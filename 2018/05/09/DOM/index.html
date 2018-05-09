@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <title>DOM | RoxasDengBlog</title>
+  <meta name="description" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="MobileOptimized" content="320" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+  <link rel="stylesheet" type="text/css" href="/css/style.css" />
+  <meta name="generator" content="RoxasDengBlog">
+
+  
+  
+  
+
+  
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body class="home-template">
+<div id="perspective" class="perspective effect-movedown">
+  <div class="container">
+    <!-- wrapper -->
+    <div class="wrapper">
+
+      <header class="site-head"  style="background: #24282b url(/img/img-bg.jpg) 0 -20%" >
+    <div class="vertical">
+        <div class="site-head-content inner">
+             <a class="blog-logo" href="/"><img src="/img/logo.svg" alt="Blog Logo"/></a> 
+            <h1 class="blog-title">RoxasDengBlog</h1>
+            <h2 class="blog-description"><button id="showMenu">Show Menu</button></h2>
+        </div>
+    </div>
+</header>
+
+      
+
+<main class="content" role="main">
+  <article class="post">
+    <span class="post-meta">
+      <time datetime="2018-05-09T10:52:32.000Z" itemprop="datePublished">
+          2018-05-09
+      </time>
+    
+</span>
+    <h1 class="post-title">DOM</h1>
+    <section class="post-content">
+      <h3 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h3><p>document object model<br>文档对象模型</p>
+<h3 id="Ndoe"><a href="#Ndoe" class="headerlink" title="Ndoe"></a>Ndoe</h3><p>Document <html>标签的父元素,但根元素是HTML<br>Elment<br>Text #注意看起来是文本,其实是一个对象<br>Comment </html></p>
+<p>页面中的节点通过,构造函数,变成对象</p>
+<h4 id="Node接口属性"><a href="#Node接口属性" class="headerlink" title="Node接口属性"></a>Node接口属性</h4><h5 id="childNodes"><a href="#childNodes" class="headerlink" title="childNodes"></a>childNodes</h5><p>如果一个节点有父节点，那么该节点就继承了ChildNode接口。</p>
+<h5 id="可以用以下方法"><a href="#可以用以下方法" class="headerlink" title="可以用以下方法"></a>可以用以下方法</h5><ol>
+<li>remove()</li>
+<li>before()</li>
+<li>after()</li>
+<li>replaceWith()</li>
+</ol>
+<h4 id="parentNode"><a href="#parentNode" class="headerlink" title="parentNode"></a>parentNode</h4><p>如果当前节点是父节点，就会继承ParentNode接口。由于只有元素节点（element）、文档节点（document）和文档片段节点（documentFragment）拥有子节点，因此只有这三类节点会继承ParentNode接口。</p>
+<h5 id="可以用以下方法-1"><a href="#可以用以下方法-1" class="headerlink" title="可以用以下方法"></a>可以用以下方法</h5><ol>
+<li>children</li>
+<li>firstElementChild</li>
+<li>lastElementChild</li>
+<li>childElementCount</li>
+<li>append()</li>
+<li>prepend() //功能与5一样</li>
+</ol>
+<h5 id="firstChild-lastChild"><a href="#firstChild-lastChild" class="headerlink" title="firstChild,lastChild,"></a>firstChild,lastChild,</h5><h5 id="innerText-outerText"><a href="#innerText-outerText" class="headerlink" title="innerText,outerText,"></a>innerText,outerText,</h5><h5 id="textContent"><a href="#textContent" class="headerlink" title="textContent"></a>textContent</h5><p>与innerText区别:</p>
+<ol>
+<li>textContent获取所有元素内容包括script和style;</li>
+<li>innerText检查css,不会返回隐藏元素的文本display:none,却性能低;</li>
+</ol>
+<h5 id="nextSibling-previousSibling"><a href="#nextSibling-previousSibling" class="headerlink" title="nextSibling,previousSibling,"></a>nextSibling,previousSibling,</h5><p>这个两个可能会获取到文本节点</p>
+<h5 id="nodeName"><a href="#nodeName" class="headerlink" title="nodeName"></a>nodeName</h5><p>获取的都是大写的,只有svg是小写,</p>
+<h5 id="nodeType"><a href="#nodeType" class="headerlink" title="nodeType"></a>nodeType</h5><p>1为标签,3为文本 document.nodeType === Node.DOCUMENT_NODE</p>
+<p>确定节点类型可以使用nodeType属性<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var node = document.documentElement.firstChild;</span><br><span class="line"><span class="keyword">if</span> (node.nodeType !== Node.ELEMENT_NODE) &#123;</span><br><span class="line">  console.log(<span class="string">'该节点是元素节点'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h5 id="nodeValue"><a href="#nodeValue" class="headerlink" title="nodeValue"></a>nodeValue</h5><p>只有文本节点或注释才能返回值,其余为null</p>
+<h5 id="ownerDocument"><a href="#ownerDocument" class="headerlink" title="ownerDocument"></a>ownerDocument</h5><p>获得根对象</p>
+<h5 id="parentElement"><a href="#parentElement" class="headerlink" title="parentElement"></a>parentElement</h5><p>获得父元素节点,假如父节点不是元素则为null</p>
+<h5 id="NodeList-与-HTMLCollection"><a href="#NodeList-与-HTMLCollection" class="headerlink" title="NodeList 与 HTMLCollection"></a>NodeList 与 HTMLCollection</h5><p>相同:返回伪数组,不能push和pop</p>
+<p>HTMLCollection与NodeList区别:</p>
+<ol>
+<li>HTMLCollection实例对象的成员只能是Element节点，NodeList实例对象的成员可以包含其他节点。 </li>
+<li>HTMLCollection实例对象都是动态集合,NodeList实例对象可能是动态集合，也可能是静态集合,目前,只有Node.childNodes是一个动态集合,其他NodeList是静态集合时反映在集合中。</li>
+<li>HTMLCollection实例对象可以用id属性或name属性引用节点元素，NodeList只能使用数字索引引用。 </li>
+</ol>
+<h4 id="Node接口的方法"><a href="#Node接口的方法" class="headerlink" title="Node接口的方法"></a>Node接口的方法</h4><h5 id="appendChild"><a href="#appendChild" class="headerlink" title="appendChild()"></a>appendChild()</h5><p>创建子节点</p>
+<h5 id="insertBefore-节点1-参考节点"><a href="#insertBefore-节点1-参考节点" class="headerlink" title="insertBefore(节点1,参考节点)"></a>insertBefore(节点1,参考节点)</h5><p>将节点1插入到参考节点之前,假如要将节点1插入到参考节点之后,要使用 insertBefore(节点1,参考节点.nextSibling),注意参考节点不能省略</p>
+<h5 id="cloneChild"><a href="#cloneChild" class="headerlink" title="cloneChild()"></a>cloneChild()</h5><p>复制节点,但是会丧失监听属性,即addEventListener方法和on-属性</p>
+<ol>
+<li><p>浅拷贝 cloneChild(false) 默认就是false,只拷贝节点,不拷贝子节点</p>
+</li>
+<li><p>深拷贝 cloneChild(true),不仅拷贝节点,也拷贝子节点</p>
+</li>
+</ol>
+<h5 id="removeChild"><a href="#removeChild" class="headerlink" title="removeChild()"></a>removeChild()</h5><p>移除节点,不在页面里,还在内存里,注意调用的是父节点</p>
+<h5 id="replaceChild"><a href="#replaceChild" class="headerlink" title="replaceChild()"></a>replaceChild()</h5><p>替换节点,之前的节点在内存里</p>
+<h5 id="contains"><a href="#contains" class="headerlink" title="contains()"></a>contains()</h5><p>一个节点是否是参考节点的子节点或其本身</p>
+<h5 id="hasChildNodes"><a href="#hasChildNodes" class="headerlink" title="hasChildNodes()"></a>hasChildNodes()</h5><p>是否有子节点,返回布尔值</p>
+<h5 id="isEqualNode"><a href="#isEqualNode" class="headerlink" title="isEqualNode()"></a>isEqualNode()</h5><p>是否相等节点,看起来一样</p>
+<h5 id="isSameNode"><a href="#isSameNode" class="headerlink" title="isSameNode()"></a>isSameNode()</h5><p>是否相同节点,是否同一个<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var p1 = document.createElement(<span class="string">'p'</span>);</span><br><span class="line">var p2 = document.createElement(<span class="string">'p'</span>);</span><br><span class="line"></span><br><span class="line">p1.isSameNode(p2) // <span class="literal">false</span></span><br><span class="line">p1.isSameNode(p1) // <span class="literal">true</span></span><br></pre></td></tr></table></figure></p>
+<h5 id="normalize"><a href="#normalize" class="headerlink" title="normalize()"></a>normalize()</h5><p>常规化<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var wrapper = document.createElement(<span class="string">'div'</span>);</span><br><span class="line"></span><br><span class="line">wrapper.appendChild(document.createTextNode(<span class="string">'Part 1 '</span>));</span><br><span class="line">wrapper.appendChild(document.createTextNode(<span class="string">'Part 2 '</span>));</span><br><span class="line"></span><br><span class="line">wrapper.childNodes.length // 2</span><br><span class="line">wrapper.normalize();</span><br><span class="line">wrapper.childNodes.length // 1</span><br></pre></td></tr></table></figure></p>
+<h3 id="Document"><a href="#Document" class="headerlink" title="Document"></a>Document</h3><h4 id="Document接口的属性"><a href="#Document接口的属性" class="headerlink" title="Document接口的属性"></a>Document接口的属性</h4><h5 id="body"><a href="#body" class="headerlink" title="body"></a>body</h5><p>获取body元素</p>
+<h5 id="head"><a href="#head" class="headerlink" title="head"></a>head</h5><p>获取head标签</p>
+<h5 id="images"><a href="#images" class="headerlink" title="images"></a>images</h5><p>获取所有image标签</p>
+<h5 id="links"><a href="#links" class="headerlink" title="links"></a>links</h5><p>获取所有a标签</p>
+<h5 id="title"><a href="#title" class="headerlink" title="title"></a>title</h5><p>获取title标签</p>
+<h5 id="scripts"><a href="#scripts" class="headerlink" title="scripts"></a>scripts</h5><p>获取所有script标签</p>
+<h5 id="characterSet"><a href="#characterSet" class="headerlink" title="characterSet"></a>characterSet</h5><p>获取字符编码</p>
+<h5 id="childElementCount"><a href="#childElementCount" class="headerlink" title="childElementCount"></a>childElementCount</h5><p>获取子元素的个数,用数字表示</p>
+<h5 id="children"><a href="#children" class="headerlink" title="children"></a>children</h5><p>获取子节点</p>
+<h5 id="doctype"><a href="#doctype" class="headerlink" title="doctype"></a>doctype</h5><p>获取文档类型</p>
+<h5 id="documentElement"><a href="#documentElement" class="headerlink" title="documentElement"></a>documentElement</h5><p>获取根元素,即<html></html></p>
+<h5 id="domain"><a href="#domain" class="headerlink" title="domain"></a>domain</h5><p>获取域名</p>
+<h5 id="location"><a href="#location" class="headerlink" title="location"></a>location</h5><p>获取Location对象,其中包含有关文档当前位置的信息.</p>
+<h5 id="onxxxxxxxxx"><a href="#onxxxxxxxxx" class="headerlink" title="onxxxxxxxxx"></a>onxxxxxxxxx</h5><p>一系列的事件监听</p>
+<h5 id="origin"><a href="#origin" class="headerlink" title="origin"></a>origin</h5><p>源</p>
+<h5 id="plugins"><a href="#plugins" class="headerlink" title="plugins"></a>plugins</h5><p>是否有flash插件</p>
+<h5 id="readyState"><a href="#readyState" class="headerlink" title="readyState"></a>readyState</h5><p>是否下载完成</p>
+<h5 id="referrer"><a href="#referrer" class="headerlink" title="referrer"></a>referrer</h5><p>引荐者,http发出请求时,可以用referrer拒绝别的访问</p>
+<h5 id="hidden"><a href="#hidden" class="headerlink" title="hidden"></a>hidden</h5><p>获取隐藏标签</p>
+<h5 id="scrollingElement"><a href="#scrollingElement" class="headerlink" title="scrollingElement"></a>scrollingElement</h5><p>获取正在滚动的元素</p>
+<h5 id="styleSheets"><a href="#styleSheets" class="headerlink" title="styleSheets"></a>styleSheets</h5><p>获取所有css</p>
+<h5 id="visibilityState"><a href="#visibilityState" class="headerlink" title="visibilityState"></a>visibilityState</h5><p>获取页面是否被显示</p>
+<h4 id="Document接口的方法"><a href="#Document接口的方法" class="headerlink" title="Document接口的方法"></a>Document接口的方法</h4><h5 id="getElementById"><a href="#getElementById" class="headerlink" title="getElementById()"></a>getElementById()</h5><p>获取该id的标签</p>
+<h5 id="getElementsByClassName"><a href="#getElementsByClassName" class="headerlink" title="getElementsByClassName()"></a>getElementsByClassName()</h5><p>获取该class的标签</p>
+<h5 id="getElementsByName"><a href="#getElementsByName" class="headerlink" title="getElementsByName()"></a>getElementsByName()</h5><p>获取该name属性的标签</p>
+<h5 id="getElementsByTagName"><a href="#getElementsByTagName" class="headerlink" title="getElementsByTagName()"></a>getElementsByTagName()</h5><p>获取该标签名的标签</p>
+<h5 id="querySelector"><a href="#querySelector" class="headerlink" title="querySelector()"></a>querySelector()</h5><p>获取第一个该选择器的标签</p>
+<h5 id="querySelectorAll"><a href="#querySelectorAll" class="headerlink" title="querySelectorAll()"></a>querySelectorAll()</h5><p>获取所有该选择器的标签,</p>
+<p>与childNodes的区别:</p>
+<ol>
+<li><p>相同:都是返回伪数组</p>
+</li>
+<li><p>区别:<br>childNodes 是动态集合。所谓动态集合就是一个活的集合，DOM树删除或新增一个相关节点，都会立刻反映在NodeList接口之中<br>querySelectorAll方法返回的是一个静态集合。DOM内部的变化，并不会实时反映在该方法的返回结果之中。 </p>
+</li>
+</ol>
+<h5 id="createDocumentFragment"><a href="#createDocumentFragment" class="headerlink" title="createDocumentFragment()"></a>createDocumentFragment()</h5><h5 id="createElement"><a href="#createElement" class="headerlink" title="createElement()"></a>createElement()</h5><p>创建标签</p>
+<h5 id="createTextNode"><a href="#createTextNode" class="headerlink" title="createTextNode()"></a>createTextNode()</h5><p>创建文本节点</p>
+<h5 id="createAttribute"><a href="#createAttribute" class="headerlink" title="createAttribute()"></a>createAttribute()</h5><h5 id="open"><a href="#open" class="headerlink" title="open()"></a>open()</h5><p>打开</p>
+<h5 id="close"><a href="#close" class="headerlink" title="close()"></a>close()</h5><p>关闭,当执行doucment.wrtie时,页面会自动先document.open() -&gt; docment.write -&gt; document.close() 假如close之后写用write,会重新调用open,会覆盖之前write</p>
+<h5 id="write"><a href="#write" class="headerlink" title="write()"></a>write()</h5><p>写入文本</p>
+<h5 id="writeln"><a href="#writeln" class="headerlink" title="writeln()"></a>writeln()</h5><p>写入一行文本</p>
+<h4 id="innerHTML"><a href="#innerHTML" class="headerlink" title="innerHTML"></a>innerHTML</h4><p>与Node.innerText/textContent的区别:innerHTML会执行HTML标签</p>
+<h5 id="execCommand"><a href="#execCommand" class="headerlink" title="execCommand()"></a>execCommand()</h5><p>执行一个命令</p>
+<h5 id="exitFullscreen"><a href="#exitFullscreen" class="headerlink" title="exitFullscreen()"></a>exitFullscreen()</h5><p>退出全屏</p>
+<h5 id="getSelection"><a href="#getSelection" class="headerlink" title="getSelection()"></a>getSelection()</h5><p>获取用户选择的文本</p>
+<h5 id="hasFocus"><a href="#hasFocus" class="headerlink" title="hasFocus()"></a>hasFocus()</h5><p>用户是否在当前页面上</p>
+<h3 id="Element"><a href="#Element" class="headerlink" title="Element"></a>Element</h3><h4 id="Element接口的属性"><a href="#Element接口的属性" class="headerlink" title="Element接口的属性"></a>Element接口的属性</h4><h4 id="Element接口的方法"><a href="#Element接口的方法" class="headerlink" title="Element接口的方法"></a>Element接口的方法</h4>
+    </section>
+    <footer class="post-footer">
+      <section class="author">
+    <h4>Roxas Deng</h4>
+    <p></p>
+</section>
+      <section class="share">
+    <h4>Share this post</h4>
+    <a class="icon-sina-weibo" href="http://v.t.sina.com.cn/share/share.php?title= ?url=http://yoursite.com/2018/05/09/DOM/" target="_blank">
+        <span class="hidden">weibo</span>
+    </a>
+    <a class="icon-twitter" href="http://twitter.com/share?url=http://yoursite.com/2018/05/09/DOM/"
+       onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        <span class="hidden">Twitter</span>
+    </a>
+    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/05/09/DOM/"
+       onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+        <span class="hidden">Facebook</span>
+    </a>
+    <a class="icon-google-plus" href="https://plus.google.com/share?url=http://yoursite.com/2018/05/09/DOM/"
+       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+        <span class="hidden">Google+</span>
+    </a>
+</section>
+
+    </footer>
+  </article>
+  <nav class="pagination" role="pagination">
+    
+    <span class="icon-logo">•</span>
+    
+    <a class="older-posts" href="/2018/05/07/CSS布局/">
+        CSS布局 →
+    </a>
+    
+</nav>
+
+  <div id="comment" class="comments-area">
+    <h4 class="title"><a href="#disqus_comments" name="disqus_comments">Comments</a></h4>
+    
+</div>
+
+</main>
+
+
+      
+<footer class="site-footer">
+  
+  <div class="inner">
+     <section class="copyright">All content copyright <a href="/">RoxasDengBlog</a> &copy; 2014 &bull; All rights reserved.</section>
+     <section class="poweredby">Proudly published with <a class="icon-ghost" href="http://zespia.tw/hexo/">Hexo</a></section>
+  </div>
+</footer>
+
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<script type="text/javascript" src="/js/jquery.fitvids.js"></script>
+<script type="text/javascript" src="/js/index.js"></script>
+<script type="text/javascript" src="/js/menu.js"></script>
+
+
+
+
+
+  </div>
+</div>
+
+<nav  class="outer-nav top horizontal">
+
+          <a class="icon-home"  href="/"><span>Home</span></a>
+
+          <a class="icon-news"  href="/archive"><span>Archive</span></a>
+
+          <a class="icon-image"  href="/images"><span>Images</span></a>
+
+          <a class="icon-wiki"  href="/wiki/2014-10-28-wiki/"><span>Wiki</span></a>
+
+          <a class="icon-Favorites"  href="/favorites"><span>Favorites</span></a>
+
+          <a class="icon-mail"  href="/about/2014-09-11-mabao/"><span>Contact</span></a>
+
+</nav>
+
+</div>
+</body>
+</html>
