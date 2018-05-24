@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <title>自制一个简单的jQuery库 | RoxasDengBlog</title>
+  <meta name="description" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="MobileOptimized" content="320" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+  <link rel="stylesheet" type="text/css" href="/css/style.css" />
+  <meta name="generator" content="RoxasDengBlog">
+
+  
+  
+  
+
+  
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body class="home-template">
+<div id="perspective" class="perspective effect-movedown">
+  <div class="container">
+    <!-- wrapper -->
+    <div class="wrapper">
+
+      <header class="site-head"  style="background: #24282b url(/img/img-bg.jpg) 0 -20%" >
+    <div class="vertical">
+        <div class="site-head-content inner">
+             <a class="blog-logo" href="/"><img src="/img/logo.svg" alt="Blog Logo"/></a> 
+            <h1 class="blog-title">RoxasDengBlog</h1>
+            <h2 class="blog-description"><button id="showMenu">Show Menu</button></h2>
+        </div>
+    </div>
+</header>
+
+      
+
+<main class="content" role="main">
+  <article class="post">
+    <span class="post-meta">
+      <time datetime="2018-05-24T02:47:25.000Z" itemprop="datePublished">
+          2018-05-24
+      </time>
+    
+</span>
+    <h1 class="post-title">自制一个简单的jQuery库</h1>
+    <section class="post-content">
+      <p>####自制一个简单的jQuery库</p>
+<h4 id="1-先创建一个选择器函数"><a href="#1-先创建一个选择器函数" class="headerlink" title="1.先创建一个选择器函数"></a>1.先创建一个选择器函数</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span>(nodeOrSelector)&#123;</span><br><span class="line">    <span class="built_in">let</span> nodes = &#123;&#125;</span><br><span class="line">    <span class="keyword">if</span>(typeof nodeOrSelector === <span class="string">'string'</span>)&#123;</span><br><span class="line">        <span class="built_in">let</span> temp=document.querySelectorAll(nodeOrSelector);</span><br><span class="line">        <span class="keyword">for</span> (<span class="built_in">let</span> i = 0;i &lt; temp.length;i++)&#123;</span><br><span class="line">            nodes[i] = temp[i];</span><br><span class="line">        &#125;</span><br><span class="line">        nodes.length = temp.length</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (nodeOrSelector instanceof Node) &#123;</span><br><span class="line">        nodes = &#123;</span><br><span class="line">            0: nodeOrSelector,</span><br><span class="line">            length: 1</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>传入参数</p>
+<ol>
+<li>假如参数为string类型,则为一个选择器,那么用dom的api:querySelecotrAll生成伪数组NodeList;</li>
+<li>假如参数为Node节点,那么建立伪数组,key 0 的值为参数本身,length=1.与上面保持一致.</li>
+</ol>
+<h4 id="2-设置API-addClass"><a href="#2-设置API-addClass" class="headerlink" title="2.设置API:addClass"></a>2.设置API:addClass</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">return</span> &#123;</span><br><span class="line">        addClass : <span class="keyword">function</span>(classes) &#123;</span><br><span class="line">            <span class="keyword">if</span>(typeof classes === <span class="string">'string'</span>)&#123;</span><br><span class="line">              <span class="keyword">for</span> (<span class="built_in">let</span> i = 0; i &lt; nodes.length;i++)&#123;</span><br><span class="line">                        nodes[i].classList.add(classes)</span><br><span class="line">                    &#125;</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(typeof classes === <span class="string">'object'</span>)&#123;</span><br><span class="line">                classes.forEach(</span><br><span class="line">                    (value) =&gt; &#123;</span><br><span class="line">                        <span class="keyword">for</span> (<span class="built_in">let</span> i = 0; i &lt; nodes.length;i++)&#123;</span><br><span class="line">                            nodes[i].classList.add(value)</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                )</span><br><span class="line">            &#125;        </span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>建立选择器后,就可以操作nodes了,通过对函数return一个对象,可以设置方法.<br>对象的第一个key是addClass,值为一个函数,传入classes参数;</p>
+<ol>
+<li>假如classes的类型为stirng,那么classes是单个class.那么遍历nodes,调用DOM API的classList.add();</li>
+<li>假如classes的类型是一个数组,那么classes可能是多个class,这是要先遍历classes,对每一项的值遍历nodes,调用classList.add();</li>
+</ol>
+<h4 id="3-设置API-setText"><a href="#3-设置API-setText" class="headerlink" title="3.设置API:setText"></a>3.设置API:setText</h4><p>对象的第二个key是setText,值为一个函数,传入text参数;</p>
+<ol>
+<li>遍历nodes,调用Dom Api的textContent = text;</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">setText : <span class="keyword">function</span>(text)&#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="built_in">let</span> i = 0; i &lt; nodes.length;i++)&#123;</span><br><span class="line">                nodes[i].textContent = text;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+<h4 id="4-完整代码"><a href="#4-完整代码" class="headerlink" title="4.完整代码"></a>4.完整代码</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">window.jQuery = <span class="keyword">function</span>(nodeOrSelector)&#123;</span><br><span class="line">    <span class="built_in">let</span> nodes = &#123;&#125;</span><br><span class="line">    <span class="keyword">if</span>(typeof nodeOrSelector === <span class="string">'string'</span>)&#123;</span><br><span class="line">        <span class="built_in">let</span> temp=document.querySelectorAll(nodeOrSelector);</span><br><span class="line">        <span class="keyword">for</span> (<span class="built_in">let</span> i = 0;i &lt; temp.length;i++)&#123;</span><br><span class="line">            nodes[i] = temp[i];</span><br><span class="line">        &#125;</span><br><span class="line">        nodes.length = temp.length</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (nodeOrSelector instanceof Node) &#123;</span><br><span class="line">        nodes = &#123;</span><br><span class="line">            0: nodeOrSelector,</span><br><span class="line">            length: 1</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">return</span> &#123;</span><br><span class="line">        addClass : <span class="keyword">function</span>(classes) &#123;</span><br><span class="line">            <span class="keyword">if</span>(typeof classes === <span class="string">'string'</span>)&#123;</span><br><span class="line">              <span class="keyword">for</span> (<span class="built_in">let</span> i = 0; i &lt; nodes.length;i++)&#123;</span><br><span class="line">                        nodes[i].classList.add(classes)</span><br><span class="line">                    &#125;</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(typeof classes === <span class="string">'object'</span>)&#123;</span><br><span class="line">                classes.forEach(</span><br><span class="line">                    (value) =&gt; &#123;</span><br><span class="line">                        <span class="keyword">for</span> (<span class="built_in">let</span> i = 0; i &lt; nodes.length;i++)&#123;</span><br><span class="line">                            nodes[i].classList.add(value)</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                )</span><br><span class="line">            &#125;        </span><br><span class="line">        &#125;,</span><br><span class="line">        setText : <span class="keyword">function</span>(text)&#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="built_in">let</span> i = 0; i &lt; nodes.length;i++)&#123;</span><br><span class="line">                nodes[i].textContent = text;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="5-运行代码"><a href="#5-运行代码" class="headerlink" title="5.运行代码"></a>5.运行代码</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">window.$ = jQuery;</span><br><span class="line">var <span class="variable">$div</span> = $(<span class="string">'div'</span>)</span><br><span class="line"><span class="variable">$div</span>.addClass(<span class="string">'blue'</span>);</span><br><span class="line"><span class="variable">$div</span>.setText(<span class="string">'Hi'</span>);</span><br></pre></td></tr></table></figure>
+    </section>
+    <footer class="post-footer">
+      <section class="author">
+    <h4>Roxas Deng</h4>
+    <p></p>
+</section>
+      <section class="share">
+    <h4>Share this post</h4>
+    <a class="icon-sina-weibo" href="http://v.t.sina.com.cn/share/share.php?title= ?url=http://yoursite.com/2018/05/24/自制一个简单的jQuery库/" target="_blank">
+        <span class="hidden">weibo</span>
+    </a>
+    <a class="icon-twitter" href="http://twitter.com/share?url=http://yoursite.com/2018/05/24/自制一个简单的jQuery库/"
+       onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        <span class="hidden">Twitter</span>
+    </a>
+    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/05/24/自制一个简单的jQuery库/"
+       onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+        <span class="hidden">Facebook</span>
+    </a>
+    <a class="icon-google-plus" href="https://plus.google.com/share?url=http://yoursite.com/2018/05/24/自制一个简单的jQuery库/"
+       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+        <span class="hidden">Google+</span>
+    </a>
+</section>
+
+    </footer>
+  </article>
+  <nav class="pagination" role="pagination">
+    
+    <span class="icon-logo">•</span>
+    
+    <a class="older-posts" href="/2018/05/09/DOM/">
+        DOM →
+    </a>
+    
+</nav>
+
+  <div id="comment" class="comments-area">
+    <h4 class="title"><a href="#disqus_comments" name="disqus_comments">Comments</a></h4>
+    
+</div>
+
+</main>
+
+
+      
+<footer class="site-footer">
+  
+  <div class="inner">
+     <section class="copyright">All content copyright <a href="/">RoxasDengBlog</a> &copy; 2014 &bull; All rights reserved.</section>
+     <section class="poweredby">Proudly published with <a class="icon-ghost" href="http://zespia.tw/hexo/">Hexo</a></section>
+  </div>
+</footer>
+
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<script type="text/javascript" src="/js/jquery.fitvids.js"></script>
+<script type="text/javascript" src="/js/index.js"></script>
+<script type="text/javascript" src="/js/menu.js"></script>
+
+
+
+
+
+  </div>
+</div>
+
+<nav  class="outer-nav top horizontal">
+
+          <a class="icon-home"  href="/"><span>Home</span></a>
+
+          <a class="icon-news"  href="/archive"><span>Archive</span></a>
+
+          <a class="icon-image"  href="/images"><span>Images</span></a>
+
+          <a class="icon-wiki"  href="/wiki/2014-10-28-wiki/"><span>Wiki</span></a>
+
+          <a class="icon-Favorites"  href="/favorites"><span>Favorites</span></a>
+
+          <a class="icon-mail"  href="/about/2014-09-11-mabao/"><span>Contact</span></a>
+
+</nav>
+
+</div>
+</body>
+</html>
