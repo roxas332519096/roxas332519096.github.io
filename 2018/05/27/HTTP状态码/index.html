@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <title>HTTP状态码 | RoxasDengBlog</title>
+  <meta name="description" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="MobileOptimized" content="320" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+  <link rel="stylesheet" type="text/css" href="/css/style.css" />
+  <meta name="generator" content="RoxasDengBlog">
+
+  
+  
+  
+
+  
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body class="home-template">
+<div id="perspective" class="perspective effect-movedown">
+  <div class="container">
+    <!-- wrapper -->
+    <div class="wrapper">
+
+      <header class="site-head"  style="background: #24282b url(/img/img-bg.jpg) 0 -20%" >
+    <div class="vertical">
+        <div class="site-head-content inner">
+             <a class="blog-logo" href="/"><img src="/img/logo.svg" alt="Blog Logo"/></a> 
+            <h1 class="blog-title">RoxasDengBlog</h1>
+            <h2 class="blog-description"><button id="showMenu">Show Menu</button></h2>
+        </div>
+    </div>
+</header>
+
+      
+
+<main class="content" role="main">
+  <article class="post">
+    <span class="post-meta">
+      <time datetime="2018-05-27T12:35:03.000Z" itemprop="datePublished">
+          2018-05-27
+      </time>
+    
+</span>
+    <h1 class="post-title">HTTP状态码</h1>
+    <section class="post-content">
+      <h5 id="2XX-请求成功-成功处理了请求的状态码"><a href="#2XX-请求成功-成功处理了请求的状态码" class="headerlink" title="2XX:(请求成功) 成功处理了请求的状态码"></a>2XX:(请求成功) 成功处理了请求的状态码</h5><p>200:(成功) 服务器已成功处理请求.<br>201:(已接受) 请求成功并服务器创建了新的资源.<br>202:(已接受) 服务器已接受请求,但尚未处理.<br>203:(非授权信息) 服务器成功处理了请求,但返回信息可能来自另一来源.<br>204:(无内容) 服务器成功处理了请求,但没有返回任何内容.<br>205:(重置内容) 服务器成功处理了请求,重置当前表单.<br>206:(部分内容) 服务器成功处理了部分GET请求.</p>
+<h5 id="3XX-请求被重定向-要完成请求-需要进一步操作"><a href="#3XX-请求被重定向-要完成请求-需要进一步操作" class="headerlink" title="3XX:(请求被重定向) 要完成请求,需要进一步操作."></a>3XX:(请求被重定向) 要完成请求,需要进一步操作.</h5><p>300:(多种选择) 针对请求,服务器可执行多种操作;服务器根据请求者选择一项操作,或提供操作列表供请求者选择<br>301:(永久移动) 请求网页已永久移动到新位置;服务器返回此响应(GET或HEAD请求的响应时),自动将请求者转到新位置<br>302:(临时移动) 服务器目前从新位置的网页响应请求,但请求者应继续使用原位置来进行以后的请求.<br>303:(查看其他位置) 请求者应当对不同的位置使用单独的GET请求来检索响应时;服务器返回此代码.<br>304:(未修改) 自从上次请求后,请求的网页未修改过;服务器返回此响应时,不会返回网页内容.<br>305:(使用代理) 请求者只能使用代理访问请求的网页.<br>307:(临时重定向)  服务器目前从新位置的响应请求,但请求者应继续使用原位置来进行以后的请求.</p>
+<h5 id="4XX-请求错误"><a href="#4XX-请求错误" class="headerlink" title="4XX: (请求错误)"></a>4XX: (请求错误)</h5><p>400:(错误请求) 服务器不理解请求的语法<br>401:(未授权) 请求要求身份验证;对于需要登录的网页,服务器可能返回此响应<br>403:(禁止) 服务器拒绝请求<br>404:(未找到) 服务器找不到请求的网页.<br>405:(方法禁用) 禁用请求中的指定方法.<br>406:(不接受) 无法使用请求的内容特效响应请求的网页.<br>407:(需要代理授权) 此状态码与401(未授权)类似,但指定请求者应当授权使用代理.<br>408:(请求超时) 服务器等待请求时发生超时.<br>409:(冲突) 服务器在完成请求时发生冲突.服务器必须在响应中包含有关冲突的信息.<br>410:(已删除):请求的资源已永久删除.<br>411:(需要有效长度) 服务器不接受含义有效长度标头字段的请求<br>412:(为满足前提条件) 服务器为满足请求者在请求中设置的其中一个前提条件.<br>413:(请求实体过大) 服务器无法处理请求,因为请求实体过大,超出服务器的处理能力.<br>414:(请求的URI过长) 请求的URI过长,服务器无法处理.<br>415:(不支持的媒体类型) 请求的格式不接受请求页面的支持.<br>416:(请求范围不符合要求) 如果页面无法提供请求范围,服务器会返回此状态码.<br>417:(未满足期望值) 服务器未满足”期望”请求标头字段的要求.</p>
+<h5 id="5XX-服务器错误"><a href="#5XX-服务器错误" class="headerlink" title="5XX:(服务器错误)"></a>5XX:(服务器错误)</h5><p>500:(服务器内部错误) 服务器遇到错误,无法完成请求.<br>501:(尚未实施) 服务器不具备完成请求的功能;如,服务器无法识别请求方法时可能会返回此代码.<br>502:(错误网关) 服务器作为网关或代理,上游服务器收到无效响应.<br>503:(服务器不可用) 服务器目前无法使用(由于超载或停机维护);通常,这只是暂时状态<br>504:(网关超时) 服务器作为网关或代理,但没有及时从上游服务器收到请求.<br>505:(HTTP版本不受支持) 服务器不支持请求中所用的HTTP协议版本.</p>
+
+    </section>
+    <footer class="post-footer">
+      <section class="author">
+    <h4>Roxas Deng</h4>
+    <p></p>
+</section>
+      <section class="share">
+    <h4>Share this post</h4>
+    <a class="icon-sina-weibo" href="http://v.t.sina.com.cn/share/share.php?title= ?url=http://yoursite.com/2018/05/27/HTTP状态码/" target="_blank">
+        <span class="hidden">weibo</span>
+    </a>
+    <a class="icon-twitter" href="http://twitter.com/share?url=http://yoursite.com/2018/05/27/HTTP状态码/"
+       onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        <span class="hidden">Twitter</span>
+    </a>
+    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/05/27/HTTP状态码/"
+       onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+        <span class="hidden">Facebook</span>
+    </a>
+    <a class="icon-google-plus" href="https://plus.google.com/share?url=http://yoursite.com/2018/05/27/HTTP状态码/"
+       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+        <span class="hidden">Google+</span>
+    </a>
+</section>
+
+    </footer>
+  </article>
+  <nav class="pagination" role="pagination">
+    
+    <span class="icon-logo">•</span>
+    
+    <a class="older-posts" href="/2018/05/27/移动端页面的做法-响应式/">
+        移动端页面的做法-响应式 →
+    </a>
+    
+</nav>
+
+  <div id="comment" class="comments-area">
+    <h4 class="title"><a href="#disqus_comments" name="disqus_comments">Comments</a></h4>
+    
+</div>
+
+</main>
+
+
+      
+<footer class="site-footer">
+  
+  <div class="inner">
+     <section class="copyright">All content copyright <a href="/">RoxasDengBlog</a> &copy; 2014 &bull; All rights reserved.</section>
+     <section class="poweredby">Proudly published with <a class="icon-ghost" href="http://zespia.tw/hexo/">Hexo</a></section>
+  </div>
+</footer>
+
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<script type="text/javascript" src="/js/jquery.fitvids.js"></script>
+<script type="text/javascript" src="/js/index.js"></script>
+<script type="text/javascript" src="/js/menu.js"></script>
+
+
+
+
+
+  </div>
+</div>
+
+<nav  class="outer-nav top horizontal">
+
+          <a class="icon-home"  href="/"><span>Home</span></a>
+
+          <a class="icon-news"  href="/archive"><span>Archive</span></a>
+
+          <a class="icon-image"  href="/images"><span>Images</span></a>
+
+          <a class="icon-wiki"  href="/wiki/2014-10-28-wiki/"><span>Wiki</span></a>
+
+          <a class="icon-Favorites"  href="/favorites"><span>Favorites</span></a>
+
+          <a class="icon-mail"  href="/about/2014-09-11-mabao/"><span>Contact</span></a>
+
+</nav>
+
+</div>
+</body>
+</html>
