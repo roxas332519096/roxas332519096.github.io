@@ -70,6 +70,24 @@
 <p>例:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">HTTP/1.1 302 Found  //协议/版本号：HTTP/1.1 状态码：302 状态解释：OK</span><br><span class="line">Connection: Keep-Alive //Key1: value1</span><br><span class="line">Content-Length: 17931 //Key2: value2</span><br><span class="line">Content-Type: text/html //Key3: value3</span><br><span class="line">Date: Tue, 10 Oct 2017 09:19:47 GMT //Key4: value4</span><br><span class="line">Etag: <span class="string">"54d9749e-460b"</span> //Key5: value5</span><br><span class="line">Server: bfe/1.0.8.18 //Key6: value6</span><br><span class="line">（回车）</span><br><span class="line">&lt;html&gt;.....(省略)...&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
 <h5 id="使用Chrome开发者工具查看HTTP响应内容"><a href="#使用Chrome开发者工具查看HTTP响应内容" class="headerlink" title="使用Chrome开发者工具查看HTTP响应内容"></a>使用Chrome开发者工具查看HTTP响应内容</h5><p>1.打开 Network<br>2.输入网址<br>3.选中第一个响应<br>4.查看 Response Headers，点击「view source」<br>5.查看 Response 或者 Preview，你会看到响应的第 4 部分</p>
 <h4 id="6-状态码"><a href="#6-状态码" class="headerlink" title="6.状态码"></a>6.状态码</h4><p>1XX 信息<br>2XX 成功<br>3XX 重定向<br>4XX 客户端错误<br>5XX 服务器错误</p>
+<h4 id="7-一个页面从输入-URL-到页面加载显示完成，这个过程中都发生了什么？"><a href="#7-一个页面从输入-URL-到页面加载显示完成，这个过程中都发生了什么？" class="headerlink" title="7.一个页面从输入 URL 到页面加载显示完成，这个过程中都发生了什么？"></a>7.一个页面从输入 URL 到页面加载显示完成，这个过程中都发生了什么？</h4><ol>
+<li><p>浏览器地址栏输入url</p>
+</li>
+<li><p>浏览器会先查看浏览器缓存–系统缓存–路由缓存，如有存在缓存，就直接显示。如果没有，接着第三步</p>
+</li>
+<li><p>域名解析（DNS）获取相应的ip</p>
+</li>
+<li><p>浏览器向服务器发起tcp连接，与浏览器建立tcp三次握手</p>
+</li>
+<li><p>握手成功，浏览器向服务器发送http请求，请求数据包</p>
+</li>
+<li><p>服务器请求数据，将数据返回到浏览器</p>
+</li>
+<li><p>浏览器接收响应，读取页面内容，解析html源码，生成DOm树</p>
+</li>
+<li><p>解析css样式、浏览器渲染，js交互</p>
+</li>
+</ol>
 
     </section>
     <footer class="post-footer">
