@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <title>DOM事件 | RoxasDengBlog</title>
+  <meta name="description" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="MobileOptimized" content="320" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+  <link rel="stylesheet" type="text/css" href="/css/style.css" />
+  <meta name="generator" content="RoxasDengBlog">
+
+  
+  
+  
+
+  
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body class="home-template">
+<div id="perspective" class="perspective effect-movedown">
+  <div class="container">
+    <!-- wrapper -->
+    <div class="wrapper">
+
+      <header class="site-head"  style="background: #24282b url(/img/img-bg.jpg) 0 -20%" >
+    <div class="vertical">
+        <div class="site-head-content inner">
+             <a class="blog-logo" href="/"><img src="/img/logo.svg" alt="Blog Logo"/></a> 
+            <h1 class="blog-title">RoxasDengBlog</h1>
+            <h2 class="blog-description"><button id="showMenu">Show Menu</button></h2>
+        </div>
+    </div>
+</header>
+
+      
+
+<main class="content" role="main">
+  <article class="post">
+    <span class="post-meta">
+      <time datetime="2018-05-29T07:23:37.000Z" itemprop="datePublished">
+          2018-05-29
+      </time>
+    
+</span>
+    <h1 class="post-title">DOM事件</h1>
+    <section class="post-content">
+      <h3 id="DOM-level-0"><a href="#DOM-level-0" class="headerlink" title="DOM level 0:"></a>DOM level 0:</h3><p>onclick = “要执行的代码”  //一旦用户点击,浏览器就eval(“要执行的代码”)</p>
+<p>例:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="keyword">function</span> <span class="function"><span class="title">print</span></span>()&#123;console.log(<span class="string">''</span>hi)&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;button id = X onclick = <span class="string">"print()"</span>&gt;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">X.onclick = <span class="built_in">print</span>  //类型为函数对象,对</span><br><span class="line">Y.onclick = <span class="built_in">print</span>() //undefined,错</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="DOM-level-1-同DOM-level0"><a href="#DOM-level-1-同DOM-level0" class="headerlink" title="DOM level 1:同DOM level0;"></a>DOM level 1:同DOM level0;</h3><h3 id="DOM-level-2"><a href="#DOM-level-2" class="headerlink" title="DOM level 2:"></a>DOM level 2:</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">X.addEventListener(<span class="string">'click'</span>,<span class="function"><span class="title">function</span></span>()&#123;&#125;) //队列,先进先出,先绑定先触发</span><br></pre></td></tr></table></figure>
+<h4 id="与-X-onclick-function-区别"><a href="#与-X-onclick-function-区别" class="headerlink" title="与 X.onclick = function(){}区别:"></a>与 X.onclick = function(){}区别:</h4><p>这是一个属性,是唯一的,只能绑定一个onclick;<br>一次事件监听 X.one(‘click’,fn(){}) //添加后移除事件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">X.removeddEventListener(<span class="string">'click'</span>,<span class="function"><span class="title">function</span></span>()&#123;&#125;)</span><br></pre></td></tr></table></figure>
+<p>祖先元素绑定事件模型:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"grand1"</span>&gt;</span><br><span class="line">    爷爷</span><br><span class="line">    &lt;div id=<span class="string">"parent"</span>&gt;</span><br><span class="line">        爸爸</span><br><span class="line">        &lt;div id=<span class="string">"child1"</span>&gt;儿子&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    grand1.addEventListener(<span class="string">'click'</span>,<span class="keyword">function</span> <span class="function"><span class="title">f1</span></span>()&#123;</span><br><span class="line">        console.log(<span class="string">'爷爷'</span>)</span><br><span class="line">    &#125;)</span><br><span class="line">    parent1.addEventListener(<span class="string">'click'</span>,<span class="keyword">function</span> <span class="function"><span class="title">f2</span></span>()&#123;</span><br><span class="line">        console.log(<span class="string">'父亲'</span>)</span><br><span class="line">    &#125;)</span><br><span class="line">    child1.addEventListener(<span class="string">'click'</span>,<span class="keyword">function</span> <span class="function"><span class="title">f3</span></span>()&#123;</span><br><span class="line">        console.log(<span class="string">'儿子'</span>)</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<ol>
+<li>当我点击儿子时,也相当于点击父亲和爷爷</li>
+<li>当我点击儿子时,也相执行其绑定事件,执行f1 f2 f3;</li>
+<li><p>X.addEventListener(‘click’,function f1(){},参数)<br>添加参数,默认是false<br>假如是false:从小到大(冒泡) f3 f2 f1 ,假如是true:从大到小(捕获) f1 f2 f3</p>
+</li>
+<li><p>假如同一个事件本身存在冒泡捕获,那么按照写的顺序执行<br>X.addEventListener(‘click’,function f1(){},false) //冒泡<br>X.addEventListener(‘click’,function f1(){},ture) //捕获</p>
+</li>
+</ol>
+<h3 id="阻止祖先DOM事件触发"><a href="#阻止祖先DOM事件触发" class="headerlink" title="阻止祖先DOM事件触发"></a>阻止祖先DOM事件触发</h3><h4 id="点击其他地方关闭浮层"><a href="#点击其他地方关闭浮层" class="headerlink" title="点击其他地方关闭浮层"></a>点击其他地方关闭浮层</h4><h4 id="方案1"><a href="#方案1" class="headerlink" title="方案1:"></a>方案1:</h4><p>通过stopPropagation()方法阻止事件传播;<br>代码如下:</p>
+<p>预览:<br><a href="https://roxas332519096.github.io/notes-demo/0528-点击其他地方关闭浮层方案1.html" target="_blank" rel="noopener">https://roxas332519096.github.io/notes-demo/0528-点击其他地方关闭浮层方案1.html</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    clickMe.addEventListener(<span class="string">'click'</span>,<span class="keyword">function</span>(e)&#123;</span><br><span class="line">        popover.style.display = <span class="string">'block'</span>;</span><br><span class="line">        e.stopPropagation();</span><br><span class="line">    &#125;)</span><br><span class="line">    wrapper.addEventListener(<span class="string">'click'</span>,<span class="keyword">function</span>(e)&#123;</span><br><span class="line">            e.stopPropagation();</span><br><span class="line">    &#125;)</span><br><span class="line">    document.addEventListener(<span class="string">'click'</span>,<span class="keyword">function</span>(e)&#123;</span><br><span class="line">        popover.style.display = <span class="string">'none'</span>;</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="方案2"><a href="#方案2" class="headerlink" title="方案2:"></a>方案2:</h4><p>用jQuery的监听一次事件one()与setTimeout()</p>
+<p>预览:<br><a href="https://roxas332519096.github.io/notes-demo/0528-点击其他地方关闭浮层方案2.html" target="_blank" rel="noopener">https://roxas332519096.github.io/notes-demo/0528-点击其他地方关闭浮层方案2.html</a></p>
+<p>代码如下:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    $(clickMe).on(<span class="string">'click'</span>,<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">        $(popover).show();</span><br><span class="line">        setTimeout(<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">            $(document).one(<span class="string">'click'</span>,<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">                $(popover).hide();</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;,0)</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="做一个Demo理解DOM事件"><a href="#做一个Demo理解DOM事件" class="headerlink" title="做一个Demo理解DOM事件:"></a>做一个Demo理解DOM事件:</h4><p>预览:<br><a href="https://roxas332519096.github.io/notes-demo/0528-理解DOM事件DEOM.html" target="_blank" rel="noopener">https://roxas332519096.github.io/notes-demo/0528-理解DOM事件DEOM.html</a></p>
+<p>过程:</p>
+<p>第一次点击时,先事件监听最后的参数为true,所以传播方式为捕获,从父元素到子元素传播;<br>其后,事件监听最后的参数为默认值,false,所以传播方式为冒泡,从子元素到父元素上传播;</p>
+<p>代码如下:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;script src=<span class="string">"//code.jquery.com/jquery-2.1.1.min.js"</span>&gt;&lt;/script&gt;</span><br><span class="line">  &lt;meta charset=<span class="string">"utf-8"</span>&gt;</span><br><span class="line">  &lt;title&gt;JS Bin&lt;/title&gt;</span><br><span class="line">  &lt;style&gt;</span><br><span class="line">    *&#123;margin:0;padding:0;box-sizing:border-box;&#125;</span><br><span class="line">    .red.active &#123;</span><br><span class="line">    background: red;</span><br><span class="line">    &#125;</span><br><span class="line">    .blue.active &#123;</span><br><span class="line">    background: blue;</span><br><span class="line">    &#125;</span><br><span class="line">    .green.active &#123;</span><br><span class="line">    background: green;</span><br><span class="line">    &#125;</span><br><span class="line">    .yellow.active &#123;</span><br><span class="line">    background: yellow;</span><br><span class="line">    &#125;</span><br><span class="line">    .orange.active &#123;</span><br><span class="line">    background: orange;</span><br><span class="line">    &#125;</span><br><span class="line">    .purple.active &#123;</span><br><span class="line">    background: purple;</span><br><span class="line">    &#125;</span><br><span class="line">    div &#123;</span><br><span class="line">    border: 1px solid black;</span><br><span class="line">    padding: 10px;</span><br><span class="line">    transition: all 0.5s;</span><br><span class="line">    display: flex;</span><br><span class="line">    flex:1;</span><br><span class="line">    border-radius: 50%;</span><br><span class="line">    background: white;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    .red&#123;</span><br><span class="line">    width: 100vw;</span><br><span class="line">    height: 100vw;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div class=<span class="string">"red"</span>&gt;</span><br><span class="line">  &lt;div class=<span class="string">"blue"</span>&gt;</span><br><span class="line">    &lt;div class=<span class="string">"green"</span>&gt;</span><br><span class="line">      &lt;div class=<span class="string">"yellow"</span>&gt;</span><br><span class="line">        &lt;div class=<span class="string">"orange"</span>&gt;</span><br><span class="line">          &lt;div class=<span class="string">"purple"</span>&gt;</span><br><span class="line">            </span><br><span class="line">          &lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="built_in">let</span> divs = $(<span class="string">'div'</span>).get()</span><br><span class="line">    <span class="built_in">let</span> n = 0</span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">let</span> i = 0; i &lt; divs.length; i++) &#123;</span><br><span class="line">    divs[i].addEventListener(<span class="string">'click'</span>, () =&gt; &#123;</span><br><span class="line">        setTimeout(() =&gt; &#123;</span><br><span class="line">        divs[i].classList.add(<span class="string">'active'</span>)</span><br><span class="line">        &#125;, n * 500)</span><br><span class="line">        n += 1</span><br><span class="line">    &#125;, <span class="literal">true</span>)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">let</span> i = 0; i &lt; divs.length; i++) &#123;</span><br><span class="line">    divs[i].addEventListener(<span class="string">'click'</span>, () =&gt; &#123;</span><br><span class="line">        setTimeout(() =&gt; &#123;</span><br><span class="line">        divs[i].classList.remove(<span class="string">'active'</span>)</span><br><span class="line">        &#125;, n * 500)</span><br><span class="line">        n += 1</span><br><span class="line">    &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+    </section>
+    <footer class="post-footer">
+      <section class="author">
+    <h4>Roxas Deng</h4>
+    <p></p>
+</section>
+      <section class="share">
+    <h4>Share this post</h4>
+    <a class="icon-sina-weibo" href="http://v.t.sina.com.cn/share/share.php?title= ?url=http://yoursite.com/2018/05/29/DOM事件/" target="_blank">
+        <span class="hidden">weibo</span>
+    </a>
+    <a class="icon-twitter" href="http://twitter.com/share?url=http://yoursite.com/2018/05/29/DOM事件/"
+       onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        <span class="hidden">Twitter</span>
+    </a>
+    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/05/29/DOM事件/"
+       onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+        <span class="hidden">Facebook</span>
+    </a>
+    <a class="icon-google-plus" href="https://plus.google.com/share?url=http://yoursite.com/2018/05/29/DOM事件/"
+       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+        <span class="hidden">Google+</span>
+    </a>
+</section>
+
+    </footer>
+  </article>
+  <nav class="pagination" role="pagination">
+    
+    <span class="icon-logo">•</span>
+    
+    <a class="older-posts" href="/2018/05/27/动态REM/">
+        动态REM →
+    </a>
+    
+</nav>
+
+  <div id="comment" class="comments-area">
+    <h4 class="title"><a href="#disqus_comments" name="disqus_comments">Comments</a></h4>
+    
+</div>
+
+</main>
+
+
+      
+<footer class="site-footer">
+  
+  <div class="inner">
+     <section class="copyright">All content copyright <a href="/">RoxasDengBlog</a> &copy; 2014 &bull; All rights reserved.</section>
+     <section class="poweredby">Proudly published with <a class="icon-ghost" href="http://zespia.tw/hexo/">Hexo</a></section>
+  </div>
+</footer>
+
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<script type="text/javascript" src="/js/jquery.fitvids.js"></script>
+<script type="text/javascript" src="/js/index.js"></script>
+<script type="text/javascript" src="/js/menu.js"></script>
+
+
+
+
+
+  </div>
+</div>
+
+<nav  class="outer-nav top horizontal">
+
+          <a class="icon-home"  href="/"><span>Home</span></a>
+
+          <a class="icon-news"  href="/archive"><span>Archive</span></a>
+
+          <a class="icon-image"  href="/images"><span>Images</span></a>
+
+          <a class="icon-wiki"  href="/wiki/2014-10-28-wiki/"><span>Wiki</span></a>
+
+          <a class="icon-Favorites"  href="/favorites"><span>Favorites</span></a>
+
+          <a class="icon-mail"  href="/about/2014-09-11-mabao/"><span>Contact</span></a>
+
+</nav>
+
+</div>
+</body>
+</html>
