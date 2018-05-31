@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <title>AJAX | RoxasDengBlog</title>
+  <meta name="description" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="MobileOptimized" content="320" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+  <link rel="stylesheet" type="text/css" href="/css/style.css" />
+  <meta name="generator" content="RoxasDengBlog">
+
+  
+  
+  
+
+  
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body class="home-template">
+<div id="perspective" class="perspective effect-movedown">
+  <div class="container">
+    <!-- wrapper -->
+    <div class="wrapper">
+
+      <header class="site-head"  style="background: #24282b url(/img/img-bg.jpg) 0 -20%" >
+    <div class="vertical">
+        <div class="site-head-content inner">
+             <a class="blog-logo" href="/"><img src="/img/logo.svg" alt="Blog Logo"/></a> 
+            <h1 class="blog-title">RoxasDengBlog</h1>
+            <h2 class="blog-description"><button id="showMenu">Show Menu</button></h2>
+        </div>
+    </div>
+</header>
+
+      
+
+<main class="content" role="main">
+  <article class="post">
+    <span class="post-meta">
+      <time datetime="2018-05-31T06:16:01.000Z" itemprop="datePublished">
+          2018-05-31
+      </time>
+    
+</span>
+    <h1 class="post-title">AJAX</h1>
+    <section class="post-content">
+      <h4 id="AJAX是什么"><a href="#AJAX是什么" class="headerlink" title="AJAX是什么?"></a>AJAX是什么?</h4><p>异步的JavaScript和XML</p>
+<ol>
+<li>使用XMLHttpRequest发送请求</li>
+<li>服务器返回XML格式的字符串</li>
+<li>JS解析XML,并更新局部页面</li>
+</ol>
+<h5 id="现在已经很少用XML-都在用JSON"><a href="#现在已经很少用XML-都在用JSON" class="headerlink" title="现在已经很少用XML,都在用JSON!"></a>现在已经很少用XML,都在用JSON!</h5><h4 id="写一个简单的AJAX"><a href="#写一个简单的AJAX" class="headerlink" title="写一个简单的AJAX:"></a>写一个简单的AJAX:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> request = new XMLHttpRequest();</span><br><span class="line">request.open(<span class="string">'GET'</span>,<span class="string">'http://localhost:8001'</span>);</span><br><span class="line">request.onreadystatechange = () =&gt; &#123;</span><br><span class="line">    <span class="keyword">if</span>(request.readyState ===4)&#123;</span><br><span class="line">        console.log(<span class="string">'响应完毕'</span>);</span><br><span class="line">        <span class="keyword">if</span>(request.status =&gt; 200 &amp;&amp; request.status &lt; 300 || request.status === 304)&#123;</span><br><span class="line">            console.log(<span class="string">'请求成功'</span>);</span><br><span class="line">            <span class="built_in">let</span> string  = request.responseText;</span><br><span class="line">            <span class="built_in">let</span> objcet  = window.JSON.parse(string);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(request.status &gt;= 400)&#123;</span><br><span class="line">        console.log(<span class="string">'请求失败'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">request.send();</span><br></pre></td></tr></table></figure>
+<h4 id="readyState-请求状态"><a href="#readyState-请求状态" class="headerlink" title="readyState 请求状态"></a>readyState 请求状态</h4><p>有五种状态:</p>
+<p>0 open()方法还未被调用.<br>1 send()方法还未被调用.<br>2 send()方法已被调用,响应头和响应状态已经返回.<br>3 响应体下载中;responseText中已获取了部分数据.<br>4 整个请求过程已经完毕.</p>
+<h4 id="request-status-返回请求的状态码"><a href="#request-status-返回请求的状态码" class="headerlink" title="request.status 返回请求的状态码"></a>request.status 返回请求的状态码</h4><h4 id="request-responseText-返回的字符串"><a href="#request-responseText-返回的字符串" class="headerlink" title="request.responseText 返回的字符串"></a>request.responseText 返回的字符串</h4><h4 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h4><h5 id="JS-VS-JSON"><a href="#JS-VS-JSON" class="headerlink" title="JS VS JSON"></a>JS VS JSON</h5><ol>
+<li>JSON 没有undefined和funtion</li>
+<li>JSON 字符串的首尾必须是双引号””</li>
+</ol>
+<p>具体对比</p>
+<p>undefined      没有<br>null           null<br>[‘a’,’b’]      [“a”,”b”]<br>function(){}   没有<br>{name:’roxas’} {“name”:”roxas”}<br>‘roxas’        “roxas”<br>var a = {}<br>a.self  = a    搞不定(没有变量)<br>{<strong>proto</strong>}    没有原型链</p>
+<h4 id="JS使用JSON"><a href="#JS使用JSON" class="headerlink" title="JS使用JSON"></a>JS使用JSON</h4><p>一个JSON对象</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"notes"</span>:&#123;</span><br><span class="line">        <span class="string">"from"</span>:<span class="string">"roxas"</span>,</span><br><span class="line">        <span class="string">"to"</span>:<span class="string">"养蛇"</span>,</span><br><span class="line">        <span class="string">"title"</span>:<span class="string">"打招呼"</span>,</span><br><span class="line">        <span class="string">"contant"</span>:<span class="string">"你好"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>JS代码使用JSON</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> request = new XMLHttprequest();</span><br><span class="line">request.open(<span class="string">'GET'</span>,<span class="string">'URL'</span>)  //配置request</span><br><span class="line">request.onreadystatechange = ()=&gt;&#123;</span><br><span class="line">    <span class="keyword">if</span>(request.readyState === 4) &#123;</span><br><span class="line">        console.log(<span class="string">'请求响应都完毕了'</span>)</span><br><span class="line">        <span class="keyword">if</span>(request.status &gt;= 200 &amp;&amp; request.status &lt;300 || request.status === 304)&#123;</span><br><span class="line">            console.log(<span class="string">'说明请求成功'</span>);</span><br><span class="line">            console.log(typeof request.responseText);</span><br><span class="line">            console.log(request.responseText);</span><br><span class="line">            <span class="built_in">let</span> string = request.responseText;</span><br><span class="line">            // 把符合 JSON 语法的字符串转换成JS对应的值</span><br><span class="line">            <span class="built_in">let</span> object = window.JSON.parse(string);</span><br><span class="line">            console.log(typeof objcet);</span><br><span class="line">            console.log(object);</span><br><span class="line">            console.log(<span class="string">'object.note'</span>);</span><br><span class="line">            console.log(object);</span><br><span class="line">            console.log(<span class="string">'object.note.from'</span>);</span><br><span class="line">            console.log(object.note.from);</span><br><span class="line">        &#125;esle <span class="keyword">if</span>(request.status &gt;= 400)&#123;</span><br><span class="line">            console.log(<span class="string">'说明请求失败'</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">request.send();</span><br></pre></td></tr></table></figure>
+<p>后端代码</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(path===<span class="string">'url'</span>)&#123;</span><br><span class="line">    response.statusCode = 200</span><br><span class="line">    response.setHeader(<span class="string">'Content-Type'</span>, <span class="string">'text/json;charset=utf-8'</span>)</span><br><span class="line">    response.setHeader(<span class="string">'Access-Control-Allow-Origin'</span>, <span class="string">'http://localhsot:8001'</span>)</span><br><span class="line">    response.write(`</span><br><span class="line">    &#123;</span><br><span class="line">    <span class="string">"notes"</span>:&#123;</span><br><span class="line">        <span class="string">"from"</span>:<span class="string">"roxas"</span>,</span><br><span class="line">        <span class="string">"to"</span>:<span class="string">"养蛇"</span>,</span><br><span class="line">        <span class="string">"title"</span>:<span class="string">"打招呼"</span>,</span><br><span class="line">        <span class="string">"contant"</span>:<span class="string">"你好"</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    `)</span><br><span class="line">    response.end()</span><br></pre></td></tr></table></figure>
+<h4 id="同源策略"><a href="#同源策略" class="headerlink" title="同源策略"></a>同源策略</h4><h5 id="只有-协议-端口-域名-一模一样才允许发-AJAX-请求"><a href="#只有-协议-端口-域名-一模一样才允许发-AJAX-请求" class="headerlink" title="只有 协议+端口+域名 一模一样才允许发 AJAX 请求"></a>只有 协议+端口+域名 一模一样才允许发 AJAX 请求</h5><p>例:<br><a href="http://baidu.com" target="_blank" rel="noopener">http://baidu.com</a> 可以向 <a href="http://www.baidu.com" target="_blank" rel="noopener">http://www.baidu.com</a> 发 AJAX 请求吗 no<br><a href="http://baidu.com:80" target="_blank" rel="noopener">http://baidu.com:80</a> 可以向 <a href="http://baidu.com:81" target="_blank" rel="noopener">http://baidu.com:81</a> 发 AJAX 请求吗 no</p>
+<p>CORS可以告诉浏览器,我俩一家的，别阻止他</p>
+<h5 id="CORS-Cross-Origin-Resource-Sharing-跨源资源共享"><a href="#CORS-Cross-Origin-Resource-Sharing-跨源资源共享" class="headerlink" title="CORS:Cross-Origin Resource Sharing(跨源资源共享)"></a>CORS:Cross-Origin Resource Sharing(跨源资源共享)</h5><p>响应的服务器(8001)代码加入响应头:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">response.setHeader(<span class="string">'Access-Control-Allow-Origin'</span>, <span class="string">'http://localhsot:8002'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>AJXA获取请求与响应的所有信息</p>
+<h4 id="请求"><a href="#请求" class="headerlink" title="请求:"></a>请求:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">POST / HTTP/1.1</span><br><span class="line">HOST: localhost:8001</span><br><span class="line">Content-Type:application/x-www-url-encoded</span><br><span class="line"></span><br><span class="line">a=1&amp;b=2</span><br></pre></td></tr></table></figure>
+<p>第一部分:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">request.open(<span class="string">'POST'</span>,<span class="string">'http://localhost:8001'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>第二部分:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">request.setHeader(<span class="string">'Content-Type'</span>,<span class="string">'x-www-form-urlencoded'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>第四部分:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">request.send(<span class="string">'a=1&amp;b=2'</span>)</span><br></pre></td></tr></table></figure></p>
+<h5 id="响应"><a href="#响应" class="headerlink" title="响应:"></a>响应:</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">HTTP/1.1 200 OK</span><br><span class="line">Content-Type: text/html</span><br><span class="line"></span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;...&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>第一部分:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">request.status //200</span><br><span class="line">request.statusText //OK</span><br></pre></td></tr></table></figure></p>
+<p>第二部分:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">request.getResponseHeader() //获得值</span><br><span class="line">或</span><br><span class="line">request.getResponseHeaders() //获得<span class="built_in">hash</span></span><br></pre></td></tr></table></figure></p>
+<p>第四部分:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">request.responseText</span><br></pre></td></tr></table></figure></p>
+<h4 id="回调函数"><a href="#回调函数" class="headerlink" title="回调函数"></a>回调函数</h4><p>函数用参数是一个函数,参数名字为callback</p>
+<p>call a function<br>call a function  back</p>
+<p>callback</p>
+<p>callback  === function</p>
+<h4 id="ES6语法-解构赋值"><a href="#ES6语法-解构赋值" class="headerlink" title="ES6语法 解构赋值"></a>ES6语法 解构赋值</h4><p>ES5<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> method = options.method;</span><br><span class="line"><span class="built_in">let</span> body = options.body;</span><br><span class="line"><span class="built_in">let</span> successFn = options.successFn;</span><br><span class="line"><span class="built_in">let</span> failFn = options.failFn;</span><br><span class="line"><span class="built_in">let</span> headers = options.headers;</span><br></pre></td></tr></table></figure></p>
+<p>ES6<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> &#123;method,body,successFn,failFn,headers&#125; = option</span><br></pre></td></tr></table></figure></p>
+<h4 id="封装jQuery-ajax"><a href="#封装jQuery-ajax" class="headerlink" title="封装jQuery.ajax"></a>封装jQuery.ajax</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">// 选择器,不用看</span><br><span class="line">var jQuery = <span class="keyword">function</span>(nodeOrSelector)&#123;</span><br><span class="line">    <span class="built_in">let</span> nodes = &#123;&#125;</span><br><span class="line">    <span class="keyword">if</span>(typeof nodeOrSelector === <span class="string">'string'</span>)&#123;</span><br><span class="line">        <span class="built_in">let</span> temp = document.querySelectorAll(nodeOrSelector);</span><br><span class="line">        <span class="keyword">for</span>(<span class="built_in">let</span> i = 0;i&lt;temp.length;i++)&#123;</span><br><span class="line">            nodes[i] = temp[i]</span><br><span class="line">        &#125;</span><br><span class="line">        nodes.length = temp.length;</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(nodeOrSelector instanceof Node)&#123;</span><br><span class="line">        nodes = &#123;</span><br><span class="line">            0:nodeOrSelector,</span><br><span class="line">            length:1</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">return</span> &#123;</span><br><span class="line">        addClass:<span class="function"><span class="title">function</span></span>()&#123;&#125;,</span><br><span class="line">        setText:<span class="function"><span class="title">function</span></span>()&#123;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">window.jQuery = jQuery;</span><br><span class="line">window.$ = jQuery;</span><br><span class="line">//以下为ajxa代码</span><br><span class="line"></span><br><span class="line">window.jQuery.ajax = <span class="keyword">function</span>(&#123;url,method,body,headers&#125;)&#123;</span><br><span class="line">    <span class="built_in">return</span> new Promise(<span class="keyword">function</span>(resolve,reject)&#123;</span><br><span class="line">        <span class="built_in">let</span> request = new XMLHttprequest();</span><br><span class="line">        request.open(method,url);</span><br><span class="line">        <span class="keyword">for</span>(<span class="built_in">let</span> key <span class="keyword">in</span> headers)&#123;</span><br><span class="line">            <span class="built_in">let</span> value = headers[key];</span><br><span class="line">            request.setRequestHeader(key,value)</span><br><span class="line">        &#125;</span><br><span class="line">        request.onreadystatechange = ()=&gt;&#123;</span><br><span class="line">            <span class="keyword">if</span>(request.readystates === 4)&#123;</span><br><span class="line">                <span class="keyword">if</span>(request.status &gt;= 200 &amp;&amp; request.status &lt; 300)&#123;</span><br><span class="line">                    resolve.call(undefined,request.responseText);</span><br><span class="line">                &#125;<span class="keyword">else</span> <span class="keyword">if</span>(request.status &gt;= 400)&#123;</span><br><span class="line">                    reject.call(undefined,request)</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        request.send(body);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h4><p>return new Promise (function(resolve,reject){})</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">xxx</span></span>()&#123;</span><br><span class="line">    <span class="built_in">return</span> new Promise((f1,f2)=&gt;&#123;</span><br><span class="line">        doSometing();</span><br><span class="line">        setTimeout(()=&gt;&#123;</span><br><span class="line">            //成功就调用f1,失败就调用f2</span><br><span class="line">        &#125;,3000)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">xxx().<span class="keyword">then</span>(success,fail);</span><br><span class="line">//链式操作</span><br><span class="line"></span><br><span class="line">xxx().<span class="keyword">then</span>(success,fail).<span class="keyword">then</span>(success,fail);</span><br></pre></td></tr></table></figure>
+
+    </section>
+    <footer class="post-footer">
+      <section class="author">
+    <h4>Roxas Deng</h4>
+    <p></p>
+</section>
+      <section class="share">
+    <h4>Share this post</h4>
+    <a class="icon-sina-weibo" href="http://v.t.sina.com.cn/share/share.php?title= ?url=http://yoursite.com/2018/05/31/AJAX/" target="_blank">
+        <span class="hidden">weibo</span>
+    </a>
+    <a class="icon-twitter" href="http://twitter.com/share?url=http://yoursite.com/2018/05/31/AJAX/"
+       onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        <span class="hidden">Twitter</span>
+    </a>
+    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/05/31/AJAX/"
+       onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+        <span class="hidden">Facebook</span>
+    </a>
+    <a class="icon-google-plus" href="https://plus.google.com/share?url=http://yoursite.com/2018/05/31/AJAX/"
+       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+        <span class="hidden">Google+</span>
+    </a>
+</section>
+
+    </footer>
+  </article>
+  <nav class="pagination" role="pagination">
+    
+    <span class="icon-logo">•</span>
+    
+    <a class="older-posts" href="/2018/05/30/JSONP/">
+        JSONP →
+    </a>
+    
+</nav>
+
+  <div id="comment" class="comments-area">
+    <h4 class="title"><a href="#disqus_comments" name="disqus_comments">Comments</a></h4>
+    
+</div>
+
+</main>
+
+
+      
+<footer class="site-footer">
+  
+  <div class="inner">
+     <section class="copyright">All content copyright <a href="/">RoxasDengBlog</a> &copy; 2014 &bull; All rights reserved.</section>
+     <section class="poweredby">Proudly published with <a class="icon-ghost" href="http://zespia.tw/hexo/">Hexo</a></section>
+  </div>
+</footer>
+
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<script type="text/javascript" src="/js/jquery.fitvids.js"></script>
+<script type="text/javascript" src="/js/index.js"></script>
+<script type="text/javascript" src="/js/menu.js"></script>
+
+
+
+
+
+  </div>
+</div>
+
+<nav  class="outer-nav top horizontal">
+
+          <a class="icon-home"  href="/"><span>Home</span></a>
+
+          <a class="icon-news"  href="/archive"><span>Archive</span></a>
+
+          <a class="icon-image"  href="/images"><span>Images</span></a>
+
+          <a class="icon-wiki"  href="/wiki/2014-10-28-wiki/"><span>Wiki</span></a>
+
+          <a class="icon-Favorites"  href="/favorites"><span>Favorites</span></a>
+
+          <a class="icon-mail"  href="/about/2014-09-11-mabao/"><span>Contact</span></a>
+
+</nav>
+
+</div>
+</body>
+</html>
