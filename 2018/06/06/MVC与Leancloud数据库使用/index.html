@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <title>MVC与Leancloud数据库使用 | RoxasDengBlog</title>
+  <meta name="description" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="MobileOptimized" content="320" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+  <link rel="stylesheet" type="text/css" href="/css/style.css" />
+  <meta name="generator" content="RoxasDengBlog">
+
+  
+  
+  
+
+  
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body class="home-template">
+<div id="perspective" class="perspective effect-movedown">
+  <div class="container">
+    <!-- wrapper -->
+    <div class="wrapper">
+
+      <header class="site-head"  style="background: #24282b url(/img/img-bg.jpg) 0 -20%" >
+    <div class="vertical">
+        <div class="site-head-content inner">
+             <a class="blog-logo" href="/"><img src="/img/logo.svg" alt="Blog Logo"/></a> 
+            <h1 class="blog-title">RoxasDengBlog</h1>
+            <h2 class="blog-description"><button id="showMenu">Show Menu</button></h2>
+        </div>
+    </div>
+</header>
+
+      
+
+<main class="content" role="main">
+  <article class="post">
+    <span class="post-meta">
+      <time datetime="2018-06-06T12:09:08.000Z" itemprop="datePublished">
+          2018-06-06
+      </time>
+    
+</span>
+    <h1 class="post-title">MVC与Leancloud数据库使用</h1>
+    <section class="post-content">
+      <p>Unsplash 找图</p>
+<h3 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a>MVC</h3><h4 id="M-Model-模块化操作数据"><a href="#M-Model-模块化操作数据" class="headerlink" title="M:Model 模块化操作数据"></a>M:Model 模块化操作数据</h4><p>把JS分文件</p>
+<h4 id="解决全局变量-用闭包-匿名函数"><a href="#解决全局变量-用闭包-匿名函数" class="headerlink" title="解决全局变量,用闭包,匿名函数"></a>解决全局变量,用闭包,匿名函数</h4><p>!function(){}.call();</p>
+<p>(function(){}).call();不推荐</p>
+<p>使用window.xxx读取函数信息</p>
+<p>第一个函数</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">!<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">    var person = &#123;</span><br><span class="line">        name : <span class="string">'frank'</span>,</span><br><span class="line">        age : 18</span><br><span class="line">    &#125;</span><br><span class="line">    window.frankGrowUp = <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">        person.age += 1;</span><br><span class="line">        <span class="built_in">return</span> person.age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;.call();</span><br></pre></td></tr></table></figure>
+<p>另外一个函数<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">!<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">    var frankGrowUp = window.frankGrowUp;</span><br><span class="line">    console.log(frankGrowUp);</span><br><span class="line">&#125;.call();</span><br></pre></td></tr></table></figure></p>
+<h4 id="如何使用闭包"><a href="#如何使用闭包" class="headerlink" title="如何使用闭包"></a>如何使用闭包</h4><ol>
+<li>立即执行函数使得 person 无法被外部访问</li>
+<li>闭包使得匿名函数可以操作 person</li>
+<li>window.frankGrowUp 保存了匿名函数的地址</li>
+<li>任何地方都可以使用 window.frankGrowUp<br> =&gt; 任何地方都可以使用 window.frankGrowUp 操作 person，但是不能直接访问 person</li>
+</ol>
+<h4 id="立即执行函数"><a href="#立即执行函数" class="headerlink" title="立即执行函数"></a>立即执行函数</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">var accessor =  <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">    var person = &#123;</span><br><span class="line">        name : <span class="string">'frank'</span>,</span><br><span class="line">        age : 18</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">return</span> <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">        person.age += 1;</span><br><span class="line">        <span class="built_in">return</span> person.age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var growUp = accessor().call(); //实际是执行 <span class="function"><span class="title">function</span></span>()&#123;person.age +=1;<span class="built_in">return</span> person.age&#125;;</span><br><span class="line"></span><br><span class="line">growUp.call(); //实际是执行 person.age</span><br></pre></td></tr></table></figure>
+<h3 id="MVC的V和C"><a href="#MVC的V和C" class="headerlink" title="MVC的V和C"></a>MVC的V和C</h3><h4 id="V-View-视图-即用户看得见的"><a href="#V-View-视图-即用户看得见的" class="headerlink" title="V:View 视图,即用户看得见的."></a>V:View 视图,即用户看得见的.</h4><p>JS代码加入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var view = docmuent.querySelector(<span class="string">''</span>);</span><br></pre></td></tr></table></figure></p>
+<h4 id="C-Controller-控制器"><a href="#C-Controller-控制器" class="headerlink" title="C:Controller 控制器"></a>C:Controller 控制器</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">var controller = &#123;</span><br><span class="line">    view: null,</span><br><span class="line">    init: <span class="keyword">function</span>(view)&#123;</span><br><span class="line">        this.view = view;</span><br><span class="line">        this.bindEvents();</span><br><span class="line">        // this.bindEvents.call(this);</span><br><span class="line">    &#125;,</span><br><span class="line">    bindEvents : <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">        var view = this.view;</span><br><span class="line">        //代码</span><br><span class="line">    &#125;</span><br><span class="line">&#125;.</span><br><span class="line"></span><br><span class="line">contorller.init.(view);</span><br><span class="line">// controller.init.call(controller, view);</span><br></pre></td></tr></table></figure>
+<h5 id="对象调用一个函数-那么this就是这个对象"><a href="#对象调用一个函数-那么this就是这个对象" class="headerlink" title="对象调用一个函数,那么this就是这个对象"></a>对象调用一个函数,那么this就是这个对象</h5><ol>
+<li>可以用bind(this)绑定this;</li>
+<li>可以用箭头函数,箭头函数没有this,它this就是外面的this;</li>
+</ol>
+<h4 id="引入数据库"><a href="#引入数据库" class="headerlink" title="引入数据库:"></a>引入数据库:</h4><ol>
+<li>创建一个应用</li>
+<li>引入av-min.js 得到window.AV</li>
+<li>初始化AV对象(代码直接拷)</li>
+<li>新建一条数据(代码直接拷)</li>
+</ol>
+<p>表单提交监听事件 </p>
+<p>不监听button.click是因为也要监听回车.<br>但form.addEventListener(‘sumbmit’,()=&gt;{})中的sumbit包含点击事件与回车事件.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> myForm = document.querySelector(<span class="string">'#postMessageForm'</span>);</span><br><span class="line">myForm.addEventListener(<span class="string">'submit'</span>,<span class="keyword">function</span>(e)&#123;</span><br><span class="line">    e.preventDefault();</span><br><span class="line">    <span class="built_in">let</span> content = myForm.querySelector(<span class="string">'input[name=content]'</span>).value;</span><br><span class="line">    var Message = AV.Object.extend(<span class="string">'Message'</span>);</span><br><span class="line">    var message = new Message();</span><br><span class="line">    message.save(&#123;</span><br><span class="line">        <span class="string">'content'</span> : content</span><br><span class="line">    &#125;).<span class="keyword">then</span>(<span class="keyword">function</span>(object)&#123;</span><br><span class="line">        <span class="built_in">let</span> li = document.createElement(<span class="string">'li'</span>);</span><br><span class="line">        li.innerText = `<span class="variable">$&#123;object.attributes.name&#125;</span> : <span class="variable">$&#123;object.attributes.content&#125;</span>`;</span><br><span class="line">        <span class="built_in">let</span> messageList = document.querySelector(<span class="string">'#messageList'</span>);</span><br><span class="line">        messageList.appendChild(li);</span><br><span class="line">        myForm.querySelector(<span class="string">'input[name=content]'</span>).value = <span class="string">''</span>;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>页面读取数据库信息:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var query = new AV.Query(<span class="string">'Message'</span>);</span><br><span class="line">query.find()</span><br><span class="line">    .<span class="keyword">then</span>(</span><br><span class="line">        <span class="keyword">function</span>(messages)&#123;</span><br><span class="line">            <span class="built_in">let</span> array = messages.map((item)=&gt; item.attributes);</span><br><span class="line">            array.forEach((item)=&gt;&#123;</span><br><span class="line">                <span class="built_in">let</span> li = document.createElement(<span class="string">'li'</span>);</span><br><span class="line">                li.innerText = `<span class="variable">$&#123;item.name&#125;</span> : <span class="variable">$&#123;item.content&#125;</span>`;</span><br><span class="line">                <span class="built_in">let</span> messageList = document.querySelector(<span class="string">'#messageList'</span>);</span><br><span class="line">                messageList.appendChild(li);</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">    )</span><br></pre></td></tr></table></figure></p>
+<h4 id="MVC总结"><a href="#MVC总结" class="headerlink" title="MVC总结"></a>MVC总结</h4><ol>
+<li>Model 操作数据</li>
+<li>View 表示视图</li>
+<li>Controller 是控制器</li>
+</ol>
+<p>Model 和服务器交互，Model 将得到的数据交给 Controller，Controller 把数据填入 View，并监听 View<br>用户操作 View，如点击按钮，Controller 就会接受到点击事件，Controller 这时会去调用 Model，Model 会与服务器交互，得到数据后返回给 Controller，Controller 得到数据就去更新 View</p>
+
+    </section>
+    <footer class="post-footer">
+      <section class="author">
+    <h4>Roxas Deng</h4>
+    <p></p>
+</section>
+      <section class="share">
+    <h4>Share this post</h4>
+    <a class="icon-sina-weibo" href="http://v.t.sina.com.cn/share/share.php?title= ?url=http://yoursite.com/2018/06/06/MVC与Leancloud数据库使用/" target="_blank">
+        <span class="hidden">weibo</span>
+    </a>
+    <a class="icon-twitter" href="http://twitter.com/share?url=http://yoursite.com/2018/06/06/MVC与Leancloud数据库使用/"
+       onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        <span class="hidden">Twitter</span>
+    </a>
+    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/06/06/MVC与Leancloud数据库使用/"
+       onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+        <span class="hidden">Facebook</span>
+    </a>
+    <a class="icon-google-plus" href="https://plus.google.com/share?url=http://yoursite.com/2018/06/06/MVC与Leancloud数据库使用/"
+       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+        <span class="hidden">Google+</span>
+    </a>
+</section>
+
+    </footer>
+  </article>
+  <nav class="pagination" role="pagination">
+    
+    <span class="icon-logo">•</span>
+    
+    <a class="older-posts" href="/2018/06/04/从一个页面输入URL到页面显示完成-这个过程中都发生了什么/">
+        从一个页面输入URL到页面显示完成,这个过程中都发生了什么? →
+    </a>
+    
+</nav>
+
+  <div id="comment" class="comments-area">
+    <h4 class="title"><a href="#disqus_comments" name="disqus_comments">Comments</a></h4>
+    
+</div>
+
+</main>
+
+
+      
+<footer class="site-footer">
+  
+  <div class="inner">
+     <section class="copyright">All content copyright <a href="/">RoxasDengBlog</a> &copy; 2014 &bull; All rights reserved.</section>
+     <section class="poweredby">Proudly published with <a class="icon-ghost" href="http://zespia.tw/hexo/">Hexo</a></section>
+  </div>
+</footer>
+
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<script type="text/javascript" src="/js/jquery.fitvids.js"></script>
+<script type="text/javascript" src="/js/index.js"></script>
+<script type="text/javascript" src="/js/menu.js"></script>
+
+
+
+
+
+  </div>
+</div>
+
+<nav  class="outer-nav top horizontal">
+
+          <a class="icon-home"  href="/"><span>Home</span></a>
+
+          <a class="icon-news"  href="/archive"><span>Archive</span></a>
+
+          <a class="icon-image"  href="/images"><span>Images</span></a>
+
+          <a class="icon-wiki"  href="/wiki/2014-10-28-wiki/"><span>Wiki</span></a>
+
+          <a class="icon-Favorites"  href="/favorites"><span>Favorites</span></a>
+
+          <a class="icon-mail"  href="/about/2014-09-11-mabao/"><span>Contact</span></a>
+
+</nav>
+
+</div>
+</body>
+</html>
