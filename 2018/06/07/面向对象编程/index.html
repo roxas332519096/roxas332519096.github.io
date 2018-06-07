@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <title>面向对象编程 | RoxasDengBlog</title>
+  <meta name="description" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="MobileOptimized" content="320" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+  <link rel="stylesheet" type="text/css" href="/css/style.css" />
+  <meta name="generator" content="RoxasDengBlog">
+
+  
+  
+  
+
+  
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body class="home-template">
+<div id="perspective" class="perspective effect-movedown">
+  <div class="container">
+    <!-- wrapper -->
+    <div class="wrapper">
+
+      <header class="site-head"  style="background: #24282b url(/img/img-bg.jpg) 0 -20%" >
+    <div class="vertical">
+        <div class="site-head-content inner">
+             <a class="blog-logo" href="/"><img src="/img/logo.svg" alt="Blog Logo"/></a> 
+            <h1 class="blog-title">RoxasDengBlog</h1>
+            <h2 class="blog-description"><button id="showMenu">Show Menu</button></h2>
+        </div>
+    </div>
+</header>
+
+      
+
+<main class="content" role="main">
+  <article class="post">
+    <span class="post-meta">
+      <time datetime="2018-06-07T08:22:41.000Z" itemprop="datePublished">
+          2018-06-07
+      </time>
+    
+</span>
+    <h1 class="post-title">面向对象编程</h1>
+    <section class="post-content">
+      <h3 id="面向对象编程"><a href="#面向对象编程" class="headerlink" title="面向对象编程"></a>面向对象编程</h3><p>Object  - Oriented</p>
+<p>OOP </p>
+<p>以对象为面向的编程</p>
+<h4 id="请背诵"><a href="#请背诵" class="headerlink" title="请背诵:"></a>请背诵:</h4><h5 id="Class-类"><a href="#Class-类" class="headerlink" title="Class 类"></a>Class 类</h5><p>定义对象的特征。它是对象的属性和方法的模板定义.</p>
+<h5 id="Object-对象"><a href="#Object-对象" class="headerlink" title="Object 对象"></a>Object 对象</h5><p>类的一个实例。</p>
+<h5 id="Property-属性"><a href="#Property-属性" class="headerlink" title="Property 属性"></a>Property 属性</h5><p>对象的特征，比如颜色。</p>
+<h5 id="Method-方法"><a href="#Method-方法" class="headerlink" title="Method 方法"></a>Method 方法</h5><p>对象的能力，比如行走。</p>
+<h5 id="Constructor-构造函数"><a href="#Constructor-构造函数" class="headerlink" title="Constructor 构造函数"></a>Constructor 构造函数</h5><p>对象初始化的瞬间, 被调用的方法. 通常它的名字与包含它的类一致.</p>
+<h5 id="Inheritance-继承"><a href="#Inheritance-继承" class="headerlink" title="Inheritance 继承"></a>Inheritance 继承</h5><p>一个类可以继承另一个类的特征。</p>
+<h5 id="Encapsulation-封装"><a href="#Encapsulation-封装" class="headerlink" title="Encapsulation 封装"></a>Encapsulation 封装</h5><p>一种把数据和相关的方法绑定在一起使用的方法.</p>
+<h5 id="Abstraction-抽象"><a href="#Abstraction-抽象" class="headerlink" title="Abstraction 抽象"></a>Abstraction 抽象</h5><p>结合复杂的继承，方法，属性的对象能够模拟现实的模型。</p>
+<h5 id="Polymorphism-多态"><a href="#Polymorphism-多态" class="headerlink" title="Polymorphism 多态"></a>Polymorphism 多态</h5><p>多意为‘许多’，态意为‘形态’。不同类可以定义相同的方法或属性。</p>
+<h4 id="命名空间"><a href="#命名空间" class="headerlink" title="命名空间:"></a>命名空间:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var a = a || &#123;&#125;;</span><br></pre></td></tr></table></figure>
+<p>对于<br>a || b<br>c &amp;&amp; d</p>
+<p>值基本不可能是true/fasle</p>
+<p>&amp;&amp; 找第一个fasle值<br>例如<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1 &amp;&amp; 0 &amp;&amp; 1</span><br></pre></td></tr></table></figure></p>
+<p>返回0<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1 &amp;&amp; 0 &amp;&amp; console.log(2)</span><br><span class="line">返回0,并且console.log不执行</span><br></pre></td></tr></table></figure></p>
+<p>|| 找第一个true值<br>例如<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var a = b || &#123;&#125;</span><br><span class="line">返回&#123;&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="类Class"><a href="#类Class" class="headerlink" title="类Class"></a>类Class</h4><p>造一个模板</p>
+<h5 id="View"><a href="#View" class="headerlink" title="View"></a>View</h5><p>封装view<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">window.View = <span class="keyword">function</span>(selector)&#123;</span><br><span class="line">    <span class="built_in">return</span> document.querySelector(selector)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>引用View<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var view = View(<span class="string">'#leaveMessages'</span>);</span><br></pre></td></tr></table></figure></p>
+<h5 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h5><p>封装Model<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">window.Model = <span class="keyword">function</span>(options)&#123;</span><br><span class="line">    <span class="built_in">let</span> resourceName = options.resourceName;</span><br><span class="line">    <span class="built_in">return</span> &#123;</span><br><span class="line">        init:<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">            var APP_ID = <span class="string">'6lvWkua1rf93YuTrlvBN8GVR-gzGzoHsz'</span>;</span><br><span class="line">            var APP_KEY = <span class="string">'uPlBTdzbkh8JANXfgEN8j0Lv'</span>;</span><br><span class="line">            AV.init(&#123;</span><br><span class="line">            appId: APP_ID,</span><br><span class="line">            appKey: APP_KEY&#125;)</span><br><span class="line">        &#125;,</span><br><span class="line">        fetch:<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">            var query = new AV.Query(resourceName);</span><br><span class="line">            <span class="built_in">return</span> query.find();</span><br><span class="line">        &#125;,</span><br><span class="line">        save:<span class="keyword">function</span>(username,content)&#123;</span><br><span class="line">            var Messages = AV.Object.extend(resourceName);</span><br><span class="line">            var messages = new Messages();</span><br><span class="line">            <span class="built_in">return</span> messages.save(object)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>调用Model</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var model = Model(&#123;resourceName:<span class="string">'Messages'</span>&#125;);</span><br><span class="line"> model.init();</span><br><span class="line"> model.fetch();</span><br><span class="line"> model.save(&#123;<span class="string">'username'</span>: username,<span class="string">'content'</span>:content&#125;);</span><br></pre></td></tr></table></figure>
+<h5 id="Controller"><a href="#Controller" class="headerlink" title="Controller"></a>Controller</h5><p>封装Controller</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">window.Controller = <span class="keyword">function</span>(options)&#123;</span><br><span class="line">    var init = options.init;</span><br><span class="line">    <span class="built_in">let</span> object = &#123;</span><br><span class="line">        view: null,</span><br><span class="line">        model: null,</span><br><span class="line">        init: <span class="keyword">function</span>(view,model)&#123;</span><br><span class="line">            this.view = view;</span><br><span class="line">            this.model = model;</span><br><span class="line">            this.model.init();</span><br><span class="line">            init.call(this,view,model);</span><br><span class="line">            options.bindEvents.call(this);</span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">let</span> key <span class="keyword">in</span> options)&#123;</span><br><span class="line">        <span class="keyword">if</span>(key !== <span class="string">'init'</span>)&#123;</span><br><span class="line">            object[key] = options[key]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>调用Controller</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">var controller = Controller(&#123;</span><br><span class="line">        init: <span class="keyword">function</span>(view,controller)&#123;</span><br><span class="line">            this.messageList = view.querySelector(<span class="string">'#messageList'</span>);</span><br><span class="line">            this.form = view.querySelector(<span class="string">'form'</span>);</span><br><span class="line">            this.loadMessages();</span><br><span class="line">        &#125;,</span><br><span class="line">        loadMessages: <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">            this.model.fetch().<span class="keyword">then</span>(</span><br><span class="line">                (messages) =&gt; &#123;</span><br><span class="line">                    <span class="built_in">let</span> array = messages.map((item) =&gt; item.attributes);</span><br><span class="line">                    array.forEach((item) =&gt; &#123;</span><br><span class="line">                        <span class="built_in">let</span> li = document.createElement(<span class="string">'li'</span>);</span><br><span class="line">                        li.innerText = `<span class="variable">$&#123;item.username&#125;</span> : <span class="variable">$&#123;item.content&#125;</span>`;</span><br><span class="line">                        this.messageList.appendChild(li);</span><br><span class="line">                    &#125;)</span><br><span class="line">                &#125;</span><br><span class="line">            )</span><br><span class="line">        &#125;,</span><br><span class="line">        bindEvents: <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">            this.form.addEventListener(<span class="string">'submit'</span>,(e) =&gt; &#123;</span><br><span class="line">                e.preventDefault();</span><br><span class="line">                this.saveMessage();</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;,</span><br><span class="line">        saveMessage: <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">            <span class="built_in">let</span> myForm = this.form;</span><br><span class="line">            <span class="built_in">let</span> content = myForm.querySelector(<span class="string">'input[name=content]'</span>).value;</span><br><span class="line">            <span class="built_in">let</span> username = myForm.querySelector(<span class="string">'input[name=username]'</span>).value;</span><br><span class="line">            <span class="keyword">if</span>(content !== <span class="string">''</span> &amp;&amp; username !== <span class="string">''</span>)&#123;</span><br><span class="line">                this.model.save(username,content).<span class="keyword">then</span>(<span class="keyword">function</span>(object)&#123;</span><br><span class="line">                    <span class="built_in">let</span> li = document.createElement(<span class="string">'li'</span>);</span><br><span class="line">                    li.innerText = `<span class="variable">$&#123;object.attributes.username&#125;</span> : <span class="variable">$&#123;object.attributes.content&#125;</span>`;</span><br><span class="line">                    <span class="built_in">let</span> messagesList = document.querySelector(<span class="string">'#messageList'</span>);</span><br><span class="line">                    messagesList.appendChild(li);</span><br><span class="line">                    myForm.querySelector(<span class="string">'input[name=content]'</span>).value = <span class="string">''</span>;</span><br><span class="line">                &#125;)</span><br><span class="line">          &#125;<span class="keyword">else</span>  &#123;</span><br><span class="line">              alert(<span class="string">'请输入用户名或者留言内容'</span>);</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<h4 id="如何寻找this"><a href="#如何寻找this" class="headerlink" title="如何寻找this?"></a>如何寻找this?</h4><ol>
+<li><p>controller === object</p>
+</li>
+<li><p>controller.init(view, model)<br>controller.init.call(controller, view, model)<br>那么 controller.init 里面的 this 当然 TM 是 controller<br>也就是这个1里面的object<br>controller.init 里面的 this 就是 object<br>object.init 里面的 this 就是 object</p>
+</li>
+</ol>
+<ol start="3">
+<li>initB.call(this)<br>initB 里面的 this === call 后面的this<br>call 后面 this === 第二条里的 this<br>第二条里面的 this === object<br>=&gt; initB 里面的 this 就是 object</li>
+</ol>
+<h4 id="复习this"><a href="#复习this" class="headerlink" title="复习this"></a>复习this</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">X</span></span>()&#123;</span><br><span class="line">    <span class="built_in">return</span> object = &#123;</span><br><span class="line">        name:<span class="string">'object'</span>,</span><br><span class="line">        f1(x)&#123;</span><br><span class="line">            x.f2();</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="function"><span class="title">f2</span></span>()&#123;</span><br><span class="line">            console.log(this); //A</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var options = &#123;</span><br><span class="line">    name:<span class="string">'options'</span>,</span><br><span class="line">    <span class="function"><span class="title">f1</span></span>()&#123;&#125;,</span><br><span class="line">    <span class="function"><span class="title">f2</span></span>()&#123;</span><br><span class="line">        console.log(this); //B</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var x = X();</span><br><span class="line">x.f1(options);</span><br></pre></td></tr></table></figure>
+<p>B options</p>
+<p>why?</p>
+<p>x=X(),那么X().f1(options)<br>X()return object,那么object.f1(options)<br>object里的f1那么就是f1(x){x.f2()}<br>x是options,那么就是f1(options){options.f2()};<br>f2是console.log(this),this是options,打印options</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">X</span></span>()&#123;</span><br><span class="line">    <span class="built_in">return</span> object = &#123;</span><br><span class="line">        name:<span class="string">'object'</span>,</span><br><span class="line">        f1(x)&#123;</span><br><span class="line">            x.f2.call(this);</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="function"><span class="title">f2</span></span>()&#123;</span><br><span class="line">            console.log(this); //C </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var options = &#123;</span><br><span class="line">    name:<span class="string">'options'</span>,</span><br><span class="line">    <span class="function"><span class="title">f1</span></span>()&#123;&#125;,</span><br><span class="line">    <span class="function"><span class="title">f2</span></span>()&#123;</span><br><span class="line">        console.log(this);  //D</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var x = X();</span><br><span class="line">x.f1(options);</span><br></pre></td></tr></table></figure>
+<p>D object</p>
+<p>why?</p>
+<p>x.f2.call(this) this === object<br>x.f2 === options.console.log(this)<br>this === object</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">X</span></span>()&#123;</span><br><span class="line">    <span class="built_in">return</span> object = &#123;</span><br><span class="line">        name:<span class="string">'object'</span>,</span><br><span class="line">        options:null,</span><br><span class="line">        f1(x)&#123;</span><br><span class="line">            this.options = x;</span><br><span class="line">            this.f2();</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="function"><span class="title">f2</span></span>()&#123;</span><br><span class="line">            this.options.f2.call(this);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var options = &#123;</span><br><span class="line">    name:<span class="string">'options'</span>,</span><br><span class="line">    <span class="function"><span class="title">f1</span></span>()&#123;&#125;,</span><br><span class="line">    <span class="function"><span class="title">f2</span></span>()&#123;</span><br><span class="line">        console.log(this);  //this === ?</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var x = X();</span><br><span class="line">x.f1(options);</span><br></pre></td></tr></table></figure>
+<p>this === object;</p>
+<p>why?</p>
+<p>this = object;<br>object.options = x;//object.options = options;<br>this.f2() === object.f2() === object.options.f2.call(this);</p>
+<h4 id="new"><a href="#new" class="headerlink" title="new"></a>new</h4><p>var object = new Object();</p>
+<p>自有属性 空</p>
+<p>oject.<strong>proto</strong> === Object.prototype;</p>
+<p>var array = new Array(‘a’,’b’,’c’);</p>
+<p>自有属性 0:’a’,1:’b’,2:’c’,length:3</p>
+<p>array.<strong>proto</strong> === Array.prototype;<br>Array.prototype.<strong>proto</strong> === Object.prototype;</p>
+<p>Array is a function!<br>Array.<strong>proto</strong> === function.prototype;</p>
+<p>构造一个new</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> Human(options)&#123;</span><br><span class="line">   this.name = options.name;</span><br><span class="line">   this.city = options.city;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Human.prototype.species = <span class="string">'Human'</span>;</span><br><span class="line">Human.prototype.walk = <span class="function"><span class="title">function</span></span>()&#123;&#125;;</span><br><span class="line">Human.prototype.useTools = <span class="function"><span class="title">function</span></span>()&#123;&#125;;</span><br></pre></td></tr></table></figure>
+<p>调用<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var human = new Human(&#123;name:<span class="string">'Frank'</span>, city: <span class="string">'Hangzhou'</span>&#125;)</span><br><span class="line">var human2 = new Human(&#123;name:<span class="string">'Jack'</span>, city: <span class="string">'Hangzhou'</span>&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>其中<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">human.__proto__.constructor === Human //<span class="literal">true</span></span><br></pre></td></tr></table></figure></p>
+
+    </section>
+    <footer class="post-footer">
+      <section class="author">
+    <h4>Roxas Deng</h4>
+    <p></p>
+</section>
+      <section class="share">
+    <h4>Share this post</h4>
+    <a class="icon-sina-weibo" href="http://v.t.sina.com.cn/share/share.php?title= ?url=http://yoursite.com/2018/06/07/面向对象编程/" target="_blank">
+        <span class="hidden">weibo</span>
+    </a>
+    <a class="icon-twitter" href="http://twitter.com/share?url=http://yoursite.com/2018/06/07/面向对象编程/"
+       onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        <span class="hidden">Twitter</span>
+    </a>
+    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/06/07/面向对象编程/"
+       onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+        <span class="hidden">Facebook</span>
+    </a>
+    <a class="icon-google-plus" href="https://plus.google.com/share?url=http://yoursite.com/2018/06/07/面向对象编程/"
+       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+        <span class="hidden">Google+</span>
+    </a>
+</section>
+
+    </footer>
+  </article>
+  <nav class="pagination" role="pagination">
+    
+    <span class="icon-logo">•</span>
+    
+    <a class="older-posts" href="/2018/06/06/MVC与Leancloud数据库使用/">
+        MVC与Leancloud数据库使用 →
+    </a>
+    
+</nav>
+
+  <div id="comment" class="comments-area">
+    <h4 class="title"><a href="#disqus_comments" name="disqus_comments">Comments</a></h4>
+    
+</div>
+
+</main>
+
+
+      
+<footer class="site-footer">
+  
+  <div class="inner">
+     <section class="copyright">All content copyright <a href="/">RoxasDengBlog</a> &copy; 2014 &bull; All rights reserved.</section>
+     <section class="poweredby">Proudly published with <a class="icon-ghost" href="http://zespia.tw/hexo/">Hexo</a></section>
+  </div>
+</footer>
+
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<script type="text/javascript" src="/js/jquery.fitvids.js"></script>
+<script type="text/javascript" src="/js/index.js"></script>
+<script type="text/javascript" src="/js/menu.js"></script>
+
+
+
+
+
+  </div>
+</div>
+
+<nav  class="outer-nav top horizontal">
+
+          <a class="icon-home"  href="/"><span>Home</span></a>
+
+          <a class="icon-news"  href="/archive"><span>Archive</span></a>
+
+          <a class="icon-image"  href="/images"><span>Images</span></a>
+
+          <a class="icon-wiki"  href="/wiki/2014-10-28-wiki/"><span>Wiki</span></a>
+
+          <a class="icon-Favorites"  href="/favorites"><span>Favorites</span></a>
+
+          <a class="icon-mail"  href="/about/2014-09-11-mabao/"><span>Contact</span></a>
+
+</nav>
+
+</div>
+</body>
+</html>
