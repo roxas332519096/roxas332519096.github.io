@@ -75,7 +75,7 @@
 </li>
 <li><p>Cookie 遵守同源策略吗？<br> 当请求 qq.com 下的资源时,浏览器会默认带上 qq.com 对应的 Cookie,不会带上 baidu.com 对应的 Cookie;<br> 当请求 v.qq.com 下的资源时,浏览器不仅会带上 v.qq.com 的Cookie,还会带上 qq.com 的 Cookie;<br> 二级域名,三级域名的Cookie都会带上.<br> 另外 Cookie 还可以根据路径做限制,这个功能用得比较少.;</p>
 </li>
-<li><p>如何删除Cookie,把时间属性设置为一个过去的日期.</p>
+<li><p>.服务器端可以通过设置 Expires、max-age 两个标签将 Cookie 设置为过期状态;JavaScript 可以通过document.cookie API 删除 Cookie.</p>
 </li>
 </ol>
 <p>下面是一个带Cookie响应头<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">HTTP /1.1 200 OK</span><br><span class="line">Content-type:text/html</span><br><span class="line">Set-Cookie:name=value; expires = Mon, 22-Jan-07 07:10:24 GMT; domain=.wrox.com path=/; secure; HttpOnly</span><br></pre></td></tr></table></figure></p>
@@ -100,11 +100,14 @@
 <li>假如正确,用AJAX发送GET请求,路径为服务器端登陆页面,内容为账号密码.</li>
 <li>服务器处理信息,返回给浏览器,并给浏览器一个Cookie假如验证成功则转跳页面,假如失败则错误提示.</li>
 <li>以后每次进入该页面,HTTP请求头都会包含之前服务器所返回的Cookie.</li>
+<li>页面渲染服务器传来这个Cookie的信息.</li>
 </ol>
 <h5 id="后端-服务器-1"><a href="#后端-服务器-1" class="headerlink" title="后端(服务器)"></a>后端(服务器)</h5><ol>
-<li>服务器接受到请求后,解释Http请求的第四部分,匹配数据库.</li>
+<li>假如用第一次登陆,服务器在数据库查询该账号的信息是否匹配.</li>
 <li>假如不匹配,则返回401.</li>
-<li>假如匹配.则返回200状态码,并返回一个Cookie给浏览器.</li>
+<li>假如匹配.则返回200状态码,并返回一个Cookie给浏览器.并返回该Cookie对应的信息,渲染页面.</li>
+<li>用户发送请求,请求中带该Cookie,则服务器返回相应的Cookie的信息的页面信息,给浏览器渲染.</li>
+<li>用户发送请求,不带有该Cookie,则服务器返回共用的页面信息,交给浏览渲染.</li>
 </ol>
 
     </section>
@@ -135,6 +138,10 @@
     </footer>
   </article>
   <nav class="pagination" role="pagination">
+    
+    <a class="newer-posts" href="/2018/06/11/Seesion--LocalStorage--Cache-Control--Expires--ETag/">
+        ← Seesion/LocalStorage/Cache-Control/Expires/ETag
+    </a>
     
     <span class="icon-logo">•</span>
     
