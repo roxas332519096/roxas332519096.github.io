@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <title>sass | RoxasDengBlog</title>
+  <meta name="description" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="MobileOptimized" content="320" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+  <link rel="stylesheet" type="text/css" href="/css/style.css" />
+  <meta name="generator" content="RoxasDengBlog">
+
+  
+  
+  
+
+  
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body class="home-template">
+<div id="perspective" class="perspective effect-movedown">
+  <div class="container">
+    <!-- wrapper -->
+    <div class="wrapper">
+
+      <header class="site-head"  style="background: #24282b url(/img/img-bg.jpg) 0 -20%" >
+    <div class="vertical">
+        <div class="site-head-content inner">
+             <a class="blog-logo" href="/"><img src="/img/logo.svg" alt="Blog Logo"/></a> 
+            <h1 class="blog-title">RoxasDengBlog</h1>
+            <h2 class="blog-description"><button id="showMenu">Show Menu</button></h2>
+        </div>
+    </div>
+</header>
+
+      
+
+<main class="content" role="main">
+  <article class="post">
+    <span class="post-meta">
+      <time datetime="2018-06-12T16:17:03.000Z" itemprop="datePublished">
+          2018-06-13
+      </time>
+    
+</span>
+    <h1 class="post-title">sass</h1>
+    <section class="post-content">
+      <h3 id="SASS"><a href="#SASS" class="headerlink" title="SASS"></a>SASS</h3><h4 id="安装"><a href="#安装" class="headerlink" title="安装:"></a>安装:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install  node-sass  -g</span><br></pre></td></tr></table></figure>
+<p>安装成功<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node-sass -v</span><br></pre></td></tr></table></figure></p>
+<h4 id="编译"><a href="#编译" class="headerlink" title="编译:"></a>编译:</h4><p>将路径src/css的sass翻译到dist/css,并监听<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node-sass src/css/ -o dist/css/ -w</span><br></pre></td></tr></table></figure></p>
+<h4 id="语法"><a href="#语法" class="headerlink" title="语法:"></a>语法:</h4><h5 id="1-嵌套"><a href="#1-嵌套" class="headerlink" title="1.嵌套"></a>1.嵌套</h5><p>css:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">    margin:20px;</span><br><span class="line">&#125;</span><br><span class="line">div p &#123;</span><br><span class="line">    padding:20px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>scss:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">div&#123;</span><br><span class="line">    margin:20px;</span><br><span class="line">    p&#123;padding:20px;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h5 id="2-变量"><a href="#2-变量" class="headerlink" title="2.变量"></a>2.变量</h5><p>css:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a&#123;</span><br><span class="line">    color:<span class="comment">#ddd;</span></span><br><span class="line">&#125;</span><br><span class="line">p&#123;</span><br><span class="line">    color:<span class="comment">#ddd;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>scss:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$color</span>-<span class="built_in">test</span>:<span class="comment">#ddd;</span></span><br><span class="line">a&#123;</span><br><span class="line">    color:<span class="variable">$color</span>-<span class="built_in">test</span>;</span><br><span class="line">&#125;</span><br><span class="line">p&#123;</span><br><span class="line">    color:<span class="variable">$color</span>-<span class="built_in">test</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h5 id="3-引用-用-amp-引用父选择器"><a href="#3-引用-用-amp-引用父选择器" class="headerlink" title="3.引用,用&amp;引用父选择器"></a>3.引用,用&amp;引用父选择器</h5><p>css:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">a&#123;</span><br><span class="line">    color:<span class="comment">#111;</span></span><br><span class="line">&#125;</span><br><span class="line">a:hover&#123;</span><br><span class="line">    color:<span class="comment">#222;</span></span><br><span class="line">&#125;</span><br><span class="line">a:active&#123;</span><br><span class="line">    color:<span class="comment">#333;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>scss:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">a&#123;</span><br><span class="line">    color:<span class="comment">#111;</span></span><br><span class="line">    &amp;:hover&#123;</span><br><span class="line">        color:<span class="comment">#222;</span></span><br><span class="line">    &#125;</span><br><span class="line">    &amp;:active&#123;</span><br><span class="line">        color:<span class="comment">#333;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h5 id="4-导入-import"><a href="#4-导入-import" class="headerlink" title="4.导入,@import"></a>4.导入,@import</h5><p>Sass 的 @import 指令用于导入其他样式模块。</p>
+<p>假设现有 _variables.scss _buttons.scss _forms.scss 三个模块，可以通过一个 main.scss 导入这些模块。</p>
+<p>scss:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// main.scss</span><br><span class="line">@import <span class="string">"variables"</span>;</span><br><span class="line">@import <span class="string">"buttons"</span>;</span><br><span class="line">@import <span class="string">"forms"</span>;</span><br></pre></td></tr></table></figure></p>
+<p>子模块文件前面的下划线用于告知 Sass 编译器不要把这个模块编译成单独的 CSS 文件</p>
+<h5 id="5-嵌套-import"><a href="#5-嵌套-import" class="headerlink" title="5.嵌套@import"></a>5.嵌套@import</h5><p>Sass 的 @import 指令可以嵌套在选择器内，产生嵌套效果</p>
+<p>scss:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@import <span class="string">"variables"</span>;</span><br><span class="line">@import <span class="string">"mixins"</span>;</span><br><span class="line"></span><br><span class="line">.slamdunk &#123;</span><br><span class="line">  min-width: 320px;</span><br><span class="line">  @import <span class="string">"navbar"</span>;</span><br><span class="line">  @import <span class="string">"content"</span>;</span><br><span class="line">  @import <span class="string">"players"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p> 注意:CSS 也有 @import，在 IE 6-8 上会导致多个 CSS 文件不能同时下载的情况，影响网页性能</p>
+<h5 id="6-运算"><a href="#6-运算" class="headerlink" title="6.运算"></a>6.运算</h5><p> Sass 支持对数字标准的算术运算(加法 +，减法 - ，乘法 *，除法 / 和取模 %) 并保留单位;</p>
+<p>由于 CSS 中 / 可作为分隔符，因此除法运算要稍微注意以下情况。</p>
+<p>scss:<br> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"> p &#123;</span><br><span class="line">  font: 10px/8px;                // 原生的CSS，不作为除法</span><br><span class="line">  <span class="variable">$width</span>: 1000px;</span><br><span class="line">  width: <span class="variable">$width</span>/2;               // 使用了变量, 作为除法</span><br><span class="line">  width: round(1.5)/2;           // 使用了函数, 作为除法</span><br><span class="line">  height: (500px/2);             // 使用了括号, 作为除法</span><br><span class="line">  margin-left: 5px + 8px/2px;    // 使用了 +, 作为除法</span><br><span class="line">  font: (italic bold 10px/8px);  // 在一个列表（list）中，括号可以被忽略。</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p> css:<br> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> p &#123;</span><br><span class="line">  font: 10px/8px;</span><br><span class="line">  width: 500px;</span><br><span class="line">  height: 250px;</span><br><span class="line">  margin-left: 9px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h5 id="7-注释"><a href="#7-注释" class="headerlink" title="7.注释:"></a>7.注释:</h5><p> 单行注释 // 会在 .scss 被编译成 .css 后移除</p>
+<p> scss:<br> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// Header</span><br><span class="line">.header&#123;</span><br><span class="line">    height:60px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p> css:<br> .header {<br>     height:60px;<br> }</p>
+
+    </section>
+    <footer class="post-footer">
+      <section class="author">
+    <h4>Roxas Deng</h4>
+    <p></p>
+</section>
+      <section class="share">
+    <h4>Share this post</h4>
+    <a class="icon-sina-weibo" href="http://v.t.sina.com.cn/share/share.php?title= ?url=http://yoursite.com/2018/06/13/sass/" target="_blank">
+        <span class="hidden">weibo</span>
+    </a>
+    <a class="icon-twitter" href="http://twitter.com/share?url=http://yoursite.com/2018/06/13/sass/"
+       onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        <span class="hidden">Twitter</span>
+    </a>
+    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/06/13/sass/"
+       onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+        <span class="hidden">Facebook</span>
+    </a>
+    <a class="icon-google-plus" href="https://plus.google.com/share?url=http://yoursite.com/2018/06/13/sass/"
+       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+        <span class="hidden">Google+</span>
+    </a>
+</section>
+
+    </footer>
+  </article>
+  <nav class="pagination" role="pagination">
+    
+    <a class="newer-posts" href="/2018/06/13/webpack/">
+        ← webpack
+    </a>
+    
+    <span class="icon-logo">•</span>
+    
+    <a class="older-posts" href="/2018/06/11/Seesion--LocalStorage--Cache-Control--Expires--ETag/">
+        Seesion/LocalStorage/Cache-Control/Expires/ETag →
+    </a>
+    
+</nav>
+
+  <div id="comment" class="comments-area">
+    <h4 class="title"><a href="#disqus_comments" name="disqus_comments">Comments</a></h4>
+    
+</div>
+
+</main>
+
+
+      
+<footer class="site-footer">
+  
+  <div class="inner">
+     <section class="copyright">All content copyright <a href="/">RoxasDengBlog</a> &copy; 2014 &bull; All rights reserved.</section>
+     <section class="poweredby">Proudly published with <a class="icon-ghost" href="http://zespia.tw/hexo/">Hexo</a></section>
+  </div>
+</footer>
+
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<script type="text/javascript" src="/js/jquery.fitvids.js"></script>
+<script type="text/javascript" src="/js/index.js"></script>
+<script type="text/javascript" src="/js/menu.js"></script>
+
+
+
+
+
+  </div>
+</div>
+
+<nav  class="outer-nav top horizontal">
+
+          <a class="icon-home"  href="/"><span>Home</span></a>
+
+          <a class="icon-news"  href="/archive"><span>Archive</span></a>
+
+          <a class="icon-image"  href="/images"><span>Images</span></a>
+
+          <a class="icon-wiki"  href="/wiki/2014-10-28-wiki/"><span>Wiki</span></a>
+
+          <a class="icon-Favorites"  href="/favorites"><span>Favorites</span></a>
+
+          <a class="icon-mail"  href="/about/2014-09-11-mabao/"><span>Contact</span></a>
+
+</nav>
+
+</div>
+</body>
+</html>
