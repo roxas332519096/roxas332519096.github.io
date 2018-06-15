@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <title>Flex布局 | RoxasDengBlog</title>
+  <meta name="description" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="MobileOptimized" content="320" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+  <link rel="stylesheet" type="text/css" href="/css/style.css" />
+  <meta name="generator" content="RoxasDengBlog">
+
+  
+  
+  
+
+  
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body class="home-template">
+<div id="perspective" class="perspective effect-movedown">
+  <div class="container">
+    <!-- wrapper -->
+    <div class="wrapper">
+
+      <header class="site-head"  style="background: #24282b url(/img/img-bg.jpg) 0 -20%" >
+    <div class="vertical">
+        <div class="site-head-content inner">
+             <a class="blog-logo" href="/"><img src="/img/logo.svg" alt="Blog Logo"/></a> 
+            <h1 class="blog-title">RoxasDengBlog</h1>
+            <h2 class="blog-description"><button id="showMenu">Show Menu</button></h2>
+        </div>
+    </div>
+</header>
+
+      
+
+<main class="content" role="main">
+  <article class="post">
+    <span class="post-meta">
+      <time datetime="2018-06-15T12:39:34.000Z" itemprop="datePublished">
+          2018-06-15
+      </time>
+    
+</span>
+    <h1 class="post-title">Flex布局</h1>
+    <section class="post-content">
+      <h3 id="FLEX布局"><a href="#FLEX布局" class="headerlink" title="FLEX布局"></a>FLEX布局</h3><h3 id="flex-container的属性"><a href="#flex-container的属性" class="headerlink" title="flex container的属性"></a>flex container的属性</h3><h4 id="flex-direction-方向"><a href="#flex-direction-方向" class="headerlink" title="flex-direction 方向"></a>flex-direction 方向</h4><h5 id="属性"><a href="#属性" class="headerlink" title="属性:"></a>属性:</h5><ol>
+<li>row 水平</li>
+<li>row-reverse 水平反向</li>
+<li>column 垂直</li>
+<li>column-reverse 垂直反向</li>
+</ol>
+<h4 id="flex-wrap-换行"><a href="#flex-wrap-换行" class="headerlink" title="flex-wrap 换行"></a>flex-wrap 换行</h4><h5 id="属性-1"><a href="#属性-1" class="headerlink" title="属性"></a>属性</h5><ol>
+<li>nowrap 不换行(默认)</li>
+<li>wrap 换行</li>
+</ol>
+<h4 id="flex-flow"><a href="#flex-flow" class="headerlink" title="flex-flow"></a>flex-flow</h4><p>direction 与 wrap 的简写</p>
+<h4 id="justify-content-主轴方向对齐方式"><a href="#justify-content-主轴方向对齐方式" class="headerlink" title="justify-content 主轴方向对齐方式"></a>justify-content 主轴方向对齐方式</h4><p>假如是默认或者row主轴就是横着的<br>假如是column主轴就是竖着的</p>
+<h5 id="属性-2"><a href="#属性-2" class="headerlink" title="属性"></a>属性</h5><ol>
+<li>flex-start 主轴起点开始</li>
+<li>flex-end 主轴起点结束</li>
+<li>center 主轴居中</li>
+<li>space-between 空的放在中间 </li>
+<li>space-around 空的放在两边</li>
+</ol>
+<h4 id="align-items-子元素对齐方式"><a href="#align-items-子元素对齐方式" class="headerlink" title="align-items 子元素对齐方式"></a>align-items 子元素对齐方式</h4><h4 id="属性-3"><a href="#属性-3" class="headerlink" title="属性"></a>属性</h4><ol>
+<li>stretch 默认,把所有元素高度伸长到一样高.</li>
+<li>flex-start 所有元素往起点靠</li>
+<li>flex-end  所有元素往终点靠</li>
+<li>center    所有元素居中对齐</li>
+</ol>
+<h4 id="align-content-垂直行对齐"><a href="#align-content-垂直行对齐" class="headerlink" title="align-content 垂直行对齐"></a>align-content 垂直行对齐</h4><ol>
+<li>stretch </li>
+<li>flex-start 靠近起点</li>
+<li>flex-end  靠近终点</li>
+<li>center 主轴居中</li>
+<li>space-between 空的放在中间 </li>
+<li>space-around 空的放在两边</li>
+</ol>
+<h3 id="flex-item-的属性"><a href="#flex-item-的属性" class="headerlink" title="flex item 的属性"></a>flex item 的属性</h3><h4 id="flex-grow-增长比例-空间过多时"><a href="#flex-grow-增长比例-空间过多时" class="headerlink" title="flex-grow 增长比例(空间过多时)"></a>flex-grow 增长比例(空间过多时)</h4><p>属性数字:按比例分配 默认是0<br>假如某div是任意数字,其他是0,那么这个div占其余所有空间</p>
+<h4 id="flex-shrink-收缩比例-一般不用"><a href="#flex-shrink-收缩比例-一般不用" class="headerlink" title="flex-shrink 收缩比例 (一般不用)"></a>flex-shrink 收缩比例 (一般不用)</h4><p>属性数字:比例分配 默认是0</p>
+<h4 id="flex-basis-默认大小-一般不用"><a href="#flex-basis-默认大小-一般不用" class="headerlink" title="flex-basis 默认大小(一般不用)"></a>flex-basis 默认大小(一般不用)</h4><p>不写就是原始大小,写了就是写的小</p>
+<h4 id="flex-上面3个的缩写"><a href="#flex-上面3个的缩写" class="headerlink" title="flex 上面3个的缩写"></a>flex 上面3个的缩写</h4><h4 id="order-顺序"><a href="#order-顺序" class="headerlink" title="order 顺序"></a>order 顺序</h4><p>属性数字:是一个index,改变顺序</p>
+<h4 id="align-self-自身的对齐方式"><a href="#align-self-自身的对齐方式" class="headerlink" title="align-self 自身的对齐方式"></a>align-self 自身的对齐方式</h4><p>item自身的对齐方式</p>
+<p>同justify-content,align-content.</p>
+<h3 id="使用flex布局"><a href="#使用flex布局" class="headerlink" title="使用flex布局"></a>使用flex布局</h3><ol>
+<li>手机页面布局 (topbar+main+tabs)</li>
+</ol>
+<p>预览:<a href="https://roxas332519096.github.io/flex-demo/手机页面布局.html" target="_blank" rel="noopener">https://roxas332519096.github.io/flex-demo/手机页面布局.html</a></p>
+<ol start="2">
+<li>产品列表(ul&gt;li*9)</li>
+</ol>
+<p>预览:<a href="https://roxas332519096.github.io/flex-demo/产品列表.html" target="_blank" rel="noopener">https://roxas332519096.github.io/flex-demo/产品列表.html</a></p>
+<ol start="3">
+<li>PC页面布局(双飞翼)</li>
+</ol>
+<p>预览:<a href="https://roxas332519096.github.io/flex-demo/PC页面布局.html" target="_blank" rel="noopener">https://roxas332519096.github.io/flex-demo/PC页面布局.html</a></p>
+<ol start="4">
+<li>完美居中</li>
+</ol>
+<p>预览:<a href="https://roxas332519096.github.io/flex-demo/完美居中.html" target="_blank" rel="noopener">https://roxas332519096.github.io/flex-demo/完美居中.html</a></p>
+
+    </section>
+    <footer class="post-footer">
+      <section class="author">
+    <h4>Roxas Deng</h4>
+    <p></p>
+</section>
+      <section class="share">
+    <h4>Share this post</h4>
+    <a class="icon-sina-weibo" href="http://v.t.sina.com.cn/share/share.php?title= ?url=http://yoursite.com/2018/06/15/Flex布局/" target="_blank">
+        <span class="hidden">weibo</span>
+    </a>
+    <a class="icon-twitter" href="http://twitter.com/share?url=http://yoursite.com/2018/06/15/Flex布局/"
+       onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        <span class="hidden">Twitter</span>
+    </a>
+    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/06/15/Flex布局/"
+       onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+        <span class="hidden">Facebook</span>
+    </a>
+    <a class="icon-google-plus" href="https://plus.google.com/share?url=http://yoursite.com/2018/06/15/Flex布局/"
+       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+        <span class="hidden">Google+</span>
+    </a>
+</section>
+
+    </footer>
+  </article>
+  <nav class="pagination" role="pagination">
+    
+    <span class="icon-logo">•</span>
+    
+    <a class="older-posts" href="/2018/06/13/webpack/">
+        webpack →
+    </a>
+    
+</nav>
+
+  <div id="comment" class="comments-area">
+    <h4 class="title"><a href="#disqus_comments" name="disqus_comments">Comments</a></h4>
+    
+</div>
+
+</main>
+
+
+      
+<footer class="site-footer">
+  
+  <div class="inner">
+     <section class="copyright">All content copyright <a href="/">RoxasDengBlog</a> &copy; 2014 &bull; All rights reserved.</section>
+     <section class="poweredby">Proudly published with <a class="icon-ghost" href="http://zespia.tw/hexo/">Hexo</a></section>
+  </div>
+</footer>
+
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<script type="text/javascript" src="/js/jquery.fitvids.js"></script>
+<script type="text/javascript" src="/js/index.js"></script>
+<script type="text/javascript" src="/js/menu.js"></script>
+
+
+
+
+
+  </div>
+</div>
+
+<nav  class="outer-nav top horizontal">
+
+          <a class="icon-home"  href="/"><span>Home</span></a>
+
+          <a class="icon-news"  href="/archive"><span>Archive</span></a>
+
+          <a class="icon-image"  href="/images"><span>Images</span></a>
+
+          <a class="icon-wiki"  href="/wiki/2014-10-28-wiki/"><span>Wiki</span></a>
+
+          <a class="icon-Favorites"  href="/favorites"><span>Favorites</span></a>
+
+          <a class="icon-mail"  href="/about/2014-09-11-mabao/"><span>Contact</span></a>
+
+</nav>
+
+</div>
+</body>
+</html>
