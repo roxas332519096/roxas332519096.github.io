@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <title>CSS布局套路 | RoxasDengBlog</title>
+  <meta name="description" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="MobileOptimized" content="320" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+  <link rel="stylesheet" type="text/css" href="/css/style.css" />
+  <meta name="generator" content="RoxasDengBlog">
+
+  
+  
+  
+
+  
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body class="home-template">
+<div id="perspective" class="perspective effect-movedown">
+  <div class="container">
+    <!-- wrapper -->
+    <div class="wrapper">
+
+      <header class="site-head"  style="background: #24282b url(/img/img-bg.jpg) 0 -20%" >
+    <div class="vertical">
+        <div class="site-head-content inner">
+             <a class="blog-logo" href="/"><img src="/img/logo.svg" alt="Blog Logo"/></a> 
+            <h1 class="blog-title">RoxasDengBlog</h1>
+            <h2 class="blog-description"><button id="showMenu">Show Menu</button></h2>
+        </div>
+    </div>
+</header>
+
+      
+
+<main class="content" role="main">
+  <article class="post">
+    <span class="post-meta">
+      <time datetime="2018-06-16T11:22:42.000Z" itemprop="datePublished">
+          2018-06-16
+      </time>
+    
+</span>
+    <h1 class="post-title">CSS布局套路</h1>
+    <section class="post-content">
+      <h3 id="CSS布局"><a href="#CSS布局" class="headerlink" title="CSS布局"></a>CSS布局</h3><h4 id="流程图-要支持IE8吗"><a href="#流程图-要支持IE8吗" class="headerlink" title="流程图:要支持IE8吗?"></a>流程图:要支持IE8吗?</h4><ol>
+<li>是:float布局,定宽</li>
+<li>否:flex布局,弹性宽</li>
+</ol>
+<h4 id="Float布局"><a href="#Float布局" class="headerlink" title="Float布局"></a>Float布局</h4><ol>
+<li>给子元素加上float:left</li>
+<li>给父元素加上clearfix</li>
+</ol>
+<p>clearfix</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">.clearfix::after&#123;</span><br><span class="line">    content:<span class="string">''</span>;</span><br><span class="line">    display:block;</span><br><span class="line">    clear:both;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"> /兼容IE6/</span><br><span class="line"></span><br><span class="line">.clearfix&#123;</span><br><span class="line">    zoom:1</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="浮动实现平均布局"><a href="#浮动实现平均布局" class="headerlink" title="浮动实现平均布局"></a>浮动实现平均布局</h4><p>父元素变成祖先,建新的父元素,父元素加上一个负margin<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">.pic&#123;</span><br><span class="line">    width:800px;</span><br><span class="line">    margin:0 auto;</span><br><span class="line">&#125;</span><br><span class="line">.pic &gt; .item &#123;</span><br><span class="line">    width:194px;</span><br><span class="line">    height:194px;</span><br><span class="line">    margin:4px;</span><br><span class="line">    <span class="built_in">float</span>:left;</span><br><span class="line">&#125;</span><br><span class="line">变成</span><br><span class="line">.pic&#123;</span><br><span class="line">    width:800px;</span><br><span class="line">    margin:0 auto;</span><br><span class="line">&#125;</span><br><span class="line">.pic .xxx &#123;</span><br><span class="line">    margin-left:-4px;</span><br><span class="line">    margin-right:-8px;</span><br><span class="line">&#125;</span><br><span class="line">.pic &gt; .xxx &gt; .item&#123;</span><br><span class="line">    width:194px;</span><br><span class="line">    height:194px;</span><br><span class="line">    margin:4px;</span><br><span class="line">    <span class="built_in">float</span>:left;    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="Flex布局"><a href="#Flex布局" class="headerlink" title="Flex布局"></a>Flex布局</h4><ol>
+<li>给父元素加display:flex;</li>
+<li>给父元素加上justify-content:spance-between;</li>
+</ol>
+<h4 id="FLEX实现平均布局"><a href="#FLEX实现平均布局" class="headerlink" title="FLEX实现平均布局"></a>FLEX实现平均布局</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">.pic&#123;</span><br><span class="line">    width:800px;</span><br><span class="line">    margin:0 auto;</span><br><span class="line">    display:flex;</span><br><span class="line">    flex-wrap:wrap;</span><br><span class="line">    justify-content:space-between;</span><br><span class="line">&#125;</span><br><span class="line">.pic &gt; .item &#123;</span><br><span class="line">    width:194px;</span><br><span class="line">    height:194px;</span><br><span class="line">    margin:4px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="使用calc"><a href="#使用calc" class="headerlink" title="使用calc"></a>使用calc</h5><p>百分之25,减去8像素</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">width:calc (25% - 8px);</span><br></pre></td></tr></table></figure>
+<h5 id="如何防止banner图片变型"><a href="#如何防止banner图片变型" class="headerlink" title="如何防止banner图片变型"></a>如何防止banner图片变型</h5><ol>
+<li>不要用img标签</li>
+</ol>
+<p>用background<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">background:transparent url() no-repeat center;</span><br><span class="line">background-size:cover;</span><br></pre></td></tr></table></figure></p>
+<ol start="2">
+<li>也可以搜索固定比例的div</li>
+</ol>
+
+    </section>
+    <footer class="post-footer">
+      <section class="author">
+    <h4>Roxas Deng</h4>
+    <p></p>
+</section>
+      <section class="share">
+    <h4>Share this post</h4>
+    <a class="icon-sina-weibo" href="http://v.t.sina.com.cn/share/share.php?title= ?url=http://yoursite.com/2018/06/16/CSS布局套路/" target="_blank">
+        <span class="hidden">weibo</span>
+    </a>
+    <a class="icon-twitter" href="http://twitter.com/share?url=http://yoursite.com/2018/06/16/CSS布局套路/"
+       onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        <span class="hidden">Twitter</span>
+    </a>
+    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/06/16/CSS布局套路/"
+       onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+        <span class="hidden">Facebook</span>
+    </a>
+    <a class="icon-google-plus" href="https://plus.google.com/share?url=http://yoursite.com/2018/06/16/CSS布局套路/"
+       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+        <span class="hidden">Google+</span>
+    </a>
+</section>
+
+    </footer>
+  </article>
+  <nav class="pagination" role="pagination">
+    
+    <span class="icon-logo">•</span>
+    
+    <a class="older-posts" href="/2018/06/15/Flex布局/">
+        Flex布局 →
+    </a>
+    
+</nav>
+
+  <div id="comment" class="comments-area">
+    <h4 class="title"><a href="#disqus_comments" name="disqus_comments">Comments</a></h4>
+    
+</div>
+
+</main>
+
+
+      
+<footer class="site-footer">
+  
+  <div class="inner">
+     <section class="copyright">All content copyright <a href="/">RoxasDengBlog</a> &copy; 2014 &bull; All rights reserved.</section>
+     <section class="poweredby">Proudly published with <a class="icon-ghost" href="http://zespia.tw/hexo/">Hexo</a></section>
+  </div>
+</footer>
+
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<script type="text/javascript" src="/js/jquery.fitvids.js"></script>
+<script type="text/javascript" src="/js/index.js"></script>
+<script type="text/javascript" src="/js/menu.js"></script>
+
+
+
+
+
+  </div>
+</div>
+
+<nav  class="outer-nav top horizontal">
+
+          <a class="icon-home"  href="/"><span>Home</span></a>
+
+          <a class="icon-news"  href="/archive"><span>Archive</span></a>
+
+          <a class="icon-image"  href="/images"><span>Images</span></a>
+
+          <a class="icon-wiki"  href="/wiki/2014-10-28-wiki/"><span>Wiki</span></a>
+
+          <a class="icon-Favorites"  href="/favorites"><span>Favorites</span></a>
+
+          <a class="icon-mail"  href="/about/2014-09-11-mabao/"><span>Contact</span></a>
+
+</nav>
+
+</div>
+</body>
+</html>

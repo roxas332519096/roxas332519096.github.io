@@ -45,6 +45,39 @@
   <article class="post">
     <header class="post-header">
       <span class="post-meta">
+      <time datetime="2018-06-16T11:22:42.000Z" itemprop="datePublished">
+          2018-06-16
+      </time>
+    
+</span>
+      <h2 class="post-title"><a href="/2018/06/16/CSS布局套路/">CSS布局套路</a></h2>
+    </header>
+    <section class="post-excerpt">
+      <p>
+      
+        CSS布局流程图:要支持IE8吗?
+是:float布局,定宽
+否:flex布局,弹性宽
+
+Float布局
+给子元素加上float:left
+给父元素加上clearfix
+
+clearfix
+1234567891011.clearfix::after&#123;    content:'';    display:block;    clear:both;&#125; /兼容IE6/.clearfix&#123;    zoom:1&#1
+      
+      </p>
+      
+      <p>
+          <a href="/2018/06/16/CSS布局套路/" class="excerpt-link">Read More...</a>
+      </p>
+      
+    </section>
+  </article>
+  
+  <article class="post">
+    <header class="post-header">
+      <span class="post-meta">
       <time datetime="2018-06-15T12:39:34.000Z" itemprop="datePublished">
           2018-06-15
       </time>
@@ -318,36 +351,6 @@ MVCM:Model 模块化操作数据把JS分文件
       
       <p>
           <a href="/2018/06/04/从一个页面输入URL到页面显示完成-这个过程中都发生了什么/" class="excerpt-link">Read More...</a>
-      </p>
-      
-    </section>
-  </article>
-  
-  <article class="post">
-    <header class="post-header">
-      <span class="post-meta">
-      <time datetime="2018-05-31T06:16:01.000Z" itemprop="datePublished">
-          2018-05-31
-      </time>
-    
-</span>
-      <h2 class="post-title"><a href="/2018/05/31/AJAX/">AJAX</a></h2>
-    </header>
-    <section class="post-excerpt">
-      <p>
-      
-        AJAX是什么?异步的JavaScript和XML
-
-使用XMLHttpRequest发送请求
-服务器返回XML格式的字符串
-JS解析XML,并更新局部页面
-
-现在已经很少用XML,都在用JSON!写一个简单的AJAX:123456789101112131415let request = new XMLHttpRequest();request.open('GET','http://localhost:8001');request.on
-      
-      </p>
-      
-      <p>
-          <a href="/2018/05/31/AJAX/" class="excerpt-link">Read More...</a>
       </p>
       
     </section>
