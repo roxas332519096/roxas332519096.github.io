@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <title>WEB性能优化 | RoxasDengBlog</title>
+  <meta name="description" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="MobileOptimized" content="320" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+  <link rel="stylesheet" type="text/css" href="/css/style.css" />
+  <meta name="generator" content="RoxasDengBlog">
+
+  
+  
+  
+
+  
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body class="home-template">
+<div id="perspective" class="perspective effect-movedown">
+  <div class="container">
+    <!-- wrapper -->
+    <div class="wrapper">
+
+      <header class="site-head"  style="background: #24282b url(/img/img-bg.jpg) 0 -20%" >
+    <div class="vertical">
+        <div class="site-head-content inner">
+             <a class="blog-logo" href="/"><img src="/img/logo.svg" alt="Blog Logo"/></a> 
+            <h1 class="blog-title">RoxasDengBlog</h1>
+            <h2 class="blog-description"><button id="showMenu">Show Menu</button></h2>
+        </div>
+    </div>
+</header>
+
+      
+
+<main class="content" role="main">
+  <article class="post">
+    <span class="post-meta">
+      <time datetime="2018-07-24T18:51:44.000Z" itemprop="datePublished">
+          2018-07-25
+      </time>
+    
+</span>
+    <h1 class="post-title">WEB性能优化</h1>
+    <section class="post-content">
+      <h4 id="Web性能优化之分析"><a href="#Web性能优化之分析" class="headerlink" title="Web性能优化之分析"></a>Web性能优化之分析</h4><p>优化:用户觉得网站加载速度快.</p>
+<p>占用CPU少不算,它属于服务器性能优化.</p>
+<p>先来了解用户浏览器输入url,按回车后,前端部分</p>
+<ol>
+<li>缓存</li>
+<li>DNS查询</li>
+<li>建立TCP链接</li>
+<li>发送HTTP请求<br>(后台处理),等待中</li>
+<li>接收响应</li>
+<li>接收完成,得到HTML</li>
+<li>浏览器解析HTML,先查看DOCTYPE</li>
+<li>逐行解析</li>
+<li>如果看到标签,部分浏览器直接渲染,部分浏览器不渲染(因为W3C没有规定以何种形式渲染)<br>例如chrome,假如直接渲染那么css下载完毕后,要再次渲染,IE与Firefox则是直接渲染,css下载结束后再渲染一次.</li>
+<li>看到CSS,下载CSS,继续往下看还有没有CSS,假如有则同时下载另外的CSS,最多可以同时下载单个域名同时8个(chrome)/4个(ie8).逐个解析.(并行下载,解析串行).</li>
+<li>看到JS,并行下载,解析串行,一定阻塞HTML渲染.</li>
+</ol>
+<h4 id="WEb性能优化之对策"><a href="#WEb性能优化之对策" class="headerlink" title="WEb性能优化之对策"></a>WEb性能优化之对策</h4><p>对以上步骤进行分治.</p>
+<ol>
+<li><p>DNS查询:</p>
+<ol>
+<li>减少域名,以减少DNS查询时间,把资源放到同一个域名内.</li>
+</ol>
+</li>
+<li><p>建立TCP链接:</p>
+<ol>
+<li>开启keep-alive,使得TCP链接复用.</li>
+<li>开启HTTP2.0,进行多路复用,效率更高.</li>
+</ol>
+</li>
+<li><p>发送HTTP请求</p>
+<ol>
+<li>减少Cookie体积,从而减少请求体积.不要滥用Cookie.</li>
+<li>使用CahcheControl(缓存),一定时间内不发请求.</li>
+<li>增加请求域名,可以同时发送更多个请求.(浏览器单域名8/4个).<br> 与DNS查询优化冲突:权衡利弊,假如文件少则减少域名,从而减少DNS查询时间,假如文件多则增加域名,让其同时下载文件数变多,加快下载时间.</li>
+<li>把多个JS/CSS文件合并成一个,减少请求数.</li>
+</ol>
+</li>
+<li><p>接收响应 </p>
+<ol>
+<li>利用ETAG,返回304响应,不进行下载,直接用上次的文件.</li>
+<li>用Gzip压缩,缺点:耗费CPU.权衡:文件越大收益越高,反之越低,比如文件只有1K.</li>
+</ol>
+</li>
+<li><p>DOCTYPE</p>
+<ol>
+<li>一定要写对,不能写错,或者不写.写错了浏览器会猜.</li>
+</ol>
+</li>
+<li><p>标签</p>
+<ol>
+<li>尽量减少标签使用</li>
+</ol>
+</li>
+<li><p>CSS/JS文件下载</p>
+<ol>
+<li>尽量把JS放CDN,增加并发下载数,同时让资源分布到全球各地,资源 下载速度更快.</li>
+<li>把CSS放在head里:因为CSS一定会柱塞渲染,就算放最后也会柱塞,所以尽早下载.保证用户看到完整的画面.<br> JS放在body最后,尽早显示页面,而且让JS可以获取到之前渲染好的节点.</li>
+</ol>
+</li>
+<li><p>延迟组件加载<br> 节约流量</p>
+</li>
+<li><p>预加载<br> 还没看的时候就加载了.</p>
+</li>
+<li><p>加个Loading动画</p>
+</li>
+</ol>
+<h4 id="测试优化"><a href="#测试优化" class="headerlink" title="测试优化"></a>测试优化</h4><p>Chrome浏览器,点击Audtis,点击perform,点击run.</p>
+
+    </section>
+    <footer class="post-footer">
+      <section class="author">
+    <h4>Roxas Deng</h4>
+    <p></p>
+</section>
+      <section class="share">
+    <h4>Share this post</h4>
+    <a class="icon-sina-weibo" href="http://v.t.sina.com.cn/share/share.php?title= ?url=http://yoursite.com/2018/07/25/WEB性能优化/" target="_blank">
+        <span class="hidden">weibo</span>
+    </a>
+    <a class="icon-twitter" href="http://twitter.com/share?url=http://yoursite.com/2018/07/25/WEB性能优化/"
+       onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        <span class="hidden">Twitter</span>
+    </a>
+    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/07/25/WEB性能优化/"
+       onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+        <span class="hidden">Facebook</span>
+    </a>
+    <a class="icon-google-plus" href="https://plus.google.com/share?url=http://yoursite.com/2018/07/25/WEB性能优化/"
+       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+        <span class="hidden">Google+</span>
+    </a>
+</section>
+
+    </footer>
+  </article>
+  <nav class="pagination" role="pagination">
+    
+    <a class="newer-posts" href="/2018/07/25/JS的类与继承/">
+        ← JS的类与集成
+    </a>
+    
+    <span class="icon-logo">•</span>
+    
+    <a class="older-posts" href="/2018/07/13/Vue组件/">
+        Vue组件 →
+    </a>
+    
+</nav>
+
+  <div id="comment" class="comments-area">
+    <h4 class="title"><a href="#disqus_comments" name="disqus_comments">Comments</a></h4>
+    
+</div>
+
+</main>
+
+
+      
+<footer class="site-footer">
+  
+  <div class="inner">
+     <section class="copyright">All content copyright <a href="/">RoxasDengBlog</a> &copy; 2014 &bull; All rights reserved.</section>
+     <section class="poweredby">Proudly published with <a class="icon-ghost" href="http://zespia.tw/hexo/">Hexo</a></section>
+  </div>
+</footer>
+
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<script type="text/javascript" src="/js/jquery.fitvids.js"></script>
+<script type="text/javascript" src="/js/index.js"></script>
+<script type="text/javascript" src="/js/menu.js"></script>
+
+
+
+
+
+  </div>
+</div>
+
+<nav  class="outer-nav top horizontal">
+
+          <a class="icon-home"  href="/"><span>Home</span></a>
+
+          <a class="icon-news"  href="/archive"><span>Archive</span></a>
+
+          <a class="icon-image"  href="/images"><span>Images</span></a>
+
+          <a class="icon-wiki"  href="/wiki/2014-10-28-wiki/"><span>Wiki</span></a>
+
+          <a class="icon-Favorites"  href="/favorites"><span>Favorites</span></a>
+
+          <a class="icon-mail"  href="/about/2014-09-11-mabao/"><span>Contact</span></a>
+
+</nav>
+
+</div>
+</body>
+</html>

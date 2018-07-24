@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <title>JS的类与集成 | RoxasDengBlog</title>
+  <meta name="description" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="MobileOptimized" content="320" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+  <link rel="stylesheet" type="text/css" href="/css/style.css" />
+  <meta name="generator" content="RoxasDengBlog">
+
+  
+  
+  
+
+  
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body class="home-template">
+<div id="perspective" class="perspective effect-movedown">
+  <div class="container">
+    <!-- wrapper -->
+    <div class="wrapper">
+
+      <header class="site-head"  style="background: #24282b url(/img/img-bg.jpg) 0 -20%" >
+    <div class="vertical">
+        <div class="site-head-content inner">
+             <a class="blog-logo" href="/"><img src="/img/logo.svg" alt="Blog Logo"/></a> 
+            <h1 class="blog-title">RoxasDengBlog</h1>
+            <h2 class="blog-description"><button id="showMenu">Show Menu</button></h2>
+        </div>
+    </div>
+</header>
+
+      
+
+<main class="content" role="main">
+  <article class="post">
+    <span class="post-meta">
+      <time datetime="2018-07-24T18:52:08.000Z" itemprop="datePublished">
+          2018-07-25
+      </time>
+    
+</span>
+    <h1 class="post-title">JS的类与集成</h1>
+    <section class="post-content">
+      <h4 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h4><p>继承的作用是:子类可以具有父类的属性和方法</p>
+<p>JS没有继承,只有原型链引用</p>
+<p>一个对象的<strong>proto</strong>指向构造他的函数的protype</p>
+<p>如:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var a = new Array();</span><br><span class="line">a.push() //实例属性</span><br><span class="line">a.valueOf() //继承Object</span><br></pre></td></tr></table></figure></p>
+<p>push是Array.protoype的属性;<br>valueOf是继承子Ojbect.prototype的;<br>因为Array.protype.<strong>proto</strong> = Object.protype</p>
+<p>隔了两层的才是继承,对于a;push是自身有的,valueOf才是继承的.</p>
+<h4 id="类"><a href="#类" class="headerlink" title="类"></a>类</h4><p>能产生对象的东西即为类</p>
+<p>自己写一个继承类</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> Human(name)&#123;</span><br><span class="line">    this.name = name;</span><br><span class="line">&#125;</span><br><span class="line">Human.prototype.run = <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">    console.log(<span class="string">'跑跑跑'</span>);</span><br><span class="line">    <span class="built_in">return</span> undefined;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> Man(name)&#123;</span><br><span class="line">    Human.call(this,name); //使子类有父类的属性,假如不写this,那么this就是window</span><br><span class="line">    this.gender = <span class="string">'男'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Man.prototype.__proto__ = Human.prototype //插入父类原型链,但是IE不支持</span><br><span class="line"></span><br><span class="line">Man.prototype.fight = <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">    console.log(<span class="string">'打击'</span>);</span><br><span class="line">    <span class="built_in">return</span> undefined;</span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line">var f = new Man(<span class="string">'某个男人'</span>); //假如不写new,那么this就是window,因为new的时候this会绑定到这个对象名为Man的对象上</span><br><span class="line"></span><br><span class="line">输出:</span><br><span class="line">f.name  //<span class="string">'某个男人'</span></span><br><span class="line">f.gender //<span class="string">'男'</span></span><br><span class="line">f.fight()  //<span class="string">'打击'</span></span><br><span class="line">f.run() //<span class="string">'跑'</span></span><br><span class="line"></span><br><span class="line">f.__proto__ === Man.prototype;//<span class="literal">true</span></span><br><span class="line">f.__proto__.proto__ === Human.prototype;//<span class="literal">true</span></span><br><span class="line">Man.prototype.__proto__ === Human.prototype;//<span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<h5 id="构造函数的prototype"><a href="#构造函数的prototype" class="headerlink" title="构造函数的prototype"></a>构造函数的prototype</h5><p>prototype属性只有一个功能,存放共有属性对象的地址</p>
+<h5 id="ES5和ES6的写法"><a href="#ES5和ES6的写法" class="headerlink" title="ES5和ES6的写法"></a>ES5和ES6的写法</h5><p>ES5:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var f = <span class="function"><span class="title">function</span></span>()&#123;&#125;</span><br><span class="line">f.protype = Human.protype</span><br><span class="line">Man.protype = new f()</span><br></pre></td></tr></table></figure></p>
+<p>为什么?</p>
+<p>当var obj = new Fn()时,会做以下几件事</p>
+<ol>
+<li>产生一个空对象</li>
+<li>this = 该空对象</li>
+<li>this.<strong>proto</strong> = Fn.protype</li>
+<li>执行Fn.call(this,x,y..)</li>
+<li>return this</li>
+</ol>
+<p>Man.prtotype = New Human();会执行this.name,使得有多余属性<br>因为第4步不想要,所以构造一个空函数,只要他的protype</p>
+<p>空函数.protype = Human.protype;<br>Man.protype = new f() // 1,2,3,5步<br>f.protype === Human.protype //true<br>Man.protype.<strong>proto</strong> === f.protype //true </p>
+<p>ES6:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">class Human&#123;</span><br><span class="line">    constructor(name)&#123;</span><br><span class="line">        this.name = name</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="title">run</span></span>()&#123;</span><br><span class="line">        console.log(<span class="string">'run'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Man extends Human&#123;//等价于Man.protype.__protype = Human.protype</span><br><span class="line">    constructor(name)&#123;</span><br><span class="line">        super(name) //等价于Human.call(this,name),super意为超类,即父类</span><br><span class="line">        this.gender = <span class="string">'Man'</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="title">fight</span></span>()&#123;</span><br><span class="line">        console.log(<span class="string">'fight'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+    </section>
+    <footer class="post-footer">
+      <section class="author">
+    <h4>Roxas Deng</h4>
+    <p></p>
+</section>
+      <section class="share">
+    <h4>Share this post</h4>
+    <a class="icon-sina-weibo" href="http://v.t.sina.com.cn/share/share.php?title= ?url=http://yoursite.com/2018/07/25/JS的类与继承/" target="_blank">
+        <span class="hidden">weibo</span>
+    </a>
+    <a class="icon-twitter" href="http://twitter.com/share?url=http://yoursite.com/2018/07/25/JS的类与继承/"
+       onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        <span class="hidden">Twitter</span>
+    </a>
+    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/07/25/JS的类与继承/"
+       onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+        <span class="hidden">Facebook</span>
+    </a>
+    <a class="icon-google-plus" href="https://plus.google.com/share?url=http://yoursite.com/2018/07/25/JS的类与继承/"
+       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+        <span class="hidden">Google+</span>
+    </a>
+</section>
+
+    </footer>
+  </article>
+  <nav class="pagination" role="pagination">
+    
+    <span class="icon-logo">•</span>
+    
+    <a class="older-posts" href="/2018/07/25/WEB性能优化/">
+        WEB性能优化 →
+    </a>
+    
+</nav>
+
+  <div id="comment" class="comments-area">
+    <h4 class="title"><a href="#disqus_comments" name="disqus_comments">Comments</a></h4>
+    
+</div>
+
+</main>
+
+
+      
+<footer class="site-footer">
+  
+  <div class="inner">
+     <section class="copyright">All content copyright <a href="/">RoxasDengBlog</a> &copy; 2014 &bull; All rights reserved.</section>
+     <section class="poweredby">Proudly published with <a class="icon-ghost" href="http://zespia.tw/hexo/">Hexo</a></section>
+  </div>
+</footer>
+
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<script type="text/javascript" src="/js/jquery.fitvids.js"></script>
+<script type="text/javascript" src="/js/index.js"></script>
+<script type="text/javascript" src="/js/menu.js"></script>
+
+
+
+
+
+  </div>
+</div>
+
+<nav  class="outer-nav top horizontal">
+
+          <a class="icon-home"  href="/"><span>Home</span></a>
+
+          <a class="icon-news"  href="/archive"><span>Archive</span></a>
+
+          <a class="icon-image"  href="/images"><span>Images</span></a>
+
+          <a class="icon-wiki"  href="/wiki/2014-10-28-wiki/"><span>Wiki</span></a>
+
+          <a class="icon-Favorites"  href="/favorites"><span>Favorites</span></a>
+
+          <a class="icon-mail"  href="/about/2014-09-11-mabao/"><span>Contact</span></a>
+
+</nav>
+
+</div>
+</body>
+</html>
