@@ -45,12 +45,201 @@
   <article class="post">
     <header class="post-header">
       <span class="post-meta">
+      <time datetime="2018-07-25T08:43:09.000Z" itemprop="datePublished">
+          2018-07-25
+      </time>
+    
+</span>
+      <h2 class="post-title"><a href="/2018/07/25/vue-router与vuex/">vue-router与vuex</a></h2>
+    </header>
+    <section class="post-excerpt">
+      <p>
+      
+        
+      
+      </p>
+      
+      <p>
+          <a href="/2018/07/25/vue-router与vuex/" class="excerpt-link">Read More...</a>
+      </p>
+      
+    </section>
+  </article>
+  
+  <article class="post">
+    <header class="post-header">
+      <span class="post-meta">
+      <time datetime="2018-07-25T08:42:39.000Z" itemprop="datePublished">
+          2018-07-25
+      </time>
+    
+</span>
+      <h2 class="post-title"><a href="/2018/07/25/vue-cli手脚架/">vue-cli手脚架</a></h2>
+    </header>
+    <section class="post-excerpt">
+      <p>
+      
+        
+      
+      </p>
+      
+      <p>
+          <a href="/2018/07/25/vue-cli手脚架/" class="excerpt-link">Read More...</a>
+      </p>
+      
+    </section>
+  </article>
+  
+  <article class="post">
+    <header class="post-header">
+      <span class="post-meta">
+      <time datetime="2018-07-25T08:42:28.000Z" itemprop="datePublished">
+          2018-07-25
+      </time>
+    
+</span>
+      <h2 class="post-title"><a href="/2018/07/25/render函数/">render函数</a></h2>
+    </header>
+    <section class="post-excerpt">
+      <p>
+      
+        初步了解定义一个组件123456789101112131415161718192021222324252627282930313233343536373839404142&lt;div id="app"&gt;    &lt;comp-child :level="level"&gt;        我是组件    &lt;/comp-child&gt;    &lt;comp-child2 :level="level"&gt;     
+      
+      </p>
+      
+      <p>
+          <a href="/2018/07/25/render函数/" class="excerpt-link">Read More...</a>
+      </p>
+      
+    </section>
+  </article>
+  
+  <article class="post">
+    <header class="post-header">
+      <span class="post-meta">
+      <time datetime="2018-07-25T08:42:04.000Z" itemprop="datePublished">
+          2018-07-25
+      </time>
+    
+</span>
+      <h2 class="post-title"><a href="/2018/07/25/自定义指令/">自定义指令</a></h2>
+    </header>
+    <section class="post-excerpt">
+      <p>
+      
+        基本用法跟组件类似分全局注册和局部注册,区别就是把component缓存derective
+12345Vue.derective('nanme',&#123;    钩子函数:function(el,binding)&#123;    &#125;&#125;)
+钩子函数指令定义提供了几个钩子函数(可选)
+bind:只调用一次,指令第一次绑定到元素时调用,用这个钩子函数可以定义一个在绑定时执行一次的初始化动作.
+inserted:被绑定
+      
+      </p>
+      
+      <p>
+          <a href="/2018/07/25/自定义指令/" class="excerpt-link">Read More...</a>
+      </p>
+      
+    </section>
+  </article>
+  
+  <article class="post">
+    <header class="post-header">
+      <span class="post-meta">
+      <time datetime="2018-07-25T07:14:20.000Z" itemprop="datePublished">
+          2018-07-25
+      </time>
+    
+</span>
+      <h2 class="post-title"><a href="/2018/07/25/v-model的使用/">v-model的使用</a></h2>
+    </header>
+    <section class="post-excerpt">
+      <p>
+      
+        v-model:vue提供了v-model指令,用于在表单类元素上双向绑定.
+input和textarea可以用于input框以及textarea等.
+注意:所显示的值只依赖于所绑定的数据,不再关系初始化时插入的value.
+单选按钮
+单个单选按钮,直接用v-bind绑定一个布尔值,用v-model是不可以的.
+如果组合使用,就需要v-model来配合value使用,绑定所选中你的单选框的value值,此处所绑定初始值可以随意给
+
+12
+      
+      </p>
+      
+      <p>
+          <a href="/2018/07/25/v-model的使用/" class="excerpt-link">Read More...</a>
+      </p>
+      
+    </section>
+  </article>
+  
+  <article class="post">
+    <header class="post-header">
+      <span class="post-meta">
+      <time datetime="2018-07-25T06:36:10.000Z" itemprop="datePublished">
+          2018-07-25
+      </time>
+    
+</span>
+      <h2 class="post-title"><a href="/2018/07/25/vue的内置指令/">vue的内置指令</a></h2>
+    </header>
+    <section class="post-excerpt">
+      <p>
+      
+        v-cloak与dispaly:none进行结合使用.
+作用:解决初始化慢导致页面闪动.
+例:12345678910&lt;style&gt;    *[v-cloak]&#123;        display:none;    &#125;&lt;style&gt;&lt;comp-a v-show="isShow" v-cloak&gt;&lt;/comp-a&gt;data&#123;    isShow:false&#125;
+      
+      </p>
+      
+      <p>
+          <a href="/2018/07/25/vue的内置指令/" class="excerpt-link">Read More...</a>
+      </p>
+      
+    </section>
+  </article>
+  
+  <article class="post">
+    <header class="post-header">
+      <span class="post-meta">
+      <time datetime="2018-07-25T05:42:41.000Z" itemprop="datePublished">
+          2018-07-25
+      </time>
+    
+</span>
+      <h2 class="post-title"><a href="/2018/07/25/v-bind以及class与style的绑定/">v-bind以及class与style的绑定</a></h2>
+    </header>
+    <section class="post-excerpt">
+      <p>
+      
+        了解bind指令作用:绑定vue实例里的data或者computed属性
+
+变量语法
+
+1234567:title="message"data:&#123;    message:'abc'&#125;title="abc"
+
+对象语法
+
+12345678910:title="msgObj"data:&#123;    msgOjb:&#123;        msg1:true,        msg2:false    &#125;
+      
+      </p>
+      
+      <p>
+          <a href="/2018/07/25/v-bind以及class与style的绑定/" class="excerpt-link">Read More...</a>
+      </p>
+      
+    </section>
+  </article>
+  
+  <article class="post">
+    <header class="post-header">
+      <span class="post-meta">
       <time datetime="2018-07-24T18:52:08.000Z" itemprop="datePublished">
           2018-07-25
       </time>
     
 </span>
-      <h2 class="post-title"><a href="/2018/07/25/JS的类与继承/">JS的类与集成</a></h2>
+      <h2 class="post-title"><a href="/2018/07/25/JS的类与继承/">JS的类与继成</a></h2>
     </header>
     <section class="post-excerpt">
       <p>
@@ -135,212 +324,9 @@ DNS查询
     </section>
   </article>
   
-  <article class="post">
-    <header class="post-header">
-      <span class="post-meta">
-      <time datetime="2018-07-13T15:05:15.000Z" itemprop="datePublished">
-          2018-07-13
-      </time>
-    
-</span>
-      <h2 class="post-title"><a href="/2018/07/13/Vue基础/">Vue基础</a></h2>
-    </header>
-    <section class="post-excerpt">
-      <p>
-      
-        简介MVVM是什么?MVVM是Model-View-ViewModel的缩写。MVVM是一种设计思想。Model 层代表数据模型，也可以在Model中定义数据修改和操作的业务逻辑；View 代表UI 组件，它负责将数据模型转化成UI 展现出来，ViewModel 是一个同步View 和 Model的对象。
-在MVVM架构下，View 和 Model 之间并没有直接的联系，而是通过ViewModel进行交互，Model 和 ViewMod
-      
-      </p>
-      
-      <p>
-          <a href="/2018/07/13/Vue基础/" class="excerpt-link">Read More...</a>
-      </p>
-      
-    </section>
-  </article>
-  
-  <article class="post">
-    <header class="post-header">
-      <span class="post-meta">
-      <time datetime="2018-06-21T11:54:52.361Z" itemprop="datePublished">
-          2018-06-21
-      </time>
-    
-</span>
-      <h2 class="post-title"><a href="/2018/06/21/hello-world/">Hello World</a></h2>
-    </header>
-    <section class="post-excerpt">
-      <p>
-      
-        Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick StartCreate a new p
-      
-      </p>
-      
-      <p>
-          <a href="/2018/06/21/hello-world/" class="excerpt-link">Read More...</a>
-      </p>
-      
-    </section>
-  </article>
-  
-  <article class="post">
-    <header class="post-header">
-      <span class="post-meta">
-      <time datetime="2018-06-16T11:22:42.000Z" itemprop="datePublished">
-          2018-06-16
-      </time>
-    
-</span>
-      <h2 class="post-title"><a href="/2018/06/16/CSS布局套路/">CSS布局套路</a></h2>
-    </header>
-    <section class="post-excerpt">
-      <p>
-      
-        CSS布局流程图:要支持IE8吗?
-是:float布局,定宽
-否:flex布局,弹性宽
-
-Float布局
-给子元素加上float:left
-给父元素加上clearfix
-
-clearfix
-1234567891011.clearfix::after&#123;    content:'';    display:block;    clear:both;&#125; /兼容IE6/.clearfix&#123;    zoom:1&#1
-      
-      </p>
-      
-      <p>
-          <a href="/2018/06/16/CSS布局套路/" class="excerpt-link">Read More...</a>
-      </p>
-      
-    </section>
-  </article>
-  
-  <article class="post">
-    <header class="post-header">
-      <span class="post-meta">
-      <time datetime="2018-06-15T12:39:34.000Z" itemprop="datePublished">
-          2018-06-15
-      </time>
-    
-</span>
-      <h2 class="post-title"><a href="/2018/06/15/Flex布局/">Flex布局</a></h2>
-    </header>
-    <section class="post-excerpt">
-      <p>
-      
-        FLEX布局flex container的属性flex-direction 方向属性:
-row 水平
-row-reverse 水平反向
-column 垂直
-column-reverse 垂直反向
-
-flex-wrap 换行属性
-nowrap 不换行(默认)
-wrap 换行
-
-flex-flowdirection 与 wrap 的简写
-justify-content 主轴方向对齐方式假如是默认或者row主轴就是横着的假如是column主轴
-      
-      </p>
-      
-      <p>
-          <a href="/2018/06/15/Flex布局/" class="excerpt-link">Read More...</a>
-      </p>
-      
-    </section>
-  </article>
-  
-  <article class="post">
-    <header class="post-header">
-      <span class="post-meta">
-      <time datetime="2018-06-12T16:17:19.000Z" itemprop="datePublished">
-          2018-06-13
-      </time>
-    
-</span>
-      <h2 class="post-title"><a href="/2018/06/13/webpack/">webpack</a></h2>
-    </header>
-    <section class="post-excerpt">
-      <p>
-      
-        前端目录src source 未经翻译的代码dist distribution 发布代码vendors 第三方库node_modules 第三方包
-webpack安装安装webpack312npm initnpm i webpack@3
-新建webpack.config.js文件编辑文件123456789101112131415161718192021222324252627282930313233343536const path = 
-      
-      </p>
-      
-      <p>
-          <a href="/2018/06/13/webpack/" class="excerpt-link">Read More...</a>
-      </p>
-      
-    </section>
-  </article>
-  
-  <article class="post">
-    <header class="post-header">
-      <span class="post-meta">
-      <time datetime="2018-06-12T16:17:03.000Z" itemprop="datePublished">
-          2018-06-13
-      </time>
-    
-</span>
-      <h2 class="post-title"><a href="/2018/06/13/sass/">sass</a></h2>
-    </header>
-    <section class="post-excerpt">
-      <p>
-      
-        SASS安装:1npm install  node-sass  -g
-安装成功1node-sass -v
-编译:将路径src/css的sass翻译到dist/css,并监听1node-sass src/css/ -o dist/css/ -w
-语法:1.嵌套css:123456div &#123;    margin:20px;&#125;div p &#123;    padding:20px;&#125;
-scss:1234div&
-      
-      </p>
-      
-      <p>
-          <a href="/2018/06/13/sass/" class="excerpt-link">Read More...</a>
-      </p>
-      
-    </section>
-  </article>
-  
-  <article class="post">
-    <header class="post-header">
-      <span class="post-meta">
-      <time datetime="2018-06-11T09:33:05.000Z" itemprop="datePublished">
-          2018-06-11
-      </time>
-    
-</span>
-      <h2 class="post-title"><a href="/2018/06/11/Seesion--LocalStorage--Cache-Control--Expires--ETag/">Seesion/LocalStorage/Cache-Control/Expires/ETag</a></h2>
-    </header>
-    <section class="post-excerpt">
-      <p>
-      
-        Session 与 Cookie 的关系与区别关系:
-Session 基于 Cookie 实现的.
-区别:
-Cookie 保存在客户端，每次都随请求发送给 Server.Session 保存在 Server 的内存里，其 Session ID 是通过 Cookie 发送给客户端的.
-Cookie
-服务器通过 Set-Cookie 头给客户端一串字符串;
-客户端每次访问相同域名的网页时,必须带上这段字符串;
-客户端要在一段时间内保存这个C
-      
-      </p>
-      
-      <p>
-          <a href="/2018/06/11/Seesion--LocalStorage--Cache-Control--Expires--ETag/" class="excerpt-link">Read More...</a>
-      </p>
-      
-    </section>
-  </article>
-  
   <nav class="pagination" role="pagination">
     
-    <span class="page-number">Page 1 of 3</span>
+    <span class="page-number">Page 1 of 4</span>
     <a class="older-posts" href="/page/2/">Older Posts →</a>
   </nav>
 </main>

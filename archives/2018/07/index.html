@@ -45,12 +45,201 @@
   <article class="post">
     <header class="post-header">
       <span class="post-meta">
+      <time datetime="2018-07-25T08:43:09.000Z" itemprop="datePublished">
+          2018-07-25
+      </time>
+    
+</span>
+      <h2 class="post-title"><a href="/2018/07/25/vue-router与vuex/">vue-router与vuex</a></h2>
+    </header>
+    <section class="post-excerpt">
+      <p>
+      
+        
+      
+      </p>
+      
+      <p>
+          <a href="/2018/07/25/vue-router与vuex/" class="excerpt-link">Read More...</a>
+      </p>
+      
+    </section>
+  </article>
+  
+  <article class="post">
+    <header class="post-header">
+      <span class="post-meta">
+      <time datetime="2018-07-25T08:42:39.000Z" itemprop="datePublished">
+          2018-07-25
+      </time>
+    
+</span>
+      <h2 class="post-title"><a href="/2018/07/25/vue-cli手脚架/">vue-cli手脚架</a></h2>
+    </header>
+    <section class="post-excerpt">
+      <p>
+      
+        
+      
+      </p>
+      
+      <p>
+          <a href="/2018/07/25/vue-cli手脚架/" class="excerpt-link">Read More...</a>
+      </p>
+      
+    </section>
+  </article>
+  
+  <article class="post">
+    <header class="post-header">
+      <span class="post-meta">
+      <time datetime="2018-07-25T08:42:28.000Z" itemprop="datePublished">
+          2018-07-25
+      </time>
+    
+</span>
+      <h2 class="post-title"><a href="/2018/07/25/render函数/">render函数</a></h2>
+    </header>
+    <section class="post-excerpt">
+      <p>
+      
+        初步了解定义一个组件123456789101112131415161718192021222324252627282930313233343536373839404142&lt;div id="app"&gt;    &lt;comp-child :level="level"&gt;        我是组件    &lt;/comp-child&gt;    &lt;comp-child2 :level="level"&gt;     
+      
+      </p>
+      
+      <p>
+          <a href="/2018/07/25/render函数/" class="excerpt-link">Read More...</a>
+      </p>
+      
+    </section>
+  </article>
+  
+  <article class="post">
+    <header class="post-header">
+      <span class="post-meta">
+      <time datetime="2018-07-25T08:42:04.000Z" itemprop="datePublished">
+          2018-07-25
+      </time>
+    
+</span>
+      <h2 class="post-title"><a href="/2018/07/25/自定义指令/">自定义指令</a></h2>
+    </header>
+    <section class="post-excerpt">
+      <p>
+      
+        基本用法跟组件类似分全局注册和局部注册,区别就是把component缓存derective
+12345Vue.derective('nanme',&#123;    钩子函数:function(el,binding)&#123;    &#125;&#125;)
+钩子函数指令定义提供了几个钩子函数(可选)
+bind:只调用一次,指令第一次绑定到元素时调用,用这个钩子函数可以定义一个在绑定时执行一次的初始化动作.
+inserted:被绑定
+      
+      </p>
+      
+      <p>
+          <a href="/2018/07/25/自定义指令/" class="excerpt-link">Read More...</a>
+      </p>
+      
+    </section>
+  </article>
+  
+  <article class="post">
+    <header class="post-header">
+      <span class="post-meta">
+      <time datetime="2018-07-25T07:14:20.000Z" itemprop="datePublished">
+          2018-07-25
+      </time>
+    
+</span>
+      <h2 class="post-title"><a href="/2018/07/25/v-model的使用/">v-model的使用</a></h2>
+    </header>
+    <section class="post-excerpt">
+      <p>
+      
+        v-model:vue提供了v-model指令,用于在表单类元素上双向绑定.
+input和textarea可以用于input框以及textarea等.
+注意:所显示的值只依赖于所绑定的数据,不再关系初始化时插入的value.
+单选按钮
+单个单选按钮,直接用v-bind绑定一个布尔值,用v-model是不可以的.
+如果组合使用,就需要v-model来配合value使用,绑定所选中你的单选框的value值,此处所绑定初始值可以随意给
+
+12
+      
+      </p>
+      
+      <p>
+          <a href="/2018/07/25/v-model的使用/" class="excerpt-link">Read More...</a>
+      </p>
+      
+    </section>
+  </article>
+  
+  <article class="post">
+    <header class="post-header">
+      <span class="post-meta">
+      <time datetime="2018-07-25T06:36:10.000Z" itemprop="datePublished">
+          2018-07-25
+      </time>
+    
+</span>
+      <h2 class="post-title"><a href="/2018/07/25/vue的内置指令/">vue的内置指令</a></h2>
+    </header>
+    <section class="post-excerpt">
+      <p>
+      
+        v-cloak与dispaly:none进行结合使用.
+作用:解决初始化慢导致页面闪动.
+例:12345678910&lt;style&gt;    *[v-cloak]&#123;        display:none;    &#125;&lt;style&gt;&lt;comp-a v-show="isShow" v-cloak&gt;&lt;/comp-a&gt;data&#123;    isShow:false&#125;
+      
+      </p>
+      
+      <p>
+          <a href="/2018/07/25/vue的内置指令/" class="excerpt-link">Read More...</a>
+      </p>
+      
+    </section>
+  </article>
+  
+  <article class="post">
+    <header class="post-header">
+      <span class="post-meta">
+      <time datetime="2018-07-25T05:42:41.000Z" itemprop="datePublished">
+          2018-07-25
+      </time>
+    
+</span>
+      <h2 class="post-title"><a href="/2018/07/25/v-bind以及class与style的绑定/">v-bind以及class与style的绑定</a></h2>
+    </header>
+    <section class="post-excerpt">
+      <p>
+      
+        了解bind指令作用:绑定vue实例里的data或者computed属性
+
+变量语法
+
+1234567:title="message"data:&#123;    message:'abc'&#125;title="abc"
+
+对象语法
+
+12345678910:title="msgObj"data:&#123;    msgOjb:&#123;        msg1:true,        msg2:false    &#125;
+      
+      </p>
+      
+      <p>
+          <a href="/2018/07/25/v-bind以及class与style的绑定/" class="excerpt-link">Read More...</a>
+      </p>
+      
+    </section>
+  </article>
+  
+  <article class="post">
+    <header class="post-header">
+      <span class="post-meta">
       <time datetime="2018-07-24T18:52:08.000Z" itemprop="datePublished">
           2018-07-25
       </time>
     
 </span>
-      <h2 class="post-title"><a href="/2018/07/25/JS的类与继承/">JS的类与集成</a></h2>
+      <h2 class="post-title"><a href="/2018/07/25/JS的类与继承/">JS的类与继成</a></h2>
     </header>
     <section class="post-excerpt">
       <p>
@@ -135,35 +324,10 @@ DNS查询
     </section>
   </article>
   
-  <article class="post">
-    <header class="post-header">
-      <span class="post-meta">
-      <time datetime="2018-07-13T15:05:15.000Z" itemprop="datePublished">
-          2018-07-13
-      </time>
-    
-</span>
-      <h2 class="post-title"><a href="/2018/07/13/Vue基础/">Vue基础</a></h2>
-    </header>
-    <section class="post-excerpt">
-      <p>
-      
-        简介MVVM是什么?MVVM是Model-View-ViewModel的缩写。MVVM是一种设计思想。Model 层代表数据模型，也可以在Model中定义数据修改和操作的业务逻辑；View 代表UI 组件，它负责将数据模型转化成UI 展现出来，ViewModel 是一个同步View 和 Model的对象。
-在MVVM架构下，View 和 Model 之间并没有直接的联系，而是通过ViewModel进行交互，Model 和 ViewMod
-      
-      </p>
-      
-      <p>
-          <a href="/2018/07/13/Vue基础/" class="excerpt-link">Read More...</a>
-      </p>
-      
-    </section>
-  </article>
-  
   <nav class="pagination" role="pagination">
     
-    <span class="page-number">Page 1 of 1</span>
-    
+    <span class="page-number">Page 1 of 2</span>
+    <a class="older-posts" href="/archives/2018/07/page/2/">Older Posts →</a>
   </nav>
 </main>
 

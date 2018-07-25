@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <title>v-model的使用 | RoxasDengBlog</title>
+  <meta name="description" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="MobileOptimized" content="320" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+  <link rel="stylesheet" type="text/css" href="/css/style.css" />
+  <meta name="generator" content="RoxasDengBlog">
+
+  
+  
+  
+
+  
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body class="home-template">
+<div id="perspective" class="perspective effect-movedown">
+  <div class="container">
+    <!-- wrapper -->
+    <div class="wrapper">
+
+      <header class="site-head"  style="background: #24282b url(/img/img-bg.jpg) 0 -20%" >
+    <div class="vertical">
+        <div class="site-head-content inner">
+             <a class="blog-logo" href="/"><img src="/img/logo.svg" alt="Blog Logo"/></a> 
+            <h1 class="blog-title">RoxasDengBlog</h1>
+            <h2 class="blog-description"><button id="showMenu">Show Menu</button></h2>
+        </div>
+    </div>
+</header>
+
+      
+
+<main class="content" role="main">
+  <article class="post">
+    <span class="post-meta">
+      <time datetime="2018-07-25T07:14:20.000Z" itemprop="datePublished">
+          2018-07-25
+      </time>
+    
+</span>
+    <h1 class="post-title">v-model的使用</h1>
+    <section class="post-content">
+      <h4 id="v-model"><a href="#v-model" class="headerlink" title="v-model:"></a>v-model:</h4><p>vue提供了v-model指令,用于在表单类元素上双向绑定.</p>
+<h4 id="input和textarea"><a href="#input和textarea" class="headerlink" title="input和textarea"></a>input和textarea</h4><p>可以用于input框以及textarea等.</p>
+<p>注意:所显示的值只依赖于所绑定的数据,不再关系初始化时插入的value.</p>
+<h4 id="单选按钮"><a href="#单选按钮" class="headerlink" title="单选按钮"></a>单选按钮</h4><ol>
+<li>单个单选按钮,直接用v-bind绑定一个布尔值,用v-model是不可以的.</li>
+<li>如果组合使用,就需要v-model来配合value使用,绑定所选中你的单选框的value值,此处所绑定初始值可以随意给</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"app5"</span>&gt;</span><br><span class="line">    &lt;input <span class="built_in">type</span>=<span class="string">"radio"</span> id=<span class="string">"one"</span> value=<span class="string">"One"</span> v-model=<span class="string">"picked"</span>&gt;</span><br><span class="line">    &lt;label <span class="keyword">for</span>=<span class="string">"one"</span>&gt;One&lt;/label&gt;</span><br><span class="line">    &lt;input <span class="built_in">type</span>=<span class="string">"radio"</span> id=<span class="string">"two"</span> value=<span class="string">"Two"</span> v-model=<span class="string">"picked"</span>&gt;</span><br><span class="line">    &lt;label <span class="keyword">for</span>=<span class="string">"two"</span>&gt;Two&lt;/label&gt;</span><br><span class="line">    &lt;br&gt;</span><br><span class="line">    &lt;span&gt;&#123;&#123;picked&#125;&#125;&lt;/span&gt;        </span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    var app5 = new Vue(&#123;</span><br><span class="line">        el:<span class="string">'#app5'</span>,</span><br><span class="line">        data:&#123;</span><br><span class="line">            picked:<span class="string">''</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    &lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="复选框"><a href="#复选框" class="headerlink" title="复选框"></a>复选框</h4><ol>
+<li>单个复选框,直接用一个布尔值,可以用v-model,也可以用v-bind.</li>
+<li>多个复选框,如果是组合使用,就需要v-model来配合value使用,v-model绑定一个数组,如果绑定是字符串,则会转化为true.与所有绑定的复选框的checked属性相对应.</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"app3"</span>&gt;</span><br><span class="line">    &lt;input <span class="built_in">type</span>=<span class="string">"checkbox"</span> name=<span class="string">""</span> id=<span class="string">"checkbox"</span> v-model=<span class="string">"checked"</span>&gt;</span><br><span class="line">    &lt;label <span class="keyword">for</span>=<span class="string">"checkbox"</span>&gt;&#123;&#123;checked&#125;&#125;&lt;/label&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    var app3 = new Vue(&#123;</span><br><span class="line">        el:<span class="string">'#app3'</span>,</span><br><span class="line">        data:&#123;</span><br><span class="line">            checked:<span class="literal">false</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;div id=<span class="string">"app4"</span>&gt;</span><br><span class="line">    &lt;input <span class="built_in">type</span>=<span class="string">"checkbox"</span>  id=<span class="string">"jack"</span> value=<span class="string">"Jack"</span> v-model=<span class="string">"checkedNames"</span>&gt;</span><br><span class="line">    &lt;label <span class="keyword">for</span>=<span class="string">"jack"</span>&gt;Jack&lt;/label&gt;</span><br><span class="line">    &lt;input <span class="built_in">type</span>=<span class="string">"checkbox"</span>  id=<span class="string">"john"</span> value=<span class="string">"John"</span> v-model=<span class="string">"checkedNames"</span>&gt;</span><br><span class="line">    &lt;label <span class="keyword">for</span>=<span class="string">"john"</span>&gt;John&lt;/label&gt;</span><br><span class="line">    &lt;input <span class="built_in">type</span>=<span class="string">"checkbox"</span>  id=<span class="string">"mike"</span> value=<span class="string">"Mike"</span> v-model=<span class="string">"checkedNames"</span>&gt;</span><br><span class="line">    &lt;label <span class="keyword">for</span>=<span class="string">"mike"</span>&gt;Mike&lt;/label&gt;</span><br><span class="line">    &lt;br&gt;</span><br><span class="line">    &lt;span&gt;&#123;&#123;checkedNames&#125;&#125;&lt;/span&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    var app4 = new Vue(&#123;</span><br><span class="line">        el:<span class="string">'#app4'</span>,</span><br><span class="line">        data:&#123;</span><br><span class="line">            checkedNames:[]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="下拉框"><a href="#下拉框" class="headerlink" title="下拉框"></a>下拉框</h4><ol>
+<li>如果是单选,所绑定的value值初始化可以为数组,也可以为字符串,有value直接有限匹配一个value值,没有value就匹配一个text值.</li>
+<li>如果是多选,就需要v-model来配合value使用,v-model绑定一个数组,与复选框类似.</li>
+<li>v-model一定是绑定在select标签上.</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"app6"</span>&gt;</span><br><span class="line">    &lt;select v-model=<span class="string">"selected"</span>&gt;</span><br><span class="line">        &lt;option disabled value=<span class="string">""</span>&gt;请选择&lt;/option&gt;</span><br><span class="line">        &lt;option&gt;A&lt;/option&gt;</span><br><span class="line">        &lt;option&gt;B&lt;/option&gt;</span><br><span class="line">        &lt;option&gt;C&lt;/option&gt;</span><br><span class="line">    &lt;/select&gt;</span><br><span class="line">    &lt;span&gt;&#123;&#123;selected&#125;&#125;&lt;/span&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    var app6 = new Vue(&#123;</span><br><span class="line">        el:<span class="string">'#app6'</span>,</span><br><span class="line">        data:&#123;</span><br><span class="line">            selected:<span class="string">''</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="绑定值"><a href="#绑定值" class="headerlink" title="绑定值"></a>绑定值</h4><ol>
+<li>单选按钮,只需要v-bind给单选框绑定一个value值,此时,v-model绑定的就是他的value值.</li>
+<li>复选框</li>
+<li>下拉框,在select标签上绑定value值对option并没有影响.</li>
+</ol>
+<h4 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h4><ol>
+<li>lazy v-model默认是在input输入时实时同步输入框的数据,而lazy修饰符,可以使其爱失去焦点或敲回车后更新.</li>
+<li>number 将输入的字符串转化为number类型.</li>
+<li>trim 自动过滤输入过程中首尾的空格.</li>
+</ol>
+
+    </section>
+    <footer class="post-footer">
+      <section class="author">
+    <h4>Roxas Deng</h4>
+    <p></p>
+</section>
+      <section class="share">
+    <h4>Share this post</h4>
+    <a class="icon-sina-weibo" href="http://v.t.sina.com.cn/share/share.php?title= ?url=http://yoursite.com/2018/07/25/v-model的使用/" target="_blank">
+        <span class="hidden">weibo</span>
+    </a>
+    <a class="icon-twitter" href="http://twitter.com/share?url=http://yoursite.com/2018/07/25/v-model的使用/"
+       onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        <span class="hidden">Twitter</span>
+    </a>
+    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/07/25/v-model的使用/"
+       onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+        <span class="hidden">Facebook</span>
+    </a>
+    <a class="icon-google-plus" href="https://plus.google.com/share?url=http://yoursite.com/2018/07/25/v-model的使用/"
+       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+        <span class="hidden">Google+</span>
+    </a>
+</section>
+
+    </footer>
+  </article>
+  <nav class="pagination" role="pagination">
+    
+    <a class="newer-posts" href="/2018/07/25/自定义指令/">
+        ← 自定义指令
+    </a>
+    
+    <span class="icon-logo">•</span>
+    
+    <a class="older-posts" href="/2018/07/25/vue的内置指令/">
+        vue的内置指令 →
+    </a>
+    
+</nav>
+
+  <div id="comment" class="comments-area">
+    <h4 class="title"><a href="#disqus_comments" name="disqus_comments">Comments</a></h4>
+    
+</div>
+
+</main>
+
+
+      
+<footer class="site-footer">
+  
+  <div class="inner">
+     <section class="copyright">All content copyright <a href="/">RoxasDengBlog</a> &copy; 2014 &bull; All rights reserved.</section>
+     <section class="poweredby">Proudly published with <a class="icon-ghost" href="http://zespia.tw/hexo/">Hexo</a></section>
+  </div>
+</footer>
+
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<script type="text/javascript" src="/js/jquery.fitvids.js"></script>
+<script type="text/javascript" src="/js/index.js"></script>
+<script type="text/javascript" src="/js/menu.js"></script>
+
+
+
+
+
+  </div>
+</div>
+
+<nav  class="outer-nav top horizontal">
+
+          <a class="icon-home"  href="/"><span>Home</span></a>
+
+          <a class="icon-news"  href="/archive"><span>Archive</span></a>
+
+          <a class="icon-image"  href="/images"><span>Images</span></a>
+
+          <a class="icon-wiki"  href="/wiki/2014-10-28-wiki/"><span>Wiki</span></a>
+
+          <a class="icon-Favorites"  href="/favorites"><span>Favorites</span></a>
+
+          <a class="icon-mail"  href="/about/2014-09-11-mabao/"><span>Contact</span></a>
+
+</nav>
+
+</div>
+</body>
+</html>
