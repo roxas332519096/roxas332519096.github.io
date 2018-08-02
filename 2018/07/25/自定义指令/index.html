@@ -51,7 +51,7 @@
 </span>
     <h1 class="post-title">自定义指令</h1>
     <section class="post-content">
-      <h4 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h4><p>跟组件类似分全局注册和局部注册,区别就是把component缓存derective</p>
+      <h4 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h4><p>跟组件类似分全局注册和局部注册,区别就是把component换成derective</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Vue.derective(<span class="string">'nanme'</span>,&#123;</span><br><span class="line">    钩子函数:<span class="keyword">function</span>(el,binding)&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <h4 id="钩子函数"><a href="#钩子函数" class="headerlink" title="钩子函数"></a>钩子函数</h4><p>指令定义提供了几个钩子函数(可选)</p>
 <p>bind:只调用一次,指令第一次绑定到元素时调用,用这个钩子函数可以定义一个在绑定时执行一次的初始化动作.</p>
