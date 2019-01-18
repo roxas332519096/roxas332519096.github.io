@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>webpack | RoxasDengBlog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="前端目录src source 未经翻译的代码dist distribution 发布代码vendors 第三方库node_modules 第三方包 webpack安装安装webpack312npm initnpm i webpack@3 新建webpack.config.js文件编辑文件12345678910111213141516171819202122232425262728293031323">
+<meta property="og:type" content="article">
+<meta property="og:title" content="webpack">
+<meta property="og:url" content="http://yoursite.com/2018/06/13/webpack/index.html">
+<meta property="og:site_name" content="RoxasDengBlog">
+<meta property="og:description" content="前端目录src source 未经翻译的代码dist distribution 发布代码vendors 第三方库node_modules 第三方包 webpack安装安装webpack312npm initnpm i webpack@3 新建webpack.config.js文件编辑文件12345678910111213141516171819202122232425262728293031323">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-06-12T16:17:32.859Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="webpack">
+<meta name="twitter:description" content="前端目录src source 未经翻译的代码dist distribution 发布代码vendors 第三方库node_modules 第三方包 webpack安装安装webpack312npm initnpm i webpack@3 新建webpack.config.js文件编辑文件12345678910111213141516171819202122232425262728293031323">
+  
+    <link rel="alternate" href="/atom.xml" title="RoxasDengBlog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">RoxasDengBlog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-webpack" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/13/webpack/" class="article-date">
+  <time datetime="2018-06-12T16:17:19.000Z" itemprop="datePublished">2018-06-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      webpack
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="前端目录"><a href="#前端目录" class="headerlink" title="前端目录"></a>前端目录</h3><p>src source 未经翻译的代码<br>dist distribution 发布代码<br>vendors 第三方库<br>node_modules 第三方包</p>
+<h3 id="webpack"><a href="#webpack" class="headerlink" title="webpack"></a>webpack</h3><h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><h5 id="安装webpack3"><a href="#安装webpack3" class="headerlink" title="安装webpack3"></a>安装webpack3</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm init</span><br><span class="line">npm i webpack@3</span><br></pre></td></tr></table></figure>
+<h5 id="新建webpack-config-js文件"><a href="#新建webpack-config-js文件" class="headerlink" title="新建webpack.config.js文件"></a>新建webpack.config.js文件</h5><p>编辑文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">const path = require(<span class="string">'path'</span>);</span><br><span class="line"></span><br><span class="line">module.exports = &#123;</span><br><span class="line">    entry: <span class="string">'./src/js/app.js'</span>, //入口文件</span><br><span class="line">    output: &#123;</span><br><span class="line">      filename: <span class="string">'bundle.js'</span>,//输出文件</span><br><span class="line">      path: path.resolve(__dirname, <span class="string">'dist/js/'</span>) //输出路径</span><br><span class="line">    &#125;,</span><br><span class="line">    module: &#123;</span><br><span class="line">      rules: [</span><br><span class="line">        &#123;</span><br><span class="line">          <span class="built_in">test</span>: /\.js$/,</span><br><span class="line">          exclude: /(node_modules|bower_components)/,</span><br><span class="line">          use: &#123;</span><br><span class="line">            loader: <span class="string">'babel-loader'</span>,</span><br><span class="line">            options: &#123;</span><br><span class="line">              presets: [<span class="string">'env'</span>]</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          <span class="built_in">test</span>: /\.scss$/,</span><br><span class="line">          use: [&#123;</span><br><span class="line">            loader: <span class="string">"style-loader"</span> // creates style nodes from JS strings</span><br><span class="line">          &#125;, &#123;</span><br><span class="line">            loader: <span class="string">"css-loader"</span>, // translates CSS into CommonJS</span><br><span class="line">            options: &#123; importLoaders: 1 &#125;</span><br><span class="line">          &#125;, &#123;</span><br><span class="line">            loader: <span class="string">'postcss-loader'</span></span><br><span class="line">          &#125;,&#123;</span><br><span class="line">            loader: <span class="string">"sass-loader"</span> // compiles Sass to CSS</span><br><span class="line">          &#125;]</span><br><span class="line">        &#125;</span><br><span class="line">      ]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br></pre></td></tr></table></figure></p>
+<h5 id="安装babel-loader与scss-loader"><a href="#安装babel-loader与scss-loader" class="headerlink" title="安装babel-loader与scss-loader"></a>安装babel-loader与scss-loader</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev babel-loader babel-core babel-preset-env webpack</span><br><span class="line">npm install sass-loader node-sass webpack --save-dev</span><br></pre></td></tr></table></figure>
+<h5 id="安装其他必须插件"><a href="#安装其他必须插件" class="headerlink" title="安装其他必须插件"></a>安装其他必须插件</h5><p>它提示确实什么就npm i 缺少的东西</p>
+<h5 id="使用将babel-loader将es6转成es5"><a href="#使用将babel-loader将es6转成es5" class="headerlink" title="使用将babel-loader将es6转成es5"></a>使用将babel-loader将es6转成es5</h5><p>编辑app.js文件(入口文件)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">fn</span></span>()&#123;</span><br><span class="line">    <span class="built_in">let</span> b = <span class="string">'I am b'</span>;</span><br><span class="line">    console.log(b);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">export</span> default fn;</span><br></pre></td></tr></table></figure>
+<h5 id="编辑模块文件"><a href="#编辑模块文件" class="headerlink" title="编辑模块文件"></a>编辑模块文件</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">//1.js</span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">fn</span></span>()&#123;</span><br><span class="line">    <span class="built_in">let</span> a = <span class="string">'I am a'</span>;</span><br><span class="line">    console.log(a);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">export</span> default fn;</span><br><span class="line">//2.js</span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">fn</span></span>()&#123;</span><br><span class="line">    <span class="built_in">let</span> b = <span class="string">'I am b'</span>;</span><br><span class="line">    console.log(b);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">export</span> default fn;</span><br></pre></td></tr></table></figure>
+<h5 id="在html中引入-dist-js-bundle-js"><a href="#在html中引入-dist-js-bundle-js" class="headerlink" title="在html中引入./dist/js/bundle.js"></a>在html中引入./dist/js/bundle.js</h5><h5 id="运行webpack"><a href="#运行webpack" class="headerlink" title="运行webpack"></a>运行webpack</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npx webpack</span><br></pre></td></tr></table></figure>
+<h5 id="将scss转成css"><a href="#将scss转成css" class="headerlink" title="将scss转成css"></a>将scss转成css</h5><p>根目录创建 postcss.config.js文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">    plugins: &#123;</span><br><span class="line">      <span class="string">'postcss-cssnext'</span>: &#123;&#125;,</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
+<h5 id="入口文件引入scss文件"><a href="#入口文件引入scss文件" class="headerlink" title="入口文件引入scss文件"></a>入口文件引入scss文件</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import <span class="string">'../css/main.scss'</span></span><br></pre></td></tr></table></figure>
+<h5 id="运行webpack-1"><a href="#运行webpack-1" class="headerlink" title="运行webpack"></a>运行webpack</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npx webpack</span><br></pre></td></tr></table></figure>
+<p>////////////<br>caniuse 插兼容性问题</p>
+<p>autoprefixer 自动解决兼容性</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/06/13/webpack/" data-id="cjr24vki5000sg0pfwubmtl00" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/06/15/Flex布局/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Flex布局
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/06/13/sass/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">sass</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/01/18/Promise的使用/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/11/密码强度/">密码强度的实现</a>
+          </li>
+        
+          <li>
+            <a href="/2018/09/04/CSS盒子多边框/">CSS盒子多边框</a>
+          </li>
+        
+          <li>
+            <a href="/2018/09/03/表单美化/">表单美化</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/03/bootstrap/">bootstrap</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Roxas Deng<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

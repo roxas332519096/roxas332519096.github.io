@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>RoxasDengBlog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="title: Promise的使用date: 2019-01-18 21:39:10tags: 1. Promise的作用当一个异步函数执行的时候,需要回调,可使用Promise链式操作进行回调. 例子:12345678910111213141516171819function fn1(callback)&amp;#123;    setTimeout(()=&amp;gt;&amp;#123;        cons">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RoxasDengBlog">
+<meta property="og:url" content="http://yoursite.com/2019/01/18/Promise的使用/index.html">
+<meta property="og:site_name" content="RoxasDengBlog">
+<meta property="og:description" content="title: Promise的使用date: 2019-01-18 21:39:10tags: 1. Promise的作用当一个异步函数执行的时候,需要回调,可使用Promise链式操作进行回调. 例子:12345678910111213141516171819function fn1(callback)&amp;#123;    setTimeout(()=&amp;gt;&amp;#123;        cons">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-01-18T14:16:07.570Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="RoxasDengBlog">
+<meta name="twitter:description" content="title: Promise的使用date: 2019-01-18 21:39:10tags: 1. Promise的作用当一个异步函数执行的时候,需要回调,可使用Promise链式操作进行回调. 例子:12345678910111213141516171819function fn1(callback)&amp;#123;    setTimeout(()=&amp;gt;&amp;#123;        cons">
+  
+    <link rel="alternate" href="/atom.xml" title="RoxasDengBlog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">RoxasDengBlog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Promise的使用" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/01/18/Promise的使用/" class="article-date">
+  <time datetime="2019-01-18T13:39:10.703Z" itemprop="datePublished">2019-01-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<p>title: Promise的使用<br>date: 2019-01-18 21:39:10<br>tags:</p>
+<h4 id="1-Promise的作用"><a href="#1-Promise的作用" class="headerlink" title="1. Promise的作用"></a>1. Promise的作用</h4><p>当一个异步函数执行的时候,需要回调,可使用Promise链式操作进行回调.</p>
+<p>例子:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> fn1(callback)&#123;</span><br><span class="line">    setTimeout(()=&gt;&#123;</span><br><span class="line">        console.log(<span class="string">'fn1执行'</span>)</span><br><span class="line">    &#125;,1000)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> fn1(callback)&#123;</span><br><span class="line">    setTimeout(()=&gt;&#123;</span><br><span class="line">        console.log(<span class="string">'fn2执行'</span>)</span><br><span class="line">        callback()</span><br><span class="line">    &#125;,1000)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">fn1</span></span>()&#123;</span><br><span class="line">    setTimeout(()=&gt;&#123;</span><br><span class="line">        console.log(<span class="string">'fn3执行'</span>)</span><br><span class="line">        callback()</span><br><span class="line">    &#125;,1000)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>我们以前是这样回调的</p>
+<p>fn1(()=&gt;{<br>    fn2(()=&gt;{<br>        fn3<br>    })<br>})</p>
+<p>//控制台一秒后输出fn1,再一秒后输出fn2,再一秒后输出fn3</p>
+<p>因为回调函数复杂的时候非常麻烦,所以我们可以使用promise改写上面的函数</p>
+<h4 id="2-Promise语法"><a href="#2-Promise语法" class="headerlink" title="2. Promise语法"></a>2. Promise语法</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">promiseFn</span></span>()&#123;</span><br><span class="line">    <span class="built_in">return</span> new Promise((resolve,reject)=&gt;&#123;</span><br><span class="line">        //当异步函数执行成功时</span><br><span class="line">        resolve();</span><br><span class="line">        //当异步函数执行失败时,</span><br><span class="line">        reject();</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">promiseFn().<span class="keyword">then</span>(()=&gt;&#123;&#125;).catch(()=&gt;&#123;&#125;)</span><br></pre></td></tr></table></figure>
+<p>构造函数Promise接收一个参数function,function接收两个参数,一个是成功时执行的函数,一个是失败时执行的函数.<br>通过链式操作,我们可以分别对不同的结果分别执行不同的回调函数.</p>
+<p>通过promise改写上面的函数</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">fn1</span></span>()&#123;</span><br><span class="line">    <span class="built_in">return</span> new Promise((resolve, reject) =&gt; &#123;</span><br><span class="line">        setTimeout(() =&gt; &#123;</span><br><span class="line">            console.log(<span class="string">'fn1执行'</span>)</span><br><span class="line">            resolve()</span><br><span class="line">        &#125;, 1000)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">fn2</span></span>()&#123;</span><br><span class="line">    <span class="built_in">return</span> new Promise((resolve, reject) =&gt; &#123;</span><br><span class="line">        setTimeout(() =&gt; &#123;</span><br><span class="line">            console.log(<span class="string">'fn2执行'</span>)</span><br><span class="line">            resolve()</span><br><span class="line">        &#125;, 1000)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">fn3</span></span>()&#123;</span><br><span class="line">    <span class="built_in">return</span> new Promise((resolve, reject) =&gt; &#123;</span><br><span class="line">        setTimeout(() =&gt; &#123;</span><br><span class="line">            console.log(<span class="string">'fn3执行'</span>)</span><br><span class="line">            resolve()</span><br><span class="line">        &#125;, 1000)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">onerror</span></span>() &#123;</span><br><span class="line">    console.log(<span class="string">'error'</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fn1().<span class="keyword">then</span>(fn2).<span class="keyword">then</span>(fn3).catch(onerror)</span><br></pre></td></tr></table></figure>
+<h4 id="Promise-all"><a href="#Promise-all" class="headerlink" title="Promise.all"></a>Promise.all</h4><p>当有几个promise的时候,我们可以用promise.all让所有promise状态变更之后再回调</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Promise.all([p1,p2,p3]).<span class="keyword">then</span>(()=&gt;&#123;&#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="Promise-race"><a href="#Promise-race" class="headerlink" title="Promise.race"></a>Promise.race</h4><p>当有几个promise的时候,我们可以用promise.race来执行最快的返回的一个promise对象的函数<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Promise.race([p1,p2,p3]).<span class="keyword">then</span>(()=&gt;&#123;&#125;)</span><br></pre></td></tr></table></figure></p>
+<h4 id="finaly"><a href="#finaly" class="headerlink" title="finaly"></a>finaly</h4><p>当promise状态变更的时候时候,不管成功与失败,我们都可以执行同一个方法</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">promiseFn().finaly(&#123;&#125;=&gt;&#123;</span><br><span class="line">    console.log(<span class="string">'异步结束'</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/01/18/Promise的使用/" data-id="cjr24vkhu000fg0pfux9s8o04" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/01/11/密码强度/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">密码强度的实现</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/01/18/Promise的使用/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/11/密码强度/">密码强度的实现</a>
+          </li>
+        
+          <li>
+            <a href="/2018/09/04/CSS盒子多边框/">CSS盒子多边框</a>
+          </li>
+        
+          <li>
+            <a href="/2018/09/03/表单美化/">表单美化</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/03/bootstrap/">bootstrap</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Roxas Deng<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

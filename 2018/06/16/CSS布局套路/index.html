@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>CSS布局套路 | RoxasDengBlog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="CSS布局流程图:要支持IE8吗? 是:float布局,定宽 否:flex布局,弹性宽  Float布局 给子元素加上float:left 给父元素加上clearfix  clearfix 1234567891011.clearfix::after&amp;#123;    content:&apos;&apos;;    display:block;    clear:both;&amp;#125; /兼容IE6/.clearfi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS布局套路">
+<meta property="og:url" content="http://yoursite.com/2018/06/16/CSS布局套路/index.html">
+<meta property="og:site_name" content="RoxasDengBlog">
+<meta property="og:description" content="CSS布局流程图:要支持IE8吗? 是:float布局,定宽 否:flex布局,弹性宽  Float布局 给子元素加上float:left 给父元素加上clearfix  clearfix 1234567891011.clearfix::after&amp;#123;    content:&apos;&apos;;    display:block;    clear:both;&amp;#125; /兼容IE6/.clearfi">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-06-16T11:23:34.075Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS布局套路">
+<meta name="twitter:description" content="CSS布局流程图:要支持IE8吗? 是:float布局,定宽 否:flex布局,弹性宽  Float布局 给子元素加上float:left 给父元素加上clearfix  clearfix 1234567891011.clearfix::after&amp;#123;    content:&apos;&apos;;    display:block;    clear:both;&amp;#125; /兼容IE6/.clearfi">
+  
+    <link rel="alternate" href="/atom.xml" title="RoxasDengBlog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">RoxasDengBlog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-CSS布局套路" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/16/CSS布局套路/" class="article-date">
+  <time datetime="2018-06-16T11:22:42.000Z" itemprop="datePublished">2018-06-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      CSS布局套路
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="CSS布局"><a href="#CSS布局" class="headerlink" title="CSS布局"></a>CSS布局</h3><h4 id="流程图-要支持IE8吗"><a href="#流程图-要支持IE8吗" class="headerlink" title="流程图:要支持IE8吗?"></a>流程图:要支持IE8吗?</h4><ol>
+<li>是:float布局,定宽</li>
+<li>否:flex布局,弹性宽</li>
+</ol>
+<h4 id="Float布局"><a href="#Float布局" class="headerlink" title="Float布局"></a>Float布局</h4><ol>
+<li>给子元素加上float:left</li>
+<li>给父元素加上clearfix</li>
+</ol>
+<p>clearfix</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">.clearfix::after&#123;</span><br><span class="line">    content:<span class="string">''</span>;</span><br><span class="line">    display:block;</span><br><span class="line">    clear:both;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"> /兼容IE6/</span><br><span class="line"></span><br><span class="line">.clearfix&#123;</span><br><span class="line">    zoom:1</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="浮动实现平均布局"><a href="#浮动实现平均布局" class="headerlink" title="浮动实现平均布局"></a>浮动实现平均布局</h4><p>父元素变成祖先,建新的父元素,父元素加上一个负margin<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">.pic&#123;</span><br><span class="line">    width:800px;</span><br><span class="line">    margin:0 auto;</span><br><span class="line">&#125;</span><br><span class="line">.pic &gt; .item &#123;</span><br><span class="line">    width:194px;</span><br><span class="line">    height:194px;</span><br><span class="line">    margin:4px;</span><br><span class="line">    <span class="built_in">float</span>:left;</span><br><span class="line">&#125;</span><br><span class="line">变成</span><br><span class="line">.pic&#123;</span><br><span class="line">    width:800px;</span><br><span class="line">    margin:0 auto;</span><br><span class="line">&#125;</span><br><span class="line">.pic .xxx &#123;</span><br><span class="line">    margin-left:-4px;</span><br><span class="line">    margin-right:-8px;</span><br><span class="line">&#125;</span><br><span class="line">.pic &gt; .xxx &gt; .item&#123;</span><br><span class="line">    width:194px;</span><br><span class="line">    height:194px;</span><br><span class="line">    margin:4px;</span><br><span class="line">    <span class="built_in">float</span>:left;    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="Flex布局"><a href="#Flex布局" class="headerlink" title="Flex布局"></a>Flex布局</h4><ol>
+<li>给父元素加display:flex;</li>
+<li>给父元素加上justify-content:spance-between;</li>
+</ol>
+<h4 id="FLEX实现平均布局"><a href="#FLEX实现平均布局" class="headerlink" title="FLEX实现平均布局"></a>FLEX实现平均布局</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">.pic&#123;</span><br><span class="line">    width:800px;</span><br><span class="line">    margin:0 auto;</span><br><span class="line">    display:flex;</span><br><span class="line">    flex-wrap:wrap;</span><br><span class="line">    justify-content:space-between;</span><br><span class="line">&#125;</span><br><span class="line">.pic &gt; .item &#123;</span><br><span class="line">    width:194px;</span><br><span class="line">    height:194px;</span><br><span class="line">    margin:4px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="使用calc"><a href="#使用calc" class="headerlink" title="使用calc"></a>使用calc</h5><p>百分之25,减去8像素</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">width:calc (25% - 8px);</span><br></pre></td></tr></table></figure>
+<h5 id="如何防止banner图片变型"><a href="#如何防止banner图片变型" class="headerlink" title="如何防止banner图片变型"></a>如何防止banner图片变型</h5><ol>
+<li>不要用img标签</li>
+</ol>
+<p>用background<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">background:transparent url() no-repeat center;</span><br><span class="line">background-size:cover;</span><br></pre></td></tr></table></figure></p>
+<ol start="2">
+<li>也可以搜索固定比例的div</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/06/16/CSS布局套路/" data-id="cjr24vkhf0004g0pf1rvb06f9" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/07/13/Vue基础/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Vue基础
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/06/15/Flex布局/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Flex布局</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/01/18/Promise的使用/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/11/密码强度/">密码强度的实现</a>
+          </li>
+        
+          <li>
+            <a href="/2018/09/04/CSS盒子多边框/">CSS盒子多边框</a>
+          </li>
+        
+          <li>
+            <a href="/2018/09/03/表单美化/">表单美化</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/03/bootstrap/">bootstrap</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Roxas Deng<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

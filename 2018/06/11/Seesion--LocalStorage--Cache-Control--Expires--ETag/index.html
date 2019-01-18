@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Seesion/LocalStorage/Cache-Control/Expires/ETag | RoxasDengBlog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Session 与 Cookie 的关系与区别关系: Session 基于 Cookie 实现的. 区别: Cookie 保存在客户端，每次都随请求发送给 Server.Session 保存在 Server 的内存里，其 Session ID 是通过 Cookie 发送给客户端的. Cookie 服务器通过 Set-Cookie 头给客户端一串字符串; 客户端每次访问相同域名的网页时,必须带上这段">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Seesion&#x2F;LocalStorage&#x2F;Cache-Control&#x2F;Expires&#x2F;ETag">
+<meta property="og:url" content="http://yoursite.com/2018/06/11/Seesion--LocalStorage--Cache-Control--Expires--ETag/index.html">
+<meta property="og:site_name" content="RoxasDengBlog">
+<meta property="og:description" content="Session 与 Cookie 的关系与区别关系: Session 基于 Cookie 实现的. 区别: Cookie 保存在客户端，每次都随请求发送给 Server.Session 保存在 Server 的内存里，其 Session ID 是通过 Cookie 发送给客户端的. Cookie 服务器通过 Set-Cookie 头给客户端一串字符串; 客户端每次访问相同域名的网页时,必须带上这段">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-06-11T09:34:57.157Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Seesion&#x2F;LocalStorage&#x2F;Cache-Control&#x2F;Expires&#x2F;ETag">
+<meta name="twitter:description" content="Session 与 Cookie 的关系与区别关系: Session 基于 Cookie 实现的. 区别: Cookie 保存在客户端，每次都随请求发送给 Server.Session 保存在 Server 的内存里，其 Session ID 是通过 Cookie 发送给客户端的. Cookie 服务器通过 Set-Cookie 头给客户端一串字符串; 客户端每次访问相同域名的网页时,必须带上这段">
+  
+    <link rel="alternate" href="/atom.xml" title="RoxasDengBlog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">RoxasDengBlog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Seesion--LocalStorage--Cache-Control--Expires--ETag" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/11/Seesion--LocalStorage--Cache-Control--Expires--ETag/" class="article-date">
+  <time datetime="2018-06-11T09:33:05.000Z" itemprop="datePublished">2018-06-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Seesion/LocalStorage/Cache-Control/Expires/ETag
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="Session-与-Cookie-的关系与区别"><a href="#Session-与-Cookie-的关系与区别" class="headerlink" title="Session 与 Cookie 的关系与区别"></a>Session 与 Cookie 的关系与区别</h4><p>关系:</p>
+<p>Session 基于 Cookie 实现的.</p>
+<p>区别:</p>
+<p>Cookie 保存在客户端，每次都随请求发送给 Server.<br>Session 保存在 Server 的内存里，其 Session ID 是通过 Cookie 发送给客户端的.</p>
+<h4 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h4><ol>
+<li>服务器通过 Set-Cookie 头给客户端一串字符串;</li>
+<li>客户端每次访问相同域名的网页时,必须带上这段字符串;</li>
+<li>客户端要在一段时间内保存这个Cookie.</li>
+<li>Cookie最大存储量4K.</li>
+<li>Cookie默认在用户关闭页面后就失效,后台代码可以任意设置 Cookeie 的过期时间.</li>
+</ol>
+<h4 id="什么是Seesion"><a href="#什么是Seesion" class="headerlink" title="什么是Seesion?"></a>什么是Seesion?</h4><ol>
+<li>服务器将SessionID(随机数)通过Cookie发给客户端;</li>
+<li>客户端访问服务器时,服务器读取SessionID;</li>
+<li>服务器有一块内存(哈希表)保存了所有Session</li>
+<li>通过SessionID我们可以得到用户的隐私信息,如id,email;</li>
+<li>这块内存(哈希表)就是服务器上的所有session.</li>
+</ol>
+<h4 id="localStorage"><a href="#localStorage" class="headerlink" title="localStorage"></a>localStorage</h4><h5 id="什么是localStorage"><a href="#什么是localStorage" class="headerlink" title="什么是localStorage?"></a>什么是localStorage?</h5><p>持久化存储</p>
+<p>HTML5里的API<br>window.localStorage</p>
+<h5 id="方法"><a href="#方法" class="headerlink" title="方法:"></a>方法:</h5><ol>
+<li>localStorage.setItem();</li>
+<li>localStorage.getItem();</li>
+<li>localStorage.removeItem();</li>
+</ol>
+<h5 id="特点"><a href="#特点" class="headerlink" title="特点:"></a>特点:</h5><ol>
+<li>localStorage 跟 HTTP 无关;</li>
+<li>HTTP不会带上 localStorage 的值;</li>
+<li>只有相同域名的页面才能互相读取 localStorage(没有同源那么严格);</li>
+<li>每个域名localStorage 最大存储量为5 MB 左右 (每个浏览器不一样);</li>
+<li>常用场景: 记录有没有提示过用户 (没有用的信息,不能记录密码);</li>
+<li>localStorage 永久有效,除非用户清除缓存.</li>
+</ol>
+<h6 id="LocalStorage与Cookie的区别"><a href="#LocalStorage与Cookie的区别" class="headerlink" title="LocalStorage与Cookie的区别."></a>LocalStorage与Cookie的区别.</h6><p>Cookie在客户端每次发送请求跟服务器响应都会带上,通过服务器设置过期时间,最大4KB.<br>LocalStorage跟HTTP无关,请求时不会带上它的值,它永久有效.最大5MB.</p>
+<h5 id="SessionStorage-会话存储"><a href="#SessionStorage-会话存储" class="headerlink" title="SessionStorage(会话存储)"></a>SessionStorage(会话存储)</h5><ol>
+<li>SessionStorage 跟 HTTP 无关;</li>
+<li>HTTP不会带上 SessionStorage 的值;</li>
+<li>只有相同域名的页面才能互相读取 SessionStorage(没有同源那么严格);</li>
+<li>每个域名lSessionStorage 最大存储量为5 MB 左右 (每个浏览器不一样);</li>
+<li>SessionStorage 在用户关闭页面(会话结束)后失效.</li>
+</ol>
+<h5 id="SessionStorage与LocalStorage区别"><a href="#SessionStorage与LocalStorage区别" class="headerlink" title="SessionStorage与LocalStorage区别"></a>SessionStorage与LocalStorage区别</h5><p>LocalStorage永久有效,SessionStorage页面关闭后失效.</p>
+<h4 id="HTTP-缓存-Cache"><a href="#HTTP-缓存-Cache" class="headerlink" title="HTTP 缓存(Cache)"></a>HTTP 缓存(Cache)</h4><h5 id="Cache-Control"><a href="#Cache-Control" class="headerlink" title="Cache-Control"></a>Cache-Control</h5><p>用来区分对应缓存机制的支持情况,在请求头和响应头都支持这个属性.</p>
+<p>假如在缓存有效期内,对于同样的URL,浏览器不会对服务器发出HTTP请求,而是从内存中获取数据.</p>
+<p>时间是经过多久时间后过期.</p>
+<h5 id="更新缓存"><a href="#更新缓存" class="headerlink" title="更新缓存"></a>更新缓存</h5><p>可以做入口改动,利用URL的查询参数更新缓存.<br>比如:<br>在HTML文件里改对应文件的URL.<link rel="stylesheet" href="css/style.css?v2">,</p>
+<h5 id="为什么首页不能设置Cache-Control"><a href="#为什么首页不能设置Cache-Control" class="headerlink" title="为什么首页不能设置Cache-Control"></a>为什么首页不能设置Cache-Control</h5><p>因为用户不能从服务器中获取最新网页.</p>
+<h5 id="Expires"><a href="#Expires" class="headerlink" title="Expires"></a>Expires</h5><p>如果设置Cache-Control那么Expires会被忽略.</p>
+<p>时间是一个时间点,即几分几秒过期,时间指的是本地时间,不靠谱.</p>
+<h5 id="MD5"><a href="#MD5" class="headerlink" title="MD5"></a>MD5</h5><p>一个摘要算法</p>
+<p>Bash里 输入md5 文件名即转成MD5.</p>
+<p>如果内容差异越小,那么MD5值越大.</p>
+<h5 id="ETag"><a href="#ETag" class="headerlink" title="ETag"></a>ETag</h5><p>服务器返回一个ETag,内容是MD5给浏览器,浏览器下次发送请求时,请求时带上请求头if-none-match,那么内容不需要下载,服务器返回状态码304,304返回的第四部分是空的.</p>
+<h5 id="Cache-Control和ETag"><a href="#Cache-Control和ETag" class="headerlink" title="Cache-Control和ETag"></a>Cache-Control和ETag</h5><p>Cache-Control是未过期不发送请求,ETag是发送请求假如不匹配,但是不返回内容,即响应体是空的.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/06/11/Seesion--LocalStorage--Cache-Control--Expires--ETag/" data-id="cjr24vkhv000gg0pfamgth49h" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/06/13/sass/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          sass
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/06/10/Cookie-注册与登陆/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Cookie-注册与登陆</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/01/18/Promise的使用/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/11/密码强度/">密码强度的实现</a>
+          </li>
+        
+          <li>
+            <a href="/2018/09/04/CSS盒子多边框/">CSS盒子多边框</a>
+          </li>
+        
+          <li>
+            <a href="/2018/09/03/表单美化/">表单美化</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/03/bootstrap/">bootstrap</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Roxas Deng<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

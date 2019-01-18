@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>v-bind以及class与style的绑定 | RoxasDengBlog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="了解bind指令作用:绑定vue实例里的data或者computed属性  变量语法  1234567:title=&quot;message&quot;data:&amp;#123;    message:&apos;abc&apos;&amp;#125;title=&quot;abc&quot;  对象语法  12345678910:title=&quot;msgObj&quot;data:&amp;#123;    msgOjb:&amp;#123;        msg1:true,">
+<meta property="og:type" content="article">
+<meta property="og:title" content="v-bind以及class与style的绑定">
+<meta property="og:url" content="http://yoursite.com/2018/07/25/v-bind以及class与style的绑定/index.html">
+<meta property="og:site_name" content="RoxasDengBlog">
+<meta property="og:description" content="了解bind指令作用:绑定vue实例里的data或者computed属性  变量语法  1234567:title=&quot;message&quot;data:&amp;#123;    message:&apos;abc&apos;&amp;#125;title=&quot;abc&quot;  对象语法  12345678910:title=&quot;msgObj&quot;data:&amp;#123;    msgOjb:&amp;#123;        msg1:true,">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-07-25T06:35:39.498Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="v-bind以及class与style的绑定">
+<meta name="twitter:description" content="了解bind指令作用:绑定vue实例里的data或者computed属性  变量语法  1234567:title=&quot;message&quot;data:&amp;#123;    message:&apos;abc&apos;&amp;#125;title=&quot;abc&quot;  对象语法  12345678910:title=&quot;msgObj&quot;data:&amp;#123;    msgOjb:&amp;#123;        msg1:true,">
+  
+    <link rel="alternate" href="/atom.xml" title="RoxasDengBlog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">RoxasDengBlog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-v-bind以及class与style的绑定" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/25/v-bind以及class与style的绑定/" class="article-date">
+  <time datetime="2018-07-25T05:42:41.000Z" itemprop="datePublished">2018-07-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      v-bind以及class与style的绑定
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="了解bind指令"><a href="#了解bind指令" class="headerlink" title="了解bind指令"></a>了解bind指令</h4><p>作用:绑定vue实例里的data或者computed属性</p>
+<ol>
+<li>变量语法</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">:title=<span class="string">"message"</span></span><br><span class="line"></span><br><span class="line">data:&#123;</span><br><span class="line">    message:<span class="string">'abc'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">title=<span class="string">"abc"</span></span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>对象语法</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">:title=<span class="string">"msgObj"</span></span><br><span class="line"></span><br><span class="line">data:&#123;</span><br><span class="line">    msgOjb:&#123;</span><br><span class="line">        msg1:<span class="literal">true</span>,</span><br><span class="line">        msg2:<span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">title=<span class="string">"msg1"</span></span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>数组语法<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">:title=[msg1,msg2]</span><br><span class="line"></span><br><span class="line">data:&#123;</span><br><span class="line">    msg1:1,</span><br><span class="line">    msg2:2</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">title=<span class="string">"msg1=1 msg2=2"</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="绑定class的几种方式"><a href="#绑定class的几种方式" class="headerlink" title="绑定class的几种方式"></a>绑定class的几种方式</h4><h5 id="对象语法"><a href="#对象语法" class="headerlink" title="对象语法"></a>对象语法</h5><ol>
+<li><p>用表达式</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">:class=<span class="string">"&#123;'active':isActive,'danger':isDanger&#125;"</span></span><br><span class="line"></span><br><span class="line">data:&#123;</span><br><span class="line">    isActive:<span class="literal">true</span>,</span><br><span class="line">    isDanger:<span class="literal">false</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><ol>
+<li><p>对象变量名</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">:class=<span class="string">"classObject"</span></span><br><span class="line"></span><br><span class="line">data:&#123;</span><br><span class="line">    classObject:&#123;</span><br><span class="line">        active:<span class="literal">true</span>,</span><br><span class="line">        danger:<span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>对象变量名+计算属性</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">:class=<span class="string">"classObject"</span></span><br><span class="line"></span><br><span class="line">data:&#123;</span><br><span class="line">    isActive:<span class="literal">true</span>,</span><br><span class="line">    error:null</span><br><span class="line">&#125;,</span><br><span class="line">computed:&#123;</span><br><span class="line">    classObject:<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">        <span class="built_in">return</span> &#123;</span><br><span class="line">            active:this.active &amp;&amp; !this.error,</span><br><span class="line">            danger:this.error &amp;&amp; this.error.type === <span class="string">'fatal'</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+</ol>
+<h5 id="数组语法"><a href="#数组语法" class="headerlink" title="数组语法"></a>数组语法</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">:class=<span class="string">"[activeClass,errorClass]"</span></span><br><span class="line"></span><br><span class="line">data:&#123;</span><br><span class="line">    activeClass:<span class="string">'active'</span>,</span><br><span class="line">    errorClass:<span class="string">'text-danger'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="绑定style的几种方式"><a href="#绑定style的几种方式" class="headerlink" title="绑定style的几种方式"></a>绑定style的几种方式</h4><ol>
+<li>表达式</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">:style=<span class="string">"&#123;color:activeColor,fontSize:fontSize + 'px'&#125;"</span></span><br><span class="line"></span><br><span class="line">data:&#123;</span><br><span class="line">    activeColor:<span class="string">'red'</span>,</span><br><span class="line">    fontSize:30</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>对象变量名</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">:style=<span class="string">"styleObject"</span></span><br><span class="line"></span><br><span class="line">data:&#123;</span><br><span class="line">    styleObject:&#123;</span><br><span class="line">        color:red,</span><br><span class="line">        fontSize:30px</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>数组</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">:style=<span class="string">"[styleObject1,styleObject2]"</span></span><br><span class="line"></span><br><span class="line">data:&#123;</span><br><span class="line">    styleObject1:&#123;</span><br><span class="line">        color:<span class="string">'red'</span>,</span><br><span class="line">        background:<span class="string">'blue'</span></span><br><span class="line">    &#125;</span><br><span class="line">    styleObject2:&#123;</span><br><span class="line">        fontSize:<span class="string">'30px'</span>,</span><br><span class="line">        fontWeight:<span class="string">'bold'</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/07/25/v-bind以及class与style的绑定/" data-id="cjr24vki2000og0pfffx8xto4" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/07/25/vue的内置指令/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          vue的内置指令
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/07/25/JS的类与继承/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">JS的类与继成</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/01/18/Promise的使用/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/11/密码强度/">密码强度的实现</a>
+          </li>
+        
+          <li>
+            <a href="/2018/09/04/CSS盒子多边框/">CSS盒子多边框</a>
+          </li>
+        
+          <li>
+            <a href="/2018/09/03/表单美化/">表单美化</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/03/bootstrap/">bootstrap</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Roxas Deng<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
