@@ -86,6 +86,7 @@
 <p>构造函数Promise接收一个参数function,function接收两个参数,一个是成功时执行的函数,一个是失败时执行的函数.<br>通过链式操作,我们可以分别对不同的结果分别执行不同的回调函数.</p>
 <p>通过promise改写上面的函数</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">fn1</span></span>()&#123;</span><br><span class="line">    <span class="built_in">return</span> new Promise((resolve, reject) =&gt; &#123;</span><br><span class="line">        setTimeout(() =&gt; &#123;</span><br><span class="line">            console.log(<span class="string">'fn1执行'</span>)</span><br><span class="line">            resolve()</span><br><span class="line">        &#125;, 1000)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">fn2</span></span>()&#123;</span><br><span class="line">    <span class="built_in">return</span> new Promise((resolve, reject) =&gt; &#123;</span><br><span class="line">        setTimeout(() =&gt; &#123;</span><br><span class="line">            console.log(<span class="string">'fn2执行'</span>)</span><br><span class="line">            resolve()</span><br><span class="line">        &#125;, 1000)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">fn3</span></span>()&#123;</span><br><span class="line">    <span class="built_in">return</span> new Promise((resolve, reject) =&gt; &#123;</span><br><span class="line">        setTimeout(() =&gt; &#123;</span><br><span class="line">            console.log(<span class="string">'fn3执行'</span>)</span><br><span class="line">            resolve()</span><br><span class="line">        &#125;, 1000)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">onerror</span></span>() &#123;</span><br><span class="line">    console.log(<span class="string">'error'</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fn1().<span class="keyword">then</span>(fn2).<span class="keyword">then</span>(fn3).catch(onerror)</span><br></pre></td></tr></table></figure>
+<p>当异步函数执行时,下一个异步函数需要用上一个异步函数的返回值可以这样写<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">//定义函数获取城市</span><br><span class="line"><span class="keyword">function</span> getCity(ip)&#123;</span><br><span class="line">    <span class="built_in">return</span> new Promise((resolve,reject)=&gt;&#123;</span><br><span class="line">        <span class="built_in">let</span> xhr = new XMLHttpRequest();</span><br><span class="line">        xhr.open(<span class="string">'GET'</span>,url/ip,<span class="literal">true</span>)</span><br><span class="line">        xhr.onload = <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">            var data = JSON.parse(xhr.responseText) //获得数据</span><br><span class="line">            resolve(data)</span><br><span class="line">        &#125;</span><br><span class="line">        xhr.onerror = <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">            reject(<span class="string">'获取失败'</span>)</span><br><span class="line">        &#125;</span><br><span class="line">        xhr.send()</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line">//定义函数获取天气</span><br><span class="line"><span class="keyword">function</span> getWeather(city)&#123;</span><br><span class="line">    <span class="built_in">return</span> new Promise((resolve,reject)=&gt;&#123;</span><br><span class="line">        <span class="built_in">let</span> xhr = new XMLHttpRequest();</span><br><span class="line">        xhr.open(<span class="string">'GET'</span>,url/city,<span class="literal">true</span>)</span><br><span class="line">        xhr.onload = <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">            var data = JSON.parse(xhr.responseText)</span><br><span class="line">        &#125;</span><br><span class="line">        xhr.onerror = <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">            reject(<span class="string">'获取失败'</span>)</span><br><span class="line">        &#125;</span><br><span class="line">        xhr.send</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//调用</span><br><span class="line"></span><br><span class="line">getCity(上海).<span class="keyword">then</span>((city)=&gt;&#123;</span><br><span class="line">    <span class="built_in">return</span> getWeather(city)</span><br><span class="line">&#125;).<span class="keyword">then</span>((res)=&gt;&#123;</span><br><span class="line">    console.log(res)</span><br><span class="line">&#125;).catch((error)=&gt;&#123;</span><br><span class="line">    console.log(error)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
 <h4 id="Promise-all"><a href="#Promise-all" class="headerlink" title="Promise.all"></a>Promise.all</h4><p>当有几个promise的时候,我们可以用promise.all让所有promise状态变更之后再回调</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Promise.all([p1,p2,p3]).<span class="keyword">then</span>(()=&gt;&#123;&#125;)</span><br></pre></td></tr></table></figure>
 <h4 id="Promise-race"><a href="#Promise-race" class="headerlink" title="Promise.race"></a>Promise.race</h4><p>当有几个promise的时候,我们可以用promise.race来执行最快的返回的一个promise对象的函数<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Promise.race([p1,p2,p3]).<span class="keyword">then</span>(()=&gt;&#123;&#125;)</span><br></pre></td></tr></table></figure></p>
@@ -95,7 +96,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/18/Promise的使用/" data-id="cjr24vkhu000fg0pfux9s8o04" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/18/Promise的使用/" data-id="cjr27hntj000fj8pf1y2gmsiq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -211,7 +212,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/密码强度/" data-id="cjr24vki8000vg0pfxe6idz37" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/密码强度/" data-id="cjr27hntz000vj8pfgre7lpke" class="article-share-link">Share</a>
       
       
     </footer>
@@ -247,7 +248,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/04/CSS盒子多边框/" data-id="cjr24vkhe0003g0pfzmmh9q0d" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/04/CSS盒子多边框/" data-id="cjr27hnt40004j8pf1pujo4gy" class="article-share-link">Share</a>
       
       
     </footer>
@@ -286,7 +287,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/03/表单美化/" data-id="cjr24vkid0011g0pf830lrven" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/03/表单美化/" data-id="cjr27hnu40011j8pfeigxj3xp" class="article-share-link">Share</a>
       
       
     </footer>
@@ -340,7 +341,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/03/bootstrap/" data-id="cjr24vkhy000kg0pfsebena2f" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/03/bootstrap/" data-id="cjr27hntn000jj8pf1jwoh1jm" class="article-share-link">Share</a>
       
       
     </footer>
@@ -383,7 +384,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/26/Axios/" data-id="cjr24vkh90001g0pfge9ihjl8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/26/Axios/" data-id="cjr27hnsx0001j8pf7636c6i1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -491,7 +492,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/25/vue-router与vuex/" data-id="cjr24vkir0014g0pf2vzmsaix" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/25/vue-router与vuex/" data-id="cjr27hnud0014j8pfq0ji96ya" class="article-share-link">Share</a>
       
       
     </footer>
@@ -539,7 +540,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/25/vue-cli手脚架/" data-id="cjr24vki4000qg0pfmsa77k46" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/25/vue-cli手脚架/" data-id="cjr27hntu000qj8pfo0fw2vut" class="article-share-link">Share</a>
       
       
     </footer>
@@ -610,7 +611,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/25/render函数/" data-id="cjr24vkhz000lg0pfpg4ib3e7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/25/render函数/" data-id="cjr27hntq000mj8pfqqh8ezz8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -667,7 +668,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/25/自定义指令/" data-id="cjr24vkic0010g0pfbzqbfbsz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/25/自定义指令/" data-id="cjr27hnu30010j8pfhtj56ed0" class="article-share-link">Share</a>
       
       
     </footer>
