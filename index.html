@@ -1,776 +1,623 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    
+    <meta name="keywords" content="Life, ARIA, Hexo">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="RoxasDengBlog" type="application/atom+xml" />
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
 
-  
-  <title>RoxasDengBlog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="RoxasDengBlog">
-<meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="RoxasDengBlog">
-<meta property="og:locale" content="default">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="RoxasDengBlog">
-  
-    <link rel="alternate" href="/atom.xml" title="RoxasDengBlog" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
-</head>
-
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">RoxasDengBlog</a>
-      </h1>
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>RoxasDengBlog</title>
+  </head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">RoxasDengBlog</a></h1>
+        <h2 class="subtitle"></h2>
+      </div>
+      
+      <div class="logo">
+        <img src="/images/logo.png" alt="logo">
+      </div>
       
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
         
-          <a class="main-nav-link" href="/">Home</a>
+        <li role="menuitem"><a href="/" class="current">首页</a></li>
         
-          <a class="main-nav-link" href="/archives">Archives</a>
+        <li role="menuitem"><a href="/archives/">归档</a></li>
         
-      </nav>
-      <nav id="sub-nav">
+        <li role="menuitem"><a href="/categories/">分类</a></li>
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        <li role="menuitem"><a href="/tags/">标签</a></li>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
-      </div>
-    </div>
+      </ul>
+    </nav>
   </div>
 </header>
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-Promise的使用" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/01/18/Promise的使用/" class="article-date">
-  <time datetime="2019-01-18T13:39:10.703Z" itemprop="datePublished">2019-01-18</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<p>title: Promise的使用<br>date: 2019-01-18 21:39:10<br>tags:</p>
-<h4 id="1-Promise的作用"><a href="#1-Promise的作用" class="headerlink" title="1. Promise的作用"></a>1. Promise的作用</h4><p>当一个异步函数执行的时候,需要回调,可使用Promise链式操作进行回调.</p>
-<p>例子:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> fn1(callback)&#123;</span><br><span class="line">    setTimeout(()=&gt;&#123;</span><br><span class="line">        console.log(<span class="string">'fn1执行'</span>)</span><br><span class="line">    &#125;,1000)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> fn1(callback)&#123;</span><br><span class="line">    setTimeout(()=&gt;&#123;</span><br><span class="line">        console.log(<span class="string">'fn2执行'</span>)</span><br><span class="line">        callback()</span><br><span class="line">    &#125;,1000)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">fn1</span></span>()&#123;</span><br><span class="line">    setTimeout(()=&gt;&#123;</span><br><span class="line">        console.log(<span class="string">'fn3执行'</span>)</span><br><span class="line">        callback()</span><br><span class="line">    &#125;,1000)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>我们以前是这样回调的</p>
-<p>fn1(()=&gt;{<br>    fn2(()=&gt;{<br>        fn3<br>    })<br>})</p>
-<p>//控制台一秒后输出fn1,再一秒后输出fn2,再一秒后输出fn3</p>
-<p>因为回调函数复杂的时候非常麻烦,所以我们可以使用promise改写上面的函数</p>
-<h4 id="2-Promise语法"><a href="#2-Promise语法" class="headerlink" title="2. Promise语法"></a>2. Promise语法</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">promiseFn</span></span>()&#123;</span><br><span class="line">    <span class="built_in">return</span> new Promise((resolve,reject)=&gt;&#123;</span><br><span class="line">        //当异步函数执行成功时</span><br><span class="line">        resolve();</span><br><span class="line">        //当异步函数执行失败时,</span><br><span class="line">        reject();</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">promiseFn().<span class="keyword">then</span>(()=&gt;&#123;&#125;).catch(()=&gt;&#123;&#125;)</span><br></pre></td></tr></table></figure>
-<p>构造函数Promise接收一个参数function,function接收两个参数,一个是成功时执行的函数,一个是失败时执行的函数.<br>通过链式操作,我们可以分别对不同的结果分别执行不同的回调函数.</p>
-<p>通过promise改写上面的函数</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">fn1</span></span>()&#123;</span><br><span class="line">    <span class="built_in">return</span> new Promise((resolve, reject) =&gt; &#123;</span><br><span class="line">        setTimeout(() =&gt; &#123;</span><br><span class="line">            console.log(<span class="string">'fn1执行'</span>)</span><br><span class="line">            resolve()</span><br><span class="line">        &#125;, 1000)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">fn2</span></span>()&#123;</span><br><span class="line">    <span class="built_in">return</span> new Promise((resolve, reject) =&gt; &#123;</span><br><span class="line">        setTimeout(() =&gt; &#123;</span><br><span class="line">            console.log(<span class="string">'fn2执行'</span>)</span><br><span class="line">            resolve()</span><br><span class="line">        &#125;, 1000)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">fn3</span></span>()&#123;</span><br><span class="line">    <span class="built_in">return</span> new Promise((resolve, reject) =&gt; &#123;</span><br><span class="line">        setTimeout(() =&gt; &#123;</span><br><span class="line">            console.log(<span class="string">'fn3执行'</span>)</span><br><span class="line">            resolve()</span><br><span class="line">        &#125;, 1000)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">onerror</span></span>() &#123;</span><br><span class="line">    console.log(<span class="string">'error'</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fn1().<span class="keyword">then</span>(fn2).<span class="keyword">then</span>(fn3).catch(onerror)</span><br></pre></td></tr></table></figure>
-<p>当异步函数执行时,下一个异步函数需要用上一个异步函数的返回值可以这样写<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">//定义函数获取城市</span><br><span class="line"><span class="keyword">function</span> getCity(ip)&#123;</span><br><span class="line">    <span class="built_in">return</span> new Promise((resolve,reject)=&gt;&#123;</span><br><span class="line">        <span class="built_in">let</span> xhr = new XMLHttpRequest();</span><br><span class="line">        xhr.open(<span class="string">'GET'</span>,url/ip,<span class="literal">true</span>)</span><br><span class="line">        xhr.onload = <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">            var data = JSON.parse(xhr.responseText) //获得数据</span><br><span class="line">            resolve(data)</span><br><span class="line">        &#125;</span><br><span class="line">        xhr.onerror = <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">            reject(<span class="string">'获取失败'</span>)</span><br><span class="line">        &#125;</span><br><span class="line">        xhr.send()</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line">//定义函数获取天气</span><br><span class="line"><span class="keyword">function</span> getWeather(city)&#123;</span><br><span class="line">    <span class="built_in">return</span> new Promise((resolve,reject)=&gt;&#123;</span><br><span class="line">        <span class="built_in">let</span> xhr = new XMLHttpRequest();</span><br><span class="line">        xhr.open(<span class="string">'GET'</span>,url/city,<span class="literal">true</span>)</span><br><span class="line">        xhr.onload = <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">            var data = JSON.parse(xhr.responseText)</span><br><span class="line">        &#125;</span><br><span class="line">        xhr.onerror = <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">            reject(<span class="string">'获取失败'</span>)</span><br><span class="line">        &#125;</span><br><span class="line">        xhr.send</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//调用</span><br><span class="line"></span><br><span class="line">getCity(上海).<span class="keyword">then</span>((city)=&gt;&#123;</span><br><span class="line">    <span class="built_in">return</span> getWeather(city)</span><br><span class="line">&#125;).<span class="keyword">then</span>((res)=&gt;&#123;</span><br><span class="line">    console.log(res)</span><br><span class="line">&#125;).catch((error)=&gt;&#123;</span><br><span class="line">    console.log(error)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<h4 id="Promise-all"><a href="#Promise-all" class="headerlink" title="Promise.all"></a>Promise.all</h4><p>当有几个promise的时候,我们可以用promise.all让所有promise状态变更之后再回调</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Promise.all([p1,p2,p3]).<span class="keyword">then</span>(()=&gt;&#123;&#125;)</span><br></pre></td></tr></table></figure>
-<h4 id="Promise-race"><a href="#Promise-race" class="headerlink" title="Promise.race"></a>Promise.race</h4><p>当有几个promise的时候,我们可以用promise.race来执行最快的返回的一个promise对象的函数<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Promise.race([p1,p2,p3]).<span class="keyword">then</span>(()=&gt;&#123;&#125;)</span><br></pre></td></tr></table></figure></p>
-<h4 id="finaly"><a href="#finaly" class="headerlink" title="finaly"></a>finaly</h4><p>当promise状态变更的时候时候,不管成功与失败,我们都可以执行同一个方法</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">promiseFn().finaly(&#123;&#125;=&gt;&#123;</span><br><span class="line">    console.log(<span class="string">'异步结束'</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
-      
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+
+<div id="index" class="index page">
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/24/图片延迟加载/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="Roxas Deng">
+        <meta itemprop="description" content="">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="RoxasDengBlog">
+      </span>
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/18/Promise的使用/" data-id="cjr27hntj000fj8pf1y2gmsiq" class="article-share-link">Share</a>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2019/01/24/图片延迟加载/" itemprop="url">图片延迟加载</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-01-24T17:58:42+08:00">2019-01-24 17:58:42</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
       
+      <h4 id="图片延迟加载原理"><a href="#图片延迟加载原理" class="headerlink" title="图片延迟加载原理"></a>图片延迟加载原理</h4><ol>
+<li>
+      
+    </main>
+    <footer class="post-footer">
       
     </footer>
-  </div>
+  </article>
   
-</article>
-
-
-  
-    <article id="post-密码强度" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/01/11/密码强度/" class="article-date">
-  <time datetime="2019-01-11T05:12:52.000Z" itemprop="datePublished">2019-01-11</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/01/11/密码强度/">密码强度的实现</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="密码强度"><a href="#密码强度" class="headerlink" title="密码强度"></a>密码强度</h3><h4 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h4><h5 id="使用字符串-函数与运算符"><a href="#使用字符串-函数与运算符" class="headerlink" title="使用字符串,函数与运算符."></a>使用字符串,函数与运算符.</h5><p>一般密码会有数字,字母(大小写),特殊符号四种类型.</p>
-<p>1:密码中只包含一种类型;<br>2:密码中包含两种类型;<br>3:密码中包含三种类型;<br>4:密码中包含所以类型.</p>
-<h5 id="用以下形式表示四种字符的类型"><a href="#用以下形式表示四种字符的类型" class="headerlink" title="用以下形式表示四种字符的类型."></a>用以下形式表示四种字符的类型.</h5><table>
-<thead>
-<tr>
-<th>字符类型</th>
-<th style="text-align:center">二进制数字</th>
-<th style="text-align:left">ASCII</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>数字</td>
-<td style="text-align:center">0001</td>
-<td style="text-align:left">48~57</td>
-</tr>
-<tr>
-<td>小写字母</td>
-<td style="text-align:center">0010</td>
-<td style="text-align:left">97~122</td>
-</tr>
-<tr>
-<td>大写字母</td>
-<td style="text-align:center">0100</td>
-<td style="text-align:left">65~90</td>
-</tr>
-<tr>
-<td>特殊字符</td>
-<td style="text-align:center">1000</td>
-<td style="text-align:left">ohter</td>
-</tr>
-</tbody>
-</table>
-<h5 id="例子"><a href="#例子" class="headerlink" title="例子:"></a>例子:</h5><table>
-<thead>
-<tr>
-<th>字符类型</th>
-<th style="text-align:center">二进制数字</th>
-<th style="text-align:left">十进制</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1234</td>
-<td style="text-align:center">0001/0001/0001/0001</td>
-<td style="text-align:left">0001-&gt;1</td>
-</tr>
-<tr>
-<td>abcd</td>
-<td style="text-align:center">0010/0010/0010/0010</td>
-<td style="text-align:left">0010-&gt;2</td>
-</tr>
-<tr>
-<td>ABCD</td>
-<td style="text-align:center">0100/0100/0100/0100</td>
-<td style="text-align:left">0100-&gt;4</td>
-</tr>
-<tr>
-<td>!@#$</td>
-<td style="text-align:center">1000/1000/1000/1000</td>
-<td style="text-align:left">1000-&gt;8</td>
-</tr>
-<tr>
-<td>Aa1!</td>
-<td style="text-align:center">0100/0010/0001/1000</td>
-<td style="text-align:left">1111-&gt;15</td>
-</tr>
-</tbody>
-</table>
-<p>即:把密码变成4位二进制数,1的个数越多,密码强度越大.</p>
-<h5 id="把二进数转换为强度"><a href="#把二进数转换为强度" class="headerlink" title="把二进数转换为强度"></a>把二进数转换为强度</h5><p>每次与1做”位于”(&amp;1)运算,假如为真,则强度+1(level++),否则不变,每循环一次,位移(&gt;&gt;&gt;)操作一次.</p>
-<p>如:Abcd1234!:1111</p>
-<ol>
-<li>1111 &amp; 1;level=1;右移一位,得0111;</li>
-<li>0111 &amp; 1;level=2;右移一位,得0011;</li>
-<li>0011 &amp; 1;level=3;右移一位,得0001;</li>
-<li>0001 &amp; 1;level=4;</li>
-</ol>
-<p>所以密码强度为4.</p>
-<h5 id="使用jQuery实现代码"><a href="#使用jQuery实现代码" class="headerlink" title="使用jQuery实现代码"></a>使用jQuery实现代码</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    var $password = $(&apos;#password&apos;);</span><br><span class="line">    var $span = $(&apos;span&apos;);</span><br><span class="line">    $password.on(&apos;keyup&apos;,()=&gt;&#123;</span><br><span class="line">        let password = $password.val();</span><br><span class="line">        checkLevel(password);</span><br><span class="line">    &#125;)</span><br><span class="line">    function Chartype(num)&#123;//检测字符串类型</span><br><span class="line">        if(num &gt;= 48 &amp;&amp; num &lt;= 57)&#123;//数字</span><br><span class="line">            return 1;</span><br><span class="line">        &#125;else if(num &gt;= 97 &amp;&amp; num &lt;= 122)&#123;//小写字母</span><br><span class="line">            return 2;</span><br><span class="line">        &#125;else if(num &gt;= 65 &amp;&amp; num &lt;= 90)&#123;//大写字母</span><br><span class="line">            return 4;</span><br><span class="line">        &#125;else&#123;//符号</span><br><span class="line">            return 8;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    function checkLevel(str)&#123;//检测密码强度</span><br><span class="line">        let check = 0;</span><br><span class="line">        let level = 0;</span><br><span class="line">        for(let i = 0;i&lt;str.length;i++)&#123;</span><br><span class="line">            check |= Chartype(str.charCodeAt(i));</span><br><span class="line">        &#125;</span><br><span class="line">        for(var i = 0;i &lt;= 4;i++)&#123;</span><br><span class="line">            if(check &amp; 1)&#123;//每次循环位于运算</span><br><span class="line">                level++;</span><br><span class="line">            &#125;</span><br><span class="line">            check = check &gt;&gt;&gt; 1;//运算结束后右移一位</span><br><span class="line">        &#125;</span><br><span class="line">        if(str.length &gt;= 8)&#123;//当密码大于8执行</span><br><span class="line">            selectLevel(level);</span><br><span class="line">        &#125;else&#123;//小于8清空</span><br><span class="line">            level = 0;</span><br><span class="line">            $span.removeClass(&apos;active&apos;);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    function selectLevel(level)&#123;//根据密码强度切换类</span><br><span class="line">            switch(level)&#123;</span><br><span class="line">                case 1:</span><br><span class="line">                    $span.removeClass(&apos;active&apos;);</span><br><span class="line">                    $(&apos;.first&apos;).addClass(&apos;active&apos;);</span><br><span class="line">                    break;</span><br><span class="line">                case 2:</span><br><span class="line">                    $span.removeClass(&apos;active&apos;);</span><br><span class="line">                    $(&apos;.second&apos;).addClass(&apos;active&apos;);</span><br><span class="line">                    break;</span><br><span class="line">                case 3:</span><br><span class="line">                    $span.removeClass(&apos;active&apos;);</span><br><span class="line">                    $(&apos;.thrid&apos;).addClass(&apos;active&apos;);</span><br><span class="line">                    break;  </span><br><span class="line">                case 4:</span><br><span class="line">                    $span.removeClass(&apos;active&apos;);</span><br><span class="line">                    $(&apos;.fourth&apos;).addClass(&apos;active&apos;);</span><br><span class="line">                    break;  </span><br><span class="line">            &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-      
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/24/函数节流与防抖/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="Roxas Deng">
+        <meta itemprop="description" content="">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="RoxasDengBlog">
+      </span>
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/密码强度/" data-id="cjr27hntz000vj8pfgre7lpke" class="article-share-link">Share</a>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2019/01/24/函数节流与防抖/" itemprop="url">函数节流与防抖</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-01-24T11:08:26+08:00">2019-01-24 11:08:26</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
       
+      <h4 id="函数防抖-debounce"><a href="#函数防抖-debounce" class="headerlink" title="函数防抖(debounce)"></a>函数防抖(d
+      
+    </main>
+    <footer class="post-footer">
       
     </footer>
-  </div>
+  </article>
   
-</article>
-
-
-  
-    <article id="post-CSS盒子多边框" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/09/04/CSS盒子多边框/" class="article-date">
-  <time datetime="2018-09-04T15:40:45.000Z" itemprop="datePublished">2018-09-04</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/04/CSS盒子多边框/">CSS盒子多边框</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/18/Promise的使用/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="Roxas Deng">
+        <meta itemprop="description" content="">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="RoxasDengBlog">
+      </span>
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/04/CSS盒子多边框/" data-id="cjr27hnt40004j8pf1pujo4gy" class="article-share-link">Share</a>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2019/01/18/Promise的使用/" itemprop="url">Promise的使用</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-01-18T21:39:10+08:00">2019-01-18 21:39:10</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JS/" itemprop="url" rel="index"><span itemprop="name">JS</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
       
+      <h4 id="1-Promise的作用"><a href="#1-Promise的作用" class="headerlink" title="1. Promise的作用"></a>1. Promis
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/ES6/" rel="tag"><i class="fas fa-tags"></i>ES6</a>
+        
+      </div>
       
     </footer>
-  </div>
+  </article>
   
-</article>
-
-
-  
-    <article id="post-表单美化" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/09/03/表单美化/" class="article-date">
-  <time datetime="2018-09-03T14:10:27.000Z" itemprop="datePublished">2018-09-03</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/03/表单美化/">表单美化</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="改变checkbox样式"><a href="#改变checkbox样式" class="headerlink" title="改变checkbox样式"></a>改变checkbox样式</h4><h5 id="1-按钮"><a href="#1-按钮" class="headerlink" title="1.按钮"></a>1.按钮</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;li&gt;</span><br><span class="line">    &lt;input <span class="built_in">type</span>=<span class="string">"checkbox"</span> id=<span class="string">"id"</span> name=<span class="string">"sectors[]"</span></span><br><span class="line">        value=<span class="string">"id"</span>&gt;</span><br><span class="line">    &lt;label <span class="keyword">for</span>=<span class="string">"id"</span>&gt;ABC&lt;/label&gt;</span><br><span class="line">&lt;/li&gt;</span><br><span class="line"></span><br><span class="line">input[<span class="built_in">type</span>=checkbox] &#123;</span><br><span class="line">    position: absolute;</span><br><span class="line">    clip:rect(0,0,0,0);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">input[<span class="built_in">type</span>=checkbox] + label &#123;</span><br><span class="line">    //样式</span><br><span class="line">&#125;</span><br><span class="line">input[<span class="built_in">type</span>=checkbox]:checked + label,</span><br><span class="line">input[<span class="built_in">type</span>=checkbox]:active + label&#123;</span><br><span class="line">    //选中后样式</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="2-改变选中框样式"><a href="#2-改变选中框样式" class="headerlink" title="2.改变选中框样式"></a>2.改变选中框样式</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">input[<span class="built_in">type</span>=checkbox]&#123;</span><br><span class="line">    position: absolute;</span><br><span class="line">    clip:rect(0,0,0,0);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">input[<span class="built_in">type</span>=checkbox] + label::before&#123;</span><br><span class="line">    content:<span class="string">'\a0'</span>; //空格</span><br><span class="line">    //样式</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">input[tyoe=checkbox]:check + label::before&#123;</span><br><span class="line">    content:<span class="string">'\2713'</span>,</span><br><span class="line">    //选中后样式</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="去除Chrome浏览器历史记录的黄色"><a href="#去除Chrome浏览器历史记录的黄色" class="headerlink" title="去除Chrome浏览器历史记录的黄色"></a>去除Chrome浏览器历史记录的黄色</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">input:-webkit-autofill &#123;</span><br><span class="line">    -webkit-box-shadow: 0 0 0px 1000px white inset;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="去除IOS输入框默认样式"><a href="#去除IOS输入框默认样式" class="headerlink" title="去除IOS输入框默认样式"></a>去除IOS输入框默认样式</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-webkit-appearance: none;</span><br><span class="line">border-radius: 0;</span><br></pre></td></tr></table></figure>
-      
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/11/密码强度/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="Roxas Deng">
+        <meta itemprop="description" content="">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="RoxasDengBlog">
+      </span>
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/03/表单美化/" data-id="cjr27hnu40011j8pfeigxj3xp" class="article-share-link">Share</a>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2019/01/11/密码强度/" itemprop="url">密码强度的实现</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-01-11T13:12:52+08:00">2019-01-11 13:12:52</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
       
+      <h3 id="密码强度"><a href="#密码强度" class="headerlink" title="密码强度"></a>密码强度</h3><h4 id="原理"><a href="#原理"
+      
+    </main>
+    <footer class="post-footer">
       
     </footer>
-  </div>
+  </article>
   
-</article>
-
-
-  
-    <article id="post-bootstrap" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/08/03/bootstrap/" class="article-date">
-  <time datetime="2018-08-02T20:19:41.000Z" itemprop="datePublished">2018-08-03</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/03/bootstrap/">bootstrap</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="网格系统-栅栏系统"><a href="#网格系统-栅栏系统" class="headerlink" title="网格系统/栅栏系统"></a>网格系统/栅栏系统</h4><p>所有代码在container里面</p>
-<p>row 会有margin负15px,使容器扩大,不使用row会有bug</p>
-<p>row一共12列</p>
-<p>col-md-x 占x列</p>
-<p>col-md-x col-md-offset-y 占x列 偏移y列(左边空出y列)</p>
-<p>默认有4个媒体查询分界值</p>
-<p>1200 992 768 0</p>
-<p>lg(1200-max) 大屏幕   col-lg-1 大屏幕占1格<br>md(992-1200) 中等屏幕 col-md-2 中等屏幕占2格<br>sm(992-768) 小屏幕   col-sm-3 小屏幕占3格<br>xs(0-768) 超小屏幕 col-xs-6 超小屏幕占6格<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=<span class="string">"container"</span>&gt;</span><br><span class="line">    &lt;div class=<span class="string">"row"</span>&gt;</span><br><span class="line">        &lt;div class=<span class="string">"col-lg-1 col-md-2 col-sm-3 col-xs-6"</span>&gt;col&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
-<p>隐藏</p>
-<p>.hidden-xs</p>
-<p>右浮动(要注意宽度)</p>
-<p>pull-right</p>
-<h4 id="复杂组件"><a href="#复杂组件" class="headerlink" title="复杂组件"></a>复杂组件</h4><h5 id="css"><a href="#css" class="headerlink" title="css"></a>css</h5><p>icon</p>
-<p>下拉列表 </p>
-<p>导航栏</p>
-<p>分页</p>
-<p>图片</p>
-<h5 id="js"><a href="#js" class="headerlink" title="js"></a>js</h5><p>弹出框</p>
-
-      
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/04/CSS盒子多边框/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="Roxas Deng">
+        <meta itemprop="description" content="">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="RoxasDengBlog">
+      </span>
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/03/bootstrap/" data-id="cjr27hntn000jj8pf1jwoh1jm" class="article-share-link">Share</a>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2018/09/04/CSS盒子多边框/" itemprop="url">CSS盒子多边框</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-09-04T23:40:45+08:00">2018-09-04 23:40:45</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
       
+      
+      
+    </main>
+    <footer class="post-footer">
       
     </footer>
-  </div>
+  </article>
   
-</article>
-
-
-  
-    <article id="post-Axios" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/26/Axios/" class="article-date">
-  <time datetime="2018-07-26T12:21:20.000Z" itemprop="datePublished">2018-07-26</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/26/Axios/">Axios</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="Axios的好处"><a href="#Axios的好处" class="headerlink" title="Axios的好处"></a>Axios的好处</h4><p>从浏览器中创建 XMLHttpRequests<br>从 node.js 创建 http 请求<br>支持 Promise API<br>拦截请求和响应<br>转换请求数据和响应数据<br>取消请求<br>自动转换 JSON 数据<br>客户端支持防御 XSRF</p>
-<h4 id="axios发送post请求"><a href="#axios发送post请求" class="headerlink" title="axios发送post请求"></a>axios发送post请求</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">axios.get(<span class="string">'/user?ID=12345'</span>)</span><br><span class="line">  .<span class="keyword">then</span>(<span class="keyword">function</span> (response) &#123;</span><br><span class="line">    console.log(response);</span><br><span class="line">  &#125;)</span><br><span class="line">  .catch(<span class="keyword">function</span> (error) &#123;</span><br><span class="line">    console.log(error);</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">// 可选地，上面的请求可以这样做</span><br><span class="line">axios.get(<span class="string">'/user'</span>, &#123;</span><br><span class="line">    params: &#123;</span><br><span class="line">      ID: 12345</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">  .<span class="keyword">then</span>(<span class="keyword">function</span> (response) &#123;</span><br><span class="line">    console.log(response);</span><br><span class="line">  &#125;)</span><br><span class="line">  .catch(<span class="keyword">function</span> (error) &#123;</span><br><span class="line">    console.log(error);</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
-<h4 id="axios发送get请求"><a href="#axios发送get请求" class="headerlink" title="axios发送get请求"></a>axios发送get请求</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">axios.post(<span class="string">'/user'</span>, &#123;</span><br><span class="line">    firstName: <span class="string">'Fred'</span>,</span><br><span class="line">    lastName: <span class="string">'Flintstone'</span></span><br><span class="line">  &#125;)</span><br><span class="line">  .<span class="keyword">then</span>(<span class="keyword">function</span> (response) &#123;</span><br><span class="line">    console.log(response);</span><br><span class="line">  &#125;)</span><br><span class="line">  .catch(<span class="keyword">function</span> (error) &#123;</span><br><span class="line">    console.log(error);</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
-<h4 id="vue-cli引入axios"><a href="#vue-cli引入axios" class="headerlink" title="vue-cli引入axios"></a>vue-cli引入axios</h4><ol>
-<li>npm install axios</li>
-<li>在vue的入口文件main.js里引入axios并使用</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import axios from <span class="string">'axios'</span></span><br><span class="line"></span><br><span class="line">Vue.prototype.<span class="variable">$axios</span> = axios</span><br></pre></td></tr></table></figure>
-      
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/03/表单美化/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="Roxas Deng">
+        <meta itemprop="description" content="">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="RoxasDengBlog">
+      </span>
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/26/Axios/" data-id="cjr27hnsx0001j8pf7636c6i1" class="article-share-link">Share</a>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2018/09/03/表单美化/" itemprop="url">表单美化</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-09-03T22:10:27+08:00">2018-09-03 22:10:27</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
       
+      <h4 id="改变checkbox样式"><a href="#改变checkbox样式" class="headerlink" title="改变checkbox样式"></a>改变checkbox
+      
+    </main>
+    <footer class="post-footer">
       
     </footer>
-  </div>
+  </article>
   
-</article>
-
-
-  
-    <article id="post-vue-router与vuex" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/25/vue-router与vuex/" class="article-date">
-  <time datetime="2018-07-25T08:43:09.000Z" itemprop="datePublished">2018-07-25</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/25/vue-router与vuex/">vue-router与vuex</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="前端路由"><a href="#前端路由" class="headerlink" title="前端路由"></a>前端路由</h4><h5 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h5><p>路由,根据一个指定的路径,返回一个指定的页面.</p>
-<h5 id="前端路由-1"><a href="#前端路由-1" class="headerlink" title="前端路由"></a>前端路由</h5><p>只由前端实现的路由称为前端路由.</p>
-<h5 id="用jQuery实现前端路由"><a href="#用jQuery实现前端路由" class="headerlink" title="用jQuery实现前端路由"></a>用jQuery实现前端路由</h5><p>例子1:</p>
-<ol>
-<li>HTML上写上class.</li>
-<li>监听点击事件,获取其index,改变index切换事件,并保存到location.hash;</li>
-<li>新进入页面时,获取location.hash,切换class</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul class=<span class="string">"title"</span>&gt;</span><br><span class="line">    &lt;li class=<span class="string">"active"</span>&gt;1&lt;/li&gt;</span><br><span class="line">    &lt;li&gt;2&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br><span class="line">&lt;ol class=<span class="string">"context"</span>&gt;</span><br><span class="line">    &lt;li class=<span class="string">"active"</span>&gt;第一项&lt;/li&gt;</span><br><span class="line">    &lt;li&gt;第二项&lt;/li&gt;</span><br><span class="line">&lt;/ol&gt;</span><br><span class="line"></span><br><span class="line">//监听点击事件,获取其index,改变index切换事件,并保存到location.hash</span><br><span class="line"></span><br><span class="line">$(<span class="string">'.title'</span>).on(<span class="string">'click'</span>,<span class="string">'li'</span>,(e)=&gt;&#123;</span><br><span class="line">    <span class="built_in">let</span> <span class="variable">$li</span> = $(e.currentTarget);</span><br><span class="line">    <span class="variable">$li</span>.addClass(<span class="string">'active'</span>).siblings().removeClass();</span><br><span class="line">    <span class="built_in">let</span> index = <span class="variable">$li</span>.index();</span><br><span class="line">    $(<span class="string">'.context &gt;li'</span>).eq(index).addClass(<span class="string">'active'</span>).siblings().removeClass();</span><br><span class="line">    location.hash = index;</span><br><span class="line">&#125;)</span><br><span class="line">//新进入页面时,获取location.hash,切换class</span><br><span class="line"><span class="built_in">let</span> index = location.hash.substring(1) || <span class="string">'#0'</span></span><br><span class="line">$(<span class="string">'.title &gt; li'</span>).eq(index).addClass(<span class="string">'active'</span>).siblings().removeClass();</span><br><span class="line">$(<span class="string">'.context &gt; li'</span>).eq(index).addClass(<span class="string">'active'</span>).siblings().removeClass();</span><br></pre></td></tr></table></figure>
-<p>可以改进成:</p>
-<ol>
-<li>HTML写上a标签与class.通过点击a的锚点改变url.</li>
-<li>每次点击a标签改变hash,监听hash的改变切换tab.</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul class=<span class="string">"title"</span>&gt;</span><br><span class="line">    &lt;li class=<span class="string">"active"</span>&gt;&lt;a href=<span class="string">"#0"</span>&gt;1&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">    &lt;li&gt;&lt;a href=<span class="string">"#1"</span>&gt;2&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br><span class="line">&lt;ol class=<span class="string">"context"</span>&gt;</span><br><span class="line">    &lt;li class=<span class="string">"active"</span>&gt;第一项&lt;/li&gt;</span><br><span class="line">    &lt;li&gt;第二项&lt;/li&gt;</span><br><span class="line">&lt;/ol&gt;</span><br><span class="line"></span><br><span class="line">selectedTab();//读取<span class="built_in">hash</span>,改变class</span><br><span class="line"></span><br><span class="line">window.onhashchange = (e) =&gt; &#123;//每次点击a标签改变<span class="built_in">hash</span>,监听<span class="built_in">hash</span>的改变切换tab</span><br><span class="line">    selectedTab();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">selectedTab</span></span>() &#123;</span><br><span class="line">    <span class="built_in">let</span> index = location.hash.substring(1) || <span class="string">'#0'</span></span><br><span class="line">    $(<span class="string">'.title &gt; li'</span>).eq(index).addClass(<span class="string">'active'</span>).siblings().removeClass();</span><br><span class="line">    $(<span class="string">'.context &gt; li'</span>).eq(index).addClass(<span class="string">'active'</span>).siblings().removeClass();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>但是假如有其他锚点,会影响到index的获取.</p>
-<p>使用history.pushState()实现路由.</p>
-<ol>
-<li>点击a标签(禁止默认事件跳转),获取其href,通过pushState改变pathname,读取pathname,改变hash.</li>
-<li>读取pathname,改变class.</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul class=<span class="string">"title"</span>&gt;</span><br><span class="line">    &lt;li class=<span class="string">"active"</span>&gt;&lt;a href=<span class="string">"/tab1"</span>&gt;1&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">    &lt;li&gt;&lt;a href=<span class="string">"/tab2"</span>&gt;2&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br><span class="line">&lt;ol class=<span class="string">"context"</span>&gt;</span><br><span class="line">    &lt;li class=<span class="string">"active"</span>&gt;第一项&lt;/li&gt;</span><br><span class="line">    &lt;li&gt;第二项&lt;/li&gt;</span><br><span class="line">&lt;/ol&gt;</span><br><span class="line"></span><br><span class="line">$(<span class="string">'.title &gt; li'</span>).on(<span class="string">'click'</span>,<span class="string">'a'</span>,(e)=&gt;&#123;//点击a标签(禁止默认事件跳转),获取其href,通过pushState改变pathname,读取pathname,改变<span class="built_in">hash</span></span><br><span class="line">    e.preventDefault();</span><br><span class="line">    <span class="built_in">let</span> a = e.currentTarget;</span><br><span class="line">    <span class="built_in">let</span> path = a.getAttribute(<span class="string">'href'</span>);</span><br><span class="line">    window.history.pushState(null,null,<span class="string">'/test3.html'</span> + path)</span><br><span class="line">    selectedTab()</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">selectedTab</span></span>() &#123;//读取pathname,改变class</span><br><span class="line">    <span class="built_in">let</span> path = location.pathname || <span class="string">'/test3.html/tab1'</span>;</span><br><span class="line">    <span class="built_in">let</span> index = path.substring(path.length-1);</span><br><span class="line">    $(<span class="string">'.title &gt; li'</span>).eq(index - 1).addClass(<span class="string">'active'</span>).siblings().removeClass();</span><br><span class="line">    $(<span class="string">'.context &gt; li'</span>).eq(index - 1).addClass(<span class="string">'active'</span>).siblings().removeClass();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="vue-router"><a href="#vue-router" class="headerlink" title="vue-router"></a>vue-router</h4><p>简单例子:</p>
-<ol>
-<li>HTML中,使用router-link组件来导航,通过传入to属性指定链接,它默认会被渲染成a标签</li>
-<li>路由匹配组件渲染放在router-view组件中</li>
-<li>定义组件,也可以从其他文件中improt进来.</li>
-<li>定义路由routes,通过路由映射组件.</li>
-<li>创建router实例,传递routes.</li>
-<li>在Vue实例中挂载router.</li>
-</ol>
-<p>该例子是hash模式(改变url锚点)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">    // HTML中,使用router-link组件来导航,通过传入to属性指定链接,它默认会被渲染成a标签</span><br><span class="line">    &lt;router-link to=<span class="string">"/tab1"</span>&gt;To tab1&lt;/router-link&gt;</span><br><span class="line">    &lt;router-link to=<span class="string">"/tab2"</span>&gt;To tab2&lt;/router-link&gt;</span><br><span class="line"></span><br><span class="line">    // 路由匹配组件渲染放在router-view组件中</span><br><span class="line">    &lt;router-view&gt;&lt;/router-view&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script src=<span class="string">"https://unpkg.com/vue/dist/vue.js"</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;script src=<span class="string">"https://unpkg.com/vue-router/dist/vue-router.js"</span>&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    //定义组件,也可以从其他文件中improt进来.</span><br><span class="line">    //因为没有improt,所以使用命名空间</span><br><span class="line">    window.tab1 = &#123;</span><br><span class="line">        template: `&lt;div&gt;&#123;&#123;msg&#125;&#125;&lt;/div&gt;`,</span><br><span class="line">        <span class="function"><span class="title">data</span></span>()&#123;</span><br><span class="line">            <span class="built_in">return</span> &#123;</span><br><span class="line">                msg:<span class="string">'tab1'</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    window.tab2 = &#123;</span><br><span class="line">        template: `&lt;div&gt;&#123;&#123;msg&#125;&#125;&lt;/div&gt;`,</span><br><span class="line">        <span class="function"><span class="title">data</span></span>()&#123;</span><br><span class="line">            <span class="built_in">return</span>&#123;</span><br><span class="line">                msg:<span class="string">'tab2'</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    Vue.component(<span class="string">'tab1'</span>,window.tab1);</span><br><span class="line">    Vue.component(<span class="string">'tab2'</span>,window.tab2);</span><br><span class="line"></span><br><span class="line">    //创建router实例</span><br><span class="line">    <span class="built_in">let</span> router = new VueRouter(&#123;</span><br><span class="line">        routes: [</span><br><span class="line">            &#123; path: <span class="string">'/tab1'</span>, component: tab1 &#125;,</span><br><span class="line">            &#123; path: <span class="string">'/tab2'</span>, component: tab2 &#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    //在Vue实例中挂载router.</span><br><span class="line">    <span class="built_in">let</span> app = new Vue(&#123;</span><br><span class="line">        el: <span class="string">'#app'</span>,</span><br><span class="line">        router: router</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
-<h5 id="在vue-cli使用vue-router"><a href="#在vue-cli使用vue-router" class="headerlink" title="在vue-cli使用vue-router"></a>在vue-cli使用vue-router</h5><p>进入根目录</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">npm install --save vue-router</span><br><span class="line">``</span><br><span class="line"></span><br><span class="line">在入口文件main.js里引用vue-router</span><br><span class="line"></span><br><span class="line">``` bash</span><br><span class="line">improt router form <span class="string">'vue-router'</span></span><br><span class="line">improt 组件名 form <span class="string">'组件地址'</span></span><br><span class="line">Vue.use(router)</span><br></pre></td></tr></table></figure>
-<p>在入口文件main.js中的vue实例中注入</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">var myrouter = new router(&#123;</span><br><span class="line">    routes:[&#123;</span><br><span class="line">        path:<span class="string">'/路径'</span>,//指定跳转路径</span><br><span class="line">        component:组件名//指定要跳转的组件</span><br><span class="line">    &#125;]</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">new Vue(&#123;</span><br><span class="line">    el:<span class="string">'#app'</span>,</span><br><span class="line">    component:&#123;App&#125;,</span><br><span class="line">    template:<span class="string">'&lt;App/&gt;'</span></span><br><span class="line">    router:myrouter</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">&lt;router-link to=<span class="string">"/路径"</span>&gt;&lt;/router-link&gt;</span><br></pre></td></tr></table></figure>
-<h5 id="vue-router路由参数传递"><a href="#vue-router路由参数传递" class="headerlink" title="vue-router路由参数传递"></a>vue-router路由参数传递</h5><p>在路由内假如路由的name,在path后面加:/:+传递的参数<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//</span><br><span class="line">routes:[</span><br><span class="line">    &#123;</span><br><span class="line">        name:<span class="string">'路由名'</span></span><br><span class="line">        path:<span class="string">'/路径/:参数名'</span>,</span><br><span class="line">        component:组件名</span><br><span class="line">    &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure></p>
-<p>传递参数,在使用router-link的组件中使用<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//组件中</span><br><span class="line"></span><br><span class="line">&lt;router-link :to=<span class="string">"&#123;name:'路由名',params:&#123;参数名:参数内容&#125;&#125;"</span>&gt;   </span><br><span class="line">&lt;/router-link&gt;</span><br></pre></td></tr></table></figure></p>
-<p>读取参数:$route.params.参数名<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//路由到的组件中</span><br><span class="line">&lt;p&gt;<span class="variable">$route</span>.params.参数名&lt;p&gt;</span><br></pre></td></tr></table></figure></p>
-<h4 id="vuex"><a href="#vuex" class="headerlink" title="vuex"></a>vuex</h4><p>用来状态管理,共享数据,在各个组件之间管理的外部状态.</p>
-<h5 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install vuex</span><br></pre></td></tr></table></figure>
-<h5 id="使用vuex"><a href="#使用vuex" class="headerlink" title="使用vuex"></a>使用vuex</h5><ol>
-<li>引入vuex,通过use使用它.</li>
-<li>创建Vuex.Store实例</li>
-<li>组件都可以通过this.$store.state.key拿到数据</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">improt Vuex from <span class="string">'vuex'</span></span><br><span class="line"></span><br><span class="line">Vue.use(Vuex)</span><br><span class="line"></span><br><span class="line">var store = new Vuex.Store(&#123;</span><br><span class="line">    state:&#123;</span><br><span class="line">        key:value</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">new Vue(&#123;</span><br><span class="line">    el:<span class="string">'#app'</span>,</span><br><span class="line">    router,</span><br><span class="line">    state,</span><br><span class="line">    components:&#123;App&#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">////某个组件中</span><br><span class="line"></span><br><span class="line">this.<span class="variable">$store</span>.state.key 可以直接使用</span><br></pre></td></tr></table></figure>
-<h5 id="组件中改变state-mutation"><a href="#组件中改变state-mutation" class="headerlink" title="组件中改变state-mutation"></a>组件中改变state-mutation</h5><p>mutation只能进行同步操作</p>
-<ol>
-<li>在vuex实例中定义mutations属性</li>
-<li>muations里定义方法,并传入state</li>
-<li>组件中使用this.$store.commit(‘方法’)去改变state</li>
-<li>注意commit传入的是字符串</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">var store = new Vuex.Store(&#123;</span><br><span class="line">    state:&#123;</span><br><span class="line">        num:0</span><br><span class="line">    &#125;,</span><br><span class="line">    mutations:&#123;</span><br><span class="line">        add(state)&#123;</span><br><span class="line">            this.state.num += 1;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">////子组件中</span><br><span class="line">this.<span class="variable">$store</span>.commit(<span class="string">'add'</span>)</span><br><span class="line">&lt;button @click=<span class="string">"<span class="variable">$store</span>.commit('add')"</span>&gt;add&lt;/button&gt;</span><br></pre></td></tr></table></figure>
-<h5 id="组件中改变state-actions"><a href="#组件中改变state-actions" class="headerlink" title="组件中改变state-actions"></a>组件中改变state-actions</h5><p>actions可以进行异步操作(也可以同步)<br>它不能直接操作state,只能通过commit mutation中的方法.</p>
-<ol>
-<li>vuex实例中加入actions属性</li>
-<li>acitons属性中定义方法,方法传入参数context表示上下文对象</li>
-<li>通过context.commit(‘mutations中的方法’)</li>
-<li>组件中通过$this.stote.dispatch(‘方法’)使用</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">var store = new Vuex.store(&#123;</span><br><span class="line">    state:&#123;</span><br><span class="line">        num:0</span><br><span class="line">    &#125;,</span><br><span class="line">    mutations:&#123;</span><br><span class="line">        add(state)&#123;</span><br><span class="line">            state.num += 1;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    actions:&#123;</span><br><span class="line">        add(context)&#123; //同步</span><br><span class="line">            context.commit(<span class="string">'add'</span>);</span><br><span class="line">        &#125;,</span><br><span class="line">        addAfter(context)&#123; //异步</span><br><span class="line">            setTimeout(()=&gt;&#123;</span><br><span class="line">                context.commit(<span class="string">'add'</span>);</span><br><span class="line">            &#125;,1000)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">///子组件中</span><br><span class="line"></span><br><span class="line">this.<span class="variable">$store</span>.dispatch(<span class="string">'add'</span>)</span><br><span class="line"></span><br><span class="line">&lt;button @click=<span class="string">"<span class="variable">$store</span>.dispatch('add')"</span>&gt;添加&lt;/button&gt;</span><br></pre></td></tr></table></figure>
-<h5 id="vuex状态管理流程"><a href="#vuex状态管理流程" class="headerlink" title="vuex状态管理流程"></a>vuex状态管理流程</h5><p>view -&gt; actions -&gt; mutations -&gt; state -&gt; view<br>————————^<br>其中actions可以忽略</p>
-<h5 id="getters选项-获取并计算state中的状态"><a href="#getters选项-获取并计算state中的状态" class="headerlink" title="getters选项,获取并计算state中的状态"></a>getters选项,获取并计算state中的状态</h5><p>一般组件都是用getters来获取状态的,而不是用state</p>
-<ol>
-<li>vuex实例中定义getters属性</li>
-<li>getters属性定义方法,传入参数state</li>
-<li>方法操作state</li>
-<li>组件通过this.$store.getters.方法 获取数据</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var store = new Vuex.Store(&#123;</span><br><span class="line">    state:&#123;</span><br><span class="line">        num:1</span><br><span class="line">    &#125;,</span><br><span class="line">    getters:&#123;</span><br><span class="line">        getNum(state)&#123;</span><br><span class="line">            <span class="built_in">return</span> state.num + <span class="string">'元'</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">//子组件中</span><br><span class="line">this.<span class="variable">$store</span>.getters.getNum</span><br></pre></td></tr></table></figure>
-
-      
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/03/bootstrap/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="Roxas Deng">
+        <meta itemprop="description" content="">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="RoxasDengBlog">
+      </span>
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/25/vue-router与vuex/" data-id="cjr27hnud0014j8pfq0ji96ya" class="article-share-link">Share</a>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2018/08/03/bootstrap/" itemprop="url">bootstrap</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-08-03T04:19:41+08:00">2018-08-03 04:19:41</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
       
+      <h4 id="网格系统-栅栏系统"><a href="#网格系统-栅栏系统" class="headerlink" title="网格系统/栅栏系统"></a>网格系统/栅栏系统</h4><p>所有
+      
+    </main>
+    <footer class="post-footer">
       
     </footer>
-  </div>
+  </article>
   
-</article>
-
-
-  
-    <article id="post-vue-cli手脚架" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/25/vue-cli手脚架/" class="article-date">
-  <time datetime="2018-07-25T08:42:39.000Z" itemprop="datePublished">2018-07-25</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/25/vue-cli手脚架/">vue-cli手脚架</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g @vue/cli</span><br></pre></td></tr></table></figure>
-<p>安装成后可运行次命令检测是否成功</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vue --version</span><br></pre></td></tr></table></figure>
-<h4 id="安装vue-serve"><a href="#安装vue-serve" class="headerlink" title="安装vue serve"></a>安装vue serve</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g @vue/cli-service-global</span><br></pre></td></tr></table></figure>
-<h4 id="创建一个项目"><a href="#创建一个项目" class="headerlink" title="创建一个项目"></a>创建一个项目</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">winpty vue.cmd create 项目名称</span><br></pre></td></tr></table></figure>
-<h4 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h4><h5 id="1-选择特性"><a href="#1-选择特性" class="headerlink" title="1.选择特性"></a>1.选择特性</h5><p>有两个路线选择如何加载插件,按Enter确定,上下移动,回车选择/取消.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1. default 默认</span><br><span class="line">2. Manually select features 手动选择</span><br></pre></td></tr></table></figure>
-<h5 id="2-1-默认加载"><a href="#2-1-默认加载" class="headerlink" title="2.1 默认加载"></a>2.1 默认加载</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line"> </span><br><span class="line"><span class="comment">##### 2.2 手动加载</span></span><br><span class="line"></span><br><span class="line"><span class="comment">##### 2.2.1 选择加载插件</span></span><br><span class="line">``` bash</span><br><span class="line">1. Babel</span><br><span class="line">2. TS</span><br><span class="line">3. PWA Support</span><br><span class="line">4. Router</span><br><span class="line">5. Vuex</span><br><span class="line">6. Css Pre-processors 支持CSS预处理器</span><br><span class="line">7. Linter / Formatter 支持代码风格检查和格式化</span><br><span class="line">8. Uint Testing 支持单元测试</span><br><span class="line">9. E2E Testing 支持E2E测试</span><br></pre></td></tr></table></figure>
-<h5 id="2-2-2-router设置"><a href="#2-2-2-router设置" class="headerlink" title="2.2.2 router设置"></a>2.2.2 router设置</h5><p>Use history mode for router?<br>是否使用history模式(需要后台支持)</p>
-<h5 id="2-2-3-CSS预处理器选择"><a href="#2-2-3-CSS预处理器选择" class="headerlink" title="2.2.3 CSS预处理器选择"></a>2.2.3 CSS预处理器选择</h5><p>Sass/SCSS<br>Less<br>Stylus</p>
-<h5 id="2-2-4-配置文件位置"><a href="#2-2-4-配置文件位置" class="headerlink" title="2.2.4 配置文件位置"></a>2.2.4 配置文件位置</h5><p>In dedicated config files 根目录<br>package.json</p>
-<h5 id="2-2-5-未来是否使用该配置"><a href="#2-2-5-未来是否使用该配置" class="headerlink" title="2.2.5 未来是否使用该配置"></a>2.2.5 未来是否使用该配置</h5><h4 id="启动项目"><a href="#启动项目" class="headerlink" title="启动项目"></a>启动项目</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run server</span><br></pre></td></tr></table></figure>
-<h4 id="输出项目"><a href="#输出项目" class="headerlink" title="输出项目"></a>输出项目</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run build</span><br></pre></td></tr></table></figure>
-      
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/26/Axios/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="Roxas Deng">
+        <meta itemprop="description" content="">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="RoxasDengBlog">
+      </span>
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/25/vue-cli手脚架/" data-id="cjr27hntu000qj8pfo0fw2vut" class="article-share-link">Share</a>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2018/07/26/Axios/" itemprop="url">Axios</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-07-26T20:21:20+08:00">2018-07-26 20:21:20</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
       
+      <h4 id="Axios的好处"><a href="#Axios的好处" class="headerlink" title="Axios的好处"></a>Axios的好处</h4><p>从浏览器中创
+      
+    </main>
+    <footer class="post-footer">
       
     </footer>
-  </div>
+  </article>
   
-</article>
-
-
-  
-    <article id="post-render函数" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/25/render函数/" class="article-date">
-  <time datetime="2018-07-25T08:42:28.000Z" itemprop="datePublished">2018-07-25</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/25/render函数/">render函数</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="初步了解"><a href="#初步了解" class="headerlink" title="初步了解"></a>初步了解</h4><p>定义一个组件,使用template<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">    &lt;comp-child :level=<span class="string">"level"</span>&gt;</span><br><span class="line">        我是组件</span><br><span class="line">    &lt;/comp-child&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    Vue.component(<span class="string">'comp-child'</span>,&#123;</span><br><span class="line">        props:[<span class="string">'level'</span>],</span><br><span class="line">        template:`</span><br><span class="line">        &lt;div&gt;</span><br><span class="line">            &lt;h1 v-if=<span class="string">"level===1"</span>&gt;</span><br><span class="line">                &lt;slot&gt;&lt;/slot&gt;</span><br><span class="line">            &lt;/h1&gt;</span><br><span class="line">            &lt;h2 v-if=<span class="string">"level===2"</span>&gt;</span><br><span class="line">                &lt;slot&gt;&lt;/slot&gt;</span><br><span class="line">            &lt;/h2&gt;</span><br><span class="line">            &lt;h3 v-if=<span class="string">"level===3"</span>&gt;</span><br><span class="line">                &lt;slot&gt;&lt;/slot&gt;</span><br><span class="line">            &lt;/h3&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        `</span><br><span class="line">    &#125;)</span><br><span class="line">    var app = new Vue(&#123;</span><br><span class="line">        el:<span class="string">'#app'</span>,</span><br><span class="line">        data:&#123;</span><br><span class="line">            level:1</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
-<p>再定义一个组件,使用render函数,其效果和上面例子一样</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(<span class="string">'comp-child'</span>,&#123;</span><br><span class="line">    props:[<span class="string">'level'</span>],</span><br><span class="line">    render:<span class="keyword">function</span>(createElement)&#123;</span><br><span class="line">        <span class="built_in">return</span> createElement(<span class="string">'h'</span>+this.level,this.<span class="variable">$slots</span>.default);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h4 id="render函数的第一个参数-必须"><a href="#render函数的第一个参数-必须" class="headerlink" title="render函数的第一个参数(必须)"></a>render函数的第一个参数(必须)</h4><p>在render函数的方法中,参数必须是createElement,它是类型是function.</p>
-<p>render函数的第一个参数可以是:</p>
-<ol>
-<li><p>String<br> html标签</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(<span class="string">'child'</span>,&#123;</span><br><span class="line">    render:<span class="keyword">function</span>(createElement)&#123;</span><br><span class="line">        <span class="built_in">return</span> createElement(<span class="string">'div'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Object<br> 一个含有数据选项的对象</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(<span class="string">'child'</span>,&#123;</span><br><span class="line">    render:<span class="keyword">function</span>(createElement)&#123;</span><br><span class="line">        <span class="built_in">return</span> createElement(&#123;</span><br><span class="line">            template:<span class="string">'&lt;div&gt;&lt;/div&gt;'</span></span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Function<br> 方法返回含有数据选项的对象</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(<span class="string">'child'</span>,&#123;</span><br><span class="line">    render:<span class="keyword">function</span>(createElement)&#123;</span><br><span class="line">        var domFn = <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">            <span class="built_in">return</span> &#123;</span><br><span class="line">                template:<span class="string">'&lt;div&gt;&lt;/div&gt;'</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">return</span> createElement(domFn());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h4 id="render函数的第二个参数"><a href="#render函数的第二个参数" class="headerlink" title="render函数的第二个参数"></a>render函数的第二个参数</h4><p>第二个参数是可选,第二个参数是数据对象(只能是Object)</p>
-<ol>
-<li>class</li>
-<li>style</li>
-<li>attrs:正常的html属性</li>
-<li>domProps:原生的DOM属性<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(<span class="string">'child-4'</span>, &#123;</span><br><span class="line">    render: <span class="keyword">function</span> (createElement) &#123;</span><br><span class="line">        <span class="built_in">return</span> createElement(<span class="string">'div'</span>,&#123;</span><br><span class="line">            class:&#123;</span><br><span class="line">                active:<span class="literal">true</span>,</span><br><span class="line">                danger:<span class="literal">false</span></span><br><span class="line">            &#125;,</span><br><span class="line">            style:&#123;</span><br><span class="line">                color:<span class="string">'red'</span>,</span><br><span class="line">                fontSize:<span class="string">'16px'</span></span><br><span class="line">            &#125;,</span><br><span class="line">            attrs:&#123;</span><br><span class="line">                id:<span class="string">'foo'</span>,</span><br><span class="line">                src:<span class="string">'http://baidu.com'</span></span><br><span class="line">            &#125;,</span><br><span class="line">            domProps:&#123;</span><br><span class="line">                innerText:<span class="string">'Hello World!'</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h4 id="render函数的第三个参数"><a href="#render函数的第三个参数" class="headerlink" title="render函数的第三个参数"></a>render函数的第三个参数</h4><p>第三个参数是可选的</p>
-<ol>
-<li>String:创建文本子节点</li>
-<li>Array:创建元素子节点(VNODE)</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(<span class="string">'child-5'</span>, &#123;</span><br><span class="line">    render: <span class="keyword">function</span> (createElement) &#123;</span><br><span class="line">        <span class="built_in">return</span> createElement(<span class="string">'div'</span>,[ //:array创建元素节点</span><br><span class="line">            createElement(<span class="string">'span'</span>,<span class="string">'Hello world!'</span>) //string:创建文本节点</span><br><span class="line">        ])</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h4 id="this-slots-插槽-在render函数中的应用"><a href="#this-slots-插槽-在render函数中的应用" class="headerlink" title="this.$slots(插槽)在render函数中的应用"></a>this.$slots(插槽)在render函数中的应用</h4><p>第三个参数的数组存的是VNODE</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;child&gt;</span><br><span class="line">    &lt;h3 slot=<span class="string">"header"</span>&gt;标题&lt;/h3&gt;</span><br><span class="line">    &lt;p&gt;第一段&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;第二段&lt;/p&gt;</span><br><span class="line">    &lt;h5 slot=<span class="string">"footer"</span>&gt;结尾&lt;/h5&gt;</span><br><span class="line">&lt;/child&gt;</span><br><span class="line"></span><br><span class="line">Vue.component(<span class="string">'child'</span>, &#123;</span><br><span class="line">    render: <span class="keyword">function</span> (createElement) &#123;</span><br><span class="line">        var header = this.<span class="variable">$slots</span>.header; //返回的内容就是含有VNODE的数组</span><br><span class="line">        var main = this.<span class="variable">$slots</span>.default;</span><br><span class="line">        var footer = this.<span class="variable">$slots</span>.footer;</span><br><span class="line">        <span class="built_in">return</span> createElement(<span class="string">'div'</span>,[</span><br><span class="line">            createElement(<span class="string">'header'</span>,header),//返回的内容就是VNODE</span><br><span class="line">            createElement(<span class="string">'main'</span>,main),</span><br><span class="line">            createElement(<span class="string">'footer'</span>,footer)</span><br><span class="line">        ])</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h4 id="在rander函数中使用props传递数据"><a href="#在rander函数中使用props传递数据" class="headerlink" title="在rander函数中使用props传递数据"></a>在rander函数中使用props传递数据</h4><p>在render函数中,props传递过来的数据,可以用this.绑定的数据直接在render函数中使用.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">    &lt;child :color=<span class="string">"colorchange"</span>&gt;&lt;/child&gt;</span><br><span class="line">    &lt;button @click=<span class="string">"clickMe"</span>&gt;换色&lt;/button&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    Vue.component(<span class="string">'child'</span>, &#123;</span><br><span class="line">        props:[<span class="string">'color'</span>],</span><br><span class="line">        render: <span class="keyword">function</span> (createElement) &#123;</span><br><span class="line">            var color</span><br><span class="line">            <span class="keyword">if</span>(this.color)&#123;</span><br><span class="line">                color = <span class="string">'red'</span></span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                color = <span class="string">'blue'</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">return</span> createElement(<span class="string">'div'</span>,&#123;</span><br><span class="line">                style:&#123;</span><br><span class="line">                    color:color</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;,<span class="string">'hello world!'</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    var app6 = new Vue(&#123;</span><br><span class="line">        el: <span class="string">'#app'</span>,</span><br><span class="line">        data: &#123;</span><br><span class="line">            colorchange:<span class="literal">false</span></span><br><span class="line">        &#125;,</span><br><span class="line">        methods:&#123;</span><br><span class="line">            clickMe:<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">                this.colorchange = !this.colorchange</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<h4 id="v-model在render函数中的使用"><a href="#v-model在render函数中的使用" class="headerlink" title="v-model在render函数中的使用"></a>v-model在render函数中的使用</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">    &lt;comp v-model=<span class="string">"name"</span>&gt;&lt;/comp&gt;</span><br><span class="line">    &#123;&#123;name&#125;&#125;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    Vue.component(<span class="string">'comp'</span>,&#123;</span><br><span class="line">        render:<span class="keyword">function</span>(createElement)&#123;</span><br><span class="line">            var _this = this;</span><br><span class="line">            <span class="built_in">return</span> createElement(<span class="string">'input'</span>,&#123;</span><br><span class="line">                domProps:&#123;</span><br><span class="line">                    value:_this.name</span><br><span class="line">                &#125;,</span><br><span class="line">                on:&#123;</span><br><span class="line">                    input:<span class="keyword">function</span>(e)&#123;</span><br><span class="line">                        _this.<span class="variable">$emit</span>(<span class="string">'input'</span>,e.target.value)</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    var app = new Vue(&#123;</span><br><span class="line">        el:<span class="string">'#app'</span>,</span><br><span class="line">        data:&#123;</span><br><span class="line">            name:<span class="string">''</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<h4 id="作用域插槽在render函数中的使用"><a href="#作用域插槽在render函数中的使用" class="headerlink" title="作用域插槽在render函数中的使用"></a>作用域插槽在render函数中的使用</h4><h4 id="函数化组件的应用"><a href="#函数化组件的应用" class="headerlink" title="函数化组件的应用"></a>函数化组件的应用</h4>
-      
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/25/vue-router与vuex/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="Roxas Deng">
+        <meta itemprop="description" content="">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="RoxasDengBlog">
+      </span>
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/25/render函数/" data-id="cjr27hntq000mj8pfqqh8ezz8" class="article-share-link">Share</a>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2018/07/25/vue-router与vuex/" itemprop="url">vue-router与vuex</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-07-25T16:43:09+08:00">2018-07-25 16:43:09</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
       
+      <h4 id="前端路由"><a href="#前端路由" class="headerlink" title="前端路由"></a>前端路由</h4><h5 id="路由"><a href="#路由"
+      
+    </main>
+    <footer class="post-footer">
       
     </footer>
-  </div>
+  </article>
   
-</article>
-
-
-  
-    <article id="post-自定义指令" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/25/自定义指令/" class="article-date">
-  <time datetime="2018-07-25T08:42:04.000Z" itemprop="datePublished">2018-07-25</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/25/自定义指令/">自定义指令</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h4><p>跟组件类似分全局注册和局部注册,区别就是把component换成derective</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Vue.derective(<span class="string">'nanme'</span>,&#123;</span><br><span class="line">    钩子函数:<span class="keyword">function</span>(el,binding)&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h4 id="钩子函数"><a href="#钩子函数" class="headerlink" title="钩子函数"></a>钩子函数</h4><p>指令定义提供了几个钩子函数(可选)</p>
-<p>bind:只调用一次,指令第一次绑定到元素时调用,用这个钩子函数可以定义一个在绑定时执行一次的初始化动作.</p>
-<p>inserted:被绑定元素插入父接点时调用(父节点存在即可调用,不必存在于document中).</p>
-<p>update:被绑定元素所在的模板更新时调用,而不论绑定值是否变化.通过比较更新后的绑定值,可以忽略不必要的模板更新.</p>
-<p>componentUpdated:被绑定元素所在模板完成一次更新周期时调用.</p>
-<p>unbind:只调用一次,指令与元素解绑时调用.</p>
-<h4 id="钩子函数的参数"><a href="#钩子函数的参数" class="headerlink" title="钩子函数的参数"></a>钩子函数的参数</h4><p>el:指令所绑定的元素,可以直接用来操作DOM.</p>
-<p>binding:一个对象.包含以下属性:</p>
-<ol>
-<li>name:指令名,不包括v-前缀.</li>
-<li>value:指令的绑定值,例如v-mydirective=”1 + 1”,value=”2”.</li>
-<li>oldValue:指令绑定的前一个值,仅在update和componentUpdated钩子中可用.无论值是否改变都可用.</li>
-<li>expression:绑定值的字符串形式.如上例:expression=”1+1”.</li>
-<li>arg:传给指令的参数. 如:v-my-directive:foo,arg=”foo”.</li>
-<li>modifiers:一个包含修饰符的对象.例如v-my-directive.a.b modifiers的值是{a:true,b:true}</li>
-<li>vnode:Vue编译生成的虚拟节点.</li>
-<li>oldVnode:上一个虚拟节点,仅在update和componentUpdated钩子中可用.</li>
-</ol>
-<p>例:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">    &lt;p v-test:goudan.a.b.c=<span class="string">"obq"</span>&gt;&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    Vue.directive(<span class="string">'test'</span>,&#123;</span><br><span class="line">        <span class="built_in">bind</span>:<span class="keyword">function</span>(el,binding)&#123;</span><br><span class="line">            el.innerHTML = <span class="string">'v-test:goudan.a.b.c="obq"'</span> + <span class="string">'&lt;br/&gt;'</span> + </span><br><span class="line">                            <span class="string">'name'</span> + <span class="string">':'</span> + binding.name + <span class="string">'&lt;br&gt;'</span> +  //<span class="built_in">test</span></span><br><span class="line">                            <span class="string">'value'</span> + <span class="string">':'</span> + binding.value + <span class="string">'&lt;br&gt;'</span> + //我是value</span><br><span class="line">                            <span class="string">'argument'</span> + <span class="string">':'</span> + binding.arg + <span class="string">'&lt;br&gt;'</span> + //goudan</span><br><span class="line">                            <span class="string">'modifiers'</span> + <span class="string">':'</span> + JSON.stringify(binding.modifiers)  + <span class="string">'&lt;br&gt;'</span> //&#123;a:<span class="literal">true</span>,b:<span class="literal">true</span>,c:<span class="literal">true</span>&#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    var app = new Vue(&#123;</span><br><span class="line">        el:<span class="string">'#app'</span>,</span><br><span class="line">        data:&#123;</span><br><span class="line">            obq:<span class="string">'我是value'</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
-
-      
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/25/vue-cli手脚架/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="Roxas Deng">
+        <meta itemprop="description" content="">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="RoxasDengBlog">
+      </span>
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/25/自定义指令/" data-id="cjr27hnu30010j8pfhtj56ed0" class="article-share-link">Share</a>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2018/07/25/vue-cli手脚架/" itemprop="url">vue-cli手脚架</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-07-25T16:42:39+08:00">2018-07-25 16:42:39</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
       
+      <h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><figure class="hljs highlight bas
+      
+    </main>
+    <footer class="post-footer">
       
     </footer>
-  </div>
+  </article>
   
-</article>
-
-
   
-
-
-  <nav id="page-nav">
-    
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/"><i class="fas fa-angle-right" aria-label="下一页"></i></a>
   </nav>
+  
+  
+</div>
 
-</section>
-        
-          <aside id="sidebar">
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
   
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li></ul>
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
     </div>
   </div>
-
-
+  <div class="search-result-box" id="search-result"></div>
   
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/avatar.png" alt="Roxas Deng">
+  
+  <h1 class="author-name">Roxas Deng</h1>
+  <h2 class="author-description"></h2>
+  <div class="site-count">
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
+    <div class="archives-count">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">44</a></div>
+    </div>
+    
+    
+    
+    <span class="site-count-divider divider">|</span>
+    
+    <div class="categories-count">
+      <div class="site-count-title">分类</div>
+      <div><a href="/categories/">2</a></div>
+    </div>
+    
+    
+    
+    <span class="site-count-divider divider">|</span>
+    
+    <div class="tags-count">
+      <div class="site-count-title">标签</div>
+      <div><a href="/tags/">2</a></div>
+    </div>
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>社交链接</p></div>
       <ul>
         
-          <li>
-            <a href="/2019/01/18/Promise的使用/">(no title)</a>
-          </li>
+        <li><i class="fas fa-envelope"></i><a href="mailto:332519096@qq.com" target="_blank">E-Mail</a></li>
         
-          <li>
-            <a href="/2019/01/11/密码强度/">密码强度的实现</a>
-          </li>
-        
-          <li>
-            <a href="/2018/09/04/CSS盒子多边框/">CSS盒子多边框</a>
-          </li>
-        
-          <li>
-            <a href="/2018/09/03/表单美化/">表单美化</a>
-          </li>
-        
-          <li>
-            <a href="/2018/08/03/bootstrap/">bootstrap</a>
-          </li>
+        <li><i class="fab fa-github"></i><a href="https://github.com/roxas332519096" target="_blank">GitHub</a></li>
         
       </ul>
     </div>
+    
+    
   </div>
-
-  
 </aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">Roxas Deng</span><span class="year"><i class="far fa-copyright"></i>2019</span>
+        </div>
+        
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
+        </div>
         
       </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2019 Roxas Deng<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
     </div>
   </div>
 </footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/script.js"></script>
-
-
-
-  </div>
-</body>
+  </body>
 </html>

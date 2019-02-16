@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    
+    <meta name="keywords" content="Life, ARIA, Hexo">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="RoxasDengBlog" type="application/atom+xml" />
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>函数节流与防抖 | RoxasDengBlog</title>
+  </head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">RoxasDengBlog</a></h1>
+        <h2 class="subtitle"></h2>
+      </div>
+      
+      <div class="logo">
+        <img src="/images/logo.png" alt="logo">
+      </div>
+      
+    </div>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
+        
+        <li role="menuitem"><a href="/">首页</a></li>
+        
+        <li role="menuitem"><a href="/archives/">归档</a></li>
+        
+        <li role="menuitem"><a href="/categories/">分类</a></li>
+        
+        <li role="menuitem"><a href="/tags/">标签</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="page">
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/24/函数节流与防抖/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="Roxas Deng">
+       <meta itemprop="description" content="">
+       <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="RoxasDengBlog">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">函数节流与防抖</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-01-24T11:08:26+08:00">2019-01-24 11:08:26</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <h4 id="函数防抖-debounce"><a href="#函数防抖-debounce" class="headerlink" title="函数防抖(debounce)"></a>函数防抖(debounce)</h4><h5 id="函数防抖的定义"><a href="#函数防抖的定义" class="headerlink" title="函数防抖的定义"></a>函数防抖的定义</h5><p>当事件触发n秒后,才会回调函数,假如n秒内再次触发事件,则时间重新计算.</p>
+<h5 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h5><p>定义 debounce 函数,传入回调函数与节流时间,若出触发事件,生成定时器,当在节流时间内再次触发时间,则清空定时器,生成一个新的定时器.直到节流时间内没有新时间触发,执行回调.</p>
+<h5 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h5><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-keyword">function</span> debounce(fn,<span class="hljs-built_in">wait</span>)&#123;<br>    <span class="hljs-built_in">let</span> timer = null;<br>    <span class="hljs-built_in">return</span> ()=&gt;&#123;<br>         <span class="hljs-keyword">if</span>(timer)&#123;<br>             clearTimeout(timer);<br>             timer = null<br>         &#125;<br>         timer = setTimeout(()=&gt;&#123;<br>             fn()<br>         &#125;,<span class="hljs-built_in">wait</span>)<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h4 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h4><ol>
+<li>每次resize或者scroll触发统计事件 </li>
+<li>文本输入调用ajax</li>
+</ol>
+<h4 id="函数节流-throttle"><a href="#函数节流-throttle" class="headerlink" title="函数节流(throttle)"></a>函数节流(throttle)</h4><h5 id="函数节流的定义"><a href="#函数节流的定义" class="headerlink" title="函数节流的定义"></a>函数节流的定义</h5><p>在一个单位时间内,无论事件触发多少次,都只能回调一次函数</p>
+<h5 id="原理-1"><a href="#原理-1" class="headerlink" title="原理"></a>原理</h5><p>使用时间戳来判断是否到回调执行时间,记录上次执行时间,当当前时间与上次执行时间间隔大于时间戳则执行回调.</p>
+<h5 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h5><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs bash">//实现方式1<br><span class="hljs-keyword">function</span> throttle(fn,gapTime)&#123;<br>    <span class="hljs-built_in">let</span> lastTime = 0;<br>    <span class="hljs-built_in">return</span> ()=&gt;&#123;<br>        <span class="hljs-built_in">let</span> currTime = new Date();<br>        <span class="hljs-keyword">if</span>(currTime - lastTime &gt; gapTime || !lastTime)&#123;<br>            fn();<br>            lastTime = currTime<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h5 id="应用场景-1"><a href="#应用场景-1" class="headerlink" title="应用场景"></a>应用场景</h5><ol>
+<li>DOM元素拖动</li>
+<li>Canvas</li>
+<li>计算鼠标移动距离</li>
+<li>自动联想</li>
+<li>滚动到底部加载数据</li>
+</ol>
+
+    </main>
+    <footer class="post-footer">
+      
+    </footer>
+  </article>
+  
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+      <a href="/2019/01/18/Promise的使用/" rel="next" title="Promise的使用"><i class="fas fa-angle-left"></i><span class="nav-title">Promise的使用</span></a>
+      
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+      <a href="/2019/01/24/图片延迟加载/" rel="prev" title="图片延迟加载"><span class="nav-title">图片延迟加载</span><i class="fas fa-angle-right"></i></a>
+      
+    </div>
+  </nav>
+  
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/avatar.png" alt="Roxas Deng">
+  
+  <h1 class="author-name">Roxas Deng</h1>
+  <h2 class="author-description"></h2>
+  <div class="site-count">
+    
+    <div class="archives-count">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">44</a></div>
+    </div>
+    
+    
+    
+    <span class="site-count-divider divider">|</span>
+    
+    <div class="categories-count">
+      <div class="site-count-title">分类</div>
+      <div><a href="/categories/">2</a></div>
+    </div>
+    
+    
+    
+    <span class="site-count-divider divider">|</span>
+    
+    <div class="tags-count">
+      <div class="site-count-title">标签</div>
+      <div><a href="/tags/">2</a></div>
+    </div>
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    
+    
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>文章目录</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#函数防抖-debounce"><span class="toc-text">函数防抖(debounce)</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#函数防抖的定义"><span class="toc-text">函数防抖的定义</span></a></li><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#原理"><span class="toc-text">原理</span></a></li><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#代码"><span class="toc-text">代码</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#应用场景"><span class="toc-text">应用场景</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#函数节流-throttle"><span class="toc-text">函数节流(throttle)</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#函数节流的定义"><span class="toc-text">函数节流的定义</span></a></li><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#原理-1"><span class="toc-text">原理</span></a></li><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#代码-1"><span class="toc-text">代码</span></a></li><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#应用场景-1"><span class="toc-text">应用场景</span></a></li></ol></li></ol></div>
+    </div>
+    
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>社交链接</p></div>
+      <ul>
+        
+        <li><i class="fas fa-envelope"></i><a href="mailto:332519096@qq.com" target="_blank">E-Mail</a></li>
+        
+        <li><i class="fab fa-github"></i><a href="https://github.com/roxas332519096" target="_blank">GitHub</a></li>
+        
+      </ul>
+    </div>
+    
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">Roxas Deng</span><span class="year"><i class="far fa-copyright"></i>2019</span>
+        </div>
+        
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  </body>
+</html>

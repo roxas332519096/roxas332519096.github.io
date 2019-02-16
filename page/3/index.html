@@ -1,881 +1,615 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    
+    <meta name="keywords" content="Life, ARIA, Hexo">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="RoxasDengBlog" type="application/atom+xml" />
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
 
-  
-  <title>RoxasDengBlog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="RoxasDengBlog">
-<meta property="og:url" content="http://yoursite.com/page/3/index.html">
-<meta property="og:site_name" content="RoxasDengBlog">
-<meta property="og:locale" content="default">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="RoxasDengBlog">
-  
-    <link rel="alternate" href="/atom.xml" title="RoxasDengBlog" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
-</head>
-
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">RoxasDengBlog</a>
-      </h1>
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>RoxasDengBlog</title>
+  </head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">RoxasDengBlog</a></h1>
+        <h2 class="subtitle"></h2>
+      </div>
+      
+      <div class="logo">
+        <img src="/images/logo.png" alt="logo">
+      </div>
       
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
         
-          <a class="main-nav-link" href="/">Home</a>
+        <li role="menuitem"><a href="/">首页</a></li>
         
-          <a class="main-nav-link" href="/archives">Archives</a>
+        <li role="menuitem"><a href="/archives/">归档</a></li>
         
-      </nav>
-      <nav id="sub-nav">
+        <li role="menuitem"><a href="/categories/">分类</a></li>
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        <li role="menuitem"><a href="/tags/">标签</a></li>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
-      </div>
-    </div>
+      </ul>
+    </nav>
   </div>
 </header>
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-sass" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/13/sass/" class="article-date">
-  <time datetime="2018-06-12T16:17:03.000Z" itemprop="datePublished">2018-06-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/13/sass/">sass</a>
-    </h1>
-  
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="SASS"><a href="#SASS" class="headerlink" title="SASS"></a>SASS</h3><h4 id="安装"><a href="#安装" class="headerlink" title="安装:"></a>安装:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install  node-sass  -g</span><br></pre></td></tr></table></figure>
-<p>安装成功<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node-sass -v</span><br></pre></td></tr></table></figure></p>
-<h4 id="编译"><a href="#编译" class="headerlink" title="编译:"></a>编译:</h4><p>将路径src/css的sass翻译到dist/css,并监听<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node-sass src/css/ -o dist/css/ -w</span><br></pre></td></tr></table></figure></p>
-<h4 id="语法"><a href="#语法" class="headerlink" title="语法:"></a>语法:</h4><h5 id="1-嵌套"><a href="#1-嵌套" class="headerlink" title="1.嵌套"></a>1.嵌套</h5><p>css:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">    margin:20px;</span><br><span class="line">&#125;</span><br><span class="line">div p &#123;</span><br><span class="line">    padding:20px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>scss:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">div&#123;</span><br><span class="line">    margin:20px;</span><br><span class="line">    p&#123;padding:20px;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h5 id="2-变量"><a href="#2-变量" class="headerlink" title="2.变量"></a>2.变量</h5><p>css:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a&#123;</span><br><span class="line">    color:<span class="comment">#ddd;</span></span><br><span class="line">&#125;</span><br><span class="line">p&#123;</span><br><span class="line">    color:<span class="comment">#ddd;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>scss:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$color</span>-<span class="built_in">test</span>:<span class="comment">#ddd;</span></span><br><span class="line">a&#123;</span><br><span class="line">    color:<span class="variable">$color</span>-<span class="built_in">test</span>;</span><br><span class="line">&#125;</span><br><span class="line">p&#123;</span><br><span class="line">    color:<span class="variable">$color</span>-<span class="built_in">test</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h5 id="3-引用-用-amp-引用父选择器"><a href="#3-引用-用-amp-引用父选择器" class="headerlink" title="3.引用,用&amp;引用父选择器"></a>3.引用,用&amp;引用父选择器</h5><p>css:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">a&#123;</span><br><span class="line">    color:<span class="comment">#111;</span></span><br><span class="line">&#125;</span><br><span class="line">a:hover&#123;</span><br><span class="line">    color:<span class="comment">#222;</span></span><br><span class="line">&#125;</span><br><span class="line">a:active&#123;</span><br><span class="line">    color:<span class="comment">#333;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>scss:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">a&#123;</span><br><span class="line">    color:<span class="comment">#111;</span></span><br><span class="line">    &amp;:hover&#123;</span><br><span class="line">        color:<span class="comment">#222;</span></span><br><span class="line">    &#125;</span><br><span class="line">    &amp;:active&#123;</span><br><span class="line">        color:<span class="comment">#333;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h5 id="4-导入-import"><a href="#4-导入-import" class="headerlink" title="4.导入,@import"></a>4.导入,@import</h5><p>Sass 的 @import 指令用于导入其他样式模块。</p>
-<p>假设现有 _variables.scss _buttons.scss _forms.scss 三个模块，可以通过一个 main.scss 导入这些模块。</p>
-<p>scss:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// main.scss</span><br><span class="line">@import <span class="string">"variables"</span>;</span><br><span class="line">@import <span class="string">"buttons"</span>;</span><br><span class="line">@import <span class="string">"forms"</span>;</span><br></pre></td></tr></table></figure></p>
-<p>子模块文件前面的下划线用于告知 Sass 编译器不要把这个模块编译成单独的 CSS 文件</p>
-<h5 id="5-嵌套-import"><a href="#5-嵌套-import" class="headerlink" title="5.嵌套@import"></a>5.嵌套@import</h5><p>Sass 的 @import 指令可以嵌套在选择器内，产生嵌套效果</p>
-<p>scss:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@import <span class="string">"variables"</span>;</span><br><span class="line">@import <span class="string">"mixins"</span>;</span><br><span class="line"></span><br><span class="line">.slamdunk &#123;</span><br><span class="line">  min-width: 320px;</span><br><span class="line">  @import <span class="string">"navbar"</span>;</span><br><span class="line">  @import <span class="string">"content"</span>;</span><br><span class="line">  @import <span class="string">"players"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p> 注意:CSS 也有 @import，在 IE 6-8 上会导致多个 CSS 文件不能同时下载的情况，影响网页性能</p>
-<h5 id="6-运算"><a href="#6-运算" class="headerlink" title="6.运算"></a>6.运算</h5><p> Sass 支持对数字标准的算术运算(加法 +，减法 - ，乘法 *，除法 / 和取模 %) 并保留单位;</p>
-<p>由于 CSS 中 / 可作为分隔符，因此除法运算要稍微注意以下情况。</p>
-<p>scss:<br> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"> p &#123;</span><br><span class="line">  font: 10px/8px;                // 原生的CSS，不作为除法</span><br><span class="line">  <span class="variable">$width</span>: 1000px;</span><br><span class="line">  width: <span class="variable">$width</span>/2;               // 使用了变量, 作为除法</span><br><span class="line">  width: round(1.5)/2;           // 使用了函数, 作为除法</span><br><span class="line">  height: (500px/2);             // 使用了括号, 作为除法</span><br><span class="line">  margin-left: 5px + 8px/2px;    // 使用了 +, 作为除法</span><br><span class="line">  font: (italic bold 10px/8px);  // 在一个列表（list）中，括号可以被忽略。</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p> css:<br> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> p &#123;</span><br><span class="line">  font: 10px/8px;</span><br><span class="line">  width: 500px;</span><br><span class="line">  height: 250px;</span><br><span class="line">  margin-left: 9px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h5 id="7-注释"><a href="#7-注释" class="headerlink" title="7.注释:"></a>7.注释:</h5><p> 单行注释 // 会在 .scss 被编译成 .css 后移除</p>
-<p> scss:<br> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// Header</span><br><span class="line">.header&#123;</span><br><span class="line">    height:60px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p> css:<br> .header {<br>     height:60px;<br> }</p>
 
-      
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+
+<div id="index" class="index page">
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/15/Flex布局/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="Roxas Deng">
+        <meta itemprop="description" content="">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="RoxasDengBlog">
+      </span>
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/13/sass/" data-id="cjr27hntr000nj8pfbuilrar5" class="article-share-link">Share</a>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2018/06/15/Flex布局/" itemprop="url">Flex布局</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-06-15T20:39:34+08:00">2018-06-15 20:39:34</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
       
+      <h3 id="FLEX布局"><a href="#FLEX布局" class="headerlink" title="FLEX布局"></a>FLEX布局</h3><h3 id="flex-cont
+      
+    </main>
+    <footer class="post-footer">
       
     </footer>
-  </div>
+  </article>
   
-</article>
-
-
-  
-    <article id="post-Seesion--LocalStorage--Cache-Control--Expires--ETag" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/11/Seesion--LocalStorage--Cache-Control--Expires--ETag/" class="article-date">
-  <time datetime="2018-06-11T09:33:05.000Z" itemprop="datePublished">2018-06-11</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/11/Seesion--LocalStorage--Cache-Control--Expires--ETag/">Seesion/LocalStorage/Cache-Control/Expires/ETag</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="Session-与-Cookie-的关系与区别"><a href="#Session-与-Cookie-的关系与区别" class="headerlink" title="Session 与 Cookie 的关系与区别"></a>Session 与 Cookie 的关系与区别</h4><p>关系:</p>
-<p>Session 基于 Cookie 实现的.</p>
-<p>区别:</p>
-<p>Cookie 保存在客户端，每次都随请求发送给 Server.<br>Session 保存在 Server 的内存里，其 Session ID 是通过 Cookie 发送给客户端的.</p>
-<h4 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h4><ol>
-<li>服务器通过 Set-Cookie 头给客户端一串字符串;</li>
-<li>客户端每次访问相同域名的网页时,必须带上这段字符串;</li>
-<li>客户端要在一段时间内保存这个Cookie.</li>
-<li>Cookie最大存储量4K.</li>
-<li>Cookie默认在用户关闭页面后就失效,后台代码可以任意设置 Cookeie 的过期时间.</li>
-</ol>
-<h4 id="什么是Seesion"><a href="#什么是Seesion" class="headerlink" title="什么是Seesion?"></a>什么是Seesion?</h4><ol>
-<li>服务器将SessionID(随机数)通过Cookie发给客户端;</li>
-<li>客户端访问服务器时,服务器读取SessionID;</li>
-<li>服务器有一块内存(哈希表)保存了所有Session</li>
-<li>通过SessionID我们可以得到用户的隐私信息,如id,email;</li>
-<li>这块内存(哈希表)就是服务器上的所有session.</li>
-</ol>
-<h4 id="localStorage"><a href="#localStorage" class="headerlink" title="localStorage"></a>localStorage</h4><h5 id="什么是localStorage"><a href="#什么是localStorage" class="headerlink" title="什么是localStorage?"></a>什么是localStorage?</h5><p>持久化存储</p>
-<p>HTML5里的API<br>window.localStorage</p>
-<h5 id="方法"><a href="#方法" class="headerlink" title="方法:"></a>方法:</h5><ol>
-<li>localStorage.setItem();</li>
-<li>localStorage.getItem();</li>
-<li>localStorage.removeItem();</li>
-</ol>
-<h5 id="特点"><a href="#特点" class="headerlink" title="特点:"></a>特点:</h5><ol>
-<li>localStorage 跟 HTTP 无关;</li>
-<li>HTTP不会带上 localStorage 的值;</li>
-<li>只有相同域名的页面才能互相读取 localStorage(没有同源那么严格);</li>
-<li>每个域名localStorage 最大存储量为5 MB 左右 (每个浏览器不一样);</li>
-<li>常用场景: 记录有没有提示过用户 (没有用的信息,不能记录密码);</li>
-<li>localStorage 永久有效,除非用户清除缓存.</li>
-</ol>
-<h6 id="LocalStorage与Cookie的区别"><a href="#LocalStorage与Cookie的区别" class="headerlink" title="LocalStorage与Cookie的区别."></a>LocalStorage与Cookie的区别.</h6><p>Cookie在客户端每次发送请求跟服务器响应都会带上,通过服务器设置过期时间,最大4KB.<br>LocalStorage跟HTTP无关,请求时不会带上它的值,它永久有效.最大5MB.</p>
-<h5 id="SessionStorage-会话存储"><a href="#SessionStorage-会话存储" class="headerlink" title="SessionStorage(会话存储)"></a>SessionStorage(会话存储)</h5><ol>
-<li>SessionStorage 跟 HTTP 无关;</li>
-<li>HTTP不会带上 SessionStorage 的值;</li>
-<li>只有相同域名的页面才能互相读取 SessionStorage(没有同源那么严格);</li>
-<li>每个域名lSessionStorage 最大存储量为5 MB 左右 (每个浏览器不一样);</li>
-<li>SessionStorage 在用户关闭页面(会话结束)后失效.</li>
-</ol>
-<h5 id="SessionStorage与LocalStorage区别"><a href="#SessionStorage与LocalStorage区别" class="headerlink" title="SessionStorage与LocalStorage区别"></a>SessionStorage与LocalStorage区别</h5><p>LocalStorage永久有效,SessionStorage页面关闭后失效.</p>
-<h4 id="HTTP-缓存-Cache"><a href="#HTTP-缓存-Cache" class="headerlink" title="HTTP 缓存(Cache)"></a>HTTP 缓存(Cache)</h4><h5 id="Cache-Control"><a href="#Cache-Control" class="headerlink" title="Cache-Control"></a>Cache-Control</h5><p>用来区分对应缓存机制的支持情况,在请求头和响应头都支持这个属性.</p>
-<p>假如在缓存有效期内,对于同样的URL,浏览器不会对服务器发出HTTP请求,而是从内存中获取数据.</p>
-<p>时间是经过多久时间后过期.</p>
-<h5 id="更新缓存"><a href="#更新缓存" class="headerlink" title="更新缓存"></a>更新缓存</h5><p>可以做入口改动,利用URL的查询参数更新缓存.<br>比如:<br>在HTML文件里改对应文件的URL.<link rel="stylesheet" href="css/style.css?v2">,</p>
-<h5 id="为什么首页不能设置Cache-Control"><a href="#为什么首页不能设置Cache-Control" class="headerlink" title="为什么首页不能设置Cache-Control"></a>为什么首页不能设置Cache-Control</h5><p>因为用户不能从服务器中获取最新网页.</p>
-<h5 id="Expires"><a href="#Expires" class="headerlink" title="Expires"></a>Expires</h5><p>如果设置Cache-Control那么Expires会被忽略.</p>
-<p>时间是一个时间点,即几分几秒过期,时间指的是本地时间,不靠谱.</p>
-<h5 id="MD5"><a href="#MD5" class="headerlink" title="MD5"></a>MD5</h5><p>一个摘要算法</p>
-<p>Bash里 输入md5 文件名即转成MD5.</p>
-<p>如果内容差异越小,那么MD5值越大.</p>
-<h5 id="ETag"><a href="#ETag" class="headerlink" title="ETag"></a>ETag</h5><p>服务器返回一个ETag,内容是MD5给浏览器,浏览器下次发送请求时,请求时带上请求头if-none-match,那么内容不需要下载,服务器返回状态码304,304返回的第四部分是空的.</p>
-<h5 id="Cache-Control和ETag"><a href="#Cache-Control和ETag" class="headerlink" title="Cache-Control和ETag"></a>Cache-Control和ETag</h5><p>Cache-Control是未过期不发送请求,ETag是发送请求假如不匹配,但是不返回内容,即响应体是空的.</p>
-
-      
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/13/webpack/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="Roxas Deng">
+        <meta itemprop="description" content="">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="RoxasDengBlog">
+      </span>
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/11/Seesion--LocalStorage--Cache-Control--Expires--ETag/" data-id="cjr27hntn000ij8pfg0cbod2m" class="article-share-link">Share</a>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2018/06/13/webpack/" itemprop="url">webpack</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-06-13T00:17:19+08:00">2018-06-13 00:17:19</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
       
+      <h3 id="前端目录"><a href="#前端目录" class="headerlink" title="前端目录"></a>前端目录</h3><p>src source 未经翻译的代码<br>
+      
+    </main>
+    <footer class="post-footer">
       
     </footer>
-  </div>
+  </article>
   
-</article>
-
-
-  
-    <article id="post-Cookie-注册与登陆" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/10/Cookie-注册与登陆/" class="article-date">
-  <time datetime="2018-06-10T08:07:22.000Z" itemprop="datePublished">2018-06-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/10/Cookie-注册与登陆/">Cookie-注册与登陆</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h3><h4 id="Cookie是什么"><a href="#Cookie是什么" class="headerlink" title="Cookie是什么?"></a>Cookie是什么?</h4><p>Cookie 是服务器保存在浏览器的一小段文本信息，每个 Cookie 的大小一般不能超过4KB。浏览器每次向服务器发出请求，就会自动附上这段信息。Cookie 主要用来分辨两个请求是否来自同一个浏览器，以及用来保存一些状态信息。它的常用场合有以下一些。</p>
-<ol>
-<li>对话（session）管理：保存登录、购物车等需要记录的信息。</li>
-<li>个性化：保存用户的偏好，比如网页的字体大小、背景色等等。</li>
-<li>追踪：记录和分析用户行为。</li>
-</ol>
-<h4 id="Cookie属性"><a href="#Cookie属性" class="headerlink" title="Cookie属性"></a>Cookie属性</h4><p>名称 name (必须)<br>值 value<br>域 domain<br>路径 path<br>失效时间 expires<br>安全标志 secure 一个带有安全属性的 cookie 只有在请求使用SSL和HTTPS协议的时候才会被发送到服务器<br>HttpOnly 设置该属性js不能从document.cookie;XMLHttpRequest;Request APIs访问Cookie</p>
-<h4 id="Cookie-特点"><a href="#Cookie-特点" class="headerlink" title="Cookie 特点"></a>Cookie 特点</h4><ol>
-<li>服务器通过 Set-Cookie 响应头设置 Cookie</li>
-<li>浏览器得到 Cookie 之后，每次请求都要带上 Cookie</li>
-<li>服务器读取 Cookie 就知道登录用户的信息,例如:account,email,password等.</li>
-<li>不同的浏览器对Cookie数量和大小限制不一样,一般来说,单个域名的Cookdie不应超过30个,每个大小不超过4KB.</li>
-</ol>
-<h4 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h4><ol>
-<li><p>我在 Chrome 登录了得到 Cookie，用 Safari 访问，Safari 会带上 Cookie 吗?<br> 不会,Cookie只有用之前获得Cookie的浏览器才会有.</p>
-</li>
-<li><p>Cookie 存在哪?<br> Windows 存在 C 盘的一个文件里</p>
-</li>
-<li><p>Cookie会被用户篡改吗？<br> 可以,Session 来解决这个问题，防止用户篡改.</p>
-</li>
-<li><p>Cookie 有效期吗？<br> 默认有效期20分钟左右，不同浏览器策略不同<br> 后端可以强制设置有效期，具体语法看 MDN</p>
-</li>
-<li><p>Cookie 遵守同源策略吗？<br> 当请求 qq.com 下的资源时,浏览器会默认带上 qq.com 对应的 Cookie,不会带上 baidu.com 对应的 Cookie;<br> 当请求 v.qq.com 下的资源时,浏览器不仅会带上 v.qq.com 的Cookie,还会带上 qq.com 的 Cookie;<br> 二级域名,三级域名的Cookie都会带上.<br> 另外 Cookie 还可以根据路径做限制,这个功能用得比较少.;</p>
-</li>
-<li><p>.服务器端可以通过设置 Expires、max-age 两个标签将 Cookie 设置为过期状态;JavaScript 可以通过document.cookie API 删除 Cookie.</p>
-</li>
-</ol>
-<p>下面是一个带Cookie响应头<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">HTTP /1.1 200 OK</span><br><span class="line">Content-type:text/html</span><br><span class="line">Set-Cookie:name=value; expires = Mon, 22-Jan-07 07:10:24 GMT; domain=.wrox.com path=/; secure; HttpOnly</span><br></pre></td></tr></table></figure></p>
-<h4 id="用户注册过程中浏览器与服务器发生了什么"><a href="#用户注册过程中浏览器与服务器发生了什么" class="headerlink" title="用户注册过程中浏览器与服务器发生了什么?"></a>用户注册过程中浏览器与服务器发生了什么?</h4><h5 id="前端-浏览器"><a href="#前端-浏览器" class="headerlink" title="前端(浏览器)"></a>前端(浏览器)</h5><ol>
-<li>HTML里做一个Form表单,填入账号,Email,密码,确认密码等信息.</li>
-<li>HTML表单里每行隐藏一个span标签,显示error属性.</li>
-<li>用JS获取用户填入的信息后,先进行前端认证,如填入的格式,密码是否相同等</li>
-<li>假如错误,将错误信息返回给error标签,显示信息.</li>
-<li>假如正确,用AJAX发送post请求(这是一个Promise对象),路径为服务器端注册页面,内容为用户提交的数据.</li>
-<li>服务器处理信息,返回给浏览器,假如正确执行XXX,假如错误则返回错误信息,前端把信息翻译后传到浏览器上.</li>
-</ol>
-<h5 id="后端-服务器"><a href="#后端-服务器" class="headerlink" title="后端(服务器)"></a>后端(服务器)</h5><ol>
-<li>如果请求为GET,读取数据库数据,返回状态码200,并返回html字符串给浏览器.</li>
-<li>如果请求为POST,先解析浏览器发送过来的request字符串,变为对象,分析传过来的数据,如格式,长度,密码是否相同等,账号是否存在,假如错误,则返回状态码400,并返回错误信息给浏览器.</li>
-<li>假如都正确,则写入数据库,返回状态码200.</li>
-</ol>
-<h4 id="用户登录程中浏览器与服务器发生了什么"><a href="#用户登录程中浏览器与服务器发生了什么" class="headerlink" title="用户登录程中浏览器与服务器发生了什么?"></a>用户登录程中浏览器与服务器发生了什么?</h4><h5 id="前端-浏览器-1"><a href="#前端-浏览器-1" class="headerlink" title="前端(浏览器)"></a>前端(浏览器)</h5><ol>
-<li>HTML里做一个Form表单,填入账号,Email,密码,确认密码等信息.</li>
-<li>HTML表单里每行隐藏一个span标签,显示error属性.</li>
-<li>用JS获取用户填入的信息后,先进行前端认证,如填入的格式,密码是否相同等</li>
-<li>假如错误,将错误信息返回给error标签,显示信息.</li>
-<li>假如正确,用AJAX发送GET请求,路径为服务器端登陆页面,内容为账号密码.</li>
-<li>服务器处理信息,返回给浏览器,并给浏览器一个Cookie假如验证成功则转跳页面,假如失败则错误提示.</li>
-<li>以后每次进入该页面,HTTP请求头都会包含之前服务器所返回的Cookie.</li>
-<li>页面渲染服务器传来这个Cookie的信息.</li>
-</ol>
-<h5 id="后端-服务器-1"><a href="#后端-服务器-1" class="headerlink" title="后端(服务器)"></a>后端(服务器)</h5><ol>
-<li>假如用第一次登陆,服务器在数据库查询该账号的信息是否匹配.</li>
-<li>假如不匹配,则返回401.</li>
-<li>假如匹配.则返回200状态码,并返回一个Cookie给浏览器.并返回该Cookie对应的信息,渲染页面.</li>
-<li>用户发送请求,请求中带该Cookie,则服务器返回相应的Cookie的信息的页面信息,给浏览器渲染.</li>
-<li>用户发送请求,不带有该Cookie,则服务器返回共用的页面信息,交给浏览渲染.</li>
-</ol>
-
-      
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/13/sass/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="Roxas Deng">
+        <meta itemprop="description" content="">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="RoxasDengBlog">
+      </span>
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/10/Cookie-注册与登陆/" data-id="cjr27hnt70006j8pfbvvhqsvz" class="article-share-link">Share</a>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2018/06/13/sass/" itemprop="url">sass</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-06-13T00:17:03+08:00">2018-06-13 00:17:03</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
       
+      <h3 id="SASS"><a href="#SASS" class="headerlink" title="SASS"></a>SASS</h3><h4 id="安装"><a href="#安装"
+      
+    </main>
+    <footer class="post-footer">
       
     </footer>
-  </div>
+  </article>
   
-</article>
-
-
-  
-    <article id="post-异步同步与回调" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/09/异步同步与回调/" class="article-date">
-  <time datetime="2018-06-09T10:44:23.000Z" itemprop="datePublished">2018-06-09</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/09/异步同步与回调/">异步同步与回调</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="异步"><a href="#异步" class="headerlink" title="异步"></a>异步</h3><p>不等结果,直接进行下一步</p>
-<h5 id="异步与同步例子"><a href="#异步与同步例子" class="headerlink" title="异步与同步例子"></a>异步与同步例子</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> 异步()&#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">        console.log(<span class="string">'异步做事'</span>);</span><br><span class="line">    &#125;,5000)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> 同步()&#123;</span><br><span class="line">    console.log(<span class="string">'同步做事'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>调用<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">异步();</span><br><span class="line">console.log(1);</span><br><span class="line">//1</span><br><span class="line">//异步做事</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">同步();</span><br><span class="line">console.log(1);</span><br><span class="line">//同步做事</span><br><span class="line">//1</span><br></pre></td></tr></table></figure>
-<p>如果是做完事再打1 —同步<br>如果是不做完就打1 —异步</p>
-<h3 id="回调"><a href="#回调" class="headerlink" title="回调"></a>回调</h3><p>回调是拿到异步结果的一种方式,回调也可以拿同步结果.<br>fn1将别人传给它的fn2调用了,这种调用就是回调.</p>
-<h5 id="使用异步回调"><a href="#使用异步回调" class="headerlink" title="使用异步回调"></a>使用异步回调</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> fn1(callback)&#123;</span><br><span class="line">    var n = 0;</span><br><span class="line">    var id = setInterval(()=&gt;&#123;</span><br><span class="line">        console.log(n);</span><br><span class="line">        n += 1;</span><br><span class="line">        <span class="keyword">if</span>(n &gt;= 5)&#123;</span><br><span class="line">        window.clearInterval(id);</span><br><span class="line">        callback();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,500)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">fn2</span></span>()&#123;</span><br><span class="line">    console.log(<span class="string">'异步结束后再回调该函数'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fn1(()=&gt;&#123;</span><br><span class="line">    fn2();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>当打印完n后,,再执行回调函数</p>
-
-      
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/11/Seesion--LocalStorage--Cache-Control--Expires--ETag/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="Roxas Deng">
+        <meta itemprop="description" content="">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="RoxasDengBlog">
+      </span>
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/09/异步同步与回调/" data-id="cjr27hntz000wj8pflqjfma5j" class="article-share-link">Share</a>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2018/06/11/Seesion--LocalStorage--Cache-Control--Expires--ETag/" itemprop="url">Seesion/LocalStorage/Cache-Control/Expires/ETag</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-06-11T17:33:05+08:00">2018-06-11 17:33:05</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
       
+      <h4 id="Session-与-Cookie-的关系与区别"><a href="#Session-与-Cookie-的关系与区别" class="headerlink" title="Sessio
+      
+    </main>
+    <footer class="post-footer">
       
     </footer>
-  </div>
+  </article>
   
-</article>
-
-
-  
-    <article id="post-面向对象编程" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/07/面向对象编程/" class="article-date">
-  <time datetime="2018-06-07T08:22:41.000Z" itemprop="datePublished">2018-06-07</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/07/面向对象编程/">面向对象编程</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="面向对象编程"><a href="#面向对象编程" class="headerlink" title="面向对象编程"></a>面向对象编程</h3><p>Object  - Oriented</p>
-<p>OOP </p>
-<p>以对象为面向的编程</p>
-<h4 id="请背诵"><a href="#请背诵" class="headerlink" title="请背诵:"></a>请背诵:</h4><h5 id="Class-类"><a href="#Class-类" class="headerlink" title="Class 类"></a>Class 类</h5><p>定义对象的特征。它是对象的属性和方法的模板定义.</p>
-<h5 id="Object-对象"><a href="#Object-对象" class="headerlink" title="Object 对象"></a>Object 对象</h5><p>类的一个实例。</p>
-<h5 id="Property-属性"><a href="#Property-属性" class="headerlink" title="Property 属性"></a>Property 属性</h5><p>对象的特征，比如颜色。</p>
-<h5 id="Method-方法"><a href="#Method-方法" class="headerlink" title="Method 方法"></a>Method 方法</h5><p>对象的能力，比如行走。</p>
-<h5 id="Constructor-构造函数"><a href="#Constructor-构造函数" class="headerlink" title="Constructor 构造函数"></a>Constructor 构造函数</h5><p>对象初始化的瞬间, 被调用的方法. 通常它的名字与包含它的类一致.</p>
-<h5 id="Inheritance-继承"><a href="#Inheritance-继承" class="headerlink" title="Inheritance 继承"></a>Inheritance 继承</h5><p>一个类可以继承另一个类的特征。</p>
-<h5 id="Encapsulation-封装"><a href="#Encapsulation-封装" class="headerlink" title="Encapsulation 封装"></a>Encapsulation 封装</h5><p>一种把数据和相关的方法绑定在一起使用的方法.</p>
-<h5 id="Abstraction-抽象"><a href="#Abstraction-抽象" class="headerlink" title="Abstraction 抽象"></a>Abstraction 抽象</h5><p>结合复杂的继承，方法，属性的对象能够模拟现实的模型。</p>
-<h5 id="Polymorphism-多态"><a href="#Polymorphism-多态" class="headerlink" title="Polymorphism 多态"></a>Polymorphism 多态</h5><p>多意为‘许多’，态意为‘形态’。不同类可以定义相同的方法或属性。</p>
-<h4 id="命名空间"><a href="#命名空间" class="headerlink" title="命名空间:"></a>命名空间:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var a = a || &#123;&#125;;</span><br></pre></td></tr></table></figure>
-<p>对于<br>a || b<br>c &amp;&amp; d</p>
-<p>值基本不可能是true/fasle</p>
-<p>&amp;&amp; 找第一个fasle值<br>例如<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1 &amp;&amp; 0 &amp;&amp; 1</span><br></pre></td></tr></table></figure></p>
-<p>返回0<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1 &amp;&amp; 0 &amp;&amp; console.log(2)</span><br><span class="line">返回0,并且console.log不执行</span><br></pre></td></tr></table></figure></p>
-<p>|| 找第一个true值<br>例如<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var a = b || &#123;&#125;</span><br><span class="line">返回&#123;&#125;</span><br></pre></td></tr></table></figure></p>
-<h4 id="类Class"><a href="#类Class" class="headerlink" title="类Class"></a>类Class</h4><p>造一个模板</p>
-<h5 id="View"><a href="#View" class="headerlink" title="View"></a>View</h5><p>封装view<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">window.View = <span class="keyword">function</span>(selector)&#123;</span><br><span class="line">    <span class="built_in">return</span> document.querySelector(selector)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>引用View<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var view = View(<span class="string">'#leaveMessages'</span>);</span><br></pre></td></tr></table></figure></p>
-<h5 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h5><p>封装Model<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">window.Model = <span class="keyword">function</span>(options)&#123;</span><br><span class="line">    <span class="built_in">let</span> resourceName = options.resourceName;</span><br><span class="line">    <span class="built_in">return</span> &#123;</span><br><span class="line">        init:<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">            var APP_ID = <span class="string">'6lvWkua1rf93YuTrlvBN8GVR-gzGzoHsz'</span>;</span><br><span class="line">            var APP_KEY = <span class="string">'uPlBTdzbkh8JANXfgEN8j0Lv'</span>;</span><br><span class="line">            AV.init(&#123;</span><br><span class="line">            appId: APP_ID,</span><br><span class="line">            appKey: APP_KEY&#125;)</span><br><span class="line">        &#125;,</span><br><span class="line">        fetch:<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">            var query = new AV.Query(resourceName);</span><br><span class="line">            <span class="built_in">return</span> query.find();</span><br><span class="line">        &#125;,</span><br><span class="line">        save:<span class="keyword">function</span>(username,content)&#123;</span><br><span class="line">            var Messages = AV.Object.extend(resourceName);</span><br><span class="line">            var messages = new Messages();</span><br><span class="line">            <span class="built_in">return</span> messages.save(object)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>调用Model</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var model = Model(&#123;resourceName:<span class="string">'Messages'</span>&#125;);</span><br><span class="line"> model.init();</span><br><span class="line"> model.fetch();</span><br><span class="line"> model.save(&#123;<span class="string">'username'</span>: username,<span class="string">'content'</span>:content&#125;);</span><br></pre></td></tr></table></figure>
-<h5 id="Controller"><a href="#Controller" class="headerlink" title="Controller"></a>Controller</h5><p>封装Controller</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">window.Controller = <span class="keyword">function</span>(options)&#123;</span><br><span class="line">    var init = options.init;</span><br><span class="line">    <span class="built_in">let</span> object = &#123;</span><br><span class="line">        view: null,</span><br><span class="line">        model: null,</span><br><span class="line">        init: <span class="keyword">function</span>(view,model)&#123;</span><br><span class="line">            this.view = view;</span><br><span class="line">            this.model = model;</span><br><span class="line">            this.model.init();</span><br><span class="line">            init.call(this,view,model);</span><br><span class="line">            options.bindEvents.call(this);</span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">let</span> key <span class="keyword">in</span> options)&#123;</span><br><span class="line">        <span class="keyword">if</span>(key !== <span class="string">'init'</span>)&#123;</span><br><span class="line">            object[key] = options[key]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>调用Controller</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">var controller = Controller(&#123;</span><br><span class="line">        init: <span class="keyword">function</span>(view,controller)&#123;</span><br><span class="line">            this.messageList = view.querySelector(<span class="string">'#messageList'</span>);</span><br><span class="line">            this.form = view.querySelector(<span class="string">'form'</span>);</span><br><span class="line">            this.loadMessages();</span><br><span class="line">        &#125;,</span><br><span class="line">        loadMessages: <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">            this.model.fetch().<span class="keyword">then</span>(</span><br><span class="line">                (messages) =&gt; &#123;</span><br><span class="line">                    <span class="built_in">let</span> array = messages.map((item) =&gt; item.attributes);</span><br><span class="line">                    array.forEach((item) =&gt; &#123;</span><br><span class="line">                        <span class="built_in">let</span> li = document.createElement(<span class="string">'li'</span>);</span><br><span class="line">                        li.innerText = `<span class="variable">$&#123;item.username&#125;</span> : <span class="variable">$&#123;item.content&#125;</span>`;</span><br><span class="line">                        this.messageList.appendChild(li);</span><br><span class="line">                    &#125;)</span><br><span class="line">                &#125;</span><br><span class="line">            )</span><br><span class="line">        &#125;,</span><br><span class="line">        bindEvents: <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">            this.form.addEventListener(<span class="string">'submit'</span>,(e) =&gt; &#123;</span><br><span class="line">                e.preventDefault();</span><br><span class="line">                this.saveMessage();</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;,</span><br><span class="line">        saveMessage: <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">            <span class="built_in">let</span> myForm = this.form;</span><br><span class="line">            <span class="built_in">let</span> content = myForm.querySelector(<span class="string">'input[name=content]'</span>).value;</span><br><span class="line">            <span class="built_in">let</span> username = myForm.querySelector(<span class="string">'input[name=username]'</span>).value;</span><br><span class="line">            <span class="keyword">if</span>(content !== <span class="string">''</span> &amp;&amp; username !== <span class="string">''</span>)&#123;</span><br><span class="line">                this.model.save(username,content).<span class="keyword">then</span>(<span class="keyword">function</span>(object)&#123;</span><br><span class="line">                    <span class="built_in">let</span> li = document.createElement(<span class="string">'li'</span>);</span><br><span class="line">                    li.innerText = `<span class="variable">$&#123;object.attributes.username&#125;</span> : <span class="variable">$&#123;object.attributes.content&#125;</span>`;</span><br><span class="line">                    <span class="built_in">let</span> messagesList = document.querySelector(<span class="string">'#messageList'</span>);</span><br><span class="line">                    messagesList.appendChild(li);</span><br><span class="line">                    myForm.querySelector(<span class="string">'input[name=content]'</span>).value = <span class="string">''</span>;</span><br><span class="line">                &#125;)</span><br><span class="line">          &#125;<span class="keyword">else</span>  &#123;</span><br><span class="line">              alert(<span class="string">'请输入用户名或者留言内容'</span>);</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-<h4 id="如何寻找this"><a href="#如何寻找this" class="headerlink" title="如何寻找this?"></a>如何寻找this?</h4><ol>
-<li><p>controller === object</p>
-</li>
-<li><p>controller.init(view, model)<br>controller.init.call(controller, view, model)<br>那么 controller.init 里面的 this 当然 TM 是 controller<br>也就是这个1里面的object<br>controller.init 里面的 this 就是 object<br>object.init 里面的 this 就是 object</p>
-</li>
-</ol>
-<ol start="3">
-<li>initB.call(this)<br>initB 里面的 this === call 后面的this<br>call 后面 this === 第二条里的 this<br>第二条里面的 this === object<br>=&gt; initB 里面的 this 就是 object</li>
-</ol>
-<h4 id="复习this"><a href="#复习this" class="headerlink" title="复习this"></a>复习this</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">X</span></span>()&#123;</span><br><span class="line">    <span class="built_in">return</span> object = &#123;</span><br><span class="line">        name:<span class="string">'object'</span>,</span><br><span class="line">        f1(x)&#123;</span><br><span class="line">            x.f2();</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="function"><span class="title">f2</span></span>()&#123;</span><br><span class="line">            console.log(this); //A</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var options = &#123;</span><br><span class="line">    name:<span class="string">'options'</span>,</span><br><span class="line">    <span class="function"><span class="title">f1</span></span>()&#123;&#125;,</span><br><span class="line">    <span class="function"><span class="title">f2</span></span>()&#123;</span><br><span class="line">        console.log(this); //B</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var x = X();</span><br><span class="line">x.f1(options);</span><br></pre></td></tr></table></figure>
-<p>B options</p>
-<p>why?</p>
-<p>x=X(),那么X().f1(options)<br>X()return object,那么object.f1(options)<br>object里的f1那么就是f1(x){x.f2()}<br>x是options,那么就是f1(options){options.f2()};<br>f2是console.log(this),this是options,打印options</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">X</span></span>()&#123;</span><br><span class="line">    <span class="built_in">return</span> object = &#123;</span><br><span class="line">        name:<span class="string">'object'</span>,</span><br><span class="line">        f1(x)&#123;</span><br><span class="line">            x.f2.call(this);</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="function"><span class="title">f2</span></span>()&#123;</span><br><span class="line">            console.log(this); //C </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var options = &#123;</span><br><span class="line">    name:<span class="string">'options'</span>,</span><br><span class="line">    <span class="function"><span class="title">f1</span></span>()&#123;&#125;,</span><br><span class="line">    <span class="function"><span class="title">f2</span></span>()&#123;</span><br><span class="line">        console.log(this);  //D</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var x = X();</span><br><span class="line">x.f1(options);</span><br></pre></td></tr></table></figure>
-<p>D object</p>
-<p>why?</p>
-<p>x.f2.call(this) this === object<br>x.f2 === options.console.log(this)<br>this === object</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">X</span></span>()&#123;</span><br><span class="line">    <span class="built_in">return</span> object = &#123;</span><br><span class="line">        name:<span class="string">'object'</span>,</span><br><span class="line">        options:null,</span><br><span class="line">        f1(x)&#123;</span><br><span class="line">            this.options = x;</span><br><span class="line">            this.f2();</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="function"><span class="title">f2</span></span>()&#123;</span><br><span class="line">            this.options.f2.call(this);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var options = &#123;</span><br><span class="line">    name:<span class="string">'options'</span>,</span><br><span class="line">    <span class="function"><span class="title">f1</span></span>()&#123;&#125;,</span><br><span class="line">    <span class="function"><span class="title">f2</span></span>()&#123;</span><br><span class="line">        console.log(this);  //this === ?</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var x = X();</span><br><span class="line">x.f1(options);</span><br></pre></td></tr></table></figure>
-<p>this === object;</p>
-<p>why?</p>
-<p>this = object;<br>object.options = x;//object.options = options;<br>this.f2() === object.f2() === object.options.f2.call(this);</p>
-<h4 id="new"><a href="#new" class="headerlink" title="new"></a>new</h4><p>var object = new Object();</p>
-<p>自有属性 空</p>
-<p>oject.<strong>proto</strong> === Object.prototype;</p>
-<p>var array = new Array(‘a’,’b’,’c’);</p>
-<p>自有属性 0:’a’,1:’b’,2:’c’,length:3</p>
-<p>array.<strong>proto</strong> === Array.prototype;<br>Array.prototype.<strong>proto</strong> === Object.prototype;</p>
-<p>Array is a function!<br>Array.<strong>proto</strong> === function.prototype;</p>
-<p>构造一个new</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> Human(options)&#123;</span><br><span class="line">   this.name = options.name;</span><br><span class="line">   this.city = options.city;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Human.prototype.species = <span class="string">'Human'</span>;</span><br><span class="line">Human.prototype.walk = <span class="function"><span class="title">function</span></span>()&#123;&#125;;</span><br><span class="line">Human.prototype.useTools = <span class="function"><span class="title">function</span></span>()&#123;&#125;;</span><br></pre></td></tr></table></figure>
-<p>调用<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var human = new Human(&#123;name:<span class="string">'Frank'</span>, city: <span class="string">'Hangzhou'</span>&#125;)</span><br><span class="line">var human2 = new Human(&#123;name:<span class="string">'Jack'</span>, city: <span class="string">'Hangzhou'</span>&#125;)</span><br></pre></td></tr></table></figure></p>
-<p>其中<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">human.__proto__.constructor === Human //<span class="literal">true</span></span><br></pre></td></tr></table></figure></p>
-
-      
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/10/Cookie-注册与登陆/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="Roxas Deng">
+        <meta itemprop="description" content="">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="RoxasDengBlog">
+      </span>
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/07/面向对象编程/" data-id="cjr27hnu50012j8pfs8467fsp" class="article-share-link">Share</a>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2018/06/10/Cookie-注册与登陆/" itemprop="url">Cookie-注册与登陆</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-06-10T16:07:22+08:00">2018-06-10 16:07:22</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
       
+      <h3 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h3><h4 id="Cookie是什么
+      
+    </main>
+    <footer class="post-footer">
       
     </footer>
-  </div>
+  </article>
   
-</article>
-
-
-  
-    <article id="post-MVC与Leancloud数据库使用" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/06/MVC与Leancloud数据库使用/" class="article-date">
-  <time datetime="2018-06-06T12:09:08.000Z" itemprop="datePublished">2018-06-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/06/MVC与Leancloud数据库使用/">MVC与Leancloud数据库使用</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Unsplash 找图</p>
-<h3 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a>MVC</h3><h4 id="M-Model-模块化操作数据"><a href="#M-Model-模块化操作数据" class="headerlink" title="M:Model 模块化操作数据"></a>M:Model 模块化操作数据</h4><p>把JS分文件</p>
-<h4 id="解决全局变量-用闭包-匿名函数"><a href="#解决全局变量-用闭包-匿名函数" class="headerlink" title="解决全局变量,用闭包,匿名函数"></a>解决全局变量,用闭包,匿名函数</h4><p>!function(){}.call();</p>
-<p>(function(){}).call();不推荐</p>
-<p>使用window.xxx读取函数信息</p>
-<p>第一个函数</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">!<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">    var person = &#123;</span><br><span class="line">        name : <span class="string">'frank'</span>,</span><br><span class="line">        age : 18</span><br><span class="line">    &#125;</span><br><span class="line">    window.frankGrowUp = <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">        person.age += 1;</span><br><span class="line">        <span class="built_in">return</span> person.age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;.call();</span><br></pre></td></tr></table></figure>
-<p>另外一个函数<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">!<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">    var frankGrowUp = window.frankGrowUp;</span><br><span class="line">    console.log(frankGrowUp);</span><br><span class="line">&#125;.call();</span><br></pre></td></tr></table></figure></p>
-<h4 id="如何使用闭包"><a href="#如何使用闭包" class="headerlink" title="如何使用闭包"></a>如何使用闭包</h4><ol>
-<li>立即执行函数使得 person 无法被外部访问</li>
-<li>闭包使得匿名函数可以操作 person</li>
-<li>window.frankGrowUp 保存了匿名函数的地址</li>
-<li>任何地方都可以使用 window.frankGrowUp<br> =&gt; 任何地方都可以使用 window.frankGrowUp 操作 person，但是不能直接访问 person</li>
-</ol>
-<h4 id="立即执行函数"><a href="#立即执行函数" class="headerlink" title="立即执行函数"></a>立即执行函数</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">var accessor =  <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">    var person = &#123;</span><br><span class="line">        name : <span class="string">'frank'</span>,</span><br><span class="line">        age : 18</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">return</span> <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">        person.age += 1;</span><br><span class="line">        <span class="built_in">return</span> person.age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var growUp = accessor().call(); //实际是执行 <span class="function"><span class="title">function</span></span>()&#123;person.age +=1;<span class="built_in">return</span> person.age&#125;;</span><br><span class="line"></span><br><span class="line">growUp.call(); //实际是执行 person.age</span><br></pre></td></tr></table></figure>
-<h3 id="MVC的V和C"><a href="#MVC的V和C" class="headerlink" title="MVC的V和C"></a>MVC的V和C</h3><h4 id="V-View-视图-即用户看得见的"><a href="#V-View-视图-即用户看得见的" class="headerlink" title="V:View 视图,即用户看得见的."></a>V:View 视图,即用户看得见的.</h4><p>JS代码加入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var view = docmuent.querySelector(<span class="string">''</span>);</span><br></pre></td></tr></table></figure></p>
-<h4 id="C-Controller-控制器"><a href="#C-Controller-控制器" class="headerlink" title="C:Controller 控制器"></a>C:Controller 控制器</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">var controller = &#123;</span><br><span class="line">    view: null,</span><br><span class="line">    init: <span class="keyword">function</span>(view)&#123;</span><br><span class="line">        this.view = view;</span><br><span class="line">        this.bindEvents();</span><br><span class="line">        // this.bindEvents.call(this);</span><br><span class="line">    &#125;,</span><br><span class="line">    bindEvents : <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">        var view = this.view;</span><br><span class="line">        //代码</span><br><span class="line">    &#125;</span><br><span class="line">&#125;.</span><br><span class="line"></span><br><span class="line">contorller.init.(view);</span><br><span class="line">// controller.init.call(controller, view);</span><br></pre></td></tr></table></figure>
-<h5 id="对象调用一个函数-那么this就是这个对象"><a href="#对象调用一个函数-那么this就是这个对象" class="headerlink" title="对象调用一个函数,那么this就是这个对象"></a>对象调用一个函数,那么this就是这个对象</h5><ol>
-<li>可以用bind(this)绑定this;</li>
-<li>可以用箭头函数,箭头函数没有this,它this就是外面的this;</li>
-</ol>
-<h4 id="引入数据库"><a href="#引入数据库" class="headerlink" title="引入数据库:"></a>引入数据库:</h4><ol>
-<li>创建一个应用</li>
-<li>引入av-min.js 得到window.AV</li>
-<li>初始化AV对象(代码直接拷)</li>
-<li>新建一条数据(代码直接拷)</li>
-</ol>
-<p>表单提交监听事件 </p>
-<p>不监听button.click是因为也要监听回车.<br>但form.addEventListener(‘sumbmit’,()=&gt;{})中的sumbit包含点击事件与回车事件.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> myForm = document.querySelector(<span class="string">'#postMessageForm'</span>);</span><br><span class="line">myForm.addEventListener(<span class="string">'submit'</span>,<span class="keyword">function</span>(e)&#123;</span><br><span class="line">    e.preventDefault();</span><br><span class="line">    <span class="built_in">let</span> content = myForm.querySelector(<span class="string">'input[name=content]'</span>).value;</span><br><span class="line">    var Message = AV.Object.extend(<span class="string">'Message'</span>);</span><br><span class="line">    var message = new Message();</span><br><span class="line">    message.save(&#123;</span><br><span class="line">        <span class="string">'content'</span> : content</span><br><span class="line">    &#125;).<span class="keyword">then</span>(<span class="keyword">function</span>(object)&#123;</span><br><span class="line">        <span class="built_in">let</span> li = document.createElement(<span class="string">'li'</span>);</span><br><span class="line">        li.innerText = `<span class="variable">$&#123;object.attributes.name&#125;</span> : <span class="variable">$&#123;object.attributes.content&#125;</span>`;</span><br><span class="line">        <span class="built_in">let</span> messageList = document.querySelector(<span class="string">'#messageList'</span>);</span><br><span class="line">        messageList.appendChild(li);</span><br><span class="line">        myForm.querySelector(<span class="string">'input[name=content]'</span>).value = <span class="string">''</span>;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<p>页面读取数据库信息:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var query = new AV.Query(<span class="string">'Message'</span>);</span><br><span class="line">query.find()</span><br><span class="line">    .<span class="keyword">then</span>(</span><br><span class="line">        <span class="keyword">function</span>(messages)&#123;</span><br><span class="line">            <span class="built_in">let</span> array = messages.map((item)=&gt; item.attributes);</span><br><span class="line">            array.forEach((item)=&gt;&#123;</span><br><span class="line">                <span class="built_in">let</span> li = document.createElement(<span class="string">'li'</span>);</span><br><span class="line">                li.innerText = `<span class="variable">$&#123;item.name&#125;</span> : <span class="variable">$&#123;item.content&#125;</span>`;</span><br><span class="line">                <span class="built_in">let</span> messageList = document.querySelector(<span class="string">'#messageList'</span>);</span><br><span class="line">                messageList.appendChild(li);</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">    )</span><br></pre></td></tr></table></figure></p>
-<h4 id="MVC总结"><a href="#MVC总结" class="headerlink" title="MVC总结"></a>MVC总结</h4><ol>
-<li>Model 操作数据</li>
-<li>View 表示视图</li>
-<li>Controller 是控制器</li>
-</ol>
-<p>Model 和服务器交互，Model 将得到的数据交给 Controller，Controller 把数据填入 View，并监听 View<br>用户操作 View，如点击按钮，Controller 就会接受到点击事件，Controller 这时会去调用 Model，Model 会与服务器交互，得到数据后返回给 Controller，Controller 得到数据就去更新 View</p>
-
-      
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/09/异步同步与回调/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="Roxas Deng">
+        <meta itemprop="description" content="">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="RoxasDengBlog">
+      </span>
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/06/MVC与Leancloud数据库使用/" data-id="cjr27hntl000gj8pfvyeaavhc" class="article-share-link">Share</a>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2018/06/09/异步同步与回调/" itemprop="url">异步同步与回调</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-06-09T18:44:23+08:00">2018-06-09 18:44:23</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
       
+      <h3 id="异步"><a href="#异步" class="headerlink" title="异步"></a>异步</h3><p>不等结果,直接进行下一步</p>
+<h5 id="异步与同步
+      
+    </main>
+    <footer class="post-footer">
       
     </footer>
-  </div>
+  </article>
   
-</article>
-
-
-  
-    <article id="post-从一个页面输入URL到页面显示完成-这个过程中都发生了什么" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/04/从一个页面输入URL到页面显示完成-这个过程中都发生了什么/" class="article-date">
-  <time datetime="2018-06-04T11:45:59.000Z" itemprop="datePublished">2018-06-04</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/07/面向对象编程/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="Roxas Deng">
+        <meta itemprop="description" content="">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="RoxasDengBlog">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2018/06/07/面向对象编程/" itemprop="url">面向对象编程</a>
+      </h1>
+      <div class="post-meta">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/04/从一个页面输入URL到页面显示完成-这个过程中都发生了什么/">从一个页面输入URL到页面显示完成,这个过程中都发生了什么?</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-06-07T16:22:41+08:00">2018-06-07 16:22:41</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
       
-        <ol>
+      <h3 id="面向对象编程"><a href="#面向对象编程" class="headerlink" title="面向对象编程"></a>面向对象编程</h3><p>Object  - Orie
+      
+    </main>
+    <footer class="post-footer">
+      
+    </footer>
+  </article>
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/06/MVC与Leancloud数据库使用/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="Roxas Deng">
+        <meta itemprop="description" content="">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="RoxasDengBlog">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2018/06/06/MVC与Leancloud数据库使用/" itemprop="url">MVC与Leancloud数据库使用</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-06-06T20:09:08+08:00">2018-06-06 20:09:08</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <p>Unsplash 找图</p>
+<h3 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a>MVC</h3><h4 id="M-
+      
+    </main>
+    <footer class="post-footer">
+      
+    </footer>
+  </article>
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/04/从一个页面输入URL到页面显示完成-这个过程中都发生了什么/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="Roxas Deng">
+        <meta itemprop="description" content="">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="RoxasDengBlog">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2018/06/04/从一个页面输入URL到页面显示完成-这个过程中都发生了什么/" itemprop="url">从一个页面输入URL到页面显示完成,这个过程中都发生了什么?</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-06-04T19:45:59+08:00">2018-06-04 19:45:59</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <ol>
 <li><p>浏览器地址栏输入url</p>
 </li>
 <li><p>浏览器会先查看浏览器缓存–系统缓存–路由缓存，如有存在缓存，就直接显示。如果没有，接着第三步</p>
 </li>
-<li><p>域名解析（DNS）获取相应的ip</p>
-</li>
-<li><p>浏览器向服务器发起tcp连接，与浏览器建立tcp三次握手</p>
-</li>
-<li><p>握手成功，浏览器向服务器发送http请求，请求数据包</p>
-</li>
-<li><p>服务器请求数据，将数据返回到浏览器</p>
-</li>
-<li><p>浏览器接收响应，读取页面内容，解析html源码，生成DOm树</p>
-</li>
-<li><p>解析css样式、浏览器渲染，js交互</p>
-</li>
-</ol>
-
+<l
       
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/04/从一个页面输入URL到页面显示完成-这个过程中都发生了什么/" data-id="cjr27hntx000tj8pfblxcp6lz" class="article-share-link">Share</a>
-      
+    </main>
+    <footer class="post-footer">
       
     </footer>
-  </div>
+  </article>
   
-</article>
-
-
-  
-    <article id="post-AJAX" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/05/31/AJAX/" class="article-date">
-  <time datetime="2018-05-31T06:16:01.000Z" itemprop="datePublished">2018-05-31</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/31/AJAX/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="Roxas Deng">
+        <meta itemprop="description" content="">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="RoxasDengBlog">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2018/05/31/AJAX/" itemprop="url">AJAX</a>
+      </h1>
+      <div class="post-meta">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/31/AJAX/">AJAX</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="AJAX是什么"><a href="#AJAX是什么" class="headerlink" title="AJAX是什么?"></a>AJAX是什么?</h4><p>异步的JavaScript和XML</p>
-<ol>
-<li>使用XMLHttpRequest发送请求</li>
-<li>服务器返回XML格式的字符串</li>
-<li>JS解析XML,并更新局部页面</li>
-</ol>
-<h5 id="现在已经很少用XML-都在用JSON"><a href="#现在已经很少用XML-都在用JSON" class="headerlink" title="现在已经很少用XML,都在用JSON!"></a>现在已经很少用XML,都在用JSON!</h5><h4 id="写一个简单的AJAX"><a href="#写一个简单的AJAX" class="headerlink" title="写一个简单的AJAX:"></a>写一个简单的AJAX:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> request = new XMLHttpRequest();</span><br><span class="line">request.open(<span class="string">'GET'</span>,<span class="string">'http://localhost:8001'</span>);</span><br><span class="line">request.onreadystatechange = () =&gt; &#123;</span><br><span class="line">    <span class="keyword">if</span>(request.readyState ===4)&#123;</span><br><span class="line">        console.log(<span class="string">'响应完毕'</span>);</span><br><span class="line">        <span class="keyword">if</span>(request.status =&gt; 200 &amp;&amp; request.status &lt; 300 || request.status === 304)&#123;</span><br><span class="line">            console.log(<span class="string">'请求成功'</span>);</span><br><span class="line">            <span class="built_in">let</span> string  = request.responseText;</span><br><span class="line">            <span class="built_in">let</span> objcet  = window.JSON.parse(string);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(request.status &gt;= 400)&#123;</span><br><span class="line">        console.log(<span class="string">'请求失败'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">request.send();</span><br></pre></td></tr></table></figure>
-<h4 id="readyState-请求状态"><a href="#readyState-请求状态" class="headerlink" title="readyState 请求状态"></a>readyState 请求状态</h4><p>有五种状态:</p>
-<p>0 open()方法还未被调用.<br>1 send()方法还未被调用.<br>2 send()方法已被调用,响应头和响应状态已经返回.<br>3 响应体下载中;responseText中已获取了部分数据.<br>4 整个请求过程已经完毕.</p>
-<h4 id="request-status-返回请求的状态码"><a href="#request-status-返回请求的状态码" class="headerlink" title="request.status 返回请求的状态码"></a>request.status 返回请求的状态码</h4><h4 id="request-responseText-返回的字符串"><a href="#request-responseText-返回的字符串" class="headerlink" title="request.responseText 返回的字符串"></a>request.responseText 返回的字符串</h4><h4 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h4><h5 id="JS-VS-JSON"><a href="#JS-VS-JSON" class="headerlink" title="JS VS JSON"></a>JS VS JSON</h5><ol>
-<li>JSON 没有undefined和funtion</li>
-<li>JSON 字符串的首尾必须是双引号””</li>
-</ol>
-<p>具体对比</p>
-<p>undefined      没有<br>null           null<br>[‘a’,’b’]      [“a”,”b”]<br>function(){}   没有<br>{name:’roxas’} {“name”:”roxas”}<br>‘roxas’        “roxas”<br>var a = {}<br>a.self  = a    搞不定(没有变量)<br>{<strong>proto</strong>}    没有原型链</p>
-<h4 id="JS使用JSON"><a href="#JS使用JSON" class="headerlink" title="JS使用JSON"></a>JS使用JSON</h4><p>一个JSON对象</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"notes"</span>:&#123;</span><br><span class="line">        <span class="string">"from"</span>:<span class="string">"roxas"</span>,</span><br><span class="line">        <span class="string">"to"</span>:<span class="string">"养蛇"</span>,</span><br><span class="line">        <span class="string">"title"</span>:<span class="string">"打招呼"</span>,</span><br><span class="line">        <span class="string">"contant"</span>:<span class="string">"你好"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>JS代码使用JSON</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> request = new XMLHttprequest();</span><br><span class="line">request.open(<span class="string">'GET'</span>,<span class="string">'URL'</span>)  //配置request</span><br><span class="line">request.onreadystatechange = ()=&gt;&#123;</span><br><span class="line">    <span class="keyword">if</span>(request.readyState === 4) &#123;</span><br><span class="line">        <span class="keyword">if</span>(request.status &gt;= 200 &amp;&amp; request.status &lt;300 || request.status === 304)&#123;</span><br><span class="line">            <span class="built_in">let</span> string = request.responseText;</span><br><span class="line">            // 把符合 JSON 语法的字符串转换成JS对应的值</span><br><span class="line">            <span class="built_in">let</span> object = window.JSON.parse(string);</span><br><span class="line">            console.log(object);</span><br><span class="line">        &#125;esle <span class="keyword">if</span>(request.status &gt;= 400)&#123;</span><br><span class="line">            console.log(<span class="string">'说明请求失败'</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">request.send();</span><br></pre></td></tr></table></figure>
-<p>后端代码</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(path===<span class="string">'url'</span>)&#123;</span><br><span class="line">    response.statusCode = 200</span><br><span class="line">    response.setHeader(<span class="string">'Content-Type'</span>, <span class="string">'text/json;charset=utf-8'</span>)</span><br><span class="line">    response.setHeader(<span class="string">'Access-Control-Allow-Origin'</span>, <span class="string">'http://localhsot:8001'</span>)</span><br><span class="line">    response.write(`</span><br><span class="line">    &#123;</span><br><span class="line">    <span class="string">"notes"</span>:&#123;</span><br><span class="line">        <span class="string">"from"</span>:<span class="string">"roxas"</span>,</span><br><span class="line">        <span class="string">"to"</span>:<span class="string">"养蛇"</span>,</span><br><span class="line">        <span class="string">"title"</span>:<span class="string">"打招呼"</span>,</span><br><span class="line">        <span class="string">"contant"</span>:<span class="string">"你好"</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    `)</span><br><span class="line">    response.end()</span><br></pre></td></tr></table></figure>
-<h4 id="同源策略"><a href="#同源策略" class="headerlink" title="同源策略"></a>同源策略</h4><h5 id="只有-协议-端口-域名-一模一样才允许发-AJAX-请求"><a href="#只有-协议-端口-域名-一模一样才允许发-AJAX-请求" class="headerlink" title="只有 协议+端口+域名 一模一样才允许发 AJAX 请求"></a>只有 协议+端口+域名 一模一样才允许发 AJAX 请求</h5><p>例:<br><a href="http://baidu.com" target="_blank" rel="noopener">http://baidu.com</a> 可以向 <a href="http://www.baidu.com" target="_blank" rel="noopener">http://www.baidu.com</a> 发 AJAX 请求吗 no<br><a href="http://baidu.com:80" target="_blank" rel="noopener">http://baidu.com:80</a> 可以向 <a href="http://baidu.com:81" target="_blank" rel="noopener">http://baidu.com:81</a> 发 AJAX 请求吗 no</p>
-<p>CORS可以告诉浏览器,我俩一家的，别阻止他</p>
-<h5 id="CORS-Cross-Origin-Resource-Sharing-跨源资源共享"><a href="#CORS-Cross-Origin-Resource-Sharing-跨源资源共享" class="headerlink" title="CORS:Cross-Origin Resource Sharing(跨源资源共享)"></a>CORS:Cross-Origin Resource Sharing(跨源资源共享)</h5><p>响应的服务器(8001)代码加入响应头:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">response.setHeader(<span class="string">'Access-Control-Allow-Origin'</span>, <span class="string">'http://localhsot:8002'</span>)</span><br></pre></td></tr></table></figure></p>
-<p>AJXA获取请求与响应的所有信息</p>
-<h4 id="请求"><a href="#请求" class="headerlink" title="请求:"></a>请求:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">POST / HTTP/1.1</span><br><span class="line">HOST: localhost:8001</span><br><span class="line">Content-Type:application/x-www-url-encoded</span><br><span class="line"></span><br><span class="line">a=1&amp;b=2</span><br></pre></td></tr></table></figure>
-<p>第一部分:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">request.open(<span class="string">'POST'</span>,<span class="string">'http://localhost:8001'</span>)</span><br></pre></td></tr></table></figure></p>
-<p>第二部分:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">request.setHeader(<span class="string">'Content-Type'</span>,<span class="string">'x-www-form-urlencoded'</span>)</span><br></pre></td></tr></table></figure></p>
-<p>第四部分:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">request.send(<span class="string">'a=1&amp;b=2'</span>)</span><br></pre></td></tr></table></figure></p>
-<h5 id="响应"><a href="#响应" class="headerlink" title="响应:"></a>响应:</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">HTTP/1.1 200 OK</span><br><span class="line">Content-Type: text/html</span><br><span class="line"></span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;...&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<p>第一部分:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">request.status //200</span><br><span class="line">request.statusText //OK</span><br></pre></td></tr></table></figure></p>
-<p>第二部分:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">request.getResponseHeader() //获得值</span><br><span class="line">或</span><br><span class="line">request.getResponseHeaders() //获得<span class="built_in">hash</span></span><br></pre></td></tr></table></figure></p>
-<p>第四部分:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">request.responseText</span><br></pre></td></tr></table></figure></p>
-<h4 id="回调函数"><a href="#回调函数" class="headerlink" title="回调函数"></a>回调函数</h4><p>函数用参数是一个函数,参数名字为callback</p>
-<p>call a function<br>call a function  back</p>
-<p>callback</p>
-<p>callback  === function</p>
-<h4 id="ES6语法-解构赋值"><a href="#ES6语法-解构赋值" class="headerlink" title="ES6语法 解构赋值"></a>ES6语法 解构赋值</h4><p>ES5<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> method = options.method;</span><br><span class="line"><span class="built_in">let</span> body = options.body;</span><br><span class="line"><span class="built_in">let</span> successFn = options.successFn;</span><br><span class="line"><span class="built_in">let</span> failFn = options.failFn;</span><br><span class="line"><span class="built_in">let</span> headers = options.headers;</span><br></pre></td></tr></table></figure></p>
-<p>ES6<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> &#123;method,body,successFn,failFn,headers&#125; = option</span><br></pre></td></tr></table></figure></p>
-<h4 id="封装jQuery-ajax"><a href="#封装jQuery-ajax" class="headerlink" title="封装jQuery.ajax"></a>封装jQuery.ajax</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">// 选择器,不用看</span><br><span class="line">var jQuery = <span class="keyword">function</span>(nodeOrSelector)&#123;</span><br><span class="line">    <span class="built_in">let</span> nodes = &#123;&#125;</span><br><span class="line">    <span class="keyword">if</span>(typeof nodeOrSelector === <span class="string">'string'</span>)&#123;</span><br><span class="line">        <span class="built_in">let</span> temp = document.querySelectorAll(nodeOrSelector);</span><br><span class="line">        <span class="keyword">for</span>(<span class="built_in">let</span> i = 0;i&lt;temp.length;i++)&#123;</span><br><span class="line">            nodes[i] = temp[i]</span><br><span class="line">        &#125;</span><br><span class="line">        nodes.length = temp.length;</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(nodeOrSelector instanceof Node)&#123;</span><br><span class="line">        nodes = &#123;</span><br><span class="line">            0:nodeOrSelector,</span><br><span class="line">            length:1</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">return</span> &#123;</span><br><span class="line">        addClass:<span class="function"><span class="title">function</span></span>()&#123;&#125;,</span><br><span class="line">        setText:<span class="function"><span class="title">function</span></span>()&#123;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">window.jQuery = jQuery;</span><br><span class="line">window.$ = jQuery;</span><br><span class="line">//以下为ajxa代码</span><br><span class="line"></span><br><span class="line">window.jQuery.ajax = <span class="keyword">function</span>(&#123;url,method,body,headers&#125;)&#123;</span><br><span class="line">    <span class="built_in">return</span> new Promise(<span class="keyword">function</span>(resolve,reject)&#123;</span><br><span class="line">        <span class="built_in">let</span> request = new XMLHttprequest();</span><br><span class="line">        request.open(method,url);</span><br><span class="line">        <span class="keyword">for</span>(<span class="built_in">let</span> key <span class="keyword">in</span> headers)&#123;</span><br><span class="line">            <span class="built_in">let</span> value = headers[key];</span><br><span class="line">            request.setRequestHeader(key,value)</span><br><span class="line">        &#125;</span><br><span class="line">        request.onreadystatechange = ()=&gt;&#123;</span><br><span class="line">            <span class="keyword">if</span>(request.readystates === 4)&#123;</span><br><span class="line">                <span class="keyword">if</span>(request.status &gt;= 200 &amp;&amp; request.status &lt; 300)&#123;</span><br><span class="line">                    resolve.call(undefined,request.responseText);</span><br><span class="line">                &#125;<span class="keyword">else</span> <span class="keyword">if</span>(request.status &gt;= 400)&#123;</span><br><span class="line">                    reject.call(undefined,request)</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        request.send(body);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h4><p>return new Promise (function(resolve,reject){})</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">xxx</span></span>()&#123;</span><br><span class="line">    <span class="built_in">return</span> new Promise((f1,f2)=&gt;&#123;</span><br><span class="line">        doSometing();</span><br><span class="line">        setTimeout(()=&gt;&#123;</span><br><span class="line">            //成功就调用f1,失败就调用f2</span><br><span class="line">        &#125;,3000)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">xxx().<span class="keyword">then</span>(success,fail);</span><br><span class="line">//链式操作</span><br><span class="line"></span><br><span class="line">xxx().<span class="keyword">then</span>(success,fail).<span class="keyword">then</span>(success,fail);</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/31/AJAX/" data-id="cjr27hnsp0000j8pft0aealp1" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-JSONP" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/05/30/JSONP/" class="article-date">
-  <time datetime="2018-05-30T07:38:45.000Z" itemprop="datePublished">2018-05-30</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-05-31T14:16:01+08:00">2018-05-31 14:16:01</time></span>
+        </span>
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/30/JSONP/">JSONP</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="什么是JSONP"><a href="#什么是JSONP" class="headerlink" title="什么是JSONP"></a>什么是JSONP</h4><h5 id="JSONP"><a href="#JSONP" class="headerlink" title="JSONP:"></a>JSONP:</h5><p>请求方:浏览器<br>响应方:服务器</p>
-<ol>
-<li>请求方创建script,src指向响应方,同时传递一个查询参数 ?callback=functionName;</li>
-<li>响应方根据查询参数callback,构造函数functionName.call(undefined,’数据’);</li>
-<li>浏览器接受到响应,就会执行functionName.call(undefined,’数据’);</li>
-<li>那么请求方就知道了他要的数据</li>
-</ol>
-<p>按照约定:</p>
-<ol>
-<li>查询参数应为callback;</li>
-<li>functionName -&gt; 随机名字</li>
-</ol>
-<h4 id="实现一个JOSNP"><a href="#实现一个JOSNP" class="headerlink" title="实现一个JOSNP"></a>实现一个JOSNP</h4><p>预览:<a href="https://github.com/roxas332519096/JSONP" target="_blank" rel="noopener">https://github.com/roxas332519096/JSONP</a></p>
-<p>前端代码:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    button.addEventListener(<span class="string">'click'</span>, (e)=&gt;&#123;</span><br><span class="line">    <span class="built_in">let</span> script = document.createElement(<span class="string">'script'</span>) </span><br><span class="line">    <span class="built_in">let</span> functionName = <span class="string">'frank'</span>+ parseInt(Math.random()*10000000 ,10)  // 每次请求之前搞出一个随机的函数</span><br><span class="line">    window[functionName] = <span class="keyword">function</span>(result)&#123;</span><br><span class="line">        <span class="keyword">if</span>(result === <span class="string">'success'</span>)&#123;</span><br><span class="line">            amount.innerText = amount.innerText - 0 - 1</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    script.src = <span class="string">'http://localhost:8002/pay?callback='</span> + functionName</span><br><span class="line">    document.body.appendChild(script)</span><br><span class="line">    script.onload = <span class="keyword">function</span>(e)&#123; </span><br><span class="line">        e.currentTarget.remove()</span><br><span class="line">        delete window[functionName] </span><br><span class="line">    &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
-<p>后端代码:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(path === <span class="string">'/'</span>)&#123;</span><br><span class="line">    var string = fs.readFileSync(<span class="string">'./index.html'</span>,<span class="string">'utf8'</span>)</span><br><span class="line">    var amount = fs.readFileSync(<span class="string">'./db'</span>, <span class="string">'utf8'</span>);</span><br><span class="line">    string = string.replace(<span class="string">'&amp;&amp;&amp;amount&amp;&amp;&amp;'</span>, amount);</span><br><span class="line">    response.setHeader(<span class="string">'Content-Type'</span>, <span class="string">'text/html;charset=utf-8'</span>)</span><br><span class="line">    response.write(string);</span><br><span class="line">    response.end();</span><br><span class="line">  &#125;<span class="keyword">else</span> <span class="keyword">if</span>(path === <span class="string">'/pay'</span>)&#123;</span><br><span class="line">    var amount = fs.readFileSync(<span class="string">'./db'</span>, <span class="string">'utf8'</span>)</span><br><span class="line">    amount -= 1</span><br><span class="line">    fs.writeFileSync(<span class="string">'./db'</span>, amount);</span><br><span class="line">    var callbackName = query.callback;</span><br><span class="line">    response.setHeader(<span class="string">'Content-Type'</span>, <span class="string">'application/javascript'</span>)</span><br><span class="line">    response.statusCode = 200;</span><br><span class="line">    response.write(`</span><br><span class="line">        <span class="variable">$&#123;callbackName&#125;</span>.call(undefined, <span class="string">'success'</span>)</span><br><span class="line">    `)</span><br><span class="line">    response.end()</span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    response.statusCode = 404</span><br><span class="line">    response.setHeader(<span class="string">'Content-Type'</span>, <span class="string">'text/html;charset=utf-8'</span>)</span><br><span class="line">    response.write(<span class="string">'找不到对应路径,你需要自行修改 index.html'</span>)</span><br><span class="line">    response.end()</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
-<h5 id="流程如下"><a href="#流程如下" class="headerlink" title="流程如下:"></a>流程如下:</h5><ol>
-<li>浏览器8001点击按钮button</li>
-<li>创建script,src指向8002/pay</li>
-<li>创建随机名函数functionName</li>
-<li>发送get请求,用查询参数?callback = functionName 传递函数名</li>
-<li>服务器8002响应</li>
-<li>当被指向pay执行以下命令</li>
-<li>读取数据库db中的amout</li>
-<li>amount = amount-1</li>
-<li>将amount写入数据库</li>
-<li>根据callback构造一个函数</li>
-<li>调用函数functionName.call(undefined,’success’)</li>
-<li>浏览器接收响应,根据输入参数success执行functionName函数</li>
-<li>innerText - 1</li>
-<li>删除script标签</li>
-<li>假如刷新浏览器8001,重新读取修改后的数据库db,获得修改后的数据</li>
-</ol>
-<h4 id="原生JS的例子"><a href="#原生JS的例子" class="headerlink" title="原生JS的例子"></a>原生JS的例子</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">window.fn = <span class="keyword">function</span>(response)&#123;</span><br><span class="line">    ///response是返回的数据</span><br><span class="line">&#125;</span><br><span class="line">var script = document.createElement(<span class="string">'script'</span>);</span><br><span class="line">script.src = <span class="string">'http://api.douban.com/v2/movie/top250?callback=fn'</span>;</span><br><span class="line">document.body.appendChild(script);</span><br><span class="line">script.onload = <span class="keyword">function</span>(e)&#123;</span><br><span class="line">    e.currentTarget.remove();</span><br><span class="line">    delete window.fn;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="用jQuery实现JOSNP"><a href="#用jQuery实现JOSNP" class="headerlink" title="用jQuery实现JOSNP:"></a>用jQuery实现JOSNP:</h4><p>前端代码如下:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">    url:<span class="string">'http://api.douban.com/v2/movie/top250'</span>,</span><br><span class="line">    <span class="built_in">type</span>:<span class="string">'GET'</span>,</span><br><span class="line">    data:&#123;</span><br><span class="line">        start:0,</span><br><span class="line">        count:20</span><br><span class="line">    &#125;,</span><br><span class="line">    dataType:<span class="string">'jsonp'</span></span><br><span class="line">&#125;).<span class="keyword">done</span>(<span class="keyword">function</span>(respone)&#123;</span><br><span class="line">    console.log(respone);</span><br><span class="line">&#125;).fail(<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">    console.log(<span class="string">'error'</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<h4 id="为什么JSONP不支持POST"><a href="#为什么JSONP不支持POST" class="headerlink" title="为什么JSONP不支持POST?"></a>为什么JSONP不支持POST?</h4><p>因为JSONP是通过动态创建script实现的,动态创建script只有get请求.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/30/JSONP/" data-id="cjr27hntg000cj8pf8orglc11" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-DOM事件" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/05/29/DOM事件/" class="article-date">
-  <time datetime="2018-05-29T07:23:37.000Z" itemprop="datePublished">2018-05-29</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/29/DOM事件/">DOM事件</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
       
-        <h3 id="DOM-level-0"><a href="#DOM-level-0" class="headerlink" title="DOM level 0:"></a>DOM level 0:</h3><p>onclick = “要执行的代码”  //一旦用户点击,浏览器就eval(“要执行的代码”)</p>
-<p>例:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="keyword">function</span> <span class="function"><span class="title">print</span></span>()&#123;console.log(<span class="string">''</span>hi)&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;button id = X onclick = <span class="string">"print()"</span>&gt;</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">X.onclick = <span class="built_in">print</span>  //类型为函数对象,对</span><br><span class="line">Y.onclick = <span class="built_in">print</span>() //undefined,错</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="DOM-level-1-同DOM-level0"><a href="#DOM-level-1-同DOM-level0" class="headerlink" title="DOM level 1:同DOM level0;"></a>DOM level 1:同DOM level0;</h3><h3 id="DOM-level-2"><a href="#DOM-level-2" class="headerlink" title="DOM level 2:"></a>DOM level 2:</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">X.addEventListener(<span class="string">'click'</span>,<span class="function"><span class="title">function</span></span>()&#123;&#125;) //队列,先进先出,先绑定先触发</span><br></pre></td></tr></table></figure>
-<h4 id="与-X-onclick-function-区别"><a href="#与-X-onclick-function-区别" class="headerlink" title="与 X.onclick = function(){}区别:"></a>与 X.onclick = function(){}区别:</h4><p>这是一个属性,是唯一的,只能绑定一个onclick;<br>一次事件监听 X.one(‘click’,fn(){}) //添加后移除事件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">X.removeddEventListener(<span class="string">'click'</span>,<span class="function"><span class="title">function</span></span>()&#123;&#125;)</span><br></pre></td></tr></table></figure>
-<p>祖先元素绑定事件模型:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"grand1"</span>&gt;</span><br><span class="line">    爷爷</span><br><span class="line">    &lt;div id=<span class="string">"parent"</span>&gt;</span><br><span class="line">        爸爸</span><br><span class="line">        &lt;div id=<span class="string">"child1"</span>&gt;儿子&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    grand1.addEventListener(<span class="string">'click'</span>,<span class="keyword">function</span> <span class="function"><span class="title">f1</span></span>()&#123;</span><br><span class="line">        console.log(<span class="string">'爷爷'</span>)</span><br><span class="line">    &#125;)</span><br><span class="line">    parent1.addEventListener(<span class="string">'click'</span>,<span class="keyword">function</span> <span class="function"><span class="title">f2</span></span>()&#123;</span><br><span class="line">        console.log(<span class="string">'父亲'</span>)</span><br><span class="line">    &#125;)</span><br><span class="line">    child1.addEventListener(<span class="string">'click'</span>,<span class="keyword">function</span> <span class="function"><span class="title">f3</span></span>()&#123;</span><br><span class="line">        console.log(<span class="string">'儿子'</span>)</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
-<ol>
-<li>当我点击儿子时,也相当于点击父亲和爷爷</li>
-<li>当我点击儿子时,也相执行其绑定事件,执行f1 f2 f3;</li>
-<li><p>X.addEventListener(‘click’,function f1(){},参数)<br>添加参数,默认是false<br>假如是false:从小到大(冒泡) f3 f2 f1 ,假如是true:从大到小(捕获) f1 f2 f3</p>
-</li>
-<li><p>假如同一个事件本身存在冒泡捕获,那么按照写的顺序执行<br>X.addEventListener(‘click’,function f1(){},false) //冒泡<br>X.addEventListener(‘click’,function f1(){},ture) //捕获</p>
-</li>
-</ol>
-<h3 id="阻止祖先DOM事件触发"><a href="#阻止祖先DOM事件触发" class="headerlink" title="阻止祖先DOM事件触发"></a>阻止祖先DOM事件触发</h3><h4 id="点击其他地方关闭浮层"><a href="#点击其他地方关闭浮层" class="headerlink" title="点击其他地方关闭浮层"></a>点击其他地方关闭浮层</h4><h4 id="方案1"><a href="#方案1" class="headerlink" title="方案1:"></a>方案1:</h4><p>通过stopPropagation()方法阻止事件传播;<br>代码如下:</p>
-<p>预览:<br><a href="https://roxas332519096.github.io/notes-demo/0528-点击其他地方关闭浮层方案1.html" target="_blank" rel="noopener">https://roxas332519096.github.io/notes-demo/0528-点击其他地方关闭浮层方案1.html</a></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    clickMe.addEventListener(<span class="string">'click'</span>,<span class="keyword">function</span>(e)&#123;</span><br><span class="line">        popover.style.display = <span class="string">'block'</span>;</span><br><span class="line">    &#125;)</span><br><span class="line">    wrapper.addEventListener(<span class="string">'click'</span>,<span class="keyword">function</span>(e)&#123;</span><br><span class="line">            e.stopPropagation();</span><br><span class="line">    &#125;)</span><br><span class="line">    document.addEventListener(<span class="string">'click'</span>,<span class="keyword">function</span>(e)&#123;</span><br><span class="line">        popover.style.display = <span class="string">'none'</span>;</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<h4 id="方案2"><a href="#方案2" class="headerlink" title="方案2:"></a>方案2:</h4><p>用jQuery的监听一次事件one()与setTimeout()</p>
-<p>预览:<br><a href="https://roxas332519096.github.io/notes-demo/0528-点击其他地方关闭浮层方案2.html" target="_blank" rel="noopener">https://roxas332519096.github.io/notes-demo/0528-点击其他地方关闭浮层方案2.html</a></p>
-<p>代码如下:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    $(clickMe).on(<span class="string">'click'</span>,<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">        $(popover).show();</span><br><span class="line">        setTimeout(<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">            $(document).one(<span class="string">'click'</span>,<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">                $(popover).hide();</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;,0)</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<h4 id="做一个Demo理解DOM事件"><a href="#做一个Demo理解DOM事件" class="headerlink" title="做一个Demo理解DOM事件:"></a>做一个Demo理解DOM事件:</h4><p>预览:<br><a href="https://roxas332519096.github.io/notes-demo/0528-理解DOM事件DEOM.html" target="_blank" rel="noopener">https://roxas332519096.github.io/notes-demo/0528-理解DOM事件DEOM.html</a></p>
-<p>过程:</p>
-<p>第一次点击时,先事件监听最后的参数为true,所以传播方式为捕获,从父元素到子元素传播;<br>其后,事件监听最后的参数为默认值,false,所以传播方式为冒泡,从子元素到父元素上传播;</p>
-<p>代码如下:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="built_in">let</span> divs = $(<span class="string">'div'</span>).get()</span><br><span class="line">    <span class="built_in">let</span> n = 0</span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">let</span> i = 0; i &lt; divs.length; i++) &#123;</span><br><span class="line">    divs[i].addEventListener(<span class="string">'click'</span>, () =&gt; &#123;</span><br><span class="line">        setTimeout(() =&gt; &#123;</span><br><span class="line">        divs[i].classList.add(<span class="string">'active'</span>)</span><br><span class="line">        &#125;, n * 500)</span><br><span class="line">        n += 1</span><br><span class="line">    &#125;, <span class="literal">true</span>)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">let</span> i = 0; i &lt; divs.length; i++) &#123;</span><br><span class="line">    divs[i].addEventListener(<span class="string">'click'</span>, () =&gt; &#123;</span><br><span class="line">        setTimeout(() =&gt; &#123;</span><br><span class="line">        divs[i].classList.remove(<span class="string">'active'</span>)</span><br><span class="line">        &#125;, n * 500)</span><br><span class="line">        n += 1</span><br><span class="line">    &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
+      <h4 id="AJAX是什么"><a href="#AJAX是什么" class="headerlink" title="AJAX是什么?"></a>AJAX是什么?</h4><p>异步的JavaS
       
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/29/DOM事件/" data-id="cjr27hnt50005j8pfhb4d3mzi" class="article-share-link">Share</a>
-      
+    </main>
+    <footer class="post-footer">
       
     </footer>
-  </div>
+  </article>
   
-</article>
-
-
   
-
-
-  <nav id="page-nav">
-    
-    <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fas fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/"><i class="fas fa-angle-right" aria-label="下一页"></i></a>
   </nav>
+  
+  
+</div>
 
-</section>
-        
-          <aside id="sidebar">
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
   
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li></ul>
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
     </div>
   </div>
-
-
+  <div class="search-result-box" id="search-result"></div>
   
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/avatar.png" alt="Roxas Deng">
+  
+  <h1 class="author-name">Roxas Deng</h1>
+  <h2 class="author-description"></h2>
+  <div class="site-count">
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
+    <div class="archives-count">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">44</a></div>
+    </div>
+    
+    
+    
+    <span class="site-count-divider divider">|</span>
+    
+    <div class="categories-count">
+      <div class="site-count-title">分类</div>
+      <div><a href="/categories/">2</a></div>
+    </div>
+    
+    
+    
+    <span class="site-count-divider divider">|</span>
+    
+    <div class="tags-count">
+      <div class="site-count-title">标签</div>
+      <div><a href="/tags/">2</a></div>
+    </div>
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>社交链接</p></div>
       <ul>
         
-          <li>
-            <a href="/2019/01/18/Promise的使用/">(no title)</a>
-          </li>
+        <li><i class="fas fa-envelope"></i><a href="mailto:332519096@qq.com" target="_blank">E-Mail</a></li>
         
-          <li>
-            <a href="/2019/01/11/密码强度/">密码强度的实现</a>
-          </li>
-        
-          <li>
-            <a href="/2018/09/04/CSS盒子多边框/">CSS盒子多边框</a>
-          </li>
-        
-          <li>
-            <a href="/2018/09/03/表单美化/">表单美化</a>
-          </li>
-        
-          <li>
-            <a href="/2018/08/03/bootstrap/">bootstrap</a>
-          </li>
+        <li><i class="fab fa-github"></i><a href="https://github.com/roxas332519096" target="_blank">GitHub</a></li>
         
       </ul>
     </div>
+    
+    
   </div>
-
-  
 </aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">Roxas Deng</span><span class="year"><i class="far fa-copyright"></i>2019</span>
+        </div>
+        
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
+        </div>
         
       </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2019 Roxas Deng<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
     </div>
   </div>
 </footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/script.js"></script>
-
-
-
-  </div>
-</body>
+  </body>
 </html>
