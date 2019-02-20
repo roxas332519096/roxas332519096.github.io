@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-02-17T08:29:24.952Z</updated>
+  <updated>2019-02-20T14:45:37.090Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>深入了解函数</title>
+    <link href="http://yoursite.com/2019/02/20/%E6%B7%B1%E5%85%A5%E4%BA%86%E8%A7%A3%E5%87%BD%E6%95%B0/"/>
+    <id>http://yoursite.com/2019/02/20/深入了解函数/</id>
+    <published>2019-02-20T12:50:53.000Z</published>
+    <updated>2019-02-20T14:45:37.090Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;函数声明&quot;&gt;&lt;a href=&quot;#函数声明&quot; class=&quot;headerlink&quot; title=&quot;函数声明&quot;&gt;&lt;/a&gt;函数声明&lt;/h4&gt;&lt;h5 id=&quot;匿名函数&quot;&gt;&lt;a href=&quot;#匿名函数&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="js" scheme="http://yoursite.com/categories/js/"/>
+    
+    
+      <category term="js" scheme="http://yoursite.com/tags/js/"/>
+    
+  </entry>
   
   <entry>
     <title>详解Vuex的使用</title>
@@ -436,28 +462,6 @@
         
         
           &lt;h3 id=&quot;vue组件&quot;&gt;&lt;a href=&quot;#vue组件&quot; class=&quot;headerlink&quot; title=&quot;vue组件&quot;&gt;&lt;/a&gt;vue组件&lt;/h3&gt;&lt;h4 id=&quot;为什么要使用组件&quot;&gt;&lt;a href=&quot;#为什么要使用组件&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Vue基础</title>
-    <link href="http://yoursite.com/2018/07/13/Vue%E5%9F%BA%E7%A1%80/"/>
-    <id>http://yoursite.com/2018/07/13/Vue基础/</id>
-    <published>2018-07-13T15:05:15.000Z</published>
-    <updated>2018-07-13T15:38:17.317Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h3&gt;&lt;h4 id=&quot;MVVM是什么&quot;&gt;&lt;a href=&quot;#MVVM是什么&quot; class=&quot;headerlink&quot;
         
       
     
