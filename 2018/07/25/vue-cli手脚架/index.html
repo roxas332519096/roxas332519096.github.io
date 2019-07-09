@@ -147,6 +147,14 @@
         
         
         
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/vue/" itemprop="url" rel="index"><span itemprop="name">vue</span></a></span>
+        </span>
+        
+        
       </div>
     </header>
     <main class="post-main" itemprop="articleBody">
@@ -163,8 +171,17 @@
 <h5 id="2-2-4-配置文件位置"><a href="#2-2-4-配置文件位置" class="headerlink" title="2.2.4 配置文件位置"></a>2.2.4 配置文件位置</h5><p>In dedicated config files 根目录<br>package.json</p>
 <h5 id="2-2-5-未来是否使用该配置"><a href="#2-2-5-未来是否使用该配置" class="headerlink" title="2.2.5 未来是否使用该配置"></a>2.2.5 未来是否使用该配置</h5><h4 id="启动项目"><a href="#启动项目" class="headerlink" title="启动项目"></a>启动项目</h4><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm run server<br></code></pre></td></tr></table></figure>
 <h4 id="输出项目"><a href="#输出项目" class="headerlink" title="输出项目"></a>输出项目</h4><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm run build<br></code></pre></td></tr></table></figure>
+<h4 id="关于vue-config-js"><a href="#关于vue-config-js" class="headerlink" title="关于vue.config.js"></a>关于vue.config.js</h4><p>vue.config.js属于可选文件,需要自己手动去创建</p>
+<h4 id="如何部署本地-github"><a href="#如何部署本地-github" class="headerlink" title="如何部署本地(github)"></a>如何部署本地(github)</h4><p>在根目录下创建vue.config.js</p>
+<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">module.exports = &#123;<br>    publicPath: <span class="hljs-string">'./'</span><br>  &#125;<br></code></pre></td></tr></table></figure>
     </main>
     <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/vue/" rel="tag"><i class="fas fa-tags"></i>vue</a>
+        
+      </div>
       
     </footer>
   </article>
@@ -210,7 +227,7 @@
     
     <div class="archives-count">
       <div class="site-count-title">归档</div>
-      <div><a href="/archives/">46</a></div>
+      <div><a href="/archives/">54</a></div>
     </div>
     
     
@@ -219,7 +236,7 @@
     
     <div class="categories-count">
       <div class="site-count-title">分类</div>
-      <div><a href="/categories/">2</a></div>
+      <div><a href="/categories/">4</a></div>
     </div>
     
     
@@ -228,7 +245,7 @@
     
     <div class="tags-count">
       <div class="site-count-title">标签</div>
-      <div><a href="/tags/">3</a></div>
+      <div><a href="/tags/">4</a></div>
     </div>
     
   </div>
@@ -249,7 +266,7 @@
     <hr>
     <div class="post-toc sidebar-item" id="toc-div">
       <div><i class="fas fa-list-ol"></i>文章目录</div>
-      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#安装"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#安装vue-serve"><span class="toc-text">安装vue serve</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#创建一个项目"><span class="toc-text">创建一个项目</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#选项"><span class="toc-text">选项</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#1-选择特性"><span class="toc-text">1.选择特性</span></a></li><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#2-1-默认加载"><span class="toc-text">2.1 默认加载</span></a></li><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#2-2-2-router设置"><span class="toc-text">2.2.2 router设置</span></a></li><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#2-2-3-CSS预处理器选择"><span class="toc-text">2.2.3 CSS预处理器选择</span></a></li><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#2-2-4-配置文件位置"><span class="toc-text">2.2.4 配置文件位置</span></a></li><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#2-2-5-未来是否使用该配置"><span class="toc-text">2.2.5 未来是否使用该配置</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#启动项目"><span class="toc-text">启动项目</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#输出项目"><span class="toc-text">输出项目</span></a></li></ol></div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#安装"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#安装vue-serve"><span class="toc-text">安装vue serve</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#创建一个项目"><span class="toc-text">创建一个项目</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#选项"><span class="toc-text">选项</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#1-选择特性"><span class="toc-text">1.选择特性</span></a></li><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#2-1-默认加载"><span class="toc-text">2.1 默认加载</span></a></li><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#2-2-2-router设置"><span class="toc-text">2.2.2 router设置</span></a></li><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#2-2-3-CSS预处理器选择"><span class="toc-text">2.2.3 CSS预处理器选择</span></a></li><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#2-2-4-配置文件位置"><span class="toc-text">2.2.4 配置文件位置</span></a></li><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#2-2-5-未来是否使用该配置"><span class="toc-text">2.2.5 未来是否使用该配置</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#启动项目"><span class="toc-text">启动项目</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#输出项目"><span class="toc-text">输出项目</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#关于vue-config-js"><span class="toc-text">关于vue.config.js</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#如何部署本地-github"><span class="toc-text">如何部署本地(github)</span></a></li></ol></div>
     </div>
     
     

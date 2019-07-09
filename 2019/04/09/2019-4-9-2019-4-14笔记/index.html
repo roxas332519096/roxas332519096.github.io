@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    
+    <meta name="keywords" content="Life, ARIA, Hexo">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="RoxasDengBlog" type="application/atom+xml" />
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>自动化测试&发布npm包 | RoxasDengBlog</title>
+  </head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">RoxasDengBlog</a></h1>
+        <h2 class="subtitle"></h2>
+      </div>
+      
+      <div class="logo">
+        <img src="/images/logo.png" alt="logo">
+      </div>
+      
+    </div>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
+        
+        <li role="menuitem"><a href="/">首页</a></li>
+        
+        <li role="menuitem"><a href="/archives/">归档</a></li>
+        
+        <li role="menuitem"><a href="/categories/">分类</a></li>
+        
+        <li role="menuitem"><a href="/tags/">标签</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="page">
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/09/2019-4-9-2019-4-14笔记/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="Roxas Deng">
+       <meta itemprop="description" content="">
+       <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="RoxasDengBlog">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">自动化测试&发布npm包</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-04-09T15:49:19+08:00">2019-04-09 15:49:19</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <h4 id="1-自动化测试"><a href="#1-自动化测试" class="headerlink" title="1. 自动化测试"></a>1. 自动化测试</h4><ol>
+<li>kama一个测试运行器,可呼起浏览器,加载测试脚本,运星测试用例.</li>
+<li>mocha是一个单元测试框架/库,可以用来写测试用例.</li>
+<li>sinon是一个spy/stub/mock库,用以辅助测试.</li>
+</ol>
+<p>运行<br><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm i -D karma karma-chrome-launcher karma-mocha karma-sinon-chai mocha sinon sinon-chai karma-chai karma-chai-spies<br></code></pre></td></tr></table></figure></p>
+<p>创建karma配置,karma.conf.js</p>
+<p>输出目录:*代表加载所有文件<br><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">files: [<br>    <span class="hljs-string">'dist/**/*.test.js'</span>,<br>    <span class="hljs-string">'dist/**/*.test.css'</span><br>]<br></code></pre></td></tr></table></figure></p>
+<p>运行浏览器</p>
+<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">browsers: [<span class="hljs-string">'ChromeHeadless'</span>],<br></code></pre></td></tr></table></figure>
+<p>代码:</p>
+<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><code class="hljs bash">module.exports = <span class="hljs-keyword">function</span> (config) &#123;<br>     config.set(&#123;<br><br>         // base path that will be used to resolve all patterns (eg. files, exclude)<br>         basePath: <span class="hljs-string">''</span>,<br><br>        // frameworks to use<br>        // available frameworks: https://npmjs.org/browse/keyword/karma-adapter<br>        frameworks: [<span class="hljs-string">'mocha'</span>, <span class="hljs-string">'sinon-chai'</span>],<br>        client: &#123;<br>            chai: &#123;<br>                includeStack: <span class="hljs-literal">true</span><br>            &#125;<br>        &#125;,<br><br><br>        // list of files / patterns to load <span class="hljs-keyword">in</span> the browser<br>        files: [<br>            <span class="hljs-string">'dist/**/*.test.js'</span>,<br>            <span class="hljs-string">'dist/**/*.test.css'</span><br>        ],<br><br><br>        // list of files / patterns to exclude<br>        exclude: [],<br><br><br>        // preprocess matching files before serving them to the browser<br>        // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor<br>        preprocessors: &#123;&#125;,<br><br><br>        // <span class="hljs-built_in">test</span> results reporter to use<br>        // possible values: <span class="hljs-string">'dots'</span>, <span class="hljs-string">'progress'</span><br>        // available reporters: https://npmjs.org/browse/keyword/karma-reporter<br>        reporters: [<span class="hljs-string">'progress'</span>],<br><br><br>        // web server port<br>        port: 9876,<br><br><br>        // <span class="hljs-built_in">enable</span> / <span class="hljs-built_in">disable</span> colors <span class="hljs-keyword">in</span> the output (reporters and logs)<br>        colors: <span class="hljs-literal">true</span>,<br><br><br>        // level of logging<br>        // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG<br>        logLevel: config.LOG_INFO,<br><br><br>        // <span class="hljs-built_in">enable</span> / <span class="hljs-built_in">disable</span> watching file and executing tests whenever any file changes<br>        autoWatch: <span class="hljs-literal">true</span>,<br><br><br>        // start these browsers<br>        // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher<br>        browsers: [<span class="hljs-string">'ChromeHeadless'</span>],<br><br><br>        // Continuous Integration mode<br>        // <span class="hljs-keyword">if</span> <span class="hljs-literal">true</span>, Karma captures browsers, runs the tests and exits<br>        singleRun: <span class="hljs-literal">false</span>,<br><br>        // Concurrency level<br>        // how many browser should be started simultaneous<br>        concurrency: Infinity<br>    &#125;)<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>创建test/button.test.js文件</p>
+<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs bash">const expect = chai.expect;<br> import Vue from <span class="hljs-string">'vue'</span><br> import Button from <span class="hljs-string">'../src/button'</span><br><br> Vue.config.productionTip = <span class="hljs-literal">false</span><br> Vue.config.devtools = <span class="hljs-literal">false</span><br><br>describe(<span class="hljs-string">'Button'</span>,()=&gt;&#123;<br>    it(<span class="hljs-string">'xxx'</span>,()=&gt;&#123;<br>        //测试代码<br>    &#125;)<br>&#125;)<br></code></pre></td></tr></table></figure>
+<p>创建测试脚本</p>
+<p>在 package.json 里面找到 scripts 并改写 scripts<br><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-string">"scripts"</span>: &#123;<br>     <span class="hljs-string">"dev-test"</span>: <span class="hljs-string">"parcel watch test/* --no-cache &amp; karma start"</span>,<br>     <span class="hljs-string">"test"</span>: <span class="hljs-string">"parcel build test/* --no-minify &amp;&amp; karma start --single-run"</span><br> &#125;,<br></code></pre></td></tr></table></figure></p>
+<p>运行测试脚本</p>
+<ol>
+<li>npm run test 一次性运行</li>
+<li>npm run dev-test 进行watch运行</li>
+</ol>
+<h4 id="2-使用Mocha-amp-Chai做单元测试"><a href="#2-使用Mocha-amp-Chai做单元测试" class="headerlink" title="2.使用Mocha&amp;Chai做单元测试"></a>2.使用Mocha&amp;Chai做单元测试</h4><p>BDD  行为驱动测试</p>
+<p>descrube 描述<br>expect 期待<br>eq 输出<br>deep 深相等<br>not 不<br>with 并且</p>
+<p>descrube ‘people’</p>
+<p>it has a head<br>it can run</p>
+<p>expect(‘xxx’).eq(‘yyy’)</p>
+<p>文档: <a href="http://www.chaijs.com" target="_blank" rel="noopener">www.chaijs.com</a></p>
+<h4 id="3-使用TravisCI做持续集成"><a href="#3-使用TravisCI做持续集成" class="headerlink" title="3. 使用TravisCI做持续集成"></a>3. 使用TravisCI做持续集成</h4><p>注册travis账户.</p>
+<p>根目录下创建 .travis.yml 文件</p>
+<p>每次提交后可在travis上查看测试结果.</p>
+<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash">language: node_js<br>node_js:<br>  - <span class="hljs-string">"8"</span><br>addons:<br>  chrome: stable<br>sudo: required<br>before_script:<br>  - <span class="hljs-string">"sudo chown root /opt/google/chrome/chrome-sandbox"</span><br>  - <span class="hljs-string">"sudo chmod 4755 /opt/google/chrome/chrome-sandbox"</span><br></code></pre></td></tr></table></figure>
+<h4 id="为什么一个空数组不等于空数组"><a href="#为什么一个空数组不等于空数组" class="headerlink" title="为什么一个空数组不等于空数组"></a>为什么一个空数组不等于空数组</h4><p>因为引用不同,是两个数组</p>
+<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">[] == [] //<span class="hljs-literal">false</span><br><br>var a = []<br>a == [] //<span class="hljs-literal">false</span><br>a == [] //<span class="hljs-literal">true</span><br></code></pre></td></tr></table></figure>
+<h4 id="4-发布npm包"><a href="#4-发布npm包" class="headerlink" title="4. 发布npm包"></a>4. 发布npm包</h4><p>根目录下创建index.js<br>导入组件 导出组件<br><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">improt cp from <span class="hljs-string">'./src/cp'</span><br>exprot &#123;cp&#125;<br></code></pre></td></tr></table></figure></p>
+<p>查看自己当前npm源路径<br><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm config list<br></code></pre></td></tr></table></figure></p>
+<p>要改成默认源才能发布npm包<br>每次发布需要更改package.json里的版本<br><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">//添加用户<br>npm adduser<br><br>//公开代码<br>npm publish<br></code></pre></td></tr></table></figure></p>
+<p>由于引擎不能识别improt 所以要babel转移或者直接给他转义好</p>
+<p>转义</p>
+<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">//packjson输出目录修改成dist/index.js<br><br>运行<br><br>npx parcel build index.js --no-cache --no-minify<br></code></pre></td></tr></table></figure>
+<h4 id="5-使用npm-link"><a href="#5-使用npm-link" class="headerlink" title="5. 使用npm link"></a>5. 使用npm link</h4><p>由于每次更新都需要更改package.json里的版本,然后npm publish,所以我们可以用本地调试,在项目目录使用npm link,在所用目录运行npm link xxx.</p>
+<h4 id="6-书写README"><a href="#6-书写README" class="headerlink" title="6. 书写README"></a>6. 书写README</h4><p>shields.io生成图标</p>
+<h4 id="7-安装git-open"><a href="#7-安装git-open" class="headerlink" title="7. 安装git open"></a>7. 安装git open</h4><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm i -g git-open<br></code></pre></td></tr></table></figure>
+<h4 id="8-git会到之前版本"><a href="#8-git会到之前版本" class="headerlink" title="8. git会到之前版本"></a>8. git会到之前版本</h4><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git reset --hard xxx<br></code></pre></td></tr></table></figure>
+    </main>
+    <footer class="post-footer">
+      
+    </footer>
+  </article>
+  
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+      <a href="/2019/04/03/2019-4-1-2019-4-7笔记/" rel="next" title="Vue的几个小坑&子选择器&测试相关"><i class="fas fa-angle-left"></i><span class="nav-title">Vue的几个小坑&子选择器&测试相关</span></a>
+      
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+      <a href="/2019/04/16/web图片的使用/" rel="prev" title="web图片的使用"><span class="nav-title">web图片的使用</span><i class="fas fa-angle-right"></i></a>
+      
+    </div>
+  </nav>
+  
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/avatar.png" alt="Roxas Deng">
+  
+  <h1 class="author-name">Roxas Deng</h1>
+  <h2 class="author-description"></h2>
+  <div class="site-count">
+    
+    <div class="archives-count">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">54</a></div>
+    </div>
+    
+    
+    
+    <span class="site-count-divider divider">|</span>
+    
+    <div class="categories-count">
+      <div class="site-count-title">分类</div>
+      <div><a href="/categories/">4</a></div>
+    </div>
+    
+    
+    
+    <span class="site-count-divider divider">|</span>
+    
+    <div class="tags-count">
+      <div class="site-count-title">标签</div>
+      <div><a href="/tags/">4</a></div>
+    </div>
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    
+    
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>文章目录</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#1-自动化测试"><span class="toc-text">1. 自动化测试</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#2-使用Mocha-amp-Chai做单元测试"><span class="toc-text">2.使用Mocha&amp;Chai做单元测试</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#3-使用TravisCI做持续集成"><span class="toc-text">3. 使用TravisCI做持续集成</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#为什么一个空数组不等于空数组"><span class="toc-text">为什么一个空数组不等于空数组</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#4-发布npm包"><span class="toc-text">4. 发布npm包</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#5-使用npm-link"><span class="toc-text">5. 使用npm link</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#6-书写README"><span class="toc-text">6. 书写README</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#7-安装git-open"><span class="toc-text">7. 安装git open</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#8-git会到之前版本"><span class="toc-text">8. git会到之前版本</span></a></li></ol></div>
+    </div>
+    
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>社交链接</p></div>
+      <ul>
+        
+        <li><i class="fas fa-envelope"></i><a href="mailto:332519096@qq.com" target="_blank">E-Mail</a></li>
+        
+        <li><i class="fab fa-github"></i><a href="https://github.com/roxas332519096" target="_blank">GitHub</a></li>
+        
+      </ul>
+    </div>
+    
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">Roxas Deng</span><span class="year"><i class="far fa-copyright"></i>2019</span>
+        </div>
+        
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  </body>
+</html>

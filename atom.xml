@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-02-21T16:04:32.278Z</updated>
+  <updated>2019-07-09T16:24:56.963Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,202 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>git分支</title>
+    <link href="http://yoursite.com/2019/07/10/git-branch/"/>
+    <id>http://yoursite.com/2019/07/10/git-branch/</id>
+    <published>2019-07-09T16:12:31.000Z</published>
+    <updated>2019-07-09T16:24:56.963Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;git-branch-创建分支&quot;&gt;&lt;a href=&quot;#git-branch-创建分支&quot; class=&quot;headerlink&quot; title=&quot;git branch 创建分支&quot;&gt;&lt;/a&gt;git branch 创建分支&lt;/h4&gt;&lt;figure class=&quot;hljs
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>ES6对象</title>
+    <link href="http://yoursite.com/2019/07/08/ES6%E5%AF%B9%E8%B1%A1/"/>
+    <id>http://yoursite.com/2019/07/08/ES6对象/</id>
+    <published>2019-07-08T09:42:13.000Z</published>
+    <updated>2019-07-08T12:09:35.649Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;1-生成空对象&quot;&gt;&lt;a href=&quot;#1-生成空对象&quot; class=&quot;headerlink&quot; title=&quot;1. 生成空对象&quot;&gt;&lt;/a&gt;1. 生成空对象&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;es5 &lt;/p&gt;
+&lt;figure class=&quot;hljs highlight
+        
+      
+    
+    </summary>
+    
+      <category term="ES6" scheme="http://yoursite.com/categories/ES6/"/>
+    
+    
+      <category term="ES6" scheme="http://yoursite.com/tags/ES6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ES6变量声明</title>
+    <link href="http://yoursite.com/2019/07/08/es6%E5%8F%98%E9%87%8F%E5%A3%B0%E6%98%8E/"/>
+    <id>http://yoursite.com/2019/07/08/es6变量声明/</id>
+    <published>2019-07-08T04:17:27.000Z</published>
+    <updated>2019-07-08T12:09:35.664Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;let&quot;&gt;&lt;a href=&quot;#let&quot; class=&quot;headerlink&quot; title=&quot;let&quot;&gt;&lt;/a&gt;let&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;作用声明局部变量
+        
+      
+    
+    </summary>
+    
+      <category term="ES6" scheme="http://yoursite.com/categories/ES6/"/>
+    
+    
+      <category term="ES6" scheme="http://yoursite.com/tags/ES6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Websocket</title>
+    <link href="http://yoursite.com/2019/04/18/Websocket/"/>
+    <id>http://yoursite.com/2019/04/18/Websocket/</id>
+    <published>2019-04-18T02:29:19.000Z</published>
+    <updated>2019-07-08T12:09:35.664Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;什么是-websocket&quot;&gt;&lt;a href=&quot;#什么是-websocket&quot; class=&quot;headerlink&quot; title=&quot;什么是 websocket&quot;&gt;&lt;/a&gt;什么是 websocket&lt;/h4&gt;&lt;p&gt;websocket 是 HTML5
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>web图片的使用</title>
+    <link href="http://yoursite.com/2019/04/16/web%E5%9B%BE%E7%89%87%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
+    <id>http://yoursite.com/2019/04/16/web图片的使用/</id>
+    <published>2019-04-16T09:34:44.000Z</published>
+    <updated>2019-07-08T12:09:35.664Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;FileReader&quot;&gt;&lt;a href=&quot;#FileReader&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>自动化测试&amp;发布npm包</title>
+    <link href="http://yoursite.com/2019/04/09/2019-4-9-2019-4-14%E7%AC%94%E8%AE%B0/"/>
+    <id>http://yoursite.com/2019/04/09/2019-4-9-2019-4-14笔记/</id>
+    <published>2019-04-09T07:49:19.000Z</published>
+    <updated>2019-07-08T12:09:35.649Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;1-自动化测试&quot;&gt;&lt;a href=&quot;#1-自动化测试&quot; class=&quot;headerlink&quot; title=&quot;1. 自动化测试&quot;&gt;&lt;/a&gt;1.
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Vue的几个小坑&amp;子选择器&amp;测试相关</title>
+    <link href="http://yoursite.com/2019/04/03/2019-4-1-2019-4-7%E7%AC%94%E8%AE%B0/"/>
+    <id>http://yoursite.com/2019/04/03/2019-4-1-2019-4-7笔记/</id>
+    <published>2019-04-03T09:09:04.000Z</published>
+    <updated>2019-07-08T12:09:35.649Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;1-vue中html属性使用简写的问题&quot;&gt;&lt;a href=&quot;#1-vue中html属性使用简写的问题&quot; class=&quot;headerlink&quot; title=&quot;1. vue中html属性使用简写的问题&quot;&gt;&lt;/a&gt;1.
+        
+      
+    
+    </summary>
+    
+      <category term="笔记" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="笔记" scheme="http://yoursite.com/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>截图插件vue-cropper的使用</title>
+    <link href="http://yoursite.com/2019/03/04/%E6%88%AA%E5%9B%BE%E6%8F%92%E4%BB%B6vue-cropper%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
+    <id>http://yoursite.com/2019/03/04/截图插件vue-cropper的使用/</id>
+    <published>2019-03-04T04:47:12.000Z</published>
+    <updated>2019-07-08T12:09:35.664Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;介绍&quot;&gt;&lt;a href=&quot;#介绍&quot; class=&quot;headerlink&quot; title=&quot;介绍&quot;&gt;&lt;/a&gt;介绍&lt;/h4&gt;&lt;p&gt;vue-cropper是基于cropper.js封装的一个vue组件.功能强大.&lt;/p&gt;
+&lt;p&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="vue" scheme="http://yoursite.com/categories/vue/"/>
+    
+    
+      <category term="vue" scheme="http://yoursite.com/tags/vue/"/>
+    
+  </entry>
   
   <entry>
     <title>深入了解函数</title>
@@ -120,7 +316,7 @@
     <link href="http://yoursite.com/2019/01/18/Promise%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
     <id>http://yoursite.com/2019/01/18/Promise的使用/</id>
     <published>2019-01-18T13:39:10.000Z</published>
-    <updated>2019-02-16T05:12:55.314Z</updated>
+    <updated>2019-07-08T12:09:35.649Z</updated>
     
     <summary type="html">
     
@@ -134,7 +330,7 @@
     
     </summary>
     
-      <category term="JS" scheme="http://yoursite.com/categories/JS/"/>
+      <category term="ES6" scheme="http://yoursite.com/categories/ES6/"/>
     
     
       <category term="ES6" scheme="http://yoursite.com/tags/ES6/"/>
@@ -271,7 +467,7 @@
     <link href="http://yoursite.com/2018/07/25/vue-cli%E6%89%8B%E8%84%9A%E6%9E%B6/"/>
     <id>http://yoursite.com/2018/07/25/vue-cli手脚架/</id>
     <published>2018-07-25T08:42:39.000Z</published>
-    <updated>2018-11-09T15:10:25.157Z</updated>
+    <updated>2019-07-08T12:09:35.664Z</updated>
     
     <summary type="html">
     
@@ -285,188 +481,10 @@
     
     </summary>
     
-    
-  </entry>
-  
-  <entry>
-    <title>render函数</title>
-    <link href="http://yoursite.com/2018/07/25/render%E5%87%BD%E6%95%B0/"/>
-    <id>http://yoursite.com/2018/07/25/render函数/</id>
-    <published>2018-07-25T08:42:28.000Z</published>
-    <updated>2019-02-16T05:12:55.314Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h4 id=&quot;初步了解&quot;&gt;&lt;a href=&quot;#初步了解&quot; class=&quot;headerlink&quot; title=&quot;初步了解&quot;&gt;&lt;/a&gt;初步了解&lt;/h4&gt;&lt;p&gt;定义一个组件,使用template&lt;br&gt;&lt;figure class=&quot;hljs highlight
-        
-      
-    
-    </summary>
-    
       <category term="vue" scheme="http://yoursite.com/categories/vue/"/>
     
     
       <category term="vue" scheme="http://yoursite.com/tags/vue/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>自定义指令</title>
-    <link href="http://yoursite.com/2018/07/25/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%87%E4%BB%A4/"/>
-    <id>http://yoursite.com/2018/07/25/自定义指令/</id>
-    <published>2018-07-25T08:42:04.000Z</published>
-    <updated>2018-08-01T14:22:32.981Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h4 id=&quot;基本用法&quot;&gt;&lt;a href=&quot;#基本用法&quot; class=&quot;headerlink&quot; title=&quot;基本用法&quot;&gt;&lt;/a&gt;基本用法&lt;/h4&gt;&lt;p&gt;跟组件类似分全局注册和局部注册,区别就是把component换成derective&lt;/p&gt;
-&lt;figure
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>v-model的使用</title>
-    <link href="http://yoursite.com/2018/07/25/v-model%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
-    <id>http://yoursite.com/2018/07/25/v-model的使用/</id>
-    <published>2018-07-25T07:14:20.000Z</published>
-    <updated>2018-07-25T07:39:32.369Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h4 id=&quot;v-model&quot;&gt;&lt;a href=&quot;#v-model&quot; class=&quot;headerlink&quot; title=&quot;v-model:&quot;&gt;&lt;/a&gt;v-model:&lt;/h4&gt;&lt;p&gt;vue提供了v-model指令,用于在表单类元素上双向绑定.&lt;/p&gt;
-&lt;h4
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>vue的内置指令</title>
-    <link href="http://yoursite.com/2018/07/25/vue%E7%9A%84%E5%86%85%E7%BD%AE%E6%8C%87%E4%BB%A4/"/>
-    <id>http://yoursite.com/2018/07/25/vue的内置指令/</id>
-    <published>2018-07-25T06:36:10.000Z</published>
-    <updated>2018-07-25T07:14:03.627Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h4 id=&quot;v-cloak&quot;&gt;&lt;a href=&quot;#v-cloak&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>v-bind以及class与style的绑定</title>
-    <link href="http://yoursite.com/2018/07/25/v-bind%E4%BB%A5%E5%8F%8Aclass%E4%B8%8Estyle%E7%9A%84%E7%BB%91%E5%AE%9A/"/>
-    <id>http://yoursite.com/2018/07/25/v-bind以及class与style的绑定/</id>
-    <published>2018-07-25T05:42:41.000Z</published>
-    <updated>2018-07-25T06:35:39.498Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h4 id=&quot;了解bind指令&quot;&gt;&lt;a href=&quot;#了解bind指令&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>JS的类与继成</title>
-    <link href="http://yoursite.com/2018/07/25/JS%E7%9A%84%E7%B1%BB%E4%B8%8E%E7%BB%A7%E6%89%BF/"/>
-    <id>http://yoursite.com/2018/07/25/JS的类与继承/</id>
-    <published>2018-07-24T18:52:08.000Z</published>
-    <updated>2018-07-24T19:09:20.539Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h4 id=&quot;继承&quot;&gt;&lt;a href=&quot;#继承&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>WEB性能优化</title>
-    <link href="http://yoursite.com/2018/07/25/WEB%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
-    <id>http://yoursite.com/2018/07/25/WEB性能优化/</id>
-    <published>2018-07-24T18:51:44.000Z</published>
-    <updated>2018-07-24T18:54:01.336Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h4 id=&quot;Web性能优化之分析&quot;&gt;&lt;a href=&quot;#Web性能优化之分析&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Vue组件</title>
-    <link href="http://yoursite.com/2018/07/13/Vue%E7%BB%84%E4%BB%B6/"/>
-    <id>http://yoursite.com/2018/07/13/Vue组件/</id>
-    <published>2018-07-13T15:05:25.000Z</published>
-    <updated>2018-08-01T14:22:24.513Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;vue组件&quot;&gt;&lt;a href=&quot;#vue组件&quot; class=&quot;headerlink&quot; title=&quot;vue组件&quot;&gt;&lt;/a&gt;vue组件&lt;/h3&gt;&lt;h4 id=&quot;为什么要使用组件&quot;&gt;&lt;a href=&quot;#为什么要使用组件&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
     
   </entry>
   
