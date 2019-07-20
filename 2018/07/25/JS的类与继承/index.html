@@ -83,7 +83,7 @@
     <script defer type="text/javascript" src="/js/index.js"></script>
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
-    <title>JS的类与继成 | RoxasDengBlog</title>
+    <title>JS的类与继承 | RoxasDengBlog</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
     
@@ -138,7 +138,7 @@
       </span>
     </div>
     <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">JS的类与继成</h1>
+      <h1 class="post-title" itemprop="name headline">JS的类与继承</h1>
       <div class="post-meta">
         
         <span class="post-date">
@@ -153,13 +153,14 @@
       <h4 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h4><p>继承的作用是:子类可以具有父类的属性和方法</p>
 <p>JS没有继承,只有原型链引用</p>
 <p>一个对象的<strong>proto</strong>指向构造他的函数的protype</p>
+<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">obj._proto_ = Object.prototype<br></code></pre></td></tr></table></figure>
 <p>如:<br><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">var a = new Array();<br>a.push() //实例属性<br>a.valueOf() //继承Object<br></code></pre></td></tr></table></figure></p>
-<p>push是Array.protoype的属性;<br>valueOf是继承子Ojbect.prototype的;<br>因为Array.protype.<strong>proto</strong> = Object.protype</p>
+<p>push是Array.protoype的属性;<br>valueOf是继承子Ojbect.prototype的;<br>因为<br><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">Array.protoype.__proto__ = Object.protoype<br></code></pre></td></tr></table></figure></p>
 <p>隔了两层的才是继承,对于a;push是自身有的,valueOf才是继承的.</p>
 <h4 id="类"><a href="#类" class="headerlink" title="类"></a>类</h4><p>能产生对象的东西即为类</p>
 <p>自己写一个继承类</p>
 <figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-keyword">function</span> Human(name)&#123;<br>    this.name = name;<br>&#125;<br>Human.prototype.run = <span class="hljs-function"><span class="hljs-title">function</span></span>()&#123;<br>    console.log(<span class="hljs-string">'跑跑跑'</span>);<br>    <span class="hljs-built_in">return</span> undefined;<br>&#125;<br><br><span class="hljs-keyword">function</span> Man(name)&#123;<br>    Human.call(this,name); //使子类有父类的属性,假如不写this,那么this就是window<br>    this.gender = <span class="hljs-string">'男'</span>;<br>&#125;<br><br>Man.prototype.__proto__ = Human.prototype //插入父类原型链,但是IE不支持<br><br>Man.prototype.fight = <span class="hljs-function"><span class="hljs-title">function</span></span>()&#123;<br>    console.log(<span class="hljs-string">'打击'</span>);<br>    <span class="hljs-built_in">return</span> undefined;<br>&#125; <br><br>var f = new Man(<span class="hljs-string">'某个男人'</span>); //假如不写new,那么this就是window,因为new的时候this会绑定到这个对象名为Man的对象上<br><br>输出:<br>f.name  //<span class="hljs-string">'某个男人'</span><br>f.gender //<span class="hljs-string">'男'</span><br>f.fight()  //<span class="hljs-string">'打击'</span><br>f.run() //<span class="hljs-string">'跑'</span><br><br>f.__proto__ === Man.prototype;//<span class="hljs-literal">true</span><br>f.__proto__.proto__ === Human.prototype;//<span class="hljs-literal">true</span><br>Man.prototype.__proto__ === Human.prototype;//<span class="hljs-literal">true</span><br></code></pre></td></tr></table></figure>
-<h5 id="构造函数的prototype"><a href="#构造函数的prototype" class="headerlink" title="构造函数的prototype"></a>构造函数的prototype</h5><p>prototype属性只有一个功能,存放共有属性对象的地址</p>
+<h5 id="prototype"><a href="#prototype" class="headerlink" title="prototype"></a>prototype</h5><p>prototype,存放共有属性对象的地址</p>
 <h5 id="ES5和ES6的写法"><a href="#ES5和ES6的写法" class="headerlink" title="ES5和ES6的写法"></a>ES5和ES6的写法</h5><p>ES5:<br><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">var f = <span class="hljs-function"><span class="hljs-title">function</span></span>()&#123;&#125;<br>f.protype = Human.protype<br>Man.protype = new f()<br></code></pre></td></tr></table></figure></p>
 <p>为什么?</p>
 <p>当var obj = new Fn()时,会做以下几件事</p>
@@ -171,11 +172,19 @@
 <li>return this</li>
 </ol>
 <p>Man.prtotype = New Human();会执行this.name,使得有多余属性<br>因为第4步不想要,所以构造一个空函数,只要他的protype</p>
-<p>空函数.protype = Human.protype;<br>Man.protype = new f() // 1,2,3,5步<br>f.protype === Human.protype //true<br>Man.protype.<strong>proto</strong> === f.protype //true </p>
-<p>ES6:<br><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs bash">class Human&#123;<br>    constructor(name)&#123;<br>        this.name = name<br>    &#125;<br>    <span class="hljs-function"><span class="hljs-title">run</span></span>()&#123;<br>        console.log(<span class="hljs-string">'run'</span>)<br>    &#125;<br>&#125;<br><br>class Man extends Human&#123;//等价于Man.protype.__protype = Human.protype<br>    constructor(name)&#123;<br>        super(name) //等价于Human.call(this,name),super意为超类,即父类<br>        this.gender = <span class="hljs-string">'Man'</span><br>    &#125;<br>    <span class="hljs-function"><span class="hljs-title">fight</span></span>()&#123;<br>        console.log(<span class="hljs-string">'fight'</span>)<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure></p>
+<p>空函数.protype = Human.prototype;<br>Man.protype = new f() // 1,2,3,5步<br>f.protype === Human.prototype //true<br>Man.protype.<strong>proto</strong> === f.prototype //true </p>
+<p>ES6:<br>constructor构造自有属性,共有属性写在constructor外面<br>super,执行超类(父类)的constructor<br><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs bash">class Human&#123;<br>    constructor(name)&#123;<br>        this.name = name<br>    &#125;<br>    <span class="hljs-function"><span class="hljs-title">run</span></span>()&#123;<br>        console.log(<span class="hljs-string">'run'</span>)<br>    &#125;<br>&#125;<br><br>class Man extends Human&#123;//等价于Man.protype.__protype = Human.protype<br>    constructor(name)&#123;<br>        super(name) //等价于Human.call(this,name),super意为超类,即父类<br>        this.gender = <span class="hljs-string">'Man'</span><br>    &#125;<br>    <span class="hljs-function"><span class="hljs-title">fight</span></span>()&#123;<br>        console.log(<span class="hljs-string">'fight'</span>)<br>    &#125;<br>&#125;<br><br>var author = new Man(<span class="hljs-string">'roxas'</span>)<br>atuhor//&#123;<br>    name:<span class="hljs-string">'roxas'</span>,<br>    gender:<span class="hljs-string">'Man'</span><br>    __proto__:&#123;<br>        <span class="hljs-function"><span class="hljs-title">fight</span></span>()&#123;&#125;,<br>        ...<br>        __proto__:&#123;<br>            <span class="hljs-function"><span class="hljs-title">run</span></span>()&#123;&#125;<br>            ...<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure></p>
+<h5 id="get-set"><a href="#get-set" class="headerlink" title="get set"></a>get set</h5><p>//属性封装<br>用get来控制只读属性.属性可通过set来条件控制<br><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs bash">class Animal&#123;<br>    constructor(name)&#123;<br>        this.name = name<br>        this._race = <span class="hljs-string">'moving'</span><br>    &#125;<br>    get <span class="hljs-function"><span class="hljs-title">race</span></span>()&#123;<br>        <span class="hljs-built_in">return</span> this._race<br>    &#125;<br>    <span class="hljs-built_in">set</span> race(value)&#123;<br>        this._race = value<br>    &#125;<br>&#125;<br><br>//<span class="hljs-built_in">let</span> dog = new Animal(<span class="hljs-string">'dog'</span>)<br>dog.race //moving<br>dog.race = <span class="hljs-string">'donig'</span><br>dog.race //doing<br></code></pre></td></tr></table></figure></p>
+<h5 id="static静态方法"><a href="#static静态方法" class="headerlink" title="static静态方法"></a>static静态方法</h5><p>不需要实例化就可以调用的方法<br><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs bash">class Animal&#123;<br>    constructor(name)&#123;<br>        this.name = name<br>        this._race = <span class="hljs-string">'moving'</span><br>    &#125;<br>    static <span class="hljs-function"><span class="hljs-title">die</span></span>()&#123;<br>        console.log(<span class="hljs-string">'Animal Die'</span>)<br>    &#125;<br>&#125;<br><br>Animal.die //Animal Die<br></code></pre></td></tr></table></figure></p>
 
     </main>
     <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/ES6/" rel="tag"><i class="fas fa-tags"></i>ES6</a>
+        
+      </div>
       
     </footer>
   </article>
@@ -221,7 +230,7 @@
     
     <div class="archives-count">
       <div class="site-count-title">归档</div>
-      <div><a href="/archives/">54</a></div>
+      <div><a href="/archives/">59</a></div>
     </div>
     
     
@@ -230,7 +239,7 @@
     
     <div class="categories-count">
       <div class="site-count-title">分类</div>
-      <div><a href="/categories/">4</a></div>
+      <div><a href="/categories/">5</a></div>
     </div>
     
     
@@ -239,7 +248,7 @@
     
     <div class="tags-count">
       <div class="site-count-title">标签</div>
-      <div><a href="/tags/">4</a></div>
+      <div><a href="/tags/">5</a></div>
     </div>
     
   </div>
@@ -260,7 +269,7 @@
     <hr>
     <div class="post-toc sidebar-item" id="toc-div">
       <div><i class="fas fa-list-ol"></i>文章目录</div>
-      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#继承"><span class="toc-text">继承</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#类"><span class="toc-text">类</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#构造函数的prototype"><span class="toc-text">构造函数的prototype</span></a></li><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#ES5和ES6的写法"><span class="toc-text">ES5和ES6的写法</span></a></li></ol></li></ol></div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#继承"><span class="toc-text">继承</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#类"><span class="toc-text">类</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#prototype"><span class="toc-text">prototype</span></a></li><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#ES5和ES6的写法"><span class="toc-text">ES5和ES6的写法</span></a></li><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#get-set"><span class="toc-text">get set</span></a></li><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#static静态方法"><span class="toc-text">static静态方法</span></a></li></ol></li></ol></div>
     </div>
     
     
