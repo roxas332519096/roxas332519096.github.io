@@ -83,7 +83,7 @@
     <script defer type="text/javascript" src="/js/index.js"></script>
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
-    <title>分类: CSS | RoxasDengBlog</title>
+    <title>Vue-修饰符 | RoxasDengBlog</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
     
@@ -123,21 +123,57 @@
         <div class="main-container">
           <div class="content">
             
-<div id="category" class="category page">
-  <h1 class="page-title">CSS</h1>
+<div id="post" class="page">
   
   <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
-    <header id="post-header" class="post-header">
-      <h1 class="post-title-simple" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2019/07/20/css三角形/" itemprop="url">css三角形</a>
-      </h1>
-      
-      <span class="post-date">
-        <time title="post-date" itemprop="dateCreated datePublished" datetime="2019-07-20T11:18:03+08:00">07-20</time>
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/21/Vue事件-修饰符/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="Roxas Deng">
+       <meta itemprop="description" content="">
+       <meta itemprop="image" content="/images/avatar.png">
       </span>
-      
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="RoxasDengBlog">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">Vue-修饰符</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-07-21T17:06:14+08:00">2019-07-21 17:06:14</time></span>
+        </span>
+        
+        
+        
+      </div>
     </header>
+    <main class="post-main" itemprop="articleBody">
+      <h4 id="stop"><a href="#stop" class="headerlink" title=".stop"></a>.stop</h4><p>阻止事件的传播(冒泡,捕获)</p>
+<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;template&gt;<br>    &lt;div @click.stop&gt;<br>        &lt;div&gt;&lt;/div&gt;<br>        &lt;button @click=<span class="hljs-string">"a"</span>&gt;Click&lt;/button&gt;<br>    &lt;/div&gt;<br>&lt;/template&gt;<br></code></pre></td></tr></table></figure>
+<h4 id="sync"><a href="#sync" class="headerlink" title=".sync"></a>.sync</h4><p>更新绑定属性<br><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;comp :title.sync=<span class="hljs-string">"1"</span>&gt;&lt;/comp&gt;<br><br>//comp<br><span class="hljs-function"><span class="hljs-title">data</span></span>()&#123;<br>    title:<span class="hljs-string">'childTitle'</span><br>&#125;,<br><span class="hljs-function"><span class="hljs-title">mounted</span></span>()&#123;<br>    this.<span class="hljs-variable">$emit</span>(<span class="hljs-string">'update:title'</span>,this.title)<br>&#125;<br></code></pre></td></tr></table></figure></p>
+<h4 id="native"><a href="#native" class="headerlink" title="native"></a>native</h4><h4 id="once"><a href="#once" class="headerlink" title=".once"></a>.once</h4><p>事件只触发一次</p>
+<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;div @click.once=<span class="hljs-string">"a"</span>&gt;<br>    111<br>&lt;/div&gt;<br></code></pre></td></tr></table></figure>
+<h4 id="self"><a href="#self" class="headerlink" title=".self"></a>.self</h4><p>事件是当前元素触发(内部触发不了)</p>
+<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;div @click.self=<span class="hljs-string">"a"</span>&gt;<br>    &lt;div&gt;1&lt;/div&gt;<br>    &lt;div&gt;2&lt;/div&gt;<br>&lt;/div&gt;<br></code></pre></td></tr></table></figure>
+    </main>
+    <footer class="post-footer">
+      
+    </footer>
   </article>
+  
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+      <a href="/2019/07/20/css三角形/" rel="next" title="css三角形"><i class="fas fa-angle-left"></i><span class="nav-title">css三角形</span></a>
+      
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+    </div>
+  </nav>
   
   
 </div>
@@ -197,6 +233,17 @@
 
 
   <div class="sidebar-sticky">
+    
+    
+    
+    
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>文章目录</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#stop"><span class="toc-text">.stop</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#sync"><span class="toc-text">.sync</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#native"><span class="toc-text">native</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#once"><span class="toc-text">.once</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#self"><span class="toc-text">.self</span></a></li></ol></div>
+    </div>
+    
     
     
     <hr>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-07-20T03:40:55.437Z</updated>
+  <updated>2019-07-21T09:41:19.786Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Vue-修饰符</title>
+    <link href="http://yoursite.com/2019/07/21/Vue%E4%BA%8B%E4%BB%B6-%E4%BF%AE%E9%A5%B0%E7%AC%A6/"/>
+    <id>http://yoursite.com/2019/07/21/Vue事件-修饰符/</id>
+    <published>2019-07-21T09:06:14.000Z</published>
+    <updated>2019-07-21T09:41:19.786Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;stop&quot;&gt;&lt;a href=&quot;#stop&quot; class=&quot;headerlink&quot; title=&quot;.stop&quot;&gt;&lt;/a&gt;.stop&lt;/h4&gt;&lt;p&gt;阻止事件的传播(冒泡,捕获)&lt;/p&gt;
+&lt;figure class=&quot;hljs highlight
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>css三角形</title>
@@ -485,20 +508,6 @@
           &lt;h3 id=&quot;密码强度&quot;&gt;&lt;a href=&quot;#密码强度&quot; class=&quot;headerlink&quot; title=&quot;密码强度&quot;&gt;&lt;/a&gt;密码强度&lt;/h3&gt;&lt;h4 id=&quot;原理&quot;&gt;&lt;a href=&quot;#原理&quot; class=&quot;headerlink&quot;
         
       
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>CSS盒子多边框</title>
-    <link href="http://yoursite.com/2018/09/04/CSS%E7%9B%92%E5%AD%90%E5%A4%9A%E8%BE%B9%E6%A1%86/"/>
-    <id>http://yoursite.com/2018/09/04/CSS盒子多边框/</id>
-    <published>2018-09-04T15:40:45.000Z</published>
-    <updated>2018-09-07T13:17:35.315Z</updated>
-    
-    <summary type="html">
     
     </summary>
     
