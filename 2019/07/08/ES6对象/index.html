@@ -158,52 +158,48 @@
       </div>
     </header>
     <main class="post-main" itemprop="articleBody">
-      <h4 id="1-生成空对象"><a href="#1-生成空对象" class="headerlink" title="1. 生成空对象"></a>1. 生成空对象</h4><ol>
-<li><p>es5 </p>
-<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash">var a = new Object()<br><br>var a = &#123;&#125;<br><br>&#123;<br>    _proto_:<br>&#125;<br></code></pre></td></tr></table></figure>
-</li>
-<li><p>es6</p>
-<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">var a = Object.create(null)<br><br>&#123;<br><br>&#125;<br></code></pre></td></tr></table></figure>
-</li>
+      <h4 id="生成空对象"><a href="#生成空对象" class="headerlink" title="生成空对象"></a>生成空对象</h4><h5 id="1-es5"><a href="#1-es5" class="headerlink" title="1. es5"></a>1. es5</h5><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash">var a = new Object()<br><br>var a = &#123;&#125;<br><br>&#123;<br>    _proto_:<br>&#125;<br></code></pre></td></tr></table></figure>
+<h5 id="2-es6"><a href="#2-es6" class="headerlink" title="2. es6"></a>2. es6</h5><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">var a = Object.create(null)<br><br>&#123;<br><br>&#125;<br></code></pre></td></tr></table></figure>
+<p>es5 的还有原型,es6 是真正的空对象</p>
+<h4 id="属性定义"><a href="#属性定义" class="headerlink" title="属性定义"></a>属性定义</h4><h5 id="1-key-与属性相同可简写"><a href="#1-key-与属性相同可简写" class="headerlink" title="1. key 与属性相同可简写"></a>1. key 与属性相同可简写</h5><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs bash">var a = 1<br>    b = 2<br><br>var obj =&#123;<br>    a,<br>    b<br>&#125;<br>//<br>&#123;<br>    a:1,<br>    b:2<br>&#125;<br></code></pre></td></tr></table></figure>
+<h5 id="2-使用变量作为-key"><a href="#2-使用变量作为-key" class="headerlink" title="2. 使用变量作为 key"></a>2. 使用变量作为 key</h5><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs bash">es5:<br><br>var name = <span class="hljs-string">'a'</span><br>var obj = &#123;&#125;<br>obj[name] = 1<br>&#123;<br>    a:1<br>&#125;<br><br>es6:<br>var name = <span class="hljs-string">'a'</span><br>var obj = &#123;[name]:1&#125;<br>&#123;<br>    a:1<br>&#125;<br></code></pre></td></tr></table></figure>
+<h4 id="4-方法定义"><a href="#4-方法定义" class="headerlink" title="4 方法定义"></a>4 方法定义</h4><p>对象属性可以是一个函数,getter,setter 方法.</p>
+<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash">var obj = &#123;<br>    _age:18<br>    get <span class="hljs-function"><span class="hljs-title">age</span></span>()&#123;<span class="hljs-built_in">return</span> obj._age&#125;<br>    <span class="hljs-built_in">set</span> age(value)&#123;value &lt; 100 ? obj._age = value : obj._age = 100&#125;<br>&#125;<br><br>obj.age = 1000<br>obj&#123;<br>    age:100<br>&#125;<br></code></pre></td></tr></table></figure>
+<h4 id="对象拷贝"><a href="#对象拷贝" class="headerlink" title="对象拷贝"></a>对象拷贝</h4><p>Object.assign 与…</p>
+<ol>
+<li>key 相同时,后面定义的覆盖前面的</li>
+<li>改变被拷贝对对象的属性假如是对象,只会拷贝引用地址,原对象也会改变</li>
+<li>仅拷贝可枚举对象.</li>
 </ol>
-<p>es5的还有原型,es6是真正的空对象</p>
-<h4 id="2-属性定义"><a href="#2-属性定义" class="headerlink" title="2. 属性定义"></a>2. 属性定义</h4><ol>
-<li><p>key与属性相同可简写</p>
-<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs bash">var a = 1<br>    b = 2<br><br>var obj =&#123;<br>    a,<br>    b<br>&#125; <br>//<br>&#123;<br>    a:1,<br>    b:2<br>&#125;<br></code></pre></td></tr></table></figure>
-</li>
-<li><p>使用变量作为key</p>
-<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs bash">es5:<br><br>var name = <span class="hljs-string">'a'</span><br>var obj = &#123;&#125;<br>obj[name] = 1<br>&#123;<br>    a:1<br>&#125;<br><br>es6:<br>var name = <span class="hljs-string">'a'</span><br>var obj = &#123;[name]:1&#125;<br>&#123;<br>    a:1<br>&#125;<br></code></pre></td></tr></table></figure>
-</li>
-</ol>
-<h4 id="3-方法定义"><a href="#3-方法定义" class="headerlink" title="3.方法定义"></a>3.方法定义</h4><p>对象属性可以是一个函数,getter,setter方法.</p>
-<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash">var obj = &#123;<br>    _age:18<br>    get <span class="hljs-function"><span class="hljs-title">age</span></span>()&#123;<span class="hljs-built_in">return</span> obj._age&#125;<br>    <span class="hljs-built_in">set</span> age(value)&#123;value &lt; 100 ? obj._age = value : obj._age = 100&#125;<br>&#125; <br><br>obj.age = 1000<br>obj&#123;<br>    age:100<br>&#125;<br></code></pre></td></tr></table></figure>
-<h4 id="4-对象拷贝"><a href="#4-对象拷贝" class="headerlink" title="4. 对象拷贝"></a>4. 对象拷贝</h4><p>Object.assign与…</p>
-<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs bash">var obj1 = &#123;a:1,b:2,c:3&#125;<br>var obj2 = Object.assign(&#123;&#125;,obj1)<br>obj2 = &#123;a:1,b:2,c:3&#125;<br><br>obj2.a = 100;<br>obj1.a //1<br><br>var obj3 = &#123;..obj1&#125;<br>obj3 = &#123;a:1,b:2,c:3&#125;<br><br>obj3.a = 100;<br>obj1.a //1<br><br>var obj1 = &#123;a:1,b:2,c:3&#125;<br>var obj2 = &#123;a:2,b:2,c:3,d4&#125;<br>var obj3 = &#123;...obj1,...obj2&#125;<br><br>obj3 =&#123;<br>    a:2,<br>    b:2,<br>    c:3,<br>    d4<br>&#125;<br>//key相同时,后面定义的覆盖前面的<br></code></pre></td></tr></table></figure>
-<h4 id="5-Oject-definedProperty"><a href="#5-Oject-definedProperty" class="headerlink" title="5. Oject.definedProperty()"></a>5. Oject.definedProperty()</h4><p>该方法会直接在一个对象上定义一个新属性,或修改一个属性的现有属性,并返回这个对象.</p>
+<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs bash">var obj1 = &#123;a:1,b:2,c:3,obj:&#123;name:<span class="hljs-string">'a'</span>&#125;&#125;<br>var obj2 = Object.assign(&#123;&#125;,obj1)<br><br>obj2.a = 100;<br>obj1.a //1<br>obj2.obj.name = <span class="hljs-string">'b'</span><br>obj1.obj.name //b<br><br>var obj3 = &#123;..obj1&#125;<br>obj3 = &#123;a:1,b:2,c:3&#125;<br><br>obj3.a = 100;<br>obj1.a //1<br><br>var obj1 = &#123;a:1,b:2,c:3&#125;<br>var obj2 = &#123;a:2,b:2,c:3,d4&#125;<br>var obj3 = &#123;...obj1,...obj2&#125;<br><br>obj3 =&#123;<br>    a:2,<br>    b:2,<br>    c:3,<br>    d4<br>&#125;<br></code></pre></td></tr></table></figure>
+<h4 id="Oject-definedProperty"><a href="#Oject-definedProperty" class="headerlink" title="Oject.definedProperty()"></a>Oject.definedProperty()</h4><p>该方法会直接在一个对象上定义一个新属性,或修改一个属性的现有属性,并返回这个对象.</p>
 <figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash">Object.definedProperty(obj,prop,descriptor)<br><br>Object.definedProperty(obj,<span class="hljs-string">'x'</span>,&#123;<br>    <span class="hljs-function"><span class="hljs-title">get</span></span>()&#123;&#125;<br>    <span class="hljs-built_in">set</span>(value)&#123;&#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
-<h4 id="6-属性描述符"><a href="#6-属性描述符" class="headerlink" title="6. 属性描述符"></a>6. 属性描述符</h4><ol>
-<li>configurable<br>是否可再次配置,默认false</li>
+<h5 id="属性描述符"><a href="#属性描述符" class="headerlink" title="属性描述符"></a>属性描述符</h5><ol>
+<li>configurable<br>是否可再次配置,默认 false</li>
 </ol>
 <figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash">Object.definedProperty(o,<span class="hljs-string">'age'</span>,&#123;writable:fasle&#125;)<br>o.age = 1;<br>o.age //undefined<br>Object.definedProperty(o,<span class="hljs-string">'age'</span>,&#123;configurable:<span class="hljs-literal">true</span>&#125;)//报错<br>Object.definedProperty(o,<span class="hljs-string">'age'</span>,&#123;writable:<span class="hljs-literal">true</span>&#125;)//报错<br><br>//刷新<br>Object.definedProperty(o,<span class="hljs-string">'age'</span>,&#123;configurable:<span class="hljs-literal">true</span>&#125;)<br>Object.definedProperty(o,<span class="hljs-string">'age'</span>,&#123;writable:fasle&#125;)<br>Object.definedProperty(o,<span class="hljs-string">'age'</span>,&#123;writable:<span class="hljs-literal">true</span>&#125;)<br></code></pre></td></tr></table></figure>
 <ol start="2">
-<li>enumrable<br>是否能枚举,默认false</li>
+<li>enumrable<br>是否能枚举,默认 false</li>
 </ol>
 <figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash">var a = [1,2,3]<br><span class="hljs-keyword">for</span>(<span class="hljs-built_in">let</span> key <span class="hljs-keyword">in</span> a)&#123;<br>    console.log(key)//0,1,2<br>&#125;<br><br>Object.definedProperty(a,<span class="hljs-string">'0'</span>,&#123;enumrable:fasle&#125;)<br><span class="hljs-keyword">for</span>(<span class="hljs-built_in">let</span> key <span class="hljs-keyword">in</span> a)&#123;<br>    console.log(key)//1,2<br>&#125;<br></code></pre></td></tr></table></figure>
 <ol start="3">
 <li><p>value</p>
 </li>
-<li><p>writable<br>属性是否可写入,默认true</p>
-<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">Object.definedProperty(o,<span class="hljs-string">'age'</span>,&#123;writable:fasle&#125;)<br>o.age = 1;<br>o.age //undefined<br></code></pre></td></tr></table></figure>
-</li>
-<li><p>get</p>
-<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">Object.definedProperty(o,<span class="hljs-string">'age'</span>,&#123;<span class="hljs-function"><span class="hljs-title">get</span></span>()&#123;<br>    <span class="hljs-built_in">return</span> <span class="hljs-string">'100'</span><br>&#125;&#125;)<br>o.age = 1;<br>o.age //100<br></code></pre></td></tr></table></figure>
-</li>
-<li><p>set</p>
-<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">Object.definedProperty(o,<span class="hljs-string">'age'</span>,&#123;<span class="hljs-built_in">set</span>(val)&#123;<br>    <span class="hljs-built_in">return</span> val &lt; 100 ? val : 100<br>&#125;&#125;)<br>o.age = 1000;<br>o.age //100<br></code></pre></td></tr></table></figure>
+<li><p>writable<br>属性是否可写入,默认 true</p>
 </li>
 </ol>
+<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">Object.definedProperty(o,<span class="hljs-string">'age'</span>,&#123;writable:fasle&#125;)<br>o.age = 1;<br>o.age //undefined<br></code></pre></td></tr></table></figure>
+<ol start="5">
+<li>get</li>
+</ol>
+<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">Object.definedProperty(o,<span class="hljs-string">'age'</span>,&#123;<span class="hljs-function"><span class="hljs-title">get</span></span>()&#123;<br>    <span class="hljs-built_in">return</span> <span class="hljs-string">'100'</span><br>&#125;&#125;)<br>o.age = 1;<br>o.age //100<br></code></pre></td></tr></table></figure>
+<ol start="6">
+<li>set</li>
+</ol>
+<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">Object.definedProperty(o,<span class="hljs-string">'age'</span>,&#123;<span class="hljs-built_in">set</span>(val)&#123;<br>    <span class="hljs-built_in">return</span> val &lt; 100 ? val : 100<br>&#125;&#125;)<br>o.age = 1000;<br>o.age //100<br></code></pre></td></tr></table></figure>
 <h4 id="Oject-definedProperties"><a href="#Oject-definedProperties" class="headerlink" title="Oject.definedProperties()"></a>Oject.definedProperties()</h4><p>定义多个属性</p>
 <figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash">Object.definedProperties(obj,&#123;<br>    <span class="hljs-string">'a'</span>:&#123;<br>        value:1,<br>        writable:<span class="hljs-literal">true</span><br>    &#125;,<br>    <span class="hljs-string">'b'</span>:&#123;<br>        value:2,<br>        writable:<span class="hljs-literal">true</span><br>    &#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
+
     </main>
     <footer class="post-footer">
       
@@ -257,7 +253,7 @@
     
     <div class="archives-count">
       <div class="site-count-title">归档</div>
-      <div><a href="/archives/">60</a></div>
+      <div><a href="/archives/">61</a></div>
     </div>
     
     
@@ -266,7 +262,7 @@
     
     <div class="categories-count">
       <div class="site-count-title">分类</div>
-      <div><a href="/categories/">5</a></div>
+      <div><a href="/categories/">6</a></div>
     </div>
     
     
@@ -275,7 +271,7 @@
     
     <div class="tags-count">
       <div class="site-count-title">标签</div>
-      <div><a href="/tags/">5</a></div>
+      <div><a href="/tags/">6</a></div>
     </div>
     
   </div>
@@ -296,7 +292,7 @@
     <hr>
     <div class="post-toc sidebar-item" id="toc-div">
       <div><i class="fas fa-list-ol"></i>文章目录</div>
-      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#1-生成空对象"><span class="toc-text">1. 生成空对象</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#2-属性定义"><span class="toc-text">2. 属性定义</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#3-方法定义"><span class="toc-text">3.方法定义</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#4-对象拷贝"><span class="toc-text">4. 对象拷贝</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#5-Oject-definedProperty"><span class="toc-text">5. Oject.definedProperty()</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#6-属性描述符"><span class="toc-text">6. 属性描述符</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#Oject-definedProperties"><span class="toc-text">Oject.definedProperties()</span></a></li></ol></div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#生成空对象"><span class="toc-text">生成空对象</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#1-es5"><span class="toc-text">1. es5</span></a></li><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#2-es6"><span class="toc-text">2. es6</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#属性定义"><span class="toc-text">属性定义</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#1-key-与属性相同可简写"><span class="toc-text">1. key 与属性相同可简写</span></a></li><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#2-使用变量作为-key"><span class="toc-text">2. 使用变量作为 key</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#4-方法定义"><span class="toc-text">4 方法定义</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#对象拷贝"><span class="toc-text">对象拷贝</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#Oject-definedProperty"><span class="toc-text">Oject.definedProperty()</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#属性描述符"><span class="toc-text">属性描述符</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#Oject-definedProperties"><span class="toc-text">Oject.definedProperties()</span></a></li></ol></div>
     </div>
     
     

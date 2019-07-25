@@ -147,19 +147,34 @@
         
         
         
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Vue/" itemprop="url" rel="index"><span itemprop="name">Vue</span></a></span>
+        </span>
+        
+        
       </div>
     </header>
     <main class="post-main" itemprop="articleBody">
-      <h4 id="Axios的好处"><a href="#Axios的好处" class="headerlink" title="Axios的好处"></a>Axios的好处</h4><p>从浏览器中创建 XMLHttpRequests<br>从 node.js 创建 http 请求<br>支持 Promise API<br>拦截请求和响应<br>转换请求数据和响应数据<br>取消请求<br>自动转换 JSON 数据<br>客户端支持防御 XSRF</p>
-<h4 id="axios发送post请求"><a href="#axios发送post请求" class="headerlink" title="axios发送post请求"></a>axios发送post请求</h4><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs bash">axios.get(<span class="hljs-string">'/user?ID=12345'</span>)<br>  .<span class="hljs-keyword">then</span>(<span class="hljs-keyword">function</span> (response) &#123;<br>    console.log(response);<br>  &#125;)<br>  .catch(<span class="hljs-keyword">function</span> (error) &#123;<br>    console.log(error);<br>  &#125;);<br><br>// 可选地，上面的请求可以这样做<br>axios.get(<span class="hljs-string">'/user'</span>, &#123;<br>    params: &#123;<br>      ID: 12345<br>    &#125;<br>  &#125;)<br>  .<span class="hljs-keyword">then</span>(<span class="hljs-keyword">function</span> (response) &#123;<br>    console.log(response);<br>  &#125;)<br>  .catch(<span class="hljs-keyword">function</span> (error) &#123;<br>    console.log(error);<br>  &#125;);<br></code></pre></td></tr></table></figure>
-<h4 id="axios发送get请求"><a href="#axios发送get请求" class="headerlink" title="axios发送get请求"></a>axios发送get请求</h4><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash">axios.post(<span class="hljs-string">'/user'</span>, &#123;<br>    firstName: <span class="hljs-string">'Fred'</span>,<br>    lastName: <span class="hljs-string">'Flintstone'</span><br>  &#125;)<br>  .<span class="hljs-keyword">then</span>(<span class="hljs-keyword">function</span> (response) &#123;<br>    console.log(response);<br>  &#125;)<br>  .catch(<span class="hljs-keyword">function</span> (error) &#123;<br>    console.log(error);<br>  &#125;);<br></code></pre></td></tr></table></figure>
-<h4 id="vue-cli引入axios"><a href="#vue-cli引入axios" class="headerlink" title="vue-cli引入axios"></a>vue-cli引入axios</h4><ol>
+      <h4 id="Axios-的好处"><a href="#Axios-的好处" class="headerlink" title="Axios 的好处"></a>Axios 的好处</h4><p>从浏览器中创建 XMLHttpRequests<br>从 node.js 创建 http 请求<br>支持 Promise API<br>拦截请求和响应<br>转换请求数据和响应数据<br>取消请求<br>自动转换 JSON 数据<br>客户端支持防御 XSRF</p>
+<h4 id="axios-发送-post-请求"><a href="#axios-发送-post-请求" class="headerlink" title="axios 发送 post 请求"></a>axios 发送 post 请求</h4><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs bash">axios.get(<span class="hljs-string">'/user?ID=12345'</span>)<br>  .<span class="hljs-keyword">then</span>(<span class="hljs-keyword">function</span> (response) &#123;<br>    console.log(response);<br>  &#125;)<br>  .catch(<span class="hljs-keyword">function</span> (error) &#123;<br>    console.log(error);<br>  &#125;);<br><br>// 可选地，上面的请求可以这样做<br>axios.get(<span class="hljs-string">'/user'</span>, &#123;<br>    params: &#123;<br>      ID: 12345<br>    &#125;<br>  &#125;)<br>  .<span class="hljs-keyword">then</span>(<span class="hljs-keyword">function</span> (response) &#123;<br>    console.log(response);<br>  &#125;)<br>  .catch(<span class="hljs-keyword">function</span> (error) &#123;<br>    console.log(error);<br>  &#125;);<br></code></pre></td></tr></table></figure>
+<h4 id="axios-发送-get-请求"><a href="#axios-发送-get-请求" class="headerlink" title="axios 发送 get 请求"></a>axios 发送 get 请求</h4><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash">axios.post(<span class="hljs-string">'/user'</span>, &#123;<br>    firstName: <span class="hljs-string">'Fred'</span>,<br>    lastName: <span class="hljs-string">'Flintstone'</span><br>  &#125;)<br>  .<span class="hljs-keyword">then</span>(<span class="hljs-keyword">function</span> (response) &#123;<br>    console.log(response);<br>  &#125;)<br>  .catch(<span class="hljs-keyword">function</span> (error) &#123;<br>    console.log(error);<br>  &#125;);<br></code></pre></td></tr></table></figure>
+<h4 id="vue-cli-引入-axios"><a href="#vue-cli-引入-axios" class="headerlink" title="vue-cli 引入 axios"></a>vue-cli 引入 axios</h4><ol>
 <li>npm install axios</li>
-<li>在vue的入口文件main.js里引入axios并使用</li>
+<li>在 vue 的入口文件 main.js 里引入 axios 并使用</li>
 </ol>
 <figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">import axios from <span class="hljs-string">'axios'</span><br><br>Vue.prototype.<span class="hljs-variable">$axios</span> = axios<br></code></pre></td></tr></table></figure>
+
     </main>
     <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/Vue/" rel="tag"><i class="fas fa-tags"></i>Vue</a>
+        
+      </div>
       
     </footer>
   </article>
@@ -205,7 +220,7 @@
     
     <div class="archives-count">
       <div class="site-count-title">归档</div>
-      <div><a href="/archives/">60</a></div>
+      <div><a href="/archives/">61</a></div>
     </div>
     
     
@@ -214,7 +229,7 @@
     
     <div class="categories-count">
       <div class="site-count-title">分类</div>
-      <div><a href="/categories/">5</a></div>
+      <div><a href="/categories/">6</a></div>
     </div>
     
     
@@ -223,7 +238,7 @@
     
     <div class="tags-count">
       <div class="site-count-title">标签</div>
-      <div><a href="/tags/">5</a></div>
+      <div><a href="/tags/">6</a></div>
     </div>
     
   </div>
@@ -244,7 +259,7 @@
     <hr>
     <div class="post-toc sidebar-item" id="toc-div">
       <div><i class="fas fa-list-ol"></i>文章目录</div>
-      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#Axios的好处"><span class="toc-text">Axios的好处</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#axios发送post请求"><span class="toc-text">axios发送post请求</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#axios发送get请求"><span class="toc-text">axios发送get请求</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#vue-cli引入axios"><span class="toc-text">vue-cli引入axios</span></a></li></ol></div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#Axios-的好处"><span class="toc-text">Axios 的好处</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#axios-发送-post-请求"><span class="toc-text">axios 发送 post 请求</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#axios-发送-get-请求"><span class="toc-text">axios 发送 get 请求</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#vue-cli-引入-axios"><span class="toc-text">vue-cli 引入 axios</span></a></li></ol></div>
     </div>
     
     

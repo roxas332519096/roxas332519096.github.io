@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-07-21T09:41:19.786Z</updated>
+  <updated>2019-07-25T13:43:09.757Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,54 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>类型判断&amp;toString</title>
+    <link href="http://yoursite.com/2019/07/25/%E7%B1%BB%E5%9E%8B%E5%88%A4%E6%96%AD/"/>
+    <id>http://yoursite.com/2019/07/25/类型判断/</id>
+    <published>2019-07-25T13:10:49.000Z</published>
+    <updated>2019-07-25T13:43:09.757Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;typeof&quot;&gt;&lt;a href=&quot;#typeof&quot; class=&quot;headerlink&quot; title=&quot;typeof&quot;&gt;&lt;/a&gt;typeof&lt;/h4&gt;&lt;p&gt;操作符返回一个字符串，表示未经计算的操作数的类型&lt;br&gt;&lt;figure class=&quot;hljs
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>ES6数组</title>
+    <link href="http://yoursite.com/2019/07/24/ES6-%E6%95%B0%E7%BB%84/"/>
+    <id>http://yoursite.com/2019/07/24/ES6-数组/</id>
+    <published>2019-07-24T08:21:58.000Z</published>
+    <updated>2019-07-25T13:09:30.006Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;Array-from&quot;&gt;&lt;a href=&quot;#Array-from&quot; class=&quot;headerlink&quot; title=&quot;Array.from&quot;&gt;&lt;/a&gt;Array.from&lt;/h4&gt;&lt;figure class=&quot;hljs highlight
+        
+      
+    
+    </summary>
+    
+      <category term="ES6" scheme="http://yoursite.com/categories/ES6/"/>
+    
+    
+      <category term="ES6" scheme="http://yoursite.com/tags/ES6/"/>
+    
+  </entry>
   
   <entry>
     <title>Vue-修饰符</title>
@@ -115,32 +163,6 @@
   </entry>
   
   <entry>
-    <title>ES6对象加强</title>
-    <link href="http://yoursite.com/2019/07/09/ES6%E5%AF%B9%E8%B1%A1%E5%8A%A0%E5%BC%BA/"/>
-    <id>http://yoursite.com/2019/07/09/ES6对象加强/</id>
-    <published>2019-07-09T01:52:47.000Z</published>
-    <updated>2019-07-10T15:13:09.148Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h4 id=&quot;定义属性支持短语法&quot;&gt;&lt;a href=&quot;#定义属性支持短语法&quot; class=&quot;headerlink&quot; title=&quot;定义属性支持短语法&quot;&gt;&lt;/a&gt;定义属性支持短语法&lt;/h4&gt;&lt;figure class=&quot;hljs highlight
-        
-      
-    
-    </summary>
-    
-      <category term="ES6" scheme="http://yoursite.com/categories/ES6/"/>
-    
-    
-      <category term="ES6" scheme="http://yoursite.com/tags/ES6/"/>
-    
-  </entry>
-  
-  <entry>
     <title>ES6字面量 Literal</title>
     <link href="http://yoursite.com/2019/07/09/ES6%E5%AD%97%E9%9D%A2%E9%87%8F/"/>
     <id>http://yoursite.com/2019/07/09/ES6字面量/</id>
@@ -198,7 +220,7 @@
     <link href="http://yoursite.com/2019/07/08/ES6%E5%AF%B9%E8%B1%A1/"/>
     <id>http://yoursite.com/2019/07/08/ES6对象/</id>
     <published>2019-07-08T09:42:13.000Z</published>
-    <updated>2019-07-10T15:13:09.148Z</updated>
+    <updated>2019-07-25T13:09:30.006Z</updated>
     
     <summary type="html">
     
@@ -206,9 +228,7 @@
       
         
         
-          &lt;h4 id=&quot;1-生成空对象&quot;&gt;&lt;a href=&quot;#1-生成空对象&quot; class=&quot;headerlink&quot; title=&quot;1. 生成空对象&quot;&gt;&lt;/a&gt;1. 生成空对象&lt;/h4&gt;&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;es5 &lt;/p&gt;
-&lt;figure class=&quot;hljs highlight
+          &lt;h4 id=&quot;生成空对象&quot;&gt;&lt;a href=&quot;#生成空对象&quot; class=&quot;headerlink&quot; title=&quot;生成空对象&quot;&gt;&lt;/a&gt;生成空对象&lt;/h4&gt;&lt;h5 id=&quot;1-es5&quot;&gt;&lt;a href=&quot;#1-es5&quot; class=&quot;headerlink&quot; title=&quot;1.
         
       
     
@@ -226,7 +246,7 @@
     <link href="http://yoursite.com/2019/07/08/es6%E5%8F%98%E9%87%8F%E5%A3%B0%E6%98%8E/"/>
     <id>http://yoursite.com/2019/07/08/es6变量声明/</id>
     <published>2019-07-08T04:17:27.000Z</published>
-    <updated>2019-07-08T12:09:35.664Z</updated>
+    <updated>2019-07-25T13:09:30.006Z</updated>
     
     <summary type="html">
     
@@ -275,7 +295,7 @@
     <link href="http://yoursite.com/2019/04/16/web%E5%9B%BE%E7%89%87%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
     <id>http://yoursite.com/2019/04/16/web图片的使用/</id>
     <published>2019-04-16T09:34:44.000Z</published>
-    <updated>2019-07-08T12:09:35.664Z</updated>
+    <updated>2019-07-25T13:09:30.006Z</updated>
     
     <summary type="html">
     
@@ -283,7 +303,7 @@
       
         
         
-          &lt;h4 id=&quot;FileReader&quot;&gt;&lt;a href=&quot;#FileReader&quot; class=&quot;headerlink&quot;
+          &lt;h4 id=&quot;FileReader&quot;&gt;&lt;a href=&quot;#FileReader&quot; class=&quot;headerlink&quot; title=&quot;FileReader&quot;&gt;&lt;/a&gt;FileReader&lt;/h4&gt;&lt;p&gt;FileReader 对象,使用 File 或 Blob
         
       
     
@@ -467,11 +487,11 @@
   </entry>
   
   <entry>
-    <title>Promise的使用</title>
+    <title>Promise的使用 &amp; async awit</title>
     <link href="http://yoursite.com/2019/01/18/Promise%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
     <id>http://yoursite.com/2019/01/18/Promise的使用/</id>
     <published>2019-01-18T13:39:10.000Z</published>
-    <updated>2019-07-08T12:09:35.649Z</updated>
+    <updated>2019-07-25T13:09:30.006Z</updated>
     
     <summary type="html">
     
@@ -479,7 +499,7 @@
       
         
         
-          &lt;h4 id=&quot;1-Promise的作用&quot;&gt;&lt;a href=&quot;#1-Promise的作用&quot; class=&quot;headerlink&quot; title=&quot;1. Promise的作用&quot;&gt;&lt;/a&gt;1.
+          &lt;h3 id=&quot;Promise&quot;&gt;&lt;a href=&quot;#Promise&quot; class=&quot;headerlink&quot; title=&quot;Promise&quot;&gt;&lt;/a&gt;Promise&lt;/h3&gt;&lt;h4 id=&quot;Promise-的作用&quot;&gt;&lt;a href=&quot;#Promise-的作用&quot;
         
       
     
@@ -489,28 +509,6 @@
     
     
       <category term="ES6" scheme="http://yoursite.com/tags/ES6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>密码强度的实现</title>
-    <link href="http://yoursite.com/2019/01/11/%E5%AF%86%E7%A0%81%E5%BC%BA%E5%BA%A6/"/>
-    <id>http://yoursite.com/2019/01/11/密码强度/</id>
-    <published>2019-01-11T05:12:52.000Z</published>
-    <updated>2019-01-18T13:39:59.895Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;密码强度&quot;&gt;&lt;a href=&quot;#密码强度&quot; class=&quot;headerlink&quot; title=&quot;密码强度&quot;&gt;&lt;/a&gt;密码强度&lt;/h3&gt;&lt;h4 id=&quot;原理&quot;&gt;&lt;a href=&quot;#原理&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
     
   </entry>
   
