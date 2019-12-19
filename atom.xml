@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-07-30T16:39:54.766Z</updated>
+  <updated>2019-12-17T16:42:44.617Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>TypeScript基础</title>
+    <link href="http://yoursite.com/2019/12/17/TS/"/>
+    <id>http://yoursite.com/2019/12/17/TS/</id>
+    <published>2019-12-17T14:40:20.000Z</published>
+    <updated>2019-12-17T16:42:44.617Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h4&gt;&lt;figure class=&quot;hljs highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td
+        
+      
+    
+    </summary>
+    
+      <category term="TS" scheme="http://yoursite.com/categories/TS/"/>
+    
+    
+      <category term="TS" scheme="http://yoursite.com/tags/TS/"/>
+    
+  </entry>
   
   <entry>
     <title>手写一个深拷贝</title>
@@ -468,32 +494,6 @@
     
     </summary>
     
-    
-  </entry>
-  
-  <entry>
-    <title>Vue的几个小坑&amp;子选择器&amp;测试相关</title>
-    <link href="http://yoursite.com/2019/04/03/2019-4-1-2019-4-7%E7%AC%94%E8%AE%B0/"/>
-    <id>http://yoursite.com/2019/04/03/2019-4-1-2019-4-7笔记/</id>
-    <published>2019-04-03T09:09:04.000Z</published>
-    <updated>2019-07-08T12:09:35.649Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h4 id=&quot;1-vue中html属性使用简写的问题&quot;&gt;&lt;a href=&quot;#1-vue中html属性使用简写的问题&quot; class=&quot;headerlink&quot; title=&quot;1. vue中html属性使用简写的问题&quot;&gt;&lt;/a&gt;1.
-        
-      
-    
-    </summary>
-    
-      <category term="笔记" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="笔记" scheme="http://yoursite.com/tags/%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
