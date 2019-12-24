@@ -173,6 +173,24 @@
 <li>选择ts-node</li>
 <li>选好之前创建的ts文件,开启调试</li>
 </ol>
+<h4 id="尝试用接口和类写一个简单的函数"><a href="#尝试用接口和类写一个简单的函数" class="headerlink" title="尝试用接口和类写一个简单的函数"></a>尝试用接口和类写一个简单的函数</h4><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs bash">class Student &#123;//类<br>    fullName: string;<br>    constructor(public firstName, public middleInitial, public lastName) &#123;<br>        this.fullName = firstName + <span class="hljs-string">" "</span> + middleInitial + <span class="hljs-string">" "</span> + lastName;<br>    &#125;<br>&#125;<br><br>interface Person &#123;//接口<br>    firstName: string;<br>    lastName: string;<br>&#125;<br><br><span class="hljs-keyword">function</span> greeter(person: Person) &#123;<br>    <span class="hljs-built_in">return</span> <span class="hljs-string">"Hello, "</span> + person.firstName + <span class="hljs-string">" "</span> + person.lastName;<br>&#125;<br><br>const user = new Student(<span class="hljs-string">"Jane"</span>, <span class="hljs-string">"M."</span>, <span class="hljs-string">"User"</span>);<br><br>console.log(greeter(user))<br></code></pre></td></tr></table></figure>
+<p>编译之后</p>
+<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs bash">var Student = /** @class */ (<span class="hljs-function"><span class="hljs-title">function</span></span> () &#123;<br>    <span class="hljs-keyword">function</span> Student(firstName, middleInitial, lastName) &#123;<br>        this.firstName = firstName;<br>        this.middleInitial = middleInitial;<br>        this.lastName = lastName;<br>        this.fullName = firstName + <span class="hljs-string">" "</span> + middleInitial + <span class="hljs-string">" "</span> + lastName;<br>    &#125;<br>    <span class="hljs-built_in">return</span> Student;<br>&#125;());<br><span class="hljs-keyword">function</span> greeter(person) &#123;<br>    <span class="hljs-built_in">return</span> <span class="hljs-string">"Hello, "</span> + person.firstName + <span class="hljs-string">" "</span> + person.lastName;<br>&#125;<br>var user = new Student(<span class="hljs-string">"Jane"</span>, <span class="hljs-string">"M."</span>, <span class="hljs-string">"User"</span>);<br>console.log(greeter(user));<br></code></pre></td></tr></table></figure>
+<h4 id="写一个简单的加法命令行"><a href="#写一个简单的加法命令行" class="headerlink" title="写一个简单的加法命令行"></a>写一个简单的加法命令行</h4><ol>
+<li><p>在根目录下创建package.json</p>
+<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm init -y<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>安装所需npm包</p>
+</li>
+</ol>
+<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm install @types/node<br></code></pre></td></tr></table></figure>
+<ol start="3">
+<li><p>输入代码</p>
+<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment">#!/usr/bin/env ts-node //这句话在写命令行的时候一定要加上</span><br>const a: number = Number(process.argv[2])<br>const b: number = Number(process.argv[3])<br><br><span class="hljs-keyword">if</span> (Number.isNaN(a) || Number.isNaN(b)) &#123;<br>    console.log(<span class="hljs-string">'只接受整数类型'</span>)<br>    process.exit(1)<br>&#125;<br>console.log(a + b)<br>process.exit(0)<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>运行命令行</p>
+<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">./add.ts 1 2<br><br>/////////////输出<br></code></pre></td></tr></table></figure></li>
+</ol>
 
     </main>
     <footer class="post-footer">
@@ -264,7 +282,7 @@
     <hr>
     <div class="post-toc sidebar-item" id="toc-div">
       <div><i class="fas fa-list-ol"></i>文章目录</div>
-      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#安装"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#使用"><span class="toc-text">使用</span></a></li></ol></div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#安装"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#使用"><span class="toc-text">使用</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#尝试用接口和类写一个简单的函数"><span class="toc-text">尝试用接口和类写一个简单的函数</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#写一个简单的加法命令行"><span class="toc-text">写一个简单的加法命令行</span></a></li></ol></div>
     </div>
     
     
