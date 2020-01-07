@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    
+    <meta name="keywords" content="Life, ARIA, Hexo">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="RoxasDengBlog" type="application/atom+xml" />
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>使用TS写一个计算器 | RoxasDengBlog</title>
+  </head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">RoxasDengBlog</a></h1>
+        <h2 class="subtitle"></h2>
+      </div>
+      
+      <div class="logo">
+        <img src="/images/logo.png" alt="logo">
+      </div>
+      
+    </div>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
+        
+        <li role="menuitem"><a href="/">首页</a></li>
+        
+        <li role="menuitem"><a href="/archives/">归档</a></li>
+        
+        <li role="menuitem"><a href="/categories/">分类</a></li>
+        
+        <li role="menuitem"><a href="/tags/">标签</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="page">
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/07/使用TS操作DOM/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="Roxas Deng">
+       <meta itemprop="description" content="">
+       <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="RoxasDengBlog">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">使用TS写一个计算器</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2020-01-07T17:28:19+08:00">2020-01-07 17:28:19</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/TS/" itemprop="url" rel="index"><span itemprop="name">TS</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <ol>
+<li>将TS热更新为JS</li>
+</ol>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">tsc -w demo.ts<br></code></pre></td></tr></table></figure>
+<p>在html里引入demo.js</p>
+<ol start="2">
+<li>主要代码</li>
+</ol>
+<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br></pre></td><td class="code"><pre><code class="hljs bash">&#123;<br><br>    class Calculator &#123;<br>        public container: HTMLDivElement<br>        private output: HTMLDivElement<br>        private span: HTMLSpanElement<br>        public n1: string = null<br>        public n2: string = null<br>        public result: string = null<br>        public operator: string;<br>        public keys: Array&lt;Array&lt;string&gt;&gt; = [<br>            [<span class="hljs-string">'clear'</span>, <span class="hljs-string">'÷'</span>],<br>            [<span class="hljs-string">'7'</span>, <span class="hljs-string">'8'</span>, <span class="hljs-string">'9'</span>, <span class="hljs-string">'X'</span>],<br>            [<span class="hljs-string">'4'</span>, <span class="hljs-string">'5'</span>, <span class="hljs-string">'6'</span>, <span class="hljs-string">'-'</span>],<br>            [<span class="hljs-string">'1'</span>, <span class="hljs-string">'2'</span>, <span class="hljs-string">'3'</span>, <span class="hljs-string">'+'</span>],<br>            [<span class="hljs-string">'0'</span>, <span class="hljs-string">'.'</span>, <span class="hljs-string">'='</span>]<br>        ]<br>        <span class="hljs-function"><span class="hljs-title">constructor</span></span>() &#123;<br>            this.createContainer()<br>            this.createOutput()<br>            this.createButtons()<br>            this.bindEvents()<br>        &#125;<br>        createButton(text: string, container: HTMLElement, className: string) &#123;<br>            const button: HTMLButtonElement = document.createElement(<span class="hljs-string">'button'</span>)<br>            button.textContent = text<br>            button.classList.add(<span class="hljs-string">'button'</span>)<br>            <span class="hljs-keyword">if</span> (className) &#123;<br>                button.classList.add(className)<br>            &#125;<br>            container.appendChild(button)<br>            <span class="hljs-built_in">return</span> button<br>        &#125;<br>        <span class="hljs-function"><span class="hljs-title">createButtons</span></span>() &#123;<br>            this.keys.forEach((textList: Array&lt;string&gt;) =&gt; &#123;<br>                const div: HTMLDivElement = document.createElement(<span class="hljs-string">'div'</span>)<br>                div.classList.add(<span class="hljs-string">'row'</span>)<br>                textList.forEach((text: string) =&gt; &#123;<br>                    this.createButton(text, div, `text-<span class="hljs-variable">$&#123;text&#125;</span>`)<br>                &#125;)<br>                this.container.appendChild(div)<br>            &#125;)<br>        &#125;<br>        <span class="hljs-function"><span class="hljs-title">createContainer</span></span>() &#123;<br>            const container: HTMLDivElement = document.createElement(<span class="hljs-string">'div'</span>)<br>            container.classList.add(<span class="hljs-string">'calculator'</span>)<br>            document.body.appendChild(container)<br>            this.container = container<br>        &#125;<br>        <span class="hljs-function"><span class="hljs-title">createOutput</span></span>() &#123;<br>            const output: HTMLDivElement = document.createElement(<span class="hljs-string">'div'</span>)<br>            output.classList.add(<span class="hljs-string">'output'</span>)<br>            const span: HTMLSpanElement = document.createElement(<span class="hljs-string">'span'</span>)<br>            span.textContent = <span class="hljs-string">'0'</span><br>            output.appendChild(span)<br>            this.container.appendChild(output)<br>            this.output = output<br>            this.span = span<br>        &#125;<br>        <span class="hljs-function"><span class="hljs-title">bindEvents</span></span>() &#123;<br>            this.container.addEventListener(<span class="hljs-string">'click'</span>, (e) =&gt; &#123;<br>                <span class="hljs-keyword">if</span> (e.target instanceof HTMLButtonElement) &#123;<br>                    const button: HTMLButtonElement = e.target<br>                    const text: string = button.textContent<br>                    this.update(text)<br>                &#125;<br>            &#125;)<br>        &#125;<br>        update(text: string) &#123;<br>            <span class="hljs-keyword">if</span> (<span class="hljs-string">'0123456789.'</span>.indexOf(text) &gt;= 0) &#123;<br>                this.updateNumbers(text)<br>            &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-string">'+-X÷'</span>.indexOf(text) &gt;= 0) &#123;<br>                <span class="hljs-keyword">if</span> (this.n1 === null) &#123;<br>                    this.n1 = this.result<br>                &#125;<br>                this.operator = text<br>            &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (text === <span class="hljs-string">'='</span>) &#123;<br>                this.updateResult()<br>            &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (text === <span class="hljs-string">'clear'</span>) &#123;<br>                this.n1 = null<br>                this.n2 = null<br>                this.result = null<br>                this.operator = null<br>                this.span.textContent = <span class="hljs-string">'0'</span><br>            &#125;<br>        &#125;<br>        updateNumbers(text: string) &#123;<br>            <span class="hljs-keyword">if</span> (this.operator) &#123;<br>                this.updateNumber(<span class="hljs-string">'n2'</span>, text)<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                this.updateNumber(<span class="hljs-string">'n1'</span>, text)<br>            &#125;<br>        &#125;<br>        updateNumber(name: string, text: string) &#123;<br>            <span class="hljs-keyword">if</span> (this[name]) &#123;<br>                this[name] += text<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                this[name] = text<br>            &#125;<br>            this.span.textContent = this[name].toString()<br>        &#125;<br>        <span class="hljs-function"><span class="hljs-title">updateResult</span></span>() &#123;<br>            <span class="hljs-built_in">let</span> result: any;<br>            <span class="hljs-built_in">let</span> n1: number = parseFloat(this.n1)<br>            <span class="hljs-built_in">let</span> n2: number = parseFloat(this.n2)<br>            switch (this.operator) &#123;<br>                <span class="hljs-keyword">case</span> <span class="hljs-string">'+'</span>:<br>                    result = n1 + n2<br>                    <span class="hljs-built_in">break</span><br>                <span class="hljs-keyword">case</span> <span class="hljs-string">'-'</span>:<br>                    result = n1 - n2<br>                    <span class="hljs-built_in">break</span><br>                <span class="hljs-keyword">case</span> <span class="hljs-string">'X'</span>:<br>                    result = n1 * n2<br>                    <span class="hljs-built_in">break</span><br>                <span class="hljs-keyword">case</span> <span class="hljs-string">'÷'</span>:<br>                    result = n1 / n2<br>                    <span class="hljs-built_in">break</span><br>            &#125;<br>            <span class="hljs-keyword">if</span> (n2 === 0) &#123;<br>                result = <span class="hljs-string">'不是数字'</span><br>            &#125;<br>            this.span.textContent = result<br>            this.n1 = null<br>            this.n2 = null<br>            this.result = result<br>        &#125;<br>    &#125;<br><br>    new Calculator()<br>&#125;<br></code></pre></td></tr></table></figure>
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/TS/" rel="tag"><i class="fas fa-tags"></i>TS</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+      <a href="/2019/12/17/TS/" rel="next" title="TypeScript基础"><i class="fas fa-angle-left"></i><span class="nav-title">TypeScript基础</span></a>
+      
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+    </div>
+  </nav>
+  
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/avatar.png" alt="Roxas Deng">
+  
+  <h1 class="author-name">Roxas Deng</h1>
+  <h2 class="author-description"></h2>
+  <div class="site-count">
+    
+    <div class="archives-count">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">69</a></div>
+    </div>
+    
+    
+    
+    <span class="site-count-divider divider">|</span>
+    
+    <div class="categories-count">
+      <div class="site-count-title">分类</div>
+      <div><a href="/categories/">7</a></div>
+    </div>
+    
+    
+    
+    <span class="site-count-divider divider">|</span>
+    
+    <div class="tags-count">
+      <div class="site-count-title">标签</div>
+      <div><a href="/tags/">7</a></div>
+    </div>
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    
+    
+    
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>社交链接</p></div>
+      <ul>
+        
+        <li><i class="fas fa-envelope"></i><a href="mailto:332519096@qq.com" target="_blank">E-Mail</a></li>
+        
+        <li><i class="fab fa-github"></i><a href="https://github.com/roxas332519096" target="_blank">GitHub</a></li>
+        
+      </ul>
+    </div>
+    
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">Roxas Deng</span><span class="year"><i class="far fa-copyright"></i>2020</span>
+        </div>
+        
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  </body>
+</html>

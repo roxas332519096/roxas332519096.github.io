@@ -189,9 +189,10 @@
 <figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment">#!/usr/bin/env ts-node //这句话在写命令行的时候一定要加上</span><br>const a: number = Number(process.argv[2])<br>const b: number = Number(process.argv[3])<br><br><span class="hljs-keyword">if</span> (Number.isNaN(a) || Number.isNaN(b)) &#123;<br>    console.log(<span class="hljs-string">'只接受整数类型'</span>)<br>    process.exit(1)<br>&#125;<br>console.log(a + b)<br>process.exit(0)<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>运行命令行</p>
-<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">./add.ts 1 2<br><br>/////////////输出<br></code></pre></td></tr></table></figure></li>
+<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">./add.ts 1 2<br><br>/////////////输出<br></code></pre></td></tr></table></figure>
+</li>
 </ol>
-
+<h4 id="写一个族谱"><a href="#写一个族谱" class="headerlink" title="写一个族谱"></a>写一个族谱</h4><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><code class="hljs bash">&#123;<br>    class Person &#123;<br>        public children: Person[] = []<br>        constructor(public name: string) &#123; &#125;<br>        addChild(child: Person): void &#123;<br>            this.children.push(child)<br>        &#125;<br>        introduceFamily(n?: number): void &#123;<br>            n = n ? n : 1<br>            <span class="hljs-built_in">let</span> prefix = <span class="hljs-string">'----'</span>.repeat(n - 1)<br>            console.log(`<span class="hljs-variable">$&#123;prefix&#125;</span><span class="hljs-variable">$&#123;this.name&#125;</span>`)<br>            this.children.forEach((child) =&gt; &#123;<br>                child.introduceFamily(n + 1)<br>            &#125;)<br>        &#125;<br>    &#125;<br><br>    const grandpa = new Person(<span class="hljs-string">'爷爷'</span>)<br>    const child1 = new Person(<span class="hljs-string">'大儿子'</span>)<br>    const child2 = new Person(<span class="hljs-string">'二儿子'</span>)<br>    const person11 = new Person(<span class="hljs-string">'大孙子'</span>)<br>    const person12 = new Person(<span class="hljs-string">'二孙子'</span>)<br>    const person21 = new Person(<span class="hljs-string">'三孙子'</span>)<br>    const person22 = new Person(<span class="hljs-string">'四孙子'</span>)<br>    grandpa.addChild(child1)<br>    grandpa.addChild(child2)<br>    child1.addChild(person11)<br>    child1.addChild(person12)<br>    child2.addChild(person21)<br>    child2.addChild(person22)<br><br>    grandpa.introduceFamily()<br>&#125;<br><br><br>///输出<br>爷爷<br>----大儿子<br>--------大孙子<br>--------二孙子<br>----二儿子<br>--------三孙子<br>--------四孙子<br></code></pre></td></tr></table></figure>
     </main>
     <footer class="post-footer">
       
@@ -212,6 +213,8 @@
       
     </div>
     <div class="page-nav-prev page-nav-item">
+      
+      <a href="/2020/01/07/使用TS操作DOM/" rel="prev" title="使用TS写一个计算器"><span class="nav-title">使用TS写一个计算器</span><i class="fas fa-angle-right"></i></a>
       
     </div>
   </nav>
@@ -243,7 +246,7 @@
     
     <div class="archives-count">
       <div class="site-count-title">归档</div>
-      <div><a href="/archives/">68</a></div>
+      <div><a href="/archives/">69</a></div>
     </div>
     
     
@@ -282,7 +285,7 @@
     <hr>
     <div class="post-toc sidebar-item" id="toc-div">
       <div><i class="fas fa-list-ol"></i>文章目录</div>
-      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#安装"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#使用"><span class="toc-text">使用</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#尝试用接口和类写一个简单的函数"><span class="toc-text">尝试用接口和类写一个简单的函数</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#写一个简单的加法命令行"><span class="toc-text">写一个简单的加法命令行</span></a></li></ol></div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#安装"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#使用"><span class="toc-text">使用</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#尝试用接口和类写一个简单的函数"><span class="toc-text">尝试用接口和类写一个简单的函数</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#写一个简单的加法命令行"><span class="toc-text">写一个简单的加法命令行</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#写一个族谱"><span class="toc-text">写一个族谱</span></a></li></ol></div>
     </div>
     
     
@@ -317,7 +320,7 @@
     <div class="footer-container">
       <div class="footer-left">
         <div class="copyright">
-          <span class="author">Roxas Deng</span><span class="year"><i class="far fa-copyright"></i>2019</span>
+          <span class="author">Roxas Deng</span><span class="year"><i class="far fa-copyright"></i>2020</span>
         </div>
         
         <div class="busuanzi">

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-12-24T14:44:05.105Z</updated>
+  <updated>2020-01-07T13:40:53.817Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,40 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>使用TS写一个计算器</title>
+    <link href="http://yoursite.com/2020/01/07/%E4%BD%BF%E7%94%A8TS%E6%93%8D%E4%BD%9CDOM/"/>
+    <id>http://yoursite.com/2020/01/07/使用TS操作DOM/</id>
+    <published>2020-01-07T09:28:19.000Z</published>
+    <updated>2020-01-07T13:40:53.817Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ol&gt;
+&lt;li&gt;将TS热更新为JS&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&quot;hljs highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span
+        
+      
+    
+    </summary>
+    
+      <category term="TS" scheme="http://yoursite.com/categories/TS/"/>
+    
+    
+      <category term="TS" scheme="http://yoursite.com/tags/TS/"/>
+    
+  </entry>
+  
+  <entry>
     <title>TypeScript基础</title>
     <link href="http://yoursite.com/2019/12/17/TS/"/>
     <id>http://yoursite.com/2019/12/17/TS/</id>
     <published>2019-12-17T14:40:20.000Z</published>
-    <updated>2019-12-24T14:44:05.105Z</updated>
+    <updated>2019-12-24T16:39:01.387Z</updated>
     
     <summary type="html">
     
@@ -467,28 +496,6 @@
         
         
           &lt;h4 id=&quot;FileReader&quot;&gt;&lt;a href=&quot;#FileReader&quot; class=&quot;headerlink&quot; title=&quot;FileReader&quot;&gt;&lt;/a&gt;FileReader&lt;/h4&gt;&lt;p&gt;FileReader 对象,使用 File 或 Blob
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>自动化测试&amp;发布npm包</title>
-    <link href="http://yoursite.com/2019/04/09/2019-4-9-2019-4-14%E7%AC%94%E8%AE%B0/"/>
-    <id>http://yoursite.com/2019/04/09/2019-4-9-2019-4-14笔记/</id>
-    <published>2019-04-09T07:49:19.000Z</published>
-    <updated>2019-07-08T12:09:35.649Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h4 id=&quot;1-自动化测试&quot;&gt;&lt;a href=&quot;#1-自动化测试&quot; class=&quot;headerlink&quot; title=&quot;1. 自动化测试&quot;&gt;&lt;/a&gt;1.
         
       
     
