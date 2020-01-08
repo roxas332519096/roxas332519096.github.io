@@ -83,7 +83,7 @@
     <script defer type="text/javascript" src="/js/index.js"></script>
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
-    <title>HEXO博客相关操作 | RoxasDengBlog</title>
+    <title>TS变量,接口,类 | RoxasDengBlog</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
     
@@ -127,7 +127,7 @@
   
   <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/14/HEXO博客相关操作/">
+      <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/08/TS变量-接口-类/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
        <meta itemprop="name" content="Roxas Deng">
        <meta itemprop="description" content="">
@@ -138,31 +138,55 @@
       </span>
     </div>
     <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">HEXO博客相关操作</h1>
+      <h1 class="post-title" itemprop="name headline">TS变量,接口,类</h1>
       <div class="post-meta">
         
         <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-04-14T09:58:04+08:00">2018-04-14 09:58:04</time></span>
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2020-01-08T14:06:27+08:00">2020-01-08 14:06:27</time></span>
         </span>
         
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/TS/" itemprop="url" rel="index"><span itemprop="name">TS</span></a></span>
+        </span>
         
         
       </div>
     </header>
     <main class="post-main" itemprop="articleBody">
-      <h2 id="1-发布新的博客"><a href="#1-发布新的博客" class="headerlink" title="1.发布新的博客"></a>1.发布新的博客</h2><p>git bash 输入以下命令：</p>
-<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">"标题"</span><br>$ start C:\Users\Administrator\desktop\myBlog\<span class="hljs-built_in">source</span>\_posts\标题.md<br>$ hexo generate<br>$ hexo deploy<br></code></pre></td></tr></table></figure>
-<h2 id="2-更改博客主题"><a href="#2-更改博客主题" class="headerlink" title="2.更改博客主题"></a>2.更改博客主题</h2><p><a href="https://github.com/hexojs/hexo/wiki/Themes" target="_blank" rel="noopener">主题合集</a></p>
-<h3 id="例子："><a href="#例子：" class="headerlink" title="例子："></a>例子：</h3><p>假如找的是<a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">https://github.com/iissnan/hexo-theme-next</a><br>输入：<br><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> themes<br>git <span class="hljs-built_in">clone</span> git@github.com:iissnan/hexo-theme-next.git<br><span class="hljs-built_in">cd</span> ..<br></code></pre></td></tr></table></figure></p>
-<p>_config.yml 的第 75 行改为 theme: hexo-theme-next，保存<br> <figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">hexo generate<br>hexo deploy<br></code></pre></td></tr></table></figure></p>
-<h2 id="3-布局相关操作"><a href="#3-布局相关操作" class="headerlink" title="3.布局相关操作"></a>3.布局相关操作</h2><h4 id="3-1引入代码块"><a href="#3-1引入代码块" class="headerlink" title="3.1引入代码块"></a>3.1引入代码块</h4><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">&#123;% codeblock [title] [lang:language] [url] [link text] %&#125;<br>Hello World<br>&#123;% endcodeblock %&#125;<br></code></pre></td></tr></table></figure>
-<h5 id="或"><a href="#或" class="headerlink" title="或:"></a>或:</h5><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs ">`` ` bash   \\去掉中间空格<br>Hello World<br>`` `        \\去掉中间空格<br></code></pre></td></tr></table></figure>
-<h4 id="3-2图片"><a href="#3-2图片" class="headerlink" title="3.2图片"></a>3.2图片</h4><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">&#123;% img [class names] /path/to/image [width] [height] [title text [alt text]] %&#125;<br></code></pre></td></tr></table></figure>
-<h4 id="3-3链接"><a href="#3-3链接" class="headerlink" title="3.3链接"></a>3.3链接</h4><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">&#123;% link text url [external] [title] %&#125;<br></code></pre></td></tr></table></figure>
-<h5 id="或-1"><a href="#或-1" class="headerlink" title="或:"></a>或:</h5><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">[title](link)<br></code></pre></td></tr></table></figure>
-
+      <h4 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h4><p>跟JS一样</p>
+<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">let</span> a:string = <span class="hljs-string">'s'</span><br><span class="hljs-built_in">let</span> b:number = 1<br><span class="hljs-built_in">let</span> c:boolean = <span class="hljs-literal">true</span><br><span class="hljs-built_in">let</span> d:object = &#123;&#125;<br><span class="hljs-built_in">let</span> e:null = null<br><span class="hljs-built_in">let</span> f:undefined = undefined<br><br>//any(任何类型)<br><br><span class="hljs-built_in">let</span> any1:any = 1<br><span class="hljs-built_in">let</span> any2:any = <span class="hljs-string">'b'</span><br>any1 = &#123;&#125;<br>any2 = <span class="hljs-literal">true</span><br></code></pre></td></tr></table></figure>
+<h3 id="类型-1"><a href="#类型-1" class="headerlink" title="类型"></a>类型</h3><h4 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h4><ol>
+<li><p>不赋值</p>
+<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash">enum Gender &#123;<br>        Man,<br>        Woman<br>    &#125;<br><br><span class="hljs-built_in">let</span> gender: Gender = Gender.Woman<br>console.log(gender) //1<br>gender = Gender.Man<br>console.log(gender) //0<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>赋值</p>
+</li>
+</ol>
+<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash">enum Gender &#123;<br>        Man = <span class="hljs-string">'Man'</span>,<br>        Woman = <span class="hljs-string">'Woman'</span><br>    &#125;<br><br><span class="hljs-built_in">let</span> gender: Gender = Gender.Woman<br>console.log(gender) //Woman<br>gender = Gender.Man<br>console.log(gender) //Man<br></code></pre></td></tr></table></figure>
+<h4 id="void"><a href="#void" class="headerlink" title="void"></a>void</h4><p>函数没有返回值<br><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash"><br><span class="hljs-keyword">function</span> <span class="hljs-built_in">test</span>():void&#123;<br>    console.log(1)<br>&#125;<br><br><span class="hljs-built_in">let</span> a:number = <span class="hljs-built_in">test</span>() //会报错<br></code></pre></td></tr></table></figure></p>
+<h4 id="never"><a href="#never" class="headerlink" title="never"></a>never</h4><p>默认情况下null和undefined是所有类型的子类型.例如,null可以赋值给number类型的变量.</p>
+<h3 id="断言"><a href="#断言" class="headerlink" title="断言"></a>断言</h3><p>自己主观认为变量是哪个类型</p>
+<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">let</span> a:any = <span class="hljs-string">'123'</span><br>console.log((&lt;string&gt;a).split(<span class="hljs-string">''</span>))<br></code></pre></td></tr></table></figure>
+<h3 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h3><p>定义必须有的属性或者方法</p>
+<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs bash">interface Shape &#123;<br>    head: string,<br>    body: string<br>&#125;<br><br>interface Human &#123;<br>    name: string<br>    age: number,<br>    shape: Shape,<br>    say(word: string): void<br>&#125;<br><br><span class="hljs-built_in">let</span> tom: Human = &#123;<br>    name: <span class="hljs-string">'tom'</span>,<br>    age: 28,<br>    shape: &#123;<br>        head: <span class="hljs-string">'头'</span>,<br>        body: <span class="hljs-string">'身体'</span><br>    &#125;,<br>    say(word: string) &#123;<br>        console.log(word)<br>    &#125;<br><br>&#125;<br>tom.say(<span class="hljs-string">'hello'</span>)<br></code></pre></td></tr></table></figure>
+<ol>
+<li>readonly </li>
+</ol>
+<p>不能更改</p>
+<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash">interface Human &#123;<br>    <span class="hljs-built_in">readonly</span> name: string<br>    age: number,<br>    shape: Shape,<br>    say(word: string): void<br>    &#125;<br></code></pre></td></tr></table></figure>
     </main>
     <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/TS/" rel="tag"><i class="fas fa-tags"></i>TS</a>
+        
+      </div>
       
     </footer>
   </article>
@@ -171,10 +195,10 @@
   <nav class="page-nav">
     <div class="page-nav-next page-nav-item">
       
+      <a href="/2020/01/07/使用TS操作DOM/" rel="next" title="使用TS写一个计算器"><i class="fas fa-angle-left"></i><span class="nav-title">使用TS写一个计算器</span></a>
+      
     </div>
     <div class="page-nav-prev page-nav-item">
-      
-      <a href="/2018/04/14/Git简单命令/" rel="prev" title="Git简单命令"><span class="nav-title">Git简单命令</span><i class="fas fa-angle-right"></i></a>
       
     </div>
   </nav>
@@ -245,7 +269,7 @@
     <hr>
     <div class="post-toc sidebar-item" id="toc-div">
       <div><i class="fas fa-list-ol"></i>文章目录</div>
-      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#1-发布新的博客"><span class="toc-text">1.发布新的博客</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#2-更改博客主题"><span class="toc-text">2.更改博客主题</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#例子："><span class="toc-text">例子：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#3-布局相关操作"><span class="toc-text">3.布局相关操作</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#3-1引入代码块"><span class="toc-text">3.1引入代码块</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#或"><span class="toc-text">或:</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#3-2图片"><span class="toc-text">3.2图片</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#3-3链接"><span class="toc-text">3.3链接</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#或-1"><span class="toc-text">或:</span></a></li></ol></li></ol></li></ol></li></ol></div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#类型"><span class="toc-text">类型</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#类型-1"><span class="toc-text">类型</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#枚举"><span class="toc-text">枚举</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#void"><span class="toc-text">void</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#never"><span class="toc-text">never</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#断言"><span class="toc-text">断言</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#接口"><span class="toc-text">接口</span></a></div>
     </div>
     
     

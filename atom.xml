@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-01-07T13:40:53.817Z</updated>
+  <updated>2020-01-08T15:29:11.552Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>TS变量,接口,类</title>
+    <link href="http://yoursite.com/2020/01/08/TS%E5%8F%98%E9%87%8F-%E6%8E%A5%E5%8F%A3-%E7%B1%BB/"/>
+    <id>http://yoursite.com/2020/01/08/TS变量-接口-类/</id>
+    <published>2020-01-08T06:06:27.000Z</published>
+    <updated>2020-01-08T15:29:11.552Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;类型&quot;&gt;&lt;a href=&quot;#类型&quot; class=&quot;headerlink&quot; title=&quot;类型&quot;&gt;&lt;/a&gt;类型&lt;/h4&gt;&lt;p&gt;跟JS一样&lt;/p&gt;
+&lt;figure class=&quot;hljs highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td
+        
+      
+    
+    </summary>
+    
+      <category term="TS" scheme="http://yoursite.com/categories/TS/"/>
+    
+    
+      <category term="TS" scheme="http://yoursite.com/tags/TS/"/>
+    
+  </entry>
   
   <entry>
     <title>使用TS写一个计算器</title>
@@ -474,28 +501,6 @@
         
         
           &lt;h4 id=&quot;什么是-websocket&quot;&gt;&lt;a href=&quot;#什么是-websocket&quot; class=&quot;headerlink&quot; title=&quot;什么是 websocket&quot;&gt;&lt;/a&gt;什么是 websocket&lt;/h4&gt;&lt;p&gt;websocket 是 HTML5
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>web图片的使用</title>
-    <link href="http://yoursite.com/2019/04/16/web%E5%9B%BE%E7%89%87%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
-    <id>http://yoursite.com/2019/04/16/web图片的使用/</id>
-    <published>2019-04-16T09:34:44.000Z</published>
-    <updated>2019-07-25T13:09:30.006Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h4 id=&quot;FileReader&quot;&gt;&lt;a href=&quot;#FileReader&quot; class=&quot;headerlink&quot; title=&quot;FileReader&quot;&gt;&lt;/a&gt;FileReader&lt;/h4&gt;&lt;p&gt;FileReader 对象,使用 File 或 Blob
         
       
     
