@@ -158,7 +158,41 @@
       </div>
     </header>
     <main class="post-main" itemprop="articleBody">
-      
+      <ol>
+<li><p>写一个ts的类</p>
+<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs bash">class Human &#123;<br>    name: string<br>    age: number<br>    constructor(name: string, age: number) &#123;<br>        this.name = name<br>        this.age = age<br>    &#125;<br>    move(): void &#123;<br>        console.log(<span class="hljs-string">'run'</span>)<br>    &#125;<br>&#125;<br><br><span class="hljs-built_in">let</span> tom = new Human(<span class="hljs-string">'tom'</span>, 18)<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>与interface的比较</p>
+</li>
+</ol>
+<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs bash">interface People &#123;<br>    name: string<br>    age: number<br>    move(): void<br>&#125;<br><br><span class="hljs-built_in">let</span> jack = &#123;<br>    name: <span class="hljs-string">'jack'</span>,<br>    age: 18,<br>    move(): void &#123;<br>        console.log(<span class="hljs-string">'run'</span>)<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<ol start="3">
+<li>类的属性(static)</li>
+</ol>
+<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs bash">class Human &#123;<br>    name: string<br>    age: number<br>    static xxx = 1 //在这里定义<br>    constructor(name: string, age: number) &#123;<br>        this.name = name<br>        this.age = age<br>    &#125;<br>    move(): void &#123;<br>        console.log(<span class="hljs-string">'run'</span>)<br>    &#125;<br>&#125;<br><br><span class="hljs-built_in">let</span> tom = new Human(<span class="hljs-string">'tom'</span>, 18)<br>console.log(Human.xxx) //应该这样使用<br></code></pre></td></tr></table></figure>
+<ol start="4">
+<li>类的继承</li>
+</ol>
+<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs bash">class Animal &#123;<br>    kind: string<br>    constructor(kind: string) &#123;<br>        this.kind = kind<br>    &#125;<br>&#125;<br><br>class Human extends Animal &#123;<br>    name: string<br>    age: number<br>    static xxx = 1<br>    constructor(name: string, age: number, kind: string) &#123;<br>        super(kind) //执行super实际上是执行被父类的constructor<br>        this.name = name<br>        this.age = age<br>    &#125;<br>    move(): void &#123;<br>        console.log(<span class="hljs-string">'run'</span>)<br>    &#125;<br>&#125;<br><br><span class="hljs-built_in">let</span> tom = new Human(<span class="hljs-string">'tom'</span>, 18, <span class="hljs-string">'哺乳类'</span>)<br></code></pre></td></tr></table></figure>
+<ol start="5">
+<li>私用属性private,共有属性public</li>
+</ol>
+<p>private不能外部调用,只能在类自身使用,可以想象成局部变量<br>public外部可以调用.(默认就是public,可以不加)</p>
+<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs bash">class Human &#123;<br>    public name: string<br>    age: number<br>    private secret: string<br>    constructor(name: string, age: number) &#123;<br>        this.name = name<br>        this.age = age<br>        this.secret = <span class="hljs-string">'self'</span><br>    &#125;<br>    move(): void &#123;<br>        console.log(<span class="hljs-string">'run'</span>)<br>    &#125;<br>&#125;<br><br><span class="hljs-built_in">let</span> tom = new Human(<span class="hljs-string">'tom'</span>, 18)<br>console.log(tom.secret) //报错<br></code></pre></td></tr></table></figure>
+<ol start="6">
+<li>protected保护</li>
+</ol>
+<p>只能在子类内使用</p>
+<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs bash">class Animal &#123;<br>    kind: string<br>    protected both: string //定义<br>    constructor(kind: string) &#123;<br>        this.kind = kind<br>        <span class="hljs-keyword">if</span> (this.kind === <span class="hljs-string">'哺乳类'</span>) &#123;<br>            this.both = <span class="hljs-string">'胎生'</span><br>        &#125;<br>    &#125;<br>&#125;<br><br>class Human extends Animal &#123;<br>    name: string<br>    age: number<br>    static xxx = 1<br>    constructor(name: string, age: number, kind: string) &#123;<br>        super(kind) //执行super实际上是执行被父类的constructor<br>        this.name = name<br>        this.age = age<br>    &#125;<br>    move(): void &#123;<br>        console.log(<span class="hljs-string">'run'</span>)<br>    &#125;<br>    <span class="hljs-function"><span class="hljs-title">say</span></span>() &#123;<br>        console.log(this.both) //在子类使用<br>    &#125;<br>&#125;<br><br><span class="hljs-built_in">let</span> tom = new Human(<span class="hljs-string">'tom'</span>, 18, <span class="hljs-string">'哺乳类'</span>)<br>tom.say()<br></code></pre></td></tr></table></figure>
+<ol start="7">
+<li>访问器 get set</li>
+</ol>
+<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs bash">  class Human &#123;<br>    name: string<br>    private _age: number //首先把age变为私有属性<br>    get <span class="hljs-function"><span class="hljs-title">age</span></span>() &#123;//获取值,注意不能跟_age重名<br>        <span class="hljs-built_in">return</span> this._age<br>    &#125;<br>    <span class="hljs-built_in">set</span> age(value: number) &#123;//赋值,按照条件赋值<br>        <span class="hljs-keyword">if</span> (value &lt; 0) &#123;<br>            this._age = 0<br>        &#125; <span class="hljs-keyword">else</span> &#123;<br>            this._age = value<br>        &#125;<br>    &#125;<br>    constructor(name: string, age = 18) &#123;<br>        this.name = name<br>        this.age = age<br>    &#125;<br>&#125;<br><br><span class="hljs-built_in">let</span> tom = new Human(<span class="hljs-string">'tom'</span>)<br>tom.age = -2<br>console.log(tom.age) //0<br></code></pre></td></tr></table></figure>
+<ol start="8">
+<li>抽象类</li>
+</ol>
+<p>抽象类是子类的父类,但方法没有写完,不能直接实例化</p>
+<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs bash">abstract class Animal &#123;<br>       kind: string<br>       abstract say(): void //方法没有写完<br>   &#125;<br><br>   class Human extends Animal &#123;<br>       name: string<br>       age: number<br>       static xxx = 1<br>       constructor(name: string, age: number) &#123;<br>           super()<br>           this.name = name<br>           this.age = age<br>       &#125;<br>       say(): void &#123;//补充完整方法<br>           console.log(<span class="hljs-string">'hello'</span>)<br>       &#125;<br>   &#125;<br><br>   <span class="hljs-built_in">let</span> tom = new Human(<span class="hljs-string">'tom'</span>, 18)<br></code></pre></td></tr></table></figure>
     </main>
     <footer class="post-footer">
       
@@ -175,7 +209,7 @@
   <nav class="page-nav">
     <div class="page-nav-next page-nav-item">
       
-      <a href="/2020/01/08/TS变量-接口-类/" rel="next" title="TS变量,接口,类"><i class="fas fa-angle-left"></i><span class="nav-title">TS变量,接口,类</span></a>
+      <a href="/2020/01/08/TS变量-接口/" rel="next" title="TS变量,接口"><i class="fas fa-angle-left"></i><span class="nav-title">TS变量,接口</span></a>
       
     </div>
     <div class="page-nav-prev page-nav-item">
@@ -241,6 +275,11 @@
 
 
   <div class="sidebar-sticky">
+    
+    
+    
+    
+    
     
     
     <hr>
