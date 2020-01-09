@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-01-08T17:23:57.168Z</updated>
+  <updated>2020-01-09T02:56:54.764Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,24 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>TS类</title>
+    <link href="http://yoursite.com/2020/01/09/TS%E7%B1%BB/"/>
+    <id>http://yoursite.com/2020/01/09/TS类/</id>
+    <published>2020-01-09T02:56:36.000Z</published>
+    <updated>2020-01-09T02:56:54.764Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="TS" scheme="http://yoursite.com/categories/TS/"/>
+    
+    
+      <category term="TS" scheme="http://yoursite.com/tags/TS/"/>
+    
+  </entry>
   
   <entry>
     <title>TS变量,接口,类</title>
@@ -171,7 +189,7 @@
     <link href="http://yoursite.com/2019/07/29/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%BC%80%E5%8F%91%E7%9A%84%E5%87%A0%E4%B8%AA%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/"/>
     <id>http://yoursite.com/2019/07/29/移动端开发的几个常见问题/</id>
     <published>2019-07-29T03:33:12.000Z</published>
-    <updated>2019-07-29T13:40:11.163Z</updated>
+    <updated>2020-01-09T03:02:16.325Z</updated>
     
     <summary type="html">
     
@@ -185,15 +203,19 @@
     
     </summary>
     
+      <category term="面试题" scheme="http://yoursite.com/categories/%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    
+    
+      <category term="面试题" scheme="http://yoursite.com/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
     
   </entry>
   
   <entry>
-    <title>面试题</title>
+    <title>2019-07-28面试题</title>
     <link href="http://yoursite.com/2019/07/28/%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
     <id>http://yoursite.com/2019/07/28/面试题/</id>
     <published>2019-07-28T04:28:45.000Z</published>
-    <updated>2019-07-28T04:31:58.984Z</updated>
+    <updated>2020-01-09T03:01:11.593Z</updated>
     
     <summary type="html">
     
@@ -210,6 +232,10 @@
     
     </summary>
     
+      <category term="面试题" scheme="http://yoursite.com/categories/%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    
+    
+      <category term="面试" scheme="http://yoursite.com/tags/%E9%9D%A2%E8%AF%95/"/>
     
   </entry>
   
@@ -240,7 +266,7 @@
     <link href="http://yoursite.com/2019/07/25/%E7%B1%BB%E5%9E%8B%E5%88%A4%E6%96%AD/"/>
     <id>http://yoursite.com/2019/07/25/类型判断/</id>
     <published>2019-07-25T13:10:49.000Z</published>
-    <updated>2019-07-25T14:10:28.256Z</updated>
+    <updated>2020-01-09T03:00:34.529Z</updated>
     
     <summary type="html">
     
@@ -254,6 +280,10 @@
     
     </summary>
     
+      <category term="JS" scheme="http://yoursite.com/categories/JS/"/>
+    
+    
+      <category term="JS" scheme="http://yoursite.com/tags/JS/"/>
     
   </entry>
   
@@ -262,7 +292,7 @@
     <link href="http://yoursite.com/2019/07/24/ES6-%E6%95%B0%E7%BB%84/"/>
     <id>http://yoursite.com/2019/07/24/ES6-数组/</id>
     <published>2019-07-24T08:21:58.000Z</published>
-    <updated>2019-07-25T16:29:52.919Z</updated>
+    <updated>2020-01-09T03:06:10.732Z</updated>
     
     <summary type="html">
     
@@ -288,7 +318,7 @@
     <link href="http://yoursite.com/2019/07/21/Vue%E4%BA%8B%E4%BB%B6-%E4%BF%AE%E9%A5%B0%E7%AC%A6/"/>
     <id>http://yoursite.com/2019/07/21/Vue事件-修饰符/</id>
     <published>2019-07-21T09:06:14.000Z</published>
-    <updated>2019-07-21T09:41:19.786Z</updated>
+    <updated>2020-01-09T03:10:17.842Z</updated>
     
     <summary type="html">
     
@@ -303,6 +333,10 @@
     
     </summary>
     
+      <category term="vue" scheme="http://yoursite.com/categories/vue/"/>
+    
+    
+      <category term="vue" scheme="http://yoursite.com/tags/vue/"/>
     
   </entry>
   
@@ -338,7 +372,7 @@
     <link href="http://yoursite.com/2019/07/10/git-branch/"/>
     <id>http://yoursite.com/2019/07/10/git-branch/</id>
     <published>2019-07-09T16:12:31.000Z</published>
-    <updated>2019-07-09T16:26:38.307Z</updated>
+    <updated>2020-01-09T03:06:44.309Z</updated>
     
     <summary type="html">
     
@@ -352,6 +386,10 @@
     
     </summary>
     
+      <category term="git" scheme="http://yoursite.com/categories/git/"/>
+    
+    
+      <category term="git" scheme="http://yoursite.com/tags/git/"/>
     
   </entry>
   
@@ -439,7 +477,7 @@
     <link href="http://yoursite.com/2019/07/08/ES6%E5%AF%B9%E8%B1%A1/"/>
     <id>http://yoursite.com/2019/07/08/ES6对象/</id>
     <published>2019-07-08T09:42:13.000Z</published>
-    <updated>2019-07-25T13:09:30.006Z</updated>
+    <updated>2020-01-09T03:06:21.619Z</updated>
     
     <summary type="html">
     
@@ -465,7 +503,7 @@
     <link href="http://yoursite.com/2019/07/08/es6%E5%8F%98%E9%87%8F%E5%A3%B0%E6%98%8E/"/>
     <id>http://yoursite.com/2019/07/08/es6变量声明/</id>
     <published>2019-07-08T04:17:27.000Z</published>
-    <updated>2019-07-25T13:09:30.006Z</updated>
+    <updated>2020-01-09T03:06:15.674Z</updated>
     
     <summary type="html">
     
@@ -484,28 +522,6 @@
     
     
       <category term="ES6" scheme="http://yoursite.com/tags/ES6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Websocket</title>
-    <link href="http://yoursite.com/2019/04/18/Websocket/"/>
-    <id>http://yoursite.com/2019/04/18/Websocket/</id>
-    <published>2019-04-18T02:29:19.000Z</published>
-    <updated>2019-07-08T12:09:35.664Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h4 id=&quot;什么是-websocket&quot;&gt;&lt;a href=&quot;#什么是-websocket&quot; class=&quot;headerlink&quot; title=&quot;什么是 websocket&quot;&gt;&lt;/a&gt;什么是 websocket&lt;/h4&gt;&lt;p&gt;websocket 是 HTML5
-        
-      
-    
-    </summary>
-    
     
   </entry>
   
