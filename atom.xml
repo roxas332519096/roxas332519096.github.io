@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-01-09T08:13:41.945Z</updated>
+  <updated>2020-01-10T15:53:14.363Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>TS函数</title>
+    <link href="http://yoursite.com/2020/01/10/TS%E5%87%BD%E6%95%B0/"/>
+    <id>http://yoursite.com/2020/01/10/TS函数/</id>
+    <published>2020-01-10T15:50:49.000Z</published>
+    <updated>2020-01-10T15:53:14.363Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;函数:可以被调用的对象&lt;/p&gt;
+
+        
+      
+    
+    </summary>
+    
+      <category term="TS" scheme="http://yoursite.com/categories/TS/"/>
+    
+    
+      <category term="TS" scheme="http://yoursite.com/tags/TS/"/>
+    
+  </entry>
   
   <entry>
     <title>TS类</title>
@@ -105,7 +132,7 @@
     <link href="http://yoursite.com/2019/12/17/TS/"/>
     <id>http://yoursite.com/2019/12/17/TS/</id>
     <published>2019-12-17T14:40:20.000Z</published>
-    <updated>2019-12-24T16:39:01.387Z</updated>
+    <updated>2020-01-11T10:41:01.733Z</updated>
     
     <summary type="html">
     
@@ -496,33 +523,6 @@
         
         
           &lt;h4 id=&quot;生成空对象&quot;&gt;&lt;a href=&quot;#生成空对象&quot; class=&quot;headerlink&quot; title=&quot;生成空对象&quot;&gt;&lt;/a&gt;生成空对象&lt;/h4&gt;&lt;h5 id=&quot;1-es5&quot;&gt;&lt;a href=&quot;#1-es5&quot; class=&quot;headerlink&quot; title=&quot;1.
-        
-      
-    
-    </summary>
-    
-      <category term="ES6" scheme="http://yoursite.com/categories/ES6/"/>
-    
-    
-      <category term="ES6" scheme="http://yoursite.com/tags/ES6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ES6变量声明</title>
-    <link href="http://yoursite.com/2019/07/08/es6%E5%8F%98%E9%87%8F%E5%A3%B0%E6%98%8E/"/>
-    <id>http://yoursite.com/2019/07/08/es6变量声明/</id>
-    <published>2019-07-08T04:17:27.000Z</published>
-    <updated>2020-01-09T03:06:15.674Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h4 id=&quot;let&quot;&gt;&lt;a href=&quot;#let&quot; class=&quot;headerlink&quot; title=&quot;let&quot;&gt;&lt;/a&gt;let&lt;/h4&gt;&lt;ol&gt;
-&lt;li&gt;作用声明局部变量
         
       
     

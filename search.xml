@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>TS函数</title>
+      <link href="/2020/01/10/TS%E5%87%BD%E6%95%B0/"/>
+      <url>/2020/01/10/TS%E5%87%BD%E6%95%B0/</url>
+      
+        <content type="html"><![CDATA[<p>函数:可以被调用的对象</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> TS </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> TS </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>TS类</title>
       <link href="/2020/01/09/TS%E7%B1%BB/"/>
       <url>/2020/01/09/TS%E7%B1%BB/</url>
@@ -1746,9 +1771,9 @@
     
     
     <entry>
-      <title>categories</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
+      <title>tags</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -1757,9 +1782,9 @@
     
     
     <entry>
-      <title>tags</title>
-      <link href="/tags/index.html"/>
-      <url>/tags/index.html</url>
+      <title>categories</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
