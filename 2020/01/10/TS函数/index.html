@@ -159,6 +159,12 @@
     </header>
     <main class="post-main" itemprop="articleBody">
       <p>函数:可以被调用的对象</p>
+<h4 id="强制this"><a href="#强制this" class="headerlink" title="强制this"></a>强制this</h4><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs bash">interface Human &#123;<br>    name: string<br>    age: number<br>&#125;<br><br><span class="hljs-keyword">function</span> fn(this: Human) &#123;<br>    console.log(this)<br>&#125;<br><br>fn.call(&#123; name: <span class="hljs-string">'tom'</span>, age: 18 &#125;) //需要call<br><br>fn() //报错<br></code></pre></td></tr></table></figure>
+<h4 id="重载"><a href="#重载" class="headerlink" title="重载"></a>重载</h4><p>重载:一个函数有不同的调用形式<br>只支持不同类型的重载,不支持不同长度参数的重载.<br>如声明一个参数,那么只支持一个参数的重载.</p>
+<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-keyword">function</span> add(n1: number, n2: number)<br><span class="hljs-keyword">function</span> add(n1: string, n2: string)<br><span class="hljs-keyword">function</span> add(n1, n2) &#123;<br>    <span class="hljs-built_in">return</span> n1 + n2<br>&#125;<br><br>add(1, 2)<br>add(<span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>)<br>add(1,<span class="hljs-string">'2'</span>) //报错<br></code></pre></td></tr></table></figure>
+<h4 id="类型推断"><a href="#类型推断" class="headerlink" title="类型推断"></a>类型推断</h4><p>TS会自己猜类型</p>
+<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-keyword">function</span> add(n1: string, n2: string) &#123;<br>    <span class="hljs-built_in">return</span> n1 + n2<br>&#125;<br><br><span class="hljs-built_in">let</span> result = add(<span class="hljs-string">'tom'</span>, <span class="hljs-string">'jack'</span>).split(<span class="hljs-string">''</span>) //由于两个规定类型为string的参数相加为string,所以ts推断结果为string,拥有split方法<br></code></pre></td></tr></table></figure>
+<h4 id="类型兼容"><a href="#类型兼容" class="headerlink" title="类型兼容"></a>类型兼容</h4><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash">interface Human &#123;<br>    name: string<br>    age: number<br>&#125;<br><br><span class="hljs-built_in">let</span> tom: Human = &#123; name: <span class="hljs-string">'tom'</span>, age: 18, gender: <span class="hljs-string">'f'</span> &#125;//直接赋值会报错<br>-----------------------<br><span class="hljs-built_in">let</span> temp = &#123; name: <span class="hljs-string">'tom'</span>, age: 18, gender: <span class="hljs-string">'f'</span> &#125; //使用中间变量,会触发TS的类型兼容<br><span class="hljs-built_in">let</span> tom: Human = temp<br></code></pre></td></tr></table></figure>
 
     </main>
     <footer class="post-footer">
@@ -180,6 +186,8 @@
       
     </div>
     <div class="page-nav-prev page-nav-item">
+      
+      <a href="/2020/01/13/webpack4搭建vue-ts项目/" rel="prev" title="webpack4搭建vue-ts项目"><span class="nav-title">webpack4搭建vue-ts项目</span><i class="fas fa-angle-right"></i></a>
       
     </div>
   </nav>
@@ -211,7 +219,7 @@
     
     <div class="archives-count">
       <div class="site-count-title">归档</div>
-      <div><a href="/archives/">72</a></div>
+      <div><a href="/archives/">73</a></div>
     </div>
     
     
@@ -246,6 +254,12 @@
     
     
     
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>文章目录</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#强制this"><span class="toc-text">强制this</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#重载"><span class="toc-text">重载</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#类型推断"><span class="toc-text">类型推断</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#类型兼容"><span class="toc-text">类型兼容</span></a></li></ol></div>
+    </div>
     
     
     
