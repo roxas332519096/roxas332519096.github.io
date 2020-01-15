@@ -83,7 +83,7 @@
     <script defer type="text/javascript" src="/js/index.js"></script>
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
-    <title>CSS布局套路 | RoxasDengBlog</title>
+    <title>用vue-ts写一个toDoList | RoxasDengBlog</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
     
@@ -127,7 +127,7 @@
   
   <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/16/CSS布局套路/">
+      <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/14/用vue-ts写一个toDoList/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
        <meta itemprop="name" content="Roxas Deng">
        <meta itemprop="description" content="">
@@ -138,11 +138,11 @@
       </span>
     </div>
     <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">CSS布局套路</h1>
+      <h1 class="post-title" itemprop="name headline">用vue-ts写一个toDoList</h1>
       <div class="post-meta">
         
         <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-06-16T19:22:42+08:00">2018-06-16 19:22:42</time></span>
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2020-01-14T16:45:09+08:00">2020-01-14 16:45:09</time></span>
         </span>
         
         
@@ -151,45 +151,31 @@
         
         <span class="post-categories">
           
-          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CSS/" itemprop="url" rel="index"><span itemprop="name">CSS</span></a></span>
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/TS/" itemprop="url" rel="index"><span itemprop="name">TS</span></a></span>
         </span>
         
         
       </div>
     </header>
     <main class="post-main" itemprop="articleBody">
-      <h3 id="CSS布局"><a href="#CSS布局" class="headerlink" title="CSS布局"></a>CSS布局</h3><h4 id="流程图-要支持IE8吗"><a href="#流程图-要支持IE8吗" class="headerlink" title="流程图:要支持IE8吗?"></a>流程图:要支持IE8吗?</h4><ol>
-<li>是:float布局,定宽</li>
-<li>否:flex布局,弹性宽</li>
+      <ol>
+<li>app.vue</li>
 </ol>
-<h4 id="Float布局"><a href="#Float布局" class="headerlink" title="Float布局"></a>Float布局</h4><ol>
-<li>给子元素加上float:left</li>
-<li>给父元素加上clearfix</li>
-</ol>
-<p>clearfix</p>
-<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs bash">.clearfix::after&#123;<br>    content:<span class="hljs-string">''</span>;<br>    display:block;<br>    clear:both;<br>&#125;<br><br> /兼容IE6/<br><br>.clearfix&#123;<br>    zoom:1<br>&#125;<br></code></pre></td></tr></table></figure>
-<h4 id="浮动实现平均布局"><a href="#浮动实现平均布局" class="headerlink" title="浮动实现平均布局"></a>浮动实现平均布局</h4><p>父元素变成祖先,建新的父元素,父元素加上一个负margin<br><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs bash">.pic&#123;<br>    width:800px;<br>    margin:0 auto;<br>&#125;<br>.pic &gt; .item &#123;<br>    width:194px;<br>    height:194px;<br>    margin:4px;<br>    <span class="hljs-built_in">float</span>:left;<br>&#125;<br>变成<br>.pic&#123;<br>    width:800px;<br>    margin:0 auto;<br>&#125;<br>.pic .xxx &#123;<br>    margin-left:-4px;<br>    margin-right:-8px;<br>&#125;<br>.pic &gt; .xxx &gt; .item&#123;<br>    width:194px;<br>    height:194px;<br>    margin:4px;<br>    <span class="hljs-built_in">float</span>:left;    <br>&#125;<br></code></pre></td></tr></table></figure></p>
-<h4 id="Flex布局"><a href="#Flex布局" class="headerlink" title="Flex布局"></a>Flex布局</h4><ol>
-<li>给父元素加display:flex;</li>
-<li>给父元素加上justify-content:spance-between;</li>
-</ol>
-<h4 id="FLEX实现平均布局"><a href="#FLEX实现平均布局" class="headerlink" title="FLEX实现平均布局"></a>FLEX实现平均布局</h4><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs bash">.pic&#123;<br>    width:800px;<br>    margin:0 auto;<br>    display:flex;<br>    flex-wrap:wrap;<br>    justify-content:space-between;<br>&#125;<br>.pic &gt; .item &#123;<br>    width:194px;<br>    height:194px;<br>    margin:4px;<br>&#125;<br></code></pre></td></tr></table></figure>
-<h5 id="使用calc"><a href="#使用calc" class="headerlink" title="使用calc"></a>使用calc</h5><p>百分之25,减去8像素</p>
-<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">width:calc (25% - 8px);<br></code></pre></td></tr></table></figure>
-<h5 id="如何防止banner图片变型"><a href="#如何防止banner图片变型" class="headerlink" title="如何防止banner图片变型"></a>如何防止banner图片变型</h5><ol>
-<li>不要用img标签</li>
-</ol>
-<p>用background<br><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">background:transparent url() no-repeat center;<br>background-size:cover;<br></code></pre></td></tr></table></figure></p>
+<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;template&gt;<br>  &lt;div id=<span class="hljs-string">"app"</span>&gt;<br>    &lt;newToDo @add=<span class="hljs-string">"addNewItem"</span> /&gt;<br>    &lt;toDoList :list=<span class="hljs-string">"list"</span> /&gt;<br>  &lt;/div&gt;<br>&lt;/template&gt;<br><br>&lt;script lang=<span class="hljs-string">"ts"</span>&gt;<br>import &#123; Component, Vue &#125; from <span class="hljs-string">"vue-property-decorator"</span>;<br>// import HelloWorld from <span class="hljs-string">'./components/HelloWorld.vue'</span>;<br>import newToDo from <span class="hljs-string">"./components/newToDo.vue"</span>;<br>import toDoList from <span class="hljs-string">"./components/toDoList.vue"</span>;<br><br>interface List &#123;<br>  name: string;<br>  status: <span class="hljs-string">"done"</span> | <span class="hljs-string">"todo"</span> | <span class="hljs-string">"deleted"</span>;<br>&#125;<br><br>@Component(&#123;<br>  components: &#123;<br>    newToDo,<br>    toDoList<br>  &#125;,<br>  watch: &#123;<br>    list(newValue: List) &#123;<br>      localStorage.setItem(<span class="hljs-string">"list"</span>, JSON.stringify(newValue));<br>    &#125;<br>  &#125;<br>&#125;)<br><span class="hljs-built_in">export</span> default class App extends Vue &#123;<br>  list: Array&lt;List&gt; = localStorage.getItem(<span class="hljs-string">"list"</span>)<br>    ? JSON.parse(&lt;string&gt;localStorage.getItem(<span class="hljs-string">"list"</span>))<br>    : [];<br>  addNewItem(value: string) &#123;<br>    this.list.push(&#123;<br>      name: value,<br>      status: <span class="hljs-string">"todo"</span><br>    &#125;);<br>  &#125;<br>&#125;<br>&lt;/script&gt;<br><br>&lt;style lang=<span class="hljs-string">"scss"</span>&gt;<br>* &#123;<br>  margin: 0;<br>  padding: 0;<br>  box-sizing: content-box;<br>&#125;<br>&lt;/style&gt;<br></code></pre></td></tr></table></figure>
 <ol start="2">
-<li>也可以搜索固定比例的div</li>
+<li>newToDo.vue</li>
 </ol>
-
+<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;template&gt;<br>  &lt;div&gt;<br>    &lt;input <span class="hljs-built_in">type</span>=<span class="hljs-string">"text"</span> v-model=<span class="hljs-string">"context"</span> /&gt;<br>    &lt;button @click=<span class="hljs-string">"add"</span>&gt;+&lt;/button&gt;<br>  &lt;/div&gt;<br>&lt;/template&gt;<br><br>&lt;script lang=<span class="hljs-string">"ts"</span>&gt;<br>import &#123; Component, Vue &#125; from <span class="hljs-string">"vue-property-decorator"</span>;<br><br>@Component(&#123;&#125;)<br><span class="hljs-built_in">export</span> default class newToDo extends Vue &#123;<br>  context = <span class="hljs-string">""</span>;<br>  <span class="hljs-function"><span class="hljs-title">add</span></span>() &#123;<br>    this.<span class="hljs-variable">$emit</span>(<span class="hljs-string">"add"</span>, this.context);<br>    this.context = <span class="hljs-string">""</span>;<br>  &#125;<br>&#125;<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
+<ol start="3">
+<li>toDoList.vue</li>
+</ol>
+<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;template&gt;<br>  &lt;div&gt;<br>    &lt;ul&gt;<br>      &lt;li v-for=<span class="hljs-string">"(item,index) in list"</span> :key=<span class="hljs-string">"index"</span>&gt;&#123;&#123;item&#125;&#125;&lt;/li&gt;<br>    &lt;/ul&gt;<br>  &lt;/div&gt;<br>&lt;/template&gt;<br><br>&lt;script lang=<span class="hljs-string">"ts"</span>&gt;<br>import &#123; Component, Vue &#125; from <span class="hljs-string">"vue-property-decorator"</span>;<br><br>@Component(&#123;<br>  props: &#123;<br>    list: Array<br>  &#125;<br>&#125;)<br><span class="hljs-built_in">export</span> default class toDoList extends Vue &#123;&#125;<br>&lt;/script&gt;<br><br>&lt;style lang=<span class="hljs-string">"scss"</span>&gt;<br>ul,<br>li &#123;<br>  list-style: none;<br>&#125;<br>&lt;/style&gt;<br></code></pre></td></tr></table></figure>
     </main>
     <footer class="post-footer">
       
       <div class="post-tags">
         
-        <a class="post-tag button" href="/tags/CSS/" rel="tag"><i class="fas fa-tags"></i>CSS</a>
+        <a class="post-tag button" href="/tags/TS/" rel="tag"><i class="fas fa-tags"></i>TS</a>
         
       </div>
       
@@ -200,12 +186,10 @@
   <nav class="page-nav">
     <div class="page-nav-next page-nav-item">
       
-      <a href="/2018/06/15/Flex布局/" rel="next" title="Flex布局"><i class="fas fa-angle-left"></i><span class="nav-title">Flex布局</span></a>
+      <a href="/2020/01/13/webpack4搭建vue-ts项目/" rel="next" title="webpack4搭建vue-ts项目"><i class="fas fa-angle-left"></i><span class="nav-title">webpack4搭建vue-ts项目</span></a>
       
     </div>
     <div class="page-nav-prev page-nav-item">
-      
-      <a href="/2018/07/13/Vue基础/" rel="prev" title="Vue基础"><span class="nav-title">Vue基础</span><i class="fas fa-angle-right"></i></a>
       
     </div>
   </nav>
@@ -272,12 +256,6 @@
     
     
     
-    
-    <hr>
-    <div class="post-toc sidebar-item" id="toc-div">
-      <div><i class="fas fa-list-ol"></i>文章目录</div>
-      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#CSS布局"><span class="toc-text">CSS布局</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#流程图-要支持IE8吗"><span class="toc-text">流程图:要支持IE8吗?</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#Float布局"><span class="toc-text">Float布局</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#浮动实现平均布局"><span class="toc-text">浮动实现平均布局</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#Flex布局"><span class="toc-text">Flex布局</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#FLEX实现平均布局"><span class="toc-text">FLEX实现平均布局</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#使用calc"><span class="toc-text">使用calc</span></a></li><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#如何防止banner图片变型"><span class="toc-text">如何防止banner图片变型</span></a></li></ol></li></ol></li></ol></div>
-    </div>
     
     
     

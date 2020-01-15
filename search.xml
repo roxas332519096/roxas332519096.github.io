@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>用vue-ts写一个toDoList</title>
+      <link href="/2020/01/14/%E7%94%A8vue-ts%E5%86%99%E4%B8%80%E4%B8%AAtoDoList/"/>
+      <url>/2020/01/14/%E7%94%A8vue-ts%E5%86%99%E4%B8%80%E4%B8%AAtoDoList/</url>
+      
+        <content type="html"><![CDATA[<ol><li>app.vue</li></ol><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;template&gt;<br>  &lt;div id=<span class="hljs-string">"app"</span>&gt;<br>    &lt;newToDo @add=<span class="hljs-string">"addNewItem"</span> /&gt;<br>    &lt;toDoList :list=<span class="hljs-string">"list"</span> /&gt;<br>  &lt;/div&gt;<br>&lt;/template&gt;<br><br>&lt;script lang=<span class="hljs-string">"ts"</span>&gt;<br>import &#123; Component, Vue &#125; from <span class="hljs-string">"vue-property-decorator"</span>;<br>// import HelloWorld from <span class="hljs-string">'./components/HelloWorld.vue'</span>;<br>import newToDo from <span class="hljs-string">"./components/newToDo.vue"</span>;<br>import toDoList from <span class="hljs-string">"./components/toDoList.vue"</span>;<br><br>interface List &#123;<br>  name: string;<br>  status: <span class="hljs-string">"done"</span> | <span class="hljs-string">"todo"</span> | <span class="hljs-string">"deleted"</span>;<br>&#125;<br><br>@Component(&#123;<br>  components: &#123;<br>    newToDo,<br>    toDoList<br>  &#125;,<br>  watch: &#123;<br>    list(newValue: List) &#123;<br>      localStorage.setItem(<span class="hljs-string">"list"</span>, JSON.stringify(newValue));<br>    &#125;<br>  &#125;<br>&#125;)<br><span class="hljs-built_in">export</span> default class App extends Vue &#123;<br>  list: Array&lt;List&gt; = localStorage.getItem(<span class="hljs-string">"list"</span>)<br>    ? JSON.parse(&lt;string&gt;localStorage.getItem(<span class="hljs-string">"list"</span>))<br>    : [];<br>  addNewItem(value: string) &#123;<br>    this.list.push(&#123;<br>      name: value,<br>      status: <span class="hljs-string">"todo"</span><br>    &#125;);<br>  &#125;<br>&#125;<br>&lt;/script&gt;<br><br>&lt;style lang=<span class="hljs-string">"scss"</span>&gt;<br>* &#123;<br>  margin: 0;<br>  padding: 0;<br>  box-sizing: content-box;<br>&#125;<br>&lt;/style&gt;<br></code></pre></td></tr></table></figure><ol start="2"><li>newToDo.vue</li></ol><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;template&gt;<br>  &lt;div&gt;<br>    &lt;input <span class="hljs-built_in">type</span>=<span class="hljs-string">"text"</span> v-model=<span class="hljs-string">"context"</span> /&gt;<br>    &lt;button @click=<span class="hljs-string">"add"</span>&gt;+&lt;/button&gt;<br>  &lt;/div&gt;<br>&lt;/template&gt;<br><br>&lt;script lang=<span class="hljs-string">"ts"</span>&gt;<br>import &#123; Component, Vue &#125; from <span class="hljs-string">"vue-property-decorator"</span>;<br><br>@Component(&#123;&#125;)<br><span class="hljs-built_in">export</span> default class newToDo extends Vue &#123;<br>  context = <span class="hljs-string">""</span>;<br>  <span class="hljs-function"><span class="hljs-title">add</span></span>() &#123;<br>    this.<span class="hljs-variable">$emit</span>(<span class="hljs-string">"add"</span>, this.context);<br>    this.context = <span class="hljs-string">""</span>;<br>  &#125;<br>&#125;<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure><ol start="3"><li>toDoList.vue</li></ol><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;template&gt;<br>  &lt;div&gt;<br>    &lt;ul&gt;<br>      &lt;li v-for=<span class="hljs-string">"(item,index) in list"</span> :key=<span class="hljs-string">"index"</span>&gt;&#123;&#123;item&#125;&#125;&lt;/li&gt;<br>    &lt;/ul&gt;<br>  &lt;/div&gt;<br>&lt;/template&gt;<br><br>&lt;script lang=<span class="hljs-string">"ts"</span>&gt;<br>import &#123; Component, Vue &#125; from <span class="hljs-string">"vue-property-decorator"</span>;<br><br>@Component(&#123;<br>  props: &#123;<br>    list: Array<br>  &#125;<br>&#125;)<br><span class="hljs-built_in">export</span> default class toDoList extends Vue &#123;&#125;<br>&lt;/script&gt;<br><br>&lt;style lang=<span class="hljs-string">"scss"</span>&gt;<br>ul,<br>li &#123;<br>  list-style: none;<br>&#125;<br>&lt;/style&gt;<br></code></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> TS </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> TS </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>webpack4搭建vue-ts项目</title>
       <link href="/2020/01/13/webpack4%E6%90%AD%E5%BB%BAvue-ts%E9%A1%B9%E7%9B%AE/"/>
       <url>/2020/01/13/webpack4%E6%90%AD%E5%BB%BAvue-ts%E9%A1%B9%E7%9B%AE/</url>
@@ -1796,9 +1821,9 @@
     
     
     <entry>
-      <title>categories</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
+      <title>tags</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -1807,9 +1832,9 @@
     
     
     <entry>
-      <title>tags</title>
-      <link href="/tags/index.html"/>
-      <url>/tags/index.html</url>
+      <title>categories</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
