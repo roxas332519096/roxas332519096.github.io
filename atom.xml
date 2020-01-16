@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-01-15T15:52:23.347Z</updated>
+  <updated>2020-01-16T11:13:17.170Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>TS高级类型</title>
+    <link href="http://yoursite.com/2020/01/16/TS%E9%AB%98%E7%BA%A7%E7%B1%BB%E5%9E%8B/"/>
+    <id>http://yoursite.com/2020/01/16/TS高级类型/</id>
+    <published>2020-01-15T19:07:33.000Z</published>
+    <updated>2020-01-16T11:13:17.170Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ol&gt;
+&lt;li&gt;且类型(交叉类型)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;两种类型都需满足&lt;/p&gt;
+&lt;figure class=&quot;hljs highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span
+        
+      
+    
+    </summary>
+    
+      <category term="TS" scheme="http://yoursite.com/categories/TS/"/>
+    
+    
+      <category term="TS" scheme="http://yoursite.com/tags/TS/"/>
+    
+  </entry>
   
   <entry>
     <title>用vue-ts写一个toDoList</title>
@@ -502,32 +532,6 @@
         
         
           &lt;h4 id=&quot;import&quot;&gt;&lt;a href=&quot;#import&quot; class=&quot;headerlink&quot; title=&quot;import&quot;&gt;&lt;/a&gt;import&lt;/h4&gt;&lt;figure class=&quot;hljs highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td
-        
-      
-    
-    </summary>
-    
-      <category term="ES6" scheme="http://yoursite.com/categories/ES6/"/>
-    
-    
-      <category term="ES6" scheme="http://yoursite.com/tags/ES6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ES6字面量 Literal</title>
-    <link href="http://yoursite.com/2019/07/09/ES6%E5%AD%97%E9%9D%A2%E9%87%8F/"/>
-    <id>http://yoursite.com/2019/07/09/ES6字面量/</id>
-    <published>2019-07-09T01:52:39.000Z</published>
-    <updated>2019-07-10T15:13:09.148Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h4 id=&quot;八进制&quot;&gt;&lt;a href=&quot;#八进制&quot; class=&quot;headerlink&quot; title=&quot;八进制&quot;&gt;&lt;/a&gt;八进制&lt;/h4&gt;&lt;figure class=&quot;hljs highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td
         
       
     
