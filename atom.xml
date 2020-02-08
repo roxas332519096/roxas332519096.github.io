@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-01-16T11:13:17.170Z</updated>
+  <updated>2020-01-16T18:14:17.093Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,38 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>TS声明</title>
+    <link href="http://yoursite.com/2020/01/17/TS%E5%A3%B0%E6%98%8E/"/>
+    <id>http://yoursite.com/2020/01/17/TS声明/</id>
+    <published>2020-01-16T17:33:03.000Z</published>
+    <updated>2020-01-16T18:14:17.093Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;如何写一个TS声明文件&quot;&gt;&lt;a href=&quot;#如何写一个TS声明文件&quot; class=&quot;headerlink&quot; title=&quot;如何写一个TS声明文件&quot;&gt;&lt;/a&gt;如何写一个TS声明文件&lt;/h4&gt;&lt;p&gt;test.ts&lt;/p&gt;
+&lt;figure
+        
+      
+    
+    </summary>
+    
+      <category term="TS" scheme="http://yoursite.com/categories/TS/"/>
+    
+    
+      <category term="TS" scheme="http://yoursite.com/tags/TS/"/>
+    
+  </entry>
+  
+  <entry>
     <title>TS高级类型</title>
     <link href="http://yoursite.com/2020/01/16/TS%E9%AB%98%E7%BA%A7%E7%B1%BB%E5%9E%8B/"/>
     <id>http://yoursite.com/2020/01/16/TS高级类型/</id>
     <published>2020-01-15T19:07:33.000Z</published>
-    <updated>2020-01-16T11:13:17.170Z</updated>
+    <updated>2020-01-16T17:32:36.895Z</updated>
     
     <summary type="html">
     
@@ -33,7 +60,7 @@
 &lt;li&gt;且类型(交叉类型)&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;两种类型都需满足&lt;/p&gt;
-&lt;figure class=&quot;hljs highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span
         
       
     
@@ -62,7 +89,7 @@
           &lt;ol&gt;
 &lt;li&gt;app.vue&lt;/li&gt;
 &lt;/ol&gt;
-&lt;figure class=&quot;hljs highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span
         
       
     
@@ -80,7 +107,7 @@
     <link href="http://yoursite.com/2020/01/13/webpack4%E6%90%AD%E5%BB%BAvue-ts%E9%A1%B9%E7%9B%AE/"/>
     <id>http://yoursite.com/2020/01/13/webpack4搭建vue-ts项目/</id>
     <published>2020-01-13T14:24:51.000Z</published>
-    <updated>2020-01-14T08:39:21.510Z</updated>
+    <updated>2020-01-16T13:43:21.572Z</updated>
     
     <summary type="html">
     
@@ -91,7 +118,7 @@
           &lt;ol&gt;
 &lt;li&gt;创建根目录&lt;/li&gt;
 &lt;/ol&gt;
-&lt;figure class=&quot;hljs highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span
         
       
     
@@ -118,7 +145,7 @@
         
         
           &lt;p&gt;函数:可以被调用的对象&lt;/p&gt;
-&lt;h4 id=&quot;强制this&quot;&gt;&lt;a href=&quot;#强制this&quot; class=&quot;headerlink&quot; title=&quot;强制this&quot;&gt;&lt;/a&gt;强制this&lt;/h4&gt;&lt;figure class=&quot;hljs highlight
+&lt;h4 id=&quot;强制this&quot;&gt;&lt;a href=&quot;#强制this&quot; class=&quot;headerlink&quot; title=&quot;强制this&quot;&gt;&lt;/a&gt;强制this&lt;/h4&gt;&lt;figure class=&quot;highlight
         
       
     
@@ -146,7 +173,7 @@
         
           &lt;ol&gt;
 &lt;li&gt;&lt;p&gt;写一个ts的类&lt;/p&gt;
-&lt;figure class=&quot;hljs highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span
         
       
     
@@ -173,7 +200,7 @@
         
         
           &lt;h4 id=&quot;类型&quot;&gt;&lt;a href=&quot;#类型&quot; class=&quot;headerlink&quot; title=&quot;类型&quot;&gt;&lt;/a&gt;类型&lt;/h4&gt;&lt;p&gt;跟JS一样&lt;/p&gt;
-&lt;figure class=&quot;hljs highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td
         
       
     
@@ -202,7 +229,7 @@
           &lt;ol&gt;
 &lt;li&gt;将TS热更新为JS&lt;/li&gt;
 &lt;/ol&gt;
-&lt;figure class=&quot;hljs highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span
         
       
     
@@ -228,7 +255,7 @@
       
         
         
-          &lt;h4 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h4&gt;&lt;figure class=&quot;hljs highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td
+          &lt;h4 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h4&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span
         
       
     
@@ -270,7 +297,7 @@
         
           &lt;h3 id=&quot;无继承性的属性&quot;&gt;&lt;a href=&quot;#无继承性的属性&quot; class=&quot;headerlink&quot; title=&quot;无继承性的属性&quot;&gt;&lt;/a&gt;无继承性的属性&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;&lt;p&gt;display：&lt;/p&gt;
-&lt;figure class=&quot;hljs
+&lt;figure class=&quot;highlight
         
       
     
@@ -399,7 +426,7 @@
       
         
         
-          &lt;h4 id=&quot;typeof&quot;&gt;&lt;a href=&quot;#typeof&quot; class=&quot;headerlink&quot; title=&quot;typeof&quot;&gt;&lt;/a&gt;typeof&lt;/h4&gt;&lt;p&gt;操作符返回一个字符串，表示未经计算的操作数的类型&lt;br&gt;&lt;figure class=&quot;hljs
+          &lt;h4 id=&quot;typeof&quot;&gt;&lt;a href=&quot;#typeof&quot; class=&quot;headerlink&quot; title=&quot;typeof&quot;&gt;&lt;/a&gt;typeof&lt;/h4&gt;&lt;p&gt;操作符返回一个字符串，表示未经计算的操作数的类型&lt;br&gt;&lt;figure class=&quot;highlight
         
       
     
@@ -452,7 +479,7 @@
         
         
           &lt;h4 id=&quot;stop&quot;&gt;&lt;a href=&quot;#stop&quot; class=&quot;headerlink&quot; title=&quot;.stop&quot;&gt;&lt;/a&gt;.stop&lt;/h4&gt;&lt;p&gt;阻止事件的传播(冒泡,捕获)&lt;/p&gt;
-&lt;figure class=&quot;hljs highlight
+&lt;figure class=&quot;highlight
         
       
     
@@ -479,7 +506,7 @@
         
         
           &lt;h4 id=&quot;普通三角形&quot;&gt;&lt;a href=&quot;#普通三角形&quot; class=&quot;headerlink&quot; title=&quot;普通三角形&quot;&gt;&lt;/a&gt;普通三角形&lt;/h4&gt;&lt;p&gt;利border四边颜色不等画等边三角形&lt;/p&gt;
-&lt;figure class=&quot;hljs highlight
+&lt;figure class=&quot;highlight
         
       
     
@@ -505,7 +532,7 @@
       
         
         
-          &lt;h4 id=&quot;git-branch-创建分支&quot;&gt;&lt;a href=&quot;#git-branch-创建分支&quot; class=&quot;headerlink&quot; title=&quot;git branch 创建分支&quot;&gt;&lt;/a&gt;git branch 创建分支&lt;/h4&gt;&lt;figure class=&quot;hljs
+          &lt;h4 id=&quot;git-branch-创建分支&quot;&gt;&lt;a href=&quot;#git-branch-创建分支&quot; class=&quot;headerlink&quot; title=&quot;git branch 创建分支&quot;&gt;&lt;/a&gt;git branch 创建分支&lt;/h4&gt;&lt;figure
         
       
     
@@ -515,32 +542,6 @@
     
     
       <category term="git" scheme="http://yoursite.com/tags/git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ES6模块化</title>
-    <link href="http://yoursite.com/2019/07/09/ES6%E6%A8%A1%E5%9D%97%E5%8C%96/"/>
-    <id>http://yoursite.com/2019/07/09/ES6模块化/</id>
-    <published>2019-07-09T04:15:07.000Z</published>
-    <updated>2019-07-10T15:13:09.148Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h4 id=&quot;import&quot;&gt;&lt;a href=&quot;#import&quot; class=&quot;headerlink&quot; title=&quot;import&quot;&gt;&lt;/a&gt;import&lt;/h4&gt;&lt;figure class=&quot;hljs highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td
-        
-      
-    
-    </summary>
-    
-      <category term="ES6" scheme="http://yoursite.com/categories/ES6/"/>
-    
-    
-      <category term="ES6" scheme="http://yoursite.com/tags/ES6/"/>
     
   </entry>
   

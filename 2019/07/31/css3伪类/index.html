@@ -1,171 +1,104 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    
-    <meta name="theme-color" content="#33363b">
-    <meta name="msapplication-TileColor" content="#33363b">
-    
-    
-    
-    
-    <meta name="keywords" content="Life, ARIA, Hexo">
-    
-    
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
-    
-    
-    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
-    
-    
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
-    
-    
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
-    
-    
-    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
-    
-    
-    <link rel="manifest" href="/favicons/site.webmanifest">
-    
-    
-    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
-    
-    
-    <link rel="alternate" href="/atom.xml" title="RoxasDengBlog" type="application/atom+xml" />
-    
-    
-    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
-    
-    
-    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
-    <link rel="stylesheet" type="text/css" href="/css/index.css">
-    
-    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
-    
-    
-<link rel="stylesheet" type="text/css" href="/css/page.css">
-<link rel="stylesheet" type="text/css" href="/css/post.css">
+<head>
+  <meta charset="utf-8">
+  
 
-    <link rel="stylesheet" type="text/css" href="/css/custom.css">
-    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
-    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
-    <script type="text/javascript" src="/js/jquery.min.js"></script>
-    <script defer type="text/javascript" src="/js/util.js"></script>
-    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
-    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
-    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
-    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
-    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
-    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
-    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
-    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
-    
-    <script defer src="/js/busuanzi.pure.mini.js"></script>
-    
-    
-    <script defer type="text/javascript" src="/js/search.js"></script>
-    <script type="text/javascript">
-    $(document).ready(function () {
-      var searchPath = "search.xml";
-      if (searchPath.length === 0) {
-        searchPath = "search.xml";
-      }
-      var path = "/" + searchPath;
-      searchFunc(path, "search-input", "search-result");
-    });
-    </script>
-    
-    
-    <script defer type="text/javascript" src="/js/index.js"></script>
-    
-    <script defer type="text/javascript" src="/js/custom.js"></script>
-    <title>css3伪类 | RoxasDengBlog</title>
-  </head>
-  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
-    
-<header id="header" class="header" style="background: #33363b;">
-  <div class="container">
-    <div class="header-container">
-      <div class="header-title">
-        <h1 class="title"><a href="/">RoxasDengBlog</a></h1>
-        <h2 class="subtitle"></h2>
-      </div>
-      
-      <div class="logo">
-        <img src="/images/logo.png" alt="logo">
-      </div>
+  
+  <title>css3伪类 | RoxasDengBlog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content=":target 选择页面局部假如锚点与页面的hash匹配(#),那么对应元素可用:target定义样式 12345678910111213141516&amp;lt;h2 id=&quot;rotnruin&quot;&amp;gt;Rot &amp;amp;amp; Ruin&amp;lt;/h2&amp;gt;&amp;lt;h2 id=&quot;romero&quot;&amp;gt;Romero Zombies&amp;lt;/h2&amp;gt;&amp;lt;ul&amp;gt;    &amp;lt;li&amp;gt;&amp;">
+<meta name="keywords" content="CSS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="css3伪类">
+<meta property="og:url" content="http://yoursite.com/2019/07/31/css3伪类/index.html">
+<meta property="og:site_name" content="RoxasDengBlog">
+<meta property="og:description" content=":target 选择页面局部假如锚点与页面的hash匹配(#),那么对应元素可用:target定义样式 12345678910111213141516&amp;lt;h2 id=&quot;rotnruin&quot;&amp;gt;Rot &amp;amp;amp; Ruin&amp;lt;/h2&amp;gt;&amp;lt;h2 id=&quot;romero&quot;&amp;gt;Romero Zombies&amp;lt;/h2&amp;gt;&amp;lt;ul&amp;gt;    &amp;lt;li&amp;gt;&amp;">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:updated_time" content="2019-07-30T17:10:34.862Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="css3伪类">
+<meta name="twitter:description" content=":target 选择页面局部假如锚点与页面的hash匹配(#),那么对应元素可用:target定义样式 12345678910111213141516&amp;lt;h2 id=&quot;rotnruin&quot;&amp;gt;Rot &amp;amp;amp; Ruin&amp;lt;/h2&amp;gt;&amp;lt;h2 id=&quot;romero&quot;&amp;gt;Romero Zombies&amp;lt;/h2&amp;gt;&amp;lt;ul&amp;gt;    &amp;lt;li&amp;gt;&amp;">
+  
+    <link rel="alternate" href="/atom.xml" title="RoxasDengBlog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">RoxasDengBlog</a>
+      </h1>
       
     </div>
-    <nav id="nav" class="nav">
-      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
-      <ul id="menu" role="menubar" aria-hidden="false">
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
         
-        <li role="menuitem"><a href="/">首页</a></li>
+          <a class="main-nav-link" href="/">Home</a>
         
-        <li role="menuitem"><a href="/archives/">归档</a></li>
+          <a class="main-nav-link" href="/archives">Archives</a>
         
-        <li role="menuitem"><a href="/categories/">分类</a></li>
+      </nav>
+      <nav id="sub-nav">
         
-        <li role="menuitem"><a href="/tags/">标签</a></li>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-      </ul>
-    </nav>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
   </div>
 </header>
+      <div class="outer">
+        <section id="main"><article id="post-css3伪类" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/31/css3伪类/" class="article-date">
+  <time datetime="2019-07-30T16:04:54.000Z" itemprop="datePublished">2019-07-31</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/CSS/">CSS</a>
+  </div>
 
-
-    <main id="main" class="main">
-      <div class="container">
-        <div class="main-container">
-          <div class="content">
-            
-<div id="post" class="page">
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/31/css3伪类/">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-       <meta itemprop="name" content="Roxas Deng">
-       <meta itemprop="description" content="">
-       <meta itemprop="image" content="/images/avatar.png">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-       <meta itemprop="name" content="RoxasDengBlog">
-      </span>
-    </div>
-    <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">css3伪类</h1>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-07-31T00:04:54+08:00">2019-07-31 00:04:54</time></span>
-        </span>
-        
-        
-        
-        <span class="post-meta-divider divider">|</span>
-        
-        <span class="post-categories">
-          
-          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CSS/" itemprop="url" rel="index"><span itemprop="name">CSS</span></a></span>
-        </span>
-        
-        
-      </div>
-    </header>
-    <main class="post-main" itemprop="articleBody">
-      <h3 id="target-选择页面局部"><a href="#target-选择页面局部" class="headerlink" title=":target 选择页面局部"></a>:target 选择页面局部</h3><p>假如锚点与页面的hash匹配(#),那么对应元素可用:target定义样式</p>
-<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;h2 id=<span class="hljs-string">"rotnruin"</span>&gt;Rot &amp;amp; Ruin&lt;/h2&gt;<br>&lt;h2 id=<span class="hljs-string">"romero"</span>&gt;Romero Zombies&lt;/h2&gt;<br>&lt;ul&gt;<br>    &lt;li&gt;&lt;a href=<span class="hljs-string">"#rotnruin"</span>&gt;Rot &amp;amp; Ruin&lt;/a&gt;&lt;/li&gt;<br>    &lt;li&gt;&lt;a href=<span class="hljs-string">"#romero"</span>&gt;Romero Zombies&lt;/a&gt;&lt;/li&gt;<br>    ...<br>&lt;/ul&gt;<br><br>h2:target &#123;<br>    background: rgb(125,104,99);<br>    border: 0;<br>    color: rgb(255, 255, 255);<br>    padding-left: 10px;<br>&#125;<br><br>//如果此时点击href=<span class="hljs-string">"#romero"</span>的a标签,那么对应的h2会高亮.<br></code></pre></td></tr></table></figure>
-<h3 id="not-过滤掉不符合的元素"><a href="#not-过滤掉不符合的元素" class="headerlink" title=":not 过滤掉不符合的元素"></a>:not 过滤掉不符合的元素</h3><p>:not(x) x可以应用几乎所有选择器的语法<br>:not可搭配其他伪类使用,如p:not(:empty)选择非空元素<br><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;p id=<span class="hljs-string">"p1"</span>&gt;aaa&lt;/p&gt;<br>&lt;p id=<span class="hljs-string">"p2"</span>&gt;bbbb&lt;/p&gt;<br>&lt;p id=<span class="hljs-string">"p3"</span>&gt;ccccc&lt;/p&gt;<br>&lt;p id=<span class="hljs-string">"p4"</span>&gt;dddddd&lt;/p&gt;<br><br>p:not(<span class="hljs-comment">#p1):not(#p3) &#123;color: red;&#125;</span><br></code></pre></td></tr></table></figure></p>
+    <h1 class="article-title" itemprop="name">
+      css3伪类
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="target-选择页面局部"><a href="#target-选择页面局部" class="headerlink" title=":target 选择页面局部"></a>:target 选择页面局部</h3><p>假如锚点与页面的hash匹配(#),那么对应元素可用:target定义样式</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;h2 id=<span class="hljs-string">"rotnruin"</span>&gt;Rot &amp;amp; Ruin&lt;/h2&gt;<br>&lt;h2 id=<span class="hljs-string">"romero"</span>&gt;Romero Zombies&lt;/h2&gt;<br>&lt;ul&gt;<br>    &lt;li&gt;&lt;a href=<span class="hljs-string">"#rotnruin"</span>&gt;Rot &amp;amp; Ruin&lt;/a&gt;&lt;/li&gt;<br>    &lt;li&gt;&lt;a href=<span class="hljs-string">"#romero"</span>&gt;Romero Zombies&lt;/a&gt;&lt;/li&gt;<br>    ...<br>&lt;/ul&gt;<br><br>h2:target &#123;<br>    background: rgb(125,104,99);<br>    border: 0;<br>    color: rgb(255, 255, 255);<br>    padding-left: 10px;<br>&#125;<br><br>//如果此时点击href=<span class="hljs-string">"#romero"</span>的a标签,那么对应的h2会高亮.<br></code></pre></td></tr></table></figure>
+<h3 id="not-过滤掉不符合的元素"><a href="#not-过滤掉不符合的元素" class="headerlink" title=":not 过滤掉不符合的元素"></a>:not 过滤掉不符合的元素</h3><p>:not(x) x可以应用几乎所有选择器的语法<br>:not可搭配其他伪类使用,如p:not(:empty)选择非空元素<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;p id=<span class="hljs-string">"p1"</span>&gt;aaa&lt;/p&gt;<br>&lt;p id=<span class="hljs-string">"p2"</span>&gt;bbbb&lt;/p&gt;<br>&lt;p id=<span class="hljs-string">"p3"</span>&gt;ccccc&lt;/p&gt;<br>&lt;p id=<span class="hljs-string">"p4"</span>&gt;dddddd&lt;/p&gt;<br><br>p:not(<span class="hljs-comment">#p1):not(#p3) &#123;color: red;&#125;</span><br></code></pre></td></tr></table></figure></p>
 <h3 id="根据索引选择元素"><a href="#根据索引选择元素" class="headerlink" title="根据索引选择元素"></a>根据索引选择元素</h3><p>索引相对所有同级兄弟元素计算的,而非特定类型</p>
-<h4 id="first-child-和-last-child"><a href="#first-child-和-last-child" class="headerlink" title=":first-child 和 :last-child"></a>:first-child 和 :last-child</h4><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;div&gt;<br>    &lt;h1&gt;Hi&lt;/h1&gt;<br>    &lt;h2&gt;Apple&lt;/h2&gt;<br>    &lt;h2&gt;Banana&lt;/h2&gt;<br>    &lt;h2&gt;ApplePen&lt;/h2&gt;<br>    &lt;h2&gt;Pen&lt;/h2&gt;<br>&lt;/div&gt;<br><br>h1:first-child &#123;&#125; /*Hi*/<br>h2:first-child &#123;&#125; /*匹配不到*/<br>h2:last-child &#123;&#125; /*Pen*/<br></code></pre></td></tr></table></figure>
+<h4 id="first-child-和-last-child"><a href="#first-child-和-last-child" class="headerlink" title=":first-child 和 :last-child"></a>:first-child 和 :last-child</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;div&gt;<br>    &lt;h1&gt;Hi&lt;/h1&gt;<br>    &lt;h2&gt;Apple&lt;/h2&gt;<br>    &lt;h2&gt;Banana&lt;/h2&gt;<br>    &lt;h2&gt;ApplePen&lt;/h2&gt;<br>    &lt;h2&gt;Pen&lt;/h2&gt;<br>&lt;/div&gt;<br><br>h1:first-child &#123;&#125; /*Hi*/<br>h2:first-child &#123;&#125; /*匹配不到*/<br>h2:last-child &#123;&#125; /*Pen*/<br></code></pre></td></tr></table></figure>
 <h4 id="nth-child"><a href="#nth-child" class="headerlink" title=":nth-child()"></a>:nth-child()</h4><p>接收单一参数,可以是以下值</p>
-<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">odd 奇数<br>even 偶数<br>n 第n个<br>An+B A为整数,n从0开始算,B为整数,计算结果小于1的忽略<br></code></pre></td></tr></table></figure>
-<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">li:nth-child(3n) //3 6 9 12<br>li:nth-child(3n+1) //4 7 10 13<br>li:nth-child(-3n+1) //1<br>li:nth-child(-n+5) //5 4 3 2 1<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">odd 奇数<br>even 偶数<br>n 第n个<br>An+B A为整数,n从0开始算,B为整数,计算结果小于1的忽略<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">li:nth-child(3n) //3 6 9 12<br>li:nth-child(3n+1) //4 7 10 13<br>li:nth-child(-3n+1) //1<br>li:nth-child(-n+5) //5 4 3 2 1<br></code></pre></td></tr></table></figure>
 <h4 id="nth-last-child"><a href="#nth-last-child" class="headerlink" title=":nth-last-child()"></a>:nth-last-child()</h4><p>同上,但从最后一个元素开始反向计算</p>
 <h4 id="only-child"><a href="#only-child" class="headerlink" title=":only-child"></a>:only-child</h4><p>匹配相对于父元素类型唯一的子元素</p>
 <h4 id="empty"><a href="#empty" class="headerlink" title=":empty"></a>:empty</h4><p>匹配空的元素,假如有空格,则不匹配.</p>
@@ -178,155 +111,147 @@
 <h4 id="in-range-和-out-of-range"><a href="#in-range-和-out-of-range" class="headerlink" title=":in-range 和 :out-of-range"></a>:in-range 和 :out-of-range</h4><p>作用于type = range/number/date的input</p>
 <h4 id="valid-和-invalid"><a href="#valid-和-invalid" class="headerlink" title=":valid 和 :invalid"></a>:valid 和 :invalid</h4><p>依赖于 input 的 type类型 和 pattern约束,判断是否校验通过<br>可以组合使用,如 input:focus:invalid</p>
 
-    </main>
-    <footer class="post-footer">
       
-      <div class="post-tags">
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/07/31/css3伪类/" data-id="ck6dpgq45003elkpf75dzopzy" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/07/31/css继承/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
         
-        <a class="post-tag button" href="/tags/CSS/" rel="tag"><i class="fas fa-tags"></i>CSS</a>
+          css继承
         
       </div>
-      
-    </footer>
-  </article>
+    </a>
   
   
-  <nav class="page-nav">
-    <div class="page-nav-next page-nav-item">
-      
-      <a href="/2019/07/29/移动端开发的几个常见问题/" rel="next" title="移动端开发的几个常见问题"><i class="fas fa-angle-left"></i><span class="nav-title">移动端开发的几个常见问题</span></a>
-      
-    </div>
-    <div class="page-nav-prev page-nav-item">
-      
-      <a href="/2019/07/31/css继承/" rel="prev" title="css继承"><span class="nav-title">css继承</span><i class="fas fa-angle-right"></i></a>
-      
-    </div>
-  </nav>
+    <a href="/2019/07/29/移动端开发的几个常见问题/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">移动端开发的几个常见问题</div>
+    </a>
   
-  
-</div>
+</nav>
 
-          </div>
-          
-          
-          
-<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
   
-  <div class="search">
-    <div class="form-group">
-      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/ES6/">ES6</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JS/">JS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/TS/">TS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/node/">node</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/vue/">vue</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/webpack/">webpack</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/业务代码/">业务代码</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/库/">库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/笔记/">笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/面试题/">面试题</a></li></ul>
     </div>
   </div>
-  <div class="search-result-box" id="search-result"></div>
-  
-  
-<div class="info sidebar-item" id="info">
-  
-  <img class="author-avatar" src="/images/avatar.png" alt="Roxas Deng">
-  
-  <h1 class="author-name">Roxas Deng</h1>
-  <h2 class="author-description"></h2>
-  <div class="site-count">
-    
-    <div class="archives-count">
-      <div class="site-count-title">归档</div>
-      <div><a href="/archives/">75</a></div>
-    </div>
-    
-    
-    
-    <span class="site-count-divider divider">|</span>
-    
-    <div class="categories-count">
-      <div class="site-count-title">分类</div>
-      <div><a href="/categories/">14</a></div>
-    </div>
-    
-    
-    
-    <span class="site-count-divider divider">|</span>
-    
-    <div class="tags-count">
-      <div class="site-count-title">标签</div>
-      <div><a href="/tags/">15</a></div>
-    </div>
-    
-  </div>
-  
-  <div class="rss">
-    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
-  </div>
-  
-</div>
 
 
-  <div class="sidebar-sticky">
+  
     
-    
-    
-    
-    
-    <hr>
-    <div class="post-toc sidebar-item" id="toc-div">
-      <div><i class="fas fa-list-ol"></i>文章目录</div>
-      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#target-选择页面局部"><span class="toc-text">:target 选择页面局部</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#not-过滤掉不符合的元素"><span class="toc-text">:not 过滤掉不符合的元素</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#根据索引选择元素"><span class="toc-text">根据索引选择元素</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#first-child-和-last-child"><span class="toc-text">:first-child 和 :last-child</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#nth-child"><span class="toc-text">:nth-child()</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#nth-last-child"><span class="toc-text">:nth-last-child()</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#only-child"><span class="toc-text">:only-child</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#empty"><span class="toc-text">:empty</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#根据索引选择特殊类型的元素"><span class="toc-text">根据索引选择特殊类型的元素</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#表单元素"><span class="toc-text">表单元素</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#enabled-和-disabled"><span class="toc-text">:enabled 和 :disabled</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#required-和-optional"><span class="toc-text">:required 和 :optional</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#checkd"><span class="toc-text">:checkd</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#in-range-和-out-of-range"><span class="toc-text">:in-range 和 :out-of-range</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#valid-和-invalid"><span class="toc-text">:valid 和 :invalid</span></a></li></ol></li></ol></div>
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/">ES6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TS/">TS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/">webpack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/业务代码/">业务代码</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/库/">库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试题/">面试题</a></li></ul>
     </div>
+  </div>
+
+
+  
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CSS/" style="font-size: 18.75px;">CSS</a> <a href="/tags/ES6/" style="font-size: 16.25px;">ES6</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/HTTP/" style="font-size: 15px;">HTTP</a> <a href="/tags/JS/" style="font-size: 20px;">JS</a> <a href="/tags/TS/" style="font-size: 17.5px;">TS</a> <a href="/tags/git/" style="font-size: 11.25px;">git</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/vue/" style="font-size: 20px;">vue</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/业务代码/" style="font-size: 13.75px;">业务代码</a> <a href="/tags/库/" style="font-size: 12.5px;">库</a> <a href="/tags/笔记/" style="font-size: 10px;">笔记</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a> <a href="/tags/面试题/" style="font-size: 10px;">面试题</a>
+    </div>
+  </div>
+
+  
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
     
-    <hr>
-    <div class="social-link sidebar-item">
-      <div><i class="far fa-address-card"></i>社交链接</p></div>
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
       <ul>
         
-        <li><i class="fas fa-envelope"></i><a href="mailto:332519096@qq.com" target="_blank">E-Mail</a></li>
+          <li>
+            <a href="/2020/01/17/TS声明/">TS声明</a>
+          </li>
         
-        <li><i class="fab fa-github"></i><a href="https://github.com/roxas332519096" target="_blank">GitHub</a></li>
+          <li>
+            <a href="/2020/01/16/TS高级类型/">TS高级类型</a>
+          </li>
+        
+          <li>
+            <a href="/2020/01/14/用vue-ts写一个toDoList/">用vue-ts写一个toDoList</a>
+          </li>
+        
+          <li>
+            <a href="/2020/01/13/webpack4搭建vue-ts项目/">webpack4搭建vue-ts项目</a>
+          </li>
+        
+          <li>
+            <a href="/2020/01/10/TS函数/">TS函数</a>
+          </li>
         
       </ul>
     </div>
-    
-    
   </div>
+
+  
 </aside>
-
-
-          
-        </div>
-      </div>
-    </main>
-    
-<footer id="footer" class="footer" style="background: #33363b;">
-  <div class="container">
-    <div class="back-to-top">
-      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
-    </div>
-    <div class="footer-container">
-      <div class="footer-left">
-        <div class="copyright">
-          <span class="author">Roxas Deng</span><span class="year"><i class="far fa-copyright"></i>2020</span>
-        </div>
-        
-        <div class="busuanzi">
-          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
-        </div>
         
       </div>
-      <div class="footer-right">
-        <div class="custom-info">
-          
-          托管于<i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
-          
-        </div>
-        <div class="powered-by">
-          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
-        </div>
-      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 Roxas Deng<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
-  </body>
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
 </html>
