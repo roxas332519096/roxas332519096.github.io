@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-01-16T18:14:17.093Z</updated>
+  <updated>2020-07-08T03:32:00.823Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,40 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>常见排序算法</title>
+    <link href="http://yoursite.com/2020/02/12/%E5%B8%B8%E8%A7%81%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/"/>
+    <id>http://yoursite.com/2020/02/12/常见排序算法/</id>
+    <published>2020-02-12T01:54:15.000Z</published>
+    <updated>2020-07-08T03:32:00.823Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ol&gt;
+&lt;li&gt;&lt;p&gt;冒泡排序&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;按顺序依次两两对比,把大的放到后面,直到最后的数最大.&lt;/li&gt;
+&lt;li&gt;将最后的数固定,再重新对比n-1的数.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&quot;highlight
+        
+      
+    
+    </summary>
+    
+      <category term="计算机基础" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="计算机基础" scheme="http://yoursite.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
   
   <entry>
     <title>TS声明</title>
@@ -367,7 +401,7 @@
     <link href="http://yoursite.com/2019/07/28/%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
     <id>http://yoursite.com/2019/07/28/面试题/</id>
     <published>2019-07-28T04:28:45.000Z</published>
-    <updated>2020-01-09T03:01:11.593Z</updated>
+    <updated>2020-07-06T11:39:15.292Z</updated>
     
     <summary type="html">
     
@@ -516,32 +550,6 @@
     
     
       <category term="CSS" scheme="http://yoursite.com/tags/CSS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>git分支</title>
-    <link href="http://yoursite.com/2019/07/10/git-branch/"/>
-    <id>http://yoursite.com/2019/07/10/git-branch/</id>
-    <published>2019-07-09T16:12:31.000Z</published>
-    <updated>2020-01-09T03:06:44.309Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h4 id=&quot;git-branch-创建分支&quot;&gt;&lt;a href=&quot;#git-branch-创建分支&quot; class=&quot;headerlink&quot; title=&quot;git branch 创建分支&quot;&gt;&lt;/a&gt;git branch 创建分支&lt;/h4&gt;&lt;figure
-        
-      
-    
-    </summary>
-    
-      <category term="git" scheme="http://yoursite.com/categories/git/"/>
-    
-    
-      <category term="git" scheme="http://yoursite.com/tags/git/"/>
     
   </entry>
   
