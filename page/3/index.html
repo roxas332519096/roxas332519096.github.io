@@ -62,6 +62,54 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Vue事件-修饰符" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/21/Vue事件-修饰符/" class="article-date">
+  <time datetime="2019-07-21T09:06:14.000Z" itemprop="datePublished">2019-07-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/vue/">vue</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/21/Vue事件-修饰符/">Vue-修饰符</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="stop"><a href="#stop" class="headerlink" title=".stop"></a>.stop</h4><p>阻止事件的传播(冒泡,捕获)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;template&gt;<br>    &lt;div @click.stop&gt;<br>        &lt;div&gt;&lt;/div&gt;<br>        &lt;button @click=<span class="hljs-string">"a"</span>&gt;Click&lt;/button&gt;<br>    &lt;/div&gt;<br>&lt;/template&gt;<br></code></pre></td></tr></table></figure>
+<h4 id="sync"><a href="#sync" class="headerlink" title=".sync"></a>.sync</h4><p>更新绑定属性<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;comp :title.sync=<span class="hljs-string">"1"</span>&gt;&lt;/comp&gt;<br><br>//comp<br><span class="hljs-function"><span class="hljs-title">data</span></span>()&#123;<br>    title:<span class="hljs-string">'childTitle'</span><br>&#125;,<br><span class="hljs-function"><span class="hljs-title">mounted</span></span>()&#123;<br>    this.<span class="hljs-variable">$emit</span>(<span class="hljs-string">'update:title'</span>,this.title)<br>&#125;<br></code></pre></td></tr></table></figure></p>
+<h4 id="native"><a href="#native" class="headerlink" title="native"></a>native</h4><h4 id="once"><a href="#once" class="headerlink" title=".once"></a>.once</h4><p>事件只触发一次</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;div @click.once=<span class="hljs-string">"a"</span>&gt;<br>    111<br>&lt;/div&gt;<br></code></pre></td></tr></table></figure>
+<h4 id="self"><a href="#self" class="headerlink" title=".self"></a>.self</h4><p>事件是当前元素触发(内部触发不了)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;div @click.self=<span class="hljs-string">"a"</span>&gt;<br>    &lt;div&gt;1&lt;/div&gt;<br>    &lt;div&gt;2&lt;/div&gt;<br>&lt;/div&gt;<br></code></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/07/21/Vue事件-修饰符/" data-id="clq63ee4u002u94fqcunlwfg1" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-css三角形" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/07/20/css三角形/" class="article-date">
@@ -95,7 +143,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/20/css三角形/" data-id="clq61ndh7003tzofqau6p4mfx" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/20/css三角形/" data-id="clq63ee5i004494fqg63if0tw" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
@@ -140,7 +188,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/10/git-branch/" data-id="clq61ndhf0049zofqivco2cx7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/10/git-branch/" data-id="clq63ee55003g94fq4mfciuzi" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
@@ -188,7 +236,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/09/ES6模块化/" data-id="clq61ndfu000xzofq08tzd6vm" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/09/ES6模块化/" data-id="clq63ee3o001294fqmpzg7f97" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ES6/">ES6</a></li></ul>
@@ -240,7 +288,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/09/ES6字面量/" data-id="clq61ndfo000ozofq3xjvhy5l" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/09/ES6字面量/" data-id="clq63ee37000h94fqc3wi4aax" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ES6/">ES6</a></li></ul>
@@ -290,7 +338,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/09/Symbol/" data-id="clq61ndgj0026zofqao0o5u7n" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/09/Symbol/" data-id="clq63ee4i002194fqlnu1lots" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ES6/">ES6</a></li></ul>
@@ -373,7 +421,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/08/ES6对象/" data-id="clq61ndfs000uzofq5r2dgry9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/08/ES6对象/" data-id="clq63ee3e000p94fqeh079klo" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ES6/">ES6</a></li></ul>
@@ -431,7 +479,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/08/es6变量声明/" data-id="clq61ndhb0041zofqy4bu0gks" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/08/es6变量声明/" data-id="clq63ee5h004194fqseirf0aw" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ES6/">ES6</a></li></ul>
@@ -516,7 +564,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/18/Websocket/" data-id="clq61ndh1003gzofqewnz2778" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/04/18/Websocket/" data-id="clq63ee54003d94fqmd5pj1dc" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTTP/">HTTP</a></li></ul>
@@ -613,94 +661,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/16/web图片的使用/" data-id="clq61ndht0057zofq9etafbk9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/04/16/web图片的使用/" data-id="clq63ee5v005094fqsjakzxdc" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/业务代码/">业务代码</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-自动化测试&amp;发布npm包" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/04/09/自动化测试&发布npm包/" class="article-date">
-  <time datetime="2019-04-09T07:49:19.000Z" itemprop="datePublished">2019-04-09</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/库/">库</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/09/自动化测试&发布npm包/">自动化测试&amp;发布npm包</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="1-自动化测试"><a href="#1-自动化测试" class="headerlink" title="1. 自动化测试"></a>1. 自动化测试</h4><ol>
-<li>kama一个测试运行器,可呼起浏览器,加载测试脚本,运星测试用例.</li>
-<li>mocha是一个单元测试框架/库,可以用来写测试用例.</li>
-<li>sinon是一个spy/stub/mock库,用以辅助测试.</li>
-</ol>
-<p>运行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm i -D karma karma-chrome-launcher karma-mocha karma-sinon-chai mocha sinon sinon-chai karma-chai karma-chai-spies<br></code></pre></td></tr></table></figure></p>
-<p>创建karma配置,karma.conf.js</p>
-<p>输出目录:*代表加载所有文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">files: [<br>    <span class="hljs-string">'dist/**/*.test.js'</span>,<br>    <span class="hljs-string">'dist/**/*.test.css'</span><br>]<br></code></pre></td></tr></table></figure></p>
-<p>运行浏览器</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">browsers: [<span class="hljs-string">'ChromeHeadless'</span>],<br></code></pre></td></tr></table></figure>
-<p>代码:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><code class="hljs bash">module.exports = <span class="hljs-keyword">function</span> (config) &#123;<br>     config.set(&#123;<br><br>         // base path that will be used to resolve all patterns (eg. files, exclude)<br>         basePath: <span class="hljs-string">''</span>,<br><br>        // frameworks to use<br>        // available frameworks: https://npmjs.org/browse/keyword/karma-adapter<br>        frameworks: [<span class="hljs-string">'mocha'</span>, <span class="hljs-string">'sinon-chai'</span>],<br>        client: &#123;<br>            chai: &#123;<br>                includeStack: <span class="hljs-literal">true</span><br>            &#125;<br>        &#125;,<br><br><br>        // list of files / patterns to load <span class="hljs-keyword">in</span> the browser<br>        files: [<br>            <span class="hljs-string">'dist/**/*.test.js'</span>,<br>            <span class="hljs-string">'dist/**/*.test.css'</span><br>        ],<br><br><br>        // list of files / patterns to exclude<br>        exclude: [],<br><br><br>        // preprocess matching files before serving them to the browser<br>        // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor<br>        preprocessors: &#123;&#125;,<br><br><br>        // <span class="hljs-built_in">test</span> results reporter to use<br>        // possible values: <span class="hljs-string">'dots'</span>, <span class="hljs-string">'progress'</span><br>        // available reporters: https://npmjs.org/browse/keyword/karma-reporter<br>        reporters: [<span class="hljs-string">'progress'</span>],<br><br><br>        // web server port<br>        port: 9876,<br><br><br>        // <span class="hljs-built_in">enable</span> / <span class="hljs-built_in">disable</span> colors <span class="hljs-keyword">in</span> the output (reporters and logs)<br>        colors: <span class="hljs-literal">true</span>,<br><br><br>        // level of logging<br>        // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG<br>        logLevel: config.LOG_INFO,<br><br><br>        // <span class="hljs-built_in">enable</span> / <span class="hljs-built_in">disable</span> watching file and executing tests whenever any file changes<br>        autoWatch: <span class="hljs-literal">true</span>,<br><br><br>        // start these browsers<br>        // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher<br>        browsers: [<span class="hljs-string">'ChromeHeadless'</span>],<br><br><br>        // Continuous Integration mode<br>        // <span class="hljs-keyword">if</span> <span class="hljs-literal">true</span>, Karma captures browsers, runs the tests and exits<br>        singleRun: <span class="hljs-literal">false</span>,<br><br>        // Concurrency level<br>        // how many browser should be started simultaneous<br>        concurrency: Infinity<br>    &#125;)<br>&#125;<br></code></pre></td></tr></table></figure>
-<p>创建test/button.test.js文件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs bash">const expect = chai.expect;<br> import Vue from <span class="hljs-string">'vue'</span><br> import Button from <span class="hljs-string">'../src/button'</span><br><br> Vue.config.productionTip = <span class="hljs-literal">false</span><br> Vue.config.devtools = <span class="hljs-literal">false</span><br><br>describe(<span class="hljs-string">'Button'</span>,()=&gt;&#123;<br>    it(<span class="hljs-string">'xxx'</span>,()=&gt;&#123;<br>        //测试代码<br>    &#125;)<br>&#125;)<br></code></pre></td></tr></table></figure>
-<p>创建测试脚本</p>
-<p>在 package.json 里面找到 scripts 并改写 scripts<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-string">"scripts"</span>: &#123;<br>     <span class="hljs-string">"dev-test"</span>: <span class="hljs-string">"parcel watch test/* --no-cache &amp; karma start"</span>,<br>     <span class="hljs-string">"test"</span>: <span class="hljs-string">"parcel build test/* --no-minify &amp;&amp; karma start --single-run"</span><br> &#125;,<br></code></pre></td></tr></table></figure></p>
-<p>运行测试脚本</p>
-<ol>
-<li>npm run test 一次性运行</li>
-<li>npm run dev-test 进行watch运行</li>
-</ol>
-<h4 id="2-使用Mocha-amp-Chai做单元测试"><a href="#2-使用Mocha-amp-Chai做单元测试" class="headerlink" title="2.使用Mocha&amp;Chai做单元测试"></a>2.使用Mocha&amp;Chai做单元测试</h4><p>BDD  行为驱动测试</p>
-<p>descrube 描述<br>expect 期待<br>eq 输出<br>deep 深相等<br>not 不<br>with 并且</p>
-<p>descrube ‘people’</p>
-<p>it has a head<br>it can run</p>
-<p>expect(‘xxx’).eq(‘yyy’)</p>
-<p>文档: <a href="http://www.chaijs.com" target="_blank" rel="noopener">www.chaijs.com</a></p>
-<h4 id="3-使用TravisCI做持续集成"><a href="#3-使用TravisCI做持续集成" class="headerlink" title="3. 使用TravisCI做持续集成"></a>3. 使用TravisCI做持续集成</h4><p>注册travis账户.</p>
-<p>根目录下创建 .travis.yml 文件</p>
-<p>每次提交后可在travis上查看测试结果.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash">language: node_js<br>node_js:<br>  - <span class="hljs-string">"8"</span><br>addons:<br>  chrome: stable<br>sudo: required<br>before_script:<br>  - <span class="hljs-string">"sudo chown root /opt/google/chrome/chrome-sandbox"</span><br>  - <span class="hljs-string">"sudo chmod 4755 /opt/google/chrome/chrome-sandbox"</span><br></code></pre></td></tr></table></figure>
-<h4 id="为什么一个空数组不等于空数组"><a href="#为什么一个空数组不等于空数组" class="headerlink" title="为什么一个空数组不等于空数组"></a>为什么一个空数组不等于空数组</h4><p>因为引用不同,是两个数组</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">[] == [] //<span class="hljs-literal">false</span><br><br>var a = []<br>a == [] //<span class="hljs-literal">false</span><br>a == [] //<span class="hljs-literal">true</span><br></code></pre></td></tr></table></figure>
-<h4 id="4-发布npm包"><a href="#4-发布npm包" class="headerlink" title="4. 发布npm包"></a>4. 发布npm包</h4><p>根目录下创建index.js<br>导入组件 导出组件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">improt cp from <span class="hljs-string">'./src/cp'</span><br>exprot &#123;cp&#125;<br></code></pre></td></tr></table></figure></p>
-<p>查看自己当前npm源路径<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm config list<br></code></pre></td></tr></table></figure></p>
-<p>要改成默认源才能发布npm包<br>每次发布需要更改package.json里的版本<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">//添加用户<br>npm adduser<br><br>//公开代码<br>npm publish<br></code></pre></td></tr></table></figure></p>
-<p>由于引擎不能识别improt 所以要babel转移或者直接给他转义好</p>
-<p>转义</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">//packjson输出目录修改成dist/index.js<br><br>运行<br><br>npx parcel build index.js --no-cache --no-minify<br></code></pre></td></tr></table></figure>
-<h4 id="5-使用npm-link"><a href="#5-使用npm-link" class="headerlink" title="5. 使用npm link"></a>5. 使用npm link</h4><p>由于每次更新都需要更改package.json里的版本,然后npm publish,所以我们可以用本地调试,在项目目录使用npm link,在所用目录运行npm link xxx.</p>
-<h4 id="6-书写README"><a href="#6-书写README" class="headerlink" title="6. 书写README"></a>6. 书写README</h4><p>shields.io生成图标</p>
-<h4 id="7-安装git-open"><a href="#7-安装git-open" class="headerlink" title="7. 安装git open"></a>7. 安装git open</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm i -g git-open<br></code></pre></td></tr></table></figure>
-<h4 id="8-git会到之前版本"><a href="#8-git会到之前版本" class="headerlink" title="8. git会到之前版本"></a>8. git会到之前版本</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git reset --hard xxx<br></code></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/09/自动化测试&发布npm包/" data-id="clq61ndij006qzofqs0rywi0n" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/库/">库</a></li></ul>
 
     </footer>
   </div>
@@ -753,7 +717,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">十二月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a></li></ul>
     </div>
   </div>
 
@@ -764,6 +728,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2023/12/15/test/">test</a>
+          </li>
         
           <li>
             <a href="/2023/02/02/手写Promise-all/">手写Promise.all</a>
@@ -779,10 +747,6 @@
         
           <li>
             <a href="/2020/01/17/TS声明/">TS声明</a>
-          </li>
-        
-          <li>
-            <a href="/2020/01/16/TS高级类型/">TS类型</a>
           </li>
         
       </ul>

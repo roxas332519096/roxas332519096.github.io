@@ -62,6 +62,74 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-JS的类与继承" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/25/JS的类与继承/" class="article-date">
+  <time datetime="2018-07-24T18:52:08.000Z" itemprop="datePublished">2018-07-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/ES6/">ES6</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/25/JS的类与继承/">JS的类与继承</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h4><p>继承的作用是:子类可以具有父类的属性和方法</p>
+<p>JS没有继承,只有原型链引用</p>
+<p>一个对象的<strong>proto</strong>指向构造他的函数的protype</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">obj._proto_ = Object.prototype<br></code></pre></td></tr></table></figure>
+<p>如:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">var a = new Array();<br>a.push() //实例属性<br>a.valueOf() //继承Object<br></code></pre></td></tr></table></figure></p>
+<p>push是Array.protoype的属性;<br>valueOf是继承子Ojbect.prototype的;<br>因为<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">Array.protoype.__proto__ = Object.protoype<br></code></pre></td></tr></table></figure></p>
+<p>隔了两层的才是继承,对于a;push是自身有的,valueOf才是继承的.</p>
+<h4 id="类"><a href="#类" class="headerlink" title="类"></a>类</h4><p>能产生对象的东西即为类</p>
+<p>自己写一个继承类</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-keyword">function</span> Human(name)&#123;<br>    this.name = name;<br>&#125;<br>Human.prototype.run = <span class="hljs-function"><span class="hljs-title">function</span></span>()&#123;<br>    console.log(<span class="hljs-string">'跑跑跑'</span>);<br>    <span class="hljs-built_in">return</span> undefined;<br>&#125;<br><br><span class="hljs-keyword">function</span> Man(name)&#123;<br>    Human.call(this,name); //使子类有父类的属性,假如不写this,那么this就是window<br>    this.gender = <span class="hljs-string">'男'</span>;<br>&#125;<br><br>Man.prototype.__proto__ = Human.prototype //插入父类原型链,但是IE不支持<br><br>Man.prototype.fight = <span class="hljs-function"><span class="hljs-title">function</span></span>()&#123;<br>    console.log(<span class="hljs-string">'打击'</span>);<br>    <span class="hljs-built_in">return</span> undefined;<br>&#125; <br><br>var f = new Man(<span class="hljs-string">'某个男人'</span>); //假如不写new,那么this就是window,因为new的时候this会绑定到这个对象名为Man的对象上<br><br>输出:<br>f.name  //<span class="hljs-string">'某个男人'</span><br>f.gender //<span class="hljs-string">'男'</span><br>f.fight()  //<span class="hljs-string">'打击'</span><br>f.run() //<span class="hljs-string">'跑'</span><br><br>f.__proto__ === Man.prototype;//<span class="hljs-literal">true</span><br>f.__proto__.proto__ === Human.prototype;//<span class="hljs-literal">true</span><br>Man.prototype.__proto__ === Human.prototype;//<span class="hljs-literal">true</span><br></code></pre></td></tr></table></figure>
+<h5 id="prototype"><a href="#prototype" class="headerlink" title="prototype"></a>prototype</h5><p>prototype,存放共有属性对象的地址</p>
+<h5 id="ES5和ES6的写法"><a href="#ES5和ES6的写法" class="headerlink" title="ES5和ES6的写法"></a>ES5和ES6的写法</h5><p>ES5:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">var f = <span class="hljs-function"><span class="hljs-title">function</span></span>()&#123;&#125;<br>f.protype = Human.protype<br>Man.protype = new f()<br></code></pre></td></tr></table></figure></p>
+<p>为什么?</p>
+<p>当var obj = new Fn()时,会做以下几件事</p>
+<ol>
+<li>产生一个空对象</li>
+<li>this = 该空对象</li>
+<li>this.<strong>proto</strong> = Fn.protype</li>
+<li>执行Fn.call(this,x,y..)</li>
+<li>return this</li>
+</ol>
+<p>Man.prtotype = New Human();会执行this.name,使得有多余属性<br>因为第4步不想要,所以构造一个空函数,只要他的protype</p>
+<p>空函数.protype = Human.prototype;<br>Man.protype = new f() // 1,2,3,5步<br>f.protype === Human.prototype //true<br>Man.protype.<strong>proto</strong> === f.prototype //true </p>
+<p>ES6:<br>constructor构造自有属性,共有属性写在constructor外面<br>super,执行超类(父类)的constructor<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs bash">class Human&#123;<br>    constructor(name)&#123;<br>        this.name = name<br>    &#125;<br>    <span class="hljs-function"><span class="hljs-title">run</span></span>()&#123;<br>        console.log(<span class="hljs-string">'run'</span>)<br>    &#125;<br>&#125;<br><br>class Man extends Human&#123;//等价于Man.protype.__protype = Human.protype<br>    constructor(name)&#123;<br>        super(name) //等价于Human.call(this,name),super意为超类,即父类<br>        this.gender = <span class="hljs-string">'Man'</span><br>    &#125;<br>    <span class="hljs-function"><span class="hljs-title">fight</span></span>()&#123;<br>        console.log(<span class="hljs-string">'fight'</span>)<br>    &#125;<br>&#125;<br><br>var author = new Man(<span class="hljs-string">'roxas'</span>)<br>atuhor//&#123;<br>    name:<span class="hljs-string">'roxas'</span>,<br>    gender:<span class="hljs-string">'Man'</span><br>    __proto__:&#123;<br>        <span class="hljs-function"><span class="hljs-title">fight</span></span>()&#123;&#125;,<br>        ...<br>        __proto__:&#123;<br>            <span class="hljs-function"><span class="hljs-title">run</span></span>()&#123;&#125;<br>            ...<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure></p>
+<h5 id="get-set"><a href="#get-set" class="headerlink" title="get set"></a>get set</h5><p>//属性封装<br>用get来控制只读属性.属性可通过set来条件控制<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs bash">class Animal&#123;<br>    constructor(name)&#123;<br>        this.name = name<br>        this._race = <span class="hljs-string">'moving'</span><br>    &#125;<br>    get <span class="hljs-function"><span class="hljs-title">race</span></span>()&#123;<br>        <span class="hljs-built_in">return</span> this._race<br>    &#125;<br>    <span class="hljs-built_in">set</span> race(value)&#123;<br>        this._race = value<br>    &#125;<br>&#125;<br><br>//<span class="hljs-built_in">let</span> dog = new Animal(<span class="hljs-string">'dog'</span>)<br>dog.race //moving<br>dog.race = <span class="hljs-string">'donig'</span><br>dog.race //doing<br></code></pre></td></tr></table></figure></p>
+<h5 id="static静态方法"><a href="#static静态方法" class="headerlink" title="static静态方法"></a>static静态方法</h5><p>不需要实例化就可以调用的方法<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs bash">class Animal&#123;<br>    constructor(name)&#123;<br>        this.name = name<br>        this._race = <span class="hljs-string">'moving'</span><br>    &#125;<br>    static <span class="hljs-function"><span class="hljs-title">die</span></span>()&#123;<br>        console.log(<span class="hljs-string">'Animal Die'</span>)<br>    &#125;<br>&#125;<br><br>Animal.die //Animal Die<br></code></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/07/25/JS的类与继承/" data-id="clq63ee4a001t94fq6yeekgdj" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ES6/">ES6</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-WEB性能优化" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/07/25/WEB性能优化/" class="article-date">
@@ -159,7 +227,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/25/WEB性能优化/" data-id="clq61ndh0003dzofqev78125t" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/25/WEB性能优化/" data-id="clq63ee57003l94fqqa8d2q0i" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/业务代码/">业务代码</a></li></ul>
@@ -284,7 +352,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/13/Vue组件/" data-id="clq61ndgy0038zofqzkhznske" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/13/Vue组件/" data-id="clq63ee51003894fqeuy77e95" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
@@ -364,7 +432,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/13/Vue基础/" data-id="clq61ndgt002xzofqg2gedpb9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/13/Vue基础/" data-id="clq63ee50003594fqp09fv3c9" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
@@ -431,7 +499,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/16/CSS布局套路/" data-id="clq61ndf50006zofqyftrb3fr" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/16/CSS布局套路/" data-id="clq63ee2v000894fqo05xpf3q" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
@@ -528,7 +596,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/15/Flex布局/" data-id="clq61ndfw0012zofqiswquz3q" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/15/Flex布局/" data-id="clq63ee3h000u94fq1o7jlrla" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
@@ -584,7 +652,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/13/webpack/" data-id="clq61ndho004wzofqypwmsh9i" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/13/webpack/" data-id="clq63ee70007c94fq2qsz2idt" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webpack/">webpack</a></li></ul>
@@ -649,7 +717,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/13/sass/" data-id="clq61ndhi004hzofq3tp9sd7d" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/13/sass/" data-id="clq63ee5n004i94fqpnelh10t" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
@@ -745,7 +813,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/11/Seesion--LocalStorage--Cache-Control--Expires--ETag/" data-id="clq61ndgg0021zofqt7e17r06" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/11/Seesion--LocalStorage--Cache-Control--Expires--ETag/" data-id="clq63ee4k002694fqxuy819k1" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTTP/">HTTP</a></li></ul>
@@ -845,60 +913,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/10/Cookie-注册与登陆/" data-id="clq61ndfb000czofq2qzxwjuy" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/10/Cookie-注册与登陆/" data-id="clq63ee31000d94fqtp8u6xpf" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTTP/">HTTP</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-异步同步与回调" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/09/异步同步与回调/" class="article-date">
-  <time datetime="2018-06-09T10:44:23.000Z" itemprop="datePublished">2018-06-09</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/JS/">JS</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/09/异步同步与回调/">异步同步与回调</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="异步"><a href="#异步" class="headerlink" title="异步"></a>异步</h3><p>不等结果,直接进行下一步</p>
-<h5 id="异步与同步例子"><a href="#异步与同步例子" class="headerlink" title="异步与同步例子"></a>异步与同步例子</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-keyword">function</span> 异步()&#123;<br>    setTimeout(<span class="hljs-function"><span class="hljs-title">function</span></span>()&#123;<br>        console.log(<span class="hljs-string">'异步做事'</span>);<br>    &#125;,5000)<br>&#125;<br><br><br><span class="hljs-keyword">function</span> 同步()&#123;<br>    console.log(<span class="hljs-string">'同步做事'</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
-<p>调用<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">异步();<br>console.log(1);<br>//1<br>//异步做事<br></code></pre></td></tr></table></figure></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">同步();<br>console.log(1);<br>//同步做事<br>//1<br></code></pre></td></tr></table></figure>
-<p>如果是做完事再打1 —同步<br>如果是不做完就打1 —异步</p>
-<h3 id="回调"><a href="#回调" class="headerlink" title="回调"></a>回调</h3><p>回调是拿到异步结果的一种方式,回调也可以拿同步结果.<br>fn1将别人传给它的fn2调用了,这种调用就是回调.</p>
-<h5 id="使用异步回调"><a href="#使用异步回调" class="headerlink" title="使用异步回调"></a>使用异步回调</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-keyword">function</span> fn1(callback)&#123;<br>    var n = 0;<br>    var id = setInterval(()=&gt;&#123;<br>        console.log(n);<br>        n += 1;<br>        <span class="hljs-keyword">if</span>(n &gt;= 5)&#123;<br>        window.clearInterval(id);<br>        callback();<br>        &#125;<br>    &#125;,500)<br>&#125;<br><br><span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">fn2</span></span>()&#123;<br>    console.log(<span class="hljs-string">'异步结束后再回调该函数'</span>);<br>&#125;<br><br>fn1(()=&gt;&#123;<br>    fn2();<br>&#125;);<br></code></pre></td></tr></table></figure>
-<p>当打印完n后,,再执行回调函数</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/09/异步同步与回调/" data-id="clq61ndi6005vzofqra5w7vxs" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS/">JS</a></li></ul>
 
     </footer>
   </div>
@@ -951,7 +969,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">十二月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a></li></ul>
     </div>
   </div>
 
@@ -962,6 +980,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2023/12/15/test/">test</a>
+          </li>
         
           <li>
             <a href="/2023/02/02/手写Promise-all/">手写Promise.all</a>
@@ -977,10 +999,6 @@
         
           <li>
             <a href="/2020/01/17/TS声明/">TS声明</a>
-          </li>
-        
-          <li>
-            <a href="/2020/01/16/TS高级类型/">TS类型</a>
           </li>
         
       </ul>

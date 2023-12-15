@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2023-12-15T01:47:13.851Z</updated>
+  <updated>2023-12-15T03:51:27.662Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,20 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>test</title>
+    <link href="http://yoursite.com/2023/12/15/test/"/>
+    <id>http://yoursite.com/2023/12/15/test/</id>
+    <published>2023-12-15T03:51:27.000Z</published>
+    <updated>2023-12-15T03:51:27.662Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>手写Promise.all</title>
@@ -541,33 +555,6 @@
     
     
       <category term="ES6" scheme="http://yoursite.com/tags/ES6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Vue-修饰符</title>
-    <link href="http://yoursite.com/2019/07/21/Vue%E4%BA%8B%E4%BB%B6-%E4%BF%AE%E9%A5%B0%E7%AC%A6/"/>
-    <id>http://yoursite.com/2019/07/21/Vue事件-修饰符/</id>
-    <published>2019-07-21T09:06:14.000Z</published>
-    <updated>2023-12-15T01:47:13.837Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h4 id=&quot;stop&quot;&gt;&lt;a href=&quot;#stop&quot; class=&quot;headerlink&quot; title=&quot;.stop&quot;&gt;&lt;/a&gt;.stop&lt;/h4&gt;&lt;p&gt;阻止事件的传播(冒泡,捕获)&lt;/p&gt;
-&lt;figure class=&quot;highlight
-        
-      
-    
-    </summary>
-    
-      <category term="vue" scheme="http://yoursite.com/categories/vue/"/>
-    
-    
-      <category term="vue" scheme="http://yoursite.com/tags/vue/"/>
     
   </entry>
   
