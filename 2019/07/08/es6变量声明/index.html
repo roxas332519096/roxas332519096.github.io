@@ -1,254 +1,102 @@
-<!DOCTYPE html>
-<html>
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="utf-8">
-  
-
-  
-  <title>ES6变量声明 | RoxasDengBlog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="let 作用声明局部变量 ,作用域在最近的{}之间. 不会进行变量名声明提升 不能重复声明  在 es6 之前,声明局部变量要使用立即执行函数 123456789101112131415161718&amp;#123;    let a = 1&amp;#125;console.log(1) //报错&amp;#123;    let a = 1    &amp;#123;        console.log(a)//报错">
-<meta name="keywords" content="ES6">
-<meta property="og:type" content="article">
-<meta property="og:title" content="ES6变量声明">
-<meta property="og:url" content="http://yoursite.com/2019/07/08/es6变量声明/index.html">
-<meta property="og:site_name" content="RoxasDengBlog">
-<meta property="og:description" content="let 作用声明局部变量 ,作用域在最近的{}之间. 不会进行变量名声明提升 不能重复声明  在 es6 之前,声明局部变量要使用立即执行函数 123456789101112131415161718&amp;#123;    let a = 1&amp;#125;console.log(1) //报错&amp;#123;    let a = 1    &amp;#123;        console.log(a)//报错">
-<meta property="og:locale" content="zh_CN">
-<meta property="og:updated_time" content="2023-12-15T01:47:13.842Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ES6变量声明">
-<meta name="twitter:description" content="let 作用声明局部变量 ,作用域在最近的{}之间. 不会进行变量名声明提升 不能重复声明  在 es6 之前,声明局部变量要使用立即执行函数 123456789101112131415161718&amp;#123;    let a = 1&amp;#125;console.log(1) //报错&amp;#123;    let a = 1    &amp;#123;        console.log(a)//报错">
-  
-    <link rel="alternate" href="/atom.xml" title="RoxasDengBlog" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
-</head>
-</html>
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">RoxasDengBlog</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-es6变量声明" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/07/08/es6变量声明/" class="article-date">
-  <time datetime="2019-07-08T04:17:27.000Z" itemprop="datePublished">2019-07-08</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/ES6/">ES6</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      ES6变量声明
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="let"><a href="#let" class="headerlink" title="let"></a>let</h4><ol>
+<!DOCTYPE html><html lang="en"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><meta name="theme-color" content="#2d4356"><meta name="baidu-site-verification"><title>ES6变量声明 | RoxasDengBlog</title><link rel="stylesheet" type="text/css" href="/css/style.css"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.png"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script></head><link rel="stylesheet" type="text/css" href="/plugins/highlight/atom-one-dark.min.css"><script type="text/javascript" src="/plugins/highlight/highlight.min.js"></script><script>hljs.initHighlightingOnLoad();
+</script><script type="text/javascript" src="/js/ready.js" async></script><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"><body class="night"><div class="mobile-head" id="mobile-head"><div class="navbar-icon"><span></span><span></span><span></span></div><div class="navbar-title"><a href="/">LITREILY</a></div><div class="navbar-search"><!--= show a circle here--></div></div><div class="h-wrapper" id="menu"><nav class="h-head box"><div class="m-hdimg"><a class="hdimg img" href="/"><img class="nofancybox" src="/img/profile.jpg" width="128" height="128"></a><h1 class="ttl"><a href="/">RoxasDengBlog</a></h1></div><p class="m-desc">心之所向，无惧无悔,<br>愿求仁得仁，复无怨怼！</p><div class="m-nav"><ul><li><span class="dot">●</span><a href="/archives/">归档</a></li><li><span class="dot">●</span><a href="/categories/">分类</a></li><li><span class="dot">●</span><a href="/tags/">标签</a></li><li><span class="dot">●</span><a href="/about/">关于</a></li><li><span class="dot">●</span><a href="/atom.xml">RSS</a></li><li class="m-sch"><form class="form" id="j-formsch" method="get"><input class="txt" type="text" id="local-search-input" name="q" value="搜索" onfocus="if(this.value=='搜索'){this.value='';}" onblur="if(this.value==''){this.value='搜索';}"><input type="text" style="display:none;"></form></li></ul><div id="local-search-result"></div></div></nav></div><div id="back2Top"><a class="fa fa-arrow-up" title="Back to top" href="#"></a></div><div class="box" id="container"><div class="l-wrapper"><div class="l-content box"><div class="l-post l-post-art"><article class="p-art"><div class="p-header box"><h1 class="p-title">ES6变量声明</h1><div class="p-info"><span class="p-date"><i class="fa fa-calendar"></i><a href="/2019/07/08/es6变量声明/">2019-07-08</a></span><span class="p-category"><i class="fa fa-folder"></i><a href="/categories/ES6/">ES6</a></span><span class="p-view" id="busuanzi_container_page_pv"><i class="fa fa-eye"></i><span id="busuanzi_value_page_pv"></span></span></div></div><div class="p-content"><h4 id="let"><a href="#let" class="headerlink" title="let"></a>let</h4><ol>
 <li>作用声明局部变量 ,作用域在最近的{}之间.</li>
 <li>不会进行变量名声明提升</li>
 <li>不能重复声明</li>
 </ol>
 <p>在 es6 之前,声明局部变量要使用立即执行函数</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs bash">&#123;<br>    <span class="hljs-built_in">let</span> a = 1<br>&#125;<br>console.log(1) //报错<br><br><br>&#123;<br>    <span class="hljs-built_in">let</span> a = 1<br>    &#123;<br>        console.log(a)//报错<br>        <span class="hljs-built_in">let</span> a =2<br>    &#125;<br>&#125;<br><br>&#123;<br>    <span class="hljs-built_in">let</span> a = 1;<br>    <span class="hljs-built_in">let</span> a = 2;//报错<br>&#125;<br></code></pre></td></tr></table></figure>
+<pre><code class="bash">{
+    let a = 1
+}
+console.log(1) //报错
+
+
+{
+    let a = 1
+    {
+        console.log(a)//报错
+        let a =2
+    }
+}
+
+{
+    let a = 1;
+    let a = 2;//报错
+}
+</code></pre>
 <h4 id="const"><a href="#const" class="headerlink" title="const"></a>const</h4><p>同 let,但只有一次赋值机会,必须在声明的时候赋值.<br>{<br>const a //报错<br>}</p>
 <h4 id="面试题"><a href="#面试题" class="headerlink" title="面试题"></a>面试题</h4><p>1.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-keyword">for</span>(var i = 0;i &lt; 6;i++)&#123;<br>    ///<br>&#125;<br>console.log(i);/6<br></code></pre></td></tr></table></figure>
+<pre><code class="bash">for(var i = 0;i &lt; 6;i++){
+    ///
+}
+console.log(i);/6
+</code></pre>
 <p>解:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bah">变成<br>var i<br>for(i = 0;i &lt; 6;i++)&#123;<br>    0,1,2,3,4,5<br>&#125;<br>console.log(i);/6<br></code></pre></td></tr></table></figure>
+<pre><code class="bah">变成
+var i
+for(i = 0;i &lt; 6;i++){
+    0,1,2,3,4,5
+}
+console.log(i);/6
+</code></pre>
 <p>2.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-keyword">for</span>(var i = 0;i &lt; 6;i++)&#123;<br>    <span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">fn</span></span>()&#123;<br>        console.log(i)<br>    &#125;<br>    button.onclick = fn//因为执行的时候i已经变成6了.<br>&#125;<br>6<br></code></pre></td></tr></table></figure>
+<pre><code class="bash">for(var i = 0;i &lt; 6;i++){
+    function fn(){
+        console.log(i)
+    }
+    button.onclick = fn//因为执行的时候i已经变成6了.
+}
+6
+</code></pre>
 <p>3.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;ul&gt;<br>    &lt;li&gt;1&lt;/li&gt;<br>    &lt;li&gt;2&lt;/li&gt;<br>    &lt;li&gt;3&lt;/li&gt;<br>    &lt;li&gt;4&lt;/li&gt;<br>    &lt;li&gt;5&lt;/li&gt;<br>    &lt;li&gt;6&lt;/li&gt;<br>&lt;/ul&gt;<br><br>var liTags = document.querySelectorAll(<span class="hljs-string">'li'</span>);<br><span class="hljs-keyword">for</span>(var i = 0;i&lt;liTags.length;i++)&#123;<br>    liTags[i].onclick = <span class="hljs-function"><span class="hljs-title">function</span></span>()&#123;<br>        console.log(i);//不管点哪个按钮,都是6<br>    &#125;<br>&#125;<br><br>改成<br><br><span class="hljs-keyword">for</span>(var i = 0;i&lt;liTags.length;i++)&#123;<br>    (<span class="hljs-function"><span class="hljs-title">function</span></span>()&#123;<br>        var j = arguments[0];//外面的i赋值给j<br>        liTags[i].onclick = <span class="hljs-function"><span class="hljs-title">function</span></span>()&#123;<br>            console.log(j)//点哪个打印哪个<br>        &#125;<br>    &#125;)(i)<br>&#125;<br><br>或者<br><br><span class="hljs-keyword">for</span>(var i = 0;i&lt;liTags.length;i++)&#123;<br>    <span class="hljs-built_in">let</span> j = i;<br>    liTags[j].onclick = <span class="hljs-function"><span class="hljs-title">function</span></span>()&#123;<br>        console.log(j)//点哪个打印哪个<br>    &#125;<br>&#125;<br><br>或<br><br><span class="hljs-keyword">for</span>(<span class="hljs-built_in">let</span> i = 0;i&lt;liTags.length;i++)&#123;<br>    liTags[i].onclick = <span class="hljs-function"><span class="hljs-title">function</span></span>()&#123;<br>        console.log(i);//点哪个打印哪个<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<pre><code class="bash">&lt;ul&gt;
+    &lt;li&gt;1&lt;/li&gt;
+    &lt;li&gt;2&lt;/li&gt;
+    &lt;li&gt;3&lt;/li&gt;
+    &lt;li&gt;4&lt;/li&gt;
+    &lt;li&gt;5&lt;/li&gt;
+    &lt;li&gt;6&lt;/li&gt;
+&lt;/ul&gt;
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/08/es6变量声明/" data-id="clq63gkyz0044iwfq0r105wiq" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ES6/">ES6</a></li></ul>
+var liTags = document.querySelectorAll(&#39;li&#39;);
+for(var i = 0;i&lt;liTags.length;i++){
+    liTags[i].onclick = function(){
+        console.log(i);//不管点哪个按钮,都是6
+    }
+}
 
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2019/07/08/ES6对象/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          ES6对象
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2019/04/18/Websocket/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Websocket</div>
-    </a>
-  
-</nav>
+改成
 
-  
-</article>
+for(var i = 0;i&lt;liTags.length;i++){
+    (function(){
+        var j = arguments[0];//外面的i赋值给j
+        liTags[i].onclick = function(){
+            console.log(j)//点哪个打印哪个
+        }
+    })(i)
+}
 
-</section>
-        
-          <aside id="sidebar">
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/ES6/">ES6</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JS/">JS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/TS/">TS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/node/">node</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/vue/">vue</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/webpack/">webpack</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/业务代码/">业务代码</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/库/">库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/笔记/">笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机基础/">计算机基础</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/面试题/">面试题</a></li></ul>
-    </div>
-  </div>
+或者
 
+for(var i = 0;i&lt;liTags.length;i++){
+    let j = i;
+    liTags[j].onclick = function(){
+        console.log(j)//点哪个打印哪个
+    }
+}
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/">ES6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TS/">TS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/">webpack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/业务代码/">业务代码</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/库/">库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机基础/">计算机基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试题/">面试题</a></li></ul>
-    </div>
-  </div>
+或
 
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/CSS/" style="font-size: 18.75px;">CSS</a> <a href="/tags/ES6/" style="font-size: 16.25px;">ES6</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/HTTP/" style="font-size: 15px;">HTTP</a> <a href="/tags/JS/" style="font-size: 20px;">JS</a> <a href="/tags/TS/" style="font-size: 17.5px;">TS</a> <a href="/tags/git/" style="font-size: 11.25px;">git</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/vue/" style="font-size: 18.75px;">vue</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/业务代码/" style="font-size: 13.75px;">业务代码</a> <a href="/tags/库/" style="font-size: 12.5px;">库</a> <a href="/tags/笔记/" style="font-size: 10px;">笔记</a> <a href="/tags/计算机基础/" style="font-size: 10px;">计算机基础</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a> <a href="/tags/面试题/" style="font-size: 10px;">面试题</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2023/02/02/手写Promise-all/">手写Promise.all</a>
-          </li>
-        
-          <li>
-            <a href="/2023/02/02/Canvas和SVG区别/">Canvas和SVG区别</a>
-          </li>
-        
-          <li>
-            <a href="/2020/02/12/常见排序算法/">常见排序算法</a>
-          </li>
-        
-          <li>
-            <a href="/2020/01/17/TS声明/">TS声明</a>
-          </li>
-        
-          <li>
-            <a href="/2020/01/16/TS高级类型/">TS类型</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2023 Roxas Deng<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/script.js"></script>
-
-
-
-  </div>
-</body>
-</html>
+for(let i = 0;i&lt;liTags.length;i++){
+    liTags[i].onclick = function(){
+        console.log(i);//点哪个打印哪个
+    }
+}
+</code></pre>
+</div><div class="p-copyright"><blockquote><div class="p-copyright-author"><span class="p-copyright-key">本文作者：</span><span class="p-copytight-value"><a href="mailto:litreily@163.com">Roxas Deng</a></span></div><div class="p-copyright-link"><span class="p-copyright-key">本文链接：</span><span class="p-copytight-value"><a href="/2019/07/08/es6变量声明/">http://yoursite.com/2019/07/08/es6变量声明/</a></span></div><div class="p-copyright-note"><span class="p-copyright-key">版权声明：</span><span class="p-copytight-value">本博客所有文章除特殊声明外，均采用<a rel="nofollow" target="_blank" href="https://creativecommons.org/licenses/by-nc/4.0/"> CC BY-NC 4.0 </a>许可协议。转载请注明出处 <a href="http://yoursite.com">Roxas Deng的博客</a>！</span></div></blockquote></div></article><div class="p-info box"><span class="p-tags"><i class="fa fa-tag"></i><a href="/tags/ES6/">ES6</a></span></div><aside id="toc"><div class="toc-title">目录</div><nav><ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#let"><span class="toc-number">1.</span> <span class="toc-text">let</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#const"><span class="toc-number">2.</span> <span class="toc-text">const</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#面试题"><span class="toc-number">3.</span> <span class="toc-text">面试题</span></a></li></ol></nav></aside></div><section class="p-ext"><div class="l-pager l-pager-dtl box"><a class="prev" href="/2019/07/08/ES6对象/">&lt; ES6对象</a><a class="next" href="/2019/04/18/Websocket/">Websocket &gt;</a></div></section><footer><p>Copyright © 2016 - 2023 <a href="/." rel="nofollow">RoxasDengBlog</a> | <strong><a rel="nofollow" target="_blank" href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a></strong><br><span id="busuanzi_container_site_uv"><i class="fa fa-user"></i><span id="busuanzi_value_site_uv"></span></span> <span id="busuanzi_container_site_pv"><i class="fa fa-eye"></i><span id="busuanzi_value_site_pv"></span></span> | Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a>Theme with<a rel="nofollow" target="_blank" href="https://github.com/litreily/snark-hexo"> snark.</a></p></footer></div></div></div><script type="text/javascript" src="/js/search.js"></script><script type="text/javascript" src="/js/top.js"></script><script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script><script>var search_path = 'search.xml';
+if (search_path.length == 0) {
+    search_path = 'search.xml';
+}
+var path = '/' + search_path;
+searchFunc(path, 'local-search-input', 'local-search-result');
+</script><script type="text/javascript" src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.1" async></script></body></html>

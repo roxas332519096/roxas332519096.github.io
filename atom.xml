@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2023-12-15T01:47:13.851Z</updated>
+  <updated>2023-12-15T05:39:18.928Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,63 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>mixin,高阶函数,珂里化</title>
+    <link href="http://yoursite.com/2023/02/11/mixin-%E9%AB%98%E9%98%B6%E5%87%BD%E6%95%B0-%E7%8F%82%E9%87%8C%E5%8C%96/"/>
+    <id>http://yoursite.com/2023/02/11/mixin-高阶函数-珂里化/</id>
+    <published>2023-02-11T06:14:26.000Z</published>
+    <updated>2023-12-15T05:39:18.928Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;mixin&quot;&gt;&lt;a href=&quot;#mixin&quot; class=&quot;headerlink&quot; title=&quot;mixin&quot;&gt;&lt;/a&gt;mixin&lt;/h3&gt;&lt;p&gt;将A对象属性给B就是mixin&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;const mixin =
+        
+      
+    
+    </summary>
+    
+      <category term="JS" scheme="http://yoursite.com/categories/JS/"/>
+    
+    
+      <category term="JS" scheme="http://yoursite.com/tags/JS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>手写一个简易的Promise</title>
+    <link href="http://yoursite.com/2023/02/08/%E6%89%8B%E5%86%99%E4%B8%80%E4%B8%AA%E7%AE%80%E6%98%93%E7%9A%84Promise/"/>
+    <id>http://yoursite.com/2023/02/08/手写一个简易的Promise/</id>
+    <published>2023-02-08T15:39:13.000Z</published>
+    <updated>2023-12-15T05:39:01.875Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;class Promises2 {
+    #status = &amp;#39;pending&amp;#39;
+    constructor(fn) {
+        this.q = []//创建一个队列
+        const
+        
+      
+    
+    </summary>
+    
+      <category term="JS" scheme="http://yoursite.com/categories/JS/"/>
+    
+    
+      <category term="JS" scheme="http://yoursite.com/tags/JS/"/>
+    
+  </entry>
   
   <entry>
     <title>手写Promise.all</title>
@@ -35,7 +92,7 @@
 &lt;li&gt;知道用数组来记录结果&lt;/li&gt;
 &lt;li&gt;知道只要一个reject就整体reject&lt;/li&gt;
 &lt;/ol&gt;
-&lt;fig
+&lt;pre
         
       
     
@@ -100,7 +157,7 @@
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;figure class=&quot;highlight
+&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;const
         
       
     
@@ -127,7 +184,7 @@
         
         
           &lt;h4 id=&quot;如何写一个TS声明文件&quot;&gt;&lt;a href=&quot;#如何写一个TS声明文件&quot; class=&quot;headerlink&quot; title=&quot;如何写一个TS声明文件&quot;&gt;&lt;/a&gt;如何写一个TS声明文件&lt;/h4&gt;&lt;p&gt;test.ts&lt;/p&gt;
-&lt;figure
+&lt;pre&gt;&lt;code
         
       
     
@@ -153,7 +210,8 @@
       
         
         
-          &lt;h3 id=&quot;类型&quot;&gt;&lt;a href=&quot;#类型&quot; class=&quot;headerlink&quot; title=&quot;类型&quot;&gt;&lt;/a&gt;类型&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span
+          &lt;h3 id=&quot;类型&quot;&gt;&lt;a href=&quot;#类型&quot; class=&quot;headerlink&quot; title=&quot;类型&quot;&gt;&lt;/a&gt;类型&lt;/h3&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;    type Name = String
+    type FasleLike =
         
       
     
@@ -182,7 +240,9 @@
           &lt;ol&gt;
 &lt;li&gt;app.vue&lt;/li&gt;
 &lt;/ol&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span
+&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;&amp;lt;template&amp;gt;
+  &amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt;
+    &amp;lt;newToDo
         
       
     
@@ -211,7 +271,36 @@
           &lt;ol&gt;
 &lt;li&gt;创建根目录&lt;/li&gt;
 &lt;/ol&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span
+&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;mkdir webpack-demo
+cd webpack-demo
+npm init -y
+npm install webpack webpack-cli
+        
+      
+    
+    </summary>
+    
+      <category term="TS" scheme="http://yoursite.com/categories/TS/"/>
+    
+    
+      <category term="TS" scheme="http://yoursite.com/tags/TS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>TS泛型</title>
+    <link href="http://yoursite.com/2020/01/11/TS%E6%B3%9B%E5%9E%8B/"/>
+    <id>http://yoursite.com/2020/01/11/TS泛型/</id>
+    <published>2020-01-11T12:37:55.000Z</published>
+    <updated>2023-12-15T05:40:38.666Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;代表广泛的类型&quot;&gt;&lt;a href=&quot;#代表广泛的类型&quot; class=&quot;headerlink&quot; title=&quot;代表广泛的类型&quot;&gt;&lt;/a&gt;代表广泛的类型&lt;/h4&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;function
         
       
     
@@ -238,7 +327,7 @@
         
         
           &lt;p&gt;函数:可以被调用的对象&lt;/p&gt;
-&lt;h4 id=&quot;函数的几种写法&quot;&gt;&lt;a href=&quot;#函数的几种写法&quot; class=&quot;headerlink&quot; title=&quot;函数的几种写法&quot;&gt;&lt;/a&gt;函数的几种写法&lt;/h4&gt;&lt;figure class=&quot;highlight
+&lt;h4 id=&quot;函数的几种写法&quot;&gt;&lt;a href=&quot;#函数的几种写法&quot; class=&quot;headerlink&quot; title=&quot;函数的几种写法&quot;&gt;&lt;/a&gt;函数的几种写法&lt;/h4&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;   
         
       
     
@@ -265,8 +354,7 @@
         
         
           &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;写一个ts的类&lt;/p&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span
+&lt;li&gt;写一个ts的类&lt;br&gt;&lt;code&gt;`&lt;/code&gt; bash&lt;br&gt;class Human {&lt;br&gt; name: string&lt;br&gt; age: number&lt;br&gt; constructor(name: string, age: number)
         
       
     
@@ -293,7 +381,8 @@
         
         
           &lt;h4 id=&quot;变量&quot;&gt;&lt;a href=&quot;#变量&quot; class=&quot;headerlink&quot; title=&quot;变量&quot;&gt;&lt;/a&gt;变量&lt;/h4&gt;&lt;p&gt;跟JS一样&lt;/p&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td
+&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;let a:string = &amp;#39;s&amp;#39;
+let
         
       
     
@@ -322,7 +411,12 @@
           &lt;ol&gt;
 &lt;li&gt;将TS热更新为JS&lt;/li&gt;
 &lt;/ol&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span
+&lt;pre&gt;&lt;code&gt;tsc -w demo.ts
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;在html里引入demo.js&lt;/p&gt;
+&lt;ol start=&quot;2&quot;&gt;
+&lt;li&gt;主要代码&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code
         
       
     
@@ -348,7 +442,8 @@
       
         
         
-          &lt;h4 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h4&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span
+          &lt;h4 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h4&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;npm install typescript -g //安装ts
+npm install
         
       
     
@@ -358,6 +453,37 @@
     
     
       <category term="TS" scheme="http://yoursite.com/tags/TS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>手写一个深拷贝</title>
+    <link href="http://yoursite.com/2019/07/31/%E6%89%8B%E5%86%99%E4%B8%80%E4%B8%AA%E6%B7%B1%E6%8B%B7%E8%B4%9D/"/>
+    <id>http://yoursite.com/2019/07/31/手写一个深拷贝/</id>
+    <published>2019-07-30T16:10:15.000Z</published>
+    <updated>2023-12-15T05:39:10.468Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ol&gt;
+&lt;li&gt;递归&lt;/li&gt;
+&lt;li&gt;判断类型&lt;/li&gt;
+&lt;li&gt;检测循环引用(环)&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;不可能拷贝 &lt;strong&gt;proto&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;const cache = new
+        
+      
+    
+    </summary>
+    
+      <category term="JS" scheme="http://yoursite.com/categories/JS/"/>
+    
+    
+      <category term="JS" scheme="http://yoursite.com/tags/JS/"/>
     
   </entry>
   
@@ -375,8 +501,7 @@
         
         
           &lt;h3 id=&quot;无继承性的属性&quot;&gt;&lt;a href=&quot;#无继承性的属性&quot; class=&quot;headerlink&quot; title=&quot;无继承性的属性&quot;&gt;&lt;/a&gt;无继承性的属性&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;display：&lt;/p&gt;
-&lt;figure class=&quot;highlight
+&lt;li&gt;display：&lt;pre&gt;&lt;code
         
       
     
@@ -467,107 +592,6 @@
     
     
       <category term="面试" scheme="http://yoursite.com/tags/%E9%9D%A2%E8%AF%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>虚拟dom</title>
-    <link href="http://yoursite.com/2019/07/27/%E8%99%9A%E6%8B%9Fdom/"/>
-    <id>http://yoursite.com/2019/07/27/虚拟dom/</id>
-    <published>2019-07-27T10:50:52.000Z</published>
-    <updated>2023-12-15T01:47:13.856Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;###
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>类型判断&amp;toString</title>
-    <link href="http://yoursite.com/2019/07/25/%E7%B1%BB%E5%9E%8B%E5%88%A4%E6%96%AD/"/>
-    <id>http://yoursite.com/2019/07/25/类型判断/</id>
-    <published>2019-07-25T13:10:49.000Z</published>
-    <updated>2023-12-15T01:47:13.855Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h4 id=&quot;typeof&quot;&gt;&lt;a href=&quot;#typeof&quot; class=&quot;headerlink&quot; title=&quot;typeof&quot;&gt;&lt;/a&gt;typeof&lt;/h4&gt;&lt;p&gt;操作符返回一个字符串，表示未经计算的操作数的类型&lt;br&gt;&lt;figure class=&quot;highlight
-        
-      
-    
-    </summary>
-    
-      <category term="JS" scheme="http://yoursite.com/categories/JS/"/>
-    
-    
-      <category term="JS" scheme="http://yoursite.com/tags/JS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ES6数组</title>
-    <link href="http://yoursite.com/2019/07/24/ES6-%E6%95%B0%E7%BB%84/"/>
-    <id>http://yoursite.com/2019/07/24/ES6-数组/</id>
-    <published>2019-07-24T08:21:58.000Z</published>
-    <updated>2023-12-15T01:47:13.827Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h4 id=&quot;Array-from&quot;&gt;&lt;a href=&quot;#Array-from&quot; class=&quot;headerlink&quot; title=&quot;Array.from&quot;&gt;&lt;/a&gt;Array.from&lt;/h4&gt;&lt;p&gt;把不是数组的变成数组,常用语将伪数组变成数组.&lt;br&gt;&lt;figure
-        
-      
-    
-    </summary>
-    
-      <category term="ES6" scheme="http://yoursite.com/categories/ES6/"/>
-    
-    
-      <category term="ES6" scheme="http://yoursite.com/tags/ES6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Vue-修饰符</title>
-    <link href="http://yoursite.com/2019/07/21/Vue%E4%BA%8B%E4%BB%B6-%E4%BF%AE%E9%A5%B0%E7%AC%A6/"/>
-    <id>http://yoursite.com/2019/07/21/Vue事件-修饰符/</id>
-    <published>2019-07-21T09:06:14.000Z</published>
-    <updated>2023-12-15T01:47:13.837Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h4 id=&quot;stop&quot;&gt;&lt;a href=&quot;#stop&quot; class=&quot;headerlink&quot; title=&quot;.stop&quot;&gt;&lt;/a&gt;.stop&lt;/h4&gt;&lt;p&gt;阻止事件的传播(冒泡,捕获)&lt;/p&gt;
-&lt;figure class=&quot;highlight
-        
-      
-    
-    </summary>
-    
-      <category term="vue" scheme="http://yoursite.com/categories/vue/"/>
-    
-    
-      <category term="vue" scheme="http://yoursite.com/tags/vue/"/>
     
   </entry>
   

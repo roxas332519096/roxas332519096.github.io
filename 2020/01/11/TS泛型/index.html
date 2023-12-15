@@ -1,0 +1,101 @@
+<!DOCTYPE html><html lang="en"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><meta name="theme-color" content="#2d4356"><meta name="baidu-site-verification"><title>TS泛型 | RoxasDengBlog</title><link rel="stylesheet" type="text/css" href="/css/style.css"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.png"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script></head><link rel="stylesheet" type="text/css" href="/plugins/highlight/atom-one-dark.min.css"><script type="text/javascript" src="/plugins/highlight/highlight.min.js"></script><script>hljs.initHighlightingOnLoad();
+</script><script type="text/javascript" src="/js/ready.js" async></script><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"><body class="night"><div class="mobile-head" id="mobile-head"><div class="navbar-icon"><span></span><span></span><span></span></div><div class="navbar-title"><a href="/">LITREILY</a></div><div class="navbar-search"><!--= show a circle here--></div></div><div class="h-wrapper" id="menu"><nav class="h-head box"><div class="m-hdimg"><a class="hdimg img" href="/"><img class="nofancybox" src="/img/profile.jpg" width="128" height="128"></a><h1 class="ttl"><a href="/">RoxasDengBlog</a></h1></div><p class="m-desc">心之所向，无惧无悔,<br>愿求仁得仁，复无怨怼！</p><div class="m-nav"><ul><li><span class="dot">●</span><a href="/archives/">归档</a></li><li><span class="dot">●</span><a href="/categories/">分类</a></li><li><span class="dot">●</span><a href="/tags/">标签</a></li><li><span class="dot">●</span><a href="/about/">关于</a></li><li><span class="dot">●</span><a href="/atom.xml">RSS</a></li><li class="m-sch"><form class="form" id="j-formsch" method="get"><input class="txt" type="text" id="local-search-input" name="q" value="搜索" onfocus="if(this.value=='搜索'){this.value='';}" onblur="if(this.value==''){this.value='搜索';}"><input type="text" style="display:none;"></form></li></ul><div id="local-search-result"></div></div></nav></div><div id="back2Top"><a class="fa fa-arrow-up" title="Back to top" href="#"></a></div><div class="box" id="container"><div class="l-wrapper"><div class="l-content box"><div class="l-post l-post-art"><article class="p-art"><div class="p-header box"><h1 class="p-title">TS泛型</h1><div class="p-info"><span class="p-date"><i class="fa fa-calendar"></i><a href="/2020/01/11/TS泛型/">2020-01-11</a></span><span class="p-category"><i class="fa fa-folder"></i><a href="/categories/TS/">TS</a></span><span class="p-view" id="busuanzi_container_page_pv"><i class="fa fa-eye"></i><span id="busuanzi_value_page_pv"></span></span></div></div><div class="p-content"><h4 id="代表广泛的类型"><a href="#代表广泛的类型" class="headerlink" title="代表广泛的类型"></a>代表广泛的类型</h4><pre><code class="bash">function identity&lt;T&gt;(arg:T):T{
+    return arg
+}
+
+let string = identity(&#39;hi&#39;)
+</code></pre>
+<h4 id="接口使用泛型"><a href="#接口使用泛型" class="headerlink" title="接口使用泛型"></a>接口使用泛型</h4><pre><code class="bash">    function returnIt&lt;T&gt;(arg: T): T {
+        return arg
+    }
+
+    interface Human {
+        name: string
+        age: number
+    }
+
+    let human = returnIt&lt;Human&gt;({ name: &#39;tom&#39;, age: 18 })
+</code></pre>
+<h4 id="数组泛型"><a href="#数组泛型" class="headerlink" title="数组泛型"></a>数组泛型</h4><pre><code class="bash">
+    interface Human {
+        name: string
+        age: number
+    }
+
+    function returnArray&lt;T&gt;(array: T[]): T[] {
+        return array
+    }
+
+    let array = returnArray&lt;string&gt;([&#39;a&#39;, &#39;b&#39;, &#39;c&#39;])
+
+    let humanArray = returnArray&lt;Human&gt;([{ name: &#39;tom&#39;, age: 18 }, { name: &#39;jack&#39;, age: 19 }])
+</code></pre>
+<h4 id="泛型类型"><a href="#泛型类型" class="headerlink" title="泛型类型"></a>泛型类型</h4><pre><code class="bash">    function returnIt&lt;T&gt;(arg: T): T {
+        return arg
+    }
+
+    let myReturnIt: &lt;T&gt;(arg: T) =&gt; T = returnIt
+    let myReturnIt2: { &lt;T&gt;(arg: T): T } = returnIt
+</code></pre>
+<h4 id="泛型接口"><a href="#泛型接口" class="headerlink" title="泛型接口"></a>泛型接口</h4><pre><code class="bash">
+    interface AnyAdd&lt;T&gt; {
+        (a1: T, b1: T): T
+    }
+
+    let numberAdd: AnyAdd&lt;number&gt; = (a1: number, b1: number): number =&gt; {
+        return a1 + b1
+    }
+
+    let stringAdd: AnyAdd&lt;string&gt; = (a2: string, b2: string): string =&gt; {
+        return a2 + b2
+    }
+</code></pre>
+<h4 id="泛型约束"><a href="#泛型约束" class="headerlink" title="泛型约束"></a>泛型约束</h4><p>满足某些条件的约束</p>
+<p>假如这样写,会报错,因为不一定有length,那么我们需要对泛型进行约束</p>
+<pre><code class="bash">    function returnIt&lt;T&gt;(arg: T): T {
+        console.log(arg.length) //这里报错
+        return arg
+    }
+</code></pre>
+<p>引用接口,找到约束的类型</p>
+<pre><code class="bash">    interface hasLength {
+        length: number
+    }
+
+    function returnIt&lt;T extends hasLength&gt;(arg: T): T {//T继承接口hasLength
+        console.log(arg.length)
+        return arg
+    }
+</code></pre>
+<h4 id="在泛型里使用类"><a href="#在泛型里使用类" class="headerlink" title="在泛型里使用类"></a>在泛型里使用类</h4><pre><code class="bash"> function create&lt;T&gt;(c: { new(): T }): T {
+        return new c()
+    }
+</code></pre>
+<p>看不懂?那先转化为js代码</p>
+<pre><code class="bash">
+    function create(c) {
+        return new c()
+    }
+</code></pre>
+<pre><code class="bash"> function create&lt;T&gt;(c: { new(): T }): T {
+        return new c()
+    }
+
+    class Human {
+
+    }
+
+    class Animal {
+
+    }
+
+    let tom = create&lt;Human&gt;(Human)
+    let jack = create&lt;Human&gt;(Animal) //报错,因为是Human
+</code></pre>
+</div><div class="p-copyright"><blockquote><div class="p-copyright-author"><span class="p-copyright-key">本文作者：</span><span class="p-copytight-value"><a href="mailto:litreily@163.com">Roxas Deng</a></span></div><div class="p-copyright-link"><span class="p-copyright-key">本文链接：</span><span class="p-copytight-value"><a href="/2020/01/11/TS泛型/">http://yoursite.com/2020/01/11/TS泛型/</a></span></div><div class="p-copyright-note"><span class="p-copyright-key">版权声明：</span><span class="p-copytight-value">本博客所有文章除特殊声明外，均采用<a rel="nofollow" target="_blank" href="https://creativecommons.org/licenses/by-nc/4.0/"> CC BY-NC 4.0 </a>许可协议。转载请注明出处 <a href="http://yoursite.com">Roxas Deng的博客</a>！</span></div></blockquote></div></article><div class="p-info box"><span class="p-tags"><i class="fa fa-tag"></i><a href="/tags/TS/">TS</a></span></div><aside id="toc"><div class="toc-title">目录</div><nav><ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#代表广泛的类型"><span class="toc-number">1.</span> <span class="toc-text">代表广泛的类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#接口使用泛型"><span class="toc-number">2.</span> <span class="toc-text">接口使用泛型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#数组泛型"><span class="toc-number">3.</span> <span class="toc-text">数组泛型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#泛型类型"><span class="toc-number">4.</span> <span class="toc-text">泛型类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#泛型接口"><span class="toc-number">5.</span> <span class="toc-text">泛型接口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#泛型约束"><span class="toc-number">6.</span> <span class="toc-text">泛型约束</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#在泛型里使用类"><span class="toc-number">7.</span> <span class="toc-text">在泛型里使用类</span></a></li></ol></nav></aside></div><section class="p-ext"><div class="l-pager l-pager-dtl box"><a class="prev" href="/2020/01/13/webpack4搭建vue-ts项目/">&lt; webpack4搭建vue-ts项目</a><a class="next" href="/2020/01/10/TS函数/">TS函数 &gt;</a></div></section><footer><p>Copyright © 2016 - 2023 <a href="/." rel="nofollow">RoxasDengBlog</a> | <strong><a rel="nofollow" target="_blank" href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a></strong><br><span id="busuanzi_container_site_uv"><i class="fa fa-user"></i><span id="busuanzi_value_site_uv"></span></span> <span id="busuanzi_container_site_pv"><i class="fa fa-eye"></i><span id="busuanzi_value_site_pv"></span></span> | Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a>Theme with<a rel="nofollow" target="_blank" href="https://github.com/litreily/snark-hexo"> snark.</a></p></footer></div></div></div><script type="text/javascript" src="/js/search.js"></script><script type="text/javascript" src="/js/top.js"></script><script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script><script>var search_path = 'search.xml';
+if (search_path.length == 0) {
+    search_path = 'search.xml';
+}
+var path = '/' + search_path;
+searchFunc(path, 'local-search-input', 'local-search-result');
+</script><script type="text/javascript" src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.1" async></script></body></html>

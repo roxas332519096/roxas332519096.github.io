@@ -1,119 +1,105 @@
-<!DOCTYPE html>
-<html>
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="utf-8">
-  
+<!DOCTYPE html><html lang="en"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><meta name="theme-color" content="#2d4356"><meta name="baidu-site-verification"><title>Vue的几个小坑&amp;子选择器&amp;测试相关 | RoxasDengBlog</title><link rel="stylesheet" type="text/css" href="/css/style.css"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.png"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script></head><link rel="stylesheet" type="text/css" href="/plugins/highlight/atom-one-dark.min.css"><script type="text/javascript" src="/plugins/highlight/highlight.min.js"></script><script>hljs.initHighlightingOnLoad();
+</script><script type="text/javascript" src="/js/ready.js" async></script><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"><body class="night"><div class="mobile-head" id="mobile-head"><div class="navbar-icon"><span></span><span></span><span></span></div><div class="navbar-title"><a href="/">LITREILY</a></div><div class="navbar-search"><!--= show a circle here--></div></div><div class="h-wrapper" id="menu"><nav class="h-head box"><div class="m-hdimg"><a class="hdimg img" href="/"><img class="nofancybox" src="/img/profile.jpg" width="128" height="128"></a><h1 class="ttl"><a href="/">RoxasDengBlog</a></h1></div><p class="m-desc">心之所向，无惧无悔,<br>愿求仁得仁，复无怨怼！</p><div class="m-nav"><ul><li><span class="dot">●</span><a href="/archives/">归档</a></li><li><span class="dot">●</span><a href="/categories/">分类</a></li><li><span class="dot">●</span><a href="/tags/">标签</a></li><li><span class="dot">●</span><a href="/about/">关于</a></li><li><span class="dot">●</span><a href="/atom.xml">RSS</a></li><li class="m-sch"><form class="form" id="j-formsch" method="get"><input class="txt" type="text" id="local-search-input" name="q" value="搜索" onfocus="if(this.value=='搜索'){this.value='';}" onblur="if(this.value==''){this.value='搜索';}"><input type="text" style="display:none;"></form></li></ul><div id="local-search-result"></div></div></nav></div><div id="back2Top"><a class="fa fa-arrow-up" title="Back to top" href="#"></a></div><div class="box" id="container"><div class="l-wrapper"><div class="l-content box"><div class="l-post l-post-art"><article class="p-art"><div class="p-header box"><h1 class="p-title">Vue的几个小坑&amp;子选择器&amp;测试相关</h1><div class="p-info"><span class="p-date"><i class="fa fa-calendar"></i><a href="/2019/04/03/Vue的几个小坑&amp;子选择器&amp;测试相关/">2019-04-03</a></span><span class="p-category"><i class="fa fa-folder"></i><a href="/categories/笔记/">笔记</a></span><span class="p-view" id="busuanzi_container_page_pv"><i class="fa fa-eye"></i><span id="busuanzi_value_page_pv"></span></span></div></div><div class="p-content"><h4 id="1-vue中html属性使用简写的问题"><a href="#1-vue中html属性使用简写的问题" class="headerlink" title="1. vue中html属性使用简写的问题"></a>1. vue中html属性使用简写的问题</h4><p>假如子组件props进行类型检测,那么子组件接收不到</p>
+<pre><code class="bash">//parent
+&lt;g-button right&gt;BTN&lt;/button&gt;
 
-  
-  <title>Vue的几个小坑&amp;子选择器&amp;测试相关 | RoxasDengBlog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1. vue中html属性使用简写的问题假如子组件props进行类型检测,那么子组件接收不到 12345678//parent&amp;lt;g-button right&amp;gt;BTN&amp;lt;/button&amp;gt;//component-Aprops:[&apos;right&apos;]mount()&amp;#123;    console.log(this.right) //undefined&amp;#125; 当子组件props进">
-<meta name="keywords" content="笔记">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Vue的几个小坑&amp;子选择器&amp;测试相关">
-<meta property="og:url" content="http://yoursite.com/2019/04/03/Vue的几个小坑&子选择器&测试相关/index.html">
-<meta property="og:site_name" content="RoxasDengBlog">
-<meta property="og:description" content="1. vue中html属性使用简写的问题假如子组件props进行类型检测,那么子组件接收不到 12345678//parent&amp;lt;g-button right&amp;gt;BTN&amp;lt;/button&amp;gt;//component-Aprops:[&apos;right&apos;]mount()&amp;#123;    console.log(this.right) //undefined&amp;#125; 当子组件props进">
-<meta property="og:locale" content="zh_CN">
-<meta property="og:updated_time" content="2023-12-15T01:47:13.838Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Vue的几个小坑&amp;子选择器&amp;测试相关">
-<meta name="twitter:description" content="1. vue中html属性使用简写的问题假如子组件props进行类型检测,那么子组件接收不到 12345678//parent&amp;lt;g-button right&amp;gt;BTN&amp;lt;/button&amp;gt;//component-Aprops:[&apos;right&apos;]mount()&amp;#123;    console.log(this.right) //undefined&amp;#125; 当子组件props进">
-  
-    <link rel="alternate" href="/atom.xml" title="RoxasDengBlog" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
-</head>
-</html>
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">RoxasDengBlog</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-Vue的几个小坑&amp;子选择器&amp;测试相关" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/04/03/Vue的几个小坑&子选择器&测试相关/" class="article-date">
-  <time datetime="2019-04-03T09:09:04.000Z" itemprop="datePublished">2019-04-03</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/笔记/">笔记</a>
-  </div>
+//component-A
+props:[&#39;right&#39;]
+mount(){
+    console.log(this.right) //undefined
+}
 
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      Vue的几个小坑&amp;子选择器&amp;测试相关
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="1-vue中html属性使用简写的问题"><a href="#1-vue中html属性使用简写的问题" class="headerlink" title="1. vue中html属性使用简写的问题"></a>1. vue中html属性使用简写的问题</h4><p>假如子组件props进行类型检测,那么子组件接收不到</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash">//parent<br>&lt;g-button right&gt;BTN&lt;/button&gt;<br><br>//component-A<br>props:[<span class="hljs-string">'right'</span>]<br><span class="hljs-function"><span class="hljs-title">mount</span></span>()&#123;<br>    console.log(this.right) //undefined<br>&#125;<br></code></pre></td></tr></table></figure>
+</code></pre>
 <p>当子组件props进行类型检测,子组件能接受到值.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs bash">//parent<br>&lt;g-button right&gt;BTN&lt;/button&gt;<br><br>//component-B<br>props:&#123;<br>    right:&#123;<br>        <span class="hljs-built_in">type</span>: Boolean,<br>        default: <span class="hljs-literal">false</span>,<br>    &#125;<br>&#125;<br><span class="hljs-function"><span class="hljs-title">mount</span></span>()&#123;<br>    console.log(this.right) // <span class="hljs-literal">true</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<pre><code class="bash">//parent
+&lt;g-button right&gt;BTN&lt;/button&gt;
+
+//component-B
+props:{
+    right:{
+        type: Boolean,
+        default: false,
+    }
+}
+mount(){
+    console.log(this.right) // true
+}
+
+</code></pre>
 <h4 id="2-组件点击事件失效的问题"><a href="#2-组件点击事件失效的问题" class="headerlink" title="2. 组件点击事件失效的问题"></a>2. 组件点击事件失效的问题</h4><p>点击button元素,事件不生效.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">//parent<br>&lt;g-button @click=<span class="hljs-string">"loading = !loading"</span>&gt;BTN&lt;/button&gt;<br></code></pre></td></tr></table></figure>
+<pre><code class="bash">//parent
+&lt;g-button @click=&quot;loading = !loading&quot;&gt;BTN&lt;/button&gt;
+</code></pre>
 <p>解决办法.</p>
 <ol>
 <li>父元素事件绑定中添加修饰符native.</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">//parent<br>&lt;g-button @click.native=<span class="hljs-string">"loading = !loading"</span>&gt;BTN&lt;/button&gt;<br></code></pre></td></tr></table></figure>
+<pre><code class="bash">//parent
+&lt;g-button @click.native=&quot;loading = !loading&quot;&gt;BTN&lt;/button&gt;
+</code></pre>
 <ol start="2">
 <li>子组件中监听自身的click事件,调用函数给父组件发送click事件,父组件监听该click事件.</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs bash">//parent<br>&lt;g-button @click=<span class="hljs-string">"loading = !loading"</span>&gt;BTN&lt;/button&gt;<br><br>//component<br>&lt;button @click=<span class="hljs-string">"_click"</span>&gt;<br>    &lt;slot&gt;&lt;/slot&gt;<br>&lt;/button&gt;<br><br>methods:&#123;<br>    <span class="hljs-function"><span class="hljs-title">_click</span></span>()&#123;<br>        this.<span class="hljs-variable">$emit</span>(<span class="hljs-string">'click'</span>)<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<pre><code class="bash">//parent
+&lt;g-button @click=&quot;loading = !loading&quot;&gt;BTN&lt;/button&gt;
+
+//component
+&lt;button @click=&quot;_click&quot;&gt;
+    &lt;slot&gt;&lt;/slot&gt;
+&lt;/button&gt;
+
+methods:{
+    _click(){
+        this.$emit(&#39;click&#39;)
+    }
+}
+</code></pre>
 <h4 id="3-scss子选择器"><a href="#3-scss子选择器" class="headerlink" title="3. scss子选择器"></a>3. scss子选择器</h4><p>注意:子选择器写在子元素上,而不是父元素上</p>
-<p>错误:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs bash">//<span class="hljs-literal">false</span><br>&lt;ul&gt;<br>    &lt;li&gt;1&lt;/li&gt;<br>    &lt;li&gt;2&lt;/li&gt;<br>    &lt;li&gt;3&lt;/li&gt;<br>&lt;/ul&gt;<br><br>ul&#123;<br>    &amp;:first-child&#123;<br>        color:red<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure></p>
-<p>正确:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs bash">//<span class="hljs-literal">true</span><br>&lt;ul&gt;<br>    &lt;li&gt;1&lt;/li&gt;<br>    &lt;li&gt;2&lt;/li&gt;<br>    &lt;li&gt;3&lt;/li&gt;<br>&lt;/ul&gt;<br><br>ul&#123;<br>    li&#123;<br>        &amp;:first-child&#123;<br>            color:red<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure></p>
+<p>错误:</p>
+<pre><code class="bash">//false
+&lt;ul&gt;
+    &lt;li&gt;1&lt;/li&gt;
+    &lt;li&gt;2&lt;/li&gt;
+    &lt;li&gt;3&lt;/li&gt;
+&lt;/ul&gt;
+
+ul{
+    &amp;:first-child{
+        color:red
+    }
+}
+</code></pre>
+<p>正确:</p>
+<pre><code class="bash">//true
+&lt;ul&gt;
+    &lt;li&gt;1&lt;/li&gt;
+    &lt;li&gt;2&lt;/li&gt;
+    &lt;li&gt;3&lt;/li&gt;
+&lt;/ul&gt;
+
+ul{
+    li{
+        &amp;:first-child{
+            color:red
+        }
+    }
+}
+</code></pre>
 <ol start="4">
 <li>几个有用子选择器</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs undefined">//第一个元素<br><br>li:first-child<br><br>//最后一个元素<br>li:last-child<br><br>//非第一个元素<br><br>li:not(:first-child)<br></code></pre></td></tr></table></figure>
-<h4 id="4-测试相关"><a href="#4-测试相关" class="headerlink" title="4. 测试相关"></a>4. 测试相关</h4><ol>
+<pre><code>//第一个元素
+
+li:first-child
+
+//最后一个元素
+li:last-child
+
+//非第一个元素
+
+li:not(:first-child)
+
+</code></pre><h4 id="4-测试相关"><a href="#4-测试相关" class="headerlink" title="4. 测试相关"></a>4. 测试相关</h4><ol>
 <li>BDD 行为驱动开发 (用自然语言描述)</li>
 <li>TDD 测试驱动开发 (通过测试)</li>
 <li>Assert 断言 (主观认为,例如console.log)</li>
@@ -121,155 +107,42 @@
 <h5 id="库-chai-js"><a href="#库-chai-js" class="headerlink" title="库 chai.js"></a>库 chai.js</h5><p>Should 应该</p>
 <p>Expect 期望</p>
 <p>Assert 断言</p>
-<p>安装<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm -D chai<br></code></pre></td></tr></table></figure></p>
+<p>安装</p>
+<pre><code class="bash">npm -D chai
+</code></pre>
 <p>使用</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">import chai from <span class="hljs-string">'chai'</span><br>const &#123; expect &#125; = chai<br><span class="hljs-built_in">let</span> <span class="hljs-built_in">test</span> = <span class="hljs-string">'abc'</span><br>expect(<span class="hljs-built_in">test</span>).to.eq(<span class="hljs-string">'abc'</span>)<br></code></pre></td></tr></table></figure>
+<pre><code class="bash">import chai from &#39;chai&#39;
+const { expect } = chai
+let test = &#39;abc&#39;
+expect(test).to.eq(&#39;abc&#39;)
+</code></pre>
 <h5 id="mock"><a href="#mock" class="headerlink" title="mock"></a>mock</h5><p> chai-spies</p>
 <p> 监听函数</p>
 <p>使用:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs bash">//引入<br>import chai from <span class="hljs-string">'chai'</span><br>import spies from <span class="hljs-string">'chai-spies'</span><br>chai.use(spies)<br>const &#123; expect &#125; = chai<br><br>//vue使用<br>const Constructor = Vue.extend(gButton);<br>const vm = new Constructor(&#123;<br>    propsData: &#123;<br>        icon: <span class="hljs-string">'setting'</span>,<br>    &#125;<br>&#125;)<br>vm.<span class="hljs-variable">$mount</span>();<br><span class="hljs-built_in">let</span> spy = chai.spy(<span class="hljs-function"><span class="hljs-title">function</span></span> () &#123; &#125;)<br>vm.<span class="hljs-variable">$on</span>(<span class="hljs-string">'click'</span>, spy)<br><span class="hljs-built_in">let</span> button = vm.<span class="hljs-variable">$el</span><br>button.click();<br>expect(spy).to.have.been.called()<br></code></pre></td></tr></table></figure>
+<pre><code class="bash">//引入
+import chai from &#39;chai&#39;
+import spies from &#39;chai-spies&#39;
+chai.use(spies)
+const { expect } = chai
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/03/Vue的几个小坑&子选择器&测试相关/" data-id="clq63gkyg0030iwfqe55tlg68" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
-
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2019/04/09/自动化测试&发布npm包/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          自动化测试&amp;发布npm包
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2019/03/04/截图插件vue-cropper的使用/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">截图插件vue-cropper的使用</div>
-    </a>
-  
-</nav>
-
-  
-</article>
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/ES6/">ES6</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JS/">JS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/TS/">TS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/node/">node</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/vue/">vue</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/webpack/">webpack</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/业务代码/">业务代码</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/库/">库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/笔记/">笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机基础/">计算机基础</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/面试题/">面试题</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/">ES6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TS/">TS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/">webpack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/业务代码/">业务代码</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/库/">库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机基础/">计算机基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试题/">面试题</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/CSS/" style="font-size: 18.75px;">CSS</a> <a href="/tags/ES6/" style="font-size: 16.25px;">ES6</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/HTTP/" style="font-size: 15px;">HTTP</a> <a href="/tags/JS/" style="font-size: 20px;">JS</a> <a href="/tags/TS/" style="font-size: 17.5px;">TS</a> <a href="/tags/git/" style="font-size: 11.25px;">git</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/vue/" style="font-size: 18.75px;">vue</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/业务代码/" style="font-size: 13.75px;">业务代码</a> <a href="/tags/库/" style="font-size: 12.5px;">库</a> <a href="/tags/笔记/" style="font-size: 10px;">笔记</a> <a href="/tags/计算机基础/" style="font-size: 10px;">计算机基础</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a> <a href="/tags/面试题/" style="font-size: 10px;">面试题</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2023/02/02/手写Promise-all/">手写Promise.all</a>
-          </li>
-        
-          <li>
-            <a href="/2023/02/02/Canvas和SVG区别/">Canvas和SVG区别</a>
-          </li>
-        
-          <li>
-            <a href="/2020/02/12/常见排序算法/">常见排序算法</a>
-          </li>
-        
-          <li>
-            <a href="/2020/01/17/TS声明/">TS声明</a>
-          </li>
-        
-          <li>
-            <a href="/2020/01/16/TS高级类型/">TS类型</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2023 Roxas Deng<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/script.js"></script>
-
-
-
-  </div>
-</body>
-</html>
+//vue使用
+const Constructor = Vue.extend(gButton);
+const vm = new Constructor({
+    propsData: {
+        icon: &#39;setting&#39;,
+    }
+})
+vm.$mount();
+let spy = chai.spy(function () { })
+vm.$on(&#39;click&#39;, spy)
+let button = vm.$el
+button.click();
+expect(spy).to.have.been.called()
+</code></pre>
+</div><div class="p-copyright"><blockquote><div class="p-copyright-author"><span class="p-copyright-key">本文作者：</span><span class="p-copytight-value"><a href="mailto:litreily@163.com">Roxas Deng</a></span></div><div class="p-copyright-link"><span class="p-copyright-key">本文链接：</span><span class="p-copytight-value"><a href="/2019/04/03/Vue的几个小坑&amp;子选择器&amp;测试相关/">http://yoursite.com/2019/04/03/Vue的几个小坑&amp;子选择器&amp;测试相关/</a></span></div><div class="p-copyright-note"><span class="p-copyright-key">版权声明：</span><span class="p-copytight-value">本博客所有文章除特殊声明外，均采用<a rel="nofollow" target="_blank" href="https://creativecommons.org/licenses/by-nc/4.0/"> CC BY-NC 4.0 </a>许可协议。转载请注明出处 <a href="http://yoursite.com">Roxas Deng的博客</a>！</span></div></blockquote></div></article><div class="p-info box"><span class="p-tags"><i class="fa fa-tag"></i><a href="/tags/笔记/">笔记</a></span></div><aside id="toc"><div class="toc-title">目录</div><nav><ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-vue中html属性使用简写的问题"><span class="toc-number">1.</span> <span class="toc-text">1. vue中html属性使用简写的问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-组件点击事件失效的问题"><span class="toc-number">2.</span> <span class="toc-text">2. 组件点击事件失效的问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-scss子选择器"><span class="toc-number">3.</span> <span class="toc-text">3. scss子选择器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-测试相关"><span class="toc-number">4.</span> <span class="toc-text">4. 测试相关</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#库-chai-js"><span class="toc-number">4.1.</span> <span class="toc-text">库 chai.js</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#mock"><span class="toc-number">4.2.</span> <span class="toc-text">mock</span></a></li></ol></li></ol></nav></aside></div><section class="p-ext"><div class="l-pager l-pager-dtl box"><a class="prev" href="/2019/04/09/自动化测试&amp;发布npm包/">&lt; 自动化测试&amp;发布npm包</a><a class="next" href="/2019/03/04/截图插件vue-cropper的使用/">截图插件vue-cropper的使用 &gt;</a></div></section><footer><p>Copyright © 2016 - 2023 <a href="/." rel="nofollow">RoxasDengBlog</a> | <strong><a rel="nofollow" target="_blank" href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a></strong><br><span id="busuanzi_container_site_uv"><i class="fa fa-user"></i><span id="busuanzi_value_site_uv"></span></span> <span id="busuanzi_container_site_pv"><i class="fa fa-eye"></i><span id="busuanzi_value_site_pv"></span></span> | Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a>Theme with<a rel="nofollow" target="_blank" href="https://github.com/litreily/snark-hexo"> snark.</a></p></footer></div></div></div><script type="text/javascript" src="/js/search.js"></script><script type="text/javascript" src="/js/top.js"></script><script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script><script>var search_path = 'search.xml';
+if (search_path.length == 0) {
+    search_path = 'search.xml';
+}
+var path = '/' + search_path;
+searchFunc(path, 'local-search-input', 'local-search-result');
+</script><script type="text/javascript" src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.1" async></script></body></html>

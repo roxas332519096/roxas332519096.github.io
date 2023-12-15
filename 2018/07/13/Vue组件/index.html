@@ -1,105 +1,47 @@
-<!DOCTYPE html>
-<html>
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="utf-8">
-  
-
-  
-  <title>Vue组件 | RoxasDengBlog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="vue组件为什么要使用组件提高代码的复用性 组件注册全局注册优点:都可以使用 缺点:权限太大,容错率降低 123Vue.component(&amp;apos;my-component&amp;apos;,&amp;#123;    template:&amp;apos;&amp;lt;div&amp;gt;...&amp;lt;div&amp;gt;&amp;apos;&amp;#125;) 局部注册123456789101112131415161718192021//实例">
-<meta name="keywords" content="vue">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Vue组件">
-<meta property="og:url" content="http://yoursite.com/2018/07/13/Vue组件/index.html">
-<meta property="og:site_name" content="RoxasDengBlog">
-<meta property="og:description" content="vue组件为什么要使用组件提高代码的复用性 组件注册全局注册优点:都可以使用 缺点:权限太大,容错率降低 123Vue.component(&amp;apos;my-component&amp;apos;,&amp;#123;    template:&amp;apos;&amp;lt;div&amp;gt;...&amp;lt;div&amp;gt;&amp;apos;&amp;#125;) 局部注册123456789101112131415161718192021//实例">
-<meta property="og:locale" content="zh_CN">
-<meta property="og:updated_time" content="2023-12-15T01:47:13.838Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Vue组件">
-<meta name="twitter:description" content="vue组件为什么要使用组件提高代码的复用性 组件注册全局注册优点:都可以使用 缺点:权限太大,容错率降低 123Vue.component(&amp;apos;my-component&amp;apos;,&amp;#123;    template:&amp;apos;&amp;lt;div&amp;gt;...&amp;lt;div&amp;gt;&amp;apos;&amp;#125;) 局部注册123456789101112131415161718192021//实例">
-  
-    <link rel="alternate" href="/atom.xml" title="RoxasDengBlog" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
-</head>
-</html>
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">RoxasDengBlog</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-Vue组件" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/13/Vue组件/" class="article-date">
-  <time datetime="2018-07-13T15:05:25.000Z" itemprop="datePublished">2018-07-13</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/vue/">vue</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      Vue组件
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="vue组件"><a href="#vue组件" class="headerlink" title="vue组件"></a>vue组件</h3><h4 id="为什么要使用组件"><a href="#为什么要使用组件" class="headerlink" title="为什么要使用组件"></a>为什么要使用组件</h4><p>提高代码的复用性</p>
+<!DOCTYPE html><html lang="en"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><meta name="theme-color" content="#2d4356"><meta name="baidu-site-verification"><title>Vue组件 | RoxasDengBlog</title><link rel="stylesheet" type="text/css" href="/css/style.css"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.png"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script></head><link rel="stylesheet" type="text/css" href="/plugins/highlight/atom-one-dark.min.css"><script type="text/javascript" src="/plugins/highlight/highlight.min.js"></script><script>hljs.initHighlightingOnLoad();
+</script><script type="text/javascript" src="/js/ready.js" async></script><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"><body class="night"><div class="mobile-head" id="mobile-head"><div class="navbar-icon"><span></span><span></span><span></span></div><div class="navbar-title"><a href="/">LITREILY</a></div><div class="navbar-search"><!--= show a circle here--></div></div><div class="h-wrapper" id="menu"><nav class="h-head box"><div class="m-hdimg"><a class="hdimg img" href="/"><img class="nofancybox" src="/img/profile.jpg" width="128" height="128"></a><h1 class="ttl"><a href="/">RoxasDengBlog</a></h1></div><p class="m-desc">心之所向，无惧无悔,<br>愿求仁得仁，复无怨怼！</p><div class="m-nav"><ul><li><span class="dot">●</span><a href="/archives/">归档</a></li><li><span class="dot">●</span><a href="/categories/">分类</a></li><li><span class="dot">●</span><a href="/tags/">标签</a></li><li><span class="dot">●</span><a href="/about/">关于</a></li><li><span class="dot">●</span><a href="/atom.xml">RSS</a></li><li class="m-sch"><form class="form" id="j-formsch" method="get"><input class="txt" type="text" id="local-search-input" name="q" value="搜索" onfocus="if(this.value=='搜索'){this.value='';}" onblur="if(this.value==''){this.value='搜索';}"><input type="text" style="display:none;"></form></li></ul><div id="local-search-result"></div></div></nav></div><div id="back2Top"><a class="fa fa-arrow-up" title="Back to top" href="#"></a></div><div class="box" id="container"><div class="l-wrapper"><div class="l-content box"><div class="l-post l-post-art"><article class="p-art"><div class="p-header box"><h1 class="p-title">Vue组件</h1><div class="p-info"><span class="p-date"><i class="fa fa-calendar"></i><a href="/2018/07/13/Vue组件/">2018-07-13</a></span><span class="p-category"><i class="fa fa-folder"></i><a href="/categories/vue/">vue</a></span><span class="p-view" id="busuanzi_container_page_pv"><i class="fa fa-eye"></i><span id="busuanzi_value_page_pv"></span></span></div></div><div class="p-content"><h3 id="vue组件"><a href="#vue组件" class="headerlink" title="vue组件"></a>vue组件</h3><h4 id="为什么要使用组件"><a href="#为什么要使用组件" class="headerlink" title="为什么要使用组件"></a>为什么要使用组件</h4><p>提高代码的复用性</p>
 <h4 id="组件注册"><a href="#组件注册" class="headerlink" title="组件注册"></a>组件注册</h4><h5 id="全局注册"><a href="#全局注册" class="headerlink" title="全局注册"></a>全局注册</h5><p>优点:都可以使用</p>
 <p>缺点:权限太大,容错率降低</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs undefined">Vue.component(&apos;my-component&apos;,&#123;<br>    template:&apos;&lt;div&gt;...&lt;div&gt;&apos;<br>&#125;)<br></code></pre></td></tr></table></figure>
-<h4 id="局部注册"><a href="#局部注册" class="headerlink" title="局部注册"></a>局部注册</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs bash">//实例内包含组件A<br><br>var componentA = &#123;<br>    template:<span class="hljs-string">'&lt;div&gt;A&lt;/div&gt;'</span><br>&#125;<br><br>new Vue(&#123;<br>    el:<span class="hljs-string">''</span>,<br>    components:&#123;<br>        <span class="hljs-string">'component-a'</span>:componentA<br>    &#125;<br>&#125;)<br><br>//局部组件B内使用局部组件A<br><br>var componentB = &#123;<br>    template:<span class="hljs-string">'&lt;div&gt;A&lt;/div&gt;'</span>,<br>    components:&#123;<br>        <span class="hljs-string">'compontent-a'</span>:componentA<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<pre><code>Vue.component(&#39;my-component&#39;,{
+    template:&#39;&lt;div&gt;...&lt;div&gt;&#39;
+})
+</code></pre><h4 id="局部注册"><a href="#局部注册" class="headerlink" title="局部注册"></a>局部注册</h4><pre><code class="bash">//实例内包含组件A
+
+var componentA = {
+    template:&#39;&lt;div&gt;A&lt;/div&gt;&#39;
+}
+
+new Vue({
+    el:&#39;&#39;,
+    components:{
+        &#39;component-a&#39;:componentA
+    }
+})
+
+//局部组件B内使用局部组件A
+
+var componentB = {
+    template:&#39;&lt;div&gt;A&lt;/div&gt;&#39;,
+    components:{
+        &#39;compontent-a&#39;:componentA
+    }
+}
+
+</code></pre>
 <h4 id="标签受限下使用组件"><a href="#标签受限下使用组件" class="headerlink" title="标签受限下使用组件"></a>标签受限下使用组件</h4><p>table 直接使用会踢出去,因为table只能用tr td tbody 等元素</p>
 <p>要使用is属性,把原标签替换成组件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs undefined">//不能正常运行<br>&lt;table&gt;<br>    &lt;component-a&gt;/&lt;component-a&gt;<br>&lt;/table&gt;<br><br>//使用is属性替换<br><br>&lt;table&gt;<br>    &lt;tbody is=&quot;component-a&quot;&gt;&lt;/tobdy&gt;<br>&lt;/table&gt;<br></code></pre></td></tr></table></figure>
-<h4 id="组件注意事项"><a href="#组件注意事项" class="headerlink" title="组件注意事项"></a>组件注意事项</h4><ol>
+<pre><code>//不能正常运行
+&lt;table&gt;
+    &lt;component-a&gt;/&lt;component-a&gt;
+&lt;/table&gt;
+
+//使用is属性替换
+
+&lt;table&gt;
+    &lt;tbody is=&quot;component-a&quot;&gt;&lt;/tobdy&gt;
+&lt;/table&gt;
+
+</code></pre><h4 id="组件注意事项"><a href="#组件注意事项" class="headerlink" title="组件注意事项"></a>组件注意事项</h4><ol>
 <li><p>组件名称使用小写字母加-进行命名 如my-component</p>
 </li>
 <li><p>template内只能有一个根元素</p>
@@ -108,38 +50,232 @@
 </li>
 <li><p>组件的data必须是一个方法,返回一个对象,因为对象的内存地址不一样</p>
 <p> 例</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs undefined">template:&apos;&lt;p&gt;&#123;&#123;count&#125;&#125;&lt;p&gt;&apos;<br>data:function()&#123;<br>    return &#123;<br>        count:0<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-</li>
+<pre><code> template:&#39;&lt;p&gt;{{count}}&lt;p&gt;&#39;
+ data:function(){
+     return {
+         count:0
+     }
+ }
+</code></pre></li>
 </ol>
 <h4 id="props"><a href="#props" class="headerlink" title="props"></a>props</h4><ol>
 <li>使用props接收从父组件传递的参数,props中定义的属性都可以直接在组件中的使用</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;div id=<span class="hljs-string">"app"</span>&gt;<br>    &lt;child-component msg=<span class="hljs-string">"父组件传递过来的内容"</span>&gt;&lt;/child-component&gt;<br>&lt;/div&gt;<br><br>&lt;script&gt;<br>    var app = new Vue(&#123;<br>        el:<span class="hljs-string">'#app'</span>,<br>        components:&#123;<br>            <span class="hljs-string">'child-component'</span>:&#123;<br>                props:[<span class="hljs-string">'msg'</span>],<br>                template:<span class="hljs-string">'&lt;p&gt;&#123;&#123;msg&#125;&#125;&lt;p&gt;'</span><br>            &#125;<br>        &#125;<br>    &#125;)<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
+<pre><code class="bash">&lt;div id=&quot;app&quot;&gt;
+    &lt;child-component msg=&quot;父组件传递过来的内容&quot;&gt;&lt;/child-component&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+    var app = new Vue({
+        el:&#39;#app&#39;,
+        components:{
+            &#39;child-component&#39;:{
+                props:[&#39;msg&#39;],
+                template:&#39;&lt;p&gt;{{msg}}&lt;p&gt;&#39;
+            }
+        }
+    })
+&lt;/script&gt;
+</code></pre>
 <p>2.props来自父级,而组件中data return的数据是组件自己的数据,两种情况作用域就是组件本身,可以在template,computed,methods中直接使用</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs bash">components:&#123;<br>    <span class="hljs-string">'child-component'</span>:&#123;<br>        props:[<span class="hljs-string">'msg'</span>],<br>        data:<span class="hljs-function"><span class="hljs-title">function</span></span>()&#123;<br>            <span class="hljs-built_in">return</span> &#123;<br>                count:0<br>            &#125;<br>        &#125;,<br>        methods:&#123;<br>            method1:<span class="hljs-function"><span class="hljs-title">function</span></span>()&#123;<br>                <span class="hljs-built_in">return</span> this.count<br>            &#125;<br>        &#125;,<br>        computed:&#123;<br>            computed1:<span class="hljs-function"><span class="hljs-title">function</span></span>()&#123;<br>                <span class="hljs-built_in">return</span> this.count<br>            &#125;<br>        &#125;,<br>        template:<span class="hljs-string">'&lt;p&gt;&#123;&#123;msg&#125;&#125; &#123;&#123;count&#125;&#125; &#123;&#123;method1()&#125;&#125; &#123;&#123;computed1&#125;&#125;&lt;p&gt;'</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<pre><code class="bash">components:{
+    &#39;child-component&#39;:{
+        props:[&#39;msg&#39;],
+        data:function(){
+            return {
+                count:0
+            }
+        },
+        methods:{
+            method1:function(){
+                return this.count
+            }
+        },
+        computed:{
+            computed1:function(){
+                return this.count
+            }
+        },
+        template:&#39;&lt;p&gt;{{msg}} {{count}} {{method1()}} {{computed1}}&lt;p&gt;&#39;
+    }
+}
+</code></pre>
 <ol start="3">
 <li><p>props的值是字符串数组与对象</p>
 </li>
 <li><p>可以v-bind拿到来自父组件的动态数据</p>
 </li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;div id=<span class="hljs-string">"app"</span>&gt;<br>    &lt;child-component msg=<span class="hljs-string">"父组件传递过来的内容"</span>&gt;&lt;/child-component&gt;<br>    &lt;child-component v-bind:msg=<span class="hljs-string">"msg"</span>&gt;&lt;/child-component&gt;<br>&lt;/div&gt;<br><br>&lt;script&gt;<br>    var app = new Vue(&#123;<br>        el: <span class="hljs-string">'#app'</span>,<br>        data:&#123;<br>            msg:<span class="hljs-string">'父组件data中传递过来的内容'</span><br>        &#125;,<br>        components: &#123;<br>            <span class="hljs-string">'child-component'</span>: &#123;<br>                props: [<span class="hljs-string">'msg'</span>],<br>                template: <span class="hljs-string">'&lt;p&gt;&#123;&#123;msg&#125;&#125;&lt;p&gt;'</span><br>            &#125;<br>        &#125;<br>    &#125;)<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
+<pre><code class="bash">&lt;div id=&quot;app&quot;&gt;
+    &lt;child-component msg=&quot;父组件传递过来的内容&quot;&gt;&lt;/child-component&gt;
+    &lt;child-component v-bind:msg=&quot;msg&quot;&gt;&lt;/child-component&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+    var app = new Vue({
+        el: &#39;#app&#39;,
+        data:{
+            msg:&#39;父组件data中传递过来的内容&#39;
+        },
+        components: {
+            &#39;child-component&#39;: {
+                props: [&#39;msg&#39;],
+                template: &#39;&lt;p&gt;{{msg}}&lt;p&gt;&#39;
+            }
+        }
+    })
+&lt;/script&gt;
+</code></pre>
 <p>v:bind传递一个数组与直接传递一个数组的区别</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;component arr=<span class="hljs-string">"[0,1,2]"</span>&gt;&lt;/component&gt; //输出7,解析成字符串,长度为7<br><br>&lt;component :arr=<span class="hljs-string">"[0,1,2]"</span>&gt;&lt;/component&gt; //输出3,解析成数组,长度为3<br><br>....<br>props:[<span class="hljs-string">'arr'</span>],<br>template:<span class="hljs-string">'&lt;p&gt;arr.length&lt;/p&gt;'</span><br></code></pre></td></tr></table></figure>
+<pre><code class="bash">&lt;component arr=&quot;[0,1,2]&quot;&gt;&lt;/component&gt; //输出7,解析成字符串,长度为7
+
+&lt;component :arr=&quot;[0,1,2]&quot;&gt;&lt;/component&gt; //输出3,解析成数组,长度为3
+
+....
+props:[&#39;arr&#39;],
+template:&#39;&lt;p&gt;arr.length&lt;/p&gt;&#39;
+</code></pre>
 <h4 id="单向数据流"><a href="#单向数据流" class="headerlink" title="单向数据流"></a>单向数据流</h4><h5 id="解析"><a href="#解析" class="headerlink" title="解析:"></a>解析:</h5><p>通过props传递数据是单向的,父组件数据变化会传递给子组件,反过来不行.</p>
 <h5 id="目的"><a href="#目的" class="headerlink" title="目的:"></a>目的:</h5><p>将父子租借解耦,避免子组件无意中修改了父组件的状态</p>
 <h5 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景:"></a>应用场景:</h5><h5 id="场景1"><a href="#场景1" class="headerlink" title="场景1"></a>场景1</h5><p>父组件传递初始值,子组件将它作为初始值保存起来,在自己的作用域下随意使用和修改,这样情况可以在组件data内再声明一个数据,引用父组件的prop</p>
 <p>步骤1: 注册组件<br>步骤2: 将父组件的数据传递尽力啊,并在子组件中用props接受<br>步骤3: 将传递进来的数据通过初始值保存起来</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;div id=<span class="hljs-string">"app"</span>&gt;<br>    &lt;my-comp v-bind:msg=<span class="hljs-string">"msg"</span>&gt;&lt;/my-comp&gt;<br>&lt;/div&gt;<br>&lt;script&gt;<br>    var app = new Vue(&#123;<br>        el:<span class="hljs-string">'#app'</span>,<br>        data:&#123;<br>            msg:1<br>        &#125;,<br>        components:&#123;<br>            <span class="hljs-string">'my-comp'</span>:&#123;<br>                props:[<span class="hljs-string">'msg'</span>],<br>                template:<span class="hljs-string">'&lt;p&gt;&#123;&#123;childMsg&#125;&#125;&lt;/p&gt;'</span>,<br>                data:<span class="hljs-function"><span class="hljs-title">function</span></span>()&#123;<br>                    <span class="hljs-built_in">return</span> &#123;<br>                       childMsg : this.msg<br>                    &#125;<br>                &#125;<br>            &#125;<br>        &#125;<br>    &#125;)<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
+<pre><code class="bash"> &lt;div id=&quot;app&quot;&gt;
+     &lt;my-comp v-bind:msg=&quot;msg&quot;&gt;&lt;/my-comp&gt;
+ &lt;/div&gt;
+ &lt;script&gt;
+     var app = new Vue({
+         el:&#39;#app&#39;,
+         data:{
+             msg:1
+         },
+         components:{
+             &#39;my-comp&#39;:{
+                 props:[&#39;msg&#39;],
+                 template:&#39;&lt;p&gt;{{childMsg}}&lt;/p&gt;&#39;,
+                 data:function(){
+                     return {
+                        childMsg : this.msg
+                     }
+                 }
+             }
+         }
+     })
+ &lt;/script&gt;
+</code></pre>
 <h5 id="场景2"><a href="#场景2" class="headerlink" title="场景2"></a>场景2</h5><p>prop作为需要被转变的原始值传入.这种情况用计算属性</p>
 <p>步骤1:注册组件<br>步骤2:父组件传递数据,子组件props接收<br>步骤3:传递过来的数据通过计算属性进行重新计算</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;div id=<span class="hljs-string">"app"</span>&gt;<br>    &lt;input <span class="hljs-built_in">type</span>=<span class="hljs-string">"text"</span> v-model=<span class="hljs-string">"width"</span>&gt;<br>    &lt;my-comp v-bind:width=<span class="hljs-string">"width"</span>&gt;&lt;/my-comp&gt;<br>&lt;/div&gt;<br>&lt;script&gt;<br>    var app = new Vue(&#123;<br>        el:<span class="hljs-string">'#app'</span>,<br>        data:&#123;<br>            width:0<br>        &#125;,<br>        components:&#123;<br>            <span class="hljs-string">'my-comp'</span>:&#123;<br>                props:[<span class="hljs-string">'width'</span>],<br>                template:<span class="hljs-string">'&lt;div :style="style"&gt;&lt;div&gt;'</span>,<br>                computed:&#123;<br>                    style:<span class="hljs-function"><span class="hljs-title">function</span></span>()&#123;<br>                        <span class="hljs-built_in">return</span> &#123;<br>                            width:this.width + <span class="hljs-string">'px'</span>,<br>                            background:<span class="hljs-string">'red'</span>,<br>                            height:<span class="hljs-string">'30px'</span><br>                        &#125;<br>                    &#125;<br>                &#125;<br>            &#125;<br>        &#125;<br>    &#125;)<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
+<pre><code class="bash">&lt;div id=&quot;app&quot;&gt;
+    &lt;input type=&quot;text&quot; v-model=&quot;width&quot;&gt;
+    &lt;my-comp v-bind:width=&quot;width&quot;&gt;&lt;/my-comp&gt;
+&lt;/div&gt;
+&lt;script&gt;
+    var app = new Vue({
+        el:&#39;#app&#39;,
+        data:{
+            width:0
+        },
+        components:{
+            &#39;my-comp&#39;:{
+                props:[&#39;width&#39;],
+                template:&#39;&lt;div :style=&quot;style&quot;&gt;&lt;div&gt;&#39;,
+                computed:{
+                    style:function(){
+                        return {
+                            width:this.width + &#39;px&#39;,
+                            background:&#39;red&#39;,
+                            height:&#39;30px&#39;
+                        }
+                    }
+                }
+            }
+        }
+    })
+&lt;/script&gt;
+</code></pre>
 <h4 id="数据验证"><a href="#数据验证" class="headerlink" title="数据验证"></a>数据验证</h4><p>可以验证tpye类型可以是<br>Stiring<br>Number<br>Boolean<br>Object<br>Array<br>Function</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;script&gt;<br>    var app = new Vue(&#123;<br>        el:<span class="hljs-string">'#app'</span>,<br>        components:&#123;<br>            <span class="hljs-string">'my-comp'</span>:&#123;<br>                template:<span class="hljs-string">'&lt;div"&gt;&lt;div&gt;'</span>,<br>                props:&#123;<br>                    propA:Number,//数字<br>                    propB:[String,Number],//字符串或数字<br>                    propC:&#123;<br>                        <span class="hljs-built_in">type</span>:Boolean,<br>                        default:<span class="hljs-literal">true</span>//当不传入时的默认值<br>                    &#125;,<br>                    propD:&#123;<br>                        <span class="hljs-built_in">type</span>:Number,<br>                        required:<span class="hljs-literal">true</span>//必须传入<br>                    &#125;,<br>                    propE:&#123;<br>                        <span class="hljs-built_in">type</span>:Array,<br>                        default:<span class="hljs-function"><span class="hljs-title">function</span></span>()&#123;//当数组时默认值必须是一个函数并返回一个数组<br>                            <span class="hljs-built_in">return</span> []<br>                        &#125;<br>                    &#125;,<br>                    propF:&#123;<br>                        validator:<span class="hljs-keyword">function</span>(val)&#123;//条件判断<br>                            <span class="hljs-built_in">return</span> val &gt; 10;<br>                        &#125;<br>                    &#125;<br>                &#125;<br>            &#125;<br>        &#125;<br>    &#125;)<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
+<pre><code class="bash">&lt;script&gt;
+    var app = new Vue({
+        el:&#39;#app&#39;,
+        components:{
+            &#39;my-comp&#39;:{
+                template:&#39;&lt;div&quot;&gt;&lt;div&gt;&#39;,
+                props:{
+                    propA:Number,//数字
+                    propB:[String,Number],//字符串或数字
+                    propC:{
+                        type:Boolean,
+                        default:true//当不传入时的默认值
+                    },
+                    propD:{
+                        type:Number,
+                        required:true//必须传入
+                    },
+                    propE:{
+                        type:Array,
+                        default:function(){//当数组时默认值必须是一个函数并返回一个数组
+                            return []
+                        }
+                    },
+                    propF:{
+                        validator:function(val){//条件判断
+                            return val &gt; 10;
+                        }
+                    }
+                }
+            }
+        }
+    })
+&lt;/script&gt;
+</code></pre>
 <h4 id="组件通信"><a href="#组件通信" class="headerlink" title="组件通信"></a>组件通信</h4><h4 id="自定义事件"><a href="#自定义事件" class="headerlink" title="自定义事件"></a>自定义事件</h4><p>子组件给父组件传递数据</p>
 <p>子组件用$emit()发布事件,父组件用v-on监听子组件的事件</p>
 <p>步骤1:自定义事件<br>步骤2:在子组件用$emit发布事件,第一个参数是事件名,后面参数是传递的数据<br>步骤3:在自定义事件用一个参数来接受</p>
-<p>例:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;div id=<span class="hljs-string">"app"</span>&gt;<br>    &lt;p&gt;库存:&#123;&#123;total&#125;&#125;&lt;/p&gt;<br>    &lt;btn-comp <br>        @change=<span class="hljs-string">"handleTotal"</span>&gt;&lt;/btn-comp&gt;<br>&lt;/div&gt;<br>&lt;script&gt;<br>        var app = new Vue(&#123;<br>            el: <span class="hljs-string">'#app'</span>,<br>            data: &#123;<br>                total: 0<br>            &#125;,<br>            components: &#123;<br>                <span class="hljs-string">'btn-comp'</span>: &#123;<br>                    template: `<br>                    &lt;div&gt;<br>                        &lt;button @click=<span class="hljs-string">"plusOne"</span>&gt;+1&lt;/button&gt;<br>                        &lt;button @click=<span class="hljs-string">"minOne"</span>&gt;-1&lt;/button&gt;<br>                    &lt;/div&gt;<br>                    `<br>                    ,<br>                    data: <span class="hljs-function"><span class="hljs-title">function</span></span> () &#123;<br>                        <span class="hljs-built_in">return</span> &#123;<br>                            count: 0<br>                        &#125;<br>                    &#125;,<br>                    methods: &#123;<br>                        plusOne: <span class="hljs-function"><span class="hljs-title">function</span></span> () &#123;<br>                            this.count++;<br>                            this.<span class="hljs-variable">$emit</span>(<span class="hljs-string">'change'</span>, this.count)<br>                        &#125;,<br>                        minOne: <span class="hljs-function"><span class="hljs-title">function</span></span> () &#123;<br>                            this.count--;<br>                            this.<span class="hljs-variable">$emit</span>(<span class="hljs-string">'change'</span>, this.count)<br>                        &#125;<br>                    &#125;<br>                &#125;<br>            &#125;,<br>            methods:&#123;<br>                handleTotal:<span class="hljs-keyword">function</span>(val)&#123;<br>                    this.total = val<br>                &#125;<br>            &#125;<br>        &#125;)<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure></p>
+<p>例:</p>
+<pre><code class="bash">&lt;div id=&quot;app&quot;&gt;
+    &lt;p&gt;库存:{{total}}&lt;/p&gt;
+    &lt;btn-comp 
+        @change=&quot;handleTotal&quot;&gt;&lt;/btn-comp&gt;
+&lt;/div&gt;
+&lt;script&gt;
+        var app = new Vue({
+            el: &#39;#app&#39;,
+            data: {
+                total: 0
+            },
+            components: {
+                &#39;btn-comp&#39;: {
+                    template: `
+                    &lt;div&gt;
+                        &lt;button @click=&quot;plusOne&quot;&gt;+1&lt;/button&gt;
+                        &lt;button @click=&quot;minOne&quot;&gt;-1&lt;/button&gt;
+                    &lt;/div&gt;
+                    `
+                    ,
+                    data: function () {
+                        return {
+                            count: 0
+                        }
+                    },
+                    methods: {
+                        plusOne: function () {
+                            this.count++;
+                            this.$emit(&#39;change&#39;, this.count)
+                        },
+                        minOne: function () {
+                            this.count--;
+                            this.$emit(&#39;change&#39;, this.count)
+                        }
+                    }
+                }
+            },
+            methods:{
+                handleTotal:function(val){
+                    this.total = val
+                }
+            }
+        })
+&lt;/script&gt;
+</code></pre>
 <h4 id="在组件用使用v-model"><a href="#在组件用使用v-model" class="headerlink" title="在组件用使用v-model"></a>在组件用使用v-model</h4><p>$emit发布一个input事件,参数是传递给v-model绑定属性的值</p>
 <h5 id="v-model是一个语法糖-背后做了两步操作"><a href="#v-model是一个语法糖-背后做了两步操作" class="headerlink" title="v-model是一个语法糖,背后做了两步操作:"></a>v-model是一个语法糖,背后做了两步操作:</h5><ol>
 <li>v-bind绑定</li>
@@ -150,172 +286,342 @@
 <li>接收一个value属性</li>
 <li>在新的value时触发input事件</li>
 </ol>
-<p>例<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;div id=<span class="hljs-string">"app"</span>&gt;<br>    &lt;p&gt;库存:&#123;&#123;total&#125;&#125;&lt;/p&gt;<br>    &lt;btn-comp v-model=<span class="hljs-string">"total"</span>&gt;&lt;/btn-comp&gt;<br>&lt;/div&gt;<br>&lt;script&gt;<br>        var app = new Vue(&#123;<br>            el: <span class="hljs-string">'#app'</span>,<br>            data: &#123;<br>                total: 0<br>            &#125;,<br>            components: &#123;<br>                <span class="hljs-string">'btn-comp'</span>: &#123;<br>                    template: `<br>                    &lt;div&gt;<br>                        &lt;button @click=<span class="hljs-string">"plusOne"</span>&gt;+1&lt;/button&gt;<br>                        &lt;button @click=<span class="hljs-string">"minOne"</span>&gt;+1&lt;/button&gt;<br>                    &lt;/div&gt;<br>                    `<br>                    ,<br>                    data: <span class="hljs-function"><span class="hljs-title">function</span></span> () &#123;<br>                        <span class="hljs-built_in">return</span> &#123;<br>                            count: 0<br>                        &#125;<br>                    &#125;,<br>                    methods: &#123;<br>                        plusOne: <span class="hljs-function"><span class="hljs-title">function</span></span> () &#123;<br>                            this.count++;<br>                            this.<span class="hljs-variable">$emit</span>(<span class="hljs-string">'input'</span>, this.count)<br>                        &#125;,<br>                        minOne: <span class="hljs-function"><span class="hljs-title">function</span></span> () &#123;<br>                            this.count--;<br>                            this.<span class="hljs-variable">$emit</span>(<span class="hljs-string">'input'</span>, this.count)<br>                        &#125;<br>                    &#125;<br>                &#125;<br>            &#125;<br>        &#125;)<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure></p>
+<p>例</p>
+<pre><code class="bash">&lt;div id=&quot;app&quot;&gt;
+    &lt;p&gt;库存:{{total}}&lt;/p&gt;
+    &lt;btn-comp v-model=&quot;total&quot;&gt;&lt;/btn-comp&gt;
+&lt;/div&gt;
+&lt;script&gt;
+        var app = new Vue({
+            el: &#39;#app&#39;,
+            data: {
+                total: 0
+            },
+            components: {
+                &#39;btn-comp&#39;: {
+                    template: `
+                    &lt;div&gt;
+                        &lt;button @click=&quot;plusOne&quot;&gt;+1&lt;/button&gt;
+                        &lt;button @click=&quot;minOne&quot;&gt;+1&lt;/button&gt;
+                    &lt;/div&gt;
+                    `
+                    ,
+                    data: function () {
+                        return {
+                            count: 0
+                        }
+                    },
+                    methods: {
+                        plusOne: function () {
+                            this.count++;
+                            this.$emit(&#39;input&#39;, this.count)
+                        },
+                        minOne: function () {
+                            this.count--;
+                            this.$emit(&#39;input&#39;, this.count)
+                        }
+                    }
+                }
+            }
+        })
+&lt;/script&gt;
+</code></pre>
 <h4 id="非父组件之间的通信"><a href="#非父组件之间的通信" class="headerlink" title="非父组件之间的通信"></a>非父组件之间的通信</h4><h5 id="子组件间通信"><a href="#子组件间通信" class="headerlink" title="子组件间通信"></a>子组件间通信</h5><p>父组件data中定义<br>bus:new Vue()<br>通过this.$root.bus这条链,子组件A emit一个事件并发送数据,子组件B在created的时候订阅事件,并接收数据</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;div id=<span class="hljs-string">"app"</span>&gt;<br>    &lt;my-comp<span class="hljs-_">-a</span>&gt;&lt;/my-comp<span class="hljs-_">-a</span>&gt;<br>    &lt;my-comp-b&gt;&lt;/my-comp-b&gt;<br>&lt;/div&gt;<br>&lt;script&gt;<br>    var app = new Vue(&#123;<br>        el:<span class="hljs-string">'#app'</span>,<br>        data:&#123;<br>            bus:new Vue()<br>        &#125;,<br>        components:&#123;<br>            <span class="hljs-string">'my-comp-a'</span>:&#123;<br>                template:<span class="hljs-string">'&lt;button @click="putDatatoB"&gt;点击向b组件传递数据&lt;/button&gt;'</span>,<br>                data:<span class="hljs-function"><span class="hljs-title">function</span></span>()&#123;<br>                    <span class="hljs-built_in">return</span>&#123;<br>                        aaa:<span class="hljs-string">'A内容'</span><br>                    &#125;<br>                &#125;,<br>                methods:&#123;<br>                    putDatatoB:<span class="hljs-function"><span class="hljs-title">function</span></span>()&#123;<br>                        this.<span class="hljs-variable">$root</span>.bus.<span class="hljs-variable">$emit</span>(<span class="hljs-string">'atob'</span>,this.aaa)<br>                    &#125;<br>                &#125;<br>            &#125;,<br>            <span class="hljs-string">'my-comp-b'</span>:&#123;<br>                template:<span class="hljs-string">'&lt;div&gt;&lt;/div&gt;'</span>,<br>                created:<span class="hljs-function"><span class="hljs-title">function</span></span>()&#123;<br>                    this.<span class="hljs-variable">$root</span>.bus.<span class="hljs-variable">$on</span>(<span class="hljs-string">'atob'</span>,<span class="hljs-keyword">function</span>(val)&#123;<br>                        alert(val)<br>                    &#125;)<br>                &#125;<br>            &#125;<br>        &#125;<br>    &#125;)<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
-<h5 id="任意组件的通信"><a href="#任意组件的通信" class="headerlink" title="任意组件的通信"></a>任意组件的通信</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">let</span> eventHub = new Vue();<br>Vue.prototype.<span class="hljs-variable">$eventHub</span> = eventHub;<br>Vue.component(<span class="hljs-string">'comp-a'</span>,&#123;<br>    template:`<br>    &lt;div&gt;&lt;button @click=<span class="hljs-string">"aTob"</span>&gt;A&lt;/button&gt;&lt;/div&gt;<br>    `,<br>    methods:&#123;<br>        aTo:<span class="hljs-function"><span class="hljs-title">function</span></span>()&#123;<br>            this.<span class="hljs-variable">$evntHub</span>.<span class="hljs-variable">$emit</span>(<span class="hljs-string">'atob'</span>,<span class="hljs-string">'form a'</span>);<br>        &#125;<br>    &#125;<br>&#125;)<br>Vue.component(<span class="hljs-string">'comp-b'</span>,&#123;<br>    tempalte:<span class="hljs-string">'<br>    &lt;div&gt;&lt;span&gt;B&lt;span&gt;&lt;span ref='</span>formA<span class="hljs-string">'&gt;&lt;/span&gt;&lt;div&gt;<br>    '</span>,<br>    created:<span class="hljs-function"><span class="hljs-title">function</span></span>()&#123;<br>        this.<span class="hljs-variable">$eventHub</span>.<span class="hljs-variable">$on</span>(<span class="hljs-string">'atob'</span>,(data)=&gt;&#123;<br>            this.<span class="hljs-variable">$refs</span>.formA.textContent = data;<br>        &#125;)<br>    &#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
+<pre><code class="bash">&lt;div id=&quot;app&quot;&gt;
+    &lt;my-comp-a&gt;&lt;/my-comp-a&gt;
+    &lt;my-comp-b&gt;&lt;/my-comp-b&gt;
+&lt;/div&gt;
+&lt;script&gt;
+    var app = new Vue({
+        el:&#39;#app&#39;,
+        data:{
+            bus:new Vue()
+        },
+        components:{
+            &#39;my-comp-a&#39;:{
+                template:&#39;&lt;button @click=&quot;putDatatoB&quot;&gt;点击向b组件传递数据&lt;/button&gt;&#39;,
+                data:function(){
+                    return{
+                        aaa:&#39;A内容&#39;
+                    }
+                },
+                methods:{
+                    putDatatoB:function(){
+                        this.$root.bus.$emit(&#39;atob&#39;,this.aaa)
+                    }
+                }
+            },
+            &#39;my-comp-b&#39;:{
+                template:&#39;&lt;div&gt;&lt;/div&gt;&#39;,
+                created:function(){
+                    this.$root.bus.$on(&#39;atob&#39;,function(val){
+                        alert(val)
+                    })
+                }
+            }
+        }
+    })
+&lt;/script&gt;
+</code></pre>
+<h5 id="任意组件的通信"><a href="#任意组件的通信" class="headerlink" title="任意组件的通信"></a>任意组件的通信</h5><pre><code class="bash">let eventHub = new Vue();
+Vue.prototype.$eventHub = eventHub;
+Vue.component(&#39;comp-a&#39;,{
+    template:`
+    &lt;div&gt;&lt;button @click=&quot;aTob&quot;&gt;A&lt;/button&gt;&lt;/div&gt;
+    `,
+    methods:{
+        aTo:function(){
+            this.$evntHub.$emit(&#39;atob&#39;,&#39;form a&#39;);
+        }
+    }
+})
+Vue.component(&#39;comp-b&#39;,{
+    tempalte:&#39;
+    &lt;div&gt;&lt;span&gt;B&lt;span&gt;&lt;span ref=&#39;formA&#39;&gt;&lt;/span&gt;&lt;div&gt;
+    &#39;,
+    created:function(){
+        this.$eventHub.$on(&#39;atob&#39;,(data)=&gt;{
+            this.$refs.formA.textContent = data;
+        })
+    }
+})
+</code></pre>
 <h5 id="父组件获得子组件数据"><a href="#父组件获得子组件数据" class="headerlink" title="父组件获得子组件数据"></a>父组件获得子组件数据</h5><p>父链this.$parent<br>子链this.$refs<br>提供了为子链提供索引的方法,用特殊的属性ref为其增加一个索引</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;div id=<span class="hljs-string">"app2"</span>&gt;<br>        &#123;&#123;msg&#125;&#125;<br>        &lt;child-comp ref=<span class="hljs-string">"a"</span>&gt;&lt;/child-comp&gt;<br>        &lt;button @click=<span class="hljs-string">"getChildData"</span>&gt;点我拿到B组件数据&lt;/button&gt;<br>        &#123;&#123;formChild&#125;&#125;<br>&lt;/div&gt;<br>&lt;script&gt;<br>    var app2 = new Vue(&#123;<br>        el:<span class="hljs-string">'#app2'</span>,<br>        data:&#123;<br>            bus:new Vue(),<br>            msg:<span class="hljs-string">'数据还没修改'</span>,<br>            formChild:<span class="hljs-string">'还未拿到'</span><br>        &#125;,<br>        methods:&#123;<br>            getChildData:<span class="hljs-function"><span class="hljs-title">function</span></span>()&#123;<br>                this.formChild = this.<span class="hljs-variable">$refs</span>.a.msg //从子组件拿数据<br>            &#125;<br>        &#125;,<br>        components:&#123;<br>            <span class="hljs-string">'child-comp'</span>:&#123;<br>                template:<span class="hljs-string">'&lt;button @click="setFatherData"&gt;点我修改父组件数据&lt;/button&gt;'</span>,<br>                methods:&#123;<br>                    setFatherData:<span class="hljs-function"><span class="hljs-title">function</span></span>()&#123;<br>                        this.<span class="hljs-variable">$parent</span>.msg = <span class="hljs-string">'数据已修改了'</span> //修改父组件数据<br>                    &#125;<br>                &#125;,<br>                data:<span class="hljs-function"><span class="hljs-title">function</span></span>()&#123;<br>                    <span class="hljs-built_in">return</span>&#123;<br>                        msg:<span class="hljs-string">'我是子组件数据'</span><br>                    &#125;<br>                &#125;<br>            &#125;<br>        &#125;<br>    &#125;)<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
-<h5 id="父子组件间使用独立的eventbus"><a href="#父子组件间使用独立的eventbus" class="headerlink" title="父子组件间使用独立的eventbus"></a>父子组件间使用独立的eventbus</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs bash">//parent<br><br><span class="hljs-function"><span class="hljs-title">data</span></span>()&#123;<br>    eventBus:new Vue()<br>&#125;,<br><span class="hljs-function"><span class="hljs-title">provide</span></span>()&#123;//向子组件注入<br>    <span class="hljs-built_in">return</span> &#123;<br>        eventBus:this.eventBus<br>    &#125;<br>&#125;,<br><span class="hljs-function"><span class="hljs-title">mounted</span></span>()&#123;<br>    this.evenBus.<span class="hljs-variable">$on</span>(<span class="hljs-string">'event'</span>,(val)=&#123;//父组件b监听事件<br>        console.log(val)<br>    &#125;)<br>&#125;<br><br>//child<br>inject:[<span class="hljs-string">'eventBus'</span>],<br>methods:&#123;<br>    <span class="hljs-function"><span class="hljs-title">emitEvent</span></span>()&#123;<br>        this.evenBus.<span class="hljs-variable">$emit</span>(<span class="hljs-string">'event'</span>,<span class="hljs-string">'hi'</span>)//子组件a发布事件<br>    &#125;<br>&#125;,<br><span class="hljs-function"><span class="hljs-title">mounted</span></span>()&#123;<br>    this.evenBus.<span class="hljs-variable">$on</span>(<span class="hljs-string">'event'</span>,(val)=&#123;//子组件b监听事件<br>        console.log(val)<br>    &#125;)<br>&#125;<br></code></pre></td></tr></table></figure>
+<pre><code class="bash">&lt;div id=&quot;app2&quot;&gt;
+        {{msg}}
+        &lt;child-comp ref=&quot;a&quot;&gt;&lt;/child-comp&gt;
+        &lt;button @click=&quot;getChildData&quot;&gt;点我拿到B组件数据&lt;/button&gt;
+        {{formChild}}
+&lt;/div&gt;
+&lt;script&gt;
+    var app2 = new Vue({
+        el:&#39;#app2&#39;,
+        data:{
+            bus:new Vue(),
+            msg:&#39;数据还没修改&#39;,
+            formChild:&#39;还未拿到&#39;
+        },
+        methods:{
+            getChildData:function(){
+                this.formChild = this.$refs.a.msg //从子组件拿数据
+            }
+        },
+        components:{
+            &#39;child-comp&#39;:{
+                template:&#39;&lt;button @click=&quot;setFatherData&quot;&gt;点我修改父组件数据&lt;/button&gt;&#39;,
+                methods:{
+                    setFatherData:function(){
+                        this.$parent.msg = &#39;数据已修改了&#39; //修改父组件数据
+                    }
+                },
+                data:function(){
+                    return{
+                        msg:&#39;我是子组件数据&#39;
+                    }
+                }
+            }
+        }
+    })
+&lt;/script&gt;
+</code></pre>
+<h5 id="父子组件间使用独立的eventbus"><a href="#父子组件间使用独立的eventbus" class="headerlink" title="父子组件间使用独立的eventbus"></a>父子组件间使用独立的eventbus</h5><pre><code class="bash">//parent
+
+data(){
+    eventBus:new Vue()
+},
+provide(){//向子组件注入
+    return {
+        eventBus:this.eventBus
+    }
+},
+mounted(){
+    this.evenBus.$on(&#39;event&#39;,(val)={//父组件b监听事件
+        console.log(val)
+    })
+}
+
+//child
+inject:[&#39;eventBus&#39;],
+methods:{
+    emitEvent(){
+        this.evenBus.$emit(&#39;event&#39;,&#39;hi&#39;)//子组件a发布事件
+    }
+},
+mounted(){
+    this.evenBus.$on(&#39;event&#39;,(val)={//子组件b监听事件
+        console.log(val)
+    })
+}
+
+</code></pre>
 <h4 id="插槽"><a href="#插槽" class="headerlink" title="插槽"></a>插槽</h4><p>为了让组件可以组合,我们需要一种方式来混合父组件的内容与子组件自己的模板,这个过程被称为内容分发.<br>Vue实现了一个内容分发api,使用特殊的slot元素作为原始内容的插槽.</p>
 <p>父组件的内容在父组件作用域内编译,<br>子组件的内容在子组件作用域内编译</p>
-<p>例:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;comp v-show=<span class="hljs-string">"childshow"</span>&gt;&lt;/comp&gt;//这里的childshow是父组件data里的<br><br>data:&#123;<br>    childshow:fasle<br>&#125;,<br>component:&#123;<br>    <span class="hljs-string">'comp'</span>:&#123;<br>        template:<span class="hljs-string">'&lt;div v-show="childshow"&gt;&lt;/div&gt;'</span> //这里的childshow是子组件data例的<br>    &#125;,<br>    data:<span class="hljs-function"><span class="hljs-title">function</span></span>()&#123;<br>        <span class="hljs-built_in">return</span> &#123;<br>            childshow:<span class="hljs-literal">false</span><br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure></p>
+<p>例:</p>
+<pre><code class="bash">&lt;comp v-show=&quot;childshow&quot;&gt;&lt;/comp&gt;//这里的childshow是父组件data里的
+
+data:{
+    childshow:fasle
+},
+component:{
+    &#39;comp&#39;:{
+        template:&#39;&lt;div v-show=&quot;childshow&quot;&gt;&lt;/div&gt;&#39; //这里的childshow是子组件data例的
+    },
+    data:function(){
+        return {
+            childshow:false
+        }
+    }
+}
+
+
+</code></pre>
 <h5 id="插槽用法"><a href="#插槽用法" class="headerlink" title="插槽用法:"></a>插槽用法:</h5><p>父组件的内容与子组件相混合,从而弥补了试图的不足</p>
 <p>混合父组件的内容与子组件自己的模板</p>
-<h5 id="单个插槽"><a href="#单个插槽" class="headerlink" title="单个插槽:"></a>单个插槽:</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;div id=<span class="hljs-string">"app"</span>&gt;<br>    &lt;my-comp&gt;<br>        &lt;p&gt;父组件内容&lt;/p&gt;<br>    &lt;/my-comp&gt;<br>&lt;/div&gt;<br>&lt;script&gt;<br>    var app = new Vue(&#123;<br>        el:<span class="hljs-string">'#app'</span>,<br>        data:&#123;<br>            <br>        &#125;,<br>        components:&#123;<br>            <span class="hljs-string">'my-comp'</span>:&#123;<br>                template:`<br>                &lt;div&gt;<br>                    &lt;slot&gt;假如父组件没有内容,我就默认出现&lt;/slot&gt;<br>                &lt;div&gt;`,<br>            &#125;<br>        &#125;<br>    &#125;)<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
+<h5 id="单个插槽"><a href="#单个插槽" class="headerlink" title="单个插槽:"></a>单个插槽:</h5><pre><code class="bash">&lt;div id=&quot;app&quot;&gt;
+    &lt;my-comp&gt;
+        &lt;p&gt;父组件内容&lt;/p&gt;
+    &lt;/my-comp&gt;
+&lt;/div&gt;
+&lt;script&gt;
+    var app = new Vue({
+        el:&#39;#app&#39;,
+        data:{
+
+        },
+        components:{
+            &#39;my-comp&#39;:{
+                template:`
+                &lt;div&gt;
+                    &lt;slot&gt;假如父组件没有内容,我就默认出现&lt;/slot&gt;
+                &lt;div&gt;`,
+            }
+        }
+    })
+&lt;/script&gt;
+</code></pre>
 <h5 id="具名插槽"><a href="#具名插槽" class="headerlink" title="具名插槽:"></a>具名插槽:</h5><p>下面的</p><p solot="heaer">与<slot name="header">替换<br>变成 <h1><p></p></h1></slot></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;div id=<span class="hljs-string">"app"</span>&gt;<br>    &lt;my-comp&gt;<br>        &lt;p slot=<span class="hljs-string">"header"</span>&gt;标题&lt;/p&gt;<br>        &lt;p&gt;内容&lt;/p&gt;<br>        &lt;p slot=<span class="hljs-string">"footer"</span>&gt;底部&lt;/p&gt;<br>    &lt;/my-comp&gt;<br>&lt;/div&gt;<br>&lt;script&gt;<br>    var app = new Vue(&#123;<br>        el:<span class="hljs-string">'#app'</span>,<br>        data:&#123;<br>            <br>        &#125;,<br>        components:&#123;<br>            <span class="hljs-string">'my-comp'</span>:&#123;<br>                template:`<br>                &lt;div&gt;<br>                    &lt;h1&gt;<br>                        &lt;slot name=<span class="hljs-string">"header"</span>&gt;&lt;/slot&gt;<br>                    &lt;/h1&gt;<br>                    &lt;div&gt;<br>                        &lt;slot&gt;&lt;slot&gt;<br>                    &lt;/div&gt;<br>                    &lt;footer&gt;<br>                        &lt;slot name=<span class="hljs-string">"footer"</span>&gt;&lt;slot&gt;<br>                    &lt;footer&gt;<br>                &lt;div&gt;`,<br>            &#125;<br>        &#125;<br>    &#125;)<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
+<pre><code class="bash">&lt;div id=&quot;app&quot;&gt;
+    &lt;my-comp&gt;
+        &lt;p slot=&quot;header&quot;&gt;标题&lt;/p&gt;
+        &lt;p&gt;内容&lt;/p&gt;
+        &lt;p slot=&quot;footer&quot;&gt;底部&lt;/p&gt;
+    &lt;/my-comp&gt;
+&lt;/div&gt;
+&lt;script&gt;
+    var app = new Vue({
+        el:&#39;#app&#39;,
+        data:{
+
+        },
+        components:{
+            &#39;my-comp&#39;:{
+                template:`
+                &lt;div&gt;
+                    &lt;h1&gt;
+                        &lt;slot name=&quot;header&quot;&gt;&lt;/slot&gt;
+                    &lt;/h1&gt;
+                    &lt;div&gt;
+                        &lt;slot&gt;&lt;slot&gt;
+                    &lt;/div&gt;
+                    &lt;footer&gt;
+                        &lt;slot name=&quot;footer&quot;&gt;&lt;slot&gt;
+                    &lt;footer&gt;
+                &lt;div&gt;`,
+            }
+        }
+    })
+&lt;/script&gt;
+</code></pre>
 <h5 id="作用域插槽"><a href="#作用域插槽" class="headerlink" title="作用域插槽"></a>作用域插槽</h5><p>作用域插槽是一种特殊的slot,使用一个可以复用的模板来替换已经渲染的元素—从子组件获取数据</p>
 <p>slot-scope的属性值指向插槽中的属性值,2.5.0版本下要使用template元素包裹</p>
 <p>例:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;div id=<span class="hljs-string">"app3"</span>&gt;<br>    &lt;my-comp-abc&gt;<br>        &lt;p slot=<span class="hljs-string">"abc"</span> slot-scope=<span class="hljs-string">"props"</span>&gt;<br>            &lt;button @click=<span class="hljs-string">"props.b"</span>&gt;&#123;&#123;props.a&#125;&#125;&lt;/button&gt;<br>        &lt;/p&gt;<br>    &lt;/my-comp-abc&gt;<br>    //也可以用es6赋值解构<br>    &lt;my-comp-abc&gt;<br>        &lt;p slot=<span class="hljs-string">"abc"</span> slot-scope=<span class="hljs-string">"&#123;a,b&#125;"</span>&gt;<br>            &lt;button @click=<span class="hljs-string">"b"</span>&gt;&#123;&#123;a&#125;&#125;&lt;/button&gt;<br>        &lt;/p&gt;<br>    &lt;/my-comp-abc&gt;<br>&lt;/div&gt;<br>&lt;script &gt;<br>    var app3 = new Vue(&#123;<br>        el:<span class="hljs-string">'#app3'</span>,<br>        components:&#123;<br>            <span class="hljs-string">'my-comp-abc'</span>:&#123;<br>                template:`<br>                &lt;div&gt;<br>                    &lt;slot :a=<span class="hljs-string">"a"</span> :b=<span class="hljs-string">"b"</span> name=<span class="hljs-string">"abc"</span>&gt;&lt;/slot&gt;<br>                &lt;/div&gt;<br>                `,<br>                <span class="hljs-function"><span class="hljs-title">data</span></span>()&#123;<br>                    <span class="hljs-built_in">return</span> &#123;<br>                        a:<span class="hljs-string">'click'</span><br>                    &#125;<br>                &#125;,<br>                methods:&#123;<br>                    <span class="hljs-function"><span class="hljs-title">b</span></span>()&#123;<br>                        console.log(<span class="hljs-string">'b'</span>)<br>                    &#125;<br>                &#125;<br>            &#125;<br>        &#125;<br>    &#125;)<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
+<pre><code class="bash">&lt;div id=&quot;app3&quot;&gt;
+    &lt;my-comp-abc&gt;
+        &lt;p slot=&quot;abc&quot; slot-scope=&quot;props&quot;&gt;
+            &lt;button @click=&quot;props.b&quot;&gt;{{props.a}}&lt;/button&gt;
+        &lt;/p&gt;
+    &lt;/my-comp-abc&gt;
+    //也可以用es6赋值解构
+    &lt;my-comp-abc&gt;
+        &lt;p slot=&quot;abc&quot; slot-scope=&quot;{a,b}&quot;&gt;
+            &lt;button @click=&quot;b&quot;&gt;{{a}}&lt;/button&gt;
+        &lt;/p&gt;
+    &lt;/my-comp-abc&gt;
+&lt;/div&gt;
+&lt;script &gt;
+    var app3 = new Vue({
+        el:&#39;#app3&#39;,
+        components:{
+            &#39;my-comp-abc&#39;:{
+                template:`
+                &lt;div&gt;
+                    &lt;slot :a=&quot;a&quot; :b=&quot;b&quot; name=&quot;abc&quot;&gt;&lt;/slot&gt;
+                &lt;/div&gt;
+                `,
+                data(){
+                    return {
+                        a:&#39;click&#39;
+                    }
+                },
+                methods:{
+                    b(){
+                        console.log(&#39;b&#39;)
+                    }
+                }
+            }
+        }
+    })
+&lt;/script&gt;
+</code></pre>
 <h4 id="访问slot"><a href="#访问slot" class="headerlink" title="访问slot"></a>访问slot</h4><p>通过this.$slots.name</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">mounted:<span class="hljs-function"><span class="hljs-title">function</span></span>()&#123;<br>    <span class="hljs-built_in">let</span> header = this.<span class="hljs-variable">$slots</span>.header;<br>    <span class="hljs-built_in">let</span> text = header[0].elm.innerText;<br>    <span class="hljs-built_in">let</span> html = header[0].elm.innerHTML;<br>&#125;<br></code></pre></td></tr></table></figure>
+<pre><code class="bash">mounted:function(){
+    let header = this.$slots.header;
+    let text = header[0].elm.innerText;
+    let html = header[0].elm.innerHTML;
+}
+</code></pre>
 <h4 id="动态组件"><a href="#动态组件" class="headerlink" title="动态组件"></a>动态组件</h4><p>Vue提供一个元素教component<br>作用是:用来动态挂载不同的组件<br>实现:使用is属性来进行实现</p>
 <p>v-bind:is=”组件名”,可以把compoent变成该组件名的组件</p>
-<p>通过动态组件切换视图的小demo:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;div id=<span class="hljs-string">"app"</span>&gt;<br>    &lt;components :is=<span class="hljs-string">"view"</span>&gt;&lt;/components&gt;<br>    &lt;button @click=<span class="hljs-string">"handview('a')"</span>&gt;A&lt;/button&gt;<br>    &lt;button @click=<span class="hljs-string">"handview('b')"</span>&gt;B&lt;/button&gt;<br>    &lt;button @click=<span class="hljs-string">"handview('c')"</span>&gt;C&lt;/button&gt;<br>    &lt;button @click=<span class="hljs-string">"handview('d')"</span>&gt;D&lt;/button&gt;<br>&lt;/div&gt;<br>&lt;script&gt;<br>    var app = new Vue(&#123;<br>        el:<span class="hljs-string">'#app'</span>,<br>        data:&#123;<br>            view:<span class="hljs-string">'comp-a'</span><br>        &#125;,<br>        components:&#123;<br>            <span class="hljs-string">'comp-a'</span>:&#123;<br>                template:<span class="hljs-string">'&lt;div&gt;A&lt;div&gt;'</span>,<br>            &#125;,<br>            <span class="hljs-string">'comp-b'</span>:&#123;<br>                template:<span class="hljs-string">'&lt;div&gt;B&lt;div&gt;'</span>,<br>            &#125;,<br>            <span class="hljs-string">'comp-c'</span>:&#123;<br>                template:<span class="hljs-string">'&lt;div&gt;C&lt;div&gt;'</span>,<br>            &#125;,<br>            <span class="hljs-string">'comp-d'</span>:&#123;<br>                template:<span class="hljs-string">'&lt;div&gt;D&lt;div&gt;'</span>,<br>            &#125;,<br>        &#125;,<br>        methods:&#123;<br>            handview:<span class="hljs-keyword">function</span>(tag)&#123;<br>                this.view = <span class="hljs-string">'comp-'</span> + tag<br>            &#125;<br>        &#125;<br>    &#125;)<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/13/Vue组件/" data-id="clq63gkyl003diwfqrvfcxlh3" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
-
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2018/07/25/WEB性能优化/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          WEB性能优化
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2018/07/13/Vue基础/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Vue基础</div>
-    </a>
-  
-</nav>
-
-  
-</article>
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/ES6/">ES6</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JS/">JS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/TS/">TS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/node/">node</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/vue/">vue</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/webpack/">webpack</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/业务代码/">业务代码</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/库/">库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/笔记/">笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机基础/">计算机基础</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/面试题/">面试题</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/">ES6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TS/">TS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/">webpack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/业务代码/">业务代码</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/库/">库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机基础/">计算机基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试题/">面试题</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/CSS/" style="font-size: 18.75px;">CSS</a> <a href="/tags/ES6/" style="font-size: 16.25px;">ES6</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/HTTP/" style="font-size: 15px;">HTTP</a> <a href="/tags/JS/" style="font-size: 20px;">JS</a> <a href="/tags/TS/" style="font-size: 17.5px;">TS</a> <a href="/tags/git/" style="font-size: 11.25px;">git</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/vue/" style="font-size: 18.75px;">vue</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/业务代码/" style="font-size: 13.75px;">业务代码</a> <a href="/tags/库/" style="font-size: 12.5px;">库</a> <a href="/tags/笔记/" style="font-size: 10px;">笔记</a> <a href="/tags/计算机基础/" style="font-size: 10px;">计算机基础</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a> <a href="/tags/面试题/" style="font-size: 10px;">面试题</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2023/02/02/手写Promise-all/">手写Promise.all</a>
-          </li>
-        
-          <li>
-            <a href="/2023/02/02/Canvas和SVG区别/">Canvas和SVG区别</a>
-          </li>
-        
-          <li>
-            <a href="/2020/02/12/常见排序算法/">常见排序算法</a>
-          </li>
-        
-          <li>
-            <a href="/2020/01/17/TS声明/">TS声明</a>
-          </li>
-        
-          <li>
-            <a href="/2020/01/16/TS高级类型/">TS类型</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2023 Roxas Deng<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/script.js"></script>
-
-
-
-  </div>
-</body>
-</html>
+<p>通过动态组件切换视图的小demo:</p>
+<pre><code class="bash">&lt;div id=&quot;app&quot;&gt;
+    &lt;components :is=&quot;view&quot;&gt;&lt;/components&gt;
+    &lt;button @click=&quot;handview(&#39;a&#39;)&quot;&gt;A&lt;/button&gt;
+    &lt;button @click=&quot;handview(&#39;b&#39;)&quot;&gt;B&lt;/button&gt;
+    &lt;button @click=&quot;handview(&#39;c&#39;)&quot;&gt;C&lt;/button&gt;
+    &lt;button @click=&quot;handview(&#39;d&#39;)&quot;&gt;D&lt;/button&gt;
+&lt;/div&gt;
+&lt;script&gt;
+    var app = new Vue({
+        el:&#39;#app&#39;,
+        data:{
+            view:&#39;comp-a&#39;
+        },
+        components:{
+            &#39;comp-a&#39;:{
+                template:&#39;&lt;div&gt;A&lt;div&gt;&#39;,
+            },
+            &#39;comp-b&#39;:{
+                template:&#39;&lt;div&gt;B&lt;div&gt;&#39;,
+            },
+            &#39;comp-c&#39;:{
+                template:&#39;&lt;div&gt;C&lt;div&gt;&#39;,
+            },
+            &#39;comp-d&#39;:{
+                template:&#39;&lt;div&gt;D&lt;div&gt;&#39;,
+            },
+        },
+        methods:{
+            handview:function(tag){
+                this.view = &#39;comp-&#39; + tag
+            }
+        }
+    })
+&lt;/script&gt;
+</code></pre>
+</div><div class="p-copyright"><blockquote><div class="p-copyright-author"><span class="p-copyright-key">本文作者：</span><span class="p-copytight-value"><a href="mailto:litreily@163.com">Roxas Deng</a></span></div><div class="p-copyright-link"><span class="p-copyright-key">本文链接：</span><span class="p-copytight-value"><a href="/2018/07/13/Vue组件/">http://yoursite.com/2018/07/13/Vue组件/</a></span></div><div class="p-copyright-note"><span class="p-copyright-key">版权声明：</span><span class="p-copytight-value">本博客所有文章除特殊声明外，均采用<a rel="nofollow" target="_blank" href="https://creativecommons.org/licenses/by-nc/4.0/"> CC BY-NC 4.0 </a>许可协议。转载请注明出处 <a href="http://yoursite.com">Roxas Deng的博客</a>！</span></div></blockquote></div></article><div class="p-info box"><span class="p-tags"><i class="fa fa-tag"></i><a href="/tags/vue/">vue</a></span></div><aside id="toc"><div class="toc-title">目录</div><nav><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#vue组件"><span class="toc-number">1.</span> <span class="toc-text">vue组件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#为什么要使用组件"><span class="toc-number">1.1.</span> <span class="toc-text">为什么要使用组件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#组件注册"><span class="toc-number">1.2.</span> <span class="toc-text">组件注册</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#全局注册"><span class="toc-number">1.2.1.</span> <span class="toc-text">全局注册</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#局部注册"><span class="toc-number">1.3.</span> <span class="toc-text">局部注册</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#标签受限下使用组件"><span class="toc-number">1.4.</span> <span class="toc-text">标签受限下使用组件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#组件注意事项"><span class="toc-number">1.5.</span> <span class="toc-text">组件注意事项</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#props"><span class="toc-number">1.6.</span> <span class="toc-text">props</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#单向数据流"><span class="toc-number">1.7.</span> <span class="toc-text">单向数据流</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#解析"><span class="toc-number">1.7.1.</span> <span class="toc-text">解析:</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#目的"><span class="toc-number">1.7.2.</span> <span class="toc-text">目的:</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#应用场景"><span class="toc-number">1.7.3.</span> <span class="toc-text">应用场景:</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#场景1"><span class="toc-number">1.7.4.</span> <span class="toc-text">场景1</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#场景2"><span class="toc-number">1.7.5.</span> <span class="toc-text">场景2</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#数据验证"><span class="toc-number">1.8.</span> <span class="toc-text">数据验证</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#组件通信"><span class="toc-number">1.9.</span> <span class="toc-text">组件通信</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#自定义事件"><span class="toc-number">1.10.</span> <span class="toc-text">自定义事件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#在组件用使用v-model"><span class="toc-number">1.11.</span> <span class="toc-text">在组件用使用v-model</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#v-model是一个语法糖-背后做了两步操作"><span class="toc-number">1.11.1.</span> <span class="toc-text">v-model是一个语法糖,背后做了两步操作:</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#要使用v-model要做到"><span class="toc-number">1.11.2.</span> <span class="toc-text">要使用v-model要做到</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#非父组件之间的通信"><span class="toc-number">1.12.</span> <span class="toc-text">非父组件之间的通信</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#子组件间通信"><span class="toc-number">1.12.1.</span> <span class="toc-text">子组件间通信</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#任意组件的通信"><span class="toc-number">1.12.2.</span> <span class="toc-text">任意组件的通信</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#父组件获得子组件数据"><span class="toc-number">1.12.3.</span> <span class="toc-text">父组件获得子组件数据</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#父子组件间使用独立的eventbus"><span class="toc-number">1.12.4.</span> <span class="toc-text">父子组件间使用独立的eventbus</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#插槽"><span class="toc-number">1.13.</span> <span class="toc-text">插槽</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#插槽用法"><span class="toc-number">1.13.1.</span> <span class="toc-text">插槽用法:</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#单个插槽"><span class="toc-number">1.13.2.</span> <span class="toc-text">单个插槽:</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#具名插槽"><span class="toc-number">1.13.3.</span> <span class="toc-text">具名插槽:</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-number"></span> <span class="toc-text"></span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#作用域插槽"><span class="toc-number">0.0.1.</span> <span class="toc-text">作用域插槽</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#访问slot"><span class="toc-number">0.1.</span> <span class="toc-text">访问slot</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#动态组件"><span class="toc-number">0.2.</span> <span class="toc-text">动态组件</span></a></li></ol></li></ol></nav></aside></div><section class="p-ext"><div class="l-pager l-pager-dtl box"><a class="prev" href="/2018/07/25/WEB性能优化/">&lt; WEB性能优化</a><a class="next" href="/2018/07/13/Vue基础/">Vue基础 &gt;</a></div></section><footer><p>Copyright © 2016 - 2023 <a href="/." rel="nofollow">RoxasDengBlog</a> | <strong><a rel="nofollow" target="_blank" href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a></strong><br><span id="busuanzi_container_site_uv"><i class="fa fa-user"></i><span id="busuanzi_value_site_uv"></span></span> <span id="busuanzi_container_site_pv"><i class="fa fa-eye"></i><span id="busuanzi_value_site_pv"></span></span> | Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a>Theme with<a rel="nofollow" target="_blank" href="https://github.com/litreily/snark-hexo"> snark.</a></p></footer></div></div></div><script type="text/javascript" src="/js/search.js"></script><script type="text/javascript" src="/js/top.js"></script><script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script><script>var search_path = 'search.xml';
+if (search_path.length == 0) {
+    search_path = 'search.xml';
+}
+var path = '/' + search_path;
+searchFunc(path, 'local-search-input', 'local-search-result');
+</script><script type="text/javascript" src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.1" async></script></body></html>

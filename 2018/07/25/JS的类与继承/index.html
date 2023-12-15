@@ -1,108 +1,58 @@
-<!DOCTYPE html>
-<html>
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="utf-8">
-  
-
-  
-  <title>JS的类与继承 | RoxasDengBlog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="继承继承的作用是:子类可以具有父类的属性和方法 JS没有继承,只有原型链引用 一个对象的proto指向构造他的函数的protype 1obj._proto_ = Object.prototype 如:123var a = new Array();a.push() //实例属性a.valueOf() //继承Object push是Array.protoype的属性;valueOf是继承子Ojbec">
-<meta name="keywords" content="ES6">
-<meta property="og:type" content="article">
-<meta property="og:title" content="JS的类与继承">
-<meta property="og:url" content="http://yoursite.com/2018/07/25/JS的类与继承/index.html">
-<meta property="og:site_name" content="RoxasDengBlog">
-<meta property="og:description" content="继承继承的作用是:子类可以具有父类的属性和方法 JS没有继承,只有原型链引用 一个对象的proto指向构造他的函数的protype 1obj._proto_ = Object.prototype 如:123var a = new Array();a.push() //实例属性a.valueOf() //继承Object push是Array.protoype的属性;valueOf是继承子Ojbec">
-<meta property="og:locale" content="zh_CN">
-<meta property="og:updated_time" content="2023-12-15T01:47:13.832Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JS的类与继承">
-<meta name="twitter:description" content="继承继承的作用是:子类可以具有父类的属性和方法 JS没有继承,只有原型链引用 一个对象的proto指向构造他的函数的protype 1obj._proto_ = Object.prototype 如:123var a = new Array();a.push() //实例属性a.valueOf() //继承Object push是Array.protoype的属性;valueOf是继承子Ojbec">
-  
-    <link rel="alternate" href="/atom.xml" title="RoxasDengBlog" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
-</head>
-</html>
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">RoxasDengBlog</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-JS的类与继承" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/25/JS的类与继承/" class="article-date">
-  <time datetime="2018-07-24T18:52:08.000Z" itemprop="datePublished">2018-07-25</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/ES6/">ES6</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      JS的类与继承
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h4><p>继承的作用是:子类可以具有父类的属性和方法</p>
+<!DOCTYPE html><html lang="en"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><meta name="theme-color" content="#2d4356"><meta name="baidu-site-verification"><title>JS的类与继承 | RoxasDengBlog</title><link rel="stylesheet" type="text/css" href="/css/style.css"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.png"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script></head><link rel="stylesheet" type="text/css" href="/plugins/highlight/atom-one-dark.min.css"><script type="text/javascript" src="/plugins/highlight/highlight.min.js"></script><script>hljs.initHighlightingOnLoad();
+</script><script type="text/javascript" src="/js/ready.js" async></script><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"><body class="night"><div class="mobile-head" id="mobile-head"><div class="navbar-icon"><span></span><span></span><span></span></div><div class="navbar-title"><a href="/">LITREILY</a></div><div class="navbar-search"><!--= show a circle here--></div></div><div class="h-wrapper" id="menu"><nav class="h-head box"><div class="m-hdimg"><a class="hdimg img" href="/"><img class="nofancybox" src="/img/profile.jpg" width="128" height="128"></a><h1 class="ttl"><a href="/">RoxasDengBlog</a></h1></div><p class="m-desc">心之所向，无惧无悔,<br>愿求仁得仁，复无怨怼！</p><div class="m-nav"><ul><li><span class="dot">●</span><a href="/archives/">归档</a></li><li><span class="dot">●</span><a href="/categories/">分类</a></li><li><span class="dot">●</span><a href="/tags/">标签</a></li><li><span class="dot">●</span><a href="/about/">关于</a></li><li><span class="dot">●</span><a href="/atom.xml">RSS</a></li><li class="m-sch"><form class="form" id="j-formsch" method="get"><input class="txt" type="text" id="local-search-input" name="q" value="搜索" onfocus="if(this.value=='搜索'){this.value='';}" onblur="if(this.value==''){this.value='搜索';}"><input type="text" style="display:none;"></form></li></ul><div id="local-search-result"></div></div></nav></div><div id="back2Top"><a class="fa fa-arrow-up" title="Back to top" href="#"></a></div><div class="box" id="container"><div class="l-wrapper"><div class="l-content box"><div class="l-post l-post-art"><article class="p-art"><div class="p-header box"><h1 class="p-title">JS的类与继承</h1><div class="p-info"><span class="p-date"><i class="fa fa-calendar"></i><a href="/2018/07/25/JS的类与继承/">2018-07-25</a></span><span class="p-category"><i class="fa fa-folder"></i><a href="/categories/ES6/">ES6</a></span><span class="p-view" id="busuanzi_container_page_pv"><i class="fa fa-eye"></i><span id="busuanzi_value_page_pv"></span></span></div></div><div class="p-content"><h4 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h4><p>继承的作用是:子类可以具有父类的属性和方法</p>
 <p>JS没有继承,只有原型链引用</p>
 <p>一个对象的<strong>proto</strong>指向构造他的函数的protype</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">obj._proto_ = Object.prototype<br></code></pre></td></tr></table></figure>
-<p>如:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">var a = new Array();<br>a.push() //实例属性<br>a.valueOf() //继承Object<br></code></pre></td></tr></table></figure></p>
-<p>push是Array.protoype的属性;<br>valueOf是继承子Ojbect.prototype的;<br>因为<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">Array.protoype.__proto__ = Object.protoype<br></code></pre></td></tr></table></figure></p>
+<pre><code class="bash">obj._proto_ = Object.prototype
+</code></pre>
+<p>如:</p>
+<pre><code class="bash">var a = new Array();
+a.push() //实例属性
+a.valueOf() //继承Object
+</code></pre>
+<p>push是Array.protoype的属性;<br>valueOf是继承子Ojbect.prototype的;<br>因为</p>
+<pre><code class="bash">Array.protoype.__proto__ = Object.protoype
+</code></pre>
 <p>隔了两层的才是继承,对于a;push是自身有的,valueOf才是继承的.</p>
 <h4 id="类"><a href="#类" class="headerlink" title="类"></a>类</h4><p>能产生对象的东西即为类</p>
 <p>自己写一个继承类</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-keyword">function</span> Human(name)&#123;<br>    this.name = name;<br>&#125;<br>Human.prototype.run = <span class="hljs-function"><span class="hljs-title">function</span></span>()&#123;<br>    console.log(<span class="hljs-string">'跑跑跑'</span>);<br>    <span class="hljs-built_in">return</span> undefined;<br>&#125;<br><br><span class="hljs-keyword">function</span> Man(name)&#123;<br>    Human.call(this,name); //使子类有父类的属性,假如不写this,那么this就是window<br>    this.gender = <span class="hljs-string">'男'</span>;<br>&#125;<br><br>Man.prototype.__proto__ = Human.prototype //插入父类原型链,但是IE不支持<br><br>Man.prototype.fight = <span class="hljs-function"><span class="hljs-title">function</span></span>()&#123;<br>    console.log(<span class="hljs-string">'打击'</span>);<br>    <span class="hljs-built_in">return</span> undefined;<br>&#125; <br><br>var f = new Man(<span class="hljs-string">'某个男人'</span>); //假如不写new,那么this就是window,因为new的时候this会绑定到这个对象名为Man的对象上<br><br>输出:<br>f.name  //<span class="hljs-string">'某个男人'</span><br>f.gender //<span class="hljs-string">'男'</span><br>f.fight()  //<span class="hljs-string">'打击'</span><br>f.run() //<span class="hljs-string">'跑'</span><br><br>f.__proto__ === Man.prototype;//<span class="hljs-literal">true</span><br>f.__proto__.proto__ === Human.prototype;//<span class="hljs-literal">true</span><br>Man.prototype.__proto__ === Human.prototype;//<span class="hljs-literal">true</span><br></code></pre></td></tr></table></figure>
+<pre><code class="bash">function Human(name){
+    this.name = name;
+}
+Human.prototype.run = function(){
+    console.log(&#39;跑跑跑&#39;);
+    return undefined;
+}
+
+function Man(name){
+    Human.call(this,name); //使子类有父类的属性,假如不写this,那么this就是window
+    this.gender = &#39;男&#39;;
+}
+
+Man.prototype.__proto__ = Human.prototype //插入父类原型链,但是IE不支持
+
+Man.prototype.fight = function(){
+    console.log(&#39;打击&#39;);
+    return undefined;
+} 
+
+var f = new Man(&#39;某个男人&#39;); //假如不写new,那么this就是window,因为new的时候this会绑定到这个对象名为Man的对象上
+
+输出:
+f.name  //&#39;某个男人&#39;
+f.gender //&#39;男&#39;
+f.fight()  //&#39;打击&#39;
+f.run() //&#39;跑&#39;
+
+f.__proto__ === Man.prototype;//true
+f.__proto__.proto__ === Human.prototype;//true
+Man.prototype.__proto__ === Human.prototype;//true
+</code></pre>
 <h5 id="prototype"><a href="#prototype" class="headerlink" title="prototype"></a>prototype</h5><p>prototype,存放共有属性对象的地址</p>
-<h5 id="ES5和ES6的写法"><a href="#ES5和ES6的写法" class="headerlink" title="ES5和ES6的写法"></a>ES5和ES6的写法</h5><p>ES5:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">var f = <span class="hljs-function"><span class="hljs-title">function</span></span>()&#123;&#125;<br>f.protype = Human.protype<br>Man.protype = new f()<br></code></pre></td></tr></table></figure></p>
+<h5 id="ES5和ES6的写法"><a href="#ES5和ES6的写法" class="headerlink" title="ES5和ES6的写法"></a>ES5和ES6的写法</h5><p>ES5:</p>
+<pre><code class="bash">var f = function(){}
+f.protype = Human.protype
+Man.protype = new f()
+</code></pre>
 <p>为什么?</p>
 <p>当var obj = new Fn()时,会做以下几件事</p>
 <ol>
@@ -114,151 +64,76 @@
 </ol>
 <p>Man.prtotype = New Human();会执行this.name,使得有多余属性<br>因为第4步不想要,所以构造一个空函数,只要他的protype</p>
 <p>空函数.protype = Human.prototype;<br>Man.protype = new f() // 1,2,3,5步<br>f.protype === Human.prototype //true<br>Man.protype.<strong>proto</strong> === f.prototype //true </p>
-<p>ES6:<br>constructor构造自有属性,共有属性写在constructor外面<br>super,执行超类(父类)的constructor<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs bash">class Human&#123;<br>    constructor(name)&#123;<br>        this.name = name<br>    &#125;<br>    <span class="hljs-function"><span class="hljs-title">run</span></span>()&#123;<br>        console.log(<span class="hljs-string">'run'</span>)<br>    &#125;<br>&#125;<br><br>class Man extends Human&#123;//等价于Man.protype.__protype = Human.protype<br>    constructor(name)&#123;<br>        super(name) //等价于Human.call(this,name),super意为超类,即父类<br>        this.gender = <span class="hljs-string">'Man'</span><br>    &#125;<br>    <span class="hljs-function"><span class="hljs-title">fight</span></span>()&#123;<br>        console.log(<span class="hljs-string">'fight'</span>)<br>    &#125;<br>&#125;<br><br>var author = new Man(<span class="hljs-string">'roxas'</span>)<br>atuhor//&#123;<br>    name:<span class="hljs-string">'roxas'</span>,<br>    gender:<span class="hljs-string">'Man'</span><br>    __proto__:&#123;<br>        <span class="hljs-function"><span class="hljs-title">fight</span></span>()&#123;&#125;,<br>        ...<br>        __proto__:&#123;<br>            <span class="hljs-function"><span class="hljs-title">run</span></span>()&#123;&#125;<br>            ...<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure></p>
-<h5 id="get-set"><a href="#get-set" class="headerlink" title="get set"></a>get set</h5><p>//属性封装<br>用get来控制只读属性.属性可通过set来条件控制<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs bash">class Animal&#123;<br>    constructor(name)&#123;<br>        this.name = name<br>        this._race = <span class="hljs-string">'moving'</span><br>    &#125;<br>    get <span class="hljs-function"><span class="hljs-title">race</span></span>()&#123;<br>        <span class="hljs-built_in">return</span> this._race<br>    &#125;<br>    <span class="hljs-built_in">set</span> race(value)&#123;<br>        this._race = value<br>    &#125;<br>&#125;<br><br>//<span class="hljs-built_in">let</span> dog = new Animal(<span class="hljs-string">'dog'</span>)<br>dog.race //moving<br>dog.race = <span class="hljs-string">'donig'</span><br>dog.race //doing<br></code></pre></td></tr></table></figure></p>
-<h5 id="static静态方法"><a href="#static静态方法" class="headerlink" title="static静态方法"></a>static静态方法</h5><p>不需要实例化就可以调用的方法<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs bash">class Animal&#123;<br>    constructor(name)&#123;<br>        this.name = name<br>        this._race = <span class="hljs-string">'moving'</span><br>    &#125;<br>    static <span class="hljs-function"><span class="hljs-title">die</span></span>()&#123;<br>        console.log(<span class="hljs-string">'Animal Die'</span>)<br>    &#125;<br>&#125;<br><br>Animal.die //Animal Die<br></code></pre></td></tr></table></figure></p>
+<p>ES6:<br>constructor构造自有属性,共有属性写在constructor外面<br>super,执行超类(父类)的constructor</p>
+<pre><code class="bash">class Human{
+    constructor(name){
+        this.name = name
+    }
+    run(){
+        console.log(&#39;run&#39;)
+    }
+}
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/25/JS的类与继承/" data-id="clq63gkxt001liwfq87ahyson" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ES6/">ES6</a></li></ul>
+class Man extends Human{//等价于Man.protype.__protype = Human.protype
+    constructor(name){
+        super(name) //等价于Human.call(this,name),super意为超类,即父类
+        this.gender = &#39;Man&#39;
+    }
+    fight(){
+        console.log(&#39;fight&#39;)
+    }
+}
 
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2018/07/25/v-bind以及class与style的绑定/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          v-bind以及class与style的绑定
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2018/07/25/WEB性能优化/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">WEB性能优化</div>
-    </a>
-  
-</nav>
+var author = new Man(&#39;roxas&#39;)
+atuhor//{
+    name:&#39;roxas&#39;,
+    gender:&#39;Man&#39;
+    __proto__:{
+        fight(){},
+        ...
+        __proto__:{
+            run(){}
+            ...
+        }
+    }
+}
+</code></pre>
+<h5 id="get-set"><a href="#get-set" class="headerlink" title="get set"></a>get set</h5><p>//属性封装<br>用get来控制只读属性.属性可通过set来条件控制</p>
+<pre><code class="bash">class Animal{
+    constructor(name){
+        this.name = name
+        this._race = &#39;moving&#39;
+    }
+    get race(){
+        return this._race
+    }
+    set race(value){
+        this._race = value
+    }
+}
 
-  
-</article>
+//let dog = new Animal(&#39;dog&#39;)
+dog.race //moving
+dog.race = &#39;donig&#39;
+dog.race //doing
+</code></pre>
+<h5 id="static静态方法"><a href="#static静态方法" class="headerlink" title="static静态方法"></a>static静态方法</h5><p>不需要实例化就可以调用的方法</p>
+<pre><code class="bash">class Animal{
+    constructor(name){
+        this.name = name
+        this._race = &#39;moving&#39;
+    }
+    static die(){
+        console.log(&#39;Animal Die&#39;)
+    }
+}
 
-</section>
-        
-          <aside id="sidebar">
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/ES6/">ES6</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JS/">JS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/TS/">TS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/node/">node</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/vue/">vue</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/webpack/">webpack</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/业务代码/">业务代码</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/库/">库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/笔记/">笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机基础/">计算机基础</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/面试题/">面试题</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/">ES6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TS/">TS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/">webpack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/业务代码/">业务代码</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/库/">库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机基础/">计算机基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试题/">面试题</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/CSS/" style="font-size: 18.75px;">CSS</a> <a href="/tags/ES6/" style="font-size: 16.25px;">ES6</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/HTTP/" style="font-size: 15px;">HTTP</a> <a href="/tags/JS/" style="font-size: 20px;">JS</a> <a href="/tags/TS/" style="font-size: 17.5px;">TS</a> <a href="/tags/git/" style="font-size: 11.25px;">git</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/vue/" style="font-size: 18.75px;">vue</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/业务代码/" style="font-size: 13.75px;">业务代码</a> <a href="/tags/库/" style="font-size: 12.5px;">库</a> <a href="/tags/笔记/" style="font-size: 10px;">笔记</a> <a href="/tags/计算机基础/" style="font-size: 10px;">计算机基础</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a> <a href="/tags/面试题/" style="font-size: 10px;">面试题</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2023/02/02/手写Promise-all/">手写Promise.all</a>
-          </li>
-        
-          <li>
-            <a href="/2023/02/02/Canvas和SVG区别/">Canvas和SVG区别</a>
-          </li>
-        
-          <li>
-            <a href="/2020/02/12/常见排序算法/">常见排序算法</a>
-          </li>
-        
-          <li>
-            <a href="/2020/01/17/TS声明/">TS声明</a>
-          </li>
-        
-          <li>
-            <a href="/2020/01/16/TS高级类型/">TS类型</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2023 Roxas Deng<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/script.js"></script>
-
-
-
-  </div>
-</body>
-</html>
+Animal.die //Animal Die
+</code></pre>
+</div><div class="p-copyright"><blockquote><div class="p-copyright-author"><span class="p-copyright-key">本文作者：</span><span class="p-copytight-value"><a href="mailto:litreily@163.com">Roxas Deng</a></span></div><div class="p-copyright-link"><span class="p-copyright-key">本文链接：</span><span class="p-copytight-value"><a href="/2018/07/25/JS的类与继承/">http://yoursite.com/2018/07/25/JS的类与继承/</a></span></div><div class="p-copyright-note"><span class="p-copyright-key">版权声明：</span><span class="p-copytight-value">本博客所有文章除特殊声明外，均采用<a rel="nofollow" target="_blank" href="https://creativecommons.org/licenses/by-nc/4.0/"> CC BY-NC 4.0 </a>许可协议。转载请注明出处 <a href="http://yoursite.com">Roxas Deng的博客</a>！</span></div></blockquote></div></article><div class="p-info box"><span class="p-tags"><i class="fa fa-tag"></i><a href="/tags/ES6/">ES6</a></span></div><aside id="toc"><div class="toc-title">目录</div><nav><ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#继承"><span class="toc-number">1.</span> <span class="toc-text">继承</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#类"><span class="toc-number">2.</span> <span class="toc-text">类</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#prototype"><span class="toc-number">2.1.</span> <span class="toc-text">prototype</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#ES5和ES6的写法"><span class="toc-number">2.2.</span> <span class="toc-text">ES5和ES6的写法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#get-set"><span class="toc-number">2.3.</span> <span class="toc-text">get set</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#static静态方法"><span class="toc-number">2.4.</span> <span class="toc-text">static静态方法</span></a></li></ol></li></ol></nav></aside></div><section class="p-ext"><div class="l-pager l-pager-dtl box"><a class="prev" href="/2018/07/25/v-bind以及class与style的绑定/">&lt; v-bind以及class与style的绑定</a><a class="next" href="/2018/07/25/WEB性能优化/">WEB性能优化 &gt;</a></div></section><footer><p>Copyright © 2016 - 2023 <a href="/." rel="nofollow">RoxasDengBlog</a> | <strong><a rel="nofollow" target="_blank" href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a></strong><br><span id="busuanzi_container_site_uv"><i class="fa fa-user"></i><span id="busuanzi_value_site_uv"></span></span> <span id="busuanzi_container_site_pv"><i class="fa fa-eye"></i><span id="busuanzi_value_site_pv"></span></span> | Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a>Theme with<a rel="nofollow" target="_blank" href="https://github.com/litreily/snark-hexo"> snark.</a></p></footer></div></div></div><script type="text/javascript" src="/js/search.js"></script><script type="text/javascript" src="/js/top.js"></script><script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script><script>var search_path = 'search.xml';
+if (search_path.length == 0) {
+    search_path = 'search.xml';
+}
+var path = '/' + search_path;
+searchFunc(path, 'local-search-input', 'local-search-result');
+</script><script type="text/javascript" src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.1" async></script></body></html>

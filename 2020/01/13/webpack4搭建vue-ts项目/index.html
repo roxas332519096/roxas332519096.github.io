@@ -1,295 +1,205 @@
-<!DOCTYPE html>
-<html>
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="utf-8">
-  
-
-  
-  <title>webpack4搭建vue-ts项目 | RoxasDengBlog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="创建根目录  1234mkdir webpack-democd webpack-demonpm init -ynpm install webpack webpack-cli --save-dev  创建index.js  12|- /src   |- index.js index.js 123var div = document.createElement(&apos;div&apos;)div.id = &apos;app">
-<meta name="keywords" content="TS">
-<meta property="og:type" content="article">
-<meta property="og:title" content="webpack4搭建vue-ts项目">
-<meta property="og:url" content="http://yoursite.com/2020/01/13/webpack4搭建vue-ts项目/index.html">
-<meta property="og:site_name" content="RoxasDengBlog">
-<meta property="og:description" content="创建根目录  1234mkdir webpack-democd webpack-demonpm init -ynpm install webpack webpack-cli --save-dev  创建index.js  12|- /src   |- index.js index.js 123var div = document.createElement(&apos;div&apos;)div.id = &apos;app">
-<meta property="og:locale" content="zh_CN">
-<meta property="og:updated_time" content="2023-12-15T01:47:13.846Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="webpack4搭建vue-ts项目">
-<meta name="twitter:description" content="创建根目录  1234mkdir webpack-democd webpack-demonpm init -ynpm install webpack webpack-cli --save-dev  创建index.js  12|- /src   |- index.js index.js 123var div = document.createElement(&apos;div&apos;)div.id = &apos;app">
-  
-    <link rel="alternate" href="/atom.xml" title="RoxasDengBlog" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
-</head>
-</html>
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">RoxasDengBlog</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-webpack4搭建vue-ts项目" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/01/13/webpack4搭建vue-ts项目/" class="article-date">
-  <time datetime="2020-01-13T14:24:51.000Z" itemprop="datePublished">2020-01-13</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/TS/">TS</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      webpack4搭建vue-ts项目
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ol>
+<!DOCTYPE html><html lang="en"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><meta name="theme-color" content="#2d4356"><meta name="baidu-site-verification"><title>webpack4搭建vue-ts项目 | RoxasDengBlog</title><link rel="stylesheet" type="text/css" href="/css/style.css"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.png"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script></head><link rel="stylesheet" type="text/css" href="/plugins/highlight/atom-one-dark.min.css"><script type="text/javascript" src="/plugins/highlight/highlight.min.js"></script><script>hljs.initHighlightingOnLoad();
+</script><script type="text/javascript" src="/js/ready.js" async></script><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"><body class="night"><div class="mobile-head" id="mobile-head"><div class="navbar-icon"><span></span><span></span><span></span></div><div class="navbar-title"><a href="/">LITREILY</a></div><div class="navbar-search"><!--= show a circle here--></div></div><div class="h-wrapper" id="menu"><nav class="h-head box"><div class="m-hdimg"><a class="hdimg img" href="/"><img class="nofancybox" src="/img/profile.jpg" width="128" height="128"></a><h1 class="ttl"><a href="/">RoxasDengBlog</a></h1></div><p class="m-desc">心之所向，无惧无悔,<br>愿求仁得仁，复无怨怼！</p><div class="m-nav"><ul><li><span class="dot">●</span><a href="/archives/">归档</a></li><li><span class="dot">●</span><a href="/categories/">分类</a></li><li><span class="dot">●</span><a href="/tags/">标签</a></li><li><span class="dot">●</span><a href="/about/">关于</a></li><li><span class="dot">●</span><a href="/atom.xml">RSS</a></li><li class="m-sch"><form class="form" id="j-formsch" method="get"><input class="txt" type="text" id="local-search-input" name="q" value="搜索" onfocus="if(this.value=='搜索'){this.value='';}" onblur="if(this.value==''){this.value='搜索';}"><input type="text" style="display:none;"></form></li></ul><div id="local-search-result"></div></div></nav></div><div id="back2Top"><a class="fa fa-arrow-up" title="Back to top" href="#"></a></div><div class="box" id="container"><div class="l-wrapper"><div class="l-content box"><div class="l-post l-post-art"><article class="p-art"><div class="p-header box"><h1 class="p-title">webpack4搭建vue-ts项目</h1><div class="p-info"><span class="p-date"><i class="fa fa-calendar"></i><a href="/2020/01/13/webpack4搭建vue-ts项目/">2020-01-13</a></span><span class="p-category"><i class="fa fa-folder"></i><a href="/categories/TS/">TS</a></span><span class="p-view" id="busuanzi_container_page_pv"><i class="fa fa-eye"></i><span id="busuanzi_value_page_pv"></span></span></div></div><div class="p-content"><ol>
 <li>创建根目录</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">mkdir webpack-demo<br><span class="hljs-built_in">cd</span> webpack-demo<br>npm init -y<br>npm install webpack webpack-cli --save-dev<br></code></pre></td></tr></table></figure>
+<pre><code class="bash">mkdir webpack-demo
+cd webpack-demo
+npm init -y
+npm install webpack webpack-cli --save-dev
+</code></pre>
 <ol start="2">
 <li>创建index.js</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">|- /src<br>   |- index.js<br></code></pre></td></tr></table></figure>
+<pre><code class="bash">|- /src
+   |- index.js
+</code></pre>
 <p>index.js</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">var div = document.createElement(<span class="hljs-string">'div'</span>)<br>div.id = <span class="hljs-string">'app'</span><br>document.body.appendChild(div)<br></code></pre></td></tr></table></figure>
+<pre><code class="bash">var div = document.createElement(&#39;div&#39;)
+div.id = &#39;app&#39;
+document.body.appendChild(div)
+</code></pre>
 <ol start="3">
 <li>创建webpack.config.js</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">|- webpack.config.js<br>|- /src<br>    |- index.js<br></code></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs bash">//webpack.config.js<br>const path = require(<span class="hljs-string">'path'</span>);<br><br>module.exports = &#123;<br>  entry: <span class="hljs-string">'./src/index.js'</span>,<br>  mode:<span class="hljs-string">'development'</span>,<br>  output: &#123;<br>    filename: <span class="hljs-string">'main.js'</span>,<br>    path: path.resolve(__dirname, <span class="hljs-string">'dist'</span>),<br>  &#125;,<br>&#125;;<br></code></pre></td></tr></table></figure>
+<pre><code class="bash">|- webpack.config.js
+|- /src
+    |- index.js
+</code></pre>
+<pre><code class="bash">//webpack.config.js
+const path = require(&#39;path&#39;);
+
+module.exports = {
+  entry: &#39;./src/index.js&#39;,
+  mode:&#39;development&#39;,
+  output: {
+    filename: &#39;main.js&#39;,
+    path: path.resolve(__dirname, &#39;dist&#39;),
+  },
+};
+</code></pre>
 <ol start="4">
 <li>运行打包项目</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">npx webpack --config webpack.config.js<br></code></pre></td></tr></table></figure>
+<pre><code class="bash">npx webpack --config webpack.config.js
+</code></pre>
 <ol start="5">
-<li>安装sever<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm i  -D webpack-dev-server<br></code></pre></td></tr></table></figure>
+<li>安装sever<pre><code class="bash">npm i  -D webpack-dev-server
+</code></pre>
 </li>
 </ol>
 <p>在package.json添加</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-string">"scripts"</span>: &#123;<br>    <span class="hljs-string">"dev"</span>: <span class="hljs-string">"webpack-dev-server --open"</span>,<br>&#125;<br><br>//在终端中输入<br>npm run dev<br>启动项目<br></code></pre></td></tr></table></figure>
+<pre><code class="bash">&quot;scripts&quot;: {
+    &quot;dev&quot;: &quot;webpack-dev-server --open&quot;,
+}
+
+//在终端中输入
+npm run dev
+启动项目
+</code></pre>
 <ol start="6">
 <li>安装HtmlWebpackPlugin</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm i --save-dev html-webpack-plugin<br></code></pre></td></tr></table></figure>
-<p>webpack.config.js<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs bash">const HtmlWebpackPlugin = require(<span class="hljs-string">'html-webpack-plugin'</span>)<br><br>module.exports = &#123;<br>    entry: <span class="hljs-string">'./src/index.js'</span>,<br>    mode: <span class="hljs-string">'development'</span>,<br>    output: &#123;<br>        filename: <span class="hljs-string">'main.js'</span>,<br>        path: path.resolve(__dirname, <span class="hljs-string">'dist'</span>),<br>    &#125;,<br>    plugins: [<br>        new HtmlWebpackPlugin()<br>    ]<br>&#125;;<br></code></pre></td></tr></table></figure></p>
+<pre><code class="bash">npm i --save-dev html-webpack-plugin
+</code></pre>
+<p>webpack.config.js</p>
+<pre><code class="bash">const HtmlWebpackPlugin = require(&#39;html-webpack-plugin&#39;)
+
+module.exports = {
+    entry: &#39;./src/index.js&#39;,
+    mode: &#39;development&#39;,
+    output: {
+        filename: &#39;main.js&#39;,
+        path: path.resolve(__dirname, &#39;dist&#39;),
+    },
+    plugins: [
+        new HtmlWebpackPlugin()
+    ]
+};
+</code></pre>
 <p>至此项目已经可以正常运行了</p>
 <ol start="7">
 <li>安装vue</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm i vue<br>npm i -D vue-loader<br>npm i -D vue-template-compiler<br></code></pre></td></tr></table></figure>
+<pre><code class="bash">npm i vue
+npm i -D vue-loader
+npm i -D vue-template-compiler
+</code></pre>
 <p>创建一个组件main.vue,这个很简单就不说了.</p>
 <p>index.js</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash">import Vue from <span class="hljs-string">'vue'</span><br>import main from <span class="hljs-string">'./main.vue'</span><br><br>new Vue(&#123;<br>    render: h =&gt; h(main)<br>&#125;).<span class="hljs-variable">$mount</span>(<span class="hljs-string">'#app'</span>)<br></code></pre></td></tr></table></figure>
+<pre><code class="bash">import Vue from &#39;vue&#39;
+import main from &#39;./main.vue&#39;
+
+new Vue({
+    render: h =&gt; h(main)
+}).$mount(&#39;#app&#39;)
+</code></pre>
 <p>webpack.config.js</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs bash">const path = require(<span class="hljs-string">'path'</span>);<br>const HtmlWebpackPlugin = require(<span class="hljs-string">'html-webpack-plugin'</span>)<br>const VueLoaderPlugin = require(<span class="hljs-string">'vue-loader/lib/plugin'</span>)<br><br>module.exports = &#123;<br>    entry: <span class="hljs-string">'./src/index.js'</span>,<br>    mode: <span class="hljs-string">'development'</span>,<br>    resolve: &#123;<br>        extensions: [<span class="hljs-string">".ts"</span>, <span class="hljs-string">".tsx"</span>, <span class="hljs-string">".js"</span>]<br>    &#125;,<br>    module: &#123;<br>        rules: [<br>            &#123;<br>                <span class="hljs-built_in">test</span>: /\.vue$/,<br>                loader: <span class="hljs-string">'vue-loader'</span><br>            &#125;<br>        ]<br>    &#125;,<br>    plugins: [<br>        new HtmlWebpackPlugin(), new VueLoaderPlugin()<br>    ]<br>&#125;;<br></code></pre></td></tr></table></figure>
+<pre><code class="bash">const path = require(&#39;path&#39;);
+const HtmlWebpackPlugin = require(&#39;html-webpack-plugin&#39;)
+const VueLoaderPlugin = require(&#39;vue-loader/lib/plugin&#39;)
+
+module.exports = {
+    entry: &#39;./src/index.js&#39;,
+    mode: &#39;development&#39;,
+    resolve: {
+        extensions: [&quot;.ts&quot;, &quot;.tsx&quot;, &quot;.js&quot;]
+    },
+    module: {
+        rules: [
+            {
+                test: /\.vue$/,
+                loader: &#39;vue-loader&#39;
+            }
+        ]
+    },
+    plugins: [
+        new HtmlWebpackPlugin(), new VueLoaderPlugin()
+    ]
+};
+</code></pre>
 <p>至此,可以运行vue了.</p>
 <ol start="8">
 <li>安装TS</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm i typescript<br>npm install ts-loader --save-dev<br></code></pre></td></tr></table></figure>
-<p>创建tsconfig.json<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">&#123;<br>    <span class="hljs-string">"compilerOptions"</span>: &#123;<br>        <span class="hljs-string">"sourceMap"</span>: <span class="hljs-literal">true</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure></p>
-<p>修改webpack.config.js<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs bash">const path = require(<span class="hljs-string">'path'</span>);<br>const HtmlWebpackPlugin = require(<span class="hljs-string">'html-webpack-plugin'</span>)<br>const VueLoaderPlugin = require(<span class="hljs-string">'vue-loader/lib/plugin'</span>)<br><br>module.exports = &#123;<br>    entry: <span class="hljs-string">'./src/index.ts'</span>,   //这里改成ts<br>    mode: <span class="hljs-string">'development'</span>,<br>    output: &#123;<br>        filename: <span class="hljs-string">'main.js'</span>,<br>        path: path.resolve(__dirname, <span class="hljs-string">'dist'</span>),<br>    &#125;,<br>    resolve: &#123;<br>        extensions: [<span class="hljs-string">".ts"</span>, <span class="hljs-string">".tsx"</span>, <span class="hljs-string">".js"</span>] //读取ts文件<br>    &#125;,<br>    module: &#123;<br>        rules: [<br>            &#123;<br>                <span class="hljs-built_in">test</span>: /\.vue$/,<br>                loader: <span class="hljs-string">'vue-loader'</span><br>            &#125;,<br>            &#123;<br>                <span class="hljs-built_in">test</span>: /\.tsx?$/, //新增规则<br>                loader: <span class="hljs-string">"ts-loader"</span><br>            &#125;<br>        ]<br>    &#125;,<br>    plugins: [<br>        new HtmlWebpackPlugin(), new VueLoaderPlugin()<br>    ]<br>&#125;;<br></code></pre></td></tr></table></figure></p>
+<pre><code class="bash">npm i typescript
+npm install ts-loader --save-dev
+</code></pre>
+<p>创建tsconfig.json</p>
+<pre><code class="bash">{
+    &quot;compilerOptions&quot;: {
+        &quot;sourceMap&quot;: true
+    }
+}
+</code></pre>
+<p>修改webpack.config.js</p>
+<pre><code class="bash">const path = require(&#39;path&#39;);
+const HtmlWebpackPlugin = require(&#39;html-webpack-plugin&#39;)
+const VueLoaderPlugin = require(&#39;vue-loader/lib/plugin&#39;)
+
+module.exports = {
+    entry: &#39;./src/index.ts&#39;,   //这里改成ts
+    mode: &#39;development&#39;,
+    output: {
+        filename: &#39;main.js&#39;,
+        path: path.resolve(__dirname, &#39;dist&#39;),
+    },
+    resolve: {
+        extensions: [&quot;.ts&quot;, &quot;.tsx&quot;, &quot;.js&quot;] //读取ts文件
+    },
+    module: {
+        rules: [
+            {
+                test: /\.vue$/,
+                loader: &#39;vue-loader&#39;
+            },
+            {
+                test: /\.tsx?$/, //新增规则
+                loader: &quot;ts-loader&quot;
+            }
+        ]
+    },
+    plugins: [
+        new HtmlWebpackPlugin(), new VueLoaderPlugin()
+    ]
+};
+</code></pre>
 <p>此时index.ts引入vue文件会报错</p>
 <ol start="9">
 <li>在TS里引入vue</li>
 </ol>
 <p>创建shims-vue.d.ts</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">declare</span> module <span class="hljs-string">'*.vue'</span> &#123;<br>    import Vue from <span class="hljs-string">'vue'</span><br>    <span class="hljs-built_in">export</span> default Vue<br>&#125;<br></code></pre></td></tr></table></figure>
+<pre><code class="bash">declare module &#39;*.vue&#39; {
+    import Vue from &#39;vue&#39;
+    export default Vue
+}
+</code></pre>
 <ol start="10">
 <li>在vue里使用ts</li>
 </ol>
-<p>修改webpack.config.js<br>新增两个loader的options<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs bash">module: &#123;<br>    rules: [<br>        &#123;<br>            <span class="hljs-built_in">test</span>: /\.vue$/,<br>            loader: <span class="hljs-string">'vue-loader'</span>,<br>            options: &#123;<br>                esModule: <span class="hljs-literal">true</span><br>            &#125;<br>        &#125;,<br>        &#123;<br>            <span class="hljs-built_in">test</span>: /\.tsx?$/,<br>            loader: <span class="hljs-string">"ts-loader"</span>,<br>            options: &#123;<br>                appendTsSuffixTo: [/\.vue$/]<br>            &#125;<br>        &#125;<br>    ]<br>&#125;,<br></code></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/01/13/webpack4搭建vue-ts项目/" data-id="clq63gkzf0052iwfqydfzqy4l" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TS/">TS</a></li></ul>
-
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2020/01/14/用vue-ts写一个toDoList/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          用vue-ts写一个toDoList
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2020/01/10/TS函数/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">TS函数</div>
-    </a>
-  
-</nav>
-
-  
-</article>
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/ES6/">ES6</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JS/">JS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/TS/">TS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/node/">node</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/vue/">vue</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/webpack/">webpack</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/业务代码/">业务代码</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/库/">库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/笔记/">笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机基础/">计算机基础</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/面试题/">面试题</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/">ES6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TS/">TS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/">webpack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/业务代码/">业务代码</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/库/">库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机基础/">计算机基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试题/">面试题</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/CSS/" style="font-size: 18.75px;">CSS</a> <a href="/tags/ES6/" style="font-size: 16.25px;">ES6</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/HTTP/" style="font-size: 15px;">HTTP</a> <a href="/tags/JS/" style="font-size: 20px;">JS</a> <a href="/tags/TS/" style="font-size: 17.5px;">TS</a> <a href="/tags/git/" style="font-size: 11.25px;">git</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/vue/" style="font-size: 18.75px;">vue</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/业务代码/" style="font-size: 13.75px;">业务代码</a> <a href="/tags/库/" style="font-size: 12.5px;">库</a> <a href="/tags/笔记/" style="font-size: 10px;">笔记</a> <a href="/tags/计算机基础/" style="font-size: 10px;">计算机基础</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a> <a href="/tags/面试题/" style="font-size: 10px;">面试题</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2023/02/02/手写Promise-all/">手写Promise.all</a>
-          </li>
-        
-          <li>
-            <a href="/2023/02/02/Canvas和SVG区别/">Canvas和SVG区别</a>
-          </li>
-        
-          <li>
-            <a href="/2020/02/12/常见排序算法/">常见排序算法</a>
-          </li>
-        
-          <li>
-            <a href="/2020/01/17/TS声明/">TS声明</a>
-          </li>
-        
-          <li>
-            <a href="/2020/01/16/TS高级类型/">TS类型</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2023 Roxas Deng<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/script.js"></script>
-
-
-
-  </div>
-</body>
-</html>
+<p>修改webpack.config.js<br>新增两个loader的options</p>
+<pre><code class="bash">    module: {
+        rules: [
+            {
+                test: /\.vue$/,
+                loader: &#39;vue-loader&#39;,
+                options: {
+                    esModule: true
+                }
+            },
+            {
+                test: /\.tsx?$/,
+                loader: &quot;ts-loader&quot;,
+                options: {
+                    appendTsSuffixTo: [/\.vue$/]
+                }
+            }
+        ]
+    },
+</code></pre>
+</div><div class="p-copyright"><blockquote><div class="p-copyright-author"><span class="p-copyright-key">本文作者：</span><span class="p-copytight-value"><a href="mailto:litreily@163.com">Roxas Deng</a></span></div><div class="p-copyright-link"><span class="p-copyright-key">本文链接：</span><span class="p-copytight-value"><a href="/2020/01/13/webpack4搭建vue-ts项目/">http://yoursite.com/2020/01/13/webpack4搭建vue-ts项目/</a></span></div><div class="p-copyright-note"><span class="p-copyright-key">版权声明：</span><span class="p-copytight-value">本博客所有文章除特殊声明外，均采用<a rel="nofollow" target="_blank" href="https://creativecommons.org/licenses/by-nc/4.0/"> CC BY-NC 4.0 </a>许可协议。转载请注明出处 <a href="http://yoursite.com">Roxas Deng的博客</a>！</span></div></blockquote></div></article><div class="p-info box"><span class="p-tags"><i class="fa fa-tag"></i><a href="/tags/TS/">TS</a></span></div><aside id="toc"><div class="toc-title">目录</div><nav></nav></aside></div><section class="p-ext"><div class="l-pager l-pager-dtl box"><a class="prev" href="/2020/01/14/用vue-ts写一个toDoList/">&lt; 用vue-ts写一个toDoList</a><a class="next" href="/2020/01/11/TS泛型/">TS泛型 &gt;</a></div></section><footer><p>Copyright © 2016 - 2023 <a href="/." rel="nofollow">RoxasDengBlog</a> | <strong><a rel="nofollow" target="_blank" href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a></strong><br><span id="busuanzi_container_site_uv"><i class="fa fa-user"></i><span id="busuanzi_value_site_uv"></span></span> <span id="busuanzi_container_site_pv"><i class="fa fa-eye"></i><span id="busuanzi_value_site_pv"></span></span> | Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a>Theme with<a rel="nofollow" target="_blank" href="https://github.com/litreily/snark-hexo"> snark.</a></p></footer></div></div></div><script type="text/javascript" src="/js/search.js"></script><script type="text/javascript" src="/js/top.js"></script><script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script><script>var search_path = 'search.xml';
+if (search_path.length == 0) {
+    search_path = 'search.xml';
+}
+var path = '/' + search_path;
+searchFunc(path, 'local-search-input', 'local-search-result');
+</script><script type="text/javascript" src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.1" async></script></body></html>

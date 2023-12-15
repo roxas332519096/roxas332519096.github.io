@@ -1,267 +1,185 @@
-<!DOCTYPE html>
-<html>
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="utf-8">
-  
-
-  
-  <title>TS类型 | RoxasDengBlog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="类型1234567891011type Name = Stringtype FasleLike = &apos;&apos; | 0 | false | null | undefinedtype Ponit = &amp;#123;x: number,y: number&amp;#125;type Ponits = Ponit[]//数组type Line = [Ponit, Ponit]//元祖type Circle = &amp;#12">
-<meta name="keywords" content="TS">
-<meta property="og:type" content="article">
-<meta property="og:title" content="TS类型">
-<meta property="og:url" content="http://yoursite.com/2020/01/16/TS高级类型/index.html">
-<meta property="og:site_name" content="RoxasDengBlog">
-<meta property="og:description" content="类型1234567891011type Name = Stringtype FasleLike = &apos;&apos; | 0 | false | null | undefinedtype Ponit = &amp;#123;x: number,y: number&amp;#125;type Ponits = Ponit[]//数组type Line = [Ponit, Ponit]//元祖type Circle = &amp;#12">
-<meta property="og:locale" content="zh_CN">
-<meta property="og:updated_time" content="2023-12-15T01:47:13.836Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="TS类型">
-<meta name="twitter:description" content="类型1234567891011type Name = Stringtype FasleLike = &apos;&apos; | 0 | false | null | undefinedtype Ponit = &amp;#123;x: number,y: number&amp;#125;type Ponits = Ponit[]//数组type Line = [Ponit, Ponit]//元祖type Circle = &amp;#12">
-  
-    <link rel="alternate" href="/atom.xml" title="RoxasDengBlog" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
-</head>
-</html>
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">RoxasDengBlog</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-TS高级类型" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/01/16/TS高级类型/" class="article-date">
-  <time datetime="2020-01-15T19:07:33.000Z" itemprop="datePublished">2020-01-16</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/TS/">TS</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      TS类型
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">type</span> Name = String<br><span class="hljs-built_in">type</span> FasleLike = <span class="hljs-string">''</span> | 0 | <span class="hljs-literal">false</span> | null | undefined<br><span class="hljs-built_in">type</span> Ponit = &#123;x: number,y: number&#125;<br><span class="hljs-built_in">type</span> Ponits = Ponit[]//数组<br><span class="hljs-built_in">type</span> Line = [Ponit, Ponit]//元祖<br><span class="hljs-built_in">type</span> Circle = &#123; center: Ponit, radius: number &#125;<br><span class="hljs-built_in">type</span> Fn = (a: number, b: number) =&gt; number<br><span class="hljs-built_in">type</span> FnWithProps = &#123;<br>    (a: number, b: number): number<br>    prop: number<br>&#125;<br></code></pre></td></tr></table></figure>
+<!DOCTYPE html><html lang="en"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><meta name="theme-color" content="#2d4356"><meta name="baidu-site-verification"><title>TS类型 | RoxasDengBlog</title><link rel="stylesheet" type="text/css" href="/css/style.css"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.png"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script></head><link rel="stylesheet" type="text/css" href="/plugins/highlight/atom-one-dark.min.css"><script type="text/javascript" src="/plugins/highlight/highlight.min.js"></script><script>hljs.initHighlightingOnLoad();
+</script><script type="text/javascript" src="/js/ready.js" async></script><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"><body class="night"><div class="mobile-head" id="mobile-head"><div class="navbar-icon"><span></span><span></span><span></span></div><div class="navbar-title"><a href="/">LITREILY</a></div><div class="navbar-search"><!--= show a circle here--></div></div><div class="h-wrapper" id="menu"><nav class="h-head box"><div class="m-hdimg"><a class="hdimg img" href="/"><img class="nofancybox" src="/img/profile.jpg" width="128" height="128"></a><h1 class="ttl"><a href="/">RoxasDengBlog</a></h1></div><p class="m-desc">心之所向，无惧无悔,<br>愿求仁得仁，复无怨怼！</p><div class="m-nav"><ul><li><span class="dot">●</span><a href="/archives/">归档</a></li><li><span class="dot">●</span><a href="/categories/">分类</a></li><li><span class="dot">●</span><a href="/tags/">标签</a></li><li><span class="dot">●</span><a href="/about/">关于</a></li><li><span class="dot">●</span><a href="/atom.xml">RSS</a></li><li class="m-sch"><form class="form" id="j-formsch" method="get"><input class="txt" type="text" id="local-search-input" name="q" value="搜索" onfocus="if(this.value=='搜索'){this.value='';}" onblur="if(this.value==''){this.value='搜索';}"><input type="text" style="display:none;"></form></li></ul><div id="local-search-result"></div></div></nav></div><div id="back2Top"><a class="fa fa-arrow-up" title="Back to top" href="#"></a></div><div class="box" id="container"><div class="l-wrapper"><div class="l-content box"><div class="l-post l-post-art"><article class="p-art"><div class="p-header box"><h1 class="p-title">TS类型</h1><div class="p-info"><span class="p-date"><i class="fa fa-calendar"></i><a href="/2020/01/16/TS高级类型/">2020-01-16</a></span><span class="p-category"><i class="fa fa-folder"></i><a href="/categories/TS/">TS</a></span><span class="p-view" id="busuanzi_container_page_pv"><i class="fa fa-eye"></i><span id="busuanzi_value_page_pv"></span></span></div></div><div class="p-content"><h3 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h3><pre><code class="bash">    type Name = String
+    type FasleLike = &#39;&#39; | 0 | false | null | undefined
+    type Ponit = {x: number,y: number}
+    type Ponits = Ponit[]//数组
+    type Line = [Ponit, Ponit]//元祖
+    type Circle = { center: Ponit, radius: number }
+    type Fn = (a: number, b: number) =&gt; number
+    type FnWithProps = {
+        (a: number, b: number): number
+        prop: number
+    }
+</code></pre>
 <h3 id="类型别名type"><a href="#类型别名type" class="headerlink" title="类型别名type"></a>类型别名type</h3><p>给类型取别名,跟接口很像</p>
 <p>区别</p>
 <pre><code>1. interface只描述对象，type则描述所有数据
 2. type只是别名，interface则是类型声明
 3. 对外API尽量用interface，方便扩展，对内API尽量用type，防止代码分散
-</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">type</span> Age = number<br>const age: Age = 18<br><br><span class="hljs-built_in">type</span> Name = string<br>const name: Name = <span class="hljs-string">'tom'</span><br><br><span class="hljs-built_in">type</span> A = &#123;<br>    name: string<br>&#125;<br><br>interface B &#123;<br>    name: string<br>&#125;<br></code></pre></td></tr></table></figure>
+</code></pre><pre><code class="bash">    type Age = number
+    const age: Age = 18
+
+    type Name = string
+    const name: Name = &#39;tom&#39;
+
+    type A = {
+        name: string
+    }
+
+    interface B {
+        name: string
+    }
+
+</code></pre>
 <h3 id="字面量类型"><a href="#字面量类型" class="headerlink" title="字面量类型"></a>字面量类型</h3><p>通常用来作可选项</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs bash">interface Course &#123;<br>    category: <span class="hljs-string">'task'</span> | <span class="hljs-string">'live'</span><br>&#125;<br><br>const course: Course = &#123;<br>    category: <span class="hljs-string">'task'</span><br>&#125;<br><br><span class="hljs-built_in">type</span> Dir = <span class="hljs-string">'east'</span> | <span class="hljs-string">'west'</span> | <span class="hljs-string">'north'</span> | <span class="hljs-string">'south'</span><br><br>const dir: Dir = <span class="hljs-string">'east'</span><br><br><span class="hljs-built_in">type</span> A = 1 | 2 | 3 | 4 | 5 | 6<br>const a: A = 1<br></code></pre></td></tr></table></figure>
-<h3 id="索引签名"><a href="#索引签名" class="headerlink" title="索引签名"></a>索引签名</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">type</span> Hash = &#123;<br>    [k:string]:unknown<br>    length:number<br>&#125;<br></code></pre></td></tr></table></figure>
-<h3 id="映射类型"><a href="#映射类型" class="headerlink" title="映射类型"></a>映射类型</h3><p>多用于泛型<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">type</span> Hash = &#123;<br>    [k <span class="hljs-keyword">in</span> string]:unknown<br>&#125;<br></code></pre></td></tr></table></figure></p>
+<pre><code class="bash">    interface Course {
+        category: &#39;task&#39; | &#39;live&#39;
+    }
+
+    const course: Course = {
+        category: &#39;task&#39;
+    }
+
+    type Dir = &#39;east&#39; | &#39;west&#39; | &#39;north&#39; | &#39;south&#39;
+
+    const dir: Dir = &#39;east&#39;
+
+    type A = 1 | 2 | 3 | 4 | 5 | 6
+    const a: A = 1
+</code></pre>
+<h3 id="索引签名"><a href="#索引签名" class="headerlink" title="索引签名"></a>索引签名</h3><pre><code class="bash">type Hash = {
+    [k:string]:unknown
+    length:number
+}
+
+</code></pre>
+<h3 id="映射类型"><a href="#映射类型" class="headerlink" title="映射类型"></a>映射类型</h3><p>多用于泛型</p>
+<pre><code class="bash">type Hash = {
+    [k in string]:unknown
+}
+</code></pre>
 <h3 id="且类型-交叉类型"><a href="#且类型-交叉类型" class="headerlink" title="且类型(交叉类型)"></a>且类型(交叉类型)</h3><p>两种类型都需满足</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs bash">interface human &#123;<br>    name: string<br>    age: number<br>&#125;<br><br>interface student &#123;<br>    name: string<br>    id: number<br>&#125;<br><br><span class="hljs-built_in">let</span> tom: human &amp; student = &#123;<br>    name: <span class="hljs-string">'tom'</span>,<br>    age: 18,<br>    id: 123<br>&#125;<br></code></pre></td></tr></table></figure>
+<pre><code class="bash">    interface human {
+        name: string
+        age: number
+    }
+
+    interface student {
+        name: string
+        id: number
+    }
+
+    let tom: human &amp; student = {
+        name: &#39;tom&#39;,
+        age: 18,
+        id: 123
+    }
+
+
+</code></pre>
 <h3 id="或类型-联合类型"><a href="#或类型-联合类型" class="headerlink" title="或类型(联合类型)"></a>或类型(联合类型)</h3><p>满足一种类型即可</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs bash">interface human &#123;<br>    name: string<br>    age: number<br>&#125;<br><br>interface student &#123;<br>    name: string<br>    id: number<br>&#125;<br><br><span class="hljs-built_in">let</span> tom: human | student = &#123;//满足两种<br>    name: <span class="hljs-string">'tom'</span>,<br>    age: 18,<br>    id: 123<br>&#125;<br><br><span class="hljs-built_in">let</span> jack: human | student = &#123;//满足一种<br>    name: <span class="hljs-string">'jack'</span>,<br>    age: 19<br>&#125;<br><span class="hljs-built_in">type</span> A1 = number<br><span class="hljs-built_in">type</span> B1 = string<br><span class="hljs-built_in">type</span> C1 = A1 | B1<br><br><span class="hljs-built_in">type</span> A2 = &#123;name:string&#125;<br><span class="hljs-built_in">type</span> B2 = &#123;age:number&#125;<br><span class="hljs-built_in">type</span> C2 = A2 | B2<br>const c2:C2 = &#123;<br>    name:<span class="hljs-string">'John'</span>,<br>    age:18<br>&#125;<br>const c3:c2 = &#123;<br>    name:<span class="hljs-string">'John'</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<pre><code class="bash">    interface human {
+        name: string
+        age: number
+    }
+
+    interface student {
+        name: string
+        id: number
+    }
+
+    let tom: human | student = {//满足两种
+        name: &#39;tom&#39;,
+        age: 18,
+        id: 123
+    }
+
+    let jack: human | student = {//满足一种
+        name: &#39;jack&#39;,
+        age: 19
+    }
+    type A1 = number
+    type B1 = string
+    type C1 = A1 | B1
+
+    type A2 = {name:string}
+    type B2 = {age:number}
+    type C2 = A2 | B2
+    const c2:C2 = {
+        name:&#39;John&#39;,
+        age:18
+    }
+    const c3:c2 = {
+        name:&#39;John&#39;
+    }
+</code></pre>
 <h4 id="类型收窄"><a href="#类型收窄" class="headerlink" title="类型收窄"></a>类型收窄</h4><ol>
 <li>js方法：type of instanceof</li>
 <li>Ts方法：is</li>
-<li><p>Ts方法（可辨别联合）：x.kind</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs bash">interface Circle &#123; kind: <span class="hljs-string">'circle'</span>, radius: number &#125;<br>interface Square &#123; kind: <span class="hljs-string">'square'</span>, sideLength: number &#125;<br><span class="hljs-built_in">type</span> Shape = Circle | Square;<br>const f1 = (shape: Shape) =&gt; &#123;<br>    <span class="hljs-keyword">if</span> (shape.kind === <span class="hljs-string">'circle'</span>) &#123;<br>        shape //Circle<br>    &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (shape.kind === <span class="hljs-string">'square'</span>) &#123;<br>        shape //Square<br>    &#125; <span class="hljs-keyword">else</span> &#123;<br>        shape //Never<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<li>Ts方法（可辨别联合）：x.kind<pre><code class="bash"> interface Circle { kind: &#39;circle&#39;, radius: number }
+ interface Square { kind: &#39;square&#39;, sideLength: number }
+ type Shape = Circle | Square;
+ const f1 = (shape: Shape) =&gt; {
+     if (shape.kind === &#39;circle&#39;) {
+         shape //Circle
+     } else if (shape.kind === &#39;square&#39;) {
+         shape //Square
+     } else {
+         shape //Never
+     }
+ }
+</code></pre>
 </li>
-<li><p>Ts方法：断言</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">let</span> b :unknown = await axios(...)<br>(b as number).toFixed();<br></code></pre></td></tr></table></figure>
+<li>Ts方法：断言<pre><code class="bash">let b :unknown = await axios(...)
+(b as number).toFixed();
+</code></pre>
 </li>
 </ol>
 <h3 id="this类型"><a href="#this类型" class="headerlink" title="this类型"></a>this类型</h3><p>自动判断this类型(多态)</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs bash">class Calc &#123;<br>    public n: number<br>    constructor(n: number) &#123;<br>        this.n = n<br>    &#125;<br>    add(n: number) &#123;<br>        this.n += n<br>        <span class="hljs-built_in">return</span> this<br>    &#125;<br>&#125;<br><br><span class="hljs-built_in">let</span> calc = new Calc(1)<br>calc.add(2).add(4) //自动判断this是number,可以用add<br><br>console.log(calc) //7<br></code></pre></td></tr></table></figure>
+<pre><code class="bash">    class Calc {
+        public n: number
+        constructor(n: number) {
+            this.n = n
+        }
+        add(n: number) {
+            this.n += n
+            return this
+        }
+    }
+
+    let calc = new Calc(1)
+    calc.add(2).add(4) //自动判断this是number,可以用add
+
+    console.log(calc) //7
+</code></pre>
 <p>ts的this可以推断类型<br>下面的this返回的是BiggerCalc的this,而不是Calc的this,因为他有sin方法</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs bash">class Calc &#123;<br>    public n: number<br>    constructor(n: number) &#123;<br>        this.n = n<br>    &#125;<br>    add(n: number) &#123;<br>        this.n += n<br>        <span class="hljs-built_in">return</span> this<br>    &#125;<br>&#125;<br><br>class BiggerCalc extends Calc &#123;<br>    <span class="hljs-function"><span class="hljs-title">sin</span></span>() &#123;<br>        this.n = Math.sin(this.n)<br>        <span class="hljs-built_in">return</span> this<br>    &#125;<br>&#125;<br><br><span class="hljs-built_in">let</span> calc = new BiggerCalc(1)<br>calc.add(2).add(4).sin().add<br><br>console.log(calc) //0.6569865987187891<br></code></pre></td></tr></table></figure>
+<pre><code class="bash">    class Calc {
+        public n: number
+        constructor(n: number) {
+            this.n = n
+        }
+        add(n: number) {
+            this.n += n
+            return this
+        }
+    }
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/01/16/TS高级类型/" data-id="clq63gkyc002piwfqg7y2apqt" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TS/">TS</a></li></ul>
+    class BiggerCalc extends Calc {
+        sin() {
+            this.n = Math.sin(this.n)
+            return this
+        }
+    }
 
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2020/01/17/TS声明/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          TS声明
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2020/01/14/用vue-ts写一个toDoList/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">用vue-ts写一个toDoList</div>
-    </a>
-  
-</nav>
+    let calc = new BiggerCalc(1)
+    calc.add(2).add(4).sin().add
 
-  
-</article>
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/ES6/">ES6</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JS/">JS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/TS/">TS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/node/">node</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/vue/">vue</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/webpack/">webpack</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/业务代码/">业务代码</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/库/">库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/笔记/">笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机基础/">计算机基础</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/面试题/">面试题</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/">ES6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TS/">TS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/">webpack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/业务代码/">业务代码</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/库/">库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机基础/">计算机基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试题/">面试题</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/CSS/" style="font-size: 18.75px;">CSS</a> <a href="/tags/ES6/" style="font-size: 16.25px;">ES6</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/HTTP/" style="font-size: 15px;">HTTP</a> <a href="/tags/JS/" style="font-size: 20px;">JS</a> <a href="/tags/TS/" style="font-size: 17.5px;">TS</a> <a href="/tags/git/" style="font-size: 11.25px;">git</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/vue/" style="font-size: 18.75px;">vue</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/业务代码/" style="font-size: 13.75px;">业务代码</a> <a href="/tags/库/" style="font-size: 12.5px;">库</a> <a href="/tags/笔记/" style="font-size: 10px;">笔记</a> <a href="/tags/计算机基础/" style="font-size: 10px;">计算机基础</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a> <a href="/tags/面试题/" style="font-size: 10px;">面试题</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2023/02/02/手写Promise-all/">手写Promise.all</a>
-          </li>
-        
-          <li>
-            <a href="/2023/02/02/Canvas和SVG区别/">Canvas和SVG区别</a>
-          </li>
-        
-          <li>
-            <a href="/2020/02/12/常见排序算法/">常见排序算法</a>
-          </li>
-        
-          <li>
-            <a href="/2020/01/17/TS声明/">TS声明</a>
-          </li>
-        
-          <li>
-            <a href="/2020/01/16/TS高级类型/">TS类型</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2023 Roxas Deng<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/script.js"></script>
-
-
-
-  </div>
-</body>
-</html>
+    console.log(calc) //0.6569865987187891
+</code></pre>
+</div><div class="p-copyright"><blockquote><div class="p-copyright-author"><span class="p-copyright-key">本文作者：</span><span class="p-copytight-value"><a href="mailto:litreily@163.com">Roxas Deng</a></span></div><div class="p-copyright-link"><span class="p-copyright-key">本文链接：</span><span class="p-copytight-value"><a href="/2020/01/16/TS高级类型/">http://yoursite.com/2020/01/16/TS高级类型/</a></span></div><div class="p-copyright-note"><span class="p-copyright-key">版权声明：</span><span class="p-copytight-value">本博客所有文章除特殊声明外，均采用<a rel="nofollow" target="_blank" href="https://creativecommons.org/licenses/by-nc/4.0/"> CC BY-NC 4.0 </a>许可协议。转载请注明出处 <a href="http://yoursite.com">Roxas Deng的博客</a>！</span></div></blockquote></div></article><div class="p-info box"><span class="p-tags"><i class="fa fa-tag"></i><a href="/tags/TS/">TS</a></span></div><aside id="toc"><div class="toc-title">目录</div><nav><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#类型"><span class="toc-number">1.</span> <span class="toc-text">类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#类型别名type"><span class="toc-number">2.</span> <span class="toc-text">类型别名type</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字面量类型"><span class="toc-number">3.</span> <span class="toc-text">字面量类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#索引签名"><span class="toc-number">4.</span> <span class="toc-text">索引签名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#映射类型"><span class="toc-number">5.</span> <span class="toc-text">映射类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#且类型-交叉类型"><span class="toc-number">6.</span> <span class="toc-text">且类型(交叉类型)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#或类型-联合类型"><span class="toc-number">7.</span> <span class="toc-text">或类型(联合类型)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#类型收窄"><span class="toc-number">7.1.</span> <span class="toc-text">类型收窄</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#this类型"><span class="toc-number">8.</span> <span class="toc-text">this类型</span></a></li></ol></nav></aside></div><section class="p-ext"><div class="l-pager l-pager-dtl box"><a class="prev" href="/2020/01/17/TS声明/">&lt; TS声明</a><a class="next" href="/2020/01/14/用vue-ts写一个toDoList/">用vue-ts写一个toDoList &gt;</a></div></section><footer><p>Copyright © 2016 - 2023 <a href="/." rel="nofollow">RoxasDengBlog</a> | <strong><a rel="nofollow" target="_blank" href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a></strong><br><span id="busuanzi_container_site_uv"><i class="fa fa-user"></i><span id="busuanzi_value_site_uv"></span></span> <span id="busuanzi_container_site_pv"><i class="fa fa-eye"></i><span id="busuanzi_value_site_pv"></span></span> | Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a>Theme with<a rel="nofollow" target="_blank" href="https://github.com/litreily/snark-hexo"> snark.</a></p></footer></div></div></div><script type="text/javascript" src="/js/search.js"></script><script type="text/javascript" src="/js/top.js"></script><script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script><script>var search_path = 'search.xml';
+if (search_path.length == 0) {
+    search_path = 'search.xml';
+}
+var path = '/' + search_path;
+searchFunc(path, 'local-search-input', 'local-search-result');
+</script><script type="text/javascript" src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.1" async></script></body></html>

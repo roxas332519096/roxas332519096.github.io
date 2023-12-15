@@ -1,261 +1,187 @@
-<!DOCTYPE html>
-<html>
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="utf-8">
-  
+<!DOCTYPE html><html lang="en"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><meta name="theme-color" content="#2d4356"><meta name="baidu-site-verification"><title>详解Vuex的使用 | RoxasDengBlog</title><link rel="stylesheet" type="text/css" href="/css/style.css"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.png"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script></head><link rel="stylesheet" type="text/css" href="/plugins/highlight/atom-one-dark.min.css"><script type="text/javascript" src="/plugins/highlight/highlight.min.js"></script><script>hljs.initHighlightingOnLoad();
+</script><script type="text/javascript" src="/js/ready.js" async></script><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"><body class="night"><div class="mobile-head" id="mobile-head"><div class="navbar-icon"><span></span><span></span><span></span></div><div class="navbar-title"><a href="/">LITREILY</a></div><div class="navbar-search"><!--= show a circle here--></div></div><div class="h-wrapper" id="menu"><nav class="h-head box"><div class="m-hdimg"><a class="hdimg img" href="/"><img class="nofancybox" src="/img/profile.jpg" width="128" height="128"></a><h1 class="ttl"><a href="/">RoxasDengBlog</a></h1></div><p class="m-desc">心之所向，无惧无悔,<br>愿求仁得仁，复无怨怼！</p><div class="m-nav"><ul><li><span class="dot">●</span><a href="/archives/">归档</a></li><li><span class="dot">●</span><a href="/categories/">分类</a></li><li><span class="dot">●</span><a href="/tags/">标签</a></li><li><span class="dot">●</span><a href="/about/">关于</a></li><li><span class="dot">●</span><a href="/atom.xml">RSS</a></li><li class="m-sch"><form class="form" id="j-formsch" method="get"><input class="txt" type="text" id="local-search-input" name="q" value="搜索" onfocus="if(this.value=='搜索'){this.value='';}" onblur="if(this.value==''){this.value='搜索';}"><input type="text" style="display:none;"></form></li></ul><div id="local-search-result"></div></div></nav></div><div id="back2Top"><a class="fa fa-arrow-up" title="Back to top" href="#"></a></div><div class="box" id="container"><div class="l-wrapper"><div class="l-content box"><div class="l-post l-post-art"><article class="p-art"><div class="p-header box"><h1 class="p-title">详解Vuex的使用</h1><div class="p-info"><span class="p-date"><i class="fa fa-calendar"></i><a href="/2019/02/16/详解Vuex的使用/">2019-02-16</a></span><span class="p-category"><i class="fa fa-folder"></i><a href="/categories/vue/">vue</a></span><span class="p-view" id="busuanzi_container_page_pv"><i class="fa fa-eye"></i><span id="busuanzi_value_page_pv"></span></span></div></div><div class="p-content"><h4 id="Vuex的引入"><a href="#Vuex的引入" class="headerlink" title="Vuex的引入"></a>Vuex的引入</h4><pre><code class="bash">import Vue from &#39;vue&#39;
+import Vuex from &#39;vuex&#39;
 
-  
-  <title>详解Vuex的使用 | RoxasDengBlog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Vuex的引入1234import Vue from &apos;vue&apos;import Vuex from &apos;vuex&apos;Vue.use(Vuex) vuex的格式1234567891011121314new Vuex.Store(&amp;#123;    state: &amp;#123;        //数据    &amp;#125;,    getters:&amp;#123;        //可理解为state的计算属性,同">
-<meta name="keywords" content="vue">
-<meta property="og:type" content="article">
-<meta property="og:title" content="详解Vuex的使用">
-<meta property="og:url" content="http://yoursite.com/2019/02/16/详解Vuex的使用/index.html">
-<meta property="og:site_name" content="RoxasDengBlog">
-<meta property="og:description" content="Vuex的引入1234import Vue from &apos;vue&apos;import Vuex from &apos;vuex&apos;Vue.use(Vuex) vuex的格式1234567891011121314new Vuex.Store(&amp;#123;    state: &amp;#123;        //数据    &amp;#125;,    getters:&amp;#123;        //可理解为state的计算属性,同">
-<meta property="og:locale" content="zh_CN">
-<meta property="og:updated_time" content="2023-12-15T01:47:13.857Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="详解Vuex的使用">
-<meta name="twitter:description" content="Vuex的引入1234import Vue from &apos;vue&apos;import Vuex from &apos;vuex&apos;Vue.use(Vuex) vuex的格式1234567891011121314new Vuex.Store(&amp;#123;    state: &amp;#123;        //数据    &amp;#125;,    getters:&amp;#123;        //可理解为state的计算属性,同">
-  
-    <link rel="alternate" href="/atom.xml" title="RoxasDengBlog" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
-</head>
-</html>
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">RoxasDengBlog</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-详解Vuex的使用" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/02/16/详解Vuex的使用/" class="article-date">
-  <time datetime="2019-02-16T09:22:28.000Z" itemprop="datePublished">2019-02-16</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/vue/">vue</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      详解Vuex的使用
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="Vuex的引入"><a href="#Vuex的引入" class="headerlink" title="Vuex的引入"></a>Vuex的引入</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">import Vue from <span class="hljs-string">'vue'</span><br>import Vuex from <span class="hljs-string">'vuex'</span><br><br>Vue.use(Vuex)<br></code></pre></td></tr></table></figure>
-<h4 id="vuex的格式"><a href="#vuex的格式" class="headerlink" title="vuex的格式"></a>vuex的格式</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs bash">new Vuex.Store(&#123;<br>    state: &#123;<br>        //数据<br>    &#125;,<br>    getters:&#123;<br>        //可理解为state的计算属性,同计算属性一样会被缓存,刷新才重新计算<br>    &#125;<br>    mutations: &#123;<br>        //修改state的同步方法<br>    &#125;,<br>    actions: &#123;<br>        //异步方法,需要调用mutations修改state<br>    &#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
+Vue.use(Vuex)
+</code></pre>
+<h4 id="vuex的格式"><a href="#vuex的格式" class="headerlink" title="vuex的格式"></a>vuex的格式</h4><pre><code class="bash">new Vuex.Store({
+    state: {
+        //数据
+    },
+    getters:{
+        //可理解为state的计算属性,同计算属性一样会被缓存,刷新才重新计算
+    }
+    mutations: {
+        //修改state的同步方法
+    },
+    actions: {
+        //异步方法,需要调用mutations修改state
+    }
+})
+</code></pre>
 <h4 id="state的使用"><a href="#state的使用" class="headerlink" title="state的使用"></a>state的使用</h4><p>由于state是响应式的,所以在组件中使用state时,最简单的方法是用计算属性</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs bash">//vuex<br>&#123;<br>    state:&#123;<br>        list:[1,2,3]<br>    &#125;<br>&#125;<br><br>//compoment<br><br>computed:&#123;<br>    <span class="hljs-function"><span class="hljs-title">list</span></span>()&#123;<br>        <span class="hljs-built_in">return</span> this.<span class="hljs-variable">$store</span>.state.list<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<pre><code class="bash">//vuex
+{
+    state:{
+        list:[1,2,3]
+    }
+}
+
+//compoment
+
+computed:{
+    list(){
+        return this.$store.state.list
+    }
+}
+
+</code></pre>
 <h4 id="getters的使用"><a href="#getters的使用" class="headerlink" title="getters的使用"></a>getters的使用</h4><p>可理解为state的计算属性,同计算属性一样会被缓存,刷新才重新计算<br>应用场景:当多个组件属性用到这个属性的时候,可以简化代码</p>
-<h4 id="通过属性访问"><a href="#通过属性访问" class="headerlink" title="通过属性访问"></a>通过属性访问</h4><p>可以以属性的形式访问这些值<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs bash"><br>//vuex<br>&#123;<br>    state:&#123;<br>        list:[1,2,3]<br>    &#125;,<br>    getters:&#123;<br>        count:state=&gt;&#123;<br>            <span class="hljs-built_in">return</span> state.list.map((item)=&gt;&#123;<br>                item++<br>            &#125;)<br>        &#125;<br>    &#125;<br>&#125;<br><br>//component<br><br>computed:&#123;<br>    <span class="hljs-function"><span class="hljs-title">count</span></span>()&#123;<br>        <span class="hljs-built_in">return</span> this.<span class="hljs-variable">$store</span>.getters.count<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure></p>
+<h4 id="通过属性访问"><a href="#通过属性访问" class="headerlink" title="通过属性访问"></a>通过属性访问</h4><p>可以以属性的形式访问这些值</p>
+<pre><code class="bash">
+//vuex
+{
+    state:{
+        list:[1,2,3]
+    },
+    getters:{
+        count:state=&gt;{
+            return state.list.map((item)=&gt;{
+                item++
+            })
+        }
+    }
+}
+
+//component
+
+computed:{
+    count(){
+        return this.$store.getters.count
+    }
+}
+</code></pre>
 <h5 id="通过方法访问"><a href="#通过方法访问" class="headerlink" title="通过方法访问"></a>通过方法访问</h5><p>可以通过让getter返回一个函数,来实现给getter传参,在对store数组进行查询时非常有用.<br>注意,getter通过方法访问时,每次都会进行调用,不会缓存.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs bash"><br>//vuex<br>getter:&#123;<br>    getNumber:(state)=&gt;&#123;<br>        (id)=&gt;&#123;<br>            <span class="hljs-built_in">return</span> state.list.find((item)=&gt;&#123;<br>                item === id<br>            &#125;)<br>        &#125;<br>    &#125;<br>&#125;<br><br>//compoment<br><br>this.<span class="hljs-variable">$store</span>.getters.getNumber(1)<br></code></pre></td></tr></table></figure>
+<pre><code class="bash">
+//vuex
+getter:{
+    getNumber:(state)=&gt;{
+        (id)=&gt;{
+            return state.list.find((item)=&gt;{
+                item === id
+            })
+        }
+    }
+}
+
+//compoment
+
+this.$store.getters.getNumber(1)
+</code></pre>
 <h5 id="mapGetters辅助函数"><a href="#mapGetters辅助函数" class="headerlink" title="mapGetters辅助函数"></a>mapGetters辅助函数</h5><p>mapGetters辅助函数仅仅是将store中的getter映射到局部计算属性</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs bash">import &#123;mapGetters&#125; from <span class="hljs-string">'vuex'</span><br><br>computed:&#123;<br>    //使用对象展开运算符将getter混入原computed对象中<br>    ...mapGetters([<br>        <span class="hljs-string">'list1'</span>,<br>        <span class="hljs-string">'list2'</span>,<br>        <span class="hljs-string">'list3'</span>,<br>        //...<br>    ])<br>&#125;<br></code></pre></td></tr></table></figure>
+<pre><code class="bash">import {mapGetters} from &#39;vuex&#39;
+
+computed:{
+    //使用对象展开运算符将getter混入原computed对象中
+    ...mapGetters([
+        &#39;list1&#39;,
+        &#39;list2&#39;,
+        &#39;list3&#39;,
+        //...
+    ])
+}
+</code></pre>
 <p>如想讲getter属性另取名字,使用对象形式</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">mapGetters(&#123;<br>    //把this.newListname映射为this.<span class="hljs-variable">$store</span>.getters.list1<br>    newListname:<span class="hljs-string">'list1'</span><br>&#125;)<br></code></pre></td></tr></table></figure>
+<pre><code class="bash">mapGetters({
+    //把this.newListname映射为this.$store.getters.list1
+    newListname:&#39;list1&#39;
+})
+</code></pre>
 <h4 id="Mutation"><a href="#Mutation" class="headerlink" title="Mutation"></a>Mutation</h4><p>Mutation是vuex更改state的唯一方法,并且必须是同步的.<br>每个mutation都有一个事件类型(type)和回调函数(hander),并且以state作为第一个参数</p>
-<p>调用只能通过state.commit(‘type’)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs bash"><br>//vuex<br>state:&#123;<br>    count:1<br>&#125;,<br>mutations:&#123;<br>    increment(state)&#123;<br>        state.count++<br>    &#125;<br>&#125;<br><br>//compoment<br><br>store.commit(<span class="hljs-string">'increment'</span>)<br></code></pre></td></tr></table></figure></p>
+<p>调用只能通过state.commit(‘type’)</p>
+<pre><code class="bash">
+//vuex
+state:{
+    count:1
+},
+mutations:{
+    increment(state){
+        state.count++
+    }
+}
+
+//compoment
+
+store.commit(&#39;increment&#39;)
+</code></pre>
 <h5 id="提交载荷-payload"><a href="#提交载荷-payload" class="headerlink" title="提交载荷(payload)"></a>提交载荷(payload)</h5><p>store.commit传入额外参数,即mutation的载荷(payload)</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash">//vuex<br><br>mutations:&#123;<br>    increment(state,n)&#123;<br>        state.count += n<br>    &#125;<br>&#125;<br><br>//component<br>store.commit(<span class="hljs-string">'increment'</span>,10)<br></code></pre></td></tr></table></figure>
+<pre><code class="bash">//vuex
+
+mutations:{
+    increment(state,n){
+        state.count += n
+    }
+}
+
+//component
+store.commit(&#39;increment&#39;,10)
+</code></pre>
 <h5 id="mapMutations"><a href="#mapMutations" class="headerlink" title="mapMutations"></a>mapMutations</h5><p>同mapGetters</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs undefined">//vuex<br><br>mutations:&#123;<br>    increment(state)&#123;<br>        state.count++<br>    &#125;<br>&#125;<br><br>//compoment<br><br>improt &#123;mapMutations&#125; from &apos;vuex&apos;<br><br>methods:&#123;<br>    ..mapMutations([&apos;increment&apos;])<br>    //或<br>    //...mapMutations(&#123;<br>        add:&apos;increment&apos;<br>    &#125;)<br>&#125;<br></code></pre></td></tr></table></figure>
-<h4 id="Action"><a href="#Action" class="headerlink" title="Action"></a>Action</h4><p>vuex需要异步操作时,需要用action,用action调用mutation的方法更改state</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs bash">//vuex<br><br>state:&#123;<br>    count:0<br>&#125;,<br>mutations:&#123;<br>    increment(state)&#123;<br>        state.count++<br>    &#125;<br>&#125;.<br>actions:&#123;<br>    add(context)&#123;<br>        setTimeout(()=&gt;&#123;<br>            context.commit(<span class="hljs-string">'increment'</span>)<br>        &#125;,1000)<br>    &#125;<br>&#125;<br><br>//compoment<br>store.dispatch(<span class="hljs-string">'add'</span>)<br></code></pre></td></tr></table></figure>
+<pre><code>//vuex
+
+mutations:{
+    increment(state){
+        state.count++
+    }
+}
+
+//compoment
+
+improt {mapMutations} from &#39;vuex&#39;
+
+methods:{
+    ..mapMutations([&#39;increment&#39;])
+    //或
+    //...mapMutations({
+        add:&#39;increment&#39;
+    })
+}
+</code></pre><h4 id="Action"><a href="#Action" class="headerlink" title="Action"></a>Action</h4><p>vuex需要异步操作时,需要用action,用action调用mutation的方法更改state</p>
+<pre><code class="bash">//vuex
+
+state:{
+    count:0
+},
+mutations:{
+    increment(state){
+        state.count++
+    }
+}.
+actions:{
+    add(context){
+        setTimeout(()=&gt;{
+            context.commit(&#39;increment&#39;)
+        },1000)
+    }
+}
+
+//compoment
+store.dispatch(&#39;add&#39;)
+</code></pre>
 <h5 id="参数context"><a href="#参数context" class="headerlink" title="参数context"></a>参数context</h5><p>action的第一个参数context相当于上下文,可以通过context.state和context.getters获取state与getters<br>可以用ES6的赋值解构进行简写.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash">actions:&#123;<br>    add(&#123;commit&#125;)&#123;<br>        setTimeout(()=&gt;&#123;<br>            commit(<span class="hljs-string">'increment'</span>)<br>        &#125;,1000)<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<pre><code class="bash">actions:{
+    add({commit}){
+        setTimeout(()=&gt;{
+            commit(&#39;increment&#39;)
+        },1000)
+    }
+}
+</code></pre>
 <h5 id="mapActions"><a href="#mapActions" class="headerlink" title="mapActions"></a>mapActions</h5><p>方法同mapMutations</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/02/16/详解Vuex的使用/" data-id="clq63gl0f0077iwfqny6bzlz4" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
-
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2019/02/20/深入了解函数/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          深入了解函数
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2019/01/24/图片延迟加载/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">图片延迟加载</div>
-    </a>
-  
-</nav>
-
-  
-</article>
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/ES6/">ES6</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JS/">JS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/TS/">TS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/node/">node</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/vue/">vue</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/webpack/">webpack</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/业务代码/">业务代码</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/库/">库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/笔记/">笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机基础/">计算机基础</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/面试题/">面试题</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/">ES6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TS/">TS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/">webpack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/业务代码/">业务代码</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/库/">库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机基础/">计算机基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试题/">面试题</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/CSS/" style="font-size: 18.75px;">CSS</a> <a href="/tags/ES6/" style="font-size: 16.25px;">ES6</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/HTTP/" style="font-size: 15px;">HTTP</a> <a href="/tags/JS/" style="font-size: 20px;">JS</a> <a href="/tags/TS/" style="font-size: 17.5px;">TS</a> <a href="/tags/git/" style="font-size: 11.25px;">git</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/vue/" style="font-size: 18.75px;">vue</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/业务代码/" style="font-size: 13.75px;">业务代码</a> <a href="/tags/库/" style="font-size: 12.5px;">库</a> <a href="/tags/笔记/" style="font-size: 10px;">笔记</a> <a href="/tags/计算机基础/" style="font-size: 10px;">计算机基础</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a> <a href="/tags/面试题/" style="font-size: 10px;">面试题</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2023/02/02/手写Promise-all/">手写Promise.all</a>
-          </li>
-        
-          <li>
-            <a href="/2023/02/02/Canvas和SVG区别/">Canvas和SVG区别</a>
-          </li>
-        
-          <li>
-            <a href="/2020/02/12/常见排序算法/">常见排序算法</a>
-          </li>
-        
-          <li>
-            <a href="/2020/01/17/TS声明/">TS声明</a>
-          </li>
-        
-          <li>
-            <a href="/2020/01/16/TS高级类型/">TS类型</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2023 Roxas Deng<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/script.js"></script>
-
-
-
-  </div>
-</body>
-</html>
+</div><div class="p-copyright"><blockquote><div class="p-copyright-author"><span class="p-copyright-key">本文作者：</span><span class="p-copytight-value"><a href="mailto:litreily@163.com">Roxas Deng</a></span></div><div class="p-copyright-link"><span class="p-copyright-key">本文链接：</span><span class="p-copytight-value"><a href="/2019/02/16/详解Vuex的使用/">http://yoursite.com/2019/02/16/详解Vuex的使用/</a></span></div><div class="p-copyright-note"><span class="p-copyright-key">版权声明：</span><span class="p-copytight-value">本博客所有文章除特殊声明外，均采用<a rel="nofollow" target="_blank" href="https://creativecommons.org/licenses/by-nc/4.0/"> CC BY-NC 4.0 </a>许可协议。转载请注明出处 <a href="http://yoursite.com">Roxas Deng的博客</a>！</span></div></blockquote></div></article><div class="p-info box"><span class="p-tags"><i class="fa fa-tag"></i><a href="/tags/vue/">vue</a></span></div><aside id="toc"><div class="toc-title">目录</div><nav><ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#Vuex的引入"><span class="toc-number">1.</span> <span class="toc-text">Vuex的引入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#vuex的格式"><span class="toc-number">2.</span> <span class="toc-text">vuex的格式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#state的使用"><span class="toc-number">3.</span> <span class="toc-text">state的使用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#getters的使用"><span class="toc-number">4.</span> <span class="toc-text">getters的使用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#通过属性访问"><span class="toc-number">5.</span> <span class="toc-text">通过属性访问</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#通过方法访问"><span class="toc-number">5.1.</span> <span class="toc-text">通过方法访问</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#mapGetters辅助函数"><span class="toc-number">5.2.</span> <span class="toc-text">mapGetters辅助函数</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Mutation"><span class="toc-number">6.</span> <span class="toc-text">Mutation</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#提交载荷-payload"><span class="toc-number">6.1.</span> <span class="toc-text">提交载荷(payload)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#mapMutations"><span class="toc-number">6.2.</span> <span class="toc-text">mapMutations</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Action"><span class="toc-number">7.</span> <span class="toc-text">Action</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#参数context"><span class="toc-number">7.1.</span> <span class="toc-text">参数context</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#mapActions"><span class="toc-number">7.2.</span> <span class="toc-text">mapActions</span></a></li></ol></li></ol></nav></aside></div><section class="p-ext"><div class="l-pager l-pager-dtl box"><a class="prev" href="/2019/02/20/深入了解函数/">&lt; 深入了解函数</a><a class="next" href="/2019/01/24/图片延迟加载/">图片延迟加载 &gt;</a></div></section><footer><p>Copyright © 2016 - 2023 <a href="/." rel="nofollow">RoxasDengBlog</a> | <strong><a rel="nofollow" target="_blank" href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a></strong><br><span id="busuanzi_container_site_uv"><i class="fa fa-user"></i><span id="busuanzi_value_site_uv"></span></span> <span id="busuanzi_container_site_pv"><i class="fa fa-eye"></i><span id="busuanzi_value_site_pv"></span></span> | Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a>Theme with<a rel="nofollow" target="_blank" href="https://github.com/litreily/snark-hexo"> snark.</a></p></footer></div></div></div><script type="text/javascript" src="/js/search.js"></script><script type="text/javascript" src="/js/top.js"></script><script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script><script>var search_path = 'search.xml';
+if (search_path.length == 0) {
+    search_path = 'search.xml';
+}
+var path = '/' + search_path;
+searchFunc(path, 'local-search-input', 'local-search-result');
+</script><script type="text/javascript" src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.1" async></script></body></html>
