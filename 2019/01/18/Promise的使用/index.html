@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Promise的使用 &amp; async awit | RoxasDengBlog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="PromisePromise 的作用当一个异步函数执行的时候,需要回调,可使用 Promise 链式操作进行回调. 例子: 12345678910111213141516171819function fn1(callback)&amp;#123;    setTimeout(()=&amp;gt;&amp;#123;        console.log(&apos;fn1执行&apos;)    &amp;#125;,1000)&amp;#125;fun">
+<meta name="keywords" content="ES6">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Promise的使用 &amp; async awit">
+<meta property="og:url" content="http://yoursite.com/2019/01/18/Promise的使用/index.html">
+<meta property="og:site_name" content="RoxasDengBlog">
+<meta property="og:description" content="PromisePromise 的作用当一个异步函数执行的时候,需要回调,可使用 Promise 链式操作进行回调. 例子: 12345678910111213141516171819function fn1(callback)&amp;#123;    setTimeout(()=&amp;gt;&amp;#123;        console.log(&apos;fn1执行&apos;)    &amp;#125;,1000)&amp;#125;fun">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:updated_time" content="2023-12-15T01:47:13.832Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Promise的使用 &amp; async awit">
+<meta name="twitter:description" content="PromisePromise 的作用当一个异步函数执行的时候,需要回调,可使用 Promise 链式操作进行回调. 例子: 12345678910111213141516171819function fn1(callback)&amp;#123;    setTimeout(()=&amp;gt;&amp;#123;        console.log(&apos;fn1执行&apos;)    &amp;#125;,1000)&amp;#125;fun">
+  
+    <link rel="alternate" href="/atom.xml" title="RoxasDengBlog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">RoxasDengBlog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Promise的使用" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/01/18/Promise的使用/" class="article-date">
+  <time datetime="2019-01-18T13:39:10.000Z" itemprop="datePublished">2019-01-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/ES6/">ES6</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Promise的使用 &amp; async awit
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h3><h4 id="Promise-的作用"><a href="#Promise-的作用" class="headerlink" title="Promise 的作用"></a>Promise 的作用</h4><p>当一个异步函数执行的时候,需要回调,可使用 Promise 链式操作进行回调.</p>
+<p>例子:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-keyword">function</span> fn1(callback)&#123;<br>    setTimeout(()=&gt;&#123;<br>        console.log(<span class="hljs-string">'fn1执行'</span>)<br>    &#125;,1000)<br>&#125;<br><br><span class="hljs-keyword">function</span> fn1(callback)&#123;<br>    setTimeout(()=&gt;&#123;<br>        console.log(<span class="hljs-string">'fn2执行'</span>)<br>        callback()<br>    &#125;,1000)<br>&#125;<br><br><span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">fn1</span></span>()&#123;<br>    setTimeout(()=&gt;&#123;<br>        console.log(<span class="hljs-string">'fn3执行'</span>)<br>        callback()<br>    &#125;,1000)<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>我们以前是这样回调的</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><br>fn1(()=&gt;&#123;<br>    fn2(()=&gt;&#123;<br>        fn3<br>    &#125;)<br>&#125;)<br>//控制台一秒后输出 fn1,再一秒后输出 fn2,再一秒后输出 fn3<br></code></pre></td></tr></table></figure>
+<p>因为回调函数复杂的时候非常麻烦,所以我们可以使用 promise 改写上面的函数</p>
+<h4 id="Promise-语法"><a href="#Promise-语法" class="headerlink" title="Promise 语法"></a>Promise 语法</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">promiseFn</span></span>()&#123;<br>    <span class="hljs-built_in">return</span> new Promise((resolve,reject)=&gt;&#123;<br>        //当异步函数执行成功时<br>        resolve();<br>        //当异步函数执行失败时,<br>        reject();<br>    &#125;)<br>&#125;<br><br>promiseFn().<span class="hljs-keyword">then</span>(()=&gt;&#123;&#125;).catch(()=&gt;&#123;&#125;)<br></code></pre></td></tr></table></figure>
+<p>构造函数 Promise 接收一个参数 function,function 接收两个参数,一个是成功时执行的函数,一个是失败时执行的函数.<br>通过链式操作,我们可以分别对不同的结果分别执行不同的回调函数.</p>
+<p>通过 promise 改写上面的函数</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">fn1</span></span>()&#123;<br>    <span class="hljs-built_in">return</span> new Promise((resolve, reject) =&gt; &#123;<br>        setTimeout(() =&gt; &#123;<br>            console.log(<span class="hljs-string">'fn1执行'</span>)<br>            resolve()<br>        &#125;, 1000)<br>    &#125;)<br>&#125;<br><br><span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">fn2</span></span>()&#123;<br>    <span class="hljs-built_in">return</span> new Promise((resolve, reject) =&gt; &#123;<br>        setTimeout(() =&gt; &#123;<br>            console.log(<span class="hljs-string">'fn2执行'</span>)<br>            resolve()<br>        &#125;, 1000)<br>    &#125;)<br>&#125;<br><br><span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">fn3</span></span>()&#123;<br>    <span class="hljs-built_in">return</span> new Promise((resolve, reject) =&gt; &#123;<br>        setTimeout(() =&gt; &#123;<br>            console.log(<span class="hljs-string">'fn3执行'</span>)<br>            resolve()<br>        &#125;, 1000)<br>    &#125;)<br>&#125;<br><br><span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">onerror</span></span>() &#123;<br>    console.log(<span class="hljs-string">'error'</span>)<br>&#125;<br><br>fn1().<span class="hljs-keyword">then</span>(fn2).<span class="hljs-keyword">then</span>(fn3).catch(onerror)<br></code></pre></td></tr></table></figure>
+<p>当异步函数执行时,下一个异步函数需要用上一个异步函数的返回值可以这样写</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><code class="hljs bash">//定义函数获取城市<br><span class="hljs-keyword">function</span> getCity(ip)&#123;<br>    <span class="hljs-built_in">return</span> new Promise((resolve,reject)=&gt;&#123;<br>        <span class="hljs-built_in">let</span> xhr = new XMLHttpRequest();<br>        xhr.open(<span class="hljs-string">'GET'</span>,url/ip,<span class="hljs-literal">true</span>)<br>        xhr.onload = <span class="hljs-function"><span class="hljs-title">function</span></span>()&#123;<br>            var data = JSON.parse(xhr.responseText) //获得数据<br>            resolve(data)<br>        &#125;<br>        xhr.onerror = <span class="hljs-function"><span class="hljs-title">function</span></span>()&#123;<br>            reject(<span class="hljs-string">'获取失败'</span>)<br>        &#125;<br>        xhr.send()<br>    &#125;)<br>&#125;<br>//定义函数获取天气<br><span class="hljs-keyword">function</span> getWeather(city)&#123;<br>    <span class="hljs-built_in">return</span> new Promise((resolve,reject)=&gt;&#123;<br>        <span class="hljs-built_in">let</span> xhr = new XMLHttpRequest();<br>        xhr.open(<span class="hljs-string">'GET'</span>,url/city,<span class="hljs-literal">true</span>)<br>        xhr.onload = <span class="hljs-function"><span class="hljs-title">function</span></span>()&#123;<br>            var data = JSON.parse(xhr.responseText)<br>        &#125;<br>        xhr.onerror = <span class="hljs-function"><span class="hljs-title">function</span></span>()&#123;<br>            reject(<span class="hljs-string">'获取失败'</span>)<br>        &#125;<br>        xhr.send<br>    &#125;)<br>&#125;<br><br>//调用<br><br>getCity(上海).<span class="hljs-keyword">then</span>((city)=&gt;&#123;<br>    <span class="hljs-built_in">return</span> getWeather(city)<br>&#125;).<span class="hljs-keyword">then</span>((res)=&gt;&#123;<br>    console.log(res)<br>&#125;).catch((error)=&gt;&#123;<br>    console.log(error)<br>&#125;)<br></code></pre></td></tr></table></figure>
+<h4 id="Promise-all"><a href="#Promise-all" class="headerlink" title="Promise.all"></a>Promise.all</h4><p>当有几个 promise 的时候,我们可以用 promise.all 让所有 promise 状态变更之后再回调</p>
+<p>then 的第一个参数是所有成功才执行,第二个参数是只要有一个失败就执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">Promise.all([p1,p2,p3]).<span class="hljs-keyword">then</span>((res1,res2,res3)=&gt;&#123;&#125;,(res1,res2,res3)=&gt;&#123;&#125;)<br></code></pre></td></tr></table></figure>
+<h4 id="Promise-race"><a href="#Promise-race" class="headerlink" title="Promise.race"></a>Promise.race</h4><p>当有几个 promise 的时候,我们可以用 promise.race 来获取最快/成功 promise 的 resolve</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">Promise.race([p1,p2,p3]).<span class="hljs-keyword">then</span>(()=&gt;&#123;&#125;)<br></code></pre></td></tr></table></figure>
+<h4 id="Promise-reject"><a href="#Promise-reject" class="headerlink" title="Promise.reject()"></a>Promise.reject()</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs undefined">Promise.reject(&quot;Testing static reject&quot;).then((reason)=&gt;&#123;<br>  // 未被调用<br>&#125;, (reason) =&gt; &#123;<br>  console.log(reason); // &quot;Testing static reject&quot;<br>&#125;);<br><br>Promise.reject(new Error(&quot;fail&quot;)).then((result)=&gt;&#123;<br>  // 未被调用<br>&#125;, (error)=&gt;&#123;<br>  console.log(error); // stacktrace<br>&#125;);<br></code></pre></td></tr></table></figure>
+<h4 id="finally"><a href="#finally" class="headerlink" title="finally"></a>finally</h4><p>当 promise 状态变更的时候时候,不管成功与失败,我们都可以执行同一个方法</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash">.finally(loading=&gt;&#123;<br>    loding = <span class="hljs-literal">false</span><br>&#125;)<br><br>等价于<br>.<span class="hljs-keyword">then</span>(loading=&gt;&#123;loading = fasle&#125;,loading=&gt;&#123;loading = fasle&#125;)<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">promiseFn().finaly(&#123;&#125;=&gt;&#123;<br>    console.log(<span class="hljs-string">'异步结束'</span>)<br>&#125;)<br></code></pre></td></tr></table></figure>
+<h4 id="catch"><a href="#catch" class="headerlink" title="catch"></a>catch</h4><p>只处理错误</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash">.catch(error=&gt;&#123;<br>    console.log(error)<br>&#125;)<br><br>等价于<br><br>.<span class="hljs-keyword">then</span>(null,(error)=&gt;&#123;<br>    console.log(error)<br>&#125;)<br></code></pre></td></tr></table></figure>
+<h3 id="async-await"><a href="#async-await" class="headerlink" title="async await"></a>async await</h3><h4 id="await"><a href="#await" class="headerlink" title="await"></a>await</h4><p>等待 promise 结束,并返回 resolve 的值</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-keyword">function</span> isDog(name)&#123;<br>    <span class="hljs-built_in">return</span> new Promise((resove,reject)=&gt;&#123;<br>        setTimeout(()=&gt;&#123;<br>           <span class="hljs-keyword">if</span>(name === <span class="hljs-string">'dog'</span>)&#123;<br>               resove(<span class="hljs-string">'yes'</span>)<br>           &#125;<span class="hljs-keyword">else</span>&#123;<br>               reject(<span class="hljs-string">'no'</span>)<br>           &#125;<br>        &#125;,1000)<br>    &#125;)<br>&#125;<br><br> <span class="hljs-built_in">let</span> isWhat = await isDog(<span class="hljs-string">'dog'</span>) //<span class="hljs-string">'yes'</span><br></code></pre></td></tr></table></figure>
+<h4 id="async"><a href="#async" class="headerlink" title="async"></a>async</h4><p>所有 async 函数都会隐式返回 promise 对象</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">async <span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">test</span></span>()&#123;<br>    <span class="hljs-built_in">let</span> isWhat = await isDog(<span class="hljs-string">'dog'</span>)<br>    console.log(isWhat) //yes<br>&#125;<br></code></pre></td></tr></table></figure>
+<h4 id="使用-async-函数-使用-try-catch-获取-promise-结果"><a href="#使用-async-函数-使用-try-catch-获取-promise-结果" class="headerlink" title="使用 async 函数,使用 try catch 获取 promise 结果"></a>使用 async 函数,使用 try catch 获取 promise 结果</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-keyword">function</span> isDog(name)&#123;<br>    <span class="hljs-built_in">return</span> new Promise((resove,reject)=&gt;&#123;<br>        setTimeout(()=&gt;&#123;<br>           <span class="hljs-keyword">if</span>(name === <span class="hljs-string">'dog'</span>)&#123;<br>               resove(<span class="hljs-string">'yes'</span>)<br>           &#125;<span class="hljs-keyword">else</span>&#123;<br>               reject(<span class="hljs-string">'no'</span>)<br>           &#125;<br>        &#125;,1000)<br>    &#125;)<br>&#125;<br><br>async <span class="hljs-keyword">function</span> <span class="hljs-built_in">test</span>(name)&#123;<br>    try&#123;<br>        <span class="hljs-built_in">let</span> isWhat = await isDog(name)<br>        console.log(isWhat)<br>    &#125;catch(error)&#123;<br>        console.log(error)<br>    &#125;<br><br>&#125;<br><br><span class="hljs-built_in">test</span>(<span class="hljs-string">'dog'</span>) //yes<br><span class="hljs-built_in">test</span>(<span class="hljs-string">'cat'</span>) //no<br></code></pre></td></tr></table></figure>
+<h5 id="使用-async-函数获取两以个-promise-结果"><a href="#使用-async-函数获取两以个-promise-结果" class="headerlink" title="使用 async 函数获取两以个 promise 结果"></a>使用 async 函数获取两以个 promise 结果</h5><p>只有当两个 promise 都成功时,await 才会赋值,否则进入 catch</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-keyword">function</span> isDog(name)&#123;<br>    <span class="hljs-built_in">return</span> new Promise((resove,reject)=&gt;&#123;<br>        setTimeout(()=&gt;&#123;<br>           <span class="hljs-keyword">if</span>(name === <span class="hljs-string">'dog'</span>)&#123;<br>               resove(<span class="hljs-string">'yes'</span>)<br>           &#125;<span class="hljs-keyword">else</span>&#123;<br>               reject(<span class="hljs-string">'no'</span>)<br>           &#125;<br>        &#125;,1000)<br>    &#125;)<br>&#125;<br><br>async <span class="hljs-keyword">function</span> <span class="hljs-built_in">test</span>(name1,name2)&#123;<br>    try&#123;<br>        <span class="hljs-built_in">let</span> isWhat = await Promise.all([isDog(name1),isDog(name2)])<br>        console.log(isWhat)<br>    &#125;catch(error)&#123;<br>        console.log(error)<br>    &#125;<br><br>&#125;<br><br><span class="hljs-built_in">test</span>(<span class="hljs-string">'dog'</span>,<span class="hljs-string">'dog'</span>) //[yes,yes]<br><span class="hljs-built_in">test</span>(<span class="hljs-string">'dog'</span>,<span class="hljs-string">'cat'</span>) //no<br><span class="hljs-built_in">test</span>(<span class="hljs-string">'cat'</span>,<span class="hljs-string">'cat'</span>) //no<br></code></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/01/18/Promise的使用/" data-id="clq61ndgd001yzofqpyccs7js" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ES6/">ES6</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/01/24/函数节流与防抖/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          函数节流与防抖
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/01/11/密码强度/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">密码强度的实现</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/ES6/">ES6</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JS/">JS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/TS/">TS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/node/">node</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/vue/">vue</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/webpack/">webpack</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/业务代码/">业务代码</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/库/">库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/笔记/">笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机基础/">计算机基础</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/面试题/">面试题</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/">ES6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TS/">TS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/">webpack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/业务代码/">业务代码</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/库/">库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机基础/">计算机基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试题/">面试题</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CSS/" style="font-size: 18.75px;">CSS</a> <a href="/tags/ES6/" style="font-size: 16.25px;">ES6</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/HTTP/" style="font-size: 15px;">HTTP</a> <a href="/tags/JS/" style="font-size: 20px;">JS</a> <a href="/tags/TS/" style="font-size: 17.5px;">TS</a> <a href="/tags/git/" style="font-size: 11.25px;">git</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/vue/" style="font-size: 18.75px;">vue</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/业务代码/" style="font-size: 13.75px;">业务代码</a> <a href="/tags/库/" style="font-size: 12.5px;">库</a> <a href="/tags/笔记/" style="font-size: 10px;">笔记</a> <a href="/tags/计算机基础/" style="font-size: 10px;">计算机基础</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a> <a href="/tags/面试题/" style="font-size: 10px;">面试题</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/02/02/手写Promise-all/">手写Promise.all</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/02/Canvas和SVG区别/">Canvas和SVG区别</a>
+          </li>
+        
+          <li>
+            <a href="/2020/02/12/常见排序算法/">常见排序算法</a>
+          </li>
+        
+          <li>
+            <a href="/2020/01/17/TS声明/">TS声明</a>
+          </li>
+        
+          <li>
+            <a href="/2020/01/16/TS高级类型/">TS类型</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2023 Roxas Deng<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>RoxasDengBlog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="RoxasDengBlog">
+<meta property="og:url" content="http://yoursite.com/page/3/index.html">
+<meta property="og:site_name" content="RoxasDengBlog">
+<meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="RoxasDengBlog">
+  
+    <link rel="alternate" href="/atom.xml" title="RoxasDengBlog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">RoxasDengBlog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-css三角形" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/20/css三角形/" class="article-date">
+  <time datetime="2019-07-20T03:18:03.000Z" itemprop="datePublished">2019-07-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/CSS/">CSS</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/20/css三角形/">css三角形</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="普通三角形"><a href="#普通三角形" class="headerlink" title="普通三角形"></a>普通三角形</h4><p>利border四边颜色不等画等边三角形</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs bash">.triangle&#123;<br>    width:0;<br>    height:0;<br>    border: 10px solid transparent;<br>&#125;<br>.triangle.top&#123;//向上<br>    border-bottom-color: <span class="hljs-comment">#000;</span><br>&#125;<br>.triangle.bottom&#123;//向下<br>    border-bottom-color: <span class="hljs-comment">#000;</span><br>&#125;<br>.triangle.left&#123;//向左<br>    border-left-color: <span class="hljs-comment">#000;</span><br>&#125;<br>.triangle.right&#123;//向右<br>    border-right-color: <span class="hljs-comment">#000;</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<h4 id="常见应用-盒子下创建小三角形"><a href="#常见应用-盒子下创建小三角形" class="headerlink" title="常见应用:盒子下创建小三角形"></a>常见应用:盒子下创建小三角形</h4><p>利用伪元素<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs bash">.wrapper&#123;<br>    position: relative;<br>    width:100px;<br>    height:100px;<br>    background:<span class="hljs-comment">#fff;</span><br>    border:1px solid <span class="hljs-comment">#000;</span><br>    &amp;::before,&amp;::after&#123;<br>        content: <span class="hljs-string">""</span>;<br>        display: block;<br>        position: absolute;<br>        width:0;<br>        height:0;<br>        border: 10px solid transparent;//三角形边长<br>    &#125;<br>    &amp;::before&#123;<br>        top: 100%;//位于盒子底部<br>        border-top-color: <span class="hljs-comment">#000;//三角形边框</span><br>    &#125;<br>    &amp;::after&#123;<br>        top: calc(100% - 1px);//三角形border宽度<br>        border-top-color:<span class="hljs-comment">#fff;//三角形背景</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/07/20/css三角形/" data-id="clq61ndh7003tzofqau6p4mfx" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-git-branch" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/10/git-branch/" class="article-date">
+  <time datetime="2019-07-09T16:12:31.000Z" itemprop="datePublished">2019-07-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/git/">git</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/10/git-branch/">git分支</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="git-branch-创建分支"><a href="#git-branch-创建分支" class="headerlink" title="git branch 创建分支"></a>git branch 创建分支</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">git branch abc //创建分支aaa<br>git push orgin abc:abc //推送本地分支aaa到远程分支aaa<br></code></pre></td></tr></table></figure>
+<h4 id="git-checkout-切换分支"><a href="#git-checkout-切换分支" class="headerlink" title="git checkout 切换分支"></a>git checkout 切换分支</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git checkout aaa //切换到分支aaa<br></code></pre></td></tr></table></figure>
+<h4 id="git-log-查看推送历史"><a href="#git-log-查看推送历史" class="headerlink" title="git log 查看推送历史"></a>git log 查看推送历史</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git <span class="hljs-built_in">log</span><br></code></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/07/10/git-branch/" data-id="clq61ndhf0049zofqivco2cx7" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-ES6模块化" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/09/ES6模块化/" class="article-date">
+  <time datetime="2019-07-09T04:15:07.000Z" itemprop="datePublished">2019-07-09</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/ES6/">ES6</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/09/ES6模块化/">ES6模块化</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="import"><a href="#import" class="headerlink" title="import"></a>import</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;script <span class="hljs-built_in">type</span>=<span class="hljs-string">"module"</span> src=<span class="hljs-string">"main.js"</span>&gt;&lt;/script&gt;<br><br>//main.js<br><br>import module1 from <span class="hljs-string">'./module1.js'</span><br>import module2 from <span class="hljs-string">'./module2.js'</span><br>import abc from <span class="hljs-string">'abc.js'</span><br><br>setTimeout(()=&gt;&#123;<br>    module1(abc);<br>    module2();<br>&#125;,3000)<br><br>//moudule1<br><span class="hljs-built_in">export</span> default <span class="hljs-function"><span class="hljs-title">function</span></span>()&#123;<br>    //<br>&#125;<br><br>//moudule2<br><span class="hljs-built_in">export</span> default <span class="hljs-function"><span class="hljs-title">function</span></span>()&#123;<br>    //<br>&#125;<br><br>//abc<br><span class="hljs-built_in">let</span> a = [<span class="hljs-string">'a'</span>]<br> <span class="hljs-built_in">export</span> default a<br></code></pre></td></tr></table></figure>
+<h5 id="单纯引入"><a href="#单纯引入" class="headerlink" title="单纯引入"></a>单纯引入</h5><p>直接执行模块里的代码,函数不执行,调用函数需要export<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs bash">//module<br>console.log(<span class="hljs-string">'code'</span>)<br><br><span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">x</span></span>()&#123;<br>    console.log(<span class="hljs-string">'function'</span>)<br>&#125;<br><br>//main.js<br>import <span class="hljs-string">'./module'</span><br><br>//code<br></code></pre></td></tr></table></figure></p>
+<h4 id="export"><a href="#export" class="headerlink" title="export"></a>export</h4><p>默认导出的,引用时可以任意命名,具体的要使用具体的名字.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs bash">//modules<br><br><span class="hljs-built_in">let</span> name = <span class="hljs-string">'myname'</span><br><span class="hljs-built_in">let</span> age = 18<br><span class="hljs-built_in">let</span> sayhi = <span class="hljs-function"><span class="hljs-title">function</span></span>()&#123;<br>    console.log(hi)<br>&#125;<br><span class="hljs-built_in">export</span> default sayhi<br><span class="hljs-built_in">export</span> &#123;name,age&#125;<br><br>//main<br><br>import xxx &#123;name ,age&#125; from <span class="hljs-string">'./modules'</span><br>console.log(xxx()) //hi<br>console.log(name,age) // <span class="hljs-string">'myname'</span> 18<br></code></pre></td></tr></table></figure></p>
+<h4 id="as"><a href="#as" class="headerlink" title="as"></a>as</h4><p>当导出命名重复时,需要as,否则报错<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs bash">//modules1<br><span class="hljs-built_in">let</span> name = <span class="hljs-string">'小明'</span><br><span class="hljs-built_in">export</span> name<br>//modules2<br><span class="hljs-built_in">let</span> name = <span class="hljs-string">'小红'</span><br><span class="hljs-built_in">export</span> name<br><br>//main.js<br>import &#123;name as name1&#125; from <span class="hljs-string">'./module1.js'</span><br>import &#123;name as name2&#125; from <span class="hljs-string">'./module2.js'</span><br>console.log(name1,name2) //小明小红<br></code></pre></td></tr></table></figure></p>
+<h4 id><a href="#" class="headerlink" title="*"></a>*</h4><p>全部导出</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">import * as x from <span class="hljs-string">'./modules'</span><br></code></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/07/09/ES6模块化/" data-id="clq61ndfu000xzofq08tzd6vm" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ES6/">ES6</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-ES6字面量" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/09/ES6字面量/" class="article-date">
+  <time datetime="2019-07-09T01:52:39.000Z" itemprop="datePublished">2019-07-09</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/ES6/">ES6</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/09/ES6字面量/">ES6字面量 Literal</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="八进制"><a href="#八进制" class="headerlink" title="八进制"></a>八进制</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">ES5<br>07 //7<br><br>ES6<br>0o7 //7<br></code></pre></td></tr></table></figure>
+<h4 id="字符串支持unicode"><a href="#字符串支持unicode" class="headerlink" title="字符串支持unicode"></a>字符串支持unicode</h4><p> ES5部分支持,只能存2字节字符串(16位2进制)<br> 1字节=16进制</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-string">'\ud834\udf06'</span> //𝌆<br><br><span class="hljs-string">'\ud834\udf06'</span>.length //2<br></code></pre></td></tr></table></figure>
+<p>ES6</p>
+<ol>
+<li><p>String.fromCodePonit<br> Unicode码返回对应字符串</p>
+</li>
+<li><p>String.prototype.codePonitAt()<br> 字符串返回对应Unicode码</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/07/09/ES6字面量/" data-id="clq61ndfo000ozofq3xjvhy5l" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ES6/">ES6</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Symbol" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/09/Symbol/" class="article-date">
+  <time datetime="2019-07-09T01:52:16.000Z" itemprop="datePublished">2019-07-09</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/ES6/">ES6</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/09/Symbol/">Symbol&amp;迭代器</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="Symbol"><a href="#Symbol" class="headerlink" title="Symbol"></a>Symbol</h4><p>唯一值</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">var a = new Symbol();<br></code></pre></td></tr></table></figure>
+<h4 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h4><p>它提供一个next()方法,用来返回序列中的下一项.<br>迭代器对象一旦被创建,就可以反复调用next().</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-keyword">function</span> 生成器()&#123;<br>    var _version = 0<br>    var max = 10<br>    <span class="hljs-built_in">return</span>&#123;<br>        <span class="hljs-function"><span class="hljs-title">next</span></span>()&#123;<br>             _version++<br>            <span class="hljs-built_in">return</span> &#123;<br>                version:_version<br>                <span class="hljs-keyword">done</span>:<span class="hljs-literal">false</span><br>            &#125;<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h4 id="生成器"><a href="#生成器" class="headerlink" title="生成器"></a>生成器</h4><p>迭代器生成的语法糖<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-keyword">function</span>* 生成器()&#123;<br>    var version = 0;<br>    <span class="hljs-keyword">while</span>(<span class="hljs-literal">true</span>)&#123;<br>        version += 1<br>        yield version<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure></p>
+<h4 id="for-of"><a href="#for-of" class="headerlink" title="for of"></a>for of</h4><p>访问迭代器的语法糖</p>
+<p>数组能迭代,对象不能迭代,因为数组有属性Symbol.iterator</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-keyword">for</span>(<span class="hljs-built_in">let</span> key of array)&#123;<br>    console.log(key)<br>&#125;<br><br>array[Symbol.iterator] //有值<br><br><span class="hljs-keyword">for</span>(<span class="hljs-built_in">let</span> key of obj)&#123;<br>    console.log(key)<br>&#125;//报错<br><br>obj[Symbol.iterator] //undefined<br></code></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/07/09/Symbol/" data-id="clq61ndgj0026zofqao0o5u7n" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ES6/">ES6</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-ES6对象" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/08/ES6对象/" class="article-date">
+  <time datetime="2019-07-08T09:42:13.000Z" itemprop="datePublished">2019-07-08</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/ES6/">ES6</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/08/ES6对象/">ES6对象</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="生成空对象"><a href="#生成空对象" class="headerlink" title="生成空对象"></a>生成空对象</h4><h5 id="1-es5"><a href="#1-es5" class="headerlink" title="1. es5"></a>1. es5</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash">var a = new Object()<br><br>var a = &#123;&#125;<br><br>&#123;<br>    _proto_:<br>&#125;<br></code></pre></td></tr></table></figure>
+<h5 id="2-es6"><a href="#2-es6" class="headerlink" title="2. es6"></a>2. es6</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">var a = Object.create(null)<br><br>&#123;<br><br>&#125;<br></code></pre></td></tr></table></figure>
+<p>es5 的还有原型,es6 是真正的空对象</p>
+<h4 id="属性定义"><a href="#属性定义" class="headerlink" title="属性定义"></a>属性定义</h4><h5 id="1-key-与属性相同可简写"><a href="#1-key-与属性相同可简写" class="headerlink" title="1. key 与属性相同可简写"></a>1. key 与属性相同可简写</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs bash">var a = 1<br>    b = 2<br><br>var obj =&#123;<br>    a,<br>    b<br>&#125;<br>//<br>&#123;<br>    a:1,<br>    b:2<br>&#125;<br></code></pre></td></tr></table></figure>
+<h5 id="2-使用变量作为-key"><a href="#2-使用变量作为-key" class="headerlink" title="2. 使用变量作为 key"></a>2. 使用变量作为 key</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs bash">es5:<br><br>var name = <span class="hljs-string">'a'</span><br>var obj = &#123;&#125;<br>obj[name] = 1<br>&#123;<br>    a:1<br>&#125;<br><br>es6:<br>var name = <span class="hljs-string">'a'</span><br>var obj = &#123;[name]:1&#125;<br>&#123;<br>    a:1<br>&#125;<br></code></pre></td></tr></table></figure>
+<h4 id="4-方法定义"><a href="#4-方法定义" class="headerlink" title="4 方法定义"></a>4 方法定义</h4><p>对象属性可以是一个函数,getter,setter 方法.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash">var obj = &#123;<br>    _age:18<br>    get <span class="hljs-function"><span class="hljs-title">age</span></span>()&#123;<span class="hljs-built_in">return</span> obj._age&#125;<br>    <span class="hljs-built_in">set</span> age(value)&#123;value &lt; 100 ? obj._age = value : obj._age = 100&#125;<br>&#125;<br><br>obj.age = 1000<br>obj&#123;<br>    age:100<br>&#125;<br></code></pre></td></tr></table></figure>
+<h4 id="对象拷贝"><a href="#对象拷贝" class="headerlink" title="对象拷贝"></a>对象拷贝</h4><p>Object.assign 与…</p>
+<ol>
+<li>key 相同时,后面定义的覆盖前面的</li>
+<li>改变被拷贝对对象的属性假如是对象,只会拷贝引用地址,原对象也会改变</li>
+<li>仅拷贝可枚举对象.</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs bash">var obj1 = &#123;a:1,b:2,c:3,obj:&#123;name:<span class="hljs-string">'a'</span>&#125;&#125;<br>var obj2 = Object.assign(&#123;&#125;,obj1)<br><br>obj2.a = 100;<br>obj1.a //1<br>obj2.obj.name = <span class="hljs-string">'b'</span><br>obj1.obj.name //b<br><br>var obj3 = &#123;..obj1&#125;<br>obj3 = &#123;a:1,b:2,c:3&#125;<br><br>obj3.a = 100;<br>obj1.a //1<br><br>var obj1 = &#123;a:1,b:2,c:3&#125;<br>var obj2 = &#123;a:2,b:2,c:3,d4&#125;<br>var obj3 = &#123;...obj1,...obj2&#125;<br><br>obj3 =&#123;<br>    a:2,<br>    b:2,<br>    c:3,<br>    d4<br>&#125;<br></code></pre></td></tr></table></figure>
+<h4 id="Oject-definedProperty"><a href="#Oject-definedProperty" class="headerlink" title="Oject.definedProperty()"></a>Oject.definedProperty()</h4><p>该方法会直接在一个对象上定义一个新属性,或修改一个属性的现有属性,并返回这个对象.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash">Object.definedProperty(obj,prop,descriptor)<br><br>Object.definedProperty(obj,<span class="hljs-string">'x'</span>,&#123;<br>    <span class="hljs-function"><span class="hljs-title">get</span></span>()&#123;&#125;<br>    <span class="hljs-built_in">set</span>(value)&#123;&#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
+<h5 id="属性描述符"><a href="#属性描述符" class="headerlink" title="属性描述符"></a>属性描述符</h5><ol>
+<li>configurable<br>是否可再次配置,默认 false</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash">Object.definedProperty(o,<span class="hljs-string">'age'</span>,&#123;writable:fasle&#125;)<br>o.age = 1;<br>o.age //undefined<br>Object.definedProperty(o,<span class="hljs-string">'age'</span>,&#123;configurable:<span class="hljs-literal">true</span>&#125;)//报错<br>Object.definedProperty(o,<span class="hljs-string">'age'</span>,&#123;writable:<span class="hljs-literal">true</span>&#125;)//报错<br><br>//刷新<br>Object.definedProperty(o,<span class="hljs-string">'age'</span>,&#123;configurable:<span class="hljs-literal">true</span>&#125;)<br>Object.definedProperty(o,<span class="hljs-string">'age'</span>,&#123;writable:fasle&#125;)<br>Object.definedProperty(o,<span class="hljs-string">'age'</span>,&#123;writable:<span class="hljs-literal">true</span>&#125;)<br></code></pre></td></tr></table></figure>
+<ol start="2">
+<li>enumrable<br>是否能枚举,默认 false</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash">var a = [1,2,3]<br><span class="hljs-keyword">for</span>(<span class="hljs-built_in">let</span> key <span class="hljs-keyword">in</span> a)&#123;<br>    console.log(key)//0,1,2<br>&#125;<br><br>Object.definedProperty(a,<span class="hljs-string">'0'</span>,&#123;enumrable:fasle&#125;)<br><span class="hljs-keyword">for</span>(<span class="hljs-built_in">let</span> key <span class="hljs-keyword">in</span> a)&#123;<br>    console.log(key)//1,2<br>&#125;<br></code></pre></td></tr></table></figure>
+<ol start="3">
+<li><p>value</p>
+</li>
+<li><p>writable<br>属性是否可写入,默认 true</p>
+</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">Object.definedProperty(o,<span class="hljs-string">'age'</span>,&#123;writable:fasle&#125;)<br>o.age = 1;<br>o.age //undefined<br></code></pre></td></tr></table></figure>
+<ol start="5">
+<li>get</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">Object.definedProperty(o,<span class="hljs-string">'age'</span>,&#123;<span class="hljs-function"><span class="hljs-title">get</span></span>()&#123;<br>    <span class="hljs-built_in">return</span> <span class="hljs-string">'100'</span><br>&#125;&#125;)<br>o.age = 1;<br>o.age //100<br></code></pre></td></tr></table></figure>
+<ol start="6">
+<li>set</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">Object.definedProperty(o,<span class="hljs-string">'age'</span>,&#123;<span class="hljs-built_in">set</span>(val)&#123;<br>    <span class="hljs-built_in">return</span> val &lt; 100 ? val : 100<br>&#125;&#125;)<br>o.age = 1000;<br>o.age //100<br></code></pre></td></tr></table></figure>
+<h4 id="Oject-definedProperties"><a href="#Oject-definedProperties" class="headerlink" title="Oject.definedProperties()"></a>Oject.definedProperties()</h4><p>定义多个属性</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash">Object.definedProperties(obj,&#123;<br>    <span class="hljs-string">'a'</span>:&#123;<br>        value:1,<br>        writable:<span class="hljs-literal">true</span><br>    &#125;,<br>    <span class="hljs-string">'b'</span>:&#123;<br>        value:2,<br>        writable:<span class="hljs-literal">true</span><br>    &#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/07/08/ES6对象/" data-id="clq61ndfs000uzofq5r2dgry9" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ES6/">ES6</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-es6变量声明" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/08/es6变量声明/" class="article-date">
+  <time datetime="2019-07-08T04:17:27.000Z" itemprop="datePublished">2019-07-08</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/ES6/">ES6</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/08/es6变量声明/">ES6变量声明</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="let"><a href="#let" class="headerlink" title="let"></a>let</h4><ol>
+<li>作用声明局部变量 ,作用域在最近的{}之间.</li>
+<li>不会进行变量名声明提升</li>
+<li>不能重复声明</li>
+</ol>
+<p>在 es6 之前,声明局部变量要使用立即执行函数</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs bash">&#123;<br>    <span class="hljs-built_in">let</span> a = 1<br>&#125;<br>console.log(1) //报错<br><br><br>&#123;<br>    <span class="hljs-built_in">let</span> a = 1<br>    &#123;<br>        console.log(a)//报错<br>        <span class="hljs-built_in">let</span> a =2<br>    &#125;<br>&#125;<br><br>&#123;<br>    <span class="hljs-built_in">let</span> a = 1;<br>    <span class="hljs-built_in">let</span> a = 2;//报错<br>&#125;<br></code></pre></td></tr></table></figure>
+<h4 id="const"><a href="#const" class="headerlink" title="const"></a>const</h4><p>同 let,但只有一次赋值机会,必须在声明的时候赋值.<br>{<br>const a //报错<br>}</p>
+<h4 id="面试题"><a href="#面试题" class="headerlink" title="面试题"></a>面试题</h4><p>1.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-keyword">for</span>(var i = 0;i &lt; 6;i++)&#123;<br>    ///<br>&#125;<br>console.log(i);/6<br></code></pre></td></tr></table></figure>
+<p>解:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bah">变成<br>var i<br>for(i = 0;i &lt; 6;i++)&#123;<br>    0,1,2,3,4,5<br>&#125;<br>console.log(i);/6<br></code></pre></td></tr></table></figure>
+<p>2.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-keyword">for</span>(var i = 0;i &lt; 6;i++)&#123;<br>    <span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">fn</span></span>()&#123;<br>        console.log(i)<br>    &#125;<br>    button.onclick = fn//因为执行的时候i已经变成6了.<br>&#125;<br>6<br></code></pre></td></tr></table></figure>
+<p>3.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;ul&gt;<br>    &lt;li&gt;1&lt;/li&gt;<br>    &lt;li&gt;2&lt;/li&gt;<br>    &lt;li&gt;3&lt;/li&gt;<br>    &lt;li&gt;4&lt;/li&gt;<br>    &lt;li&gt;5&lt;/li&gt;<br>    &lt;li&gt;6&lt;/li&gt;<br>&lt;/ul&gt;<br><br>var liTags = document.querySelectorAll(<span class="hljs-string">'li'</span>);<br><span class="hljs-keyword">for</span>(var i = 0;i&lt;liTags.length;i++)&#123;<br>    liTags[i].onclick = <span class="hljs-function"><span class="hljs-title">function</span></span>()&#123;<br>        console.log(i);//不管点哪个按钮,都是6<br>    &#125;<br>&#125;<br><br>改成<br><br><span class="hljs-keyword">for</span>(var i = 0;i&lt;liTags.length;i++)&#123;<br>    (<span class="hljs-function"><span class="hljs-title">function</span></span>()&#123;<br>        var j = arguments[0];//外面的i赋值给j<br>        liTags[i].onclick = <span class="hljs-function"><span class="hljs-title">function</span></span>()&#123;<br>            console.log(j)//点哪个打印哪个<br>        &#125;<br>    &#125;)(i)<br>&#125;<br><br>或者<br><br><span class="hljs-keyword">for</span>(var i = 0;i&lt;liTags.length;i++)&#123;<br>    <span class="hljs-built_in">let</span> j = i;<br>    liTags[j].onclick = <span class="hljs-function"><span class="hljs-title">function</span></span>()&#123;<br>        console.log(j)//点哪个打印哪个<br>    &#125;<br>&#125;<br><br>或<br><br><span class="hljs-keyword">for</span>(<span class="hljs-built_in">let</span> i = 0;i&lt;liTags.length;i++)&#123;<br>    liTags[i].onclick = <span class="hljs-function"><span class="hljs-title">function</span></span>()&#123;<br>        console.log(i);//点哪个打印哪个<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/07/08/es6变量声明/" data-id="clq61ndhb0041zofqy4bu0gks" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ES6/">ES6</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Websocket" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/18/Websocket/" class="article-date">
+  <time datetime="2019-04-18T02:29:19.000Z" itemprop="datePublished">2019-04-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/HTTP/">HTTP</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/18/Websocket/">Websocket</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="什么是-websocket"><a href="#什么是-websocket" class="headerlink" title="什么是 websocket"></a>什么是 websocket</h4><p>websocket 是 HTML5 新增的一种通信协议,服务端可主动给客户端推送消息,客户端也可向服务端主动发送消息.</p>
+<p>使用 websocket api 浏览器与服务器只需要做一个握手动作,两者形成通道,实现持久化的双向通讯.</p>
+<h4 id="websocket-的优点"><a href="#websocket-的优点" class="headerlink" title="websocket 的优点"></a>websocket 的优点</h4><p>当还不存在 websocket 的时候,以前用 ajax 轮询与 http long poll 实现该功能.</p>
+<h5 id="ajax-轮询"><a href="#ajax-轮询" class="headerlink" title="ajax 轮询"></a>ajax 轮询</h5><p>浏览器定时给服务器发送 ajax 请求,当服务器有新消息时候,返回数据.</p>
+<p>流程如下:</p>
+<p>浏览器:我要获取新数据.<br>服务器:没有.<br>浏览器:我要获取新数据.<br>服务器:没有.<br>浏览器:我要获取新数据.<br>服务器:没有.<br>浏览器:我要获取新数据.<br>服务器:有了,给你.</p>
+<h5 id="http-long-poll"><a href="#http-long-poll" class="headerlink" title="http long poll"></a>http long poll</h5><p>http long poll 是通过阻塞模型(拨打电话之后不挂断),浏览器与服务器建立链接后,假如没有新消息则不返回数据,知道有消息才返回,再重新建立链接.</p>
+<p>浏览器:等有数据的时候给我吧.<br>…<br>…<br>…<br>服务:有数据了,给你.<br>浏览器:等有数据的时候给我吧.<br>…<br>…<br>…<br>服务:有数据了,给你.</p>
+<p>以上两者方法是非常消耗资源的,第一种需要更快的服务器,第二种则需要服务器能处理更多的请求.</p>
+<h4 id="websocket-的作用"><a href="#websocket-的作用" class="headerlink" title="websocket 的作用"></a>websocket 的作用</h4><p>websocket 的出现解决了这个问题.首先,websocket 是双向通信协议,服务器可获得新消息主动给浏览器发送消息.</p>
+<h5 id="websocket-握手过程"><a href="#websocket-握手过程" class="headerlink" title="websocket 握手过程"></a>websocket 握手过程</h5><p>浏览器通过调用 new websocket(url)方法与服务器建立链接.</p>
+<ol>
+<li>浏览器与服务器进行三次握手,假如失败则不继续,并报错.</li>
+<li>建立连接成功后,浏览器通过 http 协议传送 websocket 的版本号,协议的字版号,原始地址,主机地址等字段给服务器.</li>
+<li>服务器接收浏览器的请求,假如上述字段正确,则接受本次握手,并返回对应数据,包含 http 相关的信息.</li>
+<li>浏览器接收数据,假如成功则触发 open 事件,浏览器可通过 send 方法发送数据,假如失败则触发 error 事件.</li>
+</ol>
+<h4 id="websocket-api"><a href="#websocket-api" class="headerlink" title="websocket api"></a>websocket api</h4><p>使用 websocket api 建立与服务器的连接.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">const socket = new Websocket(url);<br></code></pre></td></tr></table></figure>
+<h4 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h4><h5 id="open"><a href="#open" class="headerlink" title="open"></a>open</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">socket.onopen = (e)=&gt;&#123;<br>    socket.send(<span class="hljs-string">'hello'</span>)<br>&#125;<br></code></pre></td></tr></table></figure>
+<h5 id="message"><a href="#message" class="headerlink" title="message"></a>message</h5><p>服务器有响应信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">socket.onmessage = (e)=&gt;&#123;<br>    console.log(e.data)<br>&#125;<br></code></pre></td></tr></table></figure>
+<h5 id="error"><a href="#error" class="headerlink" title="error"></a>error</h5><p>当触发错误时,会关闭连接,并返回错误信息.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">socket.onerror = (e)=&gt;&#123;<br>    console.log(<span class="hljs-string">'error'</span>)<br>&#125;<br></code></pre></td></tr></table></figure>
+<h5 id="close"><a href="#close" class="headerlink" title="close"></a>close</h5><p>当关闭时触发</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs undefined">socket.onclose = (event) =&gt; &#123;<br>    debugger;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>event 的参数</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash">1. event.wasClean [boolean],假如为<span class="hljs-literal">true</span>,表示客户端或服务端调用close主动关闭.<br>2. event.code [number] 关闭的状态码<br>3. event.reason [string] 关闭的原因<br><br>//主动close的方法<br>socket.close(code,reason)<br></code></pre></td></tr></table></figure>
+<h5 id="send"><a href="#send" class="headerlink" title="send"></a>send</h5><p>send(data),发送 data,可以是 string/blob/ArrayBuffer/ByteBuffer 等<br>send 必须在建立链接成功之后,一般在 open 事件后触发.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">socket.onopen = ()=&gt;&#123;<br>    soclet.send(<span class="hljs-string">'hello'</span>)<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>判断是否还连接着</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-keyword">if</span>(socket.readyState == WebSocket.OPEN)&#123;<br>    socket.send(data)<br>&#125;<br></code></pre></td></tr></table></figure>
+<h4 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h4><p>CONNECTING 0 连接还未开启<br>OPEN 1 连接开启可以通信<br>CLOSING 2 连接正在关闭中<br>CLOSED 3 连接已经关闭</p>
+<h4 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h4><p>binaryType String<br>表示连接传输的二进制数据类型的字符串。默认为”blob”。</p>
+<p>bufferedAmount Number<br>只读。如果使用 send()方法发送的数据过大，虽然 send()方法会马上执行，但数据并不是马上传输。浏览器会缓存应用流出的数据，你可以使用 bufferedAmount 属性检查已经进入队列但还未被传输的数据大小。在一定程度上可以避免网络饱和。</p>
+<p>protocol String/Array<br>在构造函数中，protocol 参数让服务端知道客户端使用的 WebSocket 协议。而在实例 socket 中就是连接建立前为空，连接建立后为客户端和服务器端确定下来的协议名称。</p>
+<p>readyState String<br>只读。连接当前状态，这些状态是与常量相对应的。</p>
+<p>extensions String<br>服务器选择的扩展。目前，这只是一个空字符串或通过连接协商的扩展列表。</p>
+<h4 id="Socket-io"><a href="#Socket-io" class="headerlink" title="Socket.io"></a>Socket.io</h4><p>Socket.io 是一个跨浏览器支持 websocket 的实时通讯的 js.</p>
+<p><a href="http://socket.io/docs/" target="_blank" rel="noopener">http://socket.io/docs/</a></p>
+<h5 id="安装与引入"><a href="#安装与引入" class="headerlink" title="安装与引入"></a>安装与引入</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">npm install --save socket.io<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;script src=<span class="hljs-string">"/socket.io/socket.io.js"</span>&gt;&lt;/script&gt;<br>const socket = io(url);<br><br>或者<br><br>improt io from <span class="hljs-string">'socket.io-client'</span><br><br>const socket = io(url);<br></code></pre></td></tr></table></figure>
+<h5 id="API"><a href="#API" class="headerlink" title="API"></a>API</h5><p>官方文档:<br><a href="https://socket.io/docs/client-api/" target="_blank" rel="noopener">https://socket.io/docs/client-api/</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/04/18/Websocket/" data-id="clq61ndh1003gzofqewnz2778" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTTP/">HTTP</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-web图片的使用" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/16/web图片的使用/" class="article-date">
+  <time datetime="2019-04-16T09:34:44.000Z" itemprop="datePublished">2019-04-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/业务代码/">业务代码</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/16/web图片的使用/">web图片的使用</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="FileReader"><a href="#FileReader" class="headerlink" title="FileReader"></a>FileReader</h4><p>FileReader 对象,使用 File 或 Blob 对象指定要读取的文件或数据.</p>
+<p>其中 File 对象可以是: 1. input 元素上选择文件后返回的 FileList 对象 2. 拖放操作生成的 DataTransfer 对象 3. 来自 HtmlCanvasElment 上执行 mozGetAsFile()方法后返回的结果.</p>
+<h5 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h5><h6 id="FileReader-error-只读"><a href="#FileReader-error-只读" class="headerlink" title="FileReader.error(只读)"></a>FileReader.error(只读)</h6><p>表示在读取文件时发生的错误</p>
+<h6 id="FileReader-readyState-只读"><a href="#FileReader-readyState-只读" class="headerlink" title="FileReader.readyState(只读)"></a>FileReader.readyState(只读)</h6><p>表示 FileReader 状态数组 1. EMPTY 0 等待 2. LOADING 1 正在被加载 3. DONE 2 已完成全部的读取请求.</p>
+<h6 id="FileReader-result-只读"><a href="#FileReader-result-只读" class="headerlink" title="FileReader.result(只读)"></a>FileReader.result(只读)</h6><p>文件的内容.该属性仅在读取操作完成后才生效,数据的格式取决于使用哪个方法来启动读取操作.</p>
+<h5 id="事件处理函数"><a href="#事件处理函数" class="headerlink" title="事件处理函数"></a>事件处理函数</h5><h6 id="FileReader-onabort"><a href="#FileReader-onabort" class="headerlink" title="FileReader.onabort:"></a>FileReader.onabort:</h6><p>处理 abort 事件.该事件在读取操作被中断时触发.</p>
+<h6 id="FileReader-onerror："><a href="#FileReader-onerror：" class="headerlink" title="FileReader.onerror："></a>FileReader.onerror：</h6><p>处理 error 事件.该事件在读取操作发生错误时触发.</p>
+<h6 id="FileReader-onload："><a href="#FileReader-onload：" class="headerlink" title="FileReader.onload："></a>FileReader.onload：</h6><p>处理 load 事件.该事件在读取操作完成时触发.</p>
+<h6 id="FileReader-onloadstart："><a href="#FileReader-onloadstart：" class="headerlink" title="FileReader.onloadstart："></a>FileReader.onloadstart：</h6><p>处理 loadstart 事件。该事件在读取操作开始时触发.</p>
+<h6 id="FileReader-onloadend："><a href="#FileReader-onloadend：" class="headerlink" title="FileReader.onloadend："></a>FileReader.onloadend：</h6><p>处理 loadend 事件.该事件在读取操作结束时(要么成功，要么失败)触发.</p>
+<h6 id="FileReader-onprogress："><a href="#FileReader-onprogress：" class="headerlink" title="FileReader.onprogress："></a>FileReader.onprogress：</h6><p>处理 progress 事件.该事件在读取 Blob 时触发.</p>
+<h5 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h5><h6 id="FileReader-abort-："><a href="#FileReader-abort-：" class="headerlink" title="FileReader.abort()："></a>FileReader.abort()：</h6><p>中止读取操作.在返回时，readyState 属性为 DONE。</p>
+<h6 id="FileReader-readAsArrayBuffer-："><a href="#FileReader-readAsArrayBuffer-：" class="headerlink" title="FileReader.readAsArrayBuffer()："></a>FileReader.readAsArrayBuffer()：</h6><p>开始读取指定的 Blob 中的内容.一旦完成，result 属性将包含一个 ArrayBuffer 来表示文件数据.</p>
+<h6 id="FileReader-readAsBinaryString-："><a href="#FileReader-readAsBinaryString-：" class="headerlink" title="FileReader.readAsBinaryString()："></a>FileReader.readAsBinaryString()：</h6><p>开始读取指定的 Blob 中的内容.一旦完成，result 属性中将包含所读取文件的原始二进制数据.</p>
+<h6 id="FileReader-readAsDataURL-："><a href="#FileReader-readAsDataURL-：" class="headerlink" title="FileReader.readAsDataURL()："></a>FileReader.readAsDataURL()：</h6><p>开始读取指定的 Blob 中的内容.一旦完成,result 属性中将包含一个 data: URL 格式的字符串以表示所读取文件的内容.</p>
+<h6 id="FileReader-readAsText-："><a href="#FileReader-readAsText-：" class="headerlink" title="FileReader.readAsText()："></a>FileReader.readAsText()：</h6><p>开始读取指定的 Blob 中的内容.一旦完成，result 属性中将包含一个字符串以表示所读取的文件内容.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs bash">onDrop(files) &#123;<br>    files.forEach(file =&gt; &#123;<br>        const reader = new FileReader();<br>        reader.onload = () =&gt; &#123;<br>            console.log(file);<br>            const fileAsBinaryString = reader.result; //返回文件<br>            //...<br>        &#125;<br>        reader.onabort = () =&gt; &#123;<br>            console.log(<span class="hljs-string">'aborted'</span>)<br>        &#125;<br>        reder.onerror = () =&gt; &#123;<br>            console.log(<span class="hljs-string">'error'</span>)<br>        &#125;<br>        reader.readAsBinaryString(file); //返回二进制文件<br>    &#125;)<br>&#125;<br></code></pre></td></tr></table></figure>
+<h4 id="base64-dataURL-格式"><a href="#base64-dataURL-格式" class="headerlink" title="base64(dataURL)格式"></a>base64(dataURL)格式</h4><p>base64 编码是使用 64 个字符将二进制数据转换成文本数据的方案,对于非二进制数据,则先转换成二进制,然后每连续 6 比特(2 的 6 次方=64)计算其十进制,该数据值在上面的索引表中找到对应的字符,最终得到一个文本字符串.</p>
+<p>base64 格式数据,Data URI scheme.</p>
+<p>Data URI scheme 支持类型</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs bash">data:,文本数据<br>data:text/plain,文本数据<br>data:text/html,HTML 代码<br>data:text/html;base64,base64 编码的 HTML 代码<br>data:text/css,CSS代码<br>data:text/css;base64,base64 编码的 CSS 代码<br>data:text/javascript,Javascript 代码<br>data:text/javascript;base64,base64 编码的 Javascript代码<br>data:image/gif;base64,base64 编码的 gif 图片数据<br>data:image/png;base64,base64 编码的 png 图片数据<br>data:image/jpeg;base64,base64 编码的 jpeg 图片数据<br>data:image/x-icon;base64,base64 编码的 icon 图片数据<br></code></pre></td></tr></table></figure>
+<h4 id="Blob-格式"><a href="#Blob-格式" class="headerlink" title="Blob 格式"></a>Blob 格式</h4><p>Blob(Binary large object),二进制大对象,是一个可以存储二进制文件的容器.</p>
+<p>Blob 是一个大文件,典型的 Blob 是一张图片或一个声音文件,由于它们的尺寸,必须使用特殊的方式来处理(例如:上传,下载或者存放到一个数据库).</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash">Blob&#123;<br>    name:<span class="hljs-string">"name"</span>,<br>    preview:<span class="hljs-string">"blob:file:///f3823a2a-2908-44cb-81e2-c19d98abc5d1"</span>,<br>    size: 47396,<br>    <span class="hljs-built_in">type</span>: <span class="hljs-string">"image/png"</span>,<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>上面的 preview 可以直接使用做图片预览.</p>
+<h4 id="base64-转-Blob"><a href="#base64-转-Blob" class="headerlink" title="base64 转 Blob"></a>base64 转 Blob</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs bash">base64ToBlob(b64data, contentType, sliceSize) &#123;<br>  sliceSize || (sliceSize = 512);<br>  <span class="hljs-built_in">return</span> new Promise((resolve, reject) =&gt; &#123;<br>    // 使用 atob() 方法将数据解码<br>    <span class="hljs-built_in">let</span> byteCharacters = atob(b64data);<br>    <span class="hljs-built_in">let</span> byteArrays = [];<br>      <span class="hljs-keyword">for</span> (<span class="hljs-built_in">let</span> offset = 0; offset &lt; byteCharacters.length; offset += sliceSize) &#123;<br>        <span class="hljs-built_in">let</span> slice = byteCharacters.slice(offset, offset + sliceSize);<br>        <span class="hljs-built_in">let</span> byteNumbers = [];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-built_in">let</span> i = 0; i &lt; slice.length; i++) &#123;<br>            byteNumbers.push(slice.charCodeAt(i));<br>        &#125;<br>        // 8 位无符号整数值的类型化数组。内容将初始化为 0。<br>        // 如果无法分配请求数目的字节，则将引发异常。<br>        byteArrays.push(new Uint8Array(byteNumbers));<br>      &#125;<br>      resolve(new Blob(byteArrays, &#123;<br>        <span class="hljs-built_in">type</span>: contentType<br>      &#125;))<br>  &#125;)<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>调用</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">//dataUri就是base64文件<br><span class="hljs-built_in">let</span> blob = await this.base64ToBlob(dataUri.split(<span class="hljs-string">','</span>)[1], <span class="hljs-string">'image/png'</span>);<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">Blob &#123;<br>    size: 47396,<br>    <span class="hljs-built_in">type</span>: <span class="hljs-string">"image/png"</span>,<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>补充:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">Object.assign(blob,&#123;<br>  // jartto: 这里一定要处理一下<br>  preview: URL.createObjectURL(blob),<br>  name: `图片示例：<span class="hljs-variable">$&#123;index&#125;</span>.png`<br>&#125;);<br></code></pre></td></tr></table></figure>
+<h4 id="Blob-转-base64"><a href="#Blob-转-base64" class="headerlink" title="Blob 转 base64"></a>Blob 转 base64</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs bash">blobToBase64(blob) &#123;<br>  <span class="hljs-built_in">return</span> new Promise((resolve, reject) =&gt; &#123;<br>    const fileReader = new FileReader();<br>    fileReader.onload = (e) =&gt; &#123;<br>      resolve(e.target.result);<br>    &#125;;<br>    fileReader.readAsDataURL(blob);<br>    fileReader.onerror = () =&gt; &#123;<br>      reject(new Error(<span class="hljs-string">'文件流异常'</span>));<br>    &#125;;<br>  &#125;);<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>调用</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">const allBase64 = await this.blobToBase64(blobObj);<br></code></pre></td></tr></table></figure>
+<h4 id="URL-转-base64"><a href="#URL-转-base64" class="headerlink" title="URL 转 base64"></a>URL 转 base64</h4><p>使用 canvas</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs bash">getDataUri(url) &#123;<br>  <span class="hljs-built_in">return</span> new Promise((resolve, reject) =&gt; &#123;<br>    /* eslint-disable */<br>    <span class="hljs-built_in">let</span> image = new Image();<br>    //解决跨域问题<br>    image.setAttribute(<span class="hljs-string">"crossOrigin"</span>,<span class="hljs-string">'Anonymous'</span>);<br>    image.onload = <span class="hljs-function"><span class="hljs-title">function</span></span>() &#123;<br>      <span class="hljs-built_in">let</span> canvas = document.createElement(<span class="hljs-string">'canvas'</span>);<br>      canvas.width = this.naturalWidth;<br>      canvas.height = this.naturalHeight;<br>      canvas.getContext(<span class="hljs-string">'2d'</span>).drawImage(this, 0, 0);<br>      // Data URI<br>      resolve(canvas.toDataURL(<span class="hljs-string">'image/png'</span>));<br>    &#125;;<br>    image.src = url;<br>    // console.log(image.src);<br>    image.onerror = () =&gt; &#123;<br>      reject(new Error(<span class="hljs-string">'图片流异常'</span>));<br>    &#125;;<br>  &#125;);<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>调用</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">let</span> dataUri = await this.getDataUri(`image/<span class="hljs-built_in">test</span>/jartto.png`);<br></code></pre></td></tr></table></figure>
+<h4 id="src-转-image"><a href="#src-转-image" class="headerlink" title="src 转 image"></a>src 转 image</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs bash">srctoimage(src)&#123;<br>    <span class="hljs-built_in">return</span> new Promise((reslove,reject)=&gt;&#123;<br>    <span class="hljs-built_in">let</span> img = new Image()<br>    img.onload = <span class="hljs-function"><span class="hljs-title">function</span></span>()&#123;<br>      reslove(img)<br>    &#125;<br>    img.onerror = <span class="hljs-keyword">function</span>(err) &#123;<br>      reject(err)<br>    &#125;<br>    img.src = src<br>  &#125;)<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>调用</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">let</span> image = await this.srctoimage(src);<br></code></pre></td></tr></table></figure>
+<h4 id="img-转-canvas"><a href="#img-转-canvas" class="headerlink" title="img 转 canvas"></a>img 转 canvas</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash">imgtocanvas(img)&#123;<br>    <span class="hljs-built_in">let</span> canvas = document.createElement(<span class="hljs-string">"canvas"</span>);<br>    <span class="hljs-built_in">let</span> ctx = canvas.getContext(<span class="hljs-string">'2d'</span>)<br>    canvas.width = img.width<br>    canvas.height = img.height<br>    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);<br>    <span class="hljs-built_in">return</span> canvas<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>调用</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">let</span> canvas = this.imgtocanvas(img);<br></code></pre></td></tr></table></figure>
+<h4 id="ImageData-转-canvas"><a href="#ImageData-转-canvas" class="headerlink" title="ImageData 转 canvas"></a>ImageData 转 canvas</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash">ImageDatetocanvas(imgData)&#123;<br>    <span class="hljs-built_in">let</span> canvas = document.createElement(<span class="hljs-string">"canvas"</span>);<br>    <span class="hljs-built_in">let</span> ctx = canvas.getContext(<span class="hljs-string">'2d'</span>)<br>    canvas.width = imgData.width<br>    canvas.height = imgData.height<br>    ctx.putImageData(imgData,canvas.width, canvas.height);<br>    <span class="hljs-built_in">return</span> canvas<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>调用</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">let</span> canvas = this.ImageDatetocanvas(imgData);<br></code></pre></td></tr></table></figure>
+<h4 id="canvas-转-ImageData"><a href="#canvas-转-ImageData" class="headerlink" title="canvas 转 ImageData"></a>canvas 转 ImageData</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">canvastoImageDate(canvas)&#123;<br>    <span class="hljs-built_in">let</span> ctx = canvas.getContext(<span class="hljs-string">'2d'</span>)<br>    <span class="hljs-built_in">return</span> ctx.createImageData(canvas.width,canvas.height)<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>调用</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">let</span> imgdata = this.canvastoImageDate(canvas);<br></code></pre></td></tr></table></figure>
+<h4 id="canvas-像素操作"><a href="#canvas-像素操作" class="headerlink" title="canvas 像素操作"></a>canvas 像素操作</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-keyword">function</span> canvaspixel(canvas,deal) &#123;<br>  <span class="hljs-built_in">let</span> ctx = canvas.getContext(<span class="hljs-string">'2d'</span>)<br>  var imgData = ctx.createImageData(canvas.width, canvas.height);<br>  <span class="hljs-keyword">for</span> (var i = 0; i &lt; imgData.data.length; i += 4) &#123;<br>    deal(r,g,b,a)<br>  &#125;<br>  ctx.putImageData(imgData, canvas.width, canvas.height);<br>  <span class="hljs-built_in">return</span> canvas<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>调用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">let editcanvas = canvaspixel(canvas,deal)<br></code></pre></td></tr></table></figure>
+<h4 id="base64-DataURL"><a href="#base64-DataURL" class="headerlink" title="base64(DataURL)"></a>base64(DataURL)</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">canvas.toDataURL()<br></code></pre></td></tr></table></figure>
+<p>更多请查看<br><a href="https://juejin.im/post/5c00e8a66fb9a049db72dbd0" target="_blank" rel="noopener">https://juejin.im/post/5c00e8a66fb9a049db72dbd0</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/04/16/web图片的使用/" data-id="clq61ndht0057zofq9etafbk9" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/业务代码/">业务代码</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-自动化测试&amp;发布npm包" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/09/自动化测试&发布npm包/" class="article-date">
+  <time datetime="2019-04-09T07:49:19.000Z" itemprop="datePublished">2019-04-09</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/库/">库</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/09/自动化测试&发布npm包/">自动化测试&amp;发布npm包</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="1-自动化测试"><a href="#1-自动化测试" class="headerlink" title="1. 自动化测试"></a>1. 自动化测试</h4><ol>
+<li>kama一个测试运行器,可呼起浏览器,加载测试脚本,运星测试用例.</li>
+<li>mocha是一个单元测试框架/库,可以用来写测试用例.</li>
+<li>sinon是一个spy/stub/mock库,用以辅助测试.</li>
+</ol>
+<p>运行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm i -D karma karma-chrome-launcher karma-mocha karma-sinon-chai mocha sinon sinon-chai karma-chai karma-chai-spies<br></code></pre></td></tr></table></figure></p>
+<p>创建karma配置,karma.conf.js</p>
+<p>输出目录:*代表加载所有文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">files: [<br>    <span class="hljs-string">'dist/**/*.test.js'</span>,<br>    <span class="hljs-string">'dist/**/*.test.css'</span><br>]<br></code></pre></td></tr></table></figure></p>
+<p>运行浏览器</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">browsers: [<span class="hljs-string">'ChromeHeadless'</span>],<br></code></pre></td></tr></table></figure>
+<p>代码:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><code class="hljs bash">module.exports = <span class="hljs-keyword">function</span> (config) &#123;<br>     config.set(&#123;<br><br>         // base path that will be used to resolve all patterns (eg. files, exclude)<br>         basePath: <span class="hljs-string">''</span>,<br><br>        // frameworks to use<br>        // available frameworks: https://npmjs.org/browse/keyword/karma-adapter<br>        frameworks: [<span class="hljs-string">'mocha'</span>, <span class="hljs-string">'sinon-chai'</span>],<br>        client: &#123;<br>            chai: &#123;<br>                includeStack: <span class="hljs-literal">true</span><br>            &#125;<br>        &#125;,<br><br><br>        // list of files / patterns to load <span class="hljs-keyword">in</span> the browser<br>        files: [<br>            <span class="hljs-string">'dist/**/*.test.js'</span>,<br>            <span class="hljs-string">'dist/**/*.test.css'</span><br>        ],<br><br><br>        // list of files / patterns to exclude<br>        exclude: [],<br><br><br>        // preprocess matching files before serving them to the browser<br>        // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor<br>        preprocessors: &#123;&#125;,<br><br><br>        // <span class="hljs-built_in">test</span> results reporter to use<br>        // possible values: <span class="hljs-string">'dots'</span>, <span class="hljs-string">'progress'</span><br>        // available reporters: https://npmjs.org/browse/keyword/karma-reporter<br>        reporters: [<span class="hljs-string">'progress'</span>],<br><br><br>        // web server port<br>        port: 9876,<br><br><br>        // <span class="hljs-built_in">enable</span> / <span class="hljs-built_in">disable</span> colors <span class="hljs-keyword">in</span> the output (reporters and logs)<br>        colors: <span class="hljs-literal">true</span>,<br><br><br>        // level of logging<br>        // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG<br>        logLevel: config.LOG_INFO,<br><br><br>        // <span class="hljs-built_in">enable</span> / <span class="hljs-built_in">disable</span> watching file and executing tests whenever any file changes<br>        autoWatch: <span class="hljs-literal">true</span>,<br><br><br>        // start these browsers<br>        // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher<br>        browsers: [<span class="hljs-string">'ChromeHeadless'</span>],<br><br><br>        // Continuous Integration mode<br>        // <span class="hljs-keyword">if</span> <span class="hljs-literal">true</span>, Karma captures browsers, runs the tests and exits<br>        singleRun: <span class="hljs-literal">false</span>,<br><br>        // Concurrency level<br>        // how many browser should be started simultaneous<br>        concurrency: Infinity<br>    &#125;)<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>创建test/button.test.js文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs bash">const expect = chai.expect;<br> import Vue from <span class="hljs-string">'vue'</span><br> import Button from <span class="hljs-string">'../src/button'</span><br><br> Vue.config.productionTip = <span class="hljs-literal">false</span><br> Vue.config.devtools = <span class="hljs-literal">false</span><br><br>describe(<span class="hljs-string">'Button'</span>,()=&gt;&#123;<br>    it(<span class="hljs-string">'xxx'</span>,()=&gt;&#123;<br>        //测试代码<br>    &#125;)<br>&#125;)<br></code></pre></td></tr></table></figure>
+<p>创建测试脚本</p>
+<p>在 package.json 里面找到 scripts 并改写 scripts<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-string">"scripts"</span>: &#123;<br>     <span class="hljs-string">"dev-test"</span>: <span class="hljs-string">"parcel watch test/* --no-cache &amp; karma start"</span>,<br>     <span class="hljs-string">"test"</span>: <span class="hljs-string">"parcel build test/* --no-minify &amp;&amp; karma start --single-run"</span><br> &#125;,<br></code></pre></td></tr></table></figure></p>
+<p>运行测试脚本</p>
+<ol>
+<li>npm run test 一次性运行</li>
+<li>npm run dev-test 进行watch运行</li>
+</ol>
+<h4 id="2-使用Mocha-amp-Chai做单元测试"><a href="#2-使用Mocha-amp-Chai做单元测试" class="headerlink" title="2.使用Mocha&amp;Chai做单元测试"></a>2.使用Mocha&amp;Chai做单元测试</h4><p>BDD  行为驱动测试</p>
+<p>descrube 描述<br>expect 期待<br>eq 输出<br>deep 深相等<br>not 不<br>with 并且</p>
+<p>descrube ‘people’</p>
+<p>it has a head<br>it can run</p>
+<p>expect(‘xxx’).eq(‘yyy’)</p>
+<p>文档: <a href="http://www.chaijs.com" target="_blank" rel="noopener">www.chaijs.com</a></p>
+<h4 id="3-使用TravisCI做持续集成"><a href="#3-使用TravisCI做持续集成" class="headerlink" title="3. 使用TravisCI做持续集成"></a>3. 使用TravisCI做持续集成</h4><p>注册travis账户.</p>
+<p>根目录下创建 .travis.yml 文件</p>
+<p>每次提交后可在travis上查看测试结果.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash">language: node_js<br>node_js:<br>  - <span class="hljs-string">"8"</span><br>addons:<br>  chrome: stable<br>sudo: required<br>before_script:<br>  - <span class="hljs-string">"sudo chown root /opt/google/chrome/chrome-sandbox"</span><br>  - <span class="hljs-string">"sudo chmod 4755 /opt/google/chrome/chrome-sandbox"</span><br></code></pre></td></tr></table></figure>
+<h4 id="为什么一个空数组不等于空数组"><a href="#为什么一个空数组不等于空数组" class="headerlink" title="为什么一个空数组不等于空数组"></a>为什么一个空数组不等于空数组</h4><p>因为引用不同,是两个数组</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">[] == [] //<span class="hljs-literal">false</span><br><br>var a = []<br>a == [] //<span class="hljs-literal">false</span><br>a == [] //<span class="hljs-literal">true</span><br></code></pre></td></tr></table></figure>
+<h4 id="4-发布npm包"><a href="#4-发布npm包" class="headerlink" title="4. 发布npm包"></a>4. 发布npm包</h4><p>根目录下创建index.js<br>导入组件 导出组件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">improt cp from <span class="hljs-string">'./src/cp'</span><br>exprot &#123;cp&#125;<br></code></pre></td></tr></table></figure></p>
+<p>查看自己当前npm源路径<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm config list<br></code></pre></td></tr></table></figure></p>
+<p>要改成默认源才能发布npm包<br>每次发布需要更改package.json里的版本<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">//添加用户<br>npm adduser<br><br>//公开代码<br>npm publish<br></code></pre></td></tr></table></figure></p>
+<p>由于引擎不能识别improt 所以要babel转移或者直接给他转义好</p>
+<p>转义</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">//packjson输出目录修改成dist/index.js<br><br>运行<br><br>npx parcel build index.js --no-cache --no-minify<br></code></pre></td></tr></table></figure>
+<h4 id="5-使用npm-link"><a href="#5-使用npm-link" class="headerlink" title="5. 使用npm link"></a>5. 使用npm link</h4><p>由于每次更新都需要更改package.json里的版本,然后npm publish,所以我们可以用本地调试,在项目目录使用npm link,在所用目录运行npm link xxx.</p>
+<h4 id="6-书写README"><a href="#6-书写README" class="headerlink" title="6. 书写README"></a>6. 书写README</h4><p>shields.io生成图标</p>
+<h4 id="7-安装git-open"><a href="#7-安装git-open" class="headerlink" title="7. 安装git open"></a>7. 安装git open</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm i -g git-open<br></code></pre></td></tr></table></figure>
+<h4 id="8-git会到之前版本"><a href="#8-git会到之前版本" class="headerlink" title="8. git会到之前版本"></a>8. git会到之前版本</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git reset --hard xxx<br></code></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/04/09/自动化测试&发布npm包/" data-id="clq61ndij006qzofqs0rywi0n" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/库/">库</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/ES6/">ES6</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JS/">JS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/TS/">TS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/node/">node</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/vue/">vue</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/webpack/">webpack</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/业务代码/">业务代码</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/库/">库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/笔记/">笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机基础/">计算机基础</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/面试题/">面试题</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/">ES6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TS/">TS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/">webpack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/业务代码/">业务代码</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/库/">库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机基础/">计算机基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试题/">面试题</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CSS/" style="font-size: 18.75px;">CSS</a> <a href="/tags/ES6/" style="font-size: 16.25px;">ES6</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/HTTP/" style="font-size: 15px;">HTTP</a> <a href="/tags/JS/" style="font-size: 20px;">JS</a> <a href="/tags/TS/" style="font-size: 17.5px;">TS</a> <a href="/tags/git/" style="font-size: 11.25px;">git</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/vue/" style="font-size: 18.75px;">vue</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/业务代码/" style="font-size: 13.75px;">业务代码</a> <a href="/tags/库/" style="font-size: 12.5px;">库</a> <a href="/tags/笔记/" style="font-size: 10px;">笔记</a> <a href="/tags/计算机基础/" style="font-size: 10px;">计算机基础</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a> <a href="/tags/面试题/" style="font-size: 10px;">面试题</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/02/02/手写Promise-all/">手写Promise.all</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/02/Canvas和SVG区别/">Canvas和SVG区别</a>
+          </li>
+        
+          <li>
+            <a href="/2020/02/12/常见排序算法/">常见排序算法</a>
+          </li>
+        
+          <li>
+            <a href="/2020/01/17/TS声明/">TS声明</a>
+          </li>
+        
+          <li>
+            <a href="/2020/01/16/TS高级类型/">TS类型</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2023 Roxas Deng<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

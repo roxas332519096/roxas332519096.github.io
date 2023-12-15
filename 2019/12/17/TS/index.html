@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>TypeScript基础 | RoxasDengBlog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="安装12npm install typescript -g //安装tsnpm install ts-node@7.0.0 -g //ts-node,让node可以运行ts 使用 先创建好ts文件 根目录下创建文件 .vscode .vscode下创建文件launch.json  复制如下代码:   12345678910111213&amp;#123;    &quot;configurations&quot;: [">
+<meta name="keywords" content="TS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TypeScript基础">
+<meta property="og:url" content="http://yoursite.com/2019/12/17/TS/index.html">
+<meta property="og:site_name" content="RoxasDengBlog">
+<meta property="og:description" content="安装12npm install typescript -g //安装tsnpm install ts-node@7.0.0 -g //ts-node,让node可以运行ts 使用 先创建好ts文件 根目录下创建文件 .vscode .vscode下创建文件launch.json  复制如下代码:   12345678910111213&amp;#123;    &quot;configurations&quot;: [">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:updated_time" content="2023-12-15T01:47:13.834Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="TypeScript基础">
+<meta name="twitter:description" content="安装12npm install typescript -g //安装tsnpm install ts-node@7.0.0 -g //ts-node,让node可以运行ts 使用 先创建好ts文件 根目录下创建文件 .vscode .vscode下创建文件launch.json  复制如下代码:   12345678910111213&amp;#123;    &quot;configurations&quot;: [">
+  
+    <link rel="alternate" href="/atom.xml" title="RoxasDengBlog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">RoxasDengBlog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-TS" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/12/17/TS/" class="article-date">
+  <time datetime="2019-12-17T14:40:20.000Z" itemprop="datePublished">2019-12-17</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/TS/">TS</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      TypeScript基础
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm install typescript -g //安装ts<br>npm install ts-node@7.0.0 -g //ts-node,让node可以运行ts<br></code></pre></td></tr></table></figure>
+<h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><ol start="0">
+<li>先创建好ts文件</li>
+<li>根目录下创建文件 .vscode</li>
+<li><p>.vscode下创建文件launch.json</p>
+</li>
+<li><p>复制如下代码:</p>
+</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs bash">&#123;<br>    <span class="hljs-string">"configurations"</span>: [<br>        &#123;<br>        <span class="hljs-string">"name"</span>: <span class="hljs-string">"ts-node"</span>,<br>        <span class="hljs-string">"type"</span>: <span class="hljs-string">"node"</span>,<br>        <span class="hljs-string">"request"</span>: <span class="hljs-string">"launch"</span>,<br>        <span class="hljs-string">"program"</span>: <span class="hljs-string">"C:/Users/Administrator/AppData/Roaming/npm/node_modules/ts-node/dist/bin.js"</span>,//这个是ts-node的安装路径<br>        <span class="hljs-string">"args"</span>: [<span class="hljs-string">"<span class="hljs-variable">$&#123;relativeFile&#125;</span>"</span>],<br>        <span class="hljs-string">"cwd"</span>: <span class="hljs-string">"<span class="hljs-variable">$&#123;workspaceRoot&#125;</span>"</span>,<br>        <span class="hljs-string">"protocol"</span>: <span class="hljs-string">"inspector"</span><br>        &#125;<br>    ]<br>&#125;<br></code></pre></td></tr></table></figure>
+<ol start="4">
+<li>点击vscode工具栏调试(ctrl+shift+D)</li>
+<li>选择ts-node</li>
+<li>选好之前创建的ts文件,开启调试</li>
+</ol>
+<h4 id="尝试用接口和类写一个简单的函数"><a href="#尝试用接口和类写一个简单的函数" class="headerlink" title="尝试用接口和类写一个简单的函数"></a>尝试用接口和类写一个简单的函数</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs bash">class Student &#123;//类<br>    fullName: string;<br>    constructor(public firstName, public middleInitial, public lastName) &#123;<br>        this.fullName = firstName + <span class="hljs-string">" "</span> + middleInitial + <span class="hljs-string">" "</span> + lastName;<br>    &#125;<br>&#125;<br><br>interface Person &#123;//接口<br>    firstName: string;<br>    lastName: string;<br>&#125;<br><br><span class="hljs-keyword">function</span> greeter(person: Person) &#123;<br>    <span class="hljs-built_in">return</span> <span class="hljs-string">"Hello, "</span> + person.firstName + <span class="hljs-string">" "</span> + person.lastName;<br>&#125;<br><br>const user = new Student(<span class="hljs-string">"Jane"</span>, <span class="hljs-string">"M."</span>, <span class="hljs-string">"User"</span>);<br><br>console.log(greeter(user))<br></code></pre></td></tr></table></figure>
+<p>编译之后</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs bash">var Student = /** @class */ (<span class="hljs-function"><span class="hljs-title">function</span></span> () &#123;<br>    <span class="hljs-keyword">function</span> Student(firstName, middleInitial, lastName) &#123;<br>        this.firstName = firstName;<br>        this.middleInitial = middleInitial;<br>        this.lastName = lastName;<br>        this.fullName = firstName + <span class="hljs-string">" "</span> + middleInitial + <span class="hljs-string">" "</span> + lastName;<br>    &#125;<br>    <span class="hljs-built_in">return</span> Student;<br>&#125;());<br><span class="hljs-keyword">function</span> greeter(person) &#123;<br>    <span class="hljs-built_in">return</span> <span class="hljs-string">"Hello, "</span> + person.firstName + <span class="hljs-string">" "</span> + person.lastName;<br>&#125;<br>var user = new Student(<span class="hljs-string">"Jane"</span>, <span class="hljs-string">"M."</span>, <span class="hljs-string">"User"</span>);<br>console.log(greeter(user));<br></code></pre></td></tr></table></figure>
+<h4 id="写一个简单的加法命令行"><a href="#写一个简单的加法命令行" class="headerlink" title="写一个简单的加法命令行"></a>写一个简单的加法命令行</h4><ol>
+<li><p>在根目录下创建package.json</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm init -y<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>安装所需npm包</p>
+</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm install @types/node<br></code></pre></td></tr></table></figure>
+<ol start="3">
+<li><p>输入代码</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment">#!/usr/bin/env ts-node //这句话在写命令行的时候一定要加上</span><br>const a: number = Number(process.argv[2])<br>const b: number = Number(process.argv[3])<br><br><span class="hljs-keyword">if</span> (Number.isNaN(a) || Number.isNaN(b)) &#123;<br>    console.log(<span class="hljs-string">'只接受整数类型'</span>)<br>    process.exit(1)<br>&#125;<br>console.log(a + b)<br>process.exit(0)<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>运行命令行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">./add.ts 1 2<br><br>/////////////输出<br></code></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="写一个族谱"><a href="#写一个族谱" class="headerlink" title="写一个族谱"></a>写一个族谱</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><code class="hljs bash">&#123;<br>    class Person &#123;<br>        public children: Person[] = []<br>        constructor(public name: string) &#123; &#125;<br>        addChild(child: Person): void &#123;<br>            this.children.push(child)<br>        &#125;<br>        introduceFamily(n?: number): void &#123;<br>            n = n ? n : 1<br>            <span class="hljs-built_in">let</span> prefix = <span class="hljs-string">'----'</span>.repeat(n - 1)<br>            console.log(`<span class="hljs-variable">$&#123;prefix&#125;</span><span class="hljs-variable">$&#123;this.name&#125;</span>`)<br>            this.children.forEach((child) =&gt; &#123;<br>                child.introduceFamily(n + 1)<br>            &#125;)<br>        &#125;<br>    &#125;<br><br>    const grandpa = new Person(<span class="hljs-string">'爷爷'</span>)<br>    const child1 = new Person(<span class="hljs-string">'大儿子'</span>)<br>    const child2 = new Person(<span class="hljs-string">'二儿子'</span>)<br>    const person11 = new Person(<span class="hljs-string">'大孙子'</span>)<br>    const person12 = new Person(<span class="hljs-string">'二孙子'</span>)<br>    const person21 = new Person(<span class="hljs-string">'三孙子'</span>)<br>    const person22 = new Person(<span class="hljs-string">'四孙子'</span>)<br>    grandpa.addChild(child1)<br>    grandpa.addChild(child2)<br>    child1.addChild(person11)<br>    child1.addChild(person12)<br>    child2.addChild(person21)<br>    child2.addChild(person22)<br><br>    grandpa.introduceFamily()<br>&#125;<br><br><br>///输出<br>爷爷<br>----大儿子<br>--------大孙子<br>--------二孙子<br>----二儿子<br>--------三孙子<br>--------四孙子<br></code></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/12/17/TS/" data-id="clq61ndgl0029zofqfy365z41" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TS/">TS</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/01/07/使用TS操作DOM/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          使用TS写一个计算器
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/07/31/css继承/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">css继承</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/ES6/">ES6</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JS/">JS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/TS/">TS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/node/">node</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/vue/">vue</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/webpack/">webpack</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/业务代码/">业务代码</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/库/">库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/笔记/">笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机基础/">计算机基础</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/面试题/">面试题</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/">ES6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TS/">TS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/">webpack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/业务代码/">业务代码</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/库/">库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机基础/">计算机基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试题/">面试题</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CSS/" style="font-size: 18.75px;">CSS</a> <a href="/tags/ES6/" style="font-size: 16.25px;">ES6</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/HTTP/" style="font-size: 15px;">HTTP</a> <a href="/tags/JS/" style="font-size: 20px;">JS</a> <a href="/tags/TS/" style="font-size: 17.5px;">TS</a> <a href="/tags/git/" style="font-size: 11.25px;">git</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/vue/" style="font-size: 18.75px;">vue</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/业务代码/" style="font-size: 13.75px;">业务代码</a> <a href="/tags/库/" style="font-size: 12.5px;">库</a> <a href="/tags/笔记/" style="font-size: 10px;">笔记</a> <a href="/tags/计算机基础/" style="font-size: 10px;">计算机基础</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a> <a href="/tags/面试题/" style="font-size: 10px;">面试题</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/02/02/手写Promise-all/">手写Promise.all</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/02/Canvas和SVG区别/">Canvas和SVG区别</a>
+          </li>
+        
+          <li>
+            <a href="/2020/02/12/常见排序算法/">常见排序算法</a>
+          </li>
+        
+          <li>
+            <a href="/2020/01/17/TS声明/">TS声明</a>
+          </li>
+        
+          <li>
+            <a href="/2020/01/16/TS高级类型/">TS类型</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2023 Roxas Deng<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

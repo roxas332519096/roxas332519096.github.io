@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>webpack | RoxasDengBlog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="前端目录src source 未经翻译的代码dist distribution 发布代码vendors 第三方库node_modules 第三方包 webpack安装安装webpack312npm initnpm i webpack@3 新建webpack.config.js文件编辑文件12345678910111213141516171819202122232425262728293031323">
+<meta name="keywords" content="webpack">
+<meta property="og:type" content="article">
+<meta property="og:title" content="webpack">
+<meta property="og:url" content="http://yoursite.com/2018/06/13/webpack/index.html">
+<meta property="og:site_name" content="RoxasDengBlog">
+<meta property="og:description" content="前端目录src source 未经翻译的代码dist distribution 发布代码vendors 第三方库node_modules 第三方包 webpack安装安装webpack312npm initnpm i webpack@3 新建webpack.config.js文件编辑文件12345678910111213141516171819202122232425262728293031323">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:updated_time" content="2023-12-15T01:47:13.846Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="webpack">
+<meta name="twitter:description" content="前端目录src source 未经翻译的代码dist distribution 发布代码vendors 第三方库node_modules 第三方包 webpack安装安装webpack312npm initnpm i webpack@3 新建webpack.config.js文件编辑文件12345678910111213141516171819202122232425262728293031323">
+  
+    <link rel="alternate" href="/atom.xml" title="RoxasDengBlog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">RoxasDengBlog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-webpack" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/13/webpack/" class="article-date">
+  <time datetime="2018-06-12T16:17:19.000Z" itemprop="datePublished">2018-06-13</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/webpack/">webpack</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      webpack
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="前端目录"><a href="#前端目录" class="headerlink" title="前端目录"></a>前端目录</h3><p>src source 未经翻译的代码<br>dist distribution 发布代码<br>vendors 第三方库<br>node_modules 第三方包</p>
+<h3 id="webpack"><a href="#webpack" class="headerlink" title="webpack"></a>webpack</h3><h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><h5 id="安装webpack3"><a href="#安装webpack3" class="headerlink" title="安装webpack3"></a>安装webpack3</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm init<br>npm i webpack@3<br></code></pre></td></tr></table></figure>
+<h5 id="新建webpack-config-js文件"><a href="#新建webpack-config-js文件" class="headerlink" title="新建webpack.config.js文件"></a>新建webpack.config.js文件</h5><p>编辑文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs bash">const path = require(<span class="hljs-string">'path'</span>);<br><br>module.exports = &#123;<br>    entry: <span class="hljs-string">'./src/js/app.js'</span>, //入口文件<br>    output: &#123;<br>      filename: <span class="hljs-string">'bundle.js'</span>,//输出文件<br>      path: path.resolve(__dirname, <span class="hljs-string">'dist/js/'</span>) //输出路径<br>    &#125;,<br>    module: &#123;<br>      rules: [<br>        &#123;<br>          <span class="hljs-built_in">test</span>: /\.js$/,<br>          exclude: /(node_modules|bower_components)/,<br>          use: &#123;<br>            loader: <span class="hljs-string">'babel-loader'</span>,<br>            options: &#123;<br>              presets: [<span class="hljs-string">'env'</span>]<br>            &#125;<br>          &#125;<br>        &#125;,<br>        &#123;<br>          <span class="hljs-built_in">test</span>: /\.scss$/,<br>          use: [&#123;<br>            loader: <span class="hljs-string">"style-loader"</span> // creates style nodes from JS strings<br>          &#125;, &#123;<br>            loader: <span class="hljs-string">"css-loader"</span>, // translates CSS into CommonJS<br>            options: &#123; importLoaders: 1 &#125;<br>          &#125;, &#123;<br>            loader: <span class="hljs-string">'postcss-loader'</span><br>          &#125;,&#123;<br>            loader: <span class="hljs-string">"sass-loader"</span> // compiles Sass to CSS<br>          &#125;]<br>        &#125;<br>      ]<br>    &#125;<br>  &#125;;<br></code></pre></td></tr></table></figure></p>
+<h5 id="安装babel-loader与scss-loader"><a href="#安装babel-loader与scss-loader" class="headerlink" title="安装babel-loader与scss-loader"></a>安装babel-loader与scss-loader</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm install --save-dev babel-loader babel-core babel-preset-env webpack<br>npm install sass-loader node-sass webpack --save-dev<br></code></pre></td></tr></table></figure>
+<h5 id="安装其他必须插件"><a href="#安装其他必须插件" class="headerlink" title="安装其他必须插件"></a>安装其他必须插件</h5><p>它提示确实什么就npm i 缺少的东西</p>
+<h5 id="使用将babel-loader将es6转成es5"><a href="#使用将babel-loader将es6转成es5" class="headerlink" title="使用将babel-loader将es6转成es5"></a>使用将babel-loader将es6转成es5</h5><p>编辑app.js文件(入口文件)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">fn</span></span>()&#123;<br>    <span class="hljs-built_in">let</span> b = <span class="hljs-string">'I am b'</span>;<br>    console.log(b);<br>&#125;<br><span class="hljs-built_in">export</span> default fn;<br></code></pre></td></tr></table></figure>
+<h5 id="编辑模块文件"><a href="#编辑模块文件" class="headerlink" title="编辑模块文件"></a>编辑模块文件</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs bash">//1.js<br><span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">fn</span></span>()&#123;<br>    <span class="hljs-built_in">let</span> a = <span class="hljs-string">'I am a'</span>;<br>    console.log(a);<br>&#125;<br><span class="hljs-built_in">export</span> default fn;<br>//2.js<br><span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">fn</span></span>()&#123;<br>    <span class="hljs-built_in">let</span> b = <span class="hljs-string">'I am b'</span>;<br>    console.log(b);<br>&#125;<br><span class="hljs-built_in">export</span> default fn;<br></code></pre></td></tr></table></figure>
+<h5 id="在html中引入-dist-js-bundle-js"><a href="#在html中引入-dist-js-bundle-js" class="headerlink" title="在html中引入./dist/js/bundle.js"></a>在html中引入./dist/js/bundle.js</h5><h5 id="运行webpack"><a href="#运行webpack" class="headerlink" title="运行webpack"></a>运行webpack</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">npx webpack<br></code></pre></td></tr></table></figure>
+<h5 id="将scss转成css"><a href="#将scss转成css" class="headerlink" title="将scss转成css"></a>将scss转成css</h5><p>根目录创建 postcss.config.js文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">module.exports = &#123;<br>    plugins: &#123;<br>      <span class="hljs-string">'postcss-cssnext'</span>: &#123;&#125;,<br>    &#125;<br>  &#125;<br></code></pre></td></tr></table></figure></p>
+<h5 id="入口文件引入scss文件"><a href="#入口文件引入scss文件" class="headerlink" title="入口文件引入scss文件"></a>入口文件引入scss文件</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">import <span class="hljs-string">'../css/main.scss'</span><br></code></pre></td></tr></table></figure>
+<h5 id="运行webpack-1"><a href="#运行webpack-1" class="headerlink" title="运行webpack"></a>运行webpack</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">npx webpack<br></code></pre></td></tr></table></figure>
+<p>////////////<br>caniuse 插兼容性问题</p>
+<p>autoprefixer 自动解决兼容性</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/06/13/webpack/" data-id="clq61ndho004wzofqypwmsh9i" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webpack/">webpack</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/06/15/Flex布局/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Flex布局
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/06/13/sass/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">sass</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/ES6/">ES6</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JS/">JS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/TS/">TS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/node/">node</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/vue/">vue</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/webpack/">webpack</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/业务代码/">业务代码</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/库/">库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/笔记/">笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机基础/">计算机基础</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/面试题/">面试题</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/">ES6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TS/">TS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/">webpack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/业务代码/">业务代码</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/库/">库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机基础/">计算机基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试题/">面试题</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CSS/" style="font-size: 18.75px;">CSS</a> <a href="/tags/ES6/" style="font-size: 16.25px;">ES6</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/HTTP/" style="font-size: 15px;">HTTP</a> <a href="/tags/JS/" style="font-size: 20px;">JS</a> <a href="/tags/TS/" style="font-size: 17.5px;">TS</a> <a href="/tags/git/" style="font-size: 11.25px;">git</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/vue/" style="font-size: 18.75px;">vue</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/业务代码/" style="font-size: 13.75px;">业务代码</a> <a href="/tags/库/" style="font-size: 12.5px;">库</a> <a href="/tags/笔记/" style="font-size: 10px;">笔记</a> <a href="/tags/计算机基础/" style="font-size: 10px;">计算机基础</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a> <a href="/tags/面试题/" style="font-size: 10px;">面试题</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/02/02/手写Promise-all/">手写Promise.all</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/02/Canvas和SVG区别/">Canvas和SVG区别</a>
+          </li>
+        
+          <li>
+            <a href="/2020/02/12/常见排序算法/">常见排序算法</a>
+          </li>
+        
+          <li>
+            <a href="/2020/01/17/TS声明/">TS声明</a>
+          </li>
+        
+          <li>
+            <a href="/2020/01/16/TS高级类型/">TS类型</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2023 Roxas Deng<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

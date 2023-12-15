@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>RoxasDengBlog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="RoxasDengBlog">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="RoxasDengBlog">
+<meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="RoxasDengBlog">
+  
+    <link rel="alternate" href="/atom.xml" title="RoxasDengBlog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">RoxasDengBlog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-手写Promise-all" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/02/02/手写Promise-all/" class="article-date">
+  <time datetime="2023-02-02T15:03:52.000Z" itemprop="datePublished">2023-02-02</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JS/">JS</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/02/02/手写Promise-all/">手写Promise.all</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li>知道Promise上写而不是在原型上写</li>
+<li>知道all的参数（Promise数组）和返回值（新Promise对象）</li>
+<li>知道用数组来记录结果</li>
+<li>知道只要一个reject就整体reject</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs bash">Promise.myAll = <span class="hljs-keyword">function</span> (list) &#123;<br>    const results = []<br>    <span class="hljs-built_in">let</span> count = 0<br>    <span class="hljs-built_in">return</span> new Promise((resolve, reject) =&gt; &#123;<br>        list.map((promise, index) =&gt; &#123;<br>            promise.then((r) =&gt; &#123;<br>                results[index] = r<br>                count += 1<br>                <span class="hljs-keyword">if</span> (count === list.length) &#123;<br>                    resolve(results)<br>                &#125;<br>            &#125;,<br>                (reason) =&gt; &#123;<br>                    reject(reason)<br>                &#125;<br>            )<br>        &#125;)<br>    &#125;)<br>&#125;<br></code></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2023/02/02/手写Promise-all/" data-id="clq61ndi70060zofqhxbwrjvd" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS/">JS</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Canvas和SVG区别" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/02/02/Canvas和SVG区别/" class="article-date">
+  <time datetime="2023-02-02T10:00:42.000Z" itemprop="datePublished">2023-02-02</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/CSS/">CSS</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/02/02/Canvas和SVG区别/">Canvas和SVG区别</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li>Canvas主要是用笔刷来绘制2D图形。</li>
+<li>SVG主要是用标签来绘制不规则矢量图。</li>
+<li>相同点:都是主要用来画2D图形。</li>
+<li>不同点：Canvas画的是位图，SVG画的是矢量图。</li>
+<li>不同点：SVG节点过时渲染慢，Canvas性能更好，但写起来复杂。</li>
+<li>SVG支持分层和事件，Canvas不支持，但可以用库实现。</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2023/02/02/Canvas和SVG区别/" data-id="clq61ndf90008zofqme7nbsyq" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-常见排序算法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/02/12/常见排序算法/" class="article-date">
+  <time datetime="2020-02-12T01:54:15.000Z" itemprop="datePublished">2020-02-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/计算机基础/">计算机基础</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/12/常见排序算法/">常见排序算法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li><p>冒泡排序</p>
+<ol>
+<li>按顺序依次两两对比,把大的放到后面,直到最后的数最大.</li>
+<li>将最后的数固定,再重新对比n-1的数.</li>
+</ol>
+</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs bash">const arr = [1,20,30,10,50,100,999]<br><br><span class="hljs-keyword">function</span> bubbleSort(arr)&#123;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-built_in">let</span> i = 0;i&lt;arr.length - 1;i++)&#123;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-built_in">let</span> j = 0;j &lt; arr.length - i -1;j++)&#123;<br>            <span class="hljs-keyword">if</span>(arr[j] &gt; arr[j+1])&#123;<br>                swap(arr,j,j+1)<br>            &#125;<br>        &#125;<br>    &#125;<br>&#125;<br><br><span class="hljs-keyword">function</span> swap(arr,n,m)&#123;<br>    <span class="hljs-built_in">let</span> temp = arr[n]<br>    arr[n] = arr[m]<br>    arr[m] = temp<br>&#125;<br></code></pre></td></tr></table></figure>
+<ol start="2">
+<li><p>选择排序</p>
+<ol>
+<li>找出数列里最小的数,将其移到第一位.</li>
+<li>再从n+1开始,依次排序.</li>
+</ol>
+</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-keyword">function</span> selectionSort(arr)&#123;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-built_in">let</span> i = 0;i &lt; arr.length - 1;i++)&#123;<br>        <span class="hljs-built_in">let</span> index = i;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-built_in">let</span> j = i+1;j &lt; arr.length;j++)&#123;<br>            <span class="hljs-keyword">if</span>(arr[index] &gt; arr[j])&#123;<br>                index = j<br>            &#125;<br>        &#125;<br>        swap(arr,i,index)<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<ol start="3">
+<li>插入排序<br> 1.建立一个空数组,从原数组中抽出一个数插入到空数组,形成有序数组<br> 2.每次将原的一个数插入到有序的数组中去</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-keyword">function</span> insertSort(arr)&#123;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-built_in">let</span> i= 0;i &lt; arr.length;i++)&#123;<br>        <span class="hljs-built_in">let</span> temp = arr[i]<br>        <span class="hljs-keyword">for</span>(<span class="hljs-built_in">let</span> j = 0;j &lt; i;j++)&#123;<br>            <span class="hljs-keyword">if</span>(temp &lt; arr[j] &amp;&amp; j === 0)&#123;<br>                arr.splice(i,1)<br>                arr.unshift(temp)<br>                <span class="hljs-built_in">break</span><br>            &#125;<span class="hljs-keyword">else</span>  <span class="hljs-keyword">if</span>(temp &gt; arr[j] &amp;&amp; temp &lt; arr[j+1] &amp;&amp; j &lt; i - 1)&#123;<br>                arr.splice(i,1)<br>                arr.splice(j+1,0,temp)<br>            &#125;<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<ol start="4">
+<li><p>快排</p>
+<ol>
+<li>先随机取一个数,将比这个数小的放左边,大的放右边.</li>
+<li>左边和右边的数都用上面的步骤,继续分.</li>
+<li>不断重复.</li>
+</ol>
+</li>
+<li><p>归并排序</p>
+<ol>
+<li>将相邻的两个数进行排序，形成n/2对，然后在每对合并，不断重复</li>
+</ol>
+</li>
+<li><p>基数排序</p>
+<ol>
+<li>比较个位大小，将数组的顺序变成按个位一次递增，之后比较十位，最后到最后一位.</li>
+</ol>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/02/12/常见排序算法/" data-id="clq61ndi5005szofqvtyfkeza" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/计算机基础/">计算机基础</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-TS声明" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/01/17/TS声明/" class="article-date">
+  <time datetime="2020-01-16T17:33:03.000Z" itemprop="datePublished">2020-01-17</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/TS/">TS</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/01/17/TS声明/">TS声明</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="如何写一个TS声明文件"><a href="#如何写一个TS声明文件" class="headerlink" title="如何写一个TS声明文件"></a>如何写一个TS声明文件</h4><p>test.ts</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">export</span> interface Person &#123;<br>    name: string<br>    age: number<br>&#125;<br><br>const a = <span class="hljs-keyword">function</span> (p: Person) &#123;<br>    console.log(p)<br>&#125;<br><br><span class="hljs-built_in">export</span> default a<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">tsc test.ts -d<br></code></pre></td></tr></table></figure>
+<p>生成test.d.ts文件,就是声明文件<br>-d的全称是declaration(声明)</p>
+<h4 id="如何提供给别人使用-d-ts"><a href="#如何提供给别人使用-d-ts" class="headerlink" title="如何提供给别人使用 *.d.ts"></a>如何提供给别人使用 *.d.ts</h4><p>库:在package.json添加types字段</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash">&#123;<br>  <span class="hljs-string">"name"</span>: <span class="hljs-string">"ts"</span>,<br>  <span class="hljs-string">"version"</span>: <span class="hljs-string">"1.0.0"</span>,<br>  <span class="hljs-string">"description"</span>: <span class="hljs-string">""</span>,<br>  <span class="hljs-string">"main"</span>: <span class="hljs-string">"main.js"</span>,<br>  <span class="hljs-string">"type"</span>:<span class="hljs-string">"main.d.ts"</span>,//添加这里<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>社区:上传到DefinitelyTyped</p>
+<h4 id="如何给任意JS添加声明"><a href="#如何给任意JS添加声明" class="headerlink" title="如何给任意JS添加声明"></a>如何给任意JS添加声明</h4><h5 id="require方式"><a href="#require方式" class="headerlink" title="require方式"></a>require方式</h5><p>v.js<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-keyword">function</span> add(a, b) &#123;<br>    <span class="hljs-built_in">return</span> a + b<br>&#125;<br><br><span class="hljs-built_in">export</span> default add<br></code></pre></td></tr></table></figure></p>
+<p>tsconfig.json</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash">&#123;<br>    <span class="hljs-string">"compilerOptions"</span>: &#123;<br>        <span class="hljs-string">"types"</span>: [<br>            <span class="hljs-string">"node"</span><br>        ],<br>        <span class="hljs-string">"typeRoots"</span>: [<br>            <span class="hljs-string">"node_modules/@types"</span><br>        ]<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>test.ts<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash">&#123;<br>    interface V &#123;<br>        (a: number, b: number): number<br>    &#125;<br><br>    const add: V = require(<span class="hljs-string">'./v.js'</span>)<br><br>    add(1, 2)<br>&#125;<br></code></pre></td></tr></table></figure></p>
+<h4 id="import-方式"><a href="#import-方式" class="headerlink" title="import 方式"></a>import 方式</h4><p>test.ts</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">import add from <span class="hljs-string">'./v.js'</span><br><br>add(1, 2)<br></code></pre></td></tr></table></figure>
+<p>test.d.ts<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">declare</span> <span class="hljs-keyword">function</span> y(a: number, b: number): number<br><span class="hljs-built_in">export</span> default y<br></code></pre></td></tr></table></figure></p>
+<h4 id="如何修改window全局变量"><a href="#如何修改window全局变量" class="headerlink" title="如何修改window全局变量"></a>如何修改window全局变量</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">declare</span> global &#123;<br>    interface Window&#123;<br>        server:&#123;<br>            host:string<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/01/17/TS声明/" data-id="clq61ndgp002mzofqmt76p55w" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TS/">TS</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-TS高级类型" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/01/16/TS高级类型/" class="article-date">
+  <time datetime="2020-01-15T19:07:33.000Z" itemprop="datePublished">2020-01-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/TS/">TS</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/01/16/TS高级类型/">TS类型</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">type</span> Name = String<br><span class="hljs-built_in">type</span> FasleLike = <span class="hljs-string">''</span> | 0 | <span class="hljs-literal">false</span> | null | undefined<br><span class="hljs-built_in">type</span> Ponit = &#123;x: number,y: number&#125;<br><span class="hljs-built_in">type</span> Ponits = Ponit[]//数组<br><span class="hljs-built_in">type</span> Line = [Ponit, Ponit]//元祖<br><span class="hljs-built_in">type</span> Circle = &#123; center: Ponit, radius: number &#125;<br><span class="hljs-built_in">type</span> Fn = (a: number, b: number) =&gt; number<br><span class="hljs-built_in">type</span> FnWithProps = &#123;<br>    (a: number, b: number): number<br>    prop: number<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="类型别名type"><a href="#类型别名type" class="headerlink" title="类型别名type"></a>类型别名type</h3><p>给类型取别名,跟接口很像</p>
+<p>区别</p>
+<pre><code>1. interface只描述对象，type则描述所有数据
+2. type只是别名，interface则是类型声明
+3. 对外API尽量用interface，方便扩展，对内API尽量用type，防止代码分散
+</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">type</span> Age = number<br>const age: Age = 18<br><br><span class="hljs-built_in">type</span> Name = string<br>const name: Name = <span class="hljs-string">'tom'</span><br><br><span class="hljs-built_in">type</span> A = &#123;<br>    name: string<br>&#125;<br><br>interface B &#123;<br>    name: string<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="字面量类型"><a href="#字面量类型" class="headerlink" title="字面量类型"></a>字面量类型</h3><p>通常用来作可选项</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs bash">interface Course &#123;<br>    category: <span class="hljs-string">'task'</span> | <span class="hljs-string">'live'</span><br>&#125;<br><br>const course: Course = &#123;<br>    category: <span class="hljs-string">'task'</span><br>&#125;<br><br><span class="hljs-built_in">type</span> Dir = <span class="hljs-string">'east'</span> | <span class="hljs-string">'west'</span> | <span class="hljs-string">'north'</span> | <span class="hljs-string">'south'</span><br><br>const dir: Dir = <span class="hljs-string">'east'</span><br><br><span class="hljs-built_in">type</span> A = 1 | 2 | 3 | 4 | 5 | 6<br>const a: A = 1<br></code></pre></td></tr></table></figure>
+<h3 id="索引签名"><a href="#索引签名" class="headerlink" title="索引签名"></a>索引签名</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">type</span> Hash = &#123;<br>    [k:string]:unknown<br>    length:number<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="映射类型"><a href="#映射类型" class="headerlink" title="映射类型"></a>映射类型</h3><p>多用于泛型<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">type</span> Hash = &#123;<br>    [k <span class="hljs-keyword">in</span> string]:unknown<br>&#125;<br></code></pre></td></tr></table></figure></p>
+<h3 id="且类型-交叉类型"><a href="#且类型-交叉类型" class="headerlink" title="且类型(交叉类型)"></a>且类型(交叉类型)</h3><p>两种类型都需满足</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs bash">interface human &#123;<br>    name: string<br>    age: number<br>&#125;<br><br>interface student &#123;<br>    name: string<br>    id: number<br>&#125;<br><br><span class="hljs-built_in">let</span> tom: human &amp; student = &#123;<br>    name: <span class="hljs-string">'tom'</span>,<br>    age: 18,<br>    id: 123<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="或类型-联合类型"><a href="#或类型-联合类型" class="headerlink" title="或类型(联合类型)"></a>或类型(联合类型)</h3><p>满足一种类型即可</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs bash">interface human &#123;<br>    name: string<br>    age: number<br>&#125;<br><br>interface student &#123;<br>    name: string<br>    id: number<br>&#125;<br><br><span class="hljs-built_in">let</span> tom: human | student = &#123;//满足两种<br>    name: <span class="hljs-string">'tom'</span>,<br>    age: 18,<br>    id: 123<br>&#125;<br><br><span class="hljs-built_in">let</span> jack: human | student = &#123;//满足一种<br>    name: <span class="hljs-string">'jack'</span>,<br>    age: 19<br>&#125;<br><span class="hljs-built_in">type</span> A1 = number<br><span class="hljs-built_in">type</span> B1 = string<br><span class="hljs-built_in">type</span> C1 = A1 | B1<br><br><span class="hljs-built_in">type</span> A2 = &#123;name:string&#125;<br><span class="hljs-built_in">type</span> B2 = &#123;age:number&#125;<br><span class="hljs-built_in">type</span> C2 = A2 | B2<br>const c2:C2 = &#123;<br>    name:<span class="hljs-string">'John'</span>,<br>    age:18<br>&#125;<br>const c3:c2 = &#123;<br>    name:<span class="hljs-string">'John'</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<h4 id="类型收窄"><a href="#类型收窄" class="headerlink" title="类型收窄"></a>类型收窄</h4><ol>
+<li>js方法：type of instanceof</li>
+<li>Ts方法：is</li>
+<li><p>Ts方法（可辨别联合）：x.kind</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs bash">interface Circle &#123; kind: <span class="hljs-string">'circle'</span>, radius: number &#125;<br>interface Square &#123; kind: <span class="hljs-string">'square'</span>, sideLength: number &#125;<br><span class="hljs-built_in">type</span> Shape = Circle | Square;<br>const f1 = (shape: Shape) =&gt; &#123;<br>    <span class="hljs-keyword">if</span> (shape.kind === <span class="hljs-string">'circle'</span>) &#123;<br>        shape //Circle<br>    &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (shape.kind === <span class="hljs-string">'square'</span>) &#123;<br>        shape //Square<br>    &#125; <span class="hljs-keyword">else</span> &#123;<br>        shape //Never<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>Ts方法：断言</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">let</span> b :unknown = await axios(...)<br>(b as number).toFixed();<br></code></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="this类型"><a href="#this类型" class="headerlink" title="this类型"></a>this类型</h3><p>自动判断this类型(多态)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs bash">class Calc &#123;<br>    public n: number<br>    constructor(n: number) &#123;<br>        this.n = n<br>    &#125;<br>    add(n: number) &#123;<br>        this.n += n<br>        <span class="hljs-built_in">return</span> this<br>    &#125;<br>&#125;<br><br><span class="hljs-built_in">let</span> calc = new Calc(1)<br>calc.add(2).add(4) //自动判断this是number,可以用add<br><br>console.log(calc) //7<br></code></pre></td></tr></table></figure>
+<p>ts的this可以推断类型<br>下面的this返回的是BiggerCalc的this,而不是Calc的this,因为他有sin方法</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs bash">class Calc &#123;<br>    public n: number<br>    constructor(n: number) &#123;<br>        this.n = n<br>    &#125;<br>    add(n: number) &#123;<br>        this.n += n<br>        <span class="hljs-built_in">return</span> this<br>    &#125;<br>&#125;<br><br>class BiggerCalc extends Calc &#123;<br>    <span class="hljs-function"><span class="hljs-title">sin</span></span>() &#123;<br>        this.n = Math.sin(this.n)<br>        <span class="hljs-built_in">return</span> this<br>    &#125;<br>&#125;<br><br><span class="hljs-built_in">let</span> calc = new BiggerCalc(1)<br>calc.add(2).add(4).sin().add<br><br>console.log(calc) //0.6569865987187891<br></code></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/01/16/TS高级类型/" data-id="clq61ndgs002uzofq7b180777" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TS/">TS</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-用vue-ts写一个toDoList" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/01/14/用vue-ts写一个toDoList/" class="article-date">
+  <time datetime="2020-01-14T08:45:09.000Z" itemprop="datePublished">2020-01-14</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/TS/">TS</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/01/14/用vue-ts写一个toDoList/">用vue-ts写一个toDoList</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li>app.vue</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;template&gt;<br>  &lt;div id=<span class="hljs-string">"app"</span>&gt;<br>    &lt;newToDo @add=<span class="hljs-string">"addNewItem"</span> /&gt;<br>    &lt;toDoList :list=<span class="hljs-string">"list"</span> /&gt;<br>  &lt;/div&gt;<br>&lt;/template&gt;<br><br>&lt;script lang=<span class="hljs-string">"ts"</span>&gt;<br>import &#123; Component, Vue &#125; from <span class="hljs-string">"vue-property-decorator"</span>;<br>// import HelloWorld from <span class="hljs-string">'./components/HelloWorld.vue'</span>;<br>import newToDo from <span class="hljs-string">"./components/newToDo.vue"</span>;<br>import toDoList from <span class="hljs-string">"./components/toDoList.vue"</span>;<br><br>interface List &#123;<br>  name: string;<br>  status: <span class="hljs-string">"done"</span> | <span class="hljs-string">"todo"</span> | <span class="hljs-string">"deleted"</span>;<br>&#125;<br><br>@Component(&#123;<br>  components: &#123;<br>    newToDo,<br>    toDoList<br>  &#125;,<br>  watch: &#123;<br>    list(newValue: List) &#123;<br>      localStorage.setItem(<span class="hljs-string">"list"</span>, JSON.stringify(newValue));<br>    &#125;<br>  &#125;<br>&#125;)<br><span class="hljs-built_in">export</span> default class App extends Vue &#123;<br>  list: Array&lt;List&gt; = localStorage.getItem(<span class="hljs-string">"list"</span>)<br>    ? JSON.parse(&lt;string&gt;localStorage.getItem(<span class="hljs-string">"list"</span>))<br>    : [];<br>  addNewItem(value: string) &#123;<br>    this.list.push(&#123;<br>      name: value,<br>      status: <span class="hljs-string">"todo"</span><br>    &#125;);<br>  &#125;<br>&#125;<br>&lt;/script&gt;<br><br>&lt;style lang=<span class="hljs-string">"scss"</span>&gt;<br>* &#123;<br>  margin: 0;<br>  padding: 0;<br>  box-sizing: content-box;<br>&#125;<br>&lt;/style&gt;<br></code></pre></td></tr></table></figure>
+<ol start="2">
+<li>newToDo.vue</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;template&gt;<br>  &lt;div&gt;<br>    &lt;input <span class="hljs-built_in">type</span>=<span class="hljs-string">"text"</span> v-model=<span class="hljs-string">"context"</span> /&gt;<br>    &lt;button @click=<span class="hljs-string">"add"</span>&gt;+&lt;/button&gt;<br>  &lt;/div&gt;<br>&lt;/template&gt;<br><br>&lt;script lang=<span class="hljs-string">"ts"</span>&gt;<br>import &#123; Component, Vue &#125; from <span class="hljs-string">"vue-property-decorator"</span>;<br><br>@Component(&#123;&#125;)<br><span class="hljs-built_in">export</span> default class newToDo extends Vue &#123;<br>  context = <span class="hljs-string">""</span>;<br>  <span class="hljs-function"><span class="hljs-title">add</span></span>() &#123;<br>    this.<span class="hljs-variable">$emit</span>(<span class="hljs-string">"add"</span>, this.context);<br>    this.context = <span class="hljs-string">""</span>;<br>  &#125;<br>&#125;<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
+<ol start="3">
+<li>toDoList.vue</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;template&gt;<br>  &lt;div&gt;<br>    &lt;ul&gt;<br>      &lt;li v-for=<span class="hljs-string">"(item,index) in list"</span> :key=<span class="hljs-string">"index"</span>&gt;&#123;&#123;item&#125;&#125;&lt;/li&gt;<br>    &lt;/ul&gt;<br>  &lt;/div&gt;<br>&lt;/template&gt;<br><br>&lt;script lang=<span class="hljs-string">"ts"</span>&gt;<br>import &#123; Component, Vue &#125; from <span class="hljs-string">"vue-property-decorator"</span>;<br><br>@Component(&#123;<br>  props: &#123;<br>    list: Array<br>  &#125;<br>&#125;)<br><span class="hljs-built_in">export</span> default class toDoList extends Vue &#123;&#125;<br>&lt;/script&gt;<br><br>&lt;style lang=<span class="hljs-string">"scss"</span>&gt;<br>ul,<br>li &#123;<br>  list-style: none;<br>&#125;<br>&lt;/style&gt;<br></code></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/01/14/用vue-ts写一个toDoList/" data-id="clq61ndib0069zofqv5waxqvm" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TS/">TS</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-webpack4搭建vue-ts项目" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/01/13/webpack4搭建vue-ts项目/" class="article-date">
+  <time datetime="2020-01-13T14:24:51.000Z" itemprop="datePublished">2020-01-13</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/TS/">TS</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/01/13/webpack4搭建vue-ts项目/">webpack4搭建vue-ts项目</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li>创建根目录</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">mkdir webpack-demo<br><span class="hljs-built_in">cd</span> webpack-demo<br>npm init -y<br>npm install webpack webpack-cli --save-dev<br></code></pre></td></tr></table></figure>
+<ol start="2">
+<li>创建index.js</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">|- /src<br>   |- index.js<br></code></pre></td></tr></table></figure>
+<p>index.js</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">var div = document.createElement(<span class="hljs-string">'div'</span>)<br>div.id = <span class="hljs-string">'app'</span><br>document.body.appendChild(div)<br></code></pre></td></tr></table></figure>
+<ol start="3">
+<li>创建webpack.config.js</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">|- webpack.config.js<br>|- /src<br>    |- index.js<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs bash">//webpack.config.js<br>const path = require(<span class="hljs-string">'path'</span>);<br><br>module.exports = &#123;<br>  entry: <span class="hljs-string">'./src/index.js'</span>,<br>  mode:<span class="hljs-string">'development'</span>,<br>  output: &#123;<br>    filename: <span class="hljs-string">'main.js'</span>,<br>    path: path.resolve(__dirname, <span class="hljs-string">'dist'</span>),<br>  &#125;,<br>&#125;;<br></code></pre></td></tr></table></figure>
+<ol start="4">
+<li>运行打包项目</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">npx webpack --config webpack.config.js<br></code></pre></td></tr></table></figure>
+<ol start="5">
+<li>安装sever<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm i  -D webpack-dev-server<br></code></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>在package.json添加</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-string">"scripts"</span>: &#123;<br>    <span class="hljs-string">"dev"</span>: <span class="hljs-string">"webpack-dev-server --open"</span>,<br>&#125;<br><br>//在终端中输入<br>npm run dev<br>启动项目<br></code></pre></td></tr></table></figure>
+<ol start="6">
+<li>安装HtmlWebpackPlugin</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm i --save-dev html-webpack-plugin<br></code></pre></td></tr></table></figure>
+<p>webpack.config.js<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs bash">const HtmlWebpackPlugin = require(<span class="hljs-string">'html-webpack-plugin'</span>)<br><br>module.exports = &#123;<br>    entry: <span class="hljs-string">'./src/index.js'</span>,<br>    mode: <span class="hljs-string">'development'</span>,<br>    output: &#123;<br>        filename: <span class="hljs-string">'main.js'</span>,<br>        path: path.resolve(__dirname, <span class="hljs-string">'dist'</span>),<br>    &#125;,<br>    plugins: [<br>        new HtmlWebpackPlugin()<br>    ]<br>&#125;;<br></code></pre></td></tr></table></figure></p>
+<p>至此项目已经可以正常运行了</p>
+<ol start="7">
+<li>安装vue</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm i vue<br>npm i -D vue-loader<br>npm i -D vue-template-compiler<br></code></pre></td></tr></table></figure>
+<p>创建一个组件main.vue,这个很简单就不说了.</p>
+<p>index.js</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash">import Vue from <span class="hljs-string">'vue'</span><br>import main from <span class="hljs-string">'./main.vue'</span><br><br>new Vue(&#123;<br>    render: h =&gt; h(main)<br>&#125;).<span class="hljs-variable">$mount</span>(<span class="hljs-string">'#app'</span>)<br></code></pre></td></tr></table></figure>
+<p>webpack.config.js</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs bash">const path = require(<span class="hljs-string">'path'</span>);<br>const HtmlWebpackPlugin = require(<span class="hljs-string">'html-webpack-plugin'</span>)<br>const VueLoaderPlugin = require(<span class="hljs-string">'vue-loader/lib/plugin'</span>)<br><br>module.exports = &#123;<br>    entry: <span class="hljs-string">'./src/index.js'</span>,<br>    mode: <span class="hljs-string">'development'</span>,<br>    resolve: &#123;<br>        extensions: [<span class="hljs-string">".ts"</span>, <span class="hljs-string">".tsx"</span>, <span class="hljs-string">".js"</span>]<br>    &#125;,<br>    module: &#123;<br>        rules: [<br>            &#123;<br>                <span class="hljs-built_in">test</span>: /\.vue$/,<br>                loader: <span class="hljs-string">'vue-loader'</span><br>            &#125;<br>        ]<br>    &#125;,<br>    plugins: [<br>        new HtmlWebpackPlugin(), new VueLoaderPlugin()<br>    ]<br>&#125;;<br></code></pre></td></tr></table></figure>
+<p>至此,可以运行vue了.</p>
+<ol start="8">
+<li>安装TS</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm i typescript<br>npm install ts-loader --save-dev<br></code></pre></td></tr></table></figure>
+<p>创建tsconfig.json<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">&#123;<br>    <span class="hljs-string">"compilerOptions"</span>: &#123;<br>        <span class="hljs-string">"sourceMap"</span>: <span class="hljs-literal">true</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure></p>
+<p>修改webpack.config.js<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs bash">const path = require(<span class="hljs-string">'path'</span>);<br>const HtmlWebpackPlugin = require(<span class="hljs-string">'html-webpack-plugin'</span>)<br>const VueLoaderPlugin = require(<span class="hljs-string">'vue-loader/lib/plugin'</span>)<br><br>module.exports = &#123;<br>    entry: <span class="hljs-string">'./src/index.ts'</span>,   //这里改成ts<br>    mode: <span class="hljs-string">'development'</span>,<br>    output: &#123;<br>        filename: <span class="hljs-string">'main.js'</span>,<br>        path: path.resolve(__dirname, <span class="hljs-string">'dist'</span>),<br>    &#125;,<br>    resolve: &#123;<br>        extensions: [<span class="hljs-string">".ts"</span>, <span class="hljs-string">".tsx"</span>, <span class="hljs-string">".js"</span>] //读取ts文件<br>    &#125;,<br>    module: &#123;<br>        rules: [<br>            &#123;<br>                <span class="hljs-built_in">test</span>: /\.vue$/,<br>                loader: <span class="hljs-string">'vue-loader'</span><br>            &#125;,<br>            &#123;<br>                <span class="hljs-built_in">test</span>: /\.tsx?$/, //新增规则<br>                loader: <span class="hljs-string">"ts-loader"</span><br>            &#125;<br>        ]<br>    &#125;,<br>    plugins: [<br>        new HtmlWebpackPlugin(), new VueLoaderPlugin()<br>    ]<br>&#125;;<br></code></pre></td></tr></table></figure></p>
+<p>此时index.ts引入vue文件会报错</p>
+<ol start="9">
+<li>在TS里引入vue</li>
+</ol>
+<p>创建shims-vue.d.ts</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">declare</span> module <span class="hljs-string">'*.vue'</span> &#123;<br>    import Vue from <span class="hljs-string">'vue'</span><br>    <span class="hljs-built_in">export</span> default Vue<br>&#125;<br></code></pre></td></tr></table></figure>
+<ol start="10">
+<li>在vue里使用ts</li>
+</ol>
+<p>修改webpack.config.js<br>新增两个loader的options<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs bash">module: &#123;<br>    rules: [<br>        &#123;<br>            <span class="hljs-built_in">test</span>: /\.vue$/,<br>            loader: <span class="hljs-string">'vue-loader'</span>,<br>            options: &#123;<br>                esModule: <span class="hljs-literal">true</span><br>            &#125;<br>        &#125;,<br>        &#123;<br>            <span class="hljs-built_in">test</span>: /\.tsx?$/,<br>            loader: <span class="hljs-string">"ts-loader"</span>,<br>            options: &#123;<br>                appendTsSuffixTo: [/\.vue$/]<br>            &#125;<br>        &#125;<br>    ]<br>&#125;,<br></code></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/01/13/webpack4搭建vue-ts项目/" data-id="clq61ndhr0054zofq0jm97bdt" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TS/">TS</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-TS函数" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/01/10/TS函数/" class="article-date">
+  <time datetime="2020-01-10T15:50:49.000Z" itemprop="datePublished">2020-01-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/TS/">TS</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/01/10/TS函数/">TS函数</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>函数:可以被调用的对象</p>
+<h4 id="函数的几种写法"><a href="#函数的几种写法" class="headerlink" title="函数的几种写法"></a>函数的几种写法</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs bash">//先写类型再赋值<br> <span class="hljs-built_in">type</span> F = &#123;<br>    (a: number, b: number): number<br>&#125;<br><span class="hljs-built_in">let</span> f: F = (a, b) =&gt; a + b<br><br><span class="hljs-built_in">type</span> F1 = (a: number, b: number) =&gt; number<br><span class="hljs-built_in">let</span> f1: F1 = (a, b) =&gt; a + b<br><br>interface F2 &#123;<br>    (a: number, b: number): number<br>&#125;<br><span class="hljs-built_in">let</span> f2: F2 = (a, b) =&gt; a + b<br><br><br>//先写函数，再获取类型<br>const f1 = <span class="hljs-keyword">function</span> (a: number, b: number): number &#123;<br>    <span class="hljs-built_in">return</span> a + b<br>&#125;<br><span class="hljs-built_in">type</span> F1 = typeof f1<br><br><span class="hljs-keyword">function</span> f2(a: number, b: number): number &#123;<br>    <span class="hljs-built_in">return</span> a + b<br>&#125;<br><span class="hljs-built_in">type</span> F2 = typeof f2<br><br>const f3 = (a: number, b: number): number =&gt; &#123;<br>    <span class="hljs-built_in">return</span> a + b<br>&#125;<br><span class="hljs-built_in">type</span> F3 = typeof f3<br></code></pre></td></tr></table></figure>
+<h4 id="类型谓词"><a href="#类型谓词" class="headerlink" title="类型谓词"></a>类型谓词</h4><p>类型收窄</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">type</span> Person = &#123;<br>    name: string<br>&#125;<br><span class="hljs-built_in">type</span> Animal = &#123;<br><br>&#125;<br><span class="hljs-keyword">function</span> f1(a: Person | Animal) &#123;<br>    <span class="hljs-keyword">if</span> (isPerson(a)) &#123;<br>        a//类型是Person<br>    &#125;<br>&#125;<br><span class="hljs-keyword">function</span> isPerson(x: Person | Animal): x is Person &#123;<br>    <span class="hljs-built_in">return</span> <span class="hljs-string">'name'</span> <span class="hljs-keyword">in</span> x<br>&#125;<br></code></pre></td></tr></table></figure>
+<h4 id="可选参数"><a href="#可选参数" class="headerlink" title="可选参数"></a>可选参数</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-keyword">function</span> addEventListener(<br>    eventType: string, fn: (e: Event, el: Element) =&gt; void, useCaptrue?: boolean<br>) &#123;<br>    <span class="hljs-keyword">if</span> (useCaptrue === undefined) &#123;<br>        useCaptrue = <span class="hljs-literal">false</span><br>    &#125;<br>    const element = &#123;&#125; as Element<br>    const event = &#123;&#125; as Event<br>    fn(event, element)<br>    console.log(event, fn, useCaptrue)<br><br>&#125;<br>addEventListener(<span class="hljs-string">'click'</span>, (e, el) =&gt; &#123; &#125;)<br></code></pre></td></tr></table></figure>
+<h4 id="珂里化"><a href="#珂里化" class="headerlink" title="珂里化"></a>珂里化</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">const add = (a: number, b: number) =&gt; a + b<br><br>const createAdd = (a: number) =&gt; (b: number) =&gt; a + b<br><br>createAdd(1)(2)<br></code></pre></td></tr></table></figure>
+<h4 id="重载-overload"><a href="#重载-overload" class="headerlink" title="重载(overload)"></a>重载(overload)</h4><p>同名的函数，参数不同（类型不同或者参数个数不同）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-keyword">function</span> add(n1: number, n2: number): number<br><span class="hljs-keyword">function</span> add(n1: string, n2: string): string<br><span class="hljs-keyword">function</span> add(n1, n2) &#123;<br>    <span class="hljs-built_in">return</span> n1 + n2<br>&#125;<br><br>add(1, 2)<br>add(<span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>)<br>add(1, <span class="hljs-string">'2'</span>) //报错<br><br><span class="hljs-keyword">function</span> createDate(n: number): Date;<br><span class="hljs-keyword">function</span> createDate(y: number, m: number, d: number): Date;<br><span class="hljs-keyword">function</span> createDate(a: number, b?: number, c?: number): Date &#123;<br>    <span class="hljs-keyword">if</span> (a !== undefined &amp;&amp; b !== undefined &amp;&amp; c !== undefined) &#123;<br>        <span class="hljs-built_in">return</span> new Date(a, b, c)<br>    &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (a !== undefined &amp;&amp; b === undefined &amp;&amp; c === undefined) &#123;<br>        <span class="hljs-built_in">return</span> new Date(a)<br>    &#125; <span class="hljs-keyword">else</span> &#123;<br>        throw new Error(<span class="hljs-string">'error'</span>)<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h4 id="指定函数的this"><a href="#指定函数的this" class="headerlink" title="指定函数的this"></a>指定函数的this</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs bash">interface Human &#123;<br>    name: string<br>    age: number<br>&#125;<br><br><span class="hljs-keyword">function</span> fn(this: Human) &#123;<br>    console.log(this)<br>&#125;<br><br>fn.call(&#123; name: <span class="hljs-string">'tom'</span>, age: 18 &#125;) //需要call<br><br>fn() //报错<br></code></pre></td></tr></table></figure>
+<h4 id="剩余参数"><a href="#剩余参数" class="headerlink" title="剩余参数"></a>剩余参数</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-keyword">function</span> sum(...array: number[]) &#123;<br>    <span class="hljs-built_in">return</span> array.reduce((n, p) =&gt; n + p, 0)<br>&#125;<br>sum(1)<br>sum(1, 2)<br>sum(1, 2, 3)<br></code></pre></td></tr></table></figure>
+<h4 id="展开参数"><a href="#展开参数" class="headerlink" title="展开参数"></a>展开参数</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-keyword">function</span> sum(name: number, ...array: number[]) &#123;<br>    f(...array)<br>&#125;<br><span class="hljs-keyword">function</span> f(...array: number[]) &#123;<br>    console.log(array)<br>&#125;<br></code></pre></td></tr></table></figure>
+<h4 id="参数析构"><a href="#参数析构" class="headerlink" title="参数析构"></a>参数析构</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">type</span> Config = &#123;<br>    url: string,<br>    method: <span class="hljs-string">'GET'</span> | <span class="hljs-string">'POST'</span><br>    data: unknown,<br>    headers: unknown<br>&#125;<br><span class="hljs-keyword">function</span> ajax(&#123; url, method, ...rest &#125;: Config) &#123;<br>    console.log(url, method)<br>&#125;<br>//加默认值<br><span class="hljs-keyword">function</span> ajax(&#123; url, method, ...rest &#125;: Config = &#123; url: <span class="hljs-string">''</span>, method: <span class="hljs-string">'GET'</span> &#125; as Config) &#123;<br>    console.log(url, method)<br>&#125;<br></code></pre></td></tr></table></figure>
+<h4 id="类型推断"><a href="#类型推断" class="headerlink" title="类型推断"></a>类型推断</h4><p>TS会自己猜类型</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-keyword">function</span> add(n1: string, n2: string) &#123;<br>    <span class="hljs-built_in">return</span> n1 + n2<br>&#125;<br><br><span class="hljs-built_in">let</span> result = add(<span class="hljs-string">'tom'</span>, <span class="hljs-string">'jack'</span>).split(<span class="hljs-string">''</span>) //由于两个规定类型为string的参数相加为string,所以ts推断结果为string,拥有split方法<br></code></pre></td></tr></table></figure>
+<h4 id="类型兼容"><a href="#类型兼容" class="headerlink" title="类型兼容"></a>类型兼容</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash">interface Human &#123;<br>    name: string<br>    age: number<br>&#125;<br><br><span class="hljs-built_in">let</span> tom: Human = &#123; name: <span class="hljs-string">'tom'</span>, age: 18, gender: <span class="hljs-string">'f'</span> &#125;//直接赋值会报错<br>-----------------------<br><span class="hljs-built_in">let</span> temp = &#123; name: <span class="hljs-string">'tom'</span>, age: 18, gender: <span class="hljs-string">'f'</span> &#125; //使用中间变量,会触发TS的类型兼容<br><span class="hljs-built_in">let</span> tom: Human = temp<br></code></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/01/10/TS函数/" data-id="clq61ndgm002ezofqf6tkmgd1" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TS/">TS</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-TS类" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/01/09/TS类/" class="article-date">
+  <time datetime="2020-01-09T02:56:36.000Z" itemprop="datePublished">2020-01-09</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/TS/">TS</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/01/09/TS类/">TS类</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li><p>写一个ts的类</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs bash">class Human &#123;<br>    name: string<br>    age: number<br>    constructor(name: string, age: number) &#123;<br>        this.name = name<br>        this.age = age<br>    &#125;<br>    move(): void &#123;<br>        console.log(<span class="hljs-string">'run'</span>)<br>    &#125;<br>&#125;<br><br><span class="hljs-built_in">let</span> tom = new Human(<span class="hljs-string">'tom'</span>, 18)<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>与interface的比较</p>
+</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs bash">interface People &#123;<br>    name: string<br>    age: number<br>    move(): void<br>&#125;<br><br><span class="hljs-built_in">let</span> jack:People = &#123;<br>    name: <span class="hljs-string">'jack'</span>,<br>    age: 18,<br>    move(): void &#123;<br>        console.log(<span class="hljs-string">'run'</span>)<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<ol start="3">
+<li>类的属性(static)</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs bash">class Human &#123;<br>    name: string<br>    age: number<br>    static xxx = 1 //在这里定义<br>    constructor(name: string, age: number) &#123;<br>        this.name = name<br>        this.age = age<br>    &#125;<br>    move(): void &#123;<br>        console.log(<span class="hljs-string">'run'</span>)<br>    &#125;<br>&#125;<br><br><span class="hljs-built_in">let</span> tom = new Human(<span class="hljs-string">'tom'</span>, 18)<br>console.log(Human.xxx) //应该这样使用<br></code></pre></td></tr></table></figure>
+<ol start="4">
+<li>类的继承</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs bash">class Animal &#123;<br>    kind: string<br>    constructor(kind: string) &#123;<br>        this.kind = kind<br>    &#125;<br>&#125;<br><br>class Human extends Animal &#123;<br>    name: string<br>    age: number<br>    static xxx = 1<br>    constructor(name: string, age: number, kind: string) &#123;<br>        super(kind) //执行super实际上是执行被父类的constructor<br>        this.name = name<br>        this.age = age<br>    &#125;<br>    move(): void &#123;<br>        console.log(<span class="hljs-string">'run'</span>)<br>    &#125;<br>&#125;<br><br><span class="hljs-built_in">let</span> tom = new Human(<span class="hljs-string">'tom'</span>, 18, <span class="hljs-string">'哺乳类'</span>)<br></code></pre></td></tr></table></figure>
+<ol start="5">
+<li>私用属性private,共有属性public</li>
+</ol>
+<p>private不能外部调用,只能在类自身使用,可以想象成局部变量<br>public外部可以调用.(默认就是public,可以不加)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs bash">class Human &#123;<br>    public name: string<br>    age: number<br>    private secret: string<br>    constructor(name: string, age: number) &#123;<br>        this.name = name<br>        this.age = age<br>        this.secret = <span class="hljs-string">'self'</span><br>    &#125;<br>    move(): void &#123;<br>        console.log(<span class="hljs-string">'run'</span>)<br>    &#125;<br>&#125;<br><br><span class="hljs-built_in">let</span> tom = new Human(<span class="hljs-string">'tom'</span>, 18)<br>console.log(tom.secret) //报错<br></code></pre></td></tr></table></figure>
+<ol start="6">
+<li>protected保护</li>
+</ol>
+<p>只能在子类内使用</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs bash">class Animal &#123;<br>    kind: string<br>    protected both: string //定义<br>    constructor(kind: string) &#123;<br>        this.kind = kind<br>        <span class="hljs-keyword">if</span> (this.kind === <span class="hljs-string">'哺乳类'</span>) &#123;<br>            this.both = <span class="hljs-string">'胎生'</span><br>        &#125;<br>    &#125;<br>&#125;<br><br>class Human extends Animal &#123;<br>    name: string<br>    age: number<br>    static xxx = 1<br>    constructor(name: string, age: number, kind: string) &#123;<br>        super(kind) //执行super实际上是执行被父类的constructor<br>        this.name = name<br>        this.age = age<br>    &#125;<br>    move(): void &#123;<br>        console.log(<span class="hljs-string">'run'</span>)<br>    &#125;<br>    <span class="hljs-function"><span class="hljs-title">say</span></span>() &#123;<br>        console.log(this.both) //在子类使用<br>    &#125;<br>&#125;<br><br><span class="hljs-built_in">let</span> tom = new Human(<span class="hljs-string">'tom'</span>, 18, <span class="hljs-string">'哺乳类'</span>)<br>tom.say()<br></code></pre></td></tr></table></figure>
+<ol start="7">
+<li>访问器 get set</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs bash">  class Human &#123;<br>    name: string<br>    private _age: number //首先把age变为私有属性<br>    get <span class="hljs-function"><span class="hljs-title">age</span></span>() &#123;//获取值,注意不能跟_age重名<br>        <span class="hljs-built_in">return</span> this._age<br>    &#125;<br>    <span class="hljs-built_in">set</span> age(value: number) &#123;//赋值,按照条件赋值<br>        <span class="hljs-keyword">if</span> (value &lt; 0) &#123;<br>            this._age = 0<br>        &#125; <span class="hljs-keyword">else</span> &#123;<br>            this._age = value<br>        &#125;<br>    &#125;<br>    constructor(name: string, age = 18) &#123;<br>        this.name = name<br>        this.age = age<br>    &#125;<br>&#125;<br><br><span class="hljs-built_in">let</span> tom = new Human(<span class="hljs-string">'tom'</span>)<br>tom.age = -2<br>console.log(tom.age) //0<br></code></pre></td></tr></table></figure>
+<ol start="8">
+<li>抽象类</li>
+</ol>
+<p>抽象类是子类的父类,但方法没有写完,不能直接实例化</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs bash">abstract class Animal &#123;<br>       kind: string<br>       abstract say(): void //方法没有写完<br>   &#125;<br><br>   class Human extends Animal &#123;<br>       name: string<br>       age: number<br>       static xxx = 1<br>       constructor(name: string, age: number) &#123;<br>           super()<br>           this.name = name<br>           this.age = age<br>       &#125;<br>       say(): void &#123;//补充完整方法<br>           console.log(<span class="hljs-string">'hello'</span>)<br>       &#125;<br>   &#125;<br><br>   <span class="hljs-built_in">let</span> tom = new Human(<span class="hljs-string">'tom'</span>, 18)<br></code></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/01/09/TS类/" data-id="clq61ndgq002pzofqwy0bu11c" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TS/">TS</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-TS变量,枚举,接口" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/01/08/TS变量,枚举,接口/" class="article-date">
+  <time datetime="2020-01-08T06:06:27.000Z" itemprop="datePublished">2020-01-08</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/TS/">TS</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/01/08/TS变量,枚举,接口/">TS变量,枚举,接口</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h4><p>跟JS一样</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">let</span> a:string = <span class="hljs-string">'s'</span><br><span class="hljs-built_in">let</span> b:number = 1<br><span class="hljs-built_in">let</span> c:boolean = <span class="hljs-literal">true</span><br><span class="hljs-built_in">let</span> d:object = &#123;&#125;<br><span class="hljs-built_in">let</span> e:null = null<br><span class="hljs-built_in">let</span> f:undefined = undefined<br><br>//any(任何类型)<br><br><span class="hljs-built_in">let</span> any1:any = 1<br><span class="hljs-built_in">let</span> any2:any = <span class="hljs-string">'b'</span><br>any1 = &#123;&#125;<br>any2 = <span class="hljs-literal">true</span><br></code></pre></td></tr></table></figure>
+<h4 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h4><ol>
+<li><p>不赋值</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash">enum Gender &#123;<br>        Man,<br>        Woman<br>    &#125;<br><br><span class="hljs-built_in">let</span> gender: Gender = Gender.Woman<br>console.log(gender) //1<br>gender = Gender.Man<br>console.log(gender) //0<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>赋值</p>
+</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash">enum Gender &#123;<br>        Man = <span class="hljs-string">'Man'</span>,<br>        Woman = <span class="hljs-string">'Woman'</span><br>    &#125;<br><br><span class="hljs-built_in">let</span> gender: Gender = Gender.Woman<br>console.log(gender) //Woman<br>gender = Gender.Man<br>console.log(gender) //Man<br></code></pre></td></tr></table></figure>
+<h4 id="void"><a href="#void" class="headerlink" title="void"></a>void</h4><p>函数没有返回值<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash"><br><span class="hljs-keyword">function</span> <span class="hljs-built_in">test</span>():void&#123;<br>    console.log(1)<br>&#125;<br><br><span class="hljs-built_in">let</span> a:number = <span class="hljs-built_in">test</span>() //会报错<br></code></pre></td></tr></table></figure></p>
+<h4 id="never"><a href="#never" class="headerlink" title="never"></a>never</h4><p>默认情况下null和undefined是所有类型的子类型.例如,null可以赋值给number类型的变量.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">type</span> A = string &amp; number<br>//报错never<br></code></pre></td></tr></table></figure>
+<h3 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h3><p>描述一个对象必须有什么属性(方法)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs bash">interface Shape &#123;<br>    head: string,<br>    body: string<br>&#125;<br><br>interface Human &#123;<br>    name: string<br>    age: number,<br>    shape: Shape,<br>    say(word: string): void<br>&#125;<br><br><span class="hljs-built_in">let</span> tom: Human = &#123;<br>    name: <span class="hljs-string">'tom'</span>,<br>    age: 28,<br>    shape: &#123;<br>        head: <span class="hljs-string">'头'</span>,<br>        body: <span class="hljs-string">'身体'</span><br>    &#125;,<br>    say(word: string) &#123;<br>        console.log(word)<br>    &#125;<br><br>&#125;<br>tom.say(<span class="hljs-string">'hello'</span>)<br></code></pre></td></tr></table></figure>
+<ol>
+<li>readonly </li>
+</ol>
+<p>只读</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">interface Human &#123;<br>    <span class="hljs-built_in">readonly</span> name: string<br>    age: number<br></code></pre></td></tr></table></figure>
+<ol start="2">
+<li>可选属性</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">interface Human &#123;<br>    <span class="hljs-built_in">readonly</span> name: string<br>    age: number,<br>    like?:Array&lt;string&gt;<br></code></pre></td></tr></table></figure>
+<ol start="3">
+<li>假如额外传入参数</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs bash">interface Config &#123;<br>      color?: string,<br>      width?: number<br>  &#125;<br><br>  <span class="hljs-keyword">function</span> created(config: Config): void &#123;<br>      console.log(config)<br>  &#125;<br><br>  created(&#123;<br>      age: <span class="hljs-string">'red'</span><br>  &#125;)<br><br>  //会报错<br></code></pre></td></tr></table></figure>
+<p>要使用字符串索引签名</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs bash">interface Config &#123;<br>        color?: string,<br>        width?: number,<br>        [key: string]: any  //添加这一行,意思是key为字符串类型,value为any类型,key<br>    &#125;<br><br>    <span class="hljs-keyword">function</span> created(config: Config): void &#123;<br>        console.log(config)<br>    &#125;<br><br>    created(&#123;<br>        age: <span class="hljs-string">'red'</span><br>    &#125;)<br></code></pre></td></tr></table></figure>
+<ol start="4">
+<li>使用接口描述一个函数</li>
+</ol>
+<p>注意,接口定义参数名只是一个顺序,跟实际函数变量名没有关系</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash">interface Operation &#123;<br>    (number1: number, number2: number): number<br>&#125;<br><br><span class="hljs-built_in">let</span> add: Operation = <span class="hljs-keyword">function</span> (n1: number, n2: number): number &#123;<br>    <span class="hljs-built_in">return</span> n1 + n2<br>&#125;<br><span class="hljs-built_in">let</span> result: number = add(1, 2)<br>console.log(result)<br></code></pre></td></tr></table></figure>
+<ol start="5">
+<li>接口继承</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs bash">interface Animal &#123;<br>    move(): void<br>&#125;<br><br>interface Human extends Animal &#123;<br>    name: string<br>    age: number<br>&#125;<br><br><span class="hljs-built_in">let</span> tom: Human = &#123;<br>    age: 18,<br>    name: <span class="hljs-string">'tom'</span>,<br>    <span class="hljs-function"><span class="hljs-title">move</span></span>() &#123;<br>        console.log(<span class="hljs-string">'move'</span>)<br>    &#125;<br>&#125;<br><br>tom.move()<br></code></pre></td></tr></table></figure>
+<p>一个接口可以继承多个接口<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs bash">interface Animal &#123;<br>    move(): void<br>&#125;<br><br>interface 有机物 &#123;<br>    c: <span class="hljs-literal">true</span><br>    h: <span class="hljs-literal">true</span><br>    o: <span class="hljs-literal">true</span><br>&#125;<br><br>interface Human extends Animal, 有机物 &#123;<br>    name: string<br>    age: number<br>&#125;<br><br><span class="hljs-built_in">let</span> tom: Human = &#123;<br>    c: <span class="hljs-literal">true</span>,<br>    h: <span class="hljs-literal">true</span>,<br>    o: <span class="hljs-literal">true</span>,<br>    age: 18,<br>    name: <span class="hljs-string">'tom'</span>,<br>    <span class="hljs-function"><span class="hljs-title">move</span></span>() &#123;<br>        console.log(<span class="hljs-string">'move'</span>)<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/01/08/TS变量,枚举,接口/" data-id="clq61ndgn002hzofqz3qxm3q7" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TS/">TS</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/ES6/">ES6</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JS/">JS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/TS/">TS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/node/">node</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/vue/">vue</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/webpack/">webpack</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/业务代码/">业务代码</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/库/">库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/笔记/">笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机基础/">计算机基础</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/面试题/">面试题</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/">ES6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TS/">TS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/">webpack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/业务代码/">业务代码</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/库/">库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机基础/">计算机基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试题/">面试题</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CSS/" style="font-size: 18.75px;">CSS</a> <a href="/tags/ES6/" style="font-size: 16.25px;">ES6</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/HTTP/" style="font-size: 15px;">HTTP</a> <a href="/tags/JS/" style="font-size: 20px;">JS</a> <a href="/tags/TS/" style="font-size: 17.5px;">TS</a> <a href="/tags/git/" style="font-size: 11.25px;">git</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/vue/" style="font-size: 18.75px;">vue</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/业务代码/" style="font-size: 13.75px;">业务代码</a> <a href="/tags/库/" style="font-size: 12.5px;">库</a> <a href="/tags/笔记/" style="font-size: 10px;">笔记</a> <a href="/tags/计算机基础/" style="font-size: 10px;">计算机基础</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a> <a href="/tags/面试题/" style="font-size: 10px;">面试题</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/02/02/手写Promise-all/">手写Promise.all</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/02/Canvas和SVG区别/">Canvas和SVG区别</a>
+          </li>
+        
+          <li>
+            <a href="/2020/02/12/常见排序算法/">常见排序算法</a>
+          </li>
+        
+          <li>
+            <a href="/2020/01/17/TS声明/">TS声明</a>
+          </li>
+        
+          <li>
+            <a href="/2020/01/16/TS高级类型/">TS类型</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2023 Roxas Deng<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

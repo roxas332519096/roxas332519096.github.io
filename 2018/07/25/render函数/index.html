@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>render函数 | RoxasDengBlog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="初步了解定义一个组件,使用template123456789101112131415161718192021222324252627282930&amp;lt;div id=&quot;app&quot;&amp;gt;    &amp;lt;comp-child :level=&quot;level&quot;&amp;gt;        我是组件    &amp;lt;/comp-child&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;script&amp;gt;    Vue.co">
+<meta name="keywords" content="vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="render函数">
+<meta property="og:url" content="http://yoursite.com/2018/07/25/render函数/index.html">
+<meta property="og:site_name" content="RoxasDengBlog">
+<meta property="og:description" content="初步了解定义一个组件,使用template123456789101112131415161718192021222324252627282930&amp;lt;div id=&quot;app&quot;&amp;gt;    &amp;lt;comp-child :level=&quot;level&quot;&amp;gt;        我是组件    &amp;lt;/comp-child&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;script&amp;gt;    Vue.co">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:updated_time" content="2023-12-15T01:47:13.843Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="render函数">
+<meta name="twitter:description" content="初步了解定义一个组件,使用template123456789101112131415161718192021222324252627282930&amp;lt;div id=&quot;app&quot;&amp;gt;    &amp;lt;comp-child :level=&quot;level&quot;&amp;gt;        我是组件    &amp;lt;/comp-child&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;script&amp;gt;    Vue.co">
+  
+    <link rel="alternate" href="/atom.xml" title="RoxasDengBlog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">RoxasDengBlog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-render函数" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/25/render函数/" class="article-date">
+  <time datetime="2018-07-25T08:42:28.000Z" itemprop="datePublished">2018-07-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/vue/">vue</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      render函数
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="初步了解"><a href="#初步了解" class="headerlink" title="初步了解"></a>初步了解</h4><p>定义一个组件,使用template<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;div id=<span class="hljs-string">"app"</span>&gt;<br>    &lt;comp-child :level=<span class="hljs-string">"level"</span>&gt;<br>        我是组件<br>    &lt;/comp-child&gt;<br>&lt;/div&gt;<br><br>&lt;script&gt;<br>    Vue.component(<span class="hljs-string">'comp-child'</span>,&#123;<br>        props:[<span class="hljs-string">'level'</span>],<br>        template:`<br>        &lt;div&gt;<br>            &lt;h1 v-if=<span class="hljs-string">"level===1"</span>&gt;<br>                &lt;slot&gt;&lt;/slot&gt;<br>            &lt;/h1&gt;<br>            &lt;h2 v-if=<span class="hljs-string">"level===2"</span>&gt;<br>                &lt;slot&gt;&lt;/slot&gt;<br>            &lt;/h2&gt;<br>            &lt;h3 v-if=<span class="hljs-string">"level===3"</span>&gt;<br>                &lt;slot&gt;&lt;/slot&gt;<br>            &lt;/h3&gt;<br>        &lt;/div&gt;<br>        `<br>    &#125;)<br>    var app = new Vue(&#123;<br>        el:<span class="hljs-string">'#app'</span>,<br>        data:&#123;<br>            level:1<br>        &#125;<br>    &#125;)<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure></p>
+<p>再定义一个组件,使用render函数,其效果和上面例子一样</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash">Vue.component(<span class="hljs-string">'comp-child'</span>,&#123;<br>    props:[<span class="hljs-string">'level'</span>],<br>    render:<span class="hljs-keyword">function</span>(createElement)&#123;<br>        <span class="hljs-built_in">return</span> createElement(<span class="hljs-string">'h'</span>+this.level,this.<span class="hljs-variable">$slots</span>.default);<br>    &#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
+<h4 id="render函数的第一个参数-必须"><a href="#render函数的第一个参数-必须" class="headerlink" title="render函数的第一个参数(必须)"></a>render函数的第一个参数(必须)</h4><p>在render函数的方法中,参数必须是createElement,它是类型是function.</p>
+<p>render函数的第一个参数可以是:</p>
+<ol>
+<li><p>String<br> html标签</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">Vue.component(<span class="hljs-string">'child'</span>,&#123;<br>    render:<span class="hljs-keyword">function</span>(createElement)&#123;<br>        <span class="hljs-built_in">return</span> createElement(<span class="hljs-string">'div'</span>)<br>    &#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>Object<br> 一个含有数据选项的对象</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash">Vue.component(<span class="hljs-string">'child'</span>,&#123;<br>    render:<span class="hljs-keyword">function</span>(createElement)&#123;<br>        <span class="hljs-built_in">return</span> createElement(&#123;<br>            template:<span class="hljs-string">'&lt;div&gt;&lt;/div&gt;'</span><br>        &#125;)<br>    &#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>Function<br> 方法返回含有数据选项的对象</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash">Vue.component(<span class="hljs-string">'child'</span>,&#123;<br>    render:<span class="hljs-keyword">function</span>(createElement)&#123;<br>        var domFn = <span class="hljs-function"><span class="hljs-title">function</span></span>()&#123;<br>            <span class="hljs-built_in">return</span> &#123;<br>                template:<span class="hljs-string">'&lt;div&gt;&lt;/div&gt;'</span><br>            &#125;<br>        &#125;<br>        <span class="hljs-built_in">return</span> createElement(domFn());<br>    &#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="render函数的第二个参数"><a href="#render函数的第二个参数" class="headerlink" title="render函数的第二个参数"></a>render函数的第二个参数</h4><p>第二个参数是可选,第二个参数是数据对象(只能是Object)</p>
+<ol>
+<li>class</li>
+<li>style</li>
+<li>attrs:正常的html属性</li>
+<li>domProps:原生的DOM属性<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs bash">Vue.component(<span class="hljs-string">'child-4'</span>, &#123;<br>    render: <span class="hljs-keyword">function</span> (createElement) &#123;<br>        <span class="hljs-built_in">return</span> createElement(<span class="hljs-string">'div'</span>,&#123;<br>            class:&#123;<br>                active:<span class="hljs-literal">true</span>,<br>                danger:<span class="hljs-literal">false</span><br>            &#125;,<br>            style:&#123;<br>                color:<span class="hljs-string">'red'</span>,<br>                fontSize:<span class="hljs-string">'16px'</span><br>            &#125;,<br>            attrs:&#123;<br>                id:<span class="hljs-string">'foo'</span>,<br>                src:<span class="hljs-string">'http://baidu.com'</span><br>            &#125;,<br>            domProps:&#123;<br>                innerText:<span class="hljs-string">'Hello World!'</span><br>            &#125;<br>        &#125;)<br>    &#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="render函数的第三个参数"><a href="#render函数的第三个参数" class="headerlink" title="render函数的第三个参数"></a>render函数的第三个参数</h4><p>第三个参数是可选的</p>
+<ol>
+<li>String:创建文本子节点</li>
+<li>Array:创建元素子节点(VNODE)</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash">Vue.component(<span class="hljs-string">'child-5'</span>, &#123;<br>    render: <span class="hljs-keyword">function</span> (createElement) &#123;<br>        <span class="hljs-built_in">return</span> createElement(<span class="hljs-string">'div'</span>,[ //:array创建元素节点<br>            createElement(<span class="hljs-string">'span'</span>,<span class="hljs-string">'Hello world!'</span>) //string:创建文本节点<br>        ])<br>    &#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
+<h4 id="this-slots-插槽-在render函数中的应用"><a href="#this-slots-插槽-在render函数中的应用" class="headerlink" title="this.$slots(插槽)在render函数中的应用"></a>this.$slots(插槽)在render函数中的应用</h4><p>第三个参数的数组存的是VNODE</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;child&gt;<br>    &lt;h3 slot=<span class="hljs-string">"header"</span>&gt;标题&lt;/h3&gt;<br>    &lt;p&gt;第一段&lt;/p&gt;<br>    &lt;p&gt;第二段&lt;/p&gt;<br>    &lt;h5 slot=<span class="hljs-string">"footer"</span>&gt;结尾&lt;/h5&gt;<br>&lt;/child&gt;<br><br>Vue.component(<span class="hljs-string">'child'</span>, &#123;<br>    render: <span class="hljs-keyword">function</span> (createElement) &#123;<br>        var header = this.<span class="hljs-variable">$slots</span>.header; //返回的内容就是含有VNODE的数组<br>        var main = this.<span class="hljs-variable">$slots</span>.default;<br>        var footer = this.<span class="hljs-variable">$slots</span>.footer;<br>        <span class="hljs-built_in">return</span> createElement(<span class="hljs-string">'div'</span>,[<br>            createElement(<span class="hljs-string">'header'</span>,header),//返回的内容就是VNODE<br>            createElement(<span class="hljs-string">'main'</span>,main),<br>            createElement(<span class="hljs-string">'footer'</span>,footer)<br>        ])<br>    &#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
+<h4 id="在rander函数中使用props传递数据"><a href="#在rander函数中使用props传递数据" class="headerlink" title="在rander函数中使用props传递数据"></a>在rander函数中使用props传递数据</h4><p>在render函数中,props传递过来的数据,可以用this.绑定的数据直接在render函数中使用.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;div id=<span class="hljs-string">"app"</span>&gt;<br>    &lt;child :color=<span class="hljs-string">"colorchange"</span>&gt;&lt;/child&gt;<br>    &lt;button @click=<span class="hljs-string">"clickMe"</span>&gt;换色&lt;/button&gt;<br>&lt;/div&gt;<br><br>&lt;script&gt;<br>    Vue.component(<span class="hljs-string">'child'</span>, &#123;<br>        props:[<span class="hljs-string">'color'</span>],<br>        render: <span class="hljs-keyword">function</span> (createElement) &#123;<br>            var color<br>            <span class="hljs-keyword">if</span>(this.color)&#123;<br>                color = <span class="hljs-string">'red'</span><br>            &#125;<span class="hljs-keyword">else</span>&#123;<br>                color = <span class="hljs-string">'blue'</span><br>            &#125;<br>            <span class="hljs-built_in">return</span> createElement(<span class="hljs-string">'div'</span>,&#123;<br>                style:&#123;<br>                    color:color<br>                &#125;<br>            &#125;,<span class="hljs-string">'hello world!'</span>)<br>        &#125;<br>    &#125;)<br><br>    var app6 = new Vue(&#123;<br>        el: <span class="hljs-string">'#app'</span>,<br>        data: &#123;<br>            colorchange:<span class="hljs-literal">false</span><br>        &#125;,<br>        methods:&#123;<br>            clickMe:<span class="hljs-function"><span class="hljs-title">function</span></span>()&#123;<br>                this.colorchange = !this.colorchange<br>            &#125;<br>        &#125;<br>    &#125;)<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
+<h4 id="v-model在render函数中的使用"><a href="#v-model在render函数中的使用" class="headerlink" title="v-model在render函数中的使用"></a>v-model在render函数中的使用</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;div id=<span class="hljs-string">"app"</span>&gt;<br>    &lt;comp v-model=<span class="hljs-string">"name"</span>&gt;&lt;/comp&gt;<br>    &#123;&#123;name&#125;&#125;<br>&lt;/div&gt;<br>&lt;script&gt;<br>    Vue.component(<span class="hljs-string">'comp'</span>,&#123;<br>        render:<span class="hljs-keyword">function</span>(createElement)&#123;<br>            var _this = this;<br>            <span class="hljs-built_in">return</span> createElement(<span class="hljs-string">'input'</span>,&#123;<br>                domProps:&#123;<br>                    value:_this.name<br>                &#125;,<br>                on:&#123;<br>                    input:<span class="hljs-keyword">function</span>(e)&#123;<br>                        _this.<span class="hljs-variable">$emit</span>(<span class="hljs-string">'input'</span>,e.target.value)<br>                    &#125;<br>                &#125;<br>            &#125;)<br>        &#125;<br>    &#125;)<br><br>    var app = new Vue(&#123;<br>        el:<span class="hljs-string">'#app'</span>,<br>        data:&#123;<br>            name:<span class="hljs-string">''</span><br>        &#125;<br>    &#125;)<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
+<h4 id="作用域插槽在render函数中的使用"><a href="#作用域插槽在render函数中的使用" class="headerlink" title="作用域插槽在render函数中的使用"></a>作用域插槽在render函数中的使用</h4><h4 id="函数化组件的应用"><a href="#函数化组件的应用" class="headerlink" title="函数化组件的应用"></a>函数化组件的应用</h4>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/07/25/render函数/" data-id="clq61ndhg004czofq9vr2r50i" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/07/25/vue-cli手脚架/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          vue-cli手脚架
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/07/25/自定义指令/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">自定义指令</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/ES6/">ES6</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JS/">JS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/TS/">TS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/node/">node</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/vue/">vue</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/webpack/">webpack</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/业务代码/">业务代码</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/库/">库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/笔记/">笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机基础/">计算机基础</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/面试题/">面试题</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/">ES6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TS/">TS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/">webpack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/业务代码/">业务代码</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/库/">库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机基础/">计算机基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试题/">面试题</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CSS/" style="font-size: 18.75px;">CSS</a> <a href="/tags/ES6/" style="font-size: 16.25px;">ES6</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/HTTP/" style="font-size: 15px;">HTTP</a> <a href="/tags/JS/" style="font-size: 20px;">JS</a> <a href="/tags/TS/" style="font-size: 17.5px;">TS</a> <a href="/tags/git/" style="font-size: 11.25px;">git</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/vue/" style="font-size: 18.75px;">vue</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/业务代码/" style="font-size: 13.75px;">业务代码</a> <a href="/tags/库/" style="font-size: 12.5px;">库</a> <a href="/tags/笔记/" style="font-size: 10px;">笔记</a> <a href="/tags/计算机基础/" style="font-size: 10px;">计算机基础</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a> <a href="/tags/面试题/" style="font-size: 10px;">面试题</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/02/02/手写Promise-all/">手写Promise.all</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/02/Canvas和SVG区别/">Canvas和SVG区别</a>
+          </li>
+        
+          <li>
+            <a href="/2020/02/12/常见排序算法/">常见排序算法</a>
+          </li>
+        
+          <li>
+            <a href="/2020/01/17/TS声明/">TS声明</a>
+          </li>
+        
+          <li>
+            <a href="/2020/01/16/TS高级类型/">TS类型</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2023 Roxas Deng<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

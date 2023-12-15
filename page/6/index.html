@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>RoxasDengBlog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="RoxasDengBlog">
+<meta property="og:url" content="http://yoursite.com/page/6/index.html">
+<meta property="og:site_name" content="RoxasDengBlog">
+<meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="RoxasDengBlog">
+  
+    <link rel="alternate" href="/atom.xml" title="RoxasDengBlog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">RoxasDengBlog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-WEB性能优化" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/25/WEB性能优化/" class="article-date">
+  <time datetime="2018-07-24T18:51:44.000Z" itemprop="datePublished">2018-07-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/业务代码/">业务代码</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/25/WEB性能优化/">WEB性能优化</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="Web性能优化之分析"><a href="#Web性能优化之分析" class="headerlink" title="Web性能优化之分析"></a>Web性能优化之分析</h4><p>优化:用户觉得网站加载速度快.</p>
+<p>占用CPU少不算,它属于服务器性能优化.</p>
+<p>先来了解用户浏览器输入url,按回车后,前端部分</p>
+<ol>
+<li>缓存</li>
+<li>DNS查询</li>
+<li>建立TCP链接</li>
+<li>发送HTTP请求<br>(后台处理),等待中</li>
+<li>接收响应</li>
+<li>接收完成,得到HTML</li>
+<li>浏览器解析HTML,先查看DOCTYPE</li>
+<li>逐行解析</li>
+<li>如果看到标签,部分浏览器直接渲染,部分浏览器不渲染(因为W3C没有规定以何种形式渲染)<br>例如chrome,假如直接渲染那么css下载完毕后,要再次渲染,IE与Firefox则是直接渲染,css下载结束后再渲染一次.</li>
+<li>看到CSS,下载CSS,继续往下看还有没有CSS,假如有则同时下载另外的CSS,最多可以同时下载单个域名同时8个(chrome)/4个(ie8).逐个解析.(并行下载,解析串行).</li>
+<li>看到JS,并行下载,解析串行,一定阻塞HTML渲染.</li>
+</ol>
+<h4 id="WEb性能优化之对策"><a href="#WEb性能优化之对策" class="headerlink" title="WEb性能优化之对策"></a>WEb性能优化之对策</h4><p>对以上步骤进行分治.</p>
+<ol>
+<li><p>DNS查询:</p>
+<ol>
+<li>减少域名,以减少DNS查询时间,把资源放到同一个域名内.</li>
+</ol>
+</li>
+<li><p>建立TCP链接:</p>
+<ol>
+<li>开启keep-alive,使得TCP链接复用.</li>
+<li>开启HTTP2.0,进行多路复用,效率更高.</li>
+</ol>
+</li>
+<li><p>发送HTTP请求</p>
+<ol>
+<li>减少Cookie体积,从而减少请求体积.不要滥用Cookie.</li>
+<li>使用CahcheControl(缓存),一定时间内不发请求.</li>
+<li>增加请求域名,可以同时发送更多个请求.(浏览器单域名8/4个).<br> 与DNS查询优化冲突:权衡利弊,假如文件少则减少域名,从而减少DNS查询时间,假如文件多则增加域名,让其同时下载文件数变多,加快下载时间.</li>
+<li>把多个JS/CSS文件合并成一个,减少请求数.</li>
+</ol>
+</li>
+<li><p>接收响应 </p>
+<ol>
+<li>利用ETAG,返回304响应,不进行下载,直接用上次的文件.</li>
+<li>用Gzip压缩,缺点:耗费CPU.权衡:文件越大收益越高,反之越低,比如文件只有1K.</li>
+</ol>
+</li>
+<li><p>DOCTYPE</p>
+<ol>
+<li>一定要写对,不能写错,或者不写.写错了浏览器会猜.</li>
+</ol>
+</li>
+<li><p>标签</p>
+<ol>
+<li>尽量减少标签使用</li>
+</ol>
+</li>
+<li><p>CSS/JS文件下载</p>
+<ol>
+<li>尽量把JS放CDN,增加并发下载数,同时让资源分布到全球各地,资源 下载速度更快.</li>
+<li>把CSS放在head里:因为CSS一定会柱塞渲染,就算放最后也会柱塞,所以尽早下载.保证用户看到完整的画面.<br> JS放在body最后,尽早显示页面,而且让JS可以获取到之前渲染好的节点.</li>
+</ol>
+</li>
+<li><p>延迟组件加载<br> 节约流量</p>
+</li>
+<li><p>预加载<br> 还没看的时候就加载了.</p>
+</li>
+<li><p>加个Loading动画</p>
+</li>
+</ol>
+<h4 id="测试优化"><a href="#测试优化" class="headerlink" title="测试优化"></a>测试优化</h4><p>Chrome浏览器,点击Audtis,点击perform,点击run.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/07/25/WEB性能优化/" data-id="clq61ndh0003dzofqev78125t" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/业务代码/">业务代码</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Vue组件" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/13/Vue组件/" class="article-date">
+  <time datetime="2018-07-13T15:05:25.000Z" itemprop="datePublished">2018-07-13</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/vue/">vue</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/13/Vue组件/">Vue组件</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="vue组件"><a href="#vue组件" class="headerlink" title="vue组件"></a>vue组件</h3><h4 id="为什么要使用组件"><a href="#为什么要使用组件" class="headerlink" title="为什么要使用组件"></a>为什么要使用组件</h4><p>提高代码的复用性</p>
+<h4 id="组件注册"><a href="#组件注册" class="headerlink" title="组件注册"></a>组件注册</h4><h5 id="全局注册"><a href="#全局注册" class="headerlink" title="全局注册"></a>全局注册</h5><p>优点:都可以使用</p>
+<p>缺点:权限太大,容错率降低</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs undefined">Vue.component(&apos;my-component&apos;,&#123;<br>    template:&apos;&lt;div&gt;...&lt;div&gt;&apos;<br>&#125;)<br></code></pre></td></tr></table></figure>
+<h4 id="局部注册"><a href="#局部注册" class="headerlink" title="局部注册"></a>局部注册</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs bash">//实例内包含组件A<br><br>var componentA = &#123;<br>    template:<span class="hljs-string">'&lt;div&gt;A&lt;/div&gt;'</span><br>&#125;<br><br>new Vue(&#123;<br>    el:<span class="hljs-string">''</span>,<br>    components:&#123;<br>        <span class="hljs-string">'component-a'</span>:componentA<br>    &#125;<br>&#125;)<br><br>//局部组件B内使用局部组件A<br><br>var componentB = &#123;<br>    template:<span class="hljs-string">'&lt;div&gt;A&lt;/div&gt;'</span>,<br>    components:&#123;<br>        <span class="hljs-string">'compontent-a'</span>:componentA<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h4 id="标签受限下使用组件"><a href="#标签受限下使用组件" class="headerlink" title="标签受限下使用组件"></a>标签受限下使用组件</h4><p>table 直接使用会踢出去,因为table只能用tr td tbody 等元素</p>
+<p>要使用is属性,把原标签替换成组件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs undefined">//不能正常运行<br>&lt;table&gt;<br>    &lt;component-a&gt;/&lt;component-a&gt;<br>&lt;/table&gt;<br><br>//使用is属性替换<br><br>&lt;table&gt;<br>    &lt;tbody is=&quot;component-a&quot;&gt;&lt;/tobdy&gt;<br>&lt;/table&gt;<br></code></pre></td></tr></table></figure>
+<h4 id="组件注意事项"><a href="#组件注意事项" class="headerlink" title="组件注意事项"></a>组件注意事项</h4><ol>
+<li><p>组件名称使用小写字母加-进行命名 如my-component</p>
+</li>
+<li><p>template内只能有一个根元素</p>
+</li>
+<li><p>组件除了template还可以有data,computed,methods</p>
+</li>
+<li><p>组件的data必须是一个方法,返回一个对象,因为对象的内存地址不一样</p>
+<p> 例</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs undefined">template:&apos;&lt;p&gt;&#123;&#123;count&#125;&#125;&lt;p&gt;&apos;<br>data:function()&#123;<br>    return &#123;<br>        count:0<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="props"><a href="#props" class="headerlink" title="props"></a>props</h4><ol>
+<li>使用props接收从父组件传递的参数,props中定义的属性都可以直接在组件中的使用</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;div id=<span class="hljs-string">"app"</span>&gt;<br>    &lt;child-component msg=<span class="hljs-string">"父组件传递过来的内容"</span>&gt;&lt;/child-component&gt;<br>&lt;/div&gt;<br><br>&lt;script&gt;<br>    var app = new Vue(&#123;<br>        el:<span class="hljs-string">'#app'</span>,<br>        components:&#123;<br>            <span class="hljs-string">'child-component'</span>:&#123;<br>                props:[<span class="hljs-string">'msg'</span>],<br>                template:<span class="hljs-string">'&lt;p&gt;&#123;&#123;msg&#125;&#125;&lt;p&gt;'</span><br>            &#125;<br>        &#125;<br>    &#125;)<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
+<p>2.props来自父级,而组件中data return的数据是组件自己的数据,两种情况作用域就是组件本身,可以在template,computed,methods中直接使用</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs bash">components:&#123;<br>    <span class="hljs-string">'child-component'</span>:&#123;<br>        props:[<span class="hljs-string">'msg'</span>],<br>        data:<span class="hljs-function"><span class="hljs-title">function</span></span>()&#123;<br>            <span class="hljs-built_in">return</span> &#123;<br>                count:0<br>            &#125;<br>        &#125;,<br>        methods:&#123;<br>            method1:<span class="hljs-function"><span class="hljs-title">function</span></span>()&#123;<br>                <span class="hljs-built_in">return</span> this.count<br>            &#125;<br>        &#125;,<br>        computed:&#123;<br>            computed1:<span class="hljs-function"><span class="hljs-title">function</span></span>()&#123;<br>                <span class="hljs-built_in">return</span> this.count<br>            &#125;<br>        &#125;,<br>        template:<span class="hljs-string">'&lt;p&gt;&#123;&#123;msg&#125;&#125; &#123;&#123;count&#125;&#125; &#123;&#123;method1()&#125;&#125; &#123;&#123;computed1&#125;&#125;&lt;p&gt;'</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<ol start="3">
+<li><p>props的值是字符串数组与对象</p>
+</li>
+<li><p>可以v-bind拿到来自父组件的动态数据</p>
+</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;div id=<span class="hljs-string">"app"</span>&gt;<br>    &lt;child-component msg=<span class="hljs-string">"父组件传递过来的内容"</span>&gt;&lt;/child-component&gt;<br>    &lt;child-component v-bind:msg=<span class="hljs-string">"msg"</span>&gt;&lt;/child-component&gt;<br>&lt;/div&gt;<br><br>&lt;script&gt;<br>    var app = new Vue(&#123;<br>        el: <span class="hljs-string">'#app'</span>,<br>        data:&#123;<br>            msg:<span class="hljs-string">'父组件data中传递过来的内容'</span><br>        &#125;,<br>        components: &#123;<br>            <span class="hljs-string">'child-component'</span>: &#123;<br>                props: [<span class="hljs-string">'msg'</span>],<br>                template: <span class="hljs-string">'&lt;p&gt;&#123;&#123;msg&#125;&#125;&lt;p&gt;'</span><br>            &#125;<br>        &#125;<br>    &#125;)<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
+<p>v:bind传递一个数组与直接传递一个数组的区别</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;component arr=<span class="hljs-string">"[0,1,2]"</span>&gt;&lt;/component&gt; //输出7,解析成字符串,长度为7<br><br>&lt;component :arr=<span class="hljs-string">"[0,1,2]"</span>&gt;&lt;/component&gt; //输出3,解析成数组,长度为3<br><br>....<br>props:[<span class="hljs-string">'arr'</span>],<br>template:<span class="hljs-string">'&lt;p&gt;arr.length&lt;/p&gt;'</span><br></code></pre></td></tr></table></figure>
+<h4 id="单向数据流"><a href="#单向数据流" class="headerlink" title="单向数据流"></a>单向数据流</h4><h5 id="解析"><a href="#解析" class="headerlink" title="解析:"></a>解析:</h5><p>通过props传递数据是单向的,父组件数据变化会传递给子组件,反过来不行.</p>
+<h5 id="目的"><a href="#目的" class="headerlink" title="目的:"></a>目的:</h5><p>将父子租借解耦,避免子组件无意中修改了父组件的状态</p>
+<h5 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景:"></a>应用场景:</h5><h5 id="场景1"><a href="#场景1" class="headerlink" title="场景1"></a>场景1</h5><p>父组件传递初始值,子组件将它作为初始值保存起来,在自己的作用域下随意使用和修改,这样情况可以在组件data内再声明一个数据,引用父组件的prop</p>
+<p>步骤1: 注册组件<br>步骤2: 将父组件的数据传递尽力啊,并在子组件中用props接受<br>步骤3: 将传递进来的数据通过初始值保存起来</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;div id=<span class="hljs-string">"app"</span>&gt;<br>    &lt;my-comp v-bind:msg=<span class="hljs-string">"msg"</span>&gt;&lt;/my-comp&gt;<br>&lt;/div&gt;<br>&lt;script&gt;<br>    var app = new Vue(&#123;<br>        el:<span class="hljs-string">'#app'</span>,<br>        data:&#123;<br>            msg:1<br>        &#125;,<br>        components:&#123;<br>            <span class="hljs-string">'my-comp'</span>:&#123;<br>                props:[<span class="hljs-string">'msg'</span>],<br>                template:<span class="hljs-string">'&lt;p&gt;&#123;&#123;childMsg&#125;&#125;&lt;/p&gt;'</span>,<br>                data:<span class="hljs-function"><span class="hljs-title">function</span></span>()&#123;<br>                    <span class="hljs-built_in">return</span> &#123;<br>                       childMsg : this.msg<br>                    &#125;<br>                &#125;<br>            &#125;<br>        &#125;<br>    &#125;)<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
+<h5 id="场景2"><a href="#场景2" class="headerlink" title="场景2"></a>场景2</h5><p>prop作为需要被转变的原始值传入.这种情况用计算属性</p>
+<p>步骤1:注册组件<br>步骤2:父组件传递数据,子组件props接收<br>步骤3:传递过来的数据通过计算属性进行重新计算</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;div id=<span class="hljs-string">"app"</span>&gt;<br>    &lt;input <span class="hljs-built_in">type</span>=<span class="hljs-string">"text"</span> v-model=<span class="hljs-string">"width"</span>&gt;<br>    &lt;my-comp v-bind:width=<span class="hljs-string">"width"</span>&gt;&lt;/my-comp&gt;<br>&lt;/div&gt;<br>&lt;script&gt;<br>    var app = new Vue(&#123;<br>        el:<span class="hljs-string">'#app'</span>,<br>        data:&#123;<br>            width:0<br>        &#125;,<br>        components:&#123;<br>            <span class="hljs-string">'my-comp'</span>:&#123;<br>                props:[<span class="hljs-string">'width'</span>],<br>                template:<span class="hljs-string">'&lt;div :style="style"&gt;&lt;div&gt;'</span>,<br>                computed:&#123;<br>                    style:<span class="hljs-function"><span class="hljs-title">function</span></span>()&#123;<br>                        <span class="hljs-built_in">return</span> &#123;<br>                            width:this.width + <span class="hljs-string">'px'</span>,<br>                            background:<span class="hljs-string">'red'</span>,<br>                            height:<span class="hljs-string">'30px'</span><br>                        &#125;<br>                    &#125;<br>                &#125;<br>            &#125;<br>        &#125;<br>    &#125;)<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
+<h4 id="数据验证"><a href="#数据验证" class="headerlink" title="数据验证"></a>数据验证</h4><p>可以验证tpye类型可以是<br>Stiring<br>Number<br>Boolean<br>Object<br>Array<br>Function</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;script&gt;<br>    var app = new Vue(&#123;<br>        el:<span class="hljs-string">'#app'</span>,<br>        components:&#123;<br>            <span class="hljs-string">'my-comp'</span>:&#123;<br>                template:<span class="hljs-string">'&lt;div"&gt;&lt;div&gt;'</span>,<br>                props:&#123;<br>                    propA:Number,//数字<br>                    propB:[String,Number],//字符串或数字<br>                    propC:&#123;<br>                        <span class="hljs-built_in">type</span>:Boolean,<br>                        default:<span class="hljs-literal">true</span>//当不传入时的默认值<br>                    &#125;,<br>                    propD:&#123;<br>                        <span class="hljs-built_in">type</span>:Number,<br>                        required:<span class="hljs-literal">true</span>//必须传入<br>                    &#125;,<br>                    propE:&#123;<br>                        <span class="hljs-built_in">type</span>:Array,<br>                        default:<span class="hljs-function"><span class="hljs-title">function</span></span>()&#123;//当数组时默认值必须是一个函数并返回一个数组<br>                            <span class="hljs-built_in">return</span> []<br>                        &#125;<br>                    &#125;,<br>                    propF:&#123;<br>                        validator:<span class="hljs-keyword">function</span>(val)&#123;//条件判断<br>                            <span class="hljs-built_in">return</span> val &gt; 10;<br>                        &#125;<br>                    &#125;<br>                &#125;<br>            &#125;<br>        &#125;<br>    &#125;)<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
+<h4 id="组件通信"><a href="#组件通信" class="headerlink" title="组件通信"></a>组件通信</h4><h4 id="自定义事件"><a href="#自定义事件" class="headerlink" title="自定义事件"></a>自定义事件</h4><p>子组件给父组件传递数据</p>
+<p>子组件用$emit()发布事件,父组件用v-on监听子组件的事件</p>
+<p>步骤1:自定义事件<br>步骤2:在子组件用$emit发布事件,第一个参数是事件名,后面参数是传递的数据<br>步骤3:在自定义事件用一个参数来接受</p>
+<p>例:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;div id=<span class="hljs-string">"app"</span>&gt;<br>    &lt;p&gt;库存:&#123;&#123;total&#125;&#125;&lt;/p&gt;<br>    &lt;btn-comp <br>        @change=<span class="hljs-string">"handleTotal"</span>&gt;&lt;/btn-comp&gt;<br>&lt;/div&gt;<br>&lt;script&gt;<br>        var app = new Vue(&#123;<br>            el: <span class="hljs-string">'#app'</span>,<br>            data: &#123;<br>                total: 0<br>            &#125;,<br>            components: &#123;<br>                <span class="hljs-string">'btn-comp'</span>: &#123;<br>                    template: `<br>                    &lt;div&gt;<br>                        &lt;button @click=<span class="hljs-string">"plusOne"</span>&gt;+1&lt;/button&gt;<br>                        &lt;button @click=<span class="hljs-string">"minOne"</span>&gt;-1&lt;/button&gt;<br>                    &lt;/div&gt;<br>                    `<br>                    ,<br>                    data: <span class="hljs-function"><span class="hljs-title">function</span></span> () &#123;<br>                        <span class="hljs-built_in">return</span> &#123;<br>                            count: 0<br>                        &#125;<br>                    &#125;,<br>                    methods: &#123;<br>                        plusOne: <span class="hljs-function"><span class="hljs-title">function</span></span> () &#123;<br>                            this.count++;<br>                            this.<span class="hljs-variable">$emit</span>(<span class="hljs-string">'change'</span>, this.count)<br>                        &#125;,<br>                        minOne: <span class="hljs-function"><span class="hljs-title">function</span></span> () &#123;<br>                            this.count--;<br>                            this.<span class="hljs-variable">$emit</span>(<span class="hljs-string">'change'</span>, this.count)<br>                        &#125;<br>                    &#125;<br>                &#125;<br>            &#125;,<br>            methods:&#123;<br>                handleTotal:<span class="hljs-keyword">function</span>(val)&#123;<br>                    this.total = val<br>                &#125;<br>            &#125;<br>        &#125;)<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure></p>
+<h4 id="在组件用使用v-model"><a href="#在组件用使用v-model" class="headerlink" title="在组件用使用v-model"></a>在组件用使用v-model</h4><p>$emit发布一个input事件,参数是传递给v-model绑定属性的值</p>
+<h5 id="v-model是一个语法糖-背后做了两步操作"><a href="#v-model是一个语法糖-背后做了两步操作" class="headerlink" title="v-model是一个语法糖,背后做了两步操作:"></a>v-model是一个语法糖,背后做了两步操作:</h5><ol>
+<li>v-bind绑定</li>
+<li>v-on给当前元素绑定input事件</li>
+</ol>
+<p>v-model其实就是绑定input事件,当触发input时,input事件就会自动接收传递过来的参数,并赋值给v-model绑定的属性</p>
+<h5 id="要使用v-model要做到"><a href="#要使用v-model要做到" class="headerlink" title="要使用v-model要做到"></a>要使用v-model要做到</h5><ol>
+<li>接收一个value属性</li>
+<li>在新的value时触发input事件</li>
+</ol>
+<p>例<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;div id=<span class="hljs-string">"app"</span>&gt;<br>    &lt;p&gt;库存:&#123;&#123;total&#125;&#125;&lt;/p&gt;<br>    &lt;btn-comp v-model=<span class="hljs-string">"total"</span>&gt;&lt;/btn-comp&gt;<br>&lt;/div&gt;<br>&lt;script&gt;<br>        var app = new Vue(&#123;<br>            el: <span class="hljs-string">'#app'</span>,<br>            data: &#123;<br>                total: 0<br>            &#125;,<br>            components: &#123;<br>                <span class="hljs-string">'btn-comp'</span>: &#123;<br>                    template: `<br>                    &lt;div&gt;<br>                        &lt;button @click=<span class="hljs-string">"plusOne"</span>&gt;+1&lt;/button&gt;<br>                        &lt;button @click=<span class="hljs-string">"minOne"</span>&gt;+1&lt;/button&gt;<br>                    &lt;/div&gt;<br>                    `<br>                    ,<br>                    data: <span class="hljs-function"><span class="hljs-title">function</span></span> () &#123;<br>                        <span class="hljs-built_in">return</span> &#123;<br>                            count: 0<br>                        &#125;<br>                    &#125;,<br>                    methods: &#123;<br>                        plusOne: <span class="hljs-function"><span class="hljs-title">function</span></span> () &#123;<br>                            this.count++;<br>                            this.<span class="hljs-variable">$emit</span>(<span class="hljs-string">'input'</span>, this.count)<br>                        &#125;,<br>                        minOne: <span class="hljs-function"><span class="hljs-title">function</span></span> () &#123;<br>                            this.count--;<br>                            this.<span class="hljs-variable">$emit</span>(<span class="hljs-string">'input'</span>, this.count)<br>                        &#125;<br>                    &#125;<br>                &#125;<br>            &#125;<br>        &#125;)<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure></p>
+<h4 id="非父组件之间的通信"><a href="#非父组件之间的通信" class="headerlink" title="非父组件之间的通信"></a>非父组件之间的通信</h4><h5 id="子组件间通信"><a href="#子组件间通信" class="headerlink" title="子组件间通信"></a>子组件间通信</h5><p>父组件data中定义<br>bus:new Vue()<br>通过this.$root.bus这条链,子组件A emit一个事件并发送数据,子组件B在created的时候订阅事件,并接收数据</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;div id=<span class="hljs-string">"app"</span>&gt;<br>    &lt;my-comp<span class="hljs-_">-a</span>&gt;&lt;/my-comp<span class="hljs-_">-a</span>&gt;<br>    &lt;my-comp-b&gt;&lt;/my-comp-b&gt;<br>&lt;/div&gt;<br>&lt;script&gt;<br>    var app = new Vue(&#123;<br>        el:<span class="hljs-string">'#app'</span>,<br>        data:&#123;<br>            bus:new Vue()<br>        &#125;,<br>        components:&#123;<br>            <span class="hljs-string">'my-comp-a'</span>:&#123;<br>                template:<span class="hljs-string">'&lt;button @click="putDatatoB"&gt;点击向b组件传递数据&lt;/button&gt;'</span>,<br>                data:<span class="hljs-function"><span class="hljs-title">function</span></span>()&#123;<br>                    <span class="hljs-built_in">return</span>&#123;<br>                        aaa:<span class="hljs-string">'A内容'</span><br>                    &#125;<br>                &#125;,<br>                methods:&#123;<br>                    putDatatoB:<span class="hljs-function"><span class="hljs-title">function</span></span>()&#123;<br>                        this.<span class="hljs-variable">$root</span>.bus.<span class="hljs-variable">$emit</span>(<span class="hljs-string">'atob'</span>,this.aaa)<br>                    &#125;<br>                &#125;<br>            &#125;,<br>            <span class="hljs-string">'my-comp-b'</span>:&#123;<br>                template:<span class="hljs-string">'&lt;div&gt;&lt;/div&gt;'</span>,<br>                created:<span class="hljs-function"><span class="hljs-title">function</span></span>()&#123;<br>                    this.<span class="hljs-variable">$root</span>.bus.<span class="hljs-variable">$on</span>(<span class="hljs-string">'atob'</span>,<span class="hljs-keyword">function</span>(val)&#123;<br>                        alert(val)<br>                    &#125;)<br>                &#125;<br>            &#125;<br>        &#125;<br>    &#125;)<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
+<h5 id="任意组件的通信"><a href="#任意组件的通信" class="headerlink" title="任意组件的通信"></a>任意组件的通信</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">let</span> eventHub = new Vue();<br>Vue.prototype.<span class="hljs-variable">$eventHub</span> = eventHub;<br>Vue.component(<span class="hljs-string">'comp-a'</span>,&#123;<br>    template:`<br>    &lt;div&gt;&lt;button @click=<span class="hljs-string">"aTob"</span>&gt;A&lt;/button&gt;&lt;/div&gt;<br>    `,<br>    methods:&#123;<br>        aTo:<span class="hljs-function"><span class="hljs-title">function</span></span>()&#123;<br>            this.<span class="hljs-variable">$evntHub</span>.<span class="hljs-variable">$emit</span>(<span class="hljs-string">'atob'</span>,<span class="hljs-string">'form a'</span>);<br>        &#125;<br>    &#125;<br>&#125;)<br>Vue.component(<span class="hljs-string">'comp-b'</span>,&#123;<br>    tempalte:<span class="hljs-string">'<br>    &lt;div&gt;&lt;span&gt;B&lt;span&gt;&lt;span ref='</span>formA<span class="hljs-string">'&gt;&lt;/span&gt;&lt;div&gt;<br>    '</span>,<br>    created:<span class="hljs-function"><span class="hljs-title">function</span></span>()&#123;<br>        this.<span class="hljs-variable">$eventHub</span>.<span class="hljs-variable">$on</span>(<span class="hljs-string">'atob'</span>,(data)=&gt;&#123;<br>            this.<span class="hljs-variable">$refs</span>.formA.textContent = data;<br>        &#125;)<br>    &#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
+<h5 id="父组件获得子组件数据"><a href="#父组件获得子组件数据" class="headerlink" title="父组件获得子组件数据"></a>父组件获得子组件数据</h5><p>父链this.$parent<br>子链this.$refs<br>提供了为子链提供索引的方法,用特殊的属性ref为其增加一个索引</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;div id=<span class="hljs-string">"app2"</span>&gt;<br>        &#123;&#123;msg&#125;&#125;<br>        &lt;child-comp ref=<span class="hljs-string">"a"</span>&gt;&lt;/child-comp&gt;<br>        &lt;button @click=<span class="hljs-string">"getChildData"</span>&gt;点我拿到B组件数据&lt;/button&gt;<br>        &#123;&#123;formChild&#125;&#125;<br>&lt;/div&gt;<br>&lt;script&gt;<br>    var app2 = new Vue(&#123;<br>        el:<span class="hljs-string">'#app2'</span>,<br>        data:&#123;<br>            bus:new Vue(),<br>            msg:<span class="hljs-string">'数据还没修改'</span>,<br>            formChild:<span class="hljs-string">'还未拿到'</span><br>        &#125;,<br>        methods:&#123;<br>            getChildData:<span class="hljs-function"><span class="hljs-title">function</span></span>()&#123;<br>                this.formChild = this.<span class="hljs-variable">$refs</span>.a.msg //从子组件拿数据<br>            &#125;<br>        &#125;,<br>        components:&#123;<br>            <span class="hljs-string">'child-comp'</span>:&#123;<br>                template:<span class="hljs-string">'&lt;button @click="setFatherData"&gt;点我修改父组件数据&lt;/button&gt;'</span>,<br>                methods:&#123;<br>                    setFatherData:<span class="hljs-function"><span class="hljs-title">function</span></span>()&#123;<br>                        this.<span class="hljs-variable">$parent</span>.msg = <span class="hljs-string">'数据已修改了'</span> //修改父组件数据<br>                    &#125;<br>                &#125;,<br>                data:<span class="hljs-function"><span class="hljs-title">function</span></span>()&#123;<br>                    <span class="hljs-built_in">return</span>&#123;<br>                        msg:<span class="hljs-string">'我是子组件数据'</span><br>                    &#125;<br>                &#125;<br>            &#125;<br>        &#125;<br>    &#125;)<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
+<h5 id="父子组件间使用独立的eventbus"><a href="#父子组件间使用独立的eventbus" class="headerlink" title="父子组件间使用独立的eventbus"></a>父子组件间使用独立的eventbus</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs bash">//parent<br><br><span class="hljs-function"><span class="hljs-title">data</span></span>()&#123;<br>    eventBus:new Vue()<br>&#125;,<br><span class="hljs-function"><span class="hljs-title">provide</span></span>()&#123;//向子组件注入<br>    <span class="hljs-built_in">return</span> &#123;<br>        eventBus:this.eventBus<br>    &#125;<br>&#125;,<br><span class="hljs-function"><span class="hljs-title">mounted</span></span>()&#123;<br>    this.evenBus.<span class="hljs-variable">$on</span>(<span class="hljs-string">'event'</span>,(val)=&#123;//父组件b监听事件<br>        console.log(val)<br>    &#125;)<br>&#125;<br><br>//child<br>inject:[<span class="hljs-string">'eventBus'</span>],<br>methods:&#123;<br>    <span class="hljs-function"><span class="hljs-title">emitEvent</span></span>()&#123;<br>        this.evenBus.<span class="hljs-variable">$emit</span>(<span class="hljs-string">'event'</span>,<span class="hljs-string">'hi'</span>)//子组件a发布事件<br>    &#125;<br>&#125;,<br><span class="hljs-function"><span class="hljs-title">mounted</span></span>()&#123;<br>    this.evenBus.<span class="hljs-variable">$on</span>(<span class="hljs-string">'event'</span>,(val)=&#123;//子组件b监听事件<br>        console.log(val)<br>    &#125;)<br>&#125;<br></code></pre></td></tr></table></figure>
+<h4 id="插槽"><a href="#插槽" class="headerlink" title="插槽"></a>插槽</h4><p>为了让组件可以组合,我们需要一种方式来混合父组件的内容与子组件自己的模板,这个过程被称为内容分发.<br>Vue实现了一个内容分发api,使用特殊的slot元素作为原始内容的插槽.</p>
+<p>父组件的内容在父组件作用域内编译,<br>子组件的内容在子组件作用域内编译</p>
+<p>例:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;comp v-show=<span class="hljs-string">"childshow"</span>&gt;&lt;/comp&gt;//这里的childshow是父组件data里的<br><br>data:&#123;<br>    childshow:fasle<br>&#125;,<br>component:&#123;<br>    <span class="hljs-string">'comp'</span>:&#123;<br>        template:<span class="hljs-string">'&lt;div v-show="childshow"&gt;&lt;/div&gt;'</span> //这里的childshow是子组件data例的<br>    &#125;,<br>    data:<span class="hljs-function"><span class="hljs-title">function</span></span>()&#123;<br>        <span class="hljs-built_in">return</span> &#123;<br>            childshow:<span class="hljs-literal">false</span><br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure></p>
+<h5 id="插槽用法"><a href="#插槽用法" class="headerlink" title="插槽用法:"></a>插槽用法:</h5><p>父组件的内容与子组件相混合,从而弥补了试图的不足</p>
+<p>混合父组件的内容与子组件自己的模板</p>
+<h5 id="单个插槽"><a href="#单个插槽" class="headerlink" title="单个插槽:"></a>单个插槽:</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;div id=<span class="hljs-string">"app"</span>&gt;<br>    &lt;my-comp&gt;<br>        &lt;p&gt;父组件内容&lt;/p&gt;<br>    &lt;/my-comp&gt;<br>&lt;/div&gt;<br>&lt;script&gt;<br>    var app = new Vue(&#123;<br>        el:<span class="hljs-string">'#app'</span>,<br>        data:&#123;<br>            <br>        &#125;,<br>        components:&#123;<br>            <span class="hljs-string">'my-comp'</span>:&#123;<br>                template:`<br>                &lt;div&gt;<br>                    &lt;slot&gt;假如父组件没有内容,我就默认出现&lt;/slot&gt;<br>                &lt;div&gt;`,<br>            &#125;<br>        &#125;<br>    &#125;)<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
+<h5 id="具名插槽"><a href="#具名插槽" class="headerlink" title="具名插槽:"></a>具名插槽:</h5><p>下面的</p><p solot="heaer">与<slot name="header">替换<br>变成 <h1><p></p></h1></slot></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;div id=<span class="hljs-string">"app"</span>&gt;<br>    &lt;my-comp&gt;<br>        &lt;p slot=<span class="hljs-string">"header"</span>&gt;标题&lt;/p&gt;<br>        &lt;p&gt;内容&lt;/p&gt;<br>        &lt;p slot=<span class="hljs-string">"footer"</span>&gt;底部&lt;/p&gt;<br>    &lt;/my-comp&gt;<br>&lt;/div&gt;<br>&lt;script&gt;<br>    var app = new Vue(&#123;<br>        el:<span class="hljs-string">'#app'</span>,<br>        data:&#123;<br>            <br>        &#125;,<br>        components:&#123;<br>            <span class="hljs-string">'my-comp'</span>:&#123;<br>                template:`<br>                &lt;div&gt;<br>                    &lt;h1&gt;<br>                        &lt;slot name=<span class="hljs-string">"header"</span>&gt;&lt;/slot&gt;<br>                    &lt;/h1&gt;<br>                    &lt;div&gt;<br>                        &lt;slot&gt;&lt;slot&gt;<br>                    &lt;/div&gt;<br>                    &lt;footer&gt;<br>                        &lt;slot name=<span class="hljs-string">"footer"</span>&gt;&lt;slot&gt;<br>                    &lt;footer&gt;<br>                &lt;div&gt;`,<br>            &#125;<br>        &#125;<br>    &#125;)<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
+<h5 id="作用域插槽"><a href="#作用域插槽" class="headerlink" title="作用域插槽"></a>作用域插槽</h5><p>作用域插槽是一种特殊的slot,使用一个可以复用的模板来替换已经渲染的元素—从子组件获取数据</p>
+<p>slot-scope的属性值指向插槽中的属性值,2.5.0版本下要使用template元素包裹</p>
+<p>例:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;div id=<span class="hljs-string">"app3"</span>&gt;<br>    &lt;my-comp-abc&gt;<br>        &lt;p slot=<span class="hljs-string">"abc"</span> slot-scope=<span class="hljs-string">"props"</span>&gt;<br>            &lt;button @click=<span class="hljs-string">"props.b"</span>&gt;&#123;&#123;props.a&#125;&#125;&lt;/button&gt;<br>        &lt;/p&gt;<br>    &lt;/my-comp-abc&gt;<br>    //也可以用es6赋值解构<br>    &lt;my-comp-abc&gt;<br>        &lt;p slot=<span class="hljs-string">"abc"</span> slot-scope=<span class="hljs-string">"&#123;a,b&#125;"</span>&gt;<br>            &lt;button @click=<span class="hljs-string">"b"</span>&gt;&#123;&#123;a&#125;&#125;&lt;/button&gt;<br>        &lt;/p&gt;<br>    &lt;/my-comp-abc&gt;<br>&lt;/div&gt;<br>&lt;script &gt;<br>    var app3 = new Vue(&#123;<br>        el:<span class="hljs-string">'#app3'</span>,<br>        components:&#123;<br>            <span class="hljs-string">'my-comp-abc'</span>:&#123;<br>                template:`<br>                &lt;div&gt;<br>                    &lt;slot :a=<span class="hljs-string">"a"</span> :b=<span class="hljs-string">"b"</span> name=<span class="hljs-string">"abc"</span>&gt;&lt;/slot&gt;<br>                &lt;/div&gt;<br>                `,<br>                <span class="hljs-function"><span class="hljs-title">data</span></span>()&#123;<br>                    <span class="hljs-built_in">return</span> &#123;<br>                        a:<span class="hljs-string">'click'</span><br>                    &#125;<br>                &#125;,<br>                methods:&#123;<br>                    <span class="hljs-function"><span class="hljs-title">b</span></span>()&#123;<br>                        console.log(<span class="hljs-string">'b'</span>)<br>                    &#125;<br>                &#125;<br>            &#125;<br>        &#125;<br>    &#125;)<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
+<h4 id="访问slot"><a href="#访问slot" class="headerlink" title="访问slot"></a>访问slot</h4><p>通过this.$slots.name</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">mounted:<span class="hljs-function"><span class="hljs-title">function</span></span>()&#123;<br>    <span class="hljs-built_in">let</span> header = this.<span class="hljs-variable">$slots</span>.header;<br>    <span class="hljs-built_in">let</span> text = header[0].elm.innerText;<br>    <span class="hljs-built_in">let</span> html = header[0].elm.innerHTML;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h4 id="动态组件"><a href="#动态组件" class="headerlink" title="动态组件"></a>动态组件</h4><p>Vue提供一个元素教component<br>作用是:用来动态挂载不同的组件<br>实现:使用is属性来进行实现</p>
+<p>v-bind:is=”组件名”,可以把compoent变成该组件名的组件</p>
+<p>通过动态组件切换视图的小demo:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;div id=<span class="hljs-string">"app"</span>&gt;<br>    &lt;components :is=<span class="hljs-string">"view"</span>&gt;&lt;/components&gt;<br>    &lt;button @click=<span class="hljs-string">"handview('a')"</span>&gt;A&lt;/button&gt;<br>    &lt;button @click=<span class="hljs-string">"handview('b')"</span>&gt;B&lt;/button&gt;<br>    &lt;button @click=<span class="hljs-string">"handview('c')"</span>&gt;C&lt;/button&gt;<br>    &lt;button @click=<span class="hljs-string">"handview('d')"</span>&gt;D&lt;/button&gt;<br>&lt;/div&gt;<br>&lt;script&gt;<br>    var app = new Vue(&#123;<br>        el:<span class="hljs-string">'#app'</span>,<br>        data:&#123;<br>            view:<span class="hljs-string">'comp-a'</span><br>        &#125;,<br>        components:&#123;<br>            <span class="hljs-string">'comp-a'</span>:&#123;<br>                template:<span class="hljs-string">'&lt;div&gt;A&lt;div&gt;'</span>,<br>            &#125;,<br>            <span class="hljs-string">'comp-b'</span>:&#123;<br>                template:<span class="hljs-string">'&lt;div&gt;B&lt;div&gt;'</span>,<br>            &#125;,<br>            <span class="hljs-string">'comp-c'</span>:&#123;<br>                template:<span class="hljs-string">'&lt;div&gt;C&lt;div&gt;'</span>,<br>            &#125;,<br>            <span class="hljs-string">'comp-d'</span>:&#123;<br>                template:<span class="hljs-string">'&lt;div&gt;D&lt;div&gt;'</span>,<br>            &#125;,<br>        &#125;,<br>        methods:&#123;<br>            handview:<span class="hljs-keyword">function</span>(tag)&#123;<br>                this.view = <span class="hljs-string">'comp-'</span> + tag<br>            &#125;<br>        &#125;<br>    &#125;)<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/07/13/Vue组件/" data-id="clq61ndgy0038zofqzkhznske" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Vue基础" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/13/Vue基础/" class="article-date">
+  <time datetime="2018-07-13T15:05:15.000Z" itemprop="datePublished">2018-07-13</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/vue/">vue</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/13/Vue基础/">Vue基础</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><h4 id="MVVM是什么"><a href="#MVVM是什么" class="headerlink" title="MVVM是什么?"></a>MVVM是什么?</h4><p>MVVM是Model-View-ViewModel的缩写。MVVM是一种设计思想。Model 层代表数据模型，也可以在Model中定义数据修改和操作的业务逻辑；View 代表UI 组件，它负责将数据模型转化成UI 展现出来，ViewModel 是一个同步View 和 Model的对象。</p>
+<p>在MVVM架构下，View 和 Model 之间并没有直接的联系，而是通过ViewModel进行交互，Model 和 ViewModel 之间的交互是双向的， 因此View 数据的变化会同步到Model中，而Model 数据的变化也会立即反应到View 上。</p>
+<p>ViewModel 通过双向数据绑定把 View 层和 Model 层连接了起来，而View 和 Model 之间的同步工作完全是自动的，无需人为干涉，因此开发者只需关注业务逻辑，不需要手动操作DOM, 不需要关注数据状态的同步问题，复杂的数据状态维护完全由 MVVM 来统一管理。</p>
+<h4 id="Vue-js优点"><a href="#Vue-js优点" class="headerlink" title="Vue.js优点"></a>Vue.js优点</h4><p>Vue.js是一个轻巧,高性能,可组件化的MVVM库.它是MVVM模式,视图层和数据层的双向绑定,让我们无需再去关心DOM操作的事情,更多的精力放在数据和业务逻辑上去.</p>
+<h5 id="低耦合"><a href="#低耦合" class="headerlink" title="低耦合:"></a>低耦合:</h5><p>视图6（View）可以独立于Model变化和修改，一个ViewModel可以绑定到不同的”View”上，当View变化的时候Model可以不变，当Model变化的时候View也可以不变。</p>
+<h5 id="可重用性"><a href="#可重用性" class="headerlink" title="可重用性:"></a>可重用性:</h5><p>你可以把一些视图逻辑放在一个ViewModel里面，让很多view重用这段视图逻辑。</p>
+<h5 id="独立开发"><a href="#独立开发" class="headerlink" title="独立开发:"></a>独立开发:</h5><p>开发人员可以专注于业务逻辑和数据的开发（ViewModel），设计人员可以专注于页面设计。</p>
+<h5 id="可测试"><a href="#可测试" class="headerlink" title="可测试:"></a>可测试:</h5><p>界面素来是比较难于测试的，而现在测试可以针对ViewModel来写</p>
+<h5 id="易用灵活高效"><a href="#易用灵活高效" class="headerlink" title="易用灵活高效"></a>易用灵活高效</h5><h3 id="数据绑定-指令-事件"><a href="#数据绑定-指令-事件" class="headerlink" title="数据绑定,指令,事件"></a>数据绑定,指令,事件</h3><h4 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;script src=<span class="hljs-string">"https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"</span>&gt;&lt;/script&gt;<br></code></pre></td></tr></table></figure>
+<h4 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h4><p>最基本实例,其中el是必须的,是一个选择器</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">var app = new Vue(&#123;<br>    el:<span class="hljs-string">''</span><br>&#125;)<br></code></pre></td></tr></table></figure>
+<h4 id="数据绑定data"><a href="#数据绑定data" class="headerlink" title="数据绑定data"></a>数据绑定data</h4><p>声明双向绑定的数据</p>
+<h4 id="访问Vue实例的属性"><a href="#访问Vue实例的属性" class="headerlink" title="访问Vue实例的属性"></a>访问Vue实例的属性</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs bash"><br>var app = new (&#123;<br>    el:<span class="hljs-string">''</span>,<br>    data:&#123;<br>        msg:<span class="hljs-string">''</span><br>    &#125;,<br>    methods:&#123;<br>        ///<br>    &#125;<br>&#125;)<br><br>//访问el<br><br>app.<span class="hljs-variable">$el</span><br><br>//访问methods<br><br>app.<span class="hljs-variable">$methods</span><br><br>//访问data中的msg<br><br>app.msg<br></code></pre></td></tr></table></figure>
+<h4 id="生命周期钩子"><a href="#生命周期钩子" class="headerlink" title="生命周期钩子"></a>生命周期钩子</h4><p>created 实例创建完成后调用,还没挂载到el上. —还没挂载</p>
+<p>mounted el挂载到实例后. —刚挂载</p>
+<p>beforeDestroy 实例销毁之前.主要用于解绑</p>
+<p>运用例子:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;div id=<span class="hljs-string">"app"</span>&gt;<br>    &#123;&#123;date&#125;&#125;<br>&lt;/div&gt;<br><br>&lt;script&gt;<br>    var app = new Vue(&#123;<br>        el: <span class="hljs-string">'#app'</span>,<br>        data: &#123;<br>            date: new Date()<br>        &#125;,<br>        mounted:<span class="hljs-function"><span class="hljs-title">function</span></span>()&#123;//挂载成功后进行每秒刷新1次当前时间<br>            var _this = this;<br>            this.timer = setInterval(<span class="hljs-function"><span class="hljs-title">function</span></span>()&#123;<br>                _this.date = new Date();<br>            &#125;,1000)<br>        &#125;,<br>        beforeDestory:<span class="hljs-function"><span class="hljs-title">function</span></span>()&#123;//销毁前清除定时器<br>            <span class="hljs-keyword">if</span>(this.timer)&#123;<br>                clearInterval(this.timer)<br>            &#125;<br>        &#125;<br>    &#125;)<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
+<h4 id="文本插值和表达式"><a href="#文本插值和表达式" class="headerlink" title="文本插值和表达式"></a>文本插值和表达式</h4><h5 id="文本插值"><a href="#文本插值" class="headerlink" title="文本插值:"></a>文本插值:</h5><p>使用,将data中的数据显示</p>
+<h5 id="表达式"><a href="#表达式" class="headerlink" title="表达式:"></a>表达式:</h5><p>只能是单个表达式,不能是语句</p>
+<h5 id="运算"><a href="#运算" class="headerlink" title="运算"></a>运算</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><br>&#123;&#123;6 + 6&#125;&#125;<br></code></pre></td></tr></table></figure>
+<h5 id="三元运算"><a href="#三元运算" class="headerlink" title="三元运算"></a>三元运算</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">&#123;&#123; 2&gt;1 ? <span class="hljs-string">'yes'</span> : <span class="hljs-string">'no'</span>&#125;&#125;<br></code></pre></td></tr></table></figure>
+<h5 id="JS"><a href="#JS" class="headerlink" title="JS:"></a>JS:</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">&#123;&#123;Date.now()&#125;&#125;<br></code></pre></td></tr></table></figure>
+<h4 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h4><p>Vue尾部插入|,通常用于格式化文本,过滤规则是自定义的,通过给Vue实例添加filters来设置</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">&#123;&#123; data.数据名 | 过滤器1&#125;&#125;<br></code></pre></td></tr></table></figure>
+<h5 id="串联"><a href="#串联" class="headerlink" title="串联:"></a>串联:</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">&#123;&#123; data.数据名 | 过滤器1 | 过滤器2&#125;&#125;<br></code></pre></td></tr></table></figure>
+<h5 id="过滤器的参数"><a href="#过滤器的参数" class="headerlink" title="过滤器的参数"></a>过滤器的参数</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">&#123;&#123;date.数据表 | 过滤器1(a,b)&#125;&#125;<br></code></pre></td></tr></table></figure>
+<p>传入的第一二个参数是过滤器1中的第二三个参数</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">filters:&#123;<br>    过滤器1:<span class="hljs-keyword">function</span>(val,a,b)&#123;<br>        ///对val进行操作 val是  data.数据名 传入的<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h4 id="指令和事件"><a href="#指令和事件" class="headerlink" title="指令和事件"></a>指令和事件</h4><h5 id="v-text"><a href="#v-text" class="headerlink" title="v-text"></a>v-text</h5><p>解析文本和作用一样</p>
+<p>例:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;p v-text=<span class="hljs-string">"msg"</span>&gt;&lt;/p&gt;<br><br>&lt;p&gt;&#123;&#123;msg&#125;&#125;&lt;/p&gt;<br>...<br>data&#123;<br>    msg:<span class="hljs-string">'msg'</span><br>&#125;<br></code></pre></td></tr></table></figure></p>
+<h5 id="v-html"><a href="#v-html" class="headerlink" title="v-html"></a>v-html</h5><p>解析html</p>
+<p>例:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;div v-html=<span class="hljs-string">"html"</span>&gt;&lt;/div&gt;<br><br>...<br>data&#123;<br>    html:<span class="hljs-string">'&lt;h1&gt;hello&lt;/h1&gt;'</span><br>&#125;<br></code></pre></td></tr></table></figure></p>
+<h5 id="v-bind"><a href="#v-bind" class="headerlink" title="v-bind:"></a>v-bind:</h5><p>动态更新HTML元素上的属性,语法糖v-bind  === :</p>
+<p>例:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;p v-bind:title=<span class="hljs-string">"title"</span>&gt;&lt;/p&gt;<br><br>&lt;p :title=<span class="hljs-string">"title"</span>&gt;&lt;/p&gt;<br><br>&lt;p :class=<span class="hljs-string">"active"</span>&gt;&lt;/p&gt;<br>...<br>data&#123;<br>    title:<span class="hljs-string">'title'</span>,<br>    class:<span class="hljs-string">'active'</span><br>&#125;<br></code></pre></td></tr></table></figure></p>
+<h4 id="v-on"><a href="#v-on" class="headerlink" title="v-on"></a>v-on</h4><p>语法:v-on:事件=”方法”</p>
+<p>其中方法挂载到vue实例用的methods属性内,并且是一个函数,函数内的this指向vue实例本身.<br>所以可以直接访问或修改data内的数据.<br>注意:不能用箭头函数,因为会改成this,也就是把this变成对象’methods’</p>
+<p>简单例子:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;div id=<span class="hljs-string">"app"</span>&gt;<br>    &lt;button v-on:click=<span class="hljs-string">"doSomething"</span>&gt;点击我&lt;/button&gt;<br>    &lt;p&gt;&#123;&#123;msg&#125;&#125;&lt;/p&gt;<br>&lt;/div&gt;<br><br>&lt;script&gt;<br>    var app = new Vue(&#123;<br>        el:<span class="hljs-string">'#app'</span>,<br>        data:&#123;<br>            msg:<span class="hljs-string">'this is a msg in data'</span><br>        &#125;,<br>        methods:&#123;<br>            doSomething:<span class="hljs-function"><span class="hljs-title">function</span></span>()&#123;<br>                alert(<span class="hljs-string">'你点击我了!'</span>)<br>                alert(this.msg)<br>            &#125;<br>        &#125;<br>    &#125;)<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/07/13/Vue基础/" data-id="clq61ndgt002xzofqg2gedpb9" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-CSS布局套路" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/16/CSS布局套路/" class="article-date">
+  <time datetime="2018-06-16T11:22:42.000Z" itemprop="datePublished">2018-06-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/CSS/">CSS</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/16/CSS布局套路/">CSS布局套路</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="CSS布局"><a href="#CSS布局" class="headerlink" title="CSS布局"></a>CSS布局</h3><h4 id="流程图-要支持IE8吗"><a href="#流程图-要支持IE8吗" class="headerlink" title="流程图:要支持IE8吗?"></a>流程图:要支持IE8吗?</h4><ol>
+<li>是:float布局,定宽</li>
+<li>否:flex布局,弹性宽</li>
+</ol>
+<h4 id="Float布局"><a href="#Float布局" class="headerlink" title="Float布局"></a>Float布局</h4><ol>
+<li>给子元素加上float:left</li>
+<li>给父元素加上clearfix</li>
+</ol>
+<p>clearfix</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs bash">.clearfix::after&#123;<br>    content:<span class="hljs-string">''</span>;<br>    display:block;<br>    clear:both;<br>&#125;<br><br> /兼容IE6/<br><br>.clearfix&#123;<br>    zoom:1<br>&#125;<br></code></pre></td></tr></table></figure>
+<h4 id="浮动实现平均布局"><a href="#浮动实现平均布局" class="headerlink" title="浮动实现平均布局"></a>浮动实现平均布局</h4><p>父元素变成祖先,建新的父元素,父元素加上一个负margin<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs bash">.pic&#123;<br>    width:800px;<br>    margin:0 auto;<br>&#125;<br>.pic &gt; .item &#123;<br>    width:194px;<br>    height:194px;<br>    margin:4px;<br>    <span class="hljs-built_in">float</span>:left;<br>&#125;<br>变成<br>.pic&#123;<br>    width:800px;<br>    margin:0 auto;<br>&#125;<br>.pic .xxx &#123;<br>    margin-left:-4px;<br>    margin-right:-8px;<br>&#125;<br>.pic &gt; .xxx &gt; .item&#123;<br>    width:194px;<br>    height:194px;<br>    margin:4px;<br>    <span class="hljs-built_in">float</span>:left;    <br>&#125;<br></code></pre></td></tr></table></figure></p>
+<h4 id="Flex布局"><a href="#Flex布局" class="headerlink" title="Flex布局"></a>Flex布局</h4><ol>
+<li>给父元素加display:flex;</li>
+<li>给父元素加上justify-content:spance-between;</li>
+</ol>
+<h4 id="FLEX实现平均布局"><a href="#FLEX实现平均布局" class="headerlink" title="FLEX实现平均布局"></a>FLEX实现平均布局</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs bash">.pic&#123;<br>    width:800px;<br>    margin:0 auto;<br>    display:flex;<br>    flex-wrap:wrap;<br>    justify-content:space-between;<br>&#125;<br>.pic &gt; .item &#123;<br>    width:194px;<br>    height:194px;<br>    margin:4px;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h5 id="使用calc"><a href="#使用calc" class="headerlink" title="使用calc"></a>使用calc</h5><p>百分之25,减去8像素</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">width:calc (25% - 8px);<br></code></pre></td></tr></table></figure>
+<h5 id="如何防止banner图片变型"><a href="#如何防止banner图片变型" class="headerlink" title="如何防止banner图片变型"></a>如何防止banner图片变型</h5><ol>
+<li>不要用img标签</li>
+</ol>
+<p>用background<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">background:transparent url() no-repeat center;<br>background-size:cover;<br></code></pre></td></tr></table></figure></p>
+<ol start="2">
+<li>也可以搜索固定比例的div</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/06/16/CSS布局套路/" data-id="clq61ndf50006zofqyftrb3fr" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Flex布局" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/15/Flex布局/" class="article-date">
+  <time datetime="2018-06-15T12:39:34.000Z" itemprop="datePublished">2018-06-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/CSS/">CSS</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/15/Flex布局/">Flex布局</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="FLEX布局"><a href="#FLEX布局" class="headerlink" title="FLEX布局"></a>FLEX布局</h3><h3 id="flex-container的属性"><a href="#flex-container的属性" class="headerlink" title="flex container的属性"></a>flex container的属性</h3><h4 id="flex-direction-方向"><a href="#flex-direction-方向" class="headerlink" title="flex-direction 方向"></a>flex-direction 方向</h4><h5 id="属性"><a href="#属性" class="headerlink" title="属性:"></a>属性:</h5><ol>
+<li>row 水平</li>
+<li>row-reverse 水平反向</li>
+<li>column 垂直</li>
+<li>column-reverse 垂直反向</li>
+</ol>
+<h4 id="flex-wrap-换行"><a href="#flex-wrap-换行" class="headerlink" title="flex-wrap 换行"></a>flex-wrap 换行</h4><h5 id="属性-1"><a href="#属性-1" class="headerlink" title="属性"></a>属性</h5><ol>
+<li>nowrap 不换行(默认)</li>
+<li>wrap 换行</li>
+</ol>
+<h4 id="flex-flow"><a href="#flex-flow" class="headerlink" title="flex-flow"></a>flex-flow</h4><p>direction 与 wrap 的简写</p>
+<h4 id="justify-content-主轴方向对齐方式"><a href="#justify-content-主轴方向对齐方式" class="headerlink" title="justify-content 主轴方向对齐方式"></a>justify-content 主轴方向对齐方式</h4><p>假如是默认或者row主轴就是横着的<br>假如是column主轴就是竖着的</p>
+<h5 id="属性-2"><a href="#属性-2" class="headerlink" title="属性"></a>属性</h5><ol>
+<li>flex-start 主轴起点开始</li>
+<li>flex-end 主轴起点结束</li>
+<li>center 主轴居中</li>
+<li>space-between 空的放在中间 </li>
+<li>space-around 空的放在两边</li>
+</ol>
+<h4 id="align-items-子元素对齐方式"><a href="#align-items-子元素对齐方式" class="headerlink" title="align-items 子元素对齐方式"></a>align-items 子元素对齐方式</h4><h4 id="属性-3"><a href="#属性-3" class="headerlink" title="属性"></a>属性</h4><ol>
+<li>stretch 默认,把所有元素高度伸长到一样高.</li>
+<li>flex-start 所有元素往起点靠</li>
+<li>flex-end  所有元素往终点靠</li>
+<li>center    所有元素居中对齐</li>
+</ol>
+<h4 id="align-content-垂直行对齐"><a href="#align-content-垂直行对齐" class="headerlink" title="align-content 垂直行对齐"></a>align-content 垂直行对齐</h4><ol>
+<li>stretch </li>
+<li>flex-start 靠近起点</li>
+<li>flex-end  靠近终点</li>
+<li>center 主轴居中</li>
+<li>space-between 空的放在中间 </li>
+<li>space-around 空的放在两边</li>
+</ol>
+<h3 id="flex-item-的属性"><a href="#flex-item-的属性" class="headerlink" title="flex item 的属性"></a>flex item 的属性</h3><h4 id="flex-grow-增长比例-空间过多时"><a href="#flex-grow-增长比例-空间过多时" class="headerlink" title="flex-grow 增长比例(空间过多时)"></a>flex-grow 增长比例(空间过多时)</h4><p>属性数字:按比例分配 默认是0<br>假如某div是任意数字,其他是0,那么这个div占其余所有空间</p>
+<h4 id="flex-shrink-收缩比例-一般不用"><a href="#flex-shrink-收缩比例-一般不用" class="headerlink" title="flex-shrink 收缩比例 (一般不用)"></a>flex-shrink 收缩比例 (一般不用)</h4><p>属性数字:比例分配 默认是0</p>
+<h4 id="flex-basis-默认大小-一般不用"><a href="#flex-basis-默认大小-一般不用" class="headerlink" title="flex-basis 默认大小(一般不用)"></a>flex-basis 默认大小(一般不用)</h4><p>不写就是原始大小,写了就是写的小</p>
+<h4 id="flex-上面3个的缩写"><a href="#flex-上面3个的缩写" class="headerlink" title="flex 上面3个的缩写"></a>flex 上面3个的缩写</h4><h4 id="order-顺序"><a href="#order-顺序" class="headerlink" title="order 顺序"></a>order 顺序</h4><p>属性数字:是一个index,改变顺序</p>
+<h4 id="align-self-自身的对齐方式"><a href="#align-self-自身的对齐方式" class="headerlink" title="align-self 自身的对齐方式"></a>align-self 自身的对齐方式</h4><p>item自身的对齐方式</p>
+<p>同justify-content,align-content.</p>
+<h3 id="使用flex布局"><a href="#使用flex布局" class="headerlink" title="使用flex布局"></a>使用flex布局</h3><ol>
+<li>手机页面布局 (topbar+main+tabs)</li>
+</ol>
+<p>预览:<a href="https://roxas332519096.github.io/flex-demo/手机页面布局.html" target="_blank" rel="noopener">https://roxas332519096.github.io/flex-demo/手机页面布局.html</a></p>
+<ol start="2">
+<li>产品列表(ul&gt;li*9)</li>
+</ol>
+<p>预览:<a href="https://roxas332519096.github.io/flex-demo/产品列表.html" target="_blank" rel="noopener">https://roxas332519096.github.io/flex-demo/产品列表.html</a></p>
+<ol start="3">
+<li>PC页面布局(双飞翼)</li>
+</ol>
+<p>预览:<a href="https://roxas332519096.github.io/flex-demo/PC页面布局.html" target="_blank" rel="noopener">https://roxas332519096.github.io/flex-demo/PC页面布局.html</a></p>
+<ol start="4">
+<li>完美居中</li>
+</ol>
+<p>预览:<a href="https://roxas332519096.github.io/flex-demo/完美居中.html" target="_blank" rel="noopener">https://roxas332519096.github.io/flex-demo/完美居中.html</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/06/15/Flex布局/" data-id="clq61ndfw0012zofqiswquz3q" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-webpack" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/13/webpack/" class="article-date">
+  <time datetime="2018-06-12T16:17:19.000Z" itemprop="datePublished">2018-06-13</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/webpack/">webpack</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/13/webpack/">webpack</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="前端目录"><a href="#前端目录" class="headerlink" title="前端目录"></a>前端目录</h3><p>src source 未经翻译的代码<br>dist distribution 发布代码<br>vendors 第三方库<br>node_modules 第三方包</p>
+<h3 id="webpack"><a href="#webpack" class="headerlink" title="webpack"></a>webpack</h3><h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><h5 id="安装webpack3"><a href="#安装webpack3" class="headerlink" title="安装webpack3"></a>安装webpack3</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm init<br>npm i webpack@3<br></code></pre></td></tr></table></figure>
+<h5 id="新建webpack-config-js文件"><a href="#新建webpack-config-js文件" class="headerlink" title="新建webpack.config.js文件"></a>新建webpack.config.js文件</h5><p>编辑文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs bash">const path = require(<span class="hljs-string">'path'</span>);<br><br>module.exports = &#123;<br>    entry: <span class="hljs-string">'./src/js/app.js'</span>, //入口文件<br>    output: &#123;<br>      filename: <span class="hljs-string">'bundle.js'</span>,//输出文件<br>      path: path.resolve(__dirname, <span class="hljs-string">'dist/js/'</span>) //输出路径<br>    &#125;,<br>    module: &#123;<br>      rules: [<br>        &#123;<br>          <span class="hljs-built_in">test</span>: /\.js$/,<br>          exclude: /(node_modules|bower_components)/,<br>          use: &#123;<br>            loader: <span class="hljs-string">'babel-loader'</span>,<br>            options: &#123;<br>              presets: [<span class="hljs-string">'env'</span>]<br>            &#125;<br>          &#125;<br>        &#125;,<br>        &#123;<br>          <span class="hljs-built_in">test</span>: /\.scss$/,<br>          use: [&#123;<br>            loader: <span class="hljs-string">"style-loader"</span> // creates style nodes from JS strings<br>          &#125;, &#123;<br>            loader: <span class="hljs-string">"css-loader"</span>, // translates CSS into CommonJS<br>            options: &#123; importLoaders: 1 &#125;<br>          &#125;, &#123;<br>            loader: <span class="hljs-string">'postcss-loader'</span><br>          &#125;,&#123;<br>            loader: <span class="hljs-string">"sass-loader"</span> // compiles Sass to CSS<br>          &#125;]<br>        &#125;<br>      ]<br>    &#125;<br>  &#125;;<br></code></pre></td></tr></table></figure></p>
+<h5 id="安装babel-loader与scss-loader"><a href="#安装babel-loader与scss-loader" class="headerlink" title="安装babel-loader与scss-loader"></a>安装babel-loader与scss-loader</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm install --save-dev babel-loader babel-core babel-preset-env webpack<br>npm install sass-loader node-sass webpack --save-dev<br></code></pre></td></tr></table></figure>
+<h5 id="安装其他必须插件"><a href="#安装其他必须插件" class="headerlink" title="安装其他必须插件"></a>安装其他必须插件</h5><p>它提示确实什么就npm i 缺少的东西</p>
+<h5 id="使用将babel-loader将es6转成es5"><a href="#使用将babel-loader将es6转成es5" class="headerlink" title="使用将babel-loader将es6转成es5"></a>使用将babel-loader将es6转成es5</h5><p>编辑app.js文件(入口文件)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">fn</span></span>()&#123;<br>    <span class="hljs-built_in">let</span> b = <span class="hljs-string">'I am b'</span>;<br>    console.log(b);<br>&#125;<br><span class="hljs-built_in">export</span> default fn;<br></code></pre></td></tr></table></figure>
+<h5 id="编辑模块文件"><a href="#编辑模块文件" class="headerlink" title="编辑模块文件"></a>编辑模块文件</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs bash">//1.js<br><span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">fn</span></span>()&#123;<br>    <span class="hljs-built_in">let</span> a = <span class="hljs-string">'I am a'</span>;<br>    console.log(a);<br>&#125;<br><span class="hljs-built_in">export</span> default fn;<br>//2.js<br><span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">fn</span></span>()&#123;<br>    <span class="hljs-built_in">let</span> b = <span class="hljs-string">'I am b'</span>;<br>    console.log(b);<br>&#125;<br><span class="hljs-built_in">export</span> default fn;<br></code></pre></td></tr></table></figure>
+<h5 id="在html中引入-dist-js-bundle-js"><a href="#在html中引入-dist-js-bundle-js" class="headerlink" title="在html中引入./dist/js/bundle.js"></a>在html中引入./dist/js/bundle.js</h5><h5 id="运行webpack"><a href="#运行webpack" class="headerlink" title="运行webpack"></a>运行webpack</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">npx webpack<br></code></pre></td></tr></table></figure>
+<h5 id="将scss转成css"><a href="#将scss转成css" class="headerlink" title="将scss转成css"></a>将scss转成css</h5><p>根目录创建 postcss.config.js文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">module.exports = &#123;<br>    plugins: &#123;<br>      <span class="hljs-string">'postcss-cssnext'</span>: &#123;&#125;,<br>    &#125;<br>  &#125;<br></code></pre></td></tr></table></figure></p>
+<h5 id="入口文件引入scss文件"><a href="#入口文件引入scss文件" class="headerlink" title="入口文件引入scss文件"></a>入口文件引入scss文件</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">import <span class="hljs-string">'../css/main.scss'</span><br></code></pre></td></tr></table></figure>
+<h5 id="运行webpack-1"><a href="#运行webpack-1" class="headerlink" title="运行webpack"></a>运行webpack</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">npx webpack<br></code></pre></td></tr></table></figure>
+<p>////////////<br>caniuse 插兼容性问题</p>
+<p>autoprefixer 自动解决兼容性</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/06/13/webpack/" data-id="clq61ndho004wzofqypwmsh9i" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webpack/">webpack</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-sass" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/13/sass/" class="article-date">
+  <time datetime="2018-06-12T16:17:03.000Z" itemprop="datePublished">2018-06-13</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/CSS/">CSS</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/13/sass/">sass</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="SASS"><a href="#SASS" class="headerlink" title="SASS"></a>SASS</h3><h4 id="安装"><a href="#安装" class="headerlink" title="安装:"></a>安装:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm install  node-sass  -g<br></code></pre></td></tr></table></figure>
+<p>安装成功<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">node-sass -v<br></code></pre></td></tr></table></figure></p>
+<h4 id="编译"><a href="#编译" class="headerlink" title="编译:"></a>编译:</h4><p>将路径src/css的sass翻译到dist/css,并监听<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">node-sass src/css/ -o dist/css/ -w<br></code></pre></td></tr></table></figure></p>
+<h4 id="语法"><a href="#语法" class="headerlink" title="语法:"></a>语法:</h4><h5 id="1-嵌套"><a href="#1-嵌套" class="headerlink" title="1.嵌套"></a>1.嵌套</h5><p>css:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash">div &#123;<br>    margin:20px;<br>&#125;<br>div p &#123;<br>    padding:20px;<br>&#125;<br></code></pre></td></tr></table></figure></p>
+<p>scss:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">div&#123;<br>    margin:20px;<br>    p&#123;padding:20px;&#125;<br>&#125;<br></code></pre></td></tr></table></figure></p>
+<h5 id="2-变量"><a href="#2-变量" class="headerlink" title="2.变量"></a>2.变量</h5><p>css:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash">a&#123;<br>    color:<span class="hljs-comment">#ddd;</span><br>&#125;<br>p&#123;<br>    color:<span class="hljs-comment">#ddd;</span><br>&#125;<br></code></pre></td></tr></table></figure></p>
+<p>scss:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-variable">$color</span>-<span class="hljs-built_in">test</span>:<span class="hljs-comment">#ddd;</span><br>a&#123;<br>    color:<span class="hljs-variable">$color</span>-<span class="hljs-built_in">test</span>;<br>&#125;<br>p&#123;<br>    color:<span class="hljs-variable">$color</span>-<span class="hljs-built_in">test</span>;<br>&#125;<br></code></pre></td></tr></table></figure></p>
+<h5 id="3-引用-用-amp-引用父选择器"><a href="#3-引用-用-amp-引用父选择器" class="headerlink" title="3.引用,用&amp;引用父选择器"></a>3.引用,用&amp;引用父选择器</h5><p>css:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash">a&#123;<br>    color:<span class="hljs-comment">#111;</span><br>&#125;<br>a:hover&#123;<br>    color:<span class="hljs-comment">#222;</span><br>&#125;<br>a:active&#123;<br>    color:<span class="hljs-comment">#333;</span><br>&#125;<br></code></pre></td></tr></table></figure></p>
+<p>scss:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash">a&#123;<br>    color:<span class="hljs-comment">#111;</span><br>    &amp;:hover&#123;<br>        color:<span class="hljs-comment">#222;</span><br>    &#125;<br>    &amp;:active&#123;<br>        color:<span class="hljs-comment">#333;</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure></p>
+<h5 id="4-导入-import"><a href="#4-导入-import" class="headerlink" title="4.导入,@import"></a>4.导入,@import</h5><p>Sass 的 @import 指令用于导入其他样式模块。</p>
+<p>假设现有 _variables.scss _buttons.scss _forms.scss 三个模块，可以通过一个 main.scss 导入这些模块。</p>
+<p>scss:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">// main.scss<br>@import <span class="hljs-string">"variables"</span>;<br>@import <span class="hljs-string">"buttons"</span>;<br>@import <span class="hljs-string">"forms"</span>;<br></code></pre></td></tr></table></figure></p>
+<p>子模块文件前面的下划线用于告知 Sass 编译器不要把这个模块编译成单独的 CSS 文件</p>
+<h5 id="5-嵌套-import"><a href="#5-嵌套-import" class="headerlink" title="5.嵌套@import"></a>5.嵌套@import</h5><p>Sass 的 @import 指令可以嵌套在选择器内，产生嵌套效果</p>
+<p>scss:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash">@import <span class="hljs-string">"variables"</span>;<br>@import <span class="hljs-string">"mixins"</span>;<br><br>.slamdunk &#123;<br>  min-width: 320px;<br>  @import <span class="hljs-string">"navbar"</span>;<br>  @import <span class="hljs-string">"content"</span>;<br>  @import <span class="hljs-string">"players"</span>;<br>&#125;<br></code></pre></td></tr></table></figure></p>
+<p> 注意:CSS 也有 @import，在 IE 6-8 上会导致多个 CSS 文件不能同时下载的情况，影响网页性能</p>
+<h5 id="6-运算"><a href="#6-运算" class="headerlink" title="6.运算"></a>6.运算</h5><p> Sass 支持对数字标准的算术运算(加法 +，减法 - ，乘法 *，除法 / 和取模 %) 并保留单位;</p>
+<p>由于 CSS 中 / 可作为分隔符，因此除法运算要稍微注意以下情况。</p>
+<p>scss:<br> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash"> p &#123;<br>  font: 10px/8px;                // 原生的CSS，不作为除法<br>  <span class="hljs-variable">$width</span>: 1000px;<br>  width: <span class="hljs-variable">$width</span>/2;               // 使用了变量, 作为除法<br>  width: round(1.5)/2;           // 使用了函数, 作为除法<br>  height: (500px/2);             // 使用了括号, 作为除法<br>  margin-left: 5px + 8px/2px;    // 使用了 +, 作为除法<br>  font: (italic bold 10px/8px);  // 在一个列表（list）中，括号可以被忽略。<br>&#125;<br></code></pre></td></tr></table></figure></p>
+<p> css:<br> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash"> p &#123;<br>  font: 10px/8px;<br>  width: 500px;<br>  height: 250px;<br>  margin-left: 9px;<br>&#125;<br></code></pre></td></tr></table></figure></p>
+<h5 id="7-注释"><a href="#7-注释" class="headerlink" title="7.注释:"></a>7.注释:</h5><p> 单行注释 // 会在 .scss 被编译成 .css 后移除</p>
+<p> scss:<br> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">// Header<br>.header&#123;<br>    height:60px;<br>&#125;<br></code></pre></td></tr></table></figure></p>
+<p> css:<br> .header {<br>     height:60px;<br> }</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/06/13/sass/" data-id="clq61ndhi004hzofq3tp9sd7d" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Seesion--LocalStorage--Cache-Control--Expires--ETag" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/11/Seesion--LocalStorage--Cache-Control--Expires--ETag/" class="article-date">
+  <time datetime="2018-06-11T09:33:05.000Z" itemprop="datePublished">2018-06-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/HTTP/">HTTP</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/11/Seesion--LocalStorage--Cache-Control--Expires--ETag/">Session/LocalStorage/Cache-Control/Expires/ETag</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="Session-与-Cookie-的关系与区别"><a href="#Session-与-Cookie-的关系与区别" class="headerlink" title="Session 与 Cookie 的关系与区别"></a>Session 与 Cookie 的关系与区别</h4><p>关系:</p>
+<p>Session 基于 Cookie 实现的.</p>
+<p>区别:</p>
+<p>Cookie 保存在客户端，每次都随请求发送给 Server.<br>Session 保存在 Server 的内存里，其 Session ID 是通过 Cookie 发送给客户端的.</p>
+<h4 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h4><ol>
+<li>服务器通过 Set-Cookie 头给客户端一串字符串;</li>
+<li>客户端每次访问相同域名的网页时,必须带上这段字符串;</li>
+<li>客户端要在一段时间内保存这个Cookie.</li>
+<li>Cookie最大存储量4K.</li>
+<li>Cookie默认在用户关闭页面后就失效,后台代码可以任意设置 Cookeie 的过期时间.</li>
+</ol>
+<h4 id="什么是Seesion"><a href="#什么是Seesion" class="headerlink" title="什么是Seesion?"></a>什么是Seesion?</h4><ol>
+<li>服务器将SessionID(随机数)通过Cookie发给客户端;</li>
+<li>客户端访问服务器时,服务器读取SessionID;</li>
+<li>服务器有一块内存(哈希表)保存了所有Session</li>
+<li>通过SessionID我们可以得到用户的隐私信息,如id,email;</li>
+<li>这块内存(哈希表)就是服务器上的所有session.</li>
+</ol>
+<h4 id="localStorage"><a href="#localStorage" class="headerlink" title="localStorage"></a>localStorage</h4><h5 id="什么是localStorage"><a href="#什么是localStorage" class="headerlink" title="什么是localStorage?"></a>什么是localStorage?</h5><p>持久化存储</p>
+<p>HTML5里的API<br>window.localStorage</p>
+<h5 id="方法"><a href="#方法" class="headerlink" title="方法:"></a>方法:</h5><ol>
+<li>localStorage.setItem();</li>
+<li>localStorage.getItem();</li>
+<li>localStorage.removeItem();</li>
+</ol>
+<h5 id="特点"><a href="#特点" class="headerlink" title="特点:"></a>特点:</h5><ol>
+<li>localStorage 跟 HTTP 无关;</li>
+<li>HTTP不会带上 localStorage 的值;</li>
+<li>只有相同域名的页面才能互相读取 localStorage(没有同源那么严格);</li>
+<li>每个域名localStorage 最大存储量为5 MB 左右 (每个浏览器不一样);</li>
+<li>常用场景: 记录有没有提示过用户 (没有用的信息,不能记录密码);</li>
+<li>localStorage 永久有效,除非用户清除缓存.</li>
+</ol>
+<h6 id="LocalStorage与Cookie的区别"><a href="#LocalStorage与Cookie的区别" class="headerlink" title="LocalStorage与Cookie的区别."></a>LocalStorage与Cookie的区别.</h6><p>Cookie在客户端每次发送请求跟服务器响应都会带上,通过服务器设置过期时间,最大4KB.<br>LocalStorage跟HTTP无关,请求时不会带上它的值,它永久有效.最大5MB.</p>
+<h5 id="SessionStorage-会话存储"><a href="#SessionStorage-会话存储" class="headerlink" title="SessionStorage(会话存储)"></a>SessionStorage(会话存储)</h5><ol>
+<li>SessionStorage 跟 HTTP 无关;</li>
+<li>HTTP不会带上 SessionStorage 的值;</li>
+<li>只有相同域名的页面才能互相读取 SessionStorage(没有同源那么严格);</li>
+<li>每个域名lSessionStorage 最大存储量为5 MB 左右 (每个浏览器不一样);</li>
+<li>SessionStorage 在用户关闭页面(会话结束)后失效.</li>
+</ol>
+<h5 id="SessionStorage与LocalStorage区别"><a href="#SessionStorage与LocalStorage区别" class="headerlink" title="SessionStorage与LocalStorage区别"></a>SessionStorage与LocalStorage区别</h5><p>LocalStorage永久有效,SessionStorage页面关闭后失效.</p>
+<h4 id="HTTP-缓存-Cache"><a href="#HTTP-缓存-Cache" class="headerlink" title="HTTP 缓存(Cache)"></a>HTTP 缓存(Cache)</h4><h5 id="Cache-Control"><a href="#Cache-Control" class="headerlink" title="Cache-Control"></a>Cache-Control</h5><p>用来区分对应缓存机制的支持情况,在请求头和响应头都支持这个属性.</p>
+<p>假如在缓存有效期内,对于同样的URL,浏览器不会对服务器发出HTTP请求,而是从内存中获取数据.</p>
+<p>时间是经过多久时间后过期.</p>
+<h5 id="更新缓存"><a href="#更新缓存" class="headerlink" title="更新缓存"></a>更新缓存</h5><p>可以做入口改动,利用URL的查询参数更新缓存.<br>比如:<br>在HTML文件里改对应文件的URL.<link rel="stylesheet" href="css/style.css?v2">,</p>
+<h5 id="为什么首页不能设置Cache-Control"><a href="#为什么首页不能设置Cache-Control" class="headerlink" title="为什么首页不能设置Cache-Control"></a>为什么首页不能设置Cache-Control</h5><p>因为用户不能从服务器中获取最新网页.</p>
+<h5 id="Expires"><a href="#Expires" class="headerlink" title="Expires"></a>Expires</h5><p>如果设置Cache-Control那么Expires会被忽略.</p>
+<p>时间是一个时间点,即几分几秒过期,时间指的是本地时间,不靠谱.</p>
+<h5 id="MD5"><a href="#MD5" class="headerlink" title="MD5"></a>MD5</h5><p>一个摘要算法</p>
+<p>Bash里 输入md5 文件名即转成MD5.</p>
+<p>如果内容差异越小,那么MD5值越大.</p>
+<h5 id="ETag"><a href="#ETag" class="headerlink" title="ETag"></a>ETag</h5><p>服务器返回一个ETag,内容是MD5给浏览器,浏览器下次发送请求时,请求时带上请求头if-none-match,那么内容不需要下载,服务器返回状态码304,304返回的第四部分是空的.</p>
+<h5 id="Cache-Control和ETag"><a href="#Cache-Control和ETag" class="headerlink" title="Cache-Control和ETag"></a>Cache-Control和ETag</h5><p>Cache-Control是未过期不发送请求,ETag是发送请求假如不匹配,但是不返回内容,即响应体是空的.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/06/11/Seesion--LocalStorage--Cache-Control--Expires--ETag/" data-id="clq61ndgg0021zofqt7e17r06" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTTP/">HTTP</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Cookie-注册与登陆" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/10/Cookie-注册与登陆/" class="article-date">
+  <time datetime="2018-06-10T08:07:22.000Z" itemprop="datePublished">2018-06-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/HTTP/">HTTP</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/10/Cookie-注册与登陆/">Cookie-注册与登陆</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h3><h4 id="Cookie是什么"><a href="#Cookie是什么" class="headerlink" title="Cookie是什么?"></a>Cookie是什么?</h4><p>Cookie 是服务器保存在浏览器的一小段文本信息，每个 Cookie 的大小一般不能超过4KB。浏览器每次向服务器发出请求，就会自动附上这段信息。Cookie 主要用来分辨两个请求是否来自同一个浏览器，以及用来保存一些状态信息。它的常用场合有以下一些。</p>
+<ol>
+<li>对话（session）管理：保存登录、购物车等需要记录的信息。</li>
+<li>个性化：保存用户的偏好，比如网页的字体大小、背景色等等。</li>
+<li>追踪：记录和分析用户行为。</li>
+</ol>
+<h4 id="Cookie属性"><a href="#Cookie属性" class="headerlink" title="Cookie属性"></a>Cookie属性</h4><p>名称 name (必须)<br>值 value<br>域 domain<br>路径 path<br>失效时间 expires<br>安全标志 secure 一个带有安全属性的 cookie 只有在请求使用SSL和HTTPS协议的时候才会被发送到服务器<br>HttpOnly 设置该属性js不能从document.cookie;XMLHttpRequest;Request APIs访问Cookie</p>
+<h4 id="Cookie-特点"><a href="#Cookie-特点" class="headerlink" title="Cookie 特点"></a>Cookie 特点</h4><ol>
+<li>服务器通过 Set-Cookie 响应头设置 Cookie</li>
+<li>浏览器得到 Cookie 之后，每次请求都要带上 Cookie</li>
+<li>服务器读取 Cookie 就知道登录用户的信息,例如:account,email,password等.</li>
+<li>不同的浏览器对Cookie数量和大小限制不一样,一般来说,单个域名的Cookdie不应超过30个,每个大小不超过4KB.</li>
+</ol>
+<h4 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h4><ol>
+<li><p>我在 Chrome 登录了得到 Cookie，用 Safari 访问，Safari 会带上 Cookie 吗?<br> 不会,Cookie只有用之前获得Cookie的浏览器才会有.</p>
+</li>
+<li><p>Cookie 存在哪?<br> Windows 存在 C 盘的一个文件里</p>
+</li>
+<li><p>Cookie会被用户篡改吗？<br> 可以,Session 来解决这个问题，防止用户篡改.</p>
+</li>
+<li><p>Cookie 有效期吗？<br> 默认有效期20分钟左右，不同浏览器策略不同<br> 后端可以强制设置有效期，具体语法看 MDN</p>
+</li>
+<li><p>Cookie 遵守同源策略吗？<br> 当请求 qq.com 下的资源时,浏览器会默认带上 qq.com 对应的 Cookie,不会带上 baidu.com 对应的 Cookie;<br> 当请求 v.qq.com 下的资源时,浏览器不仅会带上 v.qq.com 的Cookie,还会带上 qq.com 的 Cookie;<br> 二级域名,三级域名的Cookie都会带上.<br> 另外 Cookie 还可以根据路径做限制,这个功能用得比较少.;</p>
+</li>
+<li><p>.服务器端可以通过设置 Expires、max-age 两个标签将 Cookie 设置为过期状态;JavaScript 可以通过document.cookie API 删除 Cookie.</p>
+</li>
+</ol>
+<p>下面是一个带Cookie响应头<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">HTTP /1.1 200 OK<br>Content-type:text/html<br>Set-Cookie:name=value; expires = Mon, 22-Jan-07 07:10:24 GMT; domain=.wrox.com path=/; secure; HttpOnly<br></code></pre></td></tr></table></figure></p>
+<h4 id="用户注册过程中浏览器与服务器发生了什么"><a href="#用户注册过程中浏览器与服务器发生了什么" class="headerlink" title="用户注册过程中浏览器与服务器发生了什么?"></a>用户注册过程中浏览器与服务器发生了什么?</h4><h5 id="前端-浏览器"><a href="#前端-浏览器" class="headerlink" title="前端(浏览器)"></a>前端(浏览器)</h5><ol>
+<li>HTML里做一个Form表单,填入账号,Email,密码,确认密码等信息.</li>
+<li>HTML表单里每行隐藏一个span标签,显示error属性.</li>
+<li>用JS获取用户填入的信息后,先进行前端认证,如填入的格式,密码是否相同等</li>
+<li>假如错误,将错误信息返回给error标签,显示信息.</li>
+<li>假如正确,用AJAX发送post请求(这是一个Promise对象),路径为服务器端注册页面,内容为用户提交的数据.</li>
+<li>服务器处理信息,返回给浏览器,假如正确执行XXX,假如错误则返回错误信息,前端把信息翻译后传到浏览器上.</li>
+</ol>
+<h5 id="后端-服务器"><a href="#后端-服务器" class="headerlink" title="后端(服务器)"></a>后端(服务器)</h5><ol>
+<li>如果请求为GET,读取数据库数据,返回状态码200,并返回html字符串给浏览器.</li>
+<li>如果请求为POST,先解析浏览器发送过来的request字符串,变为对象,分析传过来的数据,如格式,长度,密码是否相同等,账号是否存在,假如错误,则返回状态码400,并返回错误信息给浏览器.</li>
+<li>假如都正确,则写入数据库,返回状态码200.</li>
+</ol>
+<h4 id="用户登录程中浏览器与服务器发生了什么"><a href="#用户登录程中浏览器与服务器发生了什么" class="headerlink" title="用户登录程中浏览器与服务器发生了什么?"></a>用户登录程中浏览器与服务器发生了什么?</h4><h5 id="前端-浏览器-1"><a href="#前端-浏览器-1" class="headerlink" title="前端(浏览器)"></a>前端(浏览器)</h5><ol>
+<li>HTML里做一个Form表单,填入账号,Email,密码,确认密码等信息.</li>
+<li>HTML表单里每行隐藏一个span标签,显示error属性.</li>
+<li>用JS获取用户填入的信息后,先进行前端认证,如填入的格式,密码是否相同等</li>
+<li>假如错误,将错误信息返回给error标签,显示信息.</li>
+<li>假如正确,用AJAX发送GET请求,路径为服务器端登陆页面,内容为账号密码.</li>
+<li>服务器处理信息,返回给浏览器,并给浏览器一个Cookie假如验证成功则转跳页面,假如失败则错误提示.</li>
+<li>以后每次进入该页面,HTTP请求头都会包含之前服务器所返回的Cookie.</li>
+<li>页面渲染服务器传来这个Cookie的信息.</li>
+</ol>
+<h5 id="后端-服务器-1"><a href="#后端-服务器-1" class="headerlink" title="后端(服务器)"></a>后端(服务器)</h5><ol>
+<li>假如用第一次登陆,服务器在数据库查询该账号的信息是否匹配.</li>
+<li>假如不匹配,则返回401.</li>
+<li>假如匹配.则返回200状态码,并返回一个Cookie给浏览器.并返回该Cookie对应的信息,渲染页面.</li>
+<li>用户发送请求,请求中带该Cookie,则服务器返回相应的Cookie的信息的页面信息,给浏览器渲染.</li>
+<li>用户发送请求,不带有该Cookie,则服务器返回共用的页面信息,交给浏览渲染.</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/06/10/Cookie-注册与登陆/" data-id="clq61ndfb000czofq2qzxwjuy" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTTP/">HTTP</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-异步同步与回调" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/09/异步同步与回调/" class="article-date">
+  <time datetime="2018-06-09T10:44:23.000Z" itemprop="datePublished">2018-06-09</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JS/">JS</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/09/异步同步与回调/">异步同步与回调</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="异步"><a href="#异步" class="headerlink" title="异步"></a>异步</h3><p>不等结果,直接进行下一步</p>
+<h5 id="异步与同步例子"><a href="#异步与同步例子" class="headerlink" title="异步与同步例子"></a>异步与同步例子</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-keyword">function</span> 异步()&#123;<br>    setTimeout(<span class="hljs-function"><span class="hljs-title">function</span></span>()&#123;<br>        console.log(<span class="hljs-string">'异步做事'</span>);<br>    &#125;,5000)<br>&#125;<br><br><br><span class="hljs-keyword">function</span> 同步()&#123;<br>    console.log(<span class="hljs-string">'同步做事'</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>调用<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">异步();<br>console.log(1);<br>//1<br>//异步做事<br></code></pre></td></tr></table></figure></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">同步();<br>console.log(1);<br>//同步做事<br>//1<br></code></pre></td></tr></table></figure>
+<p>如果是做完事再打1 —同步<br>如果是不做完就打1 —异步</p>
+<h3 id="回调"><a href="#回调" class="headerlink" title="回调"></a>回调</h3><p>回调是拿到异步结果的一种方式,回调也可以拿同步结果.<br>fn1将别人传给它的fn2调用了,这种调用就是回调.</p>
+<h5 id="使用异步回调"><a href="#使用异步回调" class="headerlink" title="使用异步回调"></a>使用异步回调</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-keyword">function</span> fn1(callback)&#123;<br>    var n = 0;<br>    var id = setInterval(()=&gt;&#123;<br>        console.log(n);<br>        n += 1;<br>        <span class="hljs-keyword">if</span>(n &gt;= 5)&#123;<br>        window.clearInterval(id);<br>        callback();<br>        &#125;<br>    &#125;,500)<br>&#125;<br><br><span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">fn2</span></span>()&#123;<br>    console.log(<span class="hljs-string">'异步结束后再回调该函数'</span>);<br>&#125;<br><br>fn1(()=&gt;&#123;<br>    fn2();<br>&#125;);<br></code></pre></td></tr></table></figure>
+<p>当打印完n后,,再执行回调函数</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/06/09/异步同步与回调/" data-id="clq61ndi6005vzofqra5w7vxs" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS/">JS</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/page/5/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/7/">Next &raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/ES6/">ES6</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JS/">JS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/TS/">TS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/node/">node</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/vue/">vue</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/webpack/">webpack</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/业务代码/">业务代码</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/库/">库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/笔记/">笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机基础/">计算机基础</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/面试题/">面试题</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/">ES6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TS/">TS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/">webpack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/业务代码/">业务代码</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/库/">库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机基础/">计算机基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试题/">面试题</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CSS/" style="font-size: 18.75px;">CSS</a> <a href="/tags/ES6/" style="font-size: 16.25px;">ES6</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/HTTP/" style="font-size: 15px;">HTTP</a> <a href="/tags/JS/" style="font-size: 20px;">JS</a> <a href="/tags/TS/" style="font-size: 17.5px;">TS</a> <a href="/tags/git/" style="font-size: 11.25px;">git</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/vue/" style="font-size: 18.75px;">vue</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/业务代码/" style="font-size: 13.75px;">业务代码</a> <a href="/tags/库/" style="font-size: 12.5px;">库</a> <a href="/tags/笔记/" style="font-size: 10px;">笔记</a> <a href="/tags/计算机基础/" style="font-size: 10px;">计算机基础</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a> <a href="/tags/面试题/" style="font-size: 10px;">面试题</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/02/02/手写Promise-all/">手写Promise.all</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/02/Canvas和SVG区别/">Canvas和SVG区别</a>
+          </li>
+        
+          <li>
+            <a href="/2020/02/12/常见排序算法/">常见排序算法</a>
+          </li>
+        
+          <li>
+            <a href="/2020/01/17/TS声明/">TS声明</a>
+          </li>
+        
+          <li>
+            <a href="/2020/01/16/TS高级类型/">TS类型</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2023 Roxas Deng<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

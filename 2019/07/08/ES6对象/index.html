@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>ES6对象 | RoxasDengBlog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="生成空对象1. es51234567var a = new Object()var a = &amp;#123;&amp;#125;&amp;#123;    _proto_:&amp;#125; 2. es612345var a = Object.create(null)&amp;#123;&amp;#125; es5 的还有原型,es6 是真正的空对象 属性定义1. key 与属性相同可简写123456789101112var a = 1">
+<meta name="keywords" content="ES6">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ES6对象">
+<meta property="og:url" content="http://yoursite.com/2019/07/08/ES6对象/index.html">
+<meta property="og:site_name" content="RoxasDengBlog">
+<meta property="og:description" content="生成空对象1. es51234567var a = new Object()var a = &amp;#123;&amp;#125;&amp;#123;    _proto_:&amp;#125; 2. es612345var a = Object.create(null)&amp;#123;&amp;#125; es5 的还有原型,es6 是真正的空对象 属性定义1. key 与属性相同可简写123456789101112var a = 1">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:updated_time" content="2023-12-15T01:47:13.828Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ES6对象">
+<meta name="twitter:description" content="生成空对象1. es51234567var a = new Object()var a = &amp;#123;&amp;#125;&amp;#123;    _proto_:&amp;#125; 2. es612345var a = Object.create(null)&amp;#123;&amp;#125; es5 的还有原型,es6 是真正的空对象 属性定义1. key 与属性相同可简写123456789101112var a = 1">
+  
+    <link rel="alternate" href="/atom.xml" title="RoxasDengBlog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">RoxasDengBlog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-ES6对象" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/08/ES6对象/" class="article-date">
+  <time datetime="2019-07-08T09:42:13.000Z" itemprop="datePublished">2019-07-08</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/ES6/">ES6</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      ES6对象
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="生成空对象"><a href="#生成空对象" class="headerlink" title="生成空对象"></a>生成空对象</h4><h5 id="1-es5"><a href="#1-es5" class="headerlink" title="1. es5"></a>1. es5</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash">var a = new Object()<br><br>var a = &#123;&#125;<br><br>&#123;<br>    _proto_:<br>&#125;<br></code></pre></td></tr></table></figure>
+<h5 id="2-es6"><a href="#2-es6" class="headerlink" title="2. es6"></a>2. es6</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">var a = Object.create(null)<br><br>&#123;<br><br>&#125;<br></code></pre></td></tr></table></figure>
+<p>es5 的还有原型,es6 是真正的空对象</p>
+<h4 id="属性定义"><a href="#属性定义" class="headerlink" title="属性定义"></a>属性定义</h4><h5 id="1-key-与属性相同可简写"><a href="#1-key-与属性相同可简写" class="headerlink" title="1. key 与属性相同可简写"></a>1. key 与属性相同可简写</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs bash">var a = 1<br>    b = 2<br><br>var obj =&#123;<br>    a,<br>    b<br>&#125;<br>//<br>&#123;<br>    a:1,<br>    b:2<br>&#125;<br></code></pre></td></tr></table></figure>
+<h5 id="2-使用变量作为-key"><a href="#2-使用变量作为-key" class="headerlink" title="2. 使用变量作为 key"></a>2. 使用变量作为 key</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs bash">es5:<br><br>var name = <span class="hljs-string">'a'</span><br>var obj = &#123;&#125;<br>obj[name] = 1<br>&#123;<br>    a:1<br>&#125;<br><br>es6:<br>var name = <span class="hljs-string">'a'</span><br>var obj = &#123;[name]:1&#125;<br>&#123;<br>    a:1<br>&#125;<br></code></pre></td></tr></table></figure>
+<h4 id="4-方法定义"><a href="#4-方法定义" class="headerlink" title="4 方法定义"></a>4 方法定义</h4><p>对象属性可以是一个函数,getter,setter 方法.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash">var obj = &#123;<br>    _age:18<br>    get <span class="hljs-function"><span class="hljs-title">age</span></span>()&#123;<span class="hljs-built_in">return</span> obj._age&#125;<br>    <span class="hljs-built_in">set</span> age(value)&#123;value &lt; 100 ? obj._age = value : obj._age = 100&#125;<br>&#125;<br><br>obj.age = 1000<br>obj&#123;<br>    age:100<br>&#125;<br></code></pre></td></tr></table></figure>
+<h4 id="对象拷贝"><a href="#对象拷贝" class="headerlink" title="对象拷贝"></a>对象拷贝</h4><p>Object.assign 与…</p>
+<ol>
+<li>key 相同时,后面定义的覆盖前面的</li>
+<li>改变被拷贝对对象的属性假如是对象,只会拷贝引用地址,原对象也会改变</li>
+<li>仅拷贝可枚举对象.</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs bash">var obj1 = &#123;a:1,b:2,c:3,obj:&#123;name:<span class="hljs-string">'a'</span>&#125;&#125;<br>var obj2 = Object.assign(&#123;&#125;,obj1)<br><br>obj2.a = 100;<br>obj1.a //1<br>obj2.obj.name = <span class="hljs-string">'b'</span><br>obj1.obj.name //b<br><br>var obj3 = &#123;..obj1&#125;<br>obj3 = &#123;a:1,b:2,c:3&#125;<br><br>obj3.a = 100;<br>obj1.a //1<br><br>var obj1 = &#123;a:1,b:2,c:3&#125;<br>var obj2 = &#123;a:2,b:2,c:3,d4&#125;<br>var obj3 = &#123;...obj1,...obj2&#125;<br><br>obj3 =&#123;<br>    a:2,<br>    b:2,<br>    c:3,<br>    d4<br>&#125;<br></code></pre></td></tr></table></figure>
+<h4 id="Oject-definedProperty"><a href="#Oject-definedProperty" class="headerlink" title="Oject.definedProperty()"></a>Oject.definedProperty()</h4><p>该方法会直接在一个对象上定义一个新属性,或修改一个属性的现有属性,并返回这个对象.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash">Object.definedProperty(obj,prop,descriptor)<br><br>Object.definedProperty(obj,<span class="hljs-string">'x'</span>,&#123;<br>    <span class="hljs-function"><span class="hljs-title">get</span></span>()&#123;&#125;<br>    <span class="hljs-built_in">set</span>(value)&#123;&#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
+<h5 id="属性描述符"><a href="#属性描述符" class="headerlink" title="属性描述符"></a>属性描述符</h5><ol>
+<li>configurable<br>是否可再次配置,默认 false</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash">Object.definedProperty(o,<span class="hljs-string">'age'</span>,&#123;writable:fasle&#125;)<br>o.age = 1;<br>o.age //undefined<br>Object.definedProperty(o,<span class="hljs-string">'age'</span>,&#123;configurable:<span class="hljs-literal">true</span>&#125;)//报错<br>Object.definedProperty(o,<span class="hljs-string">'age'</span>,&#123;writable:<span class="hljs-literal">true</span>&#125;)//报错<br><br>//刷新<br>Object.definedProperty(o,<span class="hljs-string">'age'</span>,&#123;configurable:<span class="hljs-literal">true</span>&#125;)<br>Object.definedProperty(o,<span class="hljs-string">'age'</span>,&#123;writable:fasle&#125;)<br>Object.definedProperty(o,<span class="hljs-string">'age'</span>,&#123;writable:<span class="hljs-literal">true</span>&#125;)<br></code></pre></td></tr></table></figure>
+<ol start="2">
+<li>enumrable<br>是否能枚举,默认 false</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash">var a = [1,2,3]<br><span class="hljs-keyword">for</span>(<span class="hljs-built_in">let</span> key <span class="hljs-keyword">in</span> a)&#123;<br>    console.log(key)//0,1,2<br>&#125;<br><br>Object.definedProperty(a,<span class="hljs-string">'0'</span>,&#123;enumrable:fasle&#125;)<br><span class="hljs-keyword">for</span>(<span class="hljs-built_in">let</span> key <span class="hljs-keyword">in</span> a)&#123;<br>    console.log(key)//1,2<br>&#125;<br></code></pre></td></tr></table></figure>
+<ol start="3">
+<li><p>value</p>
+</li>
+<li><p>writable<br>属性是否可写入,默认 true</p>
+</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">Object.definedProperty(o,<span class="hljs-string">'age'</span>,&#123;writable:fasle&#125;)<br>o.age = 1;<br>o.age //undefined<br></code></pre></td></tr></table></figure>
+<ol start="5">
+<li>get</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">Object.definedProperty(o,<span class="hljs-string">'age'</span>,&#123;<span class="hljs-function"><span class="hljs-title">get</span></span>()&#123;<br>    <span class="hljs-built_in">return</span> <span class="hljs-string">'100'</span><br>&#125;&#125;)<br>o.age = 1;<br>o.age //100<br></code></pre></td></tr></table></figure>
+<ol start="6">
+<li>set</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">Object.definedProperty(o,<span class="hljs-string">'age'</span>,&#123;<span class="hljs-built_in">set</span>(val)&#123;<br>    <span class="hljs-built_in">return</span> val &lt; 100 ? val : 100<br>&#125;&#125;)<br>o.age = 1000;<br>o.age //100<br></code></pre></td></tr></table></figure>
+<h4 id="Oject-definedProperties"><a href="#Oject-definedProperties" class="headerlink" title="Oject.definedProperties()"></a>Oject.definedProperties()</h4><p>定义多个属性</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash">Object.definedProperties(obj,&#123;<br>    <span class="hljs-string">'a'</span>:&#123;<br>        value:1,<br>        writable:<span class="hljs-literal">true</span><br>    &#125;,<br>    <span class="hljs-string">'b'</span>:&#123;<br>        value:2,<br>        writable:<span class="hljs-literal">true</span><br>    &#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/07/08/ES6对象/" data-id="clq61ndfs000uzofq5r2dgry9" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ES6/">ES6</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/07/09/Symbol/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Symbol&amp;迭代器
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/07/08/es6变量声明/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">ES6变量声明</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/ES6/">ES6</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JS/">JS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/TS/">TS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/node/">node</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/vue/">vue</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/webpack/">webpack</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/业务代码/">业务代码</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/库/">库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/笔记/">笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机基础/">计算机基础</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/面试题/">面试题</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/">ES6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TS/">TS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/">webpack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/业务代码/">业务代码</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/库/">库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机基础/">计算机基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试题/">面试题</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CSS/" style="font-size: 18.75px;">CSS</a> <a href="/tags/ES6/" style="font-size: 16.25px;">ES6</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/HTTP/" style="font-size: 15px;">HTTP</a> <a href="/tags/JS/" style="font-size: 20px;">JS</a> <a href="/tags/TS/" style="font-size: 17.5px;">TS</a> <a href="/tags/git/" style="font-size: 11.25px;">git</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/vue/" style="font-size: 18.75px;">vue</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/业务代码/" style="font-size: 13.75px;">业务代码</a> <a href="/tags/库/" style="font-size: 12.5px;">库</a> <a href="/tags/笔记/" style="font-size: 10px;">笔记</a> <a href="/tags/计算机基础/" style="font-size: 10px;">计算机基础</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a> <a href="/tags/面试题/" style="font-size: 10px;">面试题</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/02/02/手写Promise-all/">手写Promise.all</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/02/Canvas和SVG区别/">Canvas和SVG区别</a>
+          </li>
+        
+          <li>
+            <a href="/2020/02/12/常见排序算法/">常见排序算法</a>
+          </li>
+        
+          <li>
+            <a href="/2020/01/17/TS声明/">TS声明</a>
+          </li>
+        
+          <li>
+            <a href="/2020/01/16/TS高级类型/">TS类型</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2023 Roxas Deng<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

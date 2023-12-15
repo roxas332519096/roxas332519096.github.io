@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>移动端页面的做法-响应式 | RoxasDengBlog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="手机端页面的做法 1 学会 media query(媒体查询)1.CSS meida选择器控制@media媒体查询 max-width,0-max,min-width:min-无穷;当条件都满足时,优先级谁先后写谁优先1234567891011121314151617@media (max-width:600)&amp;#123;    body &amp;#123;        background: blu">
+<meta name="keywords" content="CSS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="移动端页面的做法-响应式">
+<meta property="og:url" content="http://yoursite.com/2018/05/27/移动端页面的做法-响应式/index.html">
+<meta property="og:site_name" content="RoxasDengBlog">
+<meta property="og:description" content="手机端页面的做法 1 学会 media query(媒体查询)1.CSS meida选择器控制@media媒体查询 max-width,0-max,min-width:min-无穷;当条件都满足时,优先级谁先后写谁优先1234567891011121314151617@media (max-width:600)&amp;#123;    body &amp;#123;        background: blu">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:updated_time" content="2023-12-15T01:47:13.854Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="移动端页面的做法-响应式">
+<meta name="twitter:description" content="手机端页面的做法 1 学会 media query(媒体查询)1.CSS meida选择器控制@media媒体查询 max-width,0-max,min-width:min-无穷;当条件都满足时,优先级谁先后写谁优先1234567891011121314151617@media (max-width:600)&amp;#123;    body &amp;#123;        background: blu">
+  
+    <link rel="alternate" href="/atom.xml" title="RoxasDengBlog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">RoxasDengBlog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-移动端页面的做法-响应式" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/27/移动端页面的做法-响应式/" class="article-date">
+  <time datetime="2018-05-27T12:29:12.000Z" itemprop="datePublished">2018-05-27</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/CSS/">CSS</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      移动端页面的做法-响应式
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>手机端页面的做法</p>
+<h3 id="1-学会-media-query-媒体查询"><a href="#1-学会-media-query-媒体查询" class="headerlink" title="1 学会 media query(媒体查询)"></a>1 学会 media query(媒体查询)</h3><h4 id="1-CSS-meida选择器控制"><a href="#1-CSS-meida选择器控制" class="headerlink" title="1.CSS meida选择器控制"></a>1.CSS meida选择器控制</h4><p>@media媒体查询 max-width,0-max,min-width:min-无穷;<br>当条件都满足时,优先级谁先后写谁优先<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs bash">@media (max-width:600)&#123;<br>    body &#123;<br>        background: blue;<br>    &#125;<br>&#125;<br><br>@media (min-width:600 and max-width:800) &#123; <br>    body&#123;<br>        background: red;<br>    &#125;<br>&#125;<br><br>@media (min-width:800) &#123;<br>    body&#123;<br>        background: green;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure></p>
+<h4 id="2-引入CSS文件控制"><a href="#2-引入CSS文件控制" class="headerlink" title="2.引入CSS文件控制:"></a>2.引入CSS文件控制:</h4><p>当设备窗口宽度0-500px时候mobile.css文件生效.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;link rel=<span class="hljs-string">"stylesheet"</span> href=<span class="hljs-string">"mobile.css"</span> media=<span class="hljs-string">"(max-width:500px)"</span>&gt;<br></code></pre></td></tr></table></figure></p>
+<h3 id="2-学会要设计图（没图不做）"><a href="#2-学会要设计图（没图不做）" class="headerlink" title="2 学会要设计图（没图不做）"></a>2 学会要设计图（没图不做）</h3><h4 id="1-实在要做也行，丑可别怪我"><a href="#1-实在要做也行，丑可别怪我" class="headerlink" title="1 实在要做也行，丑可别怪我"></a>1 实在要做也行，丑可别怪我</h4><h3 id="3-学会隐藏元素"><a href="#3-学会隐藏元素" class="headerlink" title="3 学会隐藏元素"></a>3 学会隐藏元素</h3><h4 id="Mobile-first"><a href="#Mobile-first" class="headerlink" title="Mobile-first"></a>Mobile-first</h4><h4 id="Desktop-first"><a href="#Desktop-first" class="headerlink" title="Desktop-first"></a>Desktop-first</h4><p>做一下响应式导航</p>
+<p>预览:<br><a href="https://roxas332519096.github.io/notes-demo/0527-%E7%A7%BB%E5%8A%A8%E7%AB%AF%E9%A1%B5%E9%9D%A2%E7%9A%84%E5%81%9A%E6%B3%95-%E5%93%8D%E5%BA%94%E5%BC%8F.html" target="_blank" rel="noopener">https://roxas332519096.github.io/notes-demo/0527-%E7%A7%BB%E5%8A%A8%E7%AB%AF%E9%A1%B5%E9%9D%A2%E7%9A%84%E5%81%9A%E6%B3%95-%E5%93%8D%E5%BA%94%E5%BC%8F.html</a></p>
+<p>代码如下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;!DOCTYPE html&gt;<br>&lt;html lang=<span class="hljs-string">"zh-CN"</span>&gt;<br>&lt;head&gt;<br>    &lt;meta charset=<span class="hljs-string">"UTF-8"</span>&gt;<br>    &lt;meta name=<span class="hljs-string">"viewport"</span> content=<span class="hljs-string">"width=device-width, initial-scale=1.0"</span>&gt;<br>    &lt;title&gt;响应式导航&lt;/title&gt;<br>    &lt;style&gt;<br>        *&#123;margin: 0; padding: 0;&#125;<br>        ul,li&#123;list-style: none;&#125;<br>        a&#123;color: inherit;text-decoration: none;&#125;<br><br>        .logo &#123;<br>            width: 60px;<br>            height: 60px;<br>            background: grey;<br>            border-radius: 30px;<br>        &#125;<br><br>        .Clearfix::after&#123;<br>            content: <span class="hljs-string">''</span>;<br>            display: block;<br>            clear: both;<br>        &#125;<br><br>        header&#123;<br>            padding: 10px;<br>            position: relative;<br>        &#125;<br>        <br>        .nav&#123;<br>            display: none;<br>            background: grey;<br>            margin-top: 10px;<br>        &#125;<br>        <br>        .nav.active&#123;<br>            display: flex;<br>            justify-content: space-between;<br>        &#125;<br><br>        .nav2&#123;display: none;&#125;<br>        <br>        header &gt; button &#123;<br>            position: absolute;<br>            right: 20px;<br>            top: 26px;<br>        &#125;<br><br>        @media (min-width:451px) &#123;<br>          header &gt; button &#123;<br>            display: none;<br>          &#125;<br>          .nav, .nav.nav.active&#123;display: none;&#125;<br>          .nav2&#123;display: block;&#125;<br>          header &#123;<br>              display: flex;<br>              align-items: center;<br>          &#125;<br>          header .nav2 &#123;<br>              display: flex;<br>              margin-left: 20px;<br>          &#125;<br>          header .nav2&gt;li &#123;<br>              margin: 0 10px;<br>          &#125;<br>        &#125;<br>    &lt;/style&gt;<br>&lt;/head&gt;<br>&lt;body&gt;<br>    &lt;header&gt;<br>        &lt;div class=<span class="hljs-string">"logo"</span>&gt;&lt;/div&gt;<br>        &lt;button id=<span class="hljs-string">"xx"</span>&gt;菜单&lt;/button&gt;<br>        &lt;ul id=<span class="hljs-string">"yy"</span> class=<span class="hljs-string">"nav"</span>&gt;<br>            &lt;li&gt;&lt;a href=<span class="hljs-string">""</span>&gt;导航1&lt;/a&gt;&lt;/li&gt;<br>            &lt;li&gt;&lt;a href=<span class="hljs-string">""</span>&gt;导航2&lt;/a&gt;&lt;/li&gt;<br>            &lt;li&gt;&lt;a href=<span class="hljs-string">""</span>&gt;导航3&lt;/a&gt;&lt;/li&gt;<br>            &lt;li&gt;&lt;a href=<span class="hljs-string">""</span>&gt;导航4&lt;/a&gt;&lt;/li&gt;<br>            &lt;li&gt;&lt;a href=<span class="hljs-string">""</span>&gt;导航5&lt;/a&gt;&lt;/li&gt;<br>        &lt;/ul&gt;<br>        &lt;ul class=<span class="hljs-string">"nav2"</span>&gt;<br>                &lt;li&gt;&lt;a href=<span class="hljs-string">""</span>&gt;导航1&lt;/a&gt;&lt;/li&gt;<br>                &lt;li&gt;&lt;a href=<span class="hljs-string">""</span>&gt;导航2&lt;/a&gt;&lt;/li&gt;<br>                &lt;li&gt;&lt;a href=<span class="hljs-string">""</span>&gt;导航3&lt;/a&gt;&lt;/li&gt;<br>                &lt;li&gt;&lt;a href=<span class="hljs-string">""</span>&gt;导航4&lt;/a&gt;&lt;/li&gt;<br>                &lt;li&gt;&lt;a href=<span class="hljs-string">""</span>&gt;导航5&lt;/a&gt;&lt;/li&gt;<br>            &lt;/ul&gt;<br>    &lt;/header&gt;<br>    &lt;script&gt;<br>        xx.onclick = <span class="hljs-function"><span class="hljs-title">function</span></span>()&#123;<br>            yy.classList.toggle(<span class="hljs-string">'active'</span>);<br>        &#125;<br>    &lt;/script&gt;<br>&lt;/body&gt;<br>&lt;/html&gt;<br></code></pre></td></tr></table></figure></p>
+<h3 id="4-手机端要加一个-meta"><a href="#4-手机端要加一个-meta" class="headerlink" title="4 手机端要加一个 meta"></a>4 手机端要加一个 meta</h3><p>不允许用户缩放,宽度设备宽度,默认大小,最大比例1,最小比例1<br>快捷键meta:vp;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;meta name=<span class="hljs-string">"viewport"</span> content=<span class="hljs-string">"width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"</span>&gt;<br></code></pre></td></tr></table></figure></p>
+<ol>
+<li>width  设备宽度</li>
+<li>initial-scale  默认大小;</li>
+<li>user-scalable  允许用户是否能缩放,no表示不允许也可以是”0”,yes表示可以;</li>
+<li>minimum-scale  允许用户的最小缩放值;</li>
+<li>maximum-scale  允许用户的最大缩放值;</li>
+</ol>
+<h3 id="5-手机端的交互方式不一样"><a href="#5-手机端的交互方式不一样" class="headerlink" title="5 手机端的交互方式不一样"></a>5 手机端的交互方式不一样</h3><h4 id="1-没有-hover"><a href="#1-没有-hover" class="headerlink" title="1 没有 hover"></a>1 没有 hover</h4><h4 id="2-有-touch-事件"><a href="#2-有-touch-事件" class="headerlink" title="2 有 touch 事件"></a>2 有 touch 事件</h4><p>记录用户开始触摸位置和结束触摸的位置,两者之差模拟滑动事件<br>jQuery vue都有</p>
+<h4 id="3-没有-resize-窗口大小"><a href="#3-没有-resize-窗口大小" class="headerlink" title="3 没有 resize(窗口大小)"></a>3 没有 resize(窗口大小)</h4><h4 id="4-没有滚动条"><a href="#4-没有滚动条" class="headerlink" title="4 没有滚动条"></a>4 没有滚动条</h4>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/05/27/移动端页面的做法-响应式/" data-id="clq61ndie006fzofqt9yrpd2t" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/05/27/HTTP状态码/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          HTTP状态码
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/05/24/自制一个简单的jQuery库/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">自制一个简单的jQuery库</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/ES6/">ES6</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JS/">JS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/TS/">TS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/node/">node</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/vue/">vue</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/webpack/">webpack</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/业务代码/">业务代码</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/库/">库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/笔记/">笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机基础/">计算机基础</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/面试题/">面试题</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/">ES6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TS/">TS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/">webpack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/业务代码/">业务代码</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/库/">库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机基础/">计算机基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试题/">面试题</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CSS/" style="font-size: 18.75px;">CSS</a> <a href="/tags/ES6/" style="font-size: 16.25px;">ES6</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/HTTP/" style="font-size: 15px;">HTTP</a> <a href="/tags/JS/" style="font-size: 20px;">JS</a> <a href="/tags/TS/" style="font-size: 17.5px;">TS</a> <a href="/tags/git/" style="font-size: 11.25px;">git</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/vue/" style="font-size: 18.75px;">vue</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/业务代码/" style="font-size: 13.75px;">业务代码</a> <a href="/tags/库/" style="font-size: 12.5px;">库</a> <a href="/tags/笔记/" style="font-size: 10px;">笔记</a> <a href="/tags/计算机基础/" style="font-size: 10px;">计算机基础</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a> <a href="/tags/面试题/" style="font-size: 10px;">面试题</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/02/02/手写Promise-all/">手写Promise.all</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/02/Canvas和SVG区别/">Canvas和SVG区别</a>
+          </li>
+        
+          <li>
+            <a href="/2020/02/12/常见排序算法/">常见排序算法</a>
+          </li>
+        
+          <li>
+            <a href="/2020/01/17/TS声明/">TS声明</a>
+          </li>
+        
+          <li>
+            <a href="/2020/01/16/TS高级类型/">TS类型</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2023 Roxas Deng<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>v-model的使用 | RoxasDengBlog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="v-model:vue提供了v-model指令,用于在表单类元素上双向绑定. input和textarea可以用于input框以及textarea等. 注意:所显示的值只依赖于所绑定的数据,不再关系初始化时插入的value. 单选按钮 单个单选按钮,直接用v-bind绑定一个布尔值,用v-model是不可以的. 如果组合使用,就需要v-model来配合value使用,绑定所选中你的单选框的valu">
+<meta name="keywords" content="vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="v-model的使用">
+<meta property="og:url" content="http://yoursite.com/2018/07/25/v-model的使用/index.html">
+<meta property="og:site_name" content="RoxasDengBlog">
+<meta property="og:description" content="v-model:vue提供了v-model指令,用于在表单类元素上双向绑定. input和textarea可以用于input框以及textarea等. 注意:所显示的值只依赖于所绑定的数据,不再关系初始化时插入的value. 单选按钮 单个单选按钮,直接用v-bind绑定一个布尔值,用v-model是不可以的. 如果组合使用,就需要v-model来配合value使用,绑定所选中你的单选框的valu">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:updated_time" content="2023-12-15T01:47:13.844Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="v-model的使用">
+<meta name="twitter:description" content="v-model:vue提供了v-model指令,用于在表单类元素上双向绑定. input和textarea可以用于input框以及textarea等. 注意:所显示的值只依赖于所绑定的数据,不再关系初始化时插入的value. 单选按钮 单个单选按钮,直接用v-bind绑定一个布尔值,用v-model是不可以的. 如果组合使用,就需要v-model来配合value使用,绑定所选中你的单选框的valu">
+  
+    <link rel="alternate" href="/atom.xml" title="RoxasDengBlog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">RoxasDengBlog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-v-model的使用" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/25/v-model的使用/" class="article-date">
+  <time datetime="2018-07-25T07:14:20.000Z" itemprop="datePublished">2018-07-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/vue/">vue</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      v-model的使用
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="v-model"><a href="#v-model" class="headerlink" title="v-model:"></a>v-model:</h4><p>vue提供了v-model指令,用于在表单类元素上双向绑定.</p>
+<h4 id="input和textarea"><a href="#input和textarea" class="headerlink" title="input和textarea"></a>input和textarea</h4><p>可以用于input框以及textarea等.</p>
+<p>注意:所显示的值只依赖于所绑定的数据,不再关系初始化时插入的value.</p>
+<h4 id="单选按钮"><a href="#单选按钮" class="headerlink" title="单选按钮"></a>单选按钮</h4><ol>
+<li>单个单选按钮,直接用v-bind绑定一个布尔值,用v-model是不可以的.</li>
+<li>如果组合使用,就需要v-model来配合value使用,绑定所选中你的单选框的value值,此处所绑定初始值可以随意给</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;div id=<span class="hljs-string">"app5"</span>&gt;<br>    &lt;input <span class="hljs-built_in">type</span>=<span class="hljs-string">"radio"</span> id=<span class="hljs-string">"one"</span> value=<span class="hljs-string">"One"</span> v-model=<span class="hljs-string">"picked"</span>&gt;<br>    &lt;label <span class="hljs-keyword">for</span>=<span class="hljs-string">"one"</span>&gt;One&lt;/label&gt;<br>    &lt;input <span class="hljs-built_in">type</span>=<span class="hljs-string">"radio"</span> id=<span class="hljs-string">"two"</span> value=<span class="hljs-string">"Two"</span> v-model=<span class="hljs-string">"picked"</span>&gt;<br>    &lt;label <span class="hljs-keyword">for</span>=<span class="hljs-string">"two"</span>&gt;Two&lt;/label&gt;<br>    &lt;br&gt;<br>    &lt;span&gt;&#123;&#123;picked&#125;&#125;&lt;/span&gt;        <br>&lt;/div&gt;<br>&lt;script&gt;<br>    var app5 = new Vue(&#123;<br>        el:<span class="hljs-string">'#app5'</span>,<br>        data:&#123;<br>            picked:<span class="hljs-string">''</span><br>        &#125;<br>    &#125;)<br>    &lt;/script&gt;<br></code></pre></td></tr></table></figure>
+<h4 id="复选框"><a href="#复选框" class="headerlink" title="复选框"></a>复选框</h4><ol>
+<li>单个复选框,直接用一个布尔值,可以用v-model,也可以用v-bind.</li>
+<li>多个复选框,如果是组合使用,就需要v-model来配合value使用,v-model绑定一个数组,如果绑定是字符串,则会转化为true.与所有绑定的复选框的checked属性相对应.</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;div id=<span class="hljs-string">"app3"</span>&gt;<br>    &lt;input <span class="hljs-built_in">type</span>=<span class="hljs-string">"checkbox"</span> name=<span class="hljs-string">""</span> id=<span class="hljs-string">"checkbox"</span> v-model=<span class="hljs-string">"checked"</span>&gt;<br>    &lt;label <span class="hljs-keyword">for</span>=<span class="hljs-string">"checkbox"</span>&gt;&#123;&#123;checked&#125;&#125;&lt;/label&gt;<br>&lt;/div&gt;<br>&lt;script&gt;<br>    var app3 = new Vue(&#123;<br>        el:<span class="hljs-string">'#app3'</span>,<br>        data:&#123;<br>            checked:<span class="hljs-literal">false</span><br>        &#125;<br>    &#125;)<br>&lt;/script&gt;<br><br>&lt;div id=<span class="hljs-string">"app4"</span>&gt;<br>    &lt;input <span class="hljs-built_in">type</span>=<span class="hljs-string">"checkbox"</span>  id=<span class="hljs-string">"jack"</span> value=<span class="hljs-string">"Jack"</span> v-model=<span class="hljs-string">"checkedNames"</span>&gt;<br>    &lt;label <span class="hljs-keyword">for</span>=<span class="hljs-string">"jack"</span>&gt;Jack&lt;/label&gt;<br>    &lt;input <span class="hljs-built_in">type</span>=<span class="hljs-string">"checkbox"</span>  id=<span class="hljs-string">"john"</span> value=<span class="hljs-string">"John"</span> v-model=<span class="hljs-string">"checkedNames"</span>&gt;<br>    &lt;label <span class="hljs-keyword">for</span>=<span class="hljs-string">"john"</span>&gt;John&lt;/label&gt;<br>    &lt;input <span class="hljs-built_in">type</span>=<span class="hljs-string">"checkbox"</span>  id=<span class="hljs-string">"mike"</span> value=<span class="hljs-string">"Mike"</span> v-model=<span class="hljs-string">"checkedNames"</span>&gt;<br>    &lt;label <span class="hljs-keyword">for</span>=<span class="hljs-string">"mike"</span>&gt;Mike&lt;/label&gt;<br>    &lt;br&gt;<br>    &lt;span&gt;&#123;&#123;checkedNames&#125;&#125;&lt;/span&gt;<br>&lt;/div&gt;<br>&lt;script&gt;<br>    var app4 = new Vue(&#123;<br>        el:<span class="hljs-string">'#app4'</span>,<br>        data:&#123;<br>            checkedNames:[]<br>        &#125;<br>    &#125;)<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
+<h4 id="下拉框"><a href="#下拉框" class="headerlink" title="下拉框"></a>下拉框</h4><ol>
+<li>如果是单选,所绑定的value值初始化可以为数组,也可以为字符串,有value直接有限匹配一个value值,没有value就匹配一个text值.</li>
+<li>如果是多选,就需要v-model来配合value使用,v-model绑定一个数组,与复选框类似.</li>
+<li>v-model一定是绑定在select标签上.</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;div id=<span class="hljs-string">"app6"</span>&gt;<br>    &lt;select v-model=<span class="hljs-string">"selected"</span>&gt;<br>        &lt;option disabled value=<span class="hljs-string">""</span>&gt;请选择&lt;/option&gt;<br>        &lt;option&gt;A&lt;/option&gt;<br>        &lt;option&gt;B&lt;/option&gt;<br>        &lt;option&gt;C&lt;/option&gt;<br>    &lt;/select&gt;<br>    &lt;span&gt;&#123;&#123;selected&#125;&#125;&lt;/span&gt;<br>&lt;/div&gt;<br>&lt;script&gt;<br>    var app6 = new Vue(&#123;<br>        el:<span class="hljs-string">'#app6'</span>,<br>        data:&#123;<br>            selected:<span class="hljs-string">''</span><br>        &#125;<br>    &#125;)<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
+<h4 id="绑定值"><a href="#绑定值" class="headerlink" title="绑定值"></a>绑定值</h4><ol>
+<li>单选按钮,只需要v-bind给单选框绑定一个value值,此时,v-model绑定的就是他的value值.</li>
+<li>复选框</li>
+<li>下拉框,在select标签上绑定value值对option并没有影响.</li>
+</ol>
+<h4 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h4><ol>
+<li>lazy v-model默认是在input输入时实时同步输入框的数据,而lazy修饰符,可以使其爱失去焦点或敲回车后更新.</li>
+<li>number 将输入的字符串转化为number类型.</li>
+<li>trim 自动过滤输入过程中首尾的空格.</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/07/25/v-model的使用/" data-id="clq61ndhl004nzofqxnu5vwy4" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/07/25/自定义指令/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          自定义指令
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/07/25/vue的内置指令/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">vue的内置指令</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/ES6/">ES6</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JS/">JS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/TS/">TS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/node/">node</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/vue/">vue</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/webpack/">webpack</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/业务代码/">业务代码</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/库/">库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/笔记/">笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机基础/">计算机基础</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/面试题/">面试题</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/">ES6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TS/">TS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/">webpack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/业务代码/">业务代码</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/库/">库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机基础/">计算机基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试题/">面试题</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CSS/" style="font-size: 18.75px;">CSS</a> <a href="/tags/ES6/" style="font-size: 16.25px;">ES6</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/HTTP/" style="font-size: 15px;">HTTP</a> <a href="/tags/JS/" style="font-size: 20px;">JS</a> <a href="/tags/TS/" style="font-size: 17.5px;">TS</a> <a href="/tags/git/" style="font-size: 11.25px;">git</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/vue/" style="font-size: 18.75px;">vue</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/业务代码/" style="font-size: 13.75px;">业务代码</a> <a href="/tags/库/" style="font-size: 12.5px;">库</a> <a href="/tags/笔记/" style="font-size: 10px;">笔记</a> <a href="/tags/计算机基础/" style="font-size: 10px;">计算机基础</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a> <a href="/tags/面试题/" style="font-size: 10px;">面试题</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/02/02/手写Promise-all/">手写Promise.all</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/02/Canvas和SVG区别/">Canvas和SVG区别</a>
+          </li>
+        
+          <li>
+            <a href="/2020/02/12/常见排序算法/">常见排序算法</a>
+          </li>
+        
+          <li>
+            <a href="/2020/01/17/TS声明/">TS声明</a>
+          </li>
+        
+          <li>
+            <a href="/2020/01/16/TS高级类型/">TS类型</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2023 Roxas Deng<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

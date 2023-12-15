@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>JSONP | RoxasDengBlog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="什么是JSONPJSONP:请求方:浏览器响应方:服务器  请求方创建script,src指向响应方,同时传递一个查询参数 ?callback=functionName; 响应方根据查询参数callback,构造函数functionName.call(undefined,’数据’); 浏览器接受到响应,就会执行functionName.call(undefined,’数据’); 那么请求方就知道了">
+<meta name="keywords" content="JS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JSONP">
+<meta property="og:url" content="http://yoursite.com/2018/05/30/JSONP/index.html">
+<meta property="og:site_name" content="RoxasDengBlog">
+<meta property="og:description" content="什么是JSONPJSONP:请求方:浏览器响应方:服务器  请求方创建script,src指向响应方,同时传递一个查询参数 ?callback=functionName; 响应方根据查询参数callback,构造函数functionName.call(undefined,’数据’); 浏览器接受到响应,就会执行functionName.call(undefined,’数据’); 那么请求方就知道了">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:updated_time" content="2023-12-15T01:47:13.831Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JSONP">
+<meta name="twitter:description" content="什么是JSONPJSONP:请求方:浏览器响应方:服务器  请求方创建script,src指向响应方,同时传递一个查询参数 ?callback=functionName; 响应方根据查询参数callback,构造函数functionName.call(undefined,’数据’); 浏览器接受到响应,就会执行functionName.call(undefined,’数据’); 那么请求方就知道了">
+  
+    <link rel="alternate" href="/atom.xml" title="RoxasDengBlog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">RoxasDengBlog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-JSONP" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/30/JSONP/" class="article-date">
+  <time datetime="2018-05-30T07:38:45.000Z" itemprop="datePublished">2018-05-30</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JS/">JS</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JSONP
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="什么是JSONP"><a href="#什么是JSONP" class="headerlink" title="什么是JSONP"></a>什么是JSONP</h4><h5 id="JSONP"><a href="#JSONP" class="headerlink" title="JSONP:"></a>JSONP:</h5><p>请求方:浏览器<br>响应方:服务器</p>
+<ol>
+<li>请求方创建script,src指向响应方,同时传递一个查询参数 ?callback=functionName;</li>
+<li>响应方根据查询参数callback,构造函数functionName.call(undefined,’数据’);</li>
+<li>浏览器接受到响应,就会执行functionName.call(undefined,’数据’);</li>
+<li>那么请求方就知道了他要的数据</li>
+</ol>
+<p>按照约定:</p>
+<ol>
+<li>查询参数应为callback;</li>
+<li>functionName -&gt; 随机名字</li>
+</ol>
+<h4 id="实现一个JOSNP"><a href="#实现一个JOSNP" class="headerlink" title="实现一个JOSNP"></a>实现一个JOSNP</h4><p>预览:<a href="https://github.com/roxas332519096/JSONP" target="_blank" rel="noopener">https://github.com/roxas332519096/JSONP</a></p>
+<p>前端代码:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;script&gt;<br>    button.addEventListener(<span class="hljs-string">'click'</span>, (e)=&gt;&#123;<br>    <span class="hljs-built_in">let</span> script = document.createElement(<span class="hljs-string">'script'</span>) <br>    <span class="hljs-built_in">let</span> functionName = <span class="hljs-string">'frank'</span>+ parseInt(Math.random()*10000000 ,10)  // 每次请求之前搞出一个随机的函数<br>    window[functionName] = <span class="hljs-keyword">function</span>(result)&#123;<br>        <span class="hljs-keyword">if</span>(result === <span class="hljs-string">'success'</span>)&#123;<br>            amount.innerText = amount.innerText - 0 - 1<br>        &#125;<br>    &#125;<br>    script.src = <span class="hljs-string">'http://localhost:8002/pay?callback='</span> + functionName<br>    document.body.appendChild(script)<br>    script.onload = <span class="hljs-keyword">function</span>(e)&#123; <br>        e.currentTarget.remove()<br>        delete window[functionName] <br>    &#125;<br>    &#125;)<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure></p>
+<p>后端代码:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-keyword">if</span>(path === <span class="hljs-string">'/'</span>)&#123;<br>    var string = fs.readFileSync(<span class="hljs-string">'./index.html'</span>,<span class="hljs-string">'utf8'</span>)<br>    var amount = fs.readFileSync(<span class="hljs-string">'./db'</span>, <span class="hljs-string">'utf8'</span>);<br>    string = string.replace(<span class="hljs-string">'&amp;&amp;&amp;amount&amp;&amp;&amp;'</span>, amount);<br>    response.setHeader(<span class="hljs-string">'Content-Type'</span>, <span class="hljs-string">'text/html;charset=utf-8'</span>)<br>    response.write(string);<br>    response.end();<br>  &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(path === <span class="hljs-string">'/pay'</span>)&#123;<br>    var amount = fs.readFileSync(<span class="hljs-string">'./db'</span>, <span class="hljs-string">'utf8'</span>)<br>    amount -= 1<br>    fs.writeFileSync(<span class="hljs-string">'./db'</span>, amount);<br>    var callbackName = query.callback;<br>    response.setHeader(<span class="hljs-string">'Content-Type'</span>, <span class="hljs-string">'application/javascript'</span>)<br>    response.statusCode = 200;<br>    response.write(`<br>        <span class="hljs-variable">$&#123;callbackName&#125;</span>.call(undefined, <span class="hljs-string">'success'</span>)<br>    `)<br>    response.end()<br>  &#125;<span class="hljs-keyword">else</span>&#123;<br>    response.statusCode = 404<br>    response.setHeader(<span class="hljs-string">'Content-Type'</span>, <span class="hljs-string">'text/html;charset=utf-8'</span>)<br>    response.write(<span class="hljs-string">'找不到对应路径,你需要自行修改 index.html'</span>)<br>    response.end()<br>  &#125;<br></code></pre></td></tr></table></figure></p>
+<h5 id="流程如下"><a href="#流程如下" class="headerlink" title="流程如下:"></a>流程如下:</h5><ol>
+<li>浏览器8001点击按钮button</li>
+<li>创建script,src指向8002/pay</li>
+<li>创建随机名函数functionName</li>
+<li>发送get请求,用查询参数?callback = functionName 传递函数名</li>
+<li>服务器8002响应</li>
+<li>当被指向pay执行以下命令</li>
+<li>读取数据库db中的amout</li>
+<li>amount = amount-1</li>
+<li>将amount写入数据库</li>
+<li>根据callback构造一个函数</li>
+<li>调用函数functionName.call(undefined,’success’)</li>
+<li>浏览器接收响应,根据输入参数success执行functionName函数</li>
+<li>innerText - 1</li>
+<li>删除script标签</li>
+<li>假如刷新浏览器8001,重新读取修改后的数据库db,获得修改后的数据</li>
+</ol>
+<h4 id="原生JS的例子"><a href="#原生JS的例子" class="headerlink" title="原生JS的例子"></a>原生JS的例子</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash">window.fn = <span class="hljs-keyword">function</span>(response)&#123;<br>    ///response是返回的数据<br>&#125;<br>var script = document.createElement(<span class="hljs-string">'script'</span>);<br>script.src = <span class="hljs-string">'http://api.douban.com/v2/movie/top250?callback=fn'</span>;<br>document.body.appendChild(script);<br>script.onload = <span class="hljs-keyword">function</span>(e)&#123;<br>    e.currentTarget.remove();<br>    delete window.fn;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h4 id="用jQuery实现JOSNP"><a href="#用jQuery实现JOSNP" class="headerlink" title="用jQuery实现JOSNP:"></a>用jQuery实现JOSNP:</h4><p>前端代码如下:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs bash">$.ajax(&#123;<br>    url:<span class="hljs-string">'http://api.douban.com/v2/movie/top250'</span>,<br>    <span class="hljs-built_in">type</span>:<span class="hljs-string">'GET'</span>,<br>    data:&#123;<br>        start:0,<br>        count:20<br>    &#125;,<br>    dataType:<span class="hljs-string">'jsonp'</span><br>&#125;).<span class="hljs-keyword">done</span>(<span class="hljs-keyword">function</span>(respone)&#123;<br>    console.log(respone);<br>&#125;).fail(<span class="hljs-function"><span class="hljs-title">function</span></span>()&#123;<br>    console.log(<span class="hljs-string">'error'</span>);<br>&#125;)<br></code></pre></td></tr></table></figure></p>
+<h4 id="为什么JSONP不支持POST"><a href="#为什么JSONP不支持POST" class="headerlink" title="为什么JSONP不支持POST?"></a>为什么JSONP不支持POST?</h4><p>因为JSONP是通过动态创建script实现的,动态创建script只有get请求.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/05/30/JSONP/" data-id="clq61ndg6001jzofq1jwyka68" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS/">JS</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/05/31/AJAX/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          AJAX
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/05/29/DOM事件/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">DOM事件</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/ES6/">ES6</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JS/">JS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/TS/">TS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/node/">node</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/vue/">vue</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/webpack/">webpack</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/业务代码/">业务代码</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/库/">库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/笔记/">笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机基础/">计算机基础</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/面试题/">面试题</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/">ES6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TS/">TS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/">webpack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/业务代码/">业务代码</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/库/">库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机基础/">计算机基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试题/">面试题</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CSS/" style="font-size: 18.75px;">CSS</a> <a href="/tags/ES6/" style="font-size: 16.25px;">ES6</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/HTTP/" style="font-size: 15px;">HTTP</a> <a href="/tags/JS/" style="font-size: 20px;">JS</a> <a href="/tags/TS/" style="font-size: 17.5px;">TS</a> <a href="/tags/git/" style="font-size: 11.25px;">git</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/vue/" style="font-size: 18.75px;">vue</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/业务代码/" style="font-size: 13.75px;">业务代码</a> <a href="/tags/库/" style="font-size: 12.5px;">库</a> <a href="/tags/笔记/" style="font-size: 10px;">笔记</a> <a href="/tags/计算机基础/" style="font-size: 10px;">计算机基础</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a> <a href="/tags/面试题/" style="font-size: 10px;">面试题</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/02/02/手写Promise-all/">手写Promise.all</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/02/Canvas和SVG区别/">Canvas和SVG区别</a>
+          </li>
+        
+          <li>
+            <a href="/2020/02/12/常见排序算法/">常见排序算法</a>
+          </li>
+        
+          <li>
+            <a href="/2020/01/17/TS声明/">TS声明</a>
+          </li>
+        
+          <li>
+            <a href="/2020/01/16/TS高级类型/">TS类型</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2023 Roxas Deng<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

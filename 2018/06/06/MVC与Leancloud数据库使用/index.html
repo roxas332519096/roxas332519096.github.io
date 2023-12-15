@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>MVC与Leancloud数据库使用 | RoxasDengBlog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Unsplash 找图 MVCM:Model 模块化操作数据把JS分文件 解决全局变量,用闭包,匿名函数!function(){}.call(); (function(){}).call();不推荐 使用window.xxx读取函数信息 第一个函数 12345678910!function()&amp;#123;    var person = &amp;#123;        name : &apos;frank&apos;,">
+<meta name="keywords" content="JS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MVC与Leancloud数据库使用">
+<meta property="og:url" content="http://yoursite.com/2018/06/06/MVC与Leancloud数据库使用/index.html">
+<meta property="og:site_name" content="RoxasDengBlog">
+<meta property="og:description" content="Unsplash 找图 MVCM:Model 模块化操作数据把JS分文件 解决全局变量,用闭包,匿名函数!function(){}.call(); (function(){}).call();不推荐 使用window.xxx读取函数信息 第一个函数 12345678910!function()&amp;#123;    var person = &amp;#123;        name : &apos;frank&apos;,">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:updated_time" content="2023-12-15T01:47:13.832Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MVC与Leancloud数据库使用">
+<meta name="twitter:description" content="Unsplash 找图 MVCM:Model 模块化操作数据把JS分文件 解决全局变量,用闭包,匿名函数!function(){}.call(); (function(){}).call();不推荐 使用window.xxx读取函数信息 第一个函数 12345678910!function()&amp;#123;    var person = &amp;#123;        name : &apos;frank&apos;,">
+  
+    <link rel="alternate" href="/atom.xml" title="RoxasDengBlog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">RoxasDengBlog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-MVC与Leancloud数据库使用" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/06/MVC与Leancloud数据库使用/" class="article-date">
+  <time datetime="2018-06-06T12:09:08.000Z" itemprop="datePublished">2018-06-06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JS/">JS</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      MVC与Leancloud数据库使用
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Unsplash 找图</p>
+<h3 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a>MVC</h3><h4 id="M-Model-模块化操作数据"><a href="#M-Model-模块化操作数据" class="headerlink" title="M:Model 模块化操作数据"></a>M:Model 模块化操作数据</h4><p>把JS分文件</p>
+<h4 id="解决全局变量-用闭包-匿名函数"><a href="#解决全局变量-用闭包-匿名函数" class="headerlink" title="解决全局变量,用闭包,匿名函数"></a>解决全局变量,用闭包,匿名函数</h4><p>!function(){}.call();</p>
+<p>(function(){}).call();不推荐</p>
+<p>使用window.xxx读取函数信息</p>
+<p>第一个函数</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash">!<span class="hljs-function"><span class="hljs-title">function</span></span>()&#123;<br>    var person = &#123;<br>        name : <span class="hljs-string">'frank'</span>,<br>        age : 18<br>    &#125;<br>    window.frankGrowUp = <span class="hljs-function"><span class="hljs-title">function</span></span>()&#123;<br>        person.age += 1;<br>        <span class="hljs-built_in">return</span> person.age;<br>    &#125;<br>&#125;.call();<br></code></pre></td></tr></table></figure>
+<p>另外一个函数<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">!<span class="hljs-function"><span class="hljs-title">function</span></span>()&#123;<br>    var frankGrowUp = window.frankGrowUp;<br>    console.log(frankGrowUp);<br>&#125;.call();<br></code></pre></td></tr></table></figure></p>
+<h4 id="如何使用闭包"><a href="#如何使用闭包" class="headerlink" title="如何使用闭包"></a>如何使用闭包</h4><ol>
+<li>立即执行函数使得 person 无法被外部访问</li>
+<li>闭包使得匿名函数可以操作 person</li>
+<li>window.frankGrowUp 保存了匿名函数的地址</li>
+<li>任何地方都可以使用 window.frankGrowUp<br> =&gt; 任何地方都可以使用 window.frankGrowUp 操作 person，但是不能直接访问 person</li>
+</ol>
+<h4 id="立即执行函数"><a href="#立即执行函数" class="headerlink" title="立即执行函数"></a>立即执行函数</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs bash">var accessor =  <span class="hljs-function"><span class="hljs-title">function</span></span>()&#123;<br>    var person = &#123;<br>        name : <span class="hljs-string">'frank'</span>,<br>        age : 18<br>    &#125;<br>    <span class="hljs-built_in">return</span> <span class="hljs-function"><span class="hljs-title">function</span></span>()&#123;<br>        person.age += 1;<br>        <span class="hljs-built_in">return</span> person.age;<br>    &#125;<br>&#125;<br><br>var growUp = accessor().call(); //实际是执行 <span class="hljs-function"><span class="hljs-title">function</span></span>()&#123;person.age +=1;<span class="hljs-built_in">return</span> person.age&#125;;<br><br>growUp.call(); //实际是执行 person.age<br></code></pre></td></tr></table></figure>
+<h3 id="MVC的V和C"><a href="#MVC的V和C" class="headerlink" title="MVC的V和C"></a>MVC的V和C</h3><h4 id="V-View-视图-即用户看得见的"><a href="#V-View-视图-即用户看得见的" class="headerlink" title="V:View 视图,即用户看得见的."></a>V:View 视图,即用户看得见的.</h4><p>JS代码加入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">var view = docmuent.querySelector(<span class="hljs-string">''</span>);<br></code></pre></td></tr></table></figure></p>
+<h4 id="C-Controller-控制器"><a href="#C-Controller-控制器" class="headerlink" title="C:Controller 控制器"></a>C:Controller 控制器</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs bash">var controller = &#123;<br>    view: null,<br>    init: <span class="hljs-keyword">function</span>(view)&#123;<br>        this.view = view;<br>        this.bindEvents();<br>        // this.bindEvents.call(this);<br>    &#125;,<br>    bindEvents : <span class="hljs-function"><span class="hljs-title">function</span></span>()&#123;<br>        var view = this.view;<br>        //代码<br>    &#125;<br>&#125;.<br><br>contorller.init.(view);<br>// controller.init.call(controller, view);<br></code></pre></td></tr></table></figure>
+<h5 id="对象调用一个函数-那么this就是这个对象"><a href="#对象调用一个函数-那么this就是这个对象" class="headerlink" title="对象调用一个函数,那么this就是这个对象"></a>对象调用一个函数,那么this就是这个对象</h5><ol>
+<li>可以用bind(this)绑定this;</li>
+<li>可以用箭头函数,箭头函数没有this,它this就是外面的this;</li>
+</ol>
+<h4 id="引入数据库"><a href="#引入数据库" class="headerlink" title="引入数据库:"></a>引入数据库:</h4><ol>
+<li>创建一个应用</li>
+<li>引入av-min.js 得到window.AV</li>
+<li>初始化AV对象(代码直接拷)</li>
+<li>新建一条数据(代码直接拷)</li>
+</ol>
+<p>表单提交监听事件 </p>
+<p>不监听button.click是因为也要监听回车.<br>但form.addEventListener(‘sumbmit’,()=&gt;{})中的sumbit包含点击事件与回车事件.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">let</span> myForm = document.querySelector(<span class="hljs-string">'#postMessageForm'</span>);<br>myForm.addEventListener(<span class="hljs-string">'submit'</span>,<span class="hljs-keyword">function</span>(e)&#123;<br>    e.preventDefault();<br>    <span class="hljs-built_in">let</span> content = myForm.querySelector(<span class="hljs-string">'input[name=content]'</span>).value;<br>    var Message = AV.Object.extend(<span class="hljs-string">'Message'</span>);<br>    var message = new Message();<br>    message.save(&#123;<br>        <span class="hljs-string">'content'</span> : content<br>    &#125;).<span class="hljs-keyword">then</span>(<span class="hljs-keyword">function</span>(object)&#123;<br>        <span class="hljs-built_in">let</span> li = document.createElement(<span class="hljs-string">'li'</span>);<br>        li.innerText = `<span class="hljs-variable">$&#123;object.attributes.name&#125;</span> : <span class="hljs-variable">$&#123;object.attributes.content&#125;</span>`;<br>        <span class="hljs-built_in">let</span> messageList = document.querySelector(<span class="hljs-string">'#messageList'</span>);<br>        messageList.appendChild(li);<br>        myForm.querySelector(<span class="hljs-string">'input[name=content]'</span>).value = <span class="hljs-string">''</span>;<br>    &#125;)<br>&#125;)<br></code></pre></td></tr></table></figure></p>
+<p>页面读取数据库信息:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs bash">var query = new AV.Query(<span class="hljs-string">'Message'</span>);<br>query.find()<br>    .<span class="hljs-keyword">then</span>(<br>        <span class="hljs-keyword">function</span>(messages)&#123;<br>            <span class="hljs-built_in">let</span> array = messages.map((item)=&gt; item.attributes);<br>            array.forEach((item)=&gt;&#123;<br>                <span class="hljs-built_in">let</span> li = document.createElement(<span class="hljs-string">'li'</span>);<br>                li.innerText = `<span class="hljs-variable">$&#123;item.name&#125;</span> : <span class="hljs-variable">$&#123;item.content&#125;</span>`;<br>                <span class="hljs-built_in">let</span> messageList = document.querySelector(<span class="hljs-string">'#messageList'</span>);<br>                messageList.appendChild(li);<br>            &#125;)<br>        &#125;<br>    )<br></code></pre></td></tr></table></figure></p>
+<h4 id="MVC总结"><a href="#MVC总结" class="headerlink" title="MVC总结"></a>MVC总结</h4><ol>
+<li>Model 操作数据</li>
+<li>View 表示视图</li>
+<li>Controller 是控制器</li>
+</ol>
+<p>Model 和服务器交互，Model 将得到的数据交给 Controller，Controller 把数据填入 View，并监听 View<br>用户操作 View，如点击按钮，Controller 就会接受到点击事件，Controller 这时会去调用 Model，Model 会与服务器交互，得到数据后返回给 Controller，Controller 得到数据就去更新 View</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/06/06/MVC与Leancloud数据库使用/" data-id="clq61ndgb001tzofqfqglxhbn" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS/">JS</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/06/07/面向对象编程/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          面向对象编程
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/06/04/从一个页面输入URL到页面显示完成-这个过程中都发生了什么/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">从一个页面输入URL到页面显示完成,这个过程中都发生了什么?</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/ES6/">ES6</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JS/">JS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/TS/">TS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/node/">node</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/vue/">vue</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/webpack/">webpack</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/业务代码/">业务代码</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/库/">库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/笔记/">笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机基础/">计算机基础</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/面试题/">面试题</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/">ES6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TS/">TS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/">webpack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/业务代码/">业务代码</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/库/">库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机基础/">计算机基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试题/">面试题</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CSS/" style="font-size: 18.75px;">CSS</a> <a href="/tags/ES6/" style="font-size: 16.25px;">ES6</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/HTTP/" style="font-size: 15px;">HTTP</a> <a href="/tags/JS/" style="font-size: 20px;">JS</a> <a href="/tags/TS/" style="font-size: 17.5px;">TS</a> <a href="/tags/git/" style="font-size: 11.25px;">git</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/vue/" style="font-size: 18.75px;">vue</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/业务代码/" style="font-size: 13.75px;">业务代码</a> <a href="/tags/库/" style="font-size: 12.5px;">库</a> <a href="/tags/笔记/" style="font-size: 10px;">笔记</a> <a href="/tags/计算机基础/" style="font-size: 10px;">计算机基础</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a> <a href="/tags/面试题/" style="font-size: 10px;">面试题</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/02/02/手写Promise-all/">手写Promise.all</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/02/Canvas和SVG区别/">Canvas和SVG区别</a>
+          </li>
+        
+          <li>
+            <a href="/2020/02/12/常见排序算法/">常见排序算法</a>
+          </li>
+        
+          <li>
+            <a href="/2020/01/17/TS声明/">TS声明</a>
+          </li>
+        
+          <li>
+            <a href="/2020/01/16/TS高级类型/">TS类型</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2023 Roxas Deng<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

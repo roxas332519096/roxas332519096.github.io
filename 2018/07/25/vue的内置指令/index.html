@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>vue的内置指令 | RoxasDengBlog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="v-cloak与dispaly:none进行结合使用. 作用:解决初始化慢导致页面闪动. 例:12345678910&amp;lt;style&amp;gt;    *[v-cloak]&amp;#123;        display:none;    &amp;#125;&amp;lt;style&amp;gt;&amp;lt;comp-a v-show=&quot;isShow&quot; v-cloak&amp;gt;&amp;lt;/comp-a&amp;gt;data&amp;#123;">
+<meta name="keywords" content="vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue的内置指令">
+<meta property="og:url" content="http://yoursite.com/2018/07/25/vue的内置指令/index.html">
+<meta property="og:site_name" content="RoxasDengBlog">
+<meta property="og:description" content="v-cloak与dispaly:none进行结合使用. 作用:解决初始化慢导致页面闪动. 例:12345678910&amp;lt;style&amp;gt;    *[v-cloak]&amp;#123;        display:none;    &amp;#125;&amp;lt;style&amp;gt;&amp;lt;comp-a v-show=&quot;isShow&quot; v-cloak&amp;gt;&amp;lt;/comp-a&amp;gt;data&amp;#123;">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:updated_time" content="2023-12-15T01:47:13.845Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vue的内置指令">
+<meta name="twitter:description" content="v-cloak与dispaly:none进行结合使用. 作用:解决初始化慢导致页面闪动. 例:12345678910&amp;lt;style&amp;gt;    *[v-cloak]&amp;#123;        display:none;    &amp;#125;&amp;lt;style&amp;gt;&amp;lt;comp-a v-show=&quot;isShow&quot; v-cloak&amp;gt;&amp;lt;/comp-a&amp;gt;data&amp;#123;">
+  
+    <link rel="alternate" href="/atom.xml" title="RoxasDengBlog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">RoxasDengBlog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-vue的内置指令" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/25/vue的内置指令/" class="article-date">
+  <time datetime="2018-07-25T06:36:10.000Z" itemprop="datePublished">2018-07-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/vue/">vue</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      vue的内置指令
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="v-cloak"><a href="#v-cloak" class="headerlink" title="v-cloak"></a>v-cloak</h4><p>与dispaly:none进行结合使用.</p>
+<p>作用:解决初始化慢导致页面闪动.</p>
+<p>例:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;style&gt;<br>    *[v-cloak]&#123;<br>        display:none;<br>    &#125;<br>&lt;style&gt;<br>&lt;comp<span class="hljs-_">-a</span> v-show=<span class="hljs-string">"isShow"</span> v-cloak&gt;&lt;/comp<span class="hljs-_">-a</span>&gt;<br><br>data&#123;<br>    isShow:<span class="hljs-literal">false</span><br>&#125;<br></code></pre></td></tr></table></figure></p>
+<h4 id="v-once"><a href="#v-once" class="headerlink" title="v-once"></a>v-once</h4><p>定义它的元素和组件只渲染一次</p>
+<h4 id="v-if-v-else-if-v-esle"><a href="#v-if-v-else-if-v-esle" class="headerlink" title="v-if,v-else-if,v-esle"></a>v-if,v-else-if,v-esle</h4><p>例:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;div id=<span class="hljs-string">"app3"</span>&gt;<br>    &lt;div v-if=<span class="hljs-string">"type === 'A'"</span>&gt;A&lt;/div&gt;<br>    &lt;div v-else-if=<span class="hljs-string">"type === 'B'"</span>&gt;B&lt;/div&gt;<br>    &lt;div v-else-if=<span class="hljs-string">"type === 'C'"</span>&gt;C&lt;/div&gt;<br>    &lt;div v-else&gt;Not A/B/C&lt;/div&gt;<br>&lt;/div&gt;<br>&lt;script&gt;<br>    var app3 = new Vue(&#123;<br>        el:<span class="hljs-string">'#app3'</span>,<br>        data:&#123;<br>            <span class="hljs-built_in">type</span>:<span class="hljs-string">'A'</span><br>        &#125;<br>    &#125;)<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure></p>
+<p>弊端:Vue在渲染元素时,出于效率考虑,会尽可能地复用已有的元素而非重新渲染,因此会出现乌龙,只会渲染变化的云阿苏,也就是说input元素被复用了.<br>解决方法:加key,唯一,提供key值可以来决定是否复用该元素.</p>
+<h4 id="v-show"><a href="#v-show" class="headerlink" title="v-show"></a>v-show</h4><p>只改变了css属性display</p>
+<p>v-if:实时渲染,显示就渲染,不显示就销毁.<br>v-show:元素永远存在于页面中,只是改变了css的display的属性.</p>
+<h4 id="v-for"><a href="#v-for" class="headerlink" title="v-for"></a>v-for</h4><p>遍历数组,每个项渲染到列表之中.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;ul id=<span class="hljs-string">"example2"</span>&gt;<br>    &lt;li v-for=<span class="hljs-string">"(item,index) in items"</span>&gt;<br>        &#123;&#123;parentMessage&#125;&#125; - &#123;&#123;index&#125;&#125; - &#123;&#123;item.message&#125;&#125;<br>    &lt;/li&gt;<br>&lt;/ul&gt;<br>&lt;script&gt;<br>    var example2 = new Vue(&#123;<br>        el:<span class="hljs-string">'#example2'</span>,<br>        data:&#123;<br>            parentMessage:<span class="hljs-string">'Parent'</span>,<br>            items:[<br>                &#123;message:<span class="hljs-string">'Foo'</span>&#125;,<br>                &#123;message:<span class="hljs-string">'Bar'</span>&#125;<br>            ]<br>        &#125;<br>    &#125;)<br>&lt;/script&gt;<br><br>&lt;ul id=<span class="hljs-string">"example3"</span>&gt;<br>    &lt;li v-for=<span class="hljs-string">"(value,key,index) in object"</span>&gt;<br>      &#123;&#123;index&#125;&#125;. &#123;&#123;key&#125;&#125; : &#123;&#123;value&#125;&#125;<br>    &lt;/li&gt;<br>&lt;/ul&gt;<br>&lt;script&gt;<br>    var example3 = new Vue(&#123;<br>        el:<span class="hljs-string">'#example3'</span>,<br>        data:&#123;<br>            object:&#123;<br>                firstName:<span class="hljs-string">'John'</span>,<br>                lastName:<span class="hljs-string">'Doe'</span>,<br>                age:30<br>            &#125;<br>        &#125;<br>    &#125;)<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure></p>
+<h5 id="数组更新-过滤排序"><a href="#数组更新-过滤排序" class="headerlink" title="数组更新,过滤排序"></a>数组更新,过滤排序</h5><p>改变数组的方法:</p>
+<ol>
+<li><p>push()在末尾添加元素</p>
+</li>
+<li><p>pop()移除数组最后一个元素</p>
+</li>
+<li><p>shift()删除数组的第一个元素</p>
+</li>
+<li><p>unshift()在第一个元素之前添加一个元素</p>
+</li>
+<li><p>splice()添加或删除函数,返回删除的元素<br> 第一个参数:开始操作的位置.<br> 第二个参数:操作的长度.<br> 第三个可选参数:排序:sort(),reverse()</p>
+</li>
+</ol>
+<h5 id="两个数组变动vue检测不到"><a href="#两个数组变动vue检测不到" class="headerlink" title="两个数组变动vue检测不到:"></a>两个数组变动vue检测不到:</h5><ol>
+<li>改变数组的指定项</li>
+<li>改变数组长度<br> 过滤:filter</li>
+</ol>
+<p>解决方法:</p>
+<ol>
+<li><p>set(改变指定项)<br> Vue.set(app.arr,1,”car”);</p>
+</li>
+<li><p>splice(改变长度)<br> app.arr.splice(1)</p>
+</li>
+</ol>
+<h4 id="方法和事件"><a href="#方法和事件" class="headerlink" title="方法和事件"></a>方法和事件</h4><p>v-on</p>
+<p>methods</p>
+<h5 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h5><p>在vue中传入event对象用$event,方式是冒泡.</p>
+<p>stop:阻止单击事件向上冒泡.<br>prevent:提交事件并且不重载页面.<br>self:只作用在元素本身而非子元素的时候调用.<br>once:只执行一次方法.</p>
+<p>可以监听键盘事件:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;input @keyup.13=<span class="hljs-string">"fn"</span>&gt;----指定的keyCode<br></code></pre></td></tr></table></figure></p>
+<p>可以用.enter .tab .delete等</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/07/25/vue的内置指令/" data-id="clq61ndhp004zzofqpt337cej" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/07/25/v-model的使用/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          v-model的使用
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/07/25/v-bind以及class与style的绑定/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">v-bind以及class与style的绑定</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/ES6/">ES6</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JS/">JS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/TS/">TS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/node/">node</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/vue/">vue</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/webpack/">webpack</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/业务代码/">业务代码</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/库/">库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/笔记/">笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机基础/">计算机基础</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/面试题/">面试题</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/">ES6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TS/">TS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/">webpack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/业务代码/">业务代码</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/库/">库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机基础/">计算机基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试题/">面试题</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CSS/" style="font-size: 18.75px;">CSS</a> <a href="/tags/ES6/" style="font-size: 16.25px;">ES6</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/HTTP/" style="font-size: 15px;">HTTP</a> <a href="/tags/JS/" style="font-size: 20px;">JS</a> <a href="/tags/TS/" style="font-size: 17.5px;">TS</a> <a href="/tags/git/" style="font-size: 11.25px;">git</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/vue/" style="font-size: 18.75px;">vue</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/业务代码/" style="font-size: 13.75px;">业务代码</a> <a href="/tags/库/" style="font-size: 12.5px;">库</a> <a href="/tags/笔记/" style="font-size: 10px;">笔记</a> <a href="/tags/计算机基础/" style="font-size: 10px;">计算机基础</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a> <a href="/tags/面试题/" style="font-size: 10px;">面试题</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/02/02/手写Promise-all/">手写Promise.all</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/02/Canvas和SVG区别/">Canvas和SVG区别</a>
+          </li>
+        
+          <li>
+            <a href="/2020/02/12/常见排序算法/">常见排序算法</a>
+          </li>
+        
+          <li>
+            <a href="/2020/01/17/TS声明/">TS声明</a>
+          </li>
+        
+          <li>
+            <a href="/2020/01/16/TS高级类型/">TS类型</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2023 Roxas Deng<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
